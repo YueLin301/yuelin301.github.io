@@ -2,7 +2,7 @@
 title: Markdown Syntax
 date: 2022-04-03 15:48:44 +0800
 categories: [Notes]
-tags: [template, note]     # TAG names should always be lowercase
+tags: [note]     # TAG names should always be lowercase
 math: True
 ---
 
@@ -154,4 +154,4 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
 
 ### Video
 <!-- {% include embed/youtube.html id='Balreaj8Yqs' %} -->
-![video name](/assets/my-paper/RHex-T3/workspace2.mp4)
+![video name](/assets/my_paper/RHex_T3/workspace2.mp4)

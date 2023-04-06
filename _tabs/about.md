@@ -11,21 +11,21 @@ order: 4
 
 ## Education & Experience
 - **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
-    - Research Interests: Multi-Agent Reinforcement learning, Algorithmic Mechanism Design
+    - Fortunately advised by Prof. Baoxiang Wang
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)
-        - GPA: 3.89/4 (92.22/100)
-        - Rank: **1**/127
+        - GPA:  3.89 / 4 (92.22 / 100)
+        - Rank: 1 / 127
     - School of Mechanical Engineering (2018.9 - 2019.6)
-        - GPA: 3.90/4 (92.0/100)
-        - Rank: **1**/60
+        - GPA:  3.90 / 4 (92.00 / 100)
+        - Rank: 1 / 60
 
 ---
 
 ## Research Interests
 - Currently
     - Information Design
-    - Multi-Agent Reinforcement Learning and Communication
+    - Communication in Multi-Agent System, Reinforcement Learning
 - Formerly
     - Redundant Manipulator Control
     - Robotic Mechanism Design
@@ -53,7 +53,7 @@ order: 4
 ---
 
 ## Other Campus Involvement
-- Achieved a perfect score (100/100) in Advanced Mathematics and served as a class representative. Initiated and organized a weekly seminar on Advanced Mathematics for classmates for one year, promoting a harmonious learning environment.
+- Achieved a perfect score (100/100) in Advanced Mathematics and served as a class representative. Initiated and organized a weekly seminar on Advanced Mathematics for classmates, promoting a harmonious learning environment.
 - Assisted classmates in preparing for final exams during the pandemic. Check out my [mind map notes](https://github.com/YueLin301/MindMap-bakcup) and you might be surprised by the amount of effort I committed.
 - Responsible for teaching robot simulation software ([Webots](https://cyberbotics.com)) to the laboratory group, and published relevant instructional videos on [bilibili video platform](https://space.bilibili.com/36040555).
 

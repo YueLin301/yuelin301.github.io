@@ -7,16 +7,28 @@ order: 4
 > Have a good day! 🎉
 {: .prompt-tip }
 
+---
+
 ## Education & Experience
+- **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
+    - Research Interests: Multi-Agent Reinforcement learning, Algorithmic Mechanism Design
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
-    - School of Mechanical Engineering (2018.9 - 2019.6)
-        - GPA: 3.90/4 (92.0/100)
-        - Rank: **1**/60
     - School of Computer Science and Technology (2019.9 - 2022.6)
         - GPA: 3.89/4 (92.22/100)
         - Rank: **1**/127
-- **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
-    - Research Interests: Multi-Agent Reinforcement learning, Algorithmic Mechanism Design
+    - School of Mechanical Engineering (2018.9 - 2019.6)
+        - GPA: 3.90/4 (92.0/100)
+        - Rank: **1**/60
+
+---
+
+## Research Interests
+- Currently
+    - Information Design
+    - Multi-Agent Reinforcement Learning and Communication
+- Formerly
+    - Redundant Manipulator Control
+    - Robotic Mechanism Design
 
 ---
 
@@ -41,15 +53,16 @@ order: 4
 ---
 
 ## Other Campus Involvement
-- Responsible for teaching robot simulation software (Webots) to the laboratory group, and published relevant instructional videos on [bilibili video platform](https://space.bilibili.com/36040555).
-- Achieved a perfect score (100/100) in Advanced Mathematics and served as a class representative.
-- Initiated and organized a weekly seminar on Advanced Mathematics for classmates for one year, promoting a harmonious learning environment.
+- Achieved a perfect score (100/100) in Advanced Mathematics and served as a class representative. Initiated and organized a weekly seminar on Advanced Mathematics for classmates for one year, promoting a harmonious learning environment.
+- Assisted classmates in preparing for final exams during the pandemic. Check out my [mind map notes](https://github.com/YueLin301/MindMap-bakcup) and you might be surprised by the amount of effort I committed.
+- Responsible for teaching robot simulation software ([Webots](https://cyberbotics.com)) to the laboratory group, and published relevant instructional videos on [bilibili video platform](https://space.bilibili.com/36040555).
 
 ---
 
-## Hobbies & Personality
-- Hobbies: Ping Pong, Philosophy, Film
-- Personality
-    - Enneagram: [5w4](https://www.enneagraminstitute.com/type-5)
-    - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)
-    - Myers-Briggs Type Indicator (MBTI): [INTJ](https://www.16personalities.com/intj-personality)
+## Personality
+- Enneagram: [5w4](https://www.enneagraminstitute.com/type-5)
+- Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)
+- Myers-Briggs Type Indicator (MBTI): [INTJ](https://www.16personalities.com/intj-personality)
+
+> Despite some individuals misusing the personality type scale on forums, it remains a useful tool as it **clusters** people's behavioral tendencies based on multiple dimensions. Therefore, sharing my personality type with someone familiar with this system is an efficient way to describe my profile. I hope that you won't hold any biases against me for utilizing this system. :)
+{: .prompt-info}

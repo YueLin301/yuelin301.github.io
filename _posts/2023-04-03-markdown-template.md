@@ -6,6 +6,9 @@ tags: [note]     # TAG names should always be lowercase
 math: True
 ---
 
+> Adapted from [this post](https://chirpy.cotes.page/posts/text-and-typography/)
+{: .prompt-info }
+
 ---
 ## Prompts
 > green tip

@@ -33,14 +33,14 @@ order: 4
 ---
 
 ## [Publications](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN)
-- **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao\*. (2021). Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. *International Conference on Robotics and Automation (ICRA)*.
+- **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao. (2021). Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. *International Conference on Robotics and Automation (ICRA)*.
     - Delivered a presentation at the Xi'an conference venue.
 - **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin. (2022). A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. *International Journal of Advanced Robotic Systems (IJARS)*. 
 
 ---
 
 ## Manuscripts
-- **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang. Information Design in Multi-Agent Reinforcement Learning (coming soon).
+- **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang. (2023). Information Design in Multi-Agent Reinforcement Learning. *arxiv*.
 
 ---
 
@@ -60,9 +60,9 @@ order: 4
 ---
 
 ## Personality
+- Myers-Briggs Type Indicator (MBTI): [INTJ-T](https://www.16personalities.com/profiles/8dc4f03308407)
 - Enneagram: [5w4](https://www.enneagraminstitute.com/type-5)
 - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)
-- Myers-Briggs Type Indicator (MBTI): [INTJ](https://www.16personalities.com/intj-personality)
 
-> Despite some individuals misusing the personality type scale on forums, it remains a useful tool as it **clusters** people's behavioral tendencies based on multiple dimensions. Therefore, sharing my personality type with someone familiar with this system is an efficient way to describe my profile. I hope that you won't hold any biases against me for utilizing this system. :)
+> Despite some individuals misusing the personality type scale on forums, it is still a useful tool for categorizing human personality traits, as it organizes people's behavioral tendencies based on multiple dimensions. Sharing my personality type with someone familiar with this system is an efficient way to describe my profile. I hope that you won't hold any biases against me for utilizing this.
 {: .prompt-info}

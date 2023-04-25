@@ -1,4 +1,4 @@
-## Hi, This is Yue Lin.
+## Hi. This is Yue Lin.
 This blog was created using the Jekyll theme Chirpy, which is a fork from the original repository.
 The main purpose of building this repository is to showcase my work and experience, with the hope that it can be an efficient way for others to get to know me better.
 

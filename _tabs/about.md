@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Have a good day! 🎉
+> Greetings! 🎉
 {: .prompt-tip }
 
 ---
@@ -24,8 +24,8 @@ order: 4
 
 ## Research Interests
 - Currently
-    - Information Design
-    - Communication in Multi-Agent System, Reinforcement Learning
+    - Information Design (a subfield of computational economics and game theory)
+    - Multi-Agent Communication, Reinforcement Learning
 - Formerly
     - Redundant Manipulator Control
     - Robotic Mechanism Design
@@ -33,14 +33,21 @@ order: 4
 ---
 
 ## [Publications](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN)
-- **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao. (2021). Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. *International Conference on Robotics and Automation (ICRA)*.
+- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.
+    **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.
+    *International Conference on Robotics and Automation (ICRA) 2021*.
     - Delivered a presentation at the Xi'an conference venue.
-- **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin. (2022). A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. *International Journal of Advanced Robotic Systems (IJARS)*. 
+- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators
+    **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin.
+    *International Journal of Advanced Robotic Systems (IJARS) 2022*. 
 
 ---
 
 ## Manuscripts
-- **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang. (2023). Information Design in Multi-Agent Reinforcement Learning. *arxiv*.
+- Information Design in Multi-Agent Reinforcement Learning
+    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.
+    *[arXiv](https://arxiv.org/abs/2305.06807) 2023*.
+    - This is currently my most representative work, and the next few works will be based on this.
 
 ---
 
@@ -59,10 +66,14 @@ order: 4
 
 ---
 
+## Professional Services
+- Reviewer for NeurIPS 2023
+
+---
+
 ## Personality
+(A blog "A Brief Explanation of Personality" is coming soon.)
 - Myers-Briggs Type Indicator (MBTI): [INTJ-T](https://www.16personalities.com/profiles/8dc4f03308407)
 - Enneagram: [5w4](https://www.enneagraminstitute.com/type-5)
 - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)
 
-> Despite some individuals misusing the personality type scale on forums, it is still a useful tool for categorizing human personality traits, as it organizes people's behavioral tendencies based on multiple dimensions. Sharing my personality type with someone familiar with this system is an efficient way to describe my profile. I hope that you won't hold any biases against me for utilizing this.
-{: .prompt-info}

@@ -13,12 +13,12 @@ order: 4
 - **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
     - Fortunately advised by Prof. Baoxiang Wang
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
-    - School of Computer Science and Technology (2019.9 - 2022.6)
-        - GPA:  3.89 / 4 (92.22 / 100)
-        - Rank: 1 / 127
-    - School of Mechanical Engineering (2018.9 - 2019.6)
-        - GPA:  3.90 / 4 (92.00 / 100)
-        - Rank: 1 / 60
+    - School of Computer Science and Technology (2019.9 - 2022.6)  
+        $\quad$GPA:  3.89 / 4 (92.22 / 100) 
+        $\quad$Rank: 1 / 127
+    - School of Mechanical Engineering (2018.9 - 2019.6)  
+        $\quad$GPA:  3.90 / 4 (92.00 / 100)
+        $\quad$Rank: 1 / 60
 
 ---
 

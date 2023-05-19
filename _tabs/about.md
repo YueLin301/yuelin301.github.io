@@ -14,11 +14,9 @@ order: 4
     - Fortunately advised by Prof. Baoxiang Wang
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
-        $\quad$GPA:  3.89 / 4 (92.22 / 100) 
-        $\quad$Rank: 1 / 127
+        &emsp;GPA:  3.89 / 4 (92.22 / 100)&emsp;Rank: 1 / 127
     - School of Mechanical Engineering (2018.9 - 2019.6)  
-        $\quad$GPA:  3.90 / 4 (92.00 / 100)
-        $\quad$Rank: 1 / 60
+        &emsp;GPA:  3.90 / 4 (92.00 / 100)&emsp;Rank: 1 / 60
 
 ---
 

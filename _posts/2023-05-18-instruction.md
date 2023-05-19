@@ -1,8 +1,8 @@
 ---
-title: Overview of SSCC (A RL Planning Method for Redundant Manipulators)
+title: A Document for Prospective Undergraduates
 date: 2022-05-18 20:00:00 +0800
-categories: [A Document for Prospective Undergraduates]
-tags: [document]
+categories: [Notes]
+tags: [note]
 ---
 
 > Welcome! 🎉

@@ -2,7 +2,7 @@
 title: Overview of SSCC (A RL Planning Method for Redundant Manipulators)
 date: 2022-05-18 20:00:00 +0800
 categories: [A Document for Prospective Undergraduates]
-tags: [Document]
+tags: [document]
 ---
 
 > Welcome! 🎉
@@ -28,8 +28,8 @@ Reproduce A2C to complete any RL task (development needs to take place within a 
 ### interested in our topic:
 
 Currently, we are focusing on information design (a subfield of computational economics and game theory) and multi-agent reinforcement learning (MARL). Our next few works will be based on:
-   - Information Design in Multi-Agent Reinforcement Learning
-    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.
+   - Information Design in Multi-Agent Reinforcement Learning.  
+    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *[arXiv](https://arxiv.org/abs/2305.06807) 2023*.
 
 > For more specific details, please contact me so that we can discuss in person.

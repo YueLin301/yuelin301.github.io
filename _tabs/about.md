@@ -33,19 +33,20 @@ order: 4
 ---
 
 ## [Publications](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN)
-- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.
-    **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.
+- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
+    **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
     - Delivered a presentation at the Xi'an conference venue.
-- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators
-    **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin.
+  
+- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
+    **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin.  
     *International Journal of Advanced Robotic Systems (IJARS) 2022*. 
 
 ---
 
 ## Manuscripts
-- Information Design in Multi-Agent Reinforcement Learning
-    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.
+- Information Design in Multi-Agent Reinforcement Learning.  
+    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *[arXiv](https://arxiv.org/abs/2305.06807) 2023*.
     - This is currently my most representative work, and the next few works will be based on this.
 

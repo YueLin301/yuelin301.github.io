@@ -44,8 +44,9 @@ Our communication will be smoother if you have read some of the following papers
 2. [Melting Pot](http://proceedings.mlr.press/v139/leibo21a.html)
 
 ### Information Design
-1. [A survey](https://dl.acm.org/doi/abs/10.1145/3055589.3055591)
-2. [A Unified Perspective](https://www.aeaweb.org/articles?id=10.1257/jel.20181489)
+1. [Bayesian Persuasion and Information Design](https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080218-025739)
+2. [A survey](https://dl.acm.org/doi/abs/10.1145/3055589.3055591)
+3. [A Unified Perspective](https://www.aeaweb.org/articles?id=10.1257/jel.20181489)
 
 ### Mechanism Design in MARL
 1. [LIO](https://proceedings.neurips.cc/paper/2020/hash/ad7ed5d47b9baceb12045a929e7e2f66-Abstract.html)

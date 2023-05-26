@@ -14,9 +14,9 @@ order: 4
     - Fortunately advised by Prof. Baoxiang Wang
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
-        &emsp;GPA:  3.89 / 4 (92.22 / 100)&emsp;Rank: 1 / 127
+        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127
     - School of Mechanical Engineering (2018.9 - 2019.6)  
-        &emsp;GPA:  3.90 / 4 (92.00 / 100)&emsp;Rank: 1 / 60
+        > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
 
 ---
 
@@ -34,7 +34,7 @@ order: 4
 - Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
-    - Delivered a presentation at the Xi'an conference venue.
+    > Delivered a presentation at the Xi'an conference venue.
   
 - A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
     **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin.  
@@ -46,7 +46,7 @@ order: 4
 - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *[arXiv](https://arxiv.org/abs/2305.06807) 2023*.
-    - This is currently my most representative work, and the next few works will be based on this.
+    > This is currently my most representative work, and the next few works will be based on this.
 
 ---
 
@@ -62,11 +62,6 @@ order: 4
 - Achieved a perfect score (100/100) in Advanced Mathematics and served as a class representative. Initiated and organized a weekly seminar on Advanced Mathematics for classmates, promoting a harmonious learning environment.
 - Assisted classmates in preparing for final exams during the pandemic. Check out my [mind map notes](https://github.com/YueLin301/MindMap-bakcup) and you might be surprised by the amount of effort I committed.
 - Responsible for teaching robot simulation software ([Webots](https://cyberbotics.com)) to the laboratory group, and published relevant instructional videos on [bilibili video platform](https://space.bilibili.com/36040555).
-
----
-
-## Professional Services
-- Reviewer for NeurIPS 2023
 
 ---
 

@@ -3,13 +3,14 @@ title: Information Design (A Note)
 date: 2022-05-31 20:00:01 +0800
 categories: [Economics & Game Theory]
 tags: [information design, bayesian persuasion, bayes plausible, concavification, obedience, bayes correlated equilibrium, bayes nash equilibrium]
+math: True
 ---
 
  > This note is not finished yet. 
 {: .prompt-warning }
 
  
-## What's information design?
+## What is information design?
 
 > "Sometimes, the truth is not good enough." - Batman, The Dark Knight (2008)
 {: .prompt-info }

@@ -22,7 +22,7 @@ order: 4
 
 ## Research Interests
 - Currently
-    - [Information Design]() (a subfield of computational economics and game theory)
+    - [Information Design](https://yuelin301.github.io/posts/Information-Design/) (a subfield of computational economics and game theory)
     - Multi-Agent Communication, Reinforcement Learning
 - Formerly
     - Redundant Manipulator Control
@@ -66,7 +66,7 @@ order: 4
 ---
 
 ## Personality
-(A blog "A Brief Explanation of Personality" is coming soon.)
+(A blog "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.)
 - Myers-Briggs Type Indicator (MBTI): [INTJ-T](https://www.16personalities.com/profiles/8dc4f03308407)
 - Enneagram: [5w4](https://www.enneagraminstitute.com/type-5)
 - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)

@@ -1,7 +1,7 @@
 ---
 title: Markdown Syntax
 date: 2022-04-03 15:48:44 +0800
-categories: [Notes]
+categories: [Misc Notes]
 tags: [note]     # TAG names should always be lowercase
 math: True
 ---

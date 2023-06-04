@@ -22,7 +22,7 @@ order: 4
 
 ## Research Interests
 - Currently
-    - Information Design (a subfield of computational economics and game theory)
+    - [Information Design]() (a subfield of computational economics and game theory)
     - Multi-Agent Communication, Reinforcement Learning
 - Formerly
     - Redundant Manipulator Control

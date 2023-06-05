@@ -24,7 +24,7 @@ Nontrivially, "successful partially deceiving" is a better equilibrium than "say
 Information design is the study of this persuasion. And Bayesian persuasion is a special case of information design, which consists of a sender and a receiver.
 
 The problem of information design can be equivalently approached from various perspectives:
-1. $\max_{\varphi} \mathbb{E}_{s \sim \mu_0}\left[\mathbb{E}_{\sigma \sim \varphi(\cdot\mid s)}\left[r^i(s,a^*(\sigma))\right]\right]$
+1. $\max_{\varphi} \mathbb{E}\_{s \sim \mu_0}\left[\mathbb{E}\_{\sigma \sim \varphi(\cdot\mid s)}\left[r^i(s,a^*(\sigma))\right]\right]$
 2. $\max_{\varphi} \mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$, s.t. $\mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}(\mu(\cdot\mid\sigma)) = \mu_0$.
 3. In a two-signal case: The sender manipulates the receiver's posterior beliefs (each corresponding to a sent signal) to find the **highest intersection point** of the line segment $(\mu_1 - \mu_2, \hat{v}_1 - \hat{v}_2)$ and $x = \mu_0$
 4. The sender select an optimal Bayes correlated equilibrium given an objective function.
@@ -94,7 +94,7 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
 - The sender's optimization problem
    - The receiver's strategy: 
      - Given a sent $\sigma$, its posterior belief is $\mu(\cdot\mid \sigma)$.
-     - Then it chooses $a^*(\sigma) = \argmax_{a}\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\left[r^j(s,a)\right]$.
+     - Then it chooses $a^*(\sigma) = \arg\max_{a}\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\left[r^j(s,a)\right]$.
    - Original optimization: $\max_{\varphi} \mathbb{E}_{s\sim\mu_0}\Big[\mathbb{E}_{\sigma\sim\varphi(\cdot\mid s)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
    - Reformulation:
      - An equivalent objective function: $\mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
@@ -152,3 +152,4 @@ Special situations *(Dughmi 2019)*:
 
  > An ethical justification: I do not think information design is immoral. Information is a kind of property of the sender, and it is legal for it to profit from its information.  Furthermore, in those cases where the sender can improve its own expected payoff through information design, the receiver's payoff is not worse than that of the sender not reveal information at all. Nevertheless, practice use of information design should take the sender's objective function into some serious consideration.
 {: .prompt-tip }
+

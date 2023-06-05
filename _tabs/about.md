@@ -70,5 +70,5 @@ order: 4
 - Enneagram: [5w4](https://www.enneagraminstitute.com/type-5)
 - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)
 
- > A blog "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
-{: .prompt-tip }
+ >  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
+{: .prompt-info }

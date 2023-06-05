@@ -25,6 +25,7 @@ Information design is the study of this persuasion. And Bayesian persuasion is a
 
 The problem of information design can be equivalently approached from various perspectives:
 1. $\max\limits_{\varphi} \mathbb{E}_{s\sim\mu_0}\Big[\mathbb{E}_{\sigma\sim\varphi(\cdot\mid s)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
+   1. $\max_{\varphi} \mathbb{E}_{s \sim \mu_0}\left[\mathbb{E}_{\sigma \sim \varphi(\cdot|s)}\left[r^i(s,a^*(\sigma))\right]\right]$
 2. $\max\limits_{\varphi} \mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$, s.t. $\mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}(\mu(\cdot\mid\sigma)) = \mu_0$.
 3. In a two-signal case: The sender manipulates the receiver's posterior beliefs (each corresponding to a sent signal) to find the **highest intersection point** of the line segment $(\mu_1 - \mu_2, \hat{v}_1 - \hat{v}_2)$ and $x = \mu_0$
 4. The sender select an optimal Bayes correlated equilibrium given an objective function.
@@ -135,7 +136,7 @@ Special situations *(Dughmi 2019)*:
   - If reward functions are identical (i.e. $r^i = r^j$), then the sender's objective function is convex. The optimal signaling scheme is to reveal all the information.
   - If $(r^i+r^j)(s,a) = k, \forall s,a$, where $k \in \mathbb{R}$, then the sender's objective function is concave. The optimal signaling scheme is to reveal nothing (In this case, $\mu = \mu_0$). 
 
-## From an equilibrium perspective
+## From an Equilibrium Perspective
 1. Obedience
 2. Bayesian correlated equilibrium
 3. Bayesian Nash equilibrium

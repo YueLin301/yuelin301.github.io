@@ -27,7 +27,7 @@ Reproduce A2C to complete any RL task (development needs to take place within a 
 
 ### interested in our topic:
 
-Currently, we are focusing on information design (a subfield of computational economics and game theory) and multi-agent reinforcement learning (MARL). Our next few works will be based on:
+Currently, we are focusing on [information design](https://yuelin301.github.io/posts/Information-Design/) (a subfield of computational economics and game theory) and multi-agent reinforcement learning (MARL). Our next few works will be based on:
    - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *[arXiv](https://arxiv.org/abs/2305.06807) 2023*.
@@ -44,9 +44,11 @@ Our communication will be smoother if you have read some of the following papers
 2. [Melting Pot](http://proceedings.mlr.press/v139/leibo21a.html)
 
 ### Information Design
-1. [Bayesian Persuasion and Information Design](https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080218-025739)
-2. [A survey](https://dl.acm.org/doi/abs/10.1145/3055589.3055591)
-3. [A Unified Perspective](https://www.aeaweb.org/articles?id=10.1257/jel.20181489)
+1. [Bayesian Persuasion](https://www.aeaweb.org/articles?id=10.1257/aer.101.6.2590)
+2. [Bayes Correlated Equilibrium and the Comparison of Information Structures in Games](https://onlinelibrary.wiley.com/doi/abs/10.3982/TE1808)
+3. Surveys:
+   1. [Bayesian Persuasion and Information Design](https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080218-025739)
+   2.  [Algorithmic Information Structure Design: A Survey](https://dl.acm.org/doi/abs/10.1145/3055589.3055591)
 
 ### Mechanism Design in MARL
 1. [LIO](https://proceedings.neurips.cc/paper/2020/hash/ad7ed5d47b9baceb12045a929e7e2f66-Abstract.html)

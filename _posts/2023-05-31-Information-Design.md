@@ -89,8 +89,8 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
 - The distribution of posterior beliefs $\tau$
    - **Every sent signal induces a specific posterior belief**: Given a committed signaling scheme $\varphi$ and a sent signal $\sigma$, the receiver's posterior belief is $\mu(\cdot\mid\sigma)$. Calculated as $\mu(s_i \mid\sigma) = \frac{\mu_0(s_i)\cdot \varphi(\sigma\mid s_i)}{\sum\limits_{s_j}\mu_0(s_j)\cdot \varphi(\sigma\mid s_j)}$. 
    - The mapping from signals to posterior beliefs is **many-to-one**.
-   - **A distribution of signals corresponds to a distribution of posterior beliefs**: Before the signal $\sigma$ realized, the receiver can only estimate its distribution by the committed signaling scheme: $\sigma\sim p^1_{\mu_0, \varphi}(\cdot)  = \sum\limits_{s}\mu_0(s)\cdot \varphi(\cdot\mid s)$. Then $\mu\sim p^2_{\mu_0, \varphi}(\cdot) = \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits_{s} \mu_0(s)\cdot\varphi(\sigma\mid s)$
-   - A $\tau$ induced by a $\varphi$ is denoted as $\tau_{\mu_0,\varphi}$.
+   - **A distribution of signals corresponds to a distribution of posterior beliefs**: Before the signal $\sigma$ realized, the receiver can only estimate its distribution by the committed signaling scheme: $\sigma\sim p^1_{\mu_0, \varphi}(\cdot)  = \sum\limits\_{s}\mu_0(s)\cdot \varphi(\cdot\mid s)$. Then $\mu\sim p^2_{\mu_0, \varphi}(\cdot) = \sum\limits\_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits\_{s} \mu_0(s)\cdot\varphi(\sigma\mid s)$
+   - A $\tau$ induced by a $\varphi$ is denoted as $\tau\_{\mu_0,\varphi}$.
 - The sender's optimization problem
    - The receiver's strategy: 
      - Given a sent $\sigma$, its posterior belief is $\mu(\cdot\mid \sigma)$.
@@ -121,7 +121,7 @@ If an arbitrary $\tau$ satisfies $\mathbb{E}_{\mu\sim\tau}(\mu) = \mu_0$, then t
 This technique is best described with a **two-signal** example *(Figure 1 of Kamenica 2011, 2019)*:
 - Assume that there are $n$ states. Then a posterior belief $\mu$ is a point in $\mathbb{R}^{n-1}$. *(2011)*
 - The values of $x$-axis are in $\mathbb{R}^{n-1}$. Each represents a posterior belief $\mu$. *(2011)*
-- A $\mu$ induces an expected payoff of the sender $\hat{v}(\mu(\cdot\mid\sigma)) = \mathbb{E}\_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]$. The black line in the figure denotes this function. *(2011,2019)*
+- A $\mu$ induces an expected payoff of the sender $\hat{v}(\mu(\cdot\mid\sigma)) = \mathbb{E}\_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^{\*}(\sigma))\big]$. The black line in the figure denotes this function. *(2011,2019)*
 - $\sigma_1$ and $\sigma_2$ induce posterior beliefs $\mu_1(\cdot\mid\sigma_1)$ and $\mu_2(\cdot\mid\sigma_2)$ respectively. These two $\mu$ correspond to two values on the $x$-axis, and indicate two expected payoff of the sender $\hat{v}_1$ and $\hat{v}_2$. *(2019)*
 - $\mu_1$ and $\mu_2$ are **almost arbitrary**: The distribution of $\mu_1$ and $\mu_2$ should be Bayes plausible, i.e., their expectation should be $\mu_0$. 
   - Assume that the distribution of $\mu$ is $\tau = (k, 1-k)$. Then $k\cdot\mu_1+(1-k)\cdot\mu_2 = \mu_0$. Thus if $\mu_{i}$ is on the left side of $\mu_0$ on the $x$-axis, then $\mu_{1-i}$ is on the right side. Unless they both coincide with $\mu_0$.
@@ -133,10 +133,10 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
  > Please re-read the previous part of this section to make sure you understand this important example.
 {: .prompt-tip }
 
-**Special situations** :
-  - 
-  - If reward functions are identical (i.e. $r^i = r^j$), then the sender's objective function is convex. The optimal signaling scheme is to reveal all the information. *(Dughmi 2019)*
-  - If $(r^i+r^j)(s,a) = k, \forall s,a$, where $k \in \mathbb{R}$, then the sender's objective function is concave. The optimal signaling scheme is to reveal nothing (In this case, $\mu = \mu_0$). *(Dughmi 2019)*
+
+**Special situations** *(Dughmi 2019)*:
+  - If reward functions are identical (i.e. $r^i = r^j$), then the sender's objective function is convex. The optimal signaling scheme is to reveal all the information.
+  - If $(r^i+r^j)(s,a) = k, \forall s,a$, where $k \in \mathbb{R}$, then the sender's objective function is concave. The optimal signaling scheme is to reveal nothing (In this case, $\mu = \mu_0$). 
 
 ## From an Equilibrium Perspective
 1. Obedience

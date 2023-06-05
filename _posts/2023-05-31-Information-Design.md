@@ -24,9 +24,8 @@ Nontrivially, "successful partially deceiving" is a better equilibrium than "say
 Information design is the study of this persuasion. And Bayesian persuasion is a special case of information design, which consists of a sender and a receiver.
 
 The problem of information design can be equivalently approached from various perspectives:
-1. $\max\limits_{\varphi} \mathbb{E}_{s\sim\mu_0}\Big[\mathbb{E}_{\sigma\sim\varphi(\cdot\mid s)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
-   1. $\max_{\varphi} \mathbb{E}_{s \sim \mu_0}\left[\mathbb{E}_{\sigma \sim \varphi(\cdot|s)}\left[r^i(s,a^*(\sigma))\right]\right]$
-2. $\max\limits_{\varphi} \mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$, s.t. $\mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}(\mu(\cdot\mid\sigma)) = \mu_0$.
+1. $\max_{\varphi} \mathbb{E}_{s \sim \mu_0}\left[\mathbb{E}_{\sigma \sim \varphi(\cdot\mid s)}\left[r^i(s,a^*(\sigma))\right]\right]$
+2. $\max_{\varphi} \mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$, s.t. $\mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}(\mu(\cdot\mid\sigma)) = \mu_0$.
 3. In a two-signal case: The sender manipulates the receiver's posterior beliefs (each corresponding to a sent signal) to find the **highest intersection point** of the line segment $(\mu_1 - \mu_2, \hat{v}_1 - \hat{v}_2)$ and $x = \mu_0$
 4. The sender select an optimal Bayes correlated equilibrium given an objective function.
 
@@ -95,8 +94,8 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
 - The sender's optimization problem
    - The receiver's strategy: 
      - Given a sent $\sigma$, its posterior belief is $\mu(\cdot\mid \sigma)$.
-     - Then it chooses $a^*(\sigma) = \argmax\limits_{a}\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\left[r^j(s,a)\right]$.
-   - Original optimization: $\max\limits_{\varphi} \mathbb{E}_{s\sim\mu_0}\Big[\mathbb{E}_{\sigma\sim\varphi(\cdot\mid s)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
+     - Then it chooses $a^*(\sigma) = \argmax_{a}\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\left[r^j(s,a)\right]$.
+   - Original optimization: $\max_{\varphi} \mathbb{E}_{s\sim\mu_0}\Big[\mathbb{E}_{\sigma\sim\varphi(\cdot\mid s)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
    - Reformulation:
      - An equivalent objective function: $\mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
      - The only contraint: $\mathbb{E}_{\mu(\cdot\mid\sigma)\sim\tau}(\mu(\cdot\mid\sigma)) = \mu_0$. (i.e. $\tau = \tau_{\mu_0,\varphi}$. This is named as Bayes plausible. See the next subsection.)

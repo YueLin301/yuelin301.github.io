@@ -1,8 +1,8 @@
 ---
 title: A Document for Prospective Undergraduates
-date: 2022-05-18 20:00:00 +0800
+date: 2023-05-18 20:00:00 +0800
 categories: [Misc Notes]
-tags: [note]
+tags: [misc note]
 ---
 
 > Welcome! 🎉

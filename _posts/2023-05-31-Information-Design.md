@@ -1,6 +1,6 @@
 ---
 title: Information Design (A Note)
-date: 2022-05-31 20:00:01 +0800
+date: 2023-05-31 20:00:01 +0800
 categories: [Economics & Game Theory]
 tags: [information design, bayesian persuasion, bayes plausible, concavification, obedience, bayes correlated equilibrium, bayes nash equilibrium]
 math: True
@@ -24,10 +24,12 @@ Nontrivially, "successful partially deceiving" is a better equilibrium than "say
 Information design is the study of this persuasion. And Bayesian persuasion is a special case of information design, which consists of a sender and a receiver.
 
 The problem of information design can be equivalently approached from various perspectives:
-1. $\max_{\varphi} \mathbb{E}\_{s \sim \mu_0}\left[\mathbb{E}\_{\sigma \sim \varphi(\cdot\mid s)}\left[r^i(s,a^*(\sigma))\right]\right]$
-2. $\max_{\varphi} \mathbb{E}\_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}\_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$, s.t. $\mathbb{E}\_{\mu(\cdot\mid\sigma)\sim\tau}(\mu(\cdot\mid\sigma)) = \mu_0$.
-3. In a two-signal case: The sender manipulates the receiver's posterior beliefs (each corresponding to a sent signal) to find the **highest intersection point** of the line segment $(\mu_1 - \mu_2, \hat{v}_1 - \hat{v}_2)$ and $x = \mu_0$
-4. The sender select an optimal Bayes correlated equilibrium given an objective function.
+1. $\max_{\varphi} \mathbb{E}\_{s \sim \mu_0}\left[\mathbb{E}\_{\sigma \sim \varphi(\cdot\mid s)}\left[r^i(s,a^*(\sigma))\right]\right]$.
+2. $\max_{\varphi} \mathbb{E}\_{\mu\sim\tau}\Big[\mathbb{E}\_{s\sim\mu}\big[r^i(s,a^*(\mu))\big]\Big]$, s.t. $\mathbb{E}\_{\mu\sim\tau}(\mu) = \mu_0$.
+3. In a two-signal case: The sender manipulates the receiver's posterior beliefs (each corresponding to a sent signal) to find the **highest intersection point** of the line segment $(\mu_1 - \mu_2, \hat{v}_1 - \hat{v}_2)$ and $x = \mu_0$.
+4. Denote the concavification of $\hat{v}(\mu) = \mathbb{E}\_{s\sim\mu}\big[r^i(s,a^{\*}(\mu))\big]$ as $f(\mu)$. The sender's optimal expected payoff is $f(\mu_0)$.
+5. The sender select an optimal Bayes correlated equilibrium given an objective function.
+6. $\max_{\varphi} \mathbb{E}\_{s \sim \mu_0}\left[\mathbb{E}\_{\sigma \sim \varphi(\cdot\mid s)}\left[r^i(s,a^*(\sigma))\right]\right]$, s.t. Obedience.
 
 ## Papers
 The following part of this note is to summarize the essence of these papers:
@@ -82,23 +84,25 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
       - The signaling schemes are common knowledge, e.g., the sender (prosecutor) can choose investigative means (forensic tests, calling witness, etc.) to partially reveal the truth, which are public to everyone. *(Courtroom)*
       - (Justifications vary across applications. See *Section 2.2 in Kamenica 2019*)
 5. An analysis analogues to the **revelation principle**: The optimal scheme needs no more signals than the number of states of nature.
+   - Proof: probability simplex + Caratheodory's theorem. (See the next section.)
 
 
 ## Simplification and Geometric Interpretations
 ### Reformulation
+ - The receiver's strategy: 
+   - Given a sent $\sigma$, its posterior belief is $\mu(\cdot\mid \sigma)$.
+   - Then it chooses $a^{\*}(\sigma) = a^{\*}(\mu(\cdot\mid\sigma)) = \arg\max_{a}\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\left[r^j(s,a)\right]$.
+   - The mapping from signals to posterior beliefs is **many-to-one**: All the $\sigma$ that induce the same posterior belief $\mu(\cdot\mid \sigma)$, the receiver will behave the same way (thus the payoffs of both agents).
 - The distribution of posterior beliefs $\tau$
    - **Every sent signal induces a specific posterior belief**: Given a committed signaling scheme $\varphi$ and a sent signal $\sigma$, the receiver's posterior belief is $\mu(\cdot\mid\sigma)$. Calculated as $\mu(s_i \mid\sigma) = \frac{\mu_0(s_i)\cdot \varphi(\sigma\mid s_i)}{\sum\limits_{s_j}\mu_0(s_j)\cdot \varphi(\sigma\mid s_j)}$. 
-   - The mapping from signals to posterior beliefs is **many-to-one**.
-   - **A distribution of signals corresponds to a distribution of posterior beliefs**: Before the signal $\sigma$ realized, the receiver can only estimate its distribution by the committed signaling scheme: $\sigma\sim p^1\_{\mu_0, \varphi}(\cdot)  = \sum\limits\_{s}\mu_0(s)\cdot \varphi(\cdot\mid s)$. Then $\mu\sim p^2\_{\mu_0, \varphi}(\cdot) = \sum\limits\_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits\_{s} \mu_0(s)\cdot\varphi(\sigma\mid s)$
+   - Again: The mapping from signals to posterior beliefs is **many-to-one**.
+   - **A distribution of signals corresponds to a distribution of posterior beliefs**: Before the signal $\sigma$ realized, the receiver can only estimate its distribution by the committed signaling scheme: $\sigma\sim p^1\_{\mu_0, \varphi}(\cdot)  = \sum\limits\_{s}\mu_0(s)\cdot \varphi(\cdot\mid s)$. Then $\mu\sim p^2\_{\mu_0, \varphi}(\cdot) = \sum\limits\_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits\_{s} \mu_0(s)\cdot\varphi(\sigma\mid s)$.
    - A $\tau$ induced by a $\varphi$ is denoted as $\tau\_{\mu_0,\varphi}$.
 - The sender's optimization problem
-   - The receiver's strategy: 
-     - Given a sent $\sigma$, its posterior belief is $\mu(\cdot\mid \sigma)$.
-     - Then it chooses $a^*(\sigma) = \arg\max_{a}\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\left[r^j(s,a)\right]$.
    - Original optimization: $\max_{\varphi} \mathbb{E}\_{s\sim\mu_0}\Big[\mathbb{E}\_{\sigma\sim\varphi(\cdot\mid s)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
    - Reformulation:
-     - An equivalent objective function: $\mathbb{E}\_{\mu(\cdot\mid\sigma)\sim\tau}\Big[\mathbb{E}\_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^*(\sigma))\big]\Big]$.
-     - The only contraint: $\mathbb{E}\_{\mu(\cdot\mid\sigma)\sim\tau}(\mu(\cdot\mid\sigma)) = \mu_0$. (i.e. $\tau = \tau_{\mu_0,\varphi}$. This is named as Bayes plausible. See the next subsection.)
+     - An equivalent objective function: $\mathbb{E}\_{\mu\sim\tau}\Big[\mathbb{E}\_{s\sim\mu}\big[r^i(s,a^*(\mu))\big]\Big]$.
+     - The only contraint: $\mathbb{E}\_{\mu\sim\tau}(\mu) = \mu_0$. (i.e. $\tau = \tau_{\mu_0,\varphi}$. This is named as Bayes plausible. See the next subsection.)
 
 ### Bayes plausible
  > The sender's optimization problem can be approached from the perspective of **any arbitrary** distribution of induced posterior beliefs **that satisfies the Bayes plausible**. Understanding this is important for grasping the concepts of geometric interpretation (concavification) in the next subsection.
@@ -121,7 +125,7 @@ If an arbitrary $\tau$ satisfies $\mathbb{E}_{\mu\sim\tau}(\mu) = \mu_0$, then t
 This technique is best described with a **two-signal** example *(Figure 1 of Kamenica 2011, 2019)*:
 - Assume that there are $n$ states. Then a posterior belief $\mu$ is a point in $\mathbb{R}^{n-1}$. *(2011)*
 - The values of $x$-axis are in $\mathbb{R}^{n-1}$. Each represents a posterior belief $\mu$. *(2011)*
-- A $\mu$ induces an expected payoff of the sender $\hat{v}(\mu(\cdot\mid\sigma)) = \mathbb{E}\_{s\sim\mu(\cdot\mid\sigma)}\big[r^i(s,a^{\*}(\sigma))\big]$. The black line in the figure denotes this function. *(2011,2019)*
+- A $\mu$ induces an expected payoff of the sender $\hat{v}(\mu) = \mathbb{E}\_{s\sim\mu}\big[r^i(s,a^{\*}(\mu))\big]$. The black line in the figure denotes this function. *(2011,2019)*
 - $\sigma_1$ and $\sigma_2$ induce posterior beliefs $\mu_1(\cdot\mid\sigma_1)$ and $\mu_2(\cdot\mid\sigma_2)$ respectively. These two $\mu$ correspond to two values on the $x$-axis, and indicate two expected payoff of the sender $\hat{v}_1$ and $\hat{v}_2$. *(2019)*
 - $\mu_1$ and $\mu_2$ are **almost arbitrary**: The distribution of $\mu_1$ and $\mu_2$ should be Bayes plausible, i.e., their expectation should be $\mu_0$. 
   - Assume that the distribution of $\mu$ is $\tau = (k, 1-k)$. Then $k\cdot\mu_1+(1-k)\cdot\mu_2 = \mu_0$. Thus if $\mu_{i}$ is on the left side of $\mu_0$ on the $x$-axis, then $\mu_{1-i}$ is on the right side. Unless they both coincide with $\mu_0$.
@@ -130,7 +134,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 - A concavification of $\hat{v}(\mu)$ is the smallest concave function everywhere greater than $\hat{v}(\mu)$. *(The red line in Figure 1 of 2011, 2019)*
   - The concavification of $\hat{v}(\mu)$ evaluated at $\mu_0$ equals $\max\set{y\mid(\mu_0, y)\in co(\hat{v})}$, where $co(\hat{v})$ denotes the convex hull of the graph of $\hat{v}$, i.e., the light blue region in Figure 1 of 2011.
 
-If there are
+- A signaling scheme with more than two signals cannot improve the sender’s expected payoff. *(Kamenica 2019)*
  > Please re-read the previous part of this section to make sure you understand this important example.
 {: .prompt-tip }
 

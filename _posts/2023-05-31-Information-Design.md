@@ -84,7 +84,7 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
       - The signaling schemes are common knowledge, e.g., the sender (prosecutor) can choose investigative means (forensic tests, calling witness, etc.) to partially reveal the truth, which are public to everyone. *(Courtroom)*
       - (Justifications vary across applications. See *Section 2.2 in Kamenica 2019*)
 5. An analysis analogues to the **revelation principle**: The optimal scheme needs no more signals than the number of states of nature.
-   - Proof: probability simplex + Caratheodory's theorem. (See the next section.)
+   - Proof: probability simplex + Caratheodory's theorem. *(Dughmi 2019)*
 
 
 ## Simplification and Geometric Interpretations
@@ -122,7 +122,7 @@ If an arbitrary $\tau$ satisfies $\mathbb{E}_{\mu\sim\tau}(\mu) = \mu_0$, then t
  > Does the sender benefit from persuasion? What is an optimal mechanism?
 {: .prompt-tip }
 
-This technique is best described with a **two-signal** example *(Figure 1 of Kamenica 2011, 2019)*:
+This technique is best described with a **two-signal** example *(Figure 1 of Kamenica & Gentzkow 2011, Kamenica 2019)*:
 - Assume that there are $n$ states. Then a posterior belief $\mu$ is a point in $\mathbb{R}^{n-1}$. *(2011)*
 - The values of $x$-axis are in $\mathbb{R}^{n-1}$. Each represents a posterior belief $\mu$. *(2011)*
 - A $\mu$ induces an expected payoff of the sender $\hat{v}(\mu) = \mathbb{E}\_{s\sim\mu}\big[r^i(s,a^{\*}(\mu))\big]$. The black line in the figure denotes this function. *(2011,2019)*
@@ -135,15 +135,41 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
   - The concavification of $\hat{v}(\mu)$ evaluated at $\mu_0$ equals $\max\set{y\mid(\mu_0, y)\in co(\hat{v})}$, where $co(\hat{v})$ denotes the convex hull of the graph of $\hat{v}$, i.e., the light blue region in Figure 1 of 2011.
 
 - A signaling scheme with more than two signals cannot improve the sender’s expected payoff. *(Kamenica 2019)*
- > Please re-read the previous part of this section to make sure you understand this important example.
-{: .prompt-tip }
+  - (?) I do not understand this.
 
 
-**Special situations** *(Dughmi 2019)*:
+### Corollaries and propositions
+
+*(Kamenica & Gentzkow 2011)*:
+
+- Corollary 1: **The sender benefits from persuasion if and only if** there exists a Bayes plausible distribution $\tau$ of posterior belief $\mu$ such that $\mathbb{E}\_{\mu\sim\tau}\Big[\mathbb{E}\_{s\sim\mu}\big[r^i(s,a^{\*}(\mu))\big]\Big] > \mathbb{E}\_{s\sim\mu_0}\big[r^i(s,a^{\*}(\mu_0))\big]$. **The sender's optimal expected payoff is** $\max_{\varphi} \mathbb{E}\_{\mu\sim\tau}\Big[\mathbb{E}\_{s\sim\mu}\big[r^i(s,a^*(\mu))\big]\Big]$, s.t. $\mathbb{E}\_{\mu\sim\tau}(\mu) = \mu_0$.
+- Corollary 2: **The sender benefits from persuasion if and only if** $f(\mu_0)>\hat{v}(\mu_0)$, where $\hat{v}(\mu) = \mathbb{E}\_{s\sim\mu}\big[r^i(s,a^{\*}(\mu))\big]$, and $f(\mu)$ is the concavification of $\hat{v}(\mu)$. **The sender's optimal expected payoff is** $f(\mu_0)$.
+- Proposition 2: If $\hat{v}(\mu)$ is **concave**, the sender **does not benefit** from persuasion for any prior $\mu_0$. If $\hat{v}(\mu)$ is **convex and not concave**, the sender benefits from persuasion for every prior $\mu_0$.
+- Proposition 3: If there is **no information** the sender would share, the sender **does not benefit** from persuasion.
+  - *"There is information the sender would share"* is defined as $\exist \mu$, s.t. $\hat{v}(\mu)> \sum\limits_{s} \mu(s)\cdot r^j(s, a^{\*}(\mu_0))$.
+  - In other words, there must exist a $\mu$ such that, if the sender had private information that led it induces $\mu$, it would prefer to share this information with the receiver rather than have the receiver act based on $\mu_0$.
+  - Otherwise, the sender does not have the motivation to share its information.
+- Proposition 4: If there is information the sender would share, and the receiver's preference is discrete at the prior, the sender **benefits** from persuasion. (sufficient)
+  - "The receiver's preference is discrete at belief $\mu$" is defined as: If there is an $\epsilon>0$ s.t. $\forall a\ne a^{\*}(\mu)$, $\sum\limits_{s}\mu(s)\cdot r^j(s, a^{\*}(\mu)) > \sum\limits_{s} \mu(s)\cdot r^j(s, a)+\epsilon$.
+  - In other words, the receiver’s expected payoff from its preferred action $a^{\*}(\mu)$ is bounded away from its expected payoff from any other action.
+  - Otherwise, the sender does not have the ability to influence the receiver.
+- Proposition 5: If $A$ is finite, the receiver’s preference is discrete at the prior generically.
+- Proposition 7: An optimal mechanism exists.
+- Proposition 8: For any prior, 
+  - if $\hat{v}(\mu)$ is (strictly) concave, no disclosure is (uniquely) optimal;
+    - no disclosure: $\mu = \mu_0$.
+  - if $\hat{v}(\mu)$ is (strictly) convex, full disclosure is (uniquely) optimal;
+    - full disclosure: $\mu(\cdot\mid\sigma)$ is degenerate for all $\sigma$ sent in equilibirum. $\mu$ is degenerate if there is $s$ s.t. $\mu(s) = 1$.
+  - if $\hat{v}(\mu)$ is convex and not concave, strong disclosure is (uniquely) optimal.
+    - strong disclosure: $\mu$ is at the boundary of $\Delta(s)$ for all $\sigma$ sent in equilibirum. (?)
+
+
+
+*(Dughmi 2019)*:
   - If reward functions are identical (i.e. $r^i = r^j$), then the sender's objective function is convex. The optimal signaling scheme is to reveal all the information.
   - If $(r^i+r^j)(s,a) = k, \forall s,a$, where $k \in \mathbb{R}$, then the sender's objective function is concave. The optimal signaling scheme is to reveal nothing (In this case, $\mu = \mu_0$). 
 
-## From an Equilibrium Perspective
+## An Equilibrium Perspective
 1. Obedience
 2. Bayesian correlated equilibrium
 3. Bayesian Nash equilibrium
@@ -158,6 +184,6 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 
 ## Closing Remarks
 
- > An ethical justification: I do not think information design is immoral. Information is a kind of property of the sender, and it is legal for it to profit from its information.  Furthermore, in those cases where the sender can improve its own expected payoff through information design, the receiver's payoff is not worse than that of the sender not reveal information at all. Nevertheless, practice use of information design should take the sender's objective function into some serious consideration.
+ > An ethical justification: I do not think information design is immoral. Information is a kind of property of the sender, and it is legal for it to profit from its information. (Unless the utilized information is a public resource.) Furthermore, in those cases where the sender can improve its own expected payoff through information design, the receiver's payoff is not worse than that of the sender not reveal information at all. Nevertheless, practice use of information design should take the sender's objective function into some serious consideration.
 {: .prompt-tip }
 

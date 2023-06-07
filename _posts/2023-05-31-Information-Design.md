@@ -134,8 +134,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 - A concavification of $\hat{v}(\mu)$ is the smallest concave function everywhere greater than $\hat{v}(\mu)$. *(The red line in Figure 1 of 2011, 2019)*
   - The concavification of $\hat{v}(\mu)$ evaluated at $\mu_0$ equals $\max\set{y\mid(\mu_0, y)\in co(\hat{v})}$, where $co(\hat{v})$ denotes the convex hull of the graph of $\hat{v}$, i.e., the light blue region in Figure 1 of 2011.
 
-- A signaling scheme with more than two signals cannot improve the sender’s expected payoff. *(Kamenica 2019)*
-  - (?) I do not understand this.
+- In this case, a signaling scheme with more than two signals cannot improve the sender’s expected payoff. *(Kamenica 2019)*
 
 
 ### Corollaries and propositions
@@ -146,7 +145,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 - Corollary 2: **The sender benefits from persuasion if and only if** $f(\mu_0)>\hat{v}(\mu_0)$, where $\hat{v}(\mu) = \mathbb{E}\_{s\sim\mu}\big[r^i(s,a^{\*}(\mu))\big]$, and $f(\mu)$ is the concavification of $\hat{v}(\mu)$. **The sender's optimal expected payoff is** $f(\mu_0)$.
 - Proposition 2: If $\hat{v}(\mu)$ is **concave**, the sender **does not benefit** from persuasion for any prior $\mu_0$. If $\hat{v}(\mu)$ is **convex and not concave**, the sender benefits from persuasion for every prior $\mu_0$.
 - Proposition 3: If there is **no information** the sender would share, the sender **does not benefit** from persuasion.
-  - *"There is information the sender would share"* is defined as $\exist \mu$, s.t. $\hat{v}(\mu)> \sum\limits_{s} \mu(s)\cdot r^j(s, a^{\*}(\mu_0))$.
+  - *"There is information the sender would share"* is defined as $\exists \mu$, s.t. $\hat{v}(\mu)> \sum\limits_{s} \mu(s)\cdot r^j(s, a^{\*}(\mu_0))$.
   - In other words, there must exist a $\mu$ such that, if the sender had private information that led it induces $\mu$, it would prefer to share this information with the receiver rather than have the receiver act based on $\mu_0$.
   - Otherwise, the sender does not have the motivation to share its information.
 - Proposition 4: If there is information the sender would share, and the receiver's preference is discrete at the prior, the sender **benefits** from persuasion. (sufficient)
@@ -169,11 +168,25 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
   - If reward functions are identical (i.e. $r^i = r^j$), then the sender's objective function is convex. The optimal signaling scheme is to reveal all the information.
   - If $(r^i+r^j)(s,a) = k, \forall s,a$, where $k \in \mathbb{R}$, then the sender's objective function is concave. The optimal signaling scheme is to reveal nothing (In this case, $\mu = \mu_0$). 
 
+---
+
 ## An Equilibrium Perspective
+*(Bergemann & Morris 2016)*
+## Settings
+ > This paper studies the persuasion of a group of receivers.
+{: .prompt-tip }
+- A game of incomplete information can be decomposed into **a basic game** and **an information structure**.
+  - The basic game defines the set of actions, the set of payoff states, the payoff functions, and the common prior over the payoff states.
+  - The information structure refers to the signals that the players receive in the game.
+- An incomplete information game $\mathcal{G} = (G, M)$.
+  - A basic game $G = ((A^j, r^j)_{j=1}^{J}, \mu_0)$.
+  - An information structure $M = ((\Sigma^j)_{j=1}^{J}, \varphi)$.
+
 1. Obedience
 2. Bayesian correlated equilibrium
 3. Bayesian Nash equilibrium
 
+---
 
 ## Extensions
 1. Multiple senders

@@ -1,6 +1,6 @@
 ---
 title: MARL Tasks
-date: 2023-06-06 20:00:01 +0800
+date: 2023-05-31 20:00:01 +0800
 categories: [Multi-Agent Reinforcement Learning]
 tags: [multi agents, environment]
 math: True

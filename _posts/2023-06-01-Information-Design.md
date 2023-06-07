@@ -1,6 +1,6 @@
 ---
 title: Information Design (A Note)
-date: 2023-05-31 20:00:01 +0800
+date: 2023-06-01 20:00:01 +0800
 categories: [Economics & Game Theory]
 tags: [information design, bayesian persuasion, bayes plausible, concavification, obedience, bayes correlated equilibrium, bayes nash equilibrium]
 math: True
@@ -172,7 +172,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 
 ## An Equilibrium Perspective
 *(Bergemann & Morris 2016)*
-## Settings
+### Settings
  > This paper studies the persuasion of a group of receivers.
 {: .prompt-tip }
 - A game of incomplete information can be decomposed into **a basic game** and **an information structure**.
@@ -180,11 +180,20 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
   - The information structure refers to the signals that the players receive in the game.
 - An incomplete information game $\mathcal{G} = (G, M)$.
   - A basic game $G = ((A^j, r^j)_{j=1}^{J}, \mu_0)$.
+    - $A = \prod_{j} A^j$.
+    - $r^j: S\times A \to \mathbb{R}$.
+    - $\mu_0 \in \Delta_{++}(S)$.
   - An information structure $M = ((\Sigma^j)_{j=1}^{J}, \varphi)$.
+    - Signal (type) $\Sigma = \prod_{j} \Sigma^j$.
+    - Signaling scheme $\varphi: S \to \Delta(\Sigma)$.
+- A decision rule $\xi: S\times \Sigma \to \Delta(A)$
+  - There is an omniscient mediator, who first observes the sampled $s\sim\mu_0$ and the sampled $\sigma\sim\varphi(\cdot\mid s)$, and then picks actons and privately announces $a^j$ to each receiver $j$.
+  
 
-1. Obedience
-2. Bayesian correlated equilibrium
-3. Bayesian Nash equilibrium
+### Obedience
+
+### Bayesian correlated equilibrium
+### Bayesian Nash equilibrium
 
 ---
 

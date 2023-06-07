@@ -188,12 +188,45 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
     - Signaling scheme $\varphi: S \to \Delta(\Sigma)$.
 - A decision rule $\xi: S\times \Sigma \to \Delta(A)$
   - There is an omniscient mediator, who first observes the sampled $s\sim\mu_0$ and the sampled $\sigma\sim\varphi(\cdot\mid s)$, and then picks actons and privately announces $a^j$ to each receiver $j$.
+- A policy (behavioral strategy) for receiver $j$ in $(G, M)$ is $\pi^j: \Sigma^j \to \Delta(A^j)$.
   
 
 ### Obedience
+A decision rule $\xi$ is **obedient** for $(G, M)$ if, for each $j = 1, \ldots, J$, $\sigma^j\in\Sigma^j$, and $a^j\in A^j$, we have
+$$
+\begin{aligned}
+  & \sum\limits_{s, \sigma^{-j}, a^{-j}} \mu_0(s) 
+  \cdot \varphi\Big((\sigma^j, \sigma^{-j})\mid s \Big) 
+  \cdot \xi\Big( (a^j, a^{-j})\mid s, (\sigma^j, \sigma^{-j}) \Big)
+  \cdot r^j\Big(s, (a^j, a^{-j})\Big) \ge \\
 
-### Bayesian correlated equilibrium
-### Bayesian Nash equilibrium
+  & \sum\limits_{s, \sigma^{-j}, a^{-j}} \mu_0(s) 
+  \cdot \varphi\Big((\sigma^j, \sigma^{-j})\mid s \Big) 
+  \cdot \xi\Big( (a^j, a^{-j})\mid s, (\sigma^j, \sigma^{-j}) \Big)
+  \cdot r^j\Big(s, (a^{j\prime}, a^{-j})\Big)
+\end{aligned}
+$$
+for all $a^{j\prime}\in A^j$.
+
+### Bayes correlated equilibrium
+A decision rule $\xi$ is a **Bayes correlated equilibrium (BCE)** of $(G,M)$ if it is obedient for $(G,M)$.
+
+### Bayes Nash equilibrium
+A strategy profile (joint policy) $\pi$ is a **Bayes Nash equilibrium (BNE)** of $(G, M)$ if for each $j = 1 , \ldots, J$, $\sigma^j\in\Sigma^j$, and $a^j\in A^j$ with $\pi^j(a^j \mid \sigma^j) > 0$, we have
+$$
+\begin{aligned}
+  & \sum\limits_{s, \sigma^{-j}, a^{-j}} \mu_0(s) 
+  \cdot \varphi\Big((\sigma^j, \sigma^{-j})\mid s \Big) 
+  \cdot \Bigg( \prod_{j \ne k} \pi^k(a^k \mid \sigma^k) \Bigg)
+  \cdot r^j\Big(s, (a^j, a^{-j})\Big) \ge \\
+
+  & \sum\limits_{s, \sigma^{-j}, a^{-j}} \mu_0(s) 
+  \cdot \varphi\Big((\sigma^j, \sigma^{-j})\mid s \Big) 
+  \cdot \Bigg( \prod_{j \ne k} \pi^k(a^k \mid \sigma^k) \Bigg)
+  \cdot r^j\Big(s, (a^{j\prime}, a^{-j})\Big)
+\end{aligned}
+$$
+for all $a^{j\prime}\in A^j$.
 
 ---
 

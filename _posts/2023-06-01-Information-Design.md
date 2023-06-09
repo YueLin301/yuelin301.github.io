@@ -34,7 +34,10 @@ The problem of information design can be equivalently approached from various pe
 ## Papers
 The following part of this note is to summarize the essence of these papers:
 1. [Bayesian Persuasion](https://www.aeaweb.org/articles?id=10.1257/aer.101.6.2590) *(Kamenica & Gentzkow 2011)*
-2. [Bayes Correlated Equilibrium and the Comparison of Information Structures in Games](https://onlinelibrary.wiley.com/doi/abs/10.3982/TE1808) *(Bergemann & Morris 2016)*
+2. An equilibrium perspective:
+   1. [Correlated Equilibrium in Games with Incomplete Information](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1941708) *(Bergemann & Morris 2011a)*
+   2. [Robust Predictions in Games with Incomplete Information](https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA11105) *(Bergemann & Morris 2011b)*
+   3. [Bayes Correlated Equilibrium and the Comparison of Information Structures in Games](https://onlinelibrary.wiley.com/doi/abs/10.3982/TE1808) *(Bergemann & Morris 2016)*
 3. Surveys:
    1. [Bayesian Persuasion and Information Design](https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080218-025739) *(Kamenica 2019)*
    2.  [Algorithmic Information Structure Design: A Survey](https://dl.acm.org/doi/abs/10.1145/3055589.3055591) *(Dughmi 2019)*
@@ -173,7 +176,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 
 
 ## An Equilibrium Perspective
-*(Bergemann & Morris 2016)*
+*(Bergemann & Morris 2011a)*
 
 <!-- ### Settings
 - A game of incomplete information can be decomposed into **a basic game** and **an information structure**.
@@ -229,7 +232,7 @@ for all $a^{j\prime}\in A^j$.
 
 A decision rule $\varphi$ is a **Bayes correlated equilibrium (BCE)** of $(G,M)$ if it is obedient for $(G,M)$.
 
-### Degenerated cases of BCE
+### Degenerated BCE
 
 1. There is complete information, i.e., if $S$ is a singleton: this definition reduces to the definition of correlated equilibrium (CE) for a complete information game. *(Aumann 1987)*
 2. If $M$ is the null observation function (a singleton), then this is essentially the “universal Bayesian solution” of *(Forges 1993)*.  
@@ -263,11 +266,11 @@ A decision rule $\varphi$ is a **Bayes correlated equilibrium (BCE)** of $(G,M)$
 *(Bergemann & Morris 2017)*
 $$
 \begin{aligned}
-  & \lrArr
+  & \Leftrightarrow
   \sum\limits_{s} \frac{\mu_0(s) \cdot \varphi( a\mid s )}
   { \sum\limits_{s'}\mu_0(s') \cdot \varphi( a\mid s')}
   \cdot \Big( r^j(s, a) - r^j(s, a') \Big) \ge 0 , \forall a'\in A.\\
-  & \lrArr
+  & \Leftrightarrow
   \sum\limits_{s} \mu(s\mid a)
   \cdot \Big( r^j(s, a) - r^j(s, a') \Big) \ge 0 , \forall a'\in A.
 \end{aligned}

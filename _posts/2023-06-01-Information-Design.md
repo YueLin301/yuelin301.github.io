@@ -7,7 +7,7 @@ math: True
 pin: True
 ---
 
- > This note has not been finished yet.
+ > This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
 {: .prompt-warning }
 
  
@@ -41,6 +41,7 @@ The following part of this note is to summarize the essence of these papers:
 3. Surveys:
    1. [Bayesian Persuasion and Information Design](https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080218-025739) *(Kamenica 2019)*
    2.  [Algorithmic Information Structure Design: A Survey](https://dl.acm.org/doi/abs/10.1145/3055589.3055591) *(Dughmi 2019)*
+   3.  [Information Design: A Unifified Perspective](https://www.aeaweb.org/articles?id=10.1257/jel.20181489) *(Bergemann & Morris 2019)*
 
 <!-- ## Notations
 The notations in this note are adapted from the common RL papers.
@@ -122,7 +123,7 @@ If an arbitrary $\tau$ satisfies $\mathbb{E}_{\mu\sim\tau}(\mu) = \mu_0$, then t
 
 
 ### Concavification
- > Does the sender benefit from persuasion? What is an optimal mechanism?
+ > Does the sender **benefit** from persuasion? What is an **optimal** mechanism?
 {: .prompt-tip }
 
 This technique is best described with a **two-signal** example *(Figure 1 of Kamenica & Gentzkow 2011, Kamenica 2019)*:
@@ -176,7 +177,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 
 
 ## An Equilibrium Perspective
-*(Bergemann & Morris 2011a)*
+*(Bergemann & Morris 2016)*
 
 <!-- ### Settings
 - A game of incomplete information can be decomposed into **a basic game** and **an information structure**.
@@ -195,7 +196,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 - A policy (behavioral strategy) for receiver $j$ in $(G, M)$ is $\pi^j: \Sigma^j \to \Delta(A^j)$. -->
 
 ### Settings in my understanding
- > This paper studies the persuasion of a group of receivers.
+ > This paper studies the persuasion of **a group of receivers** with **private channels**.
 {: .prompt-tip }
 - A game of incomplete information can be decomposed into **a basic game** and **an observation structure** (or information structure).
   - The basic game defines the set of actions, the set of payoff states, the payoff functions, and the common prior over the payoff states.
@@ -215,7 +216,8 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
   
 
 ### Obedience & BCE
-A decision rule $\varphi$ is **obedient** for $(G, M)$ if, for each $j = 1, \ldots, J$, $o^j\in O^j$, and $a^j\in A^j$, we have  
+A decision rule $\varphi$ is **obedient** for $(G, M)$ if, for each $j = 1, \ldots, J$, $o^j\in O^j$, and $a^j\in A^j$, we have
+
 $$
 \begin{aligned}
   & \sum\limits_{s, o^{-j}, a^{-j}} \mu_0(s) 
@@ -227,8 +229,12 @@ $$
   \cdot \varphi\Big( (a^j, a^{-j})\mid s, (o^j, o^{-j}) \Big)
   \cdot r^j\Big(s, (a^{j\prime}, a^{-j})\Big)
 \end{aligned}
-$$  
+$$
+
 for all $a^{j\prime}\in A^j$.
+
+> The definitions of obedience in *(Bergemann & Morris 2011a, 2011b)* is a bit different from this.
+{: .prompt-tip }
 
 A decision rule $\varphi$ is a **Bayes correlated equilibrium (BCE)** of $(G,M)$ if it is obedient for $(G,M)$.
 
@@ -237,7 +243,8 @@ A decision rule $\varphi$ is a **Bayes correlated equilibrium (BCE)** of $(G,M)$
 1. There is complete information, i.e., if $S$ is a singleton: this definition reduces to the definition of correlated equilibrium (CE) for a complete information game. *(Aumann 1987)*
 2. If $M$ is the null observation function (a singleton), then this is essentially the “universal Bayesian solution” of *(Forges 1993)*.  
 
-    A decision rule $\varphi$ is **obedient** for $(G)$ if, for each $j = 1, \ldots, J$ and $a^j\in A^j$, we have  
+    A decision rule $\varphi$ is **obedient** for $(G)$ if, for each $j = 1, \ldots, J$ and $a^j\in A^j$, we have
+
     $$
     \begin{aligned}
       & \sum\limits_{s, a^{-j}} \mu_0(s) 
@@ -247,23 +254,27 @@ A decision rule $\varphi$ is a **Bayes correlated equilibrium (BCE)** of $(G,M)$
       \cdot \varphi\Big( (a^j, a^{-j})\mid s \Big)
       \cdot r^j\Big(s, (a^{j\prime}, a^{-j})\Big)
     \end{aligned}
-    $$  
+    $$
+
     for all $a^{j\prime}\in A^j$.
 
 3. If $M$ is the null observation function, and if there is only one receiver, then this definition reduces to behavior in the concavification problem of *(Aumann et al. 1995)* and the Bayesian persuasion of *(Kamenica & Gentzkow 2011)*.
 
-    A decision rule $\varphi$ is **obedient** for $(G)$ if, for each $a\in A$, we have  
+    A decision rule $\varphi$ is **obedient** for $(G)$ if, for each $a\in A$, we have
+
     $$
     \sum\limits_{s} \mu_0(s) 
     \cdot \varphi( a\mid s )
     \cdot \Big( r^j(s, a) - r^j(s, a') \Big) \ge 0
-    $$  
+    $$
+
     for all $a^{\prime}\in A$.
 
 > Why is it called obedience? Why do the receivers follow the recommendation?
 {: .prompt-tip }
 
-*(Bergemann & Morris 2017)*
+*(Bergemann & Morris 2019)*
+
 $$
 \begin{aligned}
   & \Leftrightarrow
@@ -279,7 +290,8 @@ $$
 
 
 ### BNE
-A strategy profile (joint policy) $\pi$ is a **Bayes Nash equilibrium (BNE)** of $(G, M)$ if for each $j = 1 , \ldots, J$, $\sigma^j\in\Sigma^j$, and $a^j\in A^j$ with $\pi^j(a^j \mid o^j) > 0$, we have  
+A strategy profile (joint policy) $\pi$ is a **Bayes Nash equilibrium (BNE)** of $(G, M)$ if for each $j = 1 , \ldots, J$, $\sigma^j\in\Sigma^j$, and $a^j\in A^j$ with $\pi^j(a^j \mid o^j) > 0$, we have
+
 $$
 \begin{aligned}
   & \sum\limits_{s, o^{-j}, a^{-j}} \mu_0(s) 
@@ -291,7 +303,8 @@ $$
   \cdot \Bigg( \prod_{j \ne k} \pi^k(a^k \mid o^k) \Bigg)
   \cdot r^j\Big(s, (a^{j\prime}, a^{-j})\Big)
 \end{aligned}
-$$  
+$$
+
 for all $a^{j\prime}\in A^j$.
 
 ---
@@ -305,7 +318,7 @@ for all $a^{j\prime}\in A^j$.
 
 ## Closing Remarks
 
-> An ethical justification:  
+> **An ethical justification:**  
 I do not think information design is immoral. Information is a kind of property of the sender, and it is legal for it to profit from its information. (Unless the utilized information is a public resource.)  
 Furthermore, in those cases where the sender can improve its own expected payoff through information design, the receiver's payoff is not worse than that of the sender not reveal information at all.  
 Nevertheless, practice use of information design should take the sender's objective function into some serious consideration.

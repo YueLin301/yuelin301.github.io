@@ -5,7 +5,7 @@ categories: [Psychology]
 tags: [personality, psychology, MBTI, Enneagram]
 ---
 
- > This note has not been finished yet.
+ > This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
 {: .prompt-warning }
 
 

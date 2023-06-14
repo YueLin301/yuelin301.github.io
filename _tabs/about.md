@@ -9,6 +9,13 @@ order: 4
 
 ---
 
+> And how could I bear to be a man if man were not also a creator and guesser of riddles and redeemer of accidents?  
+> To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
+> 
+> *- Friedrich Nietzsche, Thus Spoke Zarathustra*
+
+---
+
 ## Education & Experience
 - **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
     - Fortunately advised by Prof. Baoxiang Wang
@@ -23,7 +30,7 @@ order: 4
 ## Research Interests
 - Currently
     - [Information Design](https://yuelin301.github.io/posts/Information-Design/) (a subfield of computational economics and game theory)
-    - Multi-Agent Communication, Reinforcement Learning
+    - Deep Multi-Agent Reinforcement Learning
 - Formerly
     - Redundant Manipulator Control
     - Robotic Mechanism Design
@@ -72,3 +79,20 @@ order: 4
 
  >  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
 {: .prompt-info }
+
+---
+  
+<!-- > Oh me! Oh life! of the questions of these recurring,  
+> Of the endless trains of the faithless, of cities fill’d with the foolish,  
+> Of myself forever reproaching myself, (for who more foolish than I, and who more faithless?)  
+> Of eyes that vainly crave the light, of the objects mean, of the struggle ever renew’d,  
+> Of the poor results of all, of the plodding and sordid crowds I see around me,  
+> Of the empty and useless years of the rest, with the rest me intertwined, -->
+> The question, O me! so sad, recurring—What good amid these, O me, O life?  
+> 
+> *Answer.*  
+> 
+> That you are here—that life exists and identity,  
+> That the powerful play goes on, and you may contribute a verse.  
+> 
+> *- Walt Whitman, O Me! O Life!*

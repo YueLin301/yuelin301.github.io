@@ -9,10 +9,10 @@ order: 4
 
 ---
 
-> And how could I bear to be a man if man were not also a creator and guesser of riddles and redeemer of accidents?  
-> To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
+> And how could I bear to be a man if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
 > 
 > *- Friedrich Nietzsche, Thus Spoke Zarathustra*
+{: .prompt-info }
 
 ---
 
@@ -78,7 +78,6 @@ order: 4
 - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)
 
  >  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
-{: .prompt-info }
 
 ---
   
@@ -91,8 +90,8 @@ order: 4
 > The question, O me! so sad, recurring—What good amid these, O me, O life?  
 > 
 > *Answer.*  
-> 
 > That you are here—that life exists and identity,  
 > That the powerful play goes on, and you may contribute a verse.  
 > 
 > *- Walt Whitman, O Me! O Life!*
+{: .prompt-info }

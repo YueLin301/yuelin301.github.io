@@ -1,9 +1,7 @@
 ---
-title: Fictitious Play (A Note)
-date: 2023-06-14 20:00:01 +0800
-categories: 
-    - Economics & Game Theory
-    - Multi-Agent Reinforcement Learning
+title: Fictitious Play Basics
+date: 2023-06-14 20:00:00 +0800
+categories: [Economics & Game Theory]
 tags: [fictitious play]
 math: True
 ---

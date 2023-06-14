@@ -1,6 +1,6 @@
 ---
 title: A Brief Explanation of Personality
-date: 2023-05-18 20:00:01 +0800
+date: 2023-05-19 20:00:01 +0800
 categories: [Psychology]
 tags: [personality, psychology, MBTI, Enneagram]
 ---

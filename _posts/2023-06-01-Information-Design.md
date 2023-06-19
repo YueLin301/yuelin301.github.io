@@ -79,7 +79,7 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
    - The receiver has its objective function to optimize (In my understanding it does not need to be consistent with its epected environmental reward), and the sender wants to influence the receiver's behavior.
    - The sender's objective function does not need to be consistent with its environmental reward, e.g., it can be social welfare $r^i+r^j$. (In this way, the sender is altruistic.)
    - Anyway, there is no limit to the goals of the sender and the receiver. They may be fully cooperative, mixed motived or adversarial.
-3. The receiver's strategy is based on Bayes' rule. (Timing 5)
+3. The receiver's strategy is based on Bayes' rule (i.e. Bayesian rational). (Timing 5)
 4. **Commitment**: The sender will *honestly* commit a signaling scheme to the receiver *before* the interaction with the receiver. (Timing 1-2)
    - It is this that makes Bayesian persuasion (or information design) different from other communication models, e.g. cheap talk, verifiable message, signaling games. *(Kamenica 2019)*
    - Justifications:

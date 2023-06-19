@@ -8,17 +8,20 @@ order: 4
 {: .prompt-tip }
 
 ---
+Hi, this is Yue Lin (or 林越, in Chinese), and welcome to my personal website. 
+Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang.
+Here, I will consistently update my experiences, paper summaries, notes, and nearly everything that interests me. 
 
-> And how could I bear to be a man if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
+> And how could I bear to be a man, if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
 > 
 > *- Friedrich Nietzsche, Thus Spoke Zarathustra*
 {: .prompt-info }
 
+---  
 ---
 
 ## Education & Experience
 - **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
-    - Fortunately advised by Prof. Baoxiang Wang
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
         > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127
@@ -79,6 +82,7 @@ order: 4
 
  >  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
 
+---  
 ---
   
 <!-- > Oh me! Oh life! of the questions of these recurring,  
@@ -95,3 +99,5 @@ order: 4
 > 
 > *- Walt Whitman, O Me! O Life!*
 {: .prompt-info }
+
+In this world that keeps blooming, I want to place a flower in your heart.

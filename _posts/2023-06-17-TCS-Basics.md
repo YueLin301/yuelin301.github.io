@@ -22,7 +22,7 @@ Topics that I might come across:
 6. Machine learning
 
 > This note is basically a compilation of information from Wikipedia. 😂  
-> And currently I mainly focus on computational complexity theory.
+> And currently I mainly focus on the computational complexity theory.
 {: .prompt-info }
 
 

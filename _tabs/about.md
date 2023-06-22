@@ -17,7 +17,6 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 > *- Friedrich Nietzsche, Thus Spoke Zarathustra*
 {: .prompt-info }
 
----  
 ---
 
 ## Education & Experience
@@ -82,7 +81,6 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 
  >  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
 
----  
 ---
   
 <!-- > Oh me! Oh life! of the questions of these recurring,  

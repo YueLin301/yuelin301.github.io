@@ -20,7 +20,7 @@ timezone: +0800
 
 title: Yue Lin # the main title
 
-tagline: \"I want poetry, real danger, and freedom.\" # it will display as the sub-title
+tagline: "I want poetry, real danger, and freedom." # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Yue Lin's personal website.

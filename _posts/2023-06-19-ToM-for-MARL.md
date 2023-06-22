@@ -36,15 +36,12 @@ A **decentralized partially observable Markov decision process** (Dec-POMDP) is 
 - $\mathcal{Q}:S\times A\to\Delta(O)$ is an observation emission function (sometimes $\mathcal{Q}:S\to\Delta(O)$), and
 - $\gamma\in[0,1]$ is the discount factor.
 
-One step of the process is  $s_{t}\to a_{t}\to (s_{t+1}, o_{t}, r_{t})$:
-
-At each timestep $t$,
+One step of the process is: $s_{t}\to a_{t}\to (s_{t+1}, o_{t}, r_{t})$. At each timestep $t$,  
 - each agent takes an action $a_t^i\in A^i$,
 - $s_{t+1}\sim \mathcal{P}(\cdot \mid s_t, a_t)$, 
-- $o_t \sim \mathcal{Q}(\cdot \mid s_{t+1}, a_{t})$ and a reward is generated for **the whole team** based on the reward function $R(s,a)$.  
+- $o_t \sim \mathcal{Q}(\cdot \mid s_{t+1}, a_{t})$ and a reward is generated for **the whole team** based on the reward function $R(s,a)$.
 
-These timesteps repeat until some given horizon (called finite horizon) or forever (called infinite horizon). The discount factor $\gamma$ maintains a finite sum in the infinite-horizon case (
-$\gamma \in [0,1)$). 
+These timesteps repeat until some given horizon (called finite horizon) or forever (called infinite horizon). The discount factor $\gamma$ maintains a finite sum in the infinite-horizon case ($\gamma \in [0,1)$). 
 The goal is to maximize expected cumulative reward over a finite or infinite number of steps.[^wiki-tom]
 
 What is different from what I previously thought is that the observations are sampled after agents make decisions at each timestep.
@@ -69,7 +66,7 @@ Markov decision processes (MDPs) and partially observable Markov decision proces
 
 Since it is the state that affects payoffs and the state transitions (thus the future payoffs) rather than the observation, the agent needs to estimate the current state $s_t$ by its previous observations before choosing $a_t$.
 
-[^wiki-POMDP]The state is Markovian by assumption, meaning that maintaining a belief over the current states $s_t$ solely requires knowledge of 
+The state is Markovian by assumption, meaning that maintaining a belief over the current states $s_t$ solely requires knowledge of 
 - the previous belief state $s_{t-1}$, 
 - the taken action $a_{t-1}$, 
 - and the current observation (generated at the end of the last step) $o_{t-1}$.
@@ -77,16 +74,23 @@ Since it is the state that affects payoffs and the state transitions (thus the f
 The belief $b$ is a distribution over states. The probability of a current state $s_t$ is $b(s_t)$ can be recursively defined as follows: Given $b(s_{t-1})$, 
 
 $$
-b(s_{t}) = \frac{1}{P(o_{t-1}\mid b, a_{t-1})}
-\mathcal{Q}(o_{t-1}\mid s_t, a_{t-1}) 
-\sum\limits_{s} 
-\mathcal{P}(s_{t}\mid s_{t-1}, a_{t-1}) 
-\cdot b(s_{t-1}),
+b(s_{t}) = \frac
+    {
+        \mathcal{Q}(o_{t-1}\mid s_t, a_{t-1}) 
+        \sum\limits_{s_{t-1}} 
+        \mathcal{P}(s_{t}\mid s_{t-1}, a_{t-1}) 
+        \cdot b(s_{t-1})
+    }
+    {
+        \sum\limits_{s_{t}}
+        \mathcal{Q}(o_{t-1}\mid s_t, a_{t-1}) 
+        \sum\limits_{s} 
+        \mathcal{P}(s_{t}\mid s_{t-1}, a_{t-1})
+        \cdot b(s_t-1)
+    }.
 $$
 
-where $P(o_{t-1}\mid b, a_{t-1}) = \sum\limits_{s_{t}}\mathcal{Q}(o_{t-1}\mid s_t, a_{t-1}) \sum\limits_{s} \mathcal{P}(s_{t}\mid s_{t-1}, a_{t-1})\cdot b(s_t-1)$.
-
-P(s_t\mid s_{t-1}, o_{t-1}, a_{t-1}) = 
+<!-- P(s_t\mid s_{t-1}, o_{t-1}, a_{t-1}) =  -->
 
 
 > This definition is adapted from that of Wikipedia[^wiki-POMDP].

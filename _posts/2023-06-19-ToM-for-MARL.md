@@ -14,7 +14,7 @@ In psychology, theory of mind refers to **the capacity to understand other peopl
 
 Possessing a functional theory of mind is considered crucial for success in everyday human social interactions. People use such a theory when analyzing, judging, and inferring others' behaviors. The discovery and development of theory of mind primarily came from studies done with animals and infants.[^wiki-tom]
 
-**Empathy**—the recognition and understanding of the states of mind of others, including their beliefs, desires, and particularly emotions—is a related concept. Empathy is often characterized as the ability to **"put oneself into another's shoes"**. Recent neuro-ethological studies of animal behaviour suggest that even rodents may exhibit empathetic abilities.** While empathy is known as emotional perspective-taking, theory of mind is defined as cognitive perspective-taking.**[^wiki-tom]
+**Empathy**—the recognition and understanding of the states of mind of others, including their beliefs, desires, and particularly emotions—is a related concept. Empathy is often characterized as the ability to **"put oneself into another's shoes"**. Recent neuro-ethological studies of animal behaviour suggest that even rodents may exhibit empathetic abilities。 **While empathy is known as emotional perspective-taking, theory of mind is defined as cognitive perspective-taking.**[^wiki-tom]
 
 In my understanding, theory of mind refers to the ability of an individual modeling others' decision making processes based on others' partial observations.
 
@@ -26,8 +26,8 @@ In my understanding, theory of mind refers to the ability of an individual model
 
 ### Dec-POMDP
 
-A **decentralized partially observable Markov decision process** (Dec-POMDP) is a tuple $(I, S,\{A^i\}_{i\in I}, \mathcal{P}, R, \{O^i\}_{i\in I}, \mathcal{Q}, \gamma)$, where
-- $I$ is a set of agents ($|I|=n$ and they are **cooperative**),
+A **decentralized partially observable Markov decision process** (Dec-POMDP) is a tuple $(I, S,\{A^i\}\_{i\in I}, \mathcal{P}, R, \{O^i\}\_{i\in I}, \mathcal{Q}, \gamma)$, where
+- $I$ is a set of agents ($\vert I\vert=n$ and they are **cooperative**),
 - $S$ is a set of global states of the environment (and agents cannot see the sampled state at any time, but they know the state set), 
 - $A^i$ is a set of actions for agent $i$, with $A=\times_{i\in I} A^i$ is the set of joint actions,
 - $\mathcal{P}:S\times A\to\Delta(S)$ is the state transition probability where $\Delta(S)$ is a set of distributions over $S$,
@@ -49,7 +49,7 @@ The goal is to maximize expected cumulative reward over a finite or infinite num
 
 What is different from what I previously thought is that the observations are sampled after agents make decisions at each timestep.
 
-> This definition is adapted from that of Wikipedia[^wiki-Dec-POMDP]. When discussing Dec-POMDP, These papers[^Dec-POMDP-Bernstein][^Dec-POMDP-Oliehoek] are often referenced.
+> This definition is adapted from that of Wikipedia[^wiki-Dec-POMDP]. When discussing Dec-POMDP, these papers[^Dec-POMDP-Bernstein][^Dec-POMDP-Oliehoek] are often referenced.
 {: .prompt-info }
 
 ### MDP & POMDP
@@ -84,15 +84,17 @@ b(s_{t}) = \frac{1}{P(o_{t-1}\mid b, a_{t-1})}
 \cdot b(s_{t-1}),
 $$
 
-where $P(o_{t-1}\mid b, a_{t-1}) = \sum\limits_{s_{t}}\mathcal{Q}(o_{t-1}\mid s_t, a_{t-1}) \sum\limits_{s} \matchcal{P}(s_{t}\mid s_{t-1}, a_{t-1})\cdot b(s_t-1)$.
+where $P(o_{t-1}\mid b, a_{t-1}) = \sum\limits_{s_{t}}\mathcal{Q}(o_{t-1}\mid s_t, a_{t-1}) \sum\limits_{s} \mathcal{P}(s_{t}\mid s_{t-1}, a_{t-1})\cdot b(s_t-1)$.
 
 P(s_t\mid s_{t-1}, o_{t-1}, a_{t-1}) = 
 
 
-> This definition id adapted from that of Wikipedia[^wiki-POMDP].
+> This definition is adapted from that of Wikipedia[^wiki-POMDP].
 {: .prompt-info }
 
 ---
+
+## References
 
 [^wiki-tom]: Wikipedia: [theory of mind](https://en.wikipedia.org/wiki/Theory_of_mind).
 [^Fuchs2019]: Andrew Fuchs, Michael Walton, Theresa Chadwick, Doug Lange. "Theory of mind for deep reinforcement learning in hanabi." *NeurIPS Workshop (2019)*.

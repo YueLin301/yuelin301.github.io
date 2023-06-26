@@ -60,6 +60,9 @@ Basic settings:
 3. "Doing nothing" is also an action and indicates something.
    > Also, the inaction of a participant is a non-verbal communication of that participant's lack of knowledge, which then becomes common knowledge to all participants who observed the inaction.
 
+> The introduction of "common knowledge" will be presented in [the next section](#common-knowledge).
+{: .prompt-tip }
+
 ### The Muddy Children Puzzle
 This is one of the most classic examples of inductin puzzles. This problem also has other descriptive forms and variations, such as the Blue-Eyed Islanders and cheating wives/husbands puzzles.
 
@@ -105,10 +108,22 @@ So what information does "At least one of you has mud on your forehead" bring to
 > But this is false! What the father provides is common knowledge. If exactly $k$ children have muddy foreheads, then it is straightforward to see that $E^{k−1}p$ holds before the father speaks, but $E^kp$ does not (here $E^k\varphi$ means $\varphi$, if $k = 0$, and everyone knows $E^{k-1}\varphi$, if $k \ge 1$). The father’s statement actually converts the children’s state of knowledge from $E^{k−1}p$ to $Cp$ (here $Cp$ means that there is common knowledge of $p$). With this extra knowledge, they can deduce whether their foreheads are muddy.  
 > In the muddy children puzzle, the children do not actually need common knowledge; Ekp suffices for them to figure out whether they have mud on their foreheads.[^Common-knowledge-revisited]
 
+I found an alternative and more general notation:
+- $p$: A piece of information.
+- $K_i p$: Agent $i$ knows $p$.
+- $B_i p$: Agent $i$ believes $p$.
+- $B_i p$: Agent $i$ believes $p$.
+- $E p := \land_{i} K_i p$. All agents know $p$. 
+- $C p := Ep \land EEp \land EEEp \land \ldots$. Common knowledge.
+
+> Two interaction axioms: $K_i p \to B_i p$ (i.e. if $i$ knows $p$ then it believes $p$) and $B_i p \to KB_i p$ (i.e. if $i$ believes $p$ then it knows that it believes $p$).
+{: .prompt-tip }
 
 #### Game-theoretic solution
 
-> Muddy children puzzle can also be solved using backward induction from game theory.
+> Muddy children puzzle can also be solved using **backward induction** from game theory.
+
+The reference is from [this paper](https://www.qucosa.de/api/qucosa%3A22752/attachment/ATT-0/), written in German.
 
 > Muddy children puzzle can be represented as an extensive form game of imperfect information. Every player has two actions — stay back and step forwards. There is a move by nature at the start of the game, which determines the children with and without muddy faces. Children do not communicate as in non-cooperative games. Every stroke is a simultaneous move by children. It is a sequential game of unlimited length. The game-theoretic solution needs some additional assumptions:  
 > 1. All children are rational and all children's rationality is common knowledge. This means that Alice is rational, Alice knows that Bob is rational and Alice knows that Bob knows that Charly is rational and so on and vice versa.
@@ -118,12 +133,30 @@ So what information does "At least one of you has mud on your forehead" bring to
 > 
 > If only Alice is muddy, the last assumption makes it irrational for her to hesitate. If Alice and Bob are muddy, Alice knows that Bob's only reason of staying back after the first stroke is the apprehension to receive the big penalty of stepping forward without a muddy face. In the case with $k$ muddy children, receiving $k$ times the minor penalty is still better than the big penalty.
 
+This is a non-cooperative extensive-form (sequential) game of imperfect information.
+1. Agents: finite, rational (common knowledge), and not hesitant.
+2. States: All agents' face situations.
+3. Actions: Do nothing, or step forward. Everyone moves  simultaneously at every timestep.
+4. Observations: The others' face situations.
+5. Reward function:
+   1. $R^i(s^i=\text{clean face}, a^i=\text{step forward}) = -\infty$,
+   2. $R^i(s^i=\text{muddy face}, a^i=\text{step forward}) = r$, where $r$ is a predefined constant reward.
+   3. $R^i(\cdot, a^i=\text{step forward}) = 0$, I guess?
+
+So this is just formulation. What about the method "backward induction"?
+
+> I found a paper about this, cited 181 times. I will read it later:  
+> Rational Dynamics and Epistemic Logic in Games.  
+Johan Van Benthem.  
+*International Game Theory Review 2007*.
+{: .prompt-tip }
 
 
 ### Hat Puzzles
 > One type of induction puzzle concerns the wearing of colored hats, where each person in a group can only see the color of those worn by others, and must work out the color of their own.
 
-
+#### The King's Wise Men Hat Puzzle
+> The King called the three wisest men in the country to his court to decide who would become his new advisor. He placed a hat on each of their heads, such that each wise man could see all of the other hats, but none of them could see their own. Each hat was either white or blue. The king gave his word to the wise men that at least one of them was wearing a blue hat; in other words, there could be one, two, or three blue hats, but not zero. The king also announced that the contest would be fair to all three men. The wise men were also forbidden to speak to each other. The king declared that whichever man stood up first and correctly announced the colour of his own hat would become his new advisor. The wise men sat for a very long time before one stood up and correctly announced the answer. What did he say, and how did he work it out?
 
 
 
@@ -143,4 +176,6 @@ So what information does "At least one of you has mud on your forehead" bring to
 ## References
 [^wiki-Dynamic-Epistemic-Logic]: Wikipedia: [Dynamic Epistemic Logic](https://en.wikipedia.org/wiki/Dynamic_epistemic_logic).
 [^wiki-Induction-Puzzles]: Wikipedia: [Induction Puzzles](https://en.wikipedia.org/wiki/Induction_puzzles)
-[^Common-knowledge-revisited]: Ronald Fagin, Joseph Y. Halpern, Yoram Moses, Moshe Y. Vardi. "Common knowledge revisited" *Annals of Pure and Applied Logic (1999)*.
+[^Common-knowledge-revisited]: Ronald Fagin, Joseph Y. Halpern, Yoram Moses, Moshe Y. Vardi. "Common knowledge revisited." *Annals of Pure and Applied Logic (1999)*.
+<!-- [^Andrew-Backward-Induction]: Andrew M. Colman. "Rationality assumptions of game theory and the
+backward induction paradox."  -->

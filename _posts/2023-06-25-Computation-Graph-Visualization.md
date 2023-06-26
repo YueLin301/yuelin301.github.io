@@ -78,7 +78,7 @@ if __name__ == '__main__':
     graph.view()
 ```
 
-### Example 4: $\nabla_\theta a$
+### Example 4: $\nabla_\theta a$ ❌
 ```python
 import torch
 from torchviz import make_dot

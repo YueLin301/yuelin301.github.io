@@ -27,16 +27,19 @@ import torch
 from torchviz import make_dot
 
 if __name__ == '__main__':
-    critic = torch.nn.Sequential(
-        torch.nn.Linear(in_features=4, out_features=2, bias=False, dtype=torch.float), torch.nn.Tanh(),
-        torch.nn.Linear(in_features=2, out_features=1, bias=True, dtype=torch.float), torch.nn.Softmax(dim=-1)
-    )
-    state = torch.rand(100, 4, dtype=torch.float)
-    v = critic(state)
-    v = v.squeeze()
+    batch_size, input_size, hidden_size, output_size = 100, 4, 2, 1
 
-    graph = make_dot(v, params=dict(critic.named_parameters()), show_attrs=True, show_saved=True)
+    critic = torch.nn.Sequential(
+        torch.nn.Linear(in_features=input_size, out_features=hidden_size, bias=False, dtype=torch.float),
+        torch.nn.Tanh(),
+        torch.nn.Linear(in_features=hidden_size, out_features=output_size, bias=True, dtype=torch.float),
+    )
+    states = torch.rand(batch_size, input_size, dtype=torch.float)
+    values = critic(states).squeeze()
+
+    graph = make_dot(values, params=dict(critic.named_parameters()), show_attrs=True, show_saved=True)
     graph.view()
+
 ```
 
 ### Example 2: Without Net
@@ -75,6 +78,56 @@ if __name__ == '__main__':
     graph.view()
 ```
 
+### Example 4: $\nabla_\theta a$
+```python
+import torch
+from torchviz import make_dot
+
+if __name__ == '__main__':
+    batch_size, input_size, output_size = 10, 4, 2
+
+    actor = torch.nn.Sequential(
+        torch.nn.Linear(in_features=input_size, out_features=output_size, bias=False, dtype=torch.float),
+        torch.nn.Softmax(dim=-1)
+    )
+
+    states = torch.rand(batch_size, input_size, dtype=torch.float)
+    pi_list = actor(states)
+    distributions = torch.distributions.Categorical(pi_list)
+    actions = distributions.sample().squeeze(dim=0)
+
+    graph = make_dot(actions, params=dict(actor.named_parameters()), show_attrs=True, show_saved=True)
+    graph.view()
+```
+No gradient.
+
+
+### Example 5: $\nabla_\theta a$ with Gumbel-Softmax (Reparameterization)
+```python
+import torch
+from torchviz import make_dot
+
+if __name__ == '__main__':
+    batch_size, input_size, output_size = 10, 4, 2
+    temperature = 1
+
+    actor = torch.nn.Sequential(
+        torch.nn.Linear(in_features=input_size, out_features=output_size, bias=False, dtype=torch.float),
+        torch.nn.Softmax(dim=-1)
+    )
+
+    states = torch.rand(batch_size, input_size, dtype=torch.float)
+
+    pi_list = actor(states)
+    logits = torch.log(pi_list)
+    actions = torch.nn.functional.gumbel_softmax(logits, tau=temperature, hard=True)
+
+    graph = make_dot(actions, params=dict(actor.named_parameters()), show_attrs=True, show_saved=True)
+    graph.view()
+```
+
+
+
 ## Model Structure
 
 If the visualization object is an `nn.Module`, then its structure can be easily inspected using the approaches in this section.
@@ -84,11 +137,15 @@ If the visualization object is an `nn.Module`, then its structure can be easily 
 import torch
 
 if __name__ == '__main__':
+    batch_size, input_size, hidden_size, output_size = 100, 4, 2, 1
+
     critic = torch.nn.Sequential(
-        torch.nn.Linear(in_features=4, out_features=2, bias=False, dtype=torch.float), torch.nn.Tanh(),
-        torch.nn.Linear(in_features=2, out_features=1, bias=True, dtype=torch.float), torch.nn.Softmax(dim=-1)
+        torch.nn.Linear(in_features=input_size, out_features=hidden_size, bias=False, dtype=torch.float),
+        torch.nn.Tanh(),
+        torch.nn.Linear(in_features=hidden_size, out_features=output_size, bias=True, dtype=torch.float),
     )
     print(critic)
+
 ```
 
 ```
@@ -96,11 +153,9 @@ Sequential(
   (0): Linear(in_features=4, out_features=2, bias=False)
   (1): Tanh()
   (2): Linear(in_features=2, out_features=1, bias=True)
-  (3): Softmax(dim=-1)
 )
 
 Process finished with exit code 0
-
 ```
 
 ### Torchsummary
@@ -111,12 +166,16 @@ import torch
 from torchsummary import summary
 
 if __name__ == '__main__':
+    batch_size, input_size, hidden_size, output_size = 100, 4, 2, 1
+
     critic = torch.nn.Sequential(
-        torch.nn.Linear(in_features=4, out_features=2, bias=False, dtype=torch.float), torch.nn.Tanh(),
-        torch.nn.Linear(in_features=2, out_features=1, bias=True, dtype=torch.float), torch.nn.Softmax(dim=-1)
+        torch.nn.Linear(in_features=input_size, out_features=hidden_size, bias=False, dtype=torch.float),
+        torch.nn.Tanh(),
+        torch.nn.Linear(in_features=hidden_size, out_features=output_size, bias=True, dtype=torch.float),
     )
-    batch_size = 100
+    
     summary(critic, input_size=(batch_size, 4))
+
 ```
 
 ```
@@ -126,7 +185,6 @@ if __name__ == '__main__':
             Linear-1               [-1, 100, 2]               8
               Tanh-2               [-1, 100, 2]               0
             Linear-3               [-1, 100, 1]               3
-           Softmax-4               [-1, 100, 1]               0
 ================================================================
 Total params: 11
 Trainable params: 11

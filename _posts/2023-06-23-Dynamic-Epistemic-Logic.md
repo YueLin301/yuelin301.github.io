@@ -55,18 +55,73 @@ A logical feature:
 Basic settings:
 1. Players know informaiton about others but does not know their owns.
    > Typical tell-tale features of these puzzles include any puzzle in which each participant has a given piece of information (usually as common knowledge) about all other participants but not themselves.  
-2. Players is smart and is capaple of theory of mind.
+2. Players are smart and are capaple of theory of mind.
    > Also, usually, some kind of hint is given to suggest that the participants can trust each other's intelligence — they are capable of theory of mind (that "every participant knows modus ponens" is common knowledge).  
 3. "Doing nothing" is also an action and indicates something.
    > Also, the inaction of a participant is a non-verbal communication of that participant's lack of knowledge, which then becomes common knowledge to all participants who observed the inaction.
 
 ### The Muddy Children Puzzle
-This is one of the most classic examples of inductin puzzles. And there are 
+This is one of the most classic examples of inductin puzzles. This problem also has other descriptive forms and variations, such as the Blue-Eyed Islanders and cheating wives/husbands puzzles.
 
-> There is a set of attentive children. They think perfectly logically (and this is common knowledge). The children consider it possible to have a muddy face. None of the children can determine the state of their own face themselves. But, every child knows the state of all other children's faces. A custodian tells the children that at least one of them has a muddy face. The children are each told that they should step forward if they know that their own face is muddy. Hereafter, the custodian starts to count and after every stroke, every muddy child has an opportunity to step forward.[^wiki-Induction-Puzzles]
+#### Description
+> There is a set of attentive children. They think perfectly logically. The children consider it possible to have a muddy face. None of the children can determine the state of their own face themselves. But, every child knows the state of all other children's faces. A custodian tells the children that at least one of them has a muddy face. The children are each told that they should step forward if they know that their own face is muddy. Hereafter, the custodian starts to count and after every stroke, every muddy child has an opportunity to step forward.
+
+Let us extract the core of it.
+
+What is the goal?
+Players (children) want to find out a piece of information (whether their face is clean or not) that they do not know but others do.
+
+What are the assumptions?
+1. Before the game starts, there will be an outsider who provides some indirect information.
+2. Players know informaiton about others but does not know their owns.
+3. There are occasions when making decisions openly (the chances for children to step forward), and the actions taken become common knowledge. 
+4. Players are smart and are capaple of theory of mind.
+5. If players know their own information, they will reveal it to their own best interests.
+6. "Doing nothing" is also an action and indicates something. Specifically, it means that a player does not know its own information. And this is new information to others. 
+
+
+#### Logical solution
+Assume that there are $n$ children and $k$ of them are dirty where $k>1$.
+
+> Let's assume that there are just 2 children: Alice and Bob. If only Alice is dirty, she will step forward at the first stroke, because she does not see any other dirty faces. The same is true for Bob. If Alice sees Bob not stepping forward at the first stroke, she must conclude that he certainly sees another muddy child and they will step forward simultaneously at the second stroke.  
+Let's assume that there are just 3 children: Alice, Bob, and Charly. If there are less than 3 muddy children, the puzzle evolves like in the case with 2 children. If Charly sees that Alice and Bob are muddy and not stepping forward at the second stroke, they all together will step forward at the third stroke.  
+It can be proven that $k$ muddy children will step forward after $k$ strokes.
+
+Denote Alice as $i$ and Bob as $j$. There are three cases:
+1. $i$ is dirty and $j$ is not.
+   - $i$ knows $j$ is not dirty. So $i$ can infer that it is dirty. Thus $i$ will step forward at the first stroke.
+   - $j$ knows $i$ is dirty but $j$ cannot infer its situation. But after the first stroke $j$ will know that "$i$ can infer itself is dirty", and thus $j$ can infer that $j$ is not dirty.
+2. $j$ is dirty and $i$ is not. The analysis is symmetrical to that of the first case.
+3. $i$ and $j$ are both dirty.
+   - $i$ knows $j$ is dirty but $i$ cannot infer its situation. Thus $i$ will do nothing at the first stroke.
+   - $j$ knows $i$ is dirty but $j$ cannot infer its situation. Thus $j$ will do nothing at the first stroke.
+   - After the first stroke, $i$ will know that $j$ cannot infer anything, meaning that it is not the first case (not "You are dirty but I am not"). So $i$ can infer that it is dirty. Thus $i$ will step forward at the second stroke.
+   - So do $j$. Thus $j$ will step forward at the second stroke.
+
+> There is a straightforward proof by induction that the first $k − 1$ times he asks the question, they will all say “No,” but then the $k$th time the children with muddy foreheads will all answer “Yes.”[^Common-knowledge-revisited]
+
+So what information does "At least one of you has mud on your forehead" bring to players? **The common knowledge.**
+> Let us denote the fact “at least one child has a muddy forehead” by $p$. Notice that if $k > 1$, i.e., more than one child has a muddy forehead, then every child can see at least one muddy forehead, and the children initially all know $p$. Thus, it would seem that the father does not provide the children with any new information, and so he should not need to tell them that $p$ holds when $k > 1$.  
+> But this is false! What the father provides is common knowledge. If exactly $k$ children have muddy foreheads, then it is straightforward to see that $E^{k−1}p$ holds before the father speaks, but $E^kp$ does not (here $E^k\varphi$ means $\varphi$, if $k = 0$, and everyone knows $E^{k-1}\varphi$, if $k \ge 1$). The father’s statement actually converts the children’s state of knowledge from $E^{k−1}p$ to $Cp$ (here $Cp$ means that there is common knowledge of $p$). With this extra knowledge, they can deduce whether their foreheads are muddy.  
+> In the muddy children puzzle, the children do not actually need common knowledge; Ekp suffices for them to figure out whether they have mud on their foreheads.[^Common-knowledge-revisited]
+
+
+#### Game-theoretic solution
+
+> Muddy children puzzle can also be solved using backward induction from game theory.
+
+> Muddy children puzzle can be represented as an extensive form game of imperfect information. Every player has two actions — stay back and step forwards. There is a move by nature at the start of the game, which determines the children with and without muddy faces. Children do not communicate as in non-cooperative games. Every stroke is a simultaneous move by children. It is a sequential game of unlimited length. The game-theoretic solution needs some additional assumptions:  
+> 1. All children are rational and all children's rationality is common knowledge. This means that Alice is rational, Alice knows that Bob is rational and Alice knows that Bob knows that Charly is rational and so on and vice versa.
+> 2. Stepping forward without having a muddy face results in a big penalty.
+> 3. Stepping forward with a muddy face results in a reward.
+> 4. Every stroke results in minor negative penalty aka discount factor for every child until any of them stepped forward. Any multiple of the minor penalty is always a lesser evil than the big penalty.
+> 
+> If only Alice is muddy, the last assumption makes it irrational for her to hesitate. If Alice and Bob are muddy, Alice knows that Bob's only reason of staying back after the first stroke is the apprehension to receive the big penalty of stepping forward without a muddy face. In the case with $k$ muddy children, receiving $k$ times the minor penalty is still better than the big penalty.
+
+
 
 ### Hat Puzzles
-> One type of induction puzzle concerns the wearing of colored hats, where each person in a group can only see the color of those worn by others, and must work out the color of their own.[^wiki-Induction-Puzzles]
+> One type of induction puzzle concerns the wearing of colored hats, where each person in a group can only see the color of those worn by others, and must work out the color of their own.
 
 
 

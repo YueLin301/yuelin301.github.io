@@ -2,7 +2,7 @@
 title: Computation Graph Visualization
 date: 2023-06-25 02:00:01 +0800
 categories: [Code]
-tags: [computation graph, visualization, torchviz, torchsummary, graphviz]
+tags: [computation graph, visualization, torchviz, torchsummary, graphviz, reparameterization]
 math: True
 ---
 

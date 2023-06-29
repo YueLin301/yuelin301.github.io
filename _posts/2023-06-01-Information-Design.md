@@ -2,7 +2,7 @@
 title: Information Design (A Note)
 date: 2023-06-01 20:00:01 +0800
 categories: [Economics & Game Theory]
-tags: [information design, bayesian persuasion, bayes plausible, concavification, obedience, Bayes correlated equilibrium, Bayes nash equilibrium]
+tags: [information design, bayesian persuasion, bayes plausible, concavification, obedience, Bayes correlated equilibrium, Bayes nash equilibrium, multi agents]
 math: True
 pin: True
 ---

@@ -75,11 +75,12 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 ---
 
 ## Personality
-- Myers-Briggs Type Indicator (MBTI): [INTJ-T](https://www.16personalities.com/profiles/8dc4f03308407)
-- Enneagram: [5w4](https://www.enneagraminstitute.com/type-5)
-- Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking)
+- Big Five Personality Test: [My test result](https://bigfive-test.com/result/649d06c585aaa70008135b20).
+- Myers-Briggs Type Indicator (MBTI): [INTJ-T (my test result)](https://www.16personalities.com/profiles/8dc4f03308407).
+  - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
+- Enneagram: [Type Five with a Four-Wing](https://www.enneagraminstitute.com/type-5).
 
- >  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
+>  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
 
 ---
   
@@ -97,5 +98,3 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 > 
 > *- Walt Whitman, O Me! O Life!*
 {: .prompt-info }
-
-In this world that keeps blooming, I want to place a flower in your heart.

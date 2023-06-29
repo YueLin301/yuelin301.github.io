@@ -2,7 +2,7 @@
 title: Fictitious Play Basics
 date: 2023-06-14 20:00:00 +0800
 categories: [Economics & Game Theory]
-tags: [fictitious play]
+tags: [fictitious play, multi agents]
 math: True
 ---
 

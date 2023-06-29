@@ -2,11 +2,11 @@
 title: Dynamic Epistemic Logic
 date: 2023-06-23 02:00:00 +0800
 categories: [Mathematics]
-tags: [epistemic logic, common knowledge, logic, induction puzzles]
+tags: [epistemic logic, common knowledge, logic, induction puzzles, multi agents]
 math: True
 ---
 
-> This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+> This note is incomplete, and I have no intention of completing it because I realized it is not the topic I am looking for.
 {: .prompt-warning }
 
 > Three logicians walk into a bar.  
@@ -112,9 +112,8 @@ I found an alternative and more general notation:
 - $p$: A piece of information.
 - $K_i p$: Agent $i$ knows $p$.
 - $B_i p$: Agent $i$ believes $p$.
-- $B_i p$: Agent $i$ believes $p$.
-- $E p := \land_{i} K_i p$. All agents know $p$. 
-- $C p := Ep \land EEp \land EEEp \land \ldots$. Common knowledge.
+- $E p := \land_{i} K_i p$: All agents know $p$. 
+- $C p := Ep \land EEp \land EEEp \land \ldots$: Common knowledge.
 
 > Two interaction axioms: $K_i p \to B_i p$ (i.e. if $i$ knows $p$ then it believes $p$) and $B_i p \to KB_i p$ (i.e. if $i$ believes $p$ then it knows that it believes $p$).
 {: .prompt-tip }

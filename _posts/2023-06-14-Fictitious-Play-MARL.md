@@ -2,7 +2,7 @@
 title: Fictitious Play in MARL
 date: 2023-06-14 20:00:01 +0800
 categories: [Multi-Agent Reinforcement Learning]
-tags: [fictitious play, reinforcement learning]
+tags: [fictitious play, reinforcement learning, multi agents]
 math: True
 ---
 

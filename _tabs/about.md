@@ -80,8 +80,6 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
   - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
 - Enneagram: [Type Five with a Four-Wing](https://www.enneagraminstitute.com/type-5).
 
->  "[A Brief Explanation of Personality](https://yuelin301.github.io/posts/personality/)" is coming soon.
-
 ---
   
 <!-- > Oh me! Oh life! of the questions of these recurring,  

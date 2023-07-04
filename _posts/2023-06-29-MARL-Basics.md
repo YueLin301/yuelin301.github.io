@@ -43,6 +43,20 @@ where:
 - (TODO)
 
 
+(TODO)
+Some potentially confusing concepts:
+- Stochastic game
+- Markov game
+- Repeated game
+- Matrix game
+- Static game
+- Dynamic game
+- Normal-form game
+- Extensive-form game
+
+
+
+
 ## Learning Goals
 The learning goals of MARL are mainly stability and adaptation.
 
@@ -79,18 +93,23 @@ To check whether the designed algorithm for agents are adaptive or not, there ar
 
 ## Scenarios (or Tasks)
 There are three types of scenarios based on their properties: fully cooperative, fully competitive, and mixed scenarios. These scenarios are classified according to the **reward functions** assigned to the agents: a scenario is
-1. fully cooperative if all the reward functions are the same function (i.e. $r^i=r^j\ \forall i,j\in I$),
+1. fully cooperative if all the reward functions are the same function (i.e. $r^i=r^j\ \forall i, j\in I$),
+   - (Without a centralized controller, a coordination problem will arise. Discussed below.)
 2. fully competitive if $r^i = -r^j$ (two-agent scenarios are mostly discussed in this case),
+   - (Games in this case are called zero-sum.)
 3. and mixed otherwise.
 
-
+Some additional points:
+1. If there is no constraint on the reward functions, the game is called general-sum game, and pure cooperative games and zero-sum games are special cases. 
+2. The second and the third case are called noncooperative games. 
+3. In coordination games, rewards are always positively related.
 
 
 ## Algorithms
 MARL algorithms are designed for variant tasks. Some of them are built relying on the assumptions of the tasks, making them applicable only to those particular tasks. 
 
 ### For fully cooperative tasks
-In this case, if a centralized controller is available, the task reduces to a MDP. Otherwise the agents take actions independently, and a coordination problem arises.
+In this case, if a centralized controller is available, the task reduces to a MDP. Otherwise the agents take actions independently, and a coordination problem arises. When there are multiple equilibria, the agents should coordinate to break ties in a same way.
 
 The algorithms designed for the fully cooperative scenarios without centralized controller (i.e. the coordination problems) can be classified into three categories based on the dimension of coordination:
 1. Coordination-free methods: teammate-independent
@@ -99,12 +118,12 @@ The algorithms designed for the fully cooperative scenarios without centralized 
    2. and teammate-aware if they use negotiation.
 3. Indirect coordination methods: team-aware
 
-
-<!-- 4. Team-Q: It is the Q-learning algorithm, assuming that the optimal joint action are unique (which will rarely be the case).
-5. Distributed-Q: It is deterministic. Every one can see the 
-6. OAL
-7. JAL
-8. FMQ -->
+(TODO)
+1. Team-Q: It is the Q-learning algorithm, assuming that the optimal joint action are unique (which will rarely be the case).
+2. Distributed-Q: It is deterministic. Every one can see the 
+3. OAL
+4. JAL
+5. FMQ
 
 ### For fully cooperative tasks
 1. minimax-Q
@@ -137,15 +156,22 @@ The algorithms designed for the fully cooperative scenarios without centralized 
    *Advances in Neural Information Processing Systems (NIPS) 2004*.
    - GIGA-WoLF (Generalized Infinitesimal Gradient Ascent, Win or Learn Fast)
 - [x] Multi-Agent Reinforcement Learning: A survey.  
-   L. Busoniu, R. Babuska, B. De Schutter.
+   L. Busoniu, R. Babuska, B. De Schutter.  
    *International Conference on Control, Automation, Robotics and Vision (ICARCV) 2006*.
    - This note is basically built on the framework of this paper.
 - [ ] Playing is Believing: The Role of Beliefs in Multi-Agent Learning.  
-   Yu-Han Chang, Leslie Pack Kaelbling.
+   Yu-Han Chang, Leslie Pack Kaelbling.  
    Advances in Neural Information Processing Systems (NIPS) 2001.
+- [x] Nash Q-Learning for General-Sum Stochastic Games.  
+   Junling Hu, Michael P. Wellman.  
+   Journal of machine learning research (JMLR) 2003.
+- [ ] [Convergence of Q-learning: A Simple Proof](http://users.isr.ist.utl.pt/~mtjspaan/readingGroup/ProofQlearning.pdf).  
+   Francisco S. Melo.
 - [ ] Value-Function Reinforcement Learning in Markov Games.  
+   Michael L. Littman.  
+   Cognitive Systems Research 2001.
 - [ ] Multi-Agent Reinforcement Learning: A Critical Survey.  
-   Yoav Shoham, Rob Powers, Trond Grenager.
+   Yoav Shoham, Rob Powers, Trond Grenager.  
    *Technical report, Stanford University 2003*.
 - [ ] An Overview of Multi-Agent Reinforcement Learning from Game Theoretical Perspective.  
    Yaodong Yang, Jun Wang.  

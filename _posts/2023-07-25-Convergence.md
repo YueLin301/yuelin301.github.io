@@ -11,16 +11,16 @@ math: True
 
 
 ## About
-> This note is based on this awesome paper:
-> 
+This note is based on this awesome paper:
+
 > Agarwal, Alekh, et al. "On the theory of policy gradient methods: Optimality, approximation, and distribution shift." The Journal of Machine Learning Research 22.1 (2021): 4431-4506.
->
-> And I will provide some omitted details here.
 {: .prompt-info }
+
+And I will provide some omitted details here. 
 
 ## Details of Setting
 
-### Why $V(s) \le \frac{1}{1-\gamma}$?
+### $V(s) \le \frac{1}{1-\gamma}$
 $V(s)$ reaches its upper bound when $r(s,a)=1,\forall s,a$, which equals $\sum\limits_{t=0}^\infty \gamma^t$.
 
 And it is a geometric progression:
@@ -32,7 +32,7 @@ And it is a geometric progression:
 - $\lim\limits_{n\to\infty}S_n = \frac{a_0}{1-\gamma} = \frac{1}{1-\gamma}$.
 
 
-### The famous theorem of Bellman and Dreyfus (1959)?
+### The famous theorem of Bellman and Dreyfus (1959)
 
 > The famous theorem of Bellman and Dreyfus (1959) shows there exists a policy $\pi^\star$ which simultaneously maximizes $V^\pi(s_0)$, for all states $s_0\in S$.
 
@@ -60,8 +60,13 @@ We want to **maximize** $V^{\pi_\theta}(s)$, so if $V^{\pi_\theta}(s)$ is **conc
 As shown in the appendix, there is a MDP where exists policy points $\pi_1, \pi_2$ that $V^{\pi_1}(s)+V^{\pi_2}(s)> 2\cdot V^{\frac{1}{2}(\pi_1+\pi_2)}(s)$. This shows a property of convex, so $V^{\pi_\theta}(s)$ is non-concave.
 
 ### Why is there a coefficient $(1-\gamma)$ in (4)?
-Recall that the derivation of the policy gradient theorem:
+Recall that [the derivation of the policy gradient theorem](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/):
+
 $$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} \sum\limits_{k=0}^{\infty} \gamma^k \cdot \text{Pr}(s_0\to s, k) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).$$
+
+> Policy Gradient
+> - Williams, Ronald J. "Simple statistical gradient-following algorithms for connectionist reinforcement learning." Machine learning 8 (1992): 229-256.
+> - Sutton, Richard S., et al. "Policy gradient methods for reinforcement learning with function approximation." Advances in neural information processing systems 12 (1999).
 
 Note that $\lim\limits_{k\to\infty} \sum\limits_{k=0}^{\infty} \gamma^k = \frac{1}{1-\gamma} > 1$. The value of discounted state visitation distribution should not larger than $1$. So the coefficient $(1-\gamma)$ is for normalization.
 
@@ -79,16 +84,21 @@ $A^{\pi}(s,a):= Q^\pi(s,a)-V^\pi(s) = Q^\pi(s,a) - \sum\limits_{a}\pi(a\mid s) \
 Given $s$ and $\pi$, $A^{\pi}(s,a)$ measures how much better the expected future return after selecting action $a$ is compared to the expected future return of sampling action based on the current policy $\pi$ in this state $s$.
 
 ### Baseline
-This part partially use material from Prof. Wang's [Lecture note 18: Variance reduction](https://drive.google.com/drive/folders/1u1oyOMsvo4bJ765NE_2HSR5x40uXWwxD) and *Reinforcement learning: An introduction*.
+> This part partially use material from Prof. Wang's [Lecture note 18: Variance reduction](https://drive.google.com/drive/folders/1u1oyOMsvo4bJ765NE_2HSR5x40uXWwxD) and *Reinforcement learning: An introduction*.
+{: .prompt-info }
+
+Policy gradient is unbiased but with high variance. The form is
+
 $$\nabla_{\theta} V^{\pi_\theta}(s_0) =\frac{1}{1-\gamma} \mathbb{E}_{s\sim d_{s_0}^\pi}\mathbb{E}_{a\sim\pi(\cdot\mid s)}\left[ Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s)\right].$$
 
-Policy gradient is unbiased but with high variance. To reduce it, a natural solution is to subtract a baseline $b(s)$ from $Q^\pi$, i.e., 
+To reduce it, a natural solution is to subtract a baseline $b(s)$ from $Q^\pi$ which can be any function, even a random variable, as long as it does not depend on the action $a$, i.e., 
 $$\nabla_{\theta} V^{\pi_\theta}(s_0) =\frac{1}{1-\gamma} \mathbb{E}_{s\sim d_{s_0}^\pi}\mathbb{E}_{a\sim\pi(\cdot\mid s)}\left[ \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s)\right],$$
 $$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s),$$
 or
 $$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta} \pi(a\mid s).$$
 
 This is still unbiased:
+
 $$\begin{aligned}
 \sum\limits_a b(s)\cdot \nabla_{\theta} \pi(a\mid s) 
 =& b(s) \cdot\nabla_\theta\sum\limits_a \pi(a\mid s) \\
@@ -118,5 +128,11 @@ $$ -->
 > Schulman, John, et al. "High-dimensional continuous control using generalized advantage estimation." arXiv preprint arXiv:1506.02438 (2015).
 {: .prompt-info }
 
-### (6) does not hold for the direct parameterization
+### Equation (6) does not hold for the direct parameterization
+$$
+\begin{aligned}
+   \sum\limits_a \nabla_\theta \pi(a) =& \left(\sum\limits_a\frac{\partial \pi(a)}{\partial \theta_1},\ldots, \sum\limits_a\frac{\partial \pi(a)}{\partial \theta_m}\right)\\ 
+\end{aligned}
+$$
 
+If every $\frac{\partial \pi(a)}{\partial \theta_1}$ has the same variables, then $\sum\limits_a\frac{\partial \pi(a)}{\partial \theta_1} = \frac{\partial \sum\limits_a\pi(a)}{\partial \theta_1} = 0$. But in the case of the direct parameterization, this assumption does not hold, i.e., $\sum\limits_a\frac{\partial \pi(a)}{\partial \theta_1} = \vert A\vert$.

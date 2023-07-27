@@ -14,7 +14,7 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 
 > And how could I bear to be a man, if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
 > 
-> *- Friedrich Nietzsche, Thus Spoke Zarathustra*
+> *- Friedrich Nietzsche, Thus Spoke Zarathustra.*
 {: .prompt-info }
 
 ---
@@ -79,6 +79,7 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 - Myers-Briggs Type Indicator (MBTI): [INTJ-T (my test result)](https://www.16personalities.com/profiles/8dc4f03308407).
   - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
 - Enneagram: [Type Five with a Four-Wing](https://www.enneagraminstitute.com/type-5).
+> I believe these are efficient communication protocols, and using them allows me to easily introduce my profile.
 
 ---
   

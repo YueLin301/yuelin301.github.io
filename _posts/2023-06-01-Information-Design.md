@@ -13,7 +13,7 @@ pin: True
  
 ## What is Information Design?
 
-> "Sometimes, the truth is not good enough." *- Batman, The Dark Knight (2008)*
+> "Sometimes, the truth is not good enough." *- Batman, The Dark Knight (2008).*
 {: .prompt-info }
 
 Communication does not just happen in fully cooperative scenarios. 

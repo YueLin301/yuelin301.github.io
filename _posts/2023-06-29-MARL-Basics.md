@@ -167,6 +167,9 @@ The algorithms designed for the fully cooperative scenarios without centralized 
    Journal of machine learning research (JMLR) 2003.
 - [ ] [Convergence of Q-learning: A Simple Proof](http://users.isr.ist.utl.pt/~mtjspaan/readingGroup/ProofQlearning.pdf).  
    Francisco S. Melo.
+- [ ] Online Convex Programming and Generalized Infinitesimal Gradient Ascent.  
+   Martin Zinkevich.  
+   International Conference on Machine Learning (ICML) 2003.
 - [ ] Value-Function Reinforcement Learning in Markov Games.  
    Michael L. Littman.  
    Cognitive Systems Research 2001.

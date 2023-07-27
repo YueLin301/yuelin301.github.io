@@ -1,0 +1,122 @@
+---
+title: Details of Policy Gradient Convergence
+date: 2023-07-25 02:40:00 +0800
+categories: [Mathematics]
+tags: [convergence, policy gradient]
+math: True
+---
+
+> The only way to make sense out of change is to plunge into it, move with it, and join the dance. *- Alan Watts.*
+{: .prompt-info }
+
+
+## About
+> This note is based on this awesome paper:
+> 
+> Agarwal, Alekh, et al. "On the theory of policy gradient methods: Optimality, approximation, and distribution shift." The Journal of Machine Learning Research 22.1 (2021): 4431-4506.
+>
+> And I will provide some omitted details here.
+{: .prompt-info }
+
+## Details of Setting
+
+### Why $V(s) \le \frac{1}{1-\gamma}$?
+$V(s)$ reaches its upper bound when $r(s,a)=1,\forall s,a$, which equals $\sum\limits_{t=0}^\infty \gamma^t$.
+
+And it is a geometric progression:
+- $a_n = a_0 \cdot \gamma^{n-1}$,
+- $S_n = a_0 \cdot \frac{1-\gamma^n}{1-\gamma}$,
+   - $S_n = a_0 + a_1 + \ldots + a_n$,
+   - $\gamma\cdot S_n = a_1 + \ldots + a_n + a_{n+1}$,
+   - $(1-\gamma)\cdot S_n = a_0\cdot (1 - \gamma^n)$.
+- $\lim\limits_{n\to\infty}S_n = \frac{a_0}{1-\gamma} = \frac{1}{1-\gamma}$.
+
+
+### The famous theorem of Bellman and Dreyfus (1959)?
+
+> The famous theorem of Bellman and Dreyfus (1959) shows there exists a policy $\pi^\star$ which simultaneously maximizes $V^\pi(s_0)$, for all states $s_0\in S$.
+
+I have read this referenced paper, and I did not find any theorem. This paper is mainly about trading additional computing time for additional memory capacity.
+
+However this statement is intuitive and is not hard to understand. Assume there is a fixed $s_{-1}$ and can be transited to $s_0$ according to $\rho$, then this problem is equivalent to the one that has a fixed $s_0$.
+
+### Direct parameterization
+$\theta\in\Delta(A)^{\vert S\vert}$ means for every state $s$ the parameters are  a point in a simplex. 
+
+For eample, for state $s_0$, there are actions $a_1, a_2$, the parameters of the current policy $\pi_\theta(\cdot \mid s_0)$ are 
+- $\theta_{s_0,a_1} = 0.2 = \pi_\theta(a_1 \mid s_0)$, and
+- $\theta_{s_0,a_2} = 0.8 = \pi_\theta(a_2 \mid s_0)$.
+
+### Softmax parameterization
+
+Sometimes it can be $\pi_\theta(a\mid s) = \frac{\exp(\tau\cdot \theta_{s,a})}{\sum\limits_{a'}\exp(\tau\cdot \theta_{s,a'})}$, which is called energy-based policy, where $\tau$ is the temperature parameter (inverse temperature) and $\theta_{s,a}$ is the energy function.
+
+> Haarnoja, Tuomas, et al. "Reinforcement learning with deep energy-based policies." International conference on machine learning. PMLR, 2017.
+{: .prompt-info }
+
+### $V^{\pi_\theta}(s)$ is non-concave
+We want to **maximize** $V^{\pi_\theta}(s)$, so if $V^{\pi_\theta}(s)$ is **concave** then we can apply standard tools of convex optimization.  Unfortunately it is not.
+
+As shown in the appendix, there is a MDP where exists policy points $\pi_1, \pi_2$ that $V^{\pi_1}(s)+V^{\pi_2}(s)> 2\cdot V^{\frac{1}{2}(\pi_1+\pi_2)}(s)$. This shows a property of convex, so $V^{\pi_\theta}(s)$ is non-concave.
+
+### Why is there a coefficient $(1-\gamma)$ in (4)?
+Recall that the derivation of the policy gradient theorem:
+$$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} \sum\limits_{k=0}^{\infty} \gamma^k \cdot \text{Pr}(s_0\to s, k) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).$$
+
+Note that $\lim\limits_{k\to\infty} \sum\limits_{k=0}^{\infty} \gamma^k = \frac{1}{1-\gamma} > 1$. The value of discounted state visitation distribution should not larger than $1$. So the coefficient $(1-\gamma)$ is for normalization.
+
+
+
+### Why is there a coefficient $\frac{1}{1-\gamma}$ in (5)?
+
+$$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).$$
+
+It is used to cancel that normalization.
+
+### Advantage
+$A^{\pi}(s,a):= Q^\pi(s,a)-V^\pi(s) = Q^\pi(s,a) - \sum\limits_{a}\pi(a\mid s) \cdot Q^\pi(s,a)$.
+
+Given $s$ and $\pi$, $A^{\pi}(s,a)$ measures how much better the expected future return after selecting action $a$ is compared to the expected future return of sampling action based on the current policy $\pi$ in this state $s$.
+
+### Baseline
+This part partially use material from Prof. Wang's [Lecture note 18: Variance reduction](https://drive.google.com/drive/folders/1u1oyOMsvo4bJ765NE_2HSR5x40uXWwxD) and *Reinforcement learning: An introduction*.
+$$\nabla_{\theta} V^{\pi_\theta}(s_0) =\frac{1}{1-\gamma} \mathbb{E}_{s\sim d_{s_0}^\pi}\mathbb{E}_{a\sim\pi(\cdot\mid s)}\left[ Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s)\right].$$
+
+Policy gradient is unbiased but with high variance. To reduce it, a natural solution is to subtract a baseline $b(s)$ from $Q^\pi$, i.e., 
+$$\nabla_{\theta} V^{\pi_\theta}(s_0) =\frac{1}{1-\gamma} \mathbb{E}_{s\sim d_{s_0}^\pi}\mathbb{E}_{a\sim\pi(\cdot\mid s)}\left[ \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s)\right],$$
+$$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s),$$
+or
+$$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta} \pi(a\mid s).$$
+
+This is still unbiased:
+$$\begin{aligned}
+\sum\limits_a b(s)\cdot \nabla_{\theta} \pi(a\mid s) 
+=& b(s) \cdot\nabla_\theta\sum\limits_a \pi(a\mid s) \\
+=& b(s) \cdot\nabla_\theta 1 \\
+=& 0. 
+\end{aligned}
+$$
+
+But it has lower variance:
+> Assume that:
+> - $X = Q^\pi(s,a)\cdot \nabla_{\theta} \pi(a\mid s)$,
+> - $Y = \nabla_{\theta} \pi(a\mid s)$,
+> - $\mathbb{E} \left[ X \right] = \mu$,
+> - $\mathbb{E} \left[ Y \right] = \eta = 0$,
+> - $X' = X + c(Y-\eta)$.
+> 
+> Then:
+> - $\mathbb{E} \left[ X' \right] = \mu$,
+> - $$\begin{aligned} \mathbb{V} \left[ X' \right] =& \mathbb{V} \left[ X + c(Y-\eta) \right] \\ =& \mathbb{V} \left[ X \right] + c^2\cdot \mathbb{V} \left[ Y-\eta \right] +2c\cdot \text{Cov}(X,Y-\eta) \\ =& \mathbb{V} \left[ Y-\eta \right] \cdot c^2 + 2\cdot \text{Cov}(X,Y-\eta)\cdot c + \mathbb{V} \left[ X \right].\end{aligned}$$
+> - $\min \mathbb{V} \left[ X' \right] = \left(1 - \text{Corr(X,Y)}\right)\cdot \mathbb{V} \left[ X \right]$.
+<!-- $$
+\mathbb{E}_x \left[ \mathbb{E}_y \left[ f(x,y) - b(x) \cdot g(x,y) \right] \right]
+$$ -->
+
+> Common usage: GAE (Generalized Advantage Estimation).
+>
+> Schulman, John, et al. "High-dimensional continuous control using generalized advantage estimation." arXiv preprint arXiv:1506.02438 (2015).
+{: .prompt-info }
+
+### (6) does not hold for the direct parameterization
+

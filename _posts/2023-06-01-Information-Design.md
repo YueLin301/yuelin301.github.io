@@ -7,7 +7,7 @@ math: True
 pin: True
 ---
 
- > This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+> This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
 {: .prompt-warning }
 
  

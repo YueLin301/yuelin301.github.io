@@ -23,7 +23,7 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 - **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
-        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127
+        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127 (Tied with another student.)
     - School of Mechanical Engineering (2018.9 - 2019.6)  
         > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
 

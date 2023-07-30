@@ -10,18 +10,23 @@ pin: True
 > This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
 {: .prompt-warning }
 
+---
+
 > The only way to make sense out of change is to plunge into it, move with it, and join the dance. *- Alan Watts.*
 {: .prompt-info }
 
+---
 
 ## About
-This note is based on this awesome paper:
+This note is based on the awesome paper:
 
 > Agarwal, Alekh, et al. "On the theory of policy gradient methods: Optimality, approximation, and distribution shift." The Journal of Machine Learning Research 22.1 (2021): 4431-4506.
 {: .prompt-info }
 
 And I will provide some omitted details here. 
-The writing of the entire article may be somewhat **verbose**, and this is to familiarize myself with the content.
+The writing of the entire note may be somewhat **verbose**, and this is to familiarize myself with the content.
+
+---
 
 ## Details of Setting
 
@@ -36,6 +41,7 @@ And it is a geometric progression:
    - $(1-\gamma)\cdot S_n = a_0\cdot (1 - \gamma^n)$.
 - $\lim\limits_{n\to\infty}S_n = \frac{a_0}{1-\gamma} = \frac{1}{1-\gamma}$.
 
+---
 
 ### The famous theorem of Bellman and Dreyfus (1959)
 
@@ -45,12 +51,16 @@ I have read this referenced paper, and I do not find any theorem. This paper is 
 
 However this statement is intuitive and is not hard to understand. Assume there is a fixed $s_{-1}$ and can be transited to $s_0$ according to $\rho$, then this problem is equivalent to the one that has a fixed $s_0$.
 
+---
+
 ### Direct parameterization
 $\theta\in\Delta(A)^{\vert S\vert}$ means for every state $s$ the parameters are  a point in a simplex. 
 
 For eample, for state $s_0$, there are actions $a_1, a_2$, the parameters of the current policy $\pi_\theta(\cdot \mid s_0)$ are 
 - $\theta_{s_0,a_1} = 0.2 = \pi_\theta(a_1 \mid s_0)$, and
 - $\theta_{s_0,a_2} = 0.8 = \pi_\theta(a_2 \mid s_0)$.
+
+---
 
 ### Softmax parameterization
 
@@ -59,12 +69,16 @@ Sometimes it can be $\pi_\theta(a\mid s) = \frac{\exp(\tau\cdot \theta_{s,a})}{\
 > Haarnoja, Tuomas, et al. "Reinforcement learning with deep energy-based policies." International conference on machine learning. PMLR, 2017.
 {: .prompt-info }
 
+---
+
 ### $V^{\pi_\theta}(s)$ is non-concave (Lemma 1)
 We want to **maximize** $V^{\pi_\theta}(s)$, so if $V^{\pi_\theta}(s)$ is **concave** then we can apply standard tools of convex optimization.  Unfortunately it is not.
 
 As shown in the appendix, there is a MDP where exists policy points $\pi_1, \pi_2$ that $V^{\pi_1}(s)+V^{\pi_2}(s)> 2\cdot V^{\frac{1}{2}(\pi_1+\pi_2)}(s)$. This shows a property of convex, so $V^{\pi_\theta}(s)$ is non-concave.
 
-### Why is there a coefficient $(1-\gamma)$ in (4)?
+---
+
+### Why is there a coefficient $(1-\gamma)$ in $(4)$?
 $$
 d_{s_0}^\pi(s) := (1-\gamma) \sum_{t=0}^\infty \gamma^t {\Pr}^\pi(s_t=s|s_0).
 $$
@@ -81,21 +95,22 @@ $$
 
 Note that $\lim\limits_{k\to\infty} \sum\limits_{k=0}^{\infty} \gamma^k = \frac{1}{1-\gamma} > 1$. The value of discounted state visitation distribution should not larger than $1$. So the coefficient $(1-\gamma)$ is for normalization.
 
+---
 
-
-### Why is there a coefficient $\frac{1}{1-\gamma}$ in (5)?
+### Why is there a coefficient $\frac{1}{1-\gamma}$ in $(5)$?
 $$
-\nabla_\theta V^{\pi_\theta}(s_0) =
-\frac{1}{1-\gamma} \, \mathbb{E}_{s \sim d_{s_0}^{\pi_\theta} }\mathbb{E}_{a\sim \pi_\theta(\cdot | s) }
+\begin{aligned}
+\nabla_\theta V^{\pi_\theta}(s_0) 
+=& \frac{1}{1-\gamma} \, \mathbb{E}_{s \sim d_{s_0}^{\pi_\theta} }\mathbb{E}_{a\sim \pi_\theta(\cdot | s) }
 \big[\nabla_\theta \log
-\pi_{\theta}(a| s) Q^{\pi_\theta}(s,a)\big] .
-$$
-
-$$
-\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).
+\pi_{\theta}(a| s) Q^{\pi_\theta}(s,a)\big] \\
+=& \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).
+\end{aligned}
 $$
 
 It is used to cancel that normalization.
+
+---
 
 ### Advantage
 $$
@@ -107,6 +122,8 @@ A^{\pi}(s,a)
 $$
 
 Given $s$ and $\pi$, $A^{\pi}(s,a)$ measures how much better the expected future return after selecting action $a$ is compared to the expected future return of sampling action based on the current policy $\pi$ in this state $s$.
+
+---
 
 ### Baseline
 > This part partially use material from Prof. Wang's [Lecture note 18: Variance reduction](https://drive.google.com/drive/folders/1u1oyOMsvo4bJ765NE_2HSR5x40uXWwxD) and *Reinforcement learning: An introduction*.
@@ -163,6 +180,8 @@ $$ -->
 > Schulman, John, et al. "High-dimensional continuous control using generalized advantage estimation." arXiv preprint arXiv:1506.02438 (2015).
 {: .prompt-info }
 
+---
+
 ### Equation (6) does not hold for the direct parameterization
 $$
 \begin{aligned}
@@ -172,6 +191,7 @@ $$
 
 If every $\frac{\partial \pi(a)}{\partial \theta_1}$ has the same variables, then $\sum\limits_a\frac{\partial \pi(a)}{\partial \theta_1} = \frac{\partial \sum\limits_a\pi(a)}{\partial \theta_1} = 0$. But in the case of the direct parameterization, this assumption does not hold, i.e., $\sum\limits_a\frac{\partial \pi(a)}{\partial \theta_1} = 1$.
 
+---
 
 ### The performance difference lemma (Lemma 2)
 
@@ -214,14 +234,14 @@ $$
 $$
 
 $(b)$: The tower property of conditional expectations (or law of total probability):
-If $\mathcal{H} \sube \mathcal{G}$, then
+If $\mathcal{H} \subseteq \mathcal{G}$, then
 
 $$
 \mathbb{E}\left[\mathbb{E}\left[X\mid \mathcal{G} \right] \mid \mathcal{H} \right] = \mathbb{E}\left[X\mid \mathcal{H} \right].
 $$
 
 Correspondingly, 
-- $\mathcal{G} = \tau \sim {\Pr}^\pi(\tau|s_0=s)$, 
+- $\mathcal{G} = \tau \sim {\Pr}^\pi(\tau \mid s_0=s)$, 
 - $\mathcal{H} = (s_t,a_t)$.
 
 $(c)$: Step $(b)$ is necessary. Note that
@@ -239,7 +259,29 @@ $$
 > Check another proof [here](https://people.cs.umass.edu/~akshay/courses/coms6998-11/files/lec7.pdf).
 {: .prompt-info }
 
+---
 
 ### Distribution mismatch coefficient (pass)
-I think this concept is introduced too soon. Let's discuss it at a later time.
+I think this concept is introduced too soon. Let's discuss it later.
 
+
+---
+
+
+## Details on Constrained Tabular Parameterization
+
+> This algorithm is **projected gradient ascent** on the **direct policy parametrization** of the MDP.
+
+<!-- ### Equation $(7)$
+$\mu$ is a distribution of $s_0$.
+
+$$
+\begin{aligned}
+& \nabla_\theta V^{\pi_\theta}(\mu) \\
+=&  \frac{\partial V^{\pi_\theta}(\mu)}{\partial } \\
+=& \frac{1}{1-\gamma} \, \mathbb{E}_{s \sim d_{s_0}^{\pi_\theta} }\mathbb{E}_{a\sim \pi_\theta(\cdot | s) }
+\big[\nabla_\theta \log
+\pi_{\theta}(a| s) Q^{\pi_\theta}(s,a)\big] \\
+=& \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).
+\end{aligned}
+$$ -->

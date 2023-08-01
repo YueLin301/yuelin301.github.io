@@ -2,7 +2,7 @@
 title: Details on the Analysis of Policy Gradient Methods
 date: 2023-07-25 02:40:00 +0800
 categories: [Mathematics]
-tags: [convergence, policy gradient]
+tags: [convergence, policy gradient, reinforcement learning]
 math: True
 pin: True
 ---
@@ -92,6 +92,7 @@ $$
 > Policy Gradient
 > - Williams, Ronald J. "Simple statistical gradient-following algorithms for connectionist reinforcement learning." Machine learning 8 (1992): 229-256.
 > - Sutton, Richard S., et al. "Policy gradient methods for reinforcement learning with function approximation." Advances in neural information processing systems 12 (1999).
+{: .prompt-info }
 
 Note that $\lim\limits_{k\to\infty} \sum\limits_{k=0}^{\infty} \gamma^k = \frac{1}{1-\gamma} > 1$. The value of discounted state visitation distribution should not larger than $1$. So the coefficient $(1-\gamma)$ is for normalization.
 
@@ -272,7 +273,7 @@ I think this concept is introduced too soon. Let's discuss it later.
 
 > This algorithm is **projected gradient ascent** on the **direct policy parametrization** of the MDP.
 
-<!-- ### Equation $(7)$
+### Equation $(7)$
 $\mu$ is a distribution of $s_0$.
 
 $$
@@ -284,4 +285,4 @@ $$
 \pi_{\theta}(a| s) Q^{\pi_\theta}(s,a)\big] \\
 =& \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).
 \end{aligned}
-$$ -->
+$$

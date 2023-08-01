@@ -48,9 +48,10 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 - A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
     **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin.  
     *International Journal of Advanced Robotic Systems (IJARS) 2022*. 
-- Self-adaptive Walking Speed Control on Underactuated Rimless Wheel.
-    Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.
+- Self-adaptive Walking Speed Control on Underactuated Rimless Wheel.  
+    Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.  
     *IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.
+
 ---
 
 ## Manuscripts

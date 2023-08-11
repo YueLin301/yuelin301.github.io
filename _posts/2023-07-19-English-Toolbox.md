@@ -57,13 +57,20 @@ math: True
 
 ## TOEFL
 ### Resources
-1. [KMF](https://toefl.kmf.com/n/home)
-2. [Test Resources](https://www.toeflresources.com/speaking-section/toefl-speaking-templates/)
+1. [ETS](https://www.ets.org/toefl.html)
+2. [KMF](https://toefl.kmf.com/n/home)
+3. [Test Resources](https://www.toeflresources.com/speaking-section/toefl-speaking-templates/)
 
+
+### Overview
+1. [Sections and time schedule](https://www.ets.org/toefl/test-takers/ibt/about/content.html)
+2. 
+
+### Reading
 
 ### Speaking
-1. 17 min.
-2. 4 questions.
+- 17 min.
+- 4 questions.
    1. Independent Speaking
    2. Campus Announcement
    3. General to Specific

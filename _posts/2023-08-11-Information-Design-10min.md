@@ -25,14 +25,17 @@ The key to the sender successfully persuading a receiver with whom it has an int
 Assuming that the sender's signal set is equal to the receiver's action set, the sender's signals can be interpreted as recommending the receiver to take a specific action. This common assumption is without loss of generality according to the **revelation principle**, i.e., there is an optimal signaling scheme that does not require more signals than the number of actions available to the receiver. 
 
 Under this premise, **obedience constraints** can be formalized as:
+
 $$
 \sum\limits_{s} \mu_0(s) 
   \cdot \varphi( a\mid s )
   \cdot \Big( r^j(s, a) - r^j(s, a') \Big) \ge 0,
 $$
+
 where $s\in S$ is the state which is only observable by the sender, $\mu_0$ is a prior distribution which is a common knowledge (both know, both know both know, etc.), $a\in A$ is the receiver's action space, $\varphi$ is the sender's signaling scheme, and $r^j$ is the receiver's reward function that depends on the state and the receiver's chosen action.
 
 **The obedience constraints ensure that the receiver will definitely follow the sender's recommendations.** A simple derivation is as follows: 
+
 $$
 \begin{aligned}
   & \sum\limits_{s} \mu_0(s) 
@@ -52,9 +55,11 @@ $$
   \cdot r^j(s, a'), \forall a'\in A.
 \end{aligned}
 $$
+
 where $\mu$ represents the posterior probability. Therefore, a self-interested and rational receiver will definitely follow the sender's recommendations, because the posterior expected payoff of the action recommended by the sender is greater than or equal to the posterior expected payoffs of all other actions. 
 
 This greatly simplifies the problem, allowing **the sender to choose the receiver's action that maximizes its expected payoff, while ensuring that the receiver obeys, and then recommend the receiver to take that action**. Thus, the specific representation of the sender's optimization goal is:
+
 $$
 \begin{aligned}
 \max\limits_{\varphi} \mathbb{E}_{\varphi}[\ r^i(s, a) \ ],\;\;\textrm{s.t. Obedience Constraints.}

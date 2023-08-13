@@ -31,7 +31,7 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 
 ## Research Interests
 - Currently
-    - Deep Multi-Agent Reinforcement Learning
+    - Multi-Agent Reinforcement Learning
     - [Information Design](https://yuelin301.github.io/posts/Information-Design/) (a subfield of computational economics and game theory)
 - Formerly
     - Redundant Manipulator Control

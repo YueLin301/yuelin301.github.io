@@ -11,10 +11,23 @@ math: True
 {: .prompt-info }
 
 
-## Complete Information v.s. Perfect Information
+## Information: Complete v.s. Perfect
 
 > I've looked up these two concepts so many times already, but every time I read about them, I forget shortly afterward. 😅
 {: .prompt-tip }
+
+### [Complete Information](https://en.wikipedia.org/wiki/Complete_information)
+
+Players possess full information about their opponents.
+
+Common knowledge includes
+- utility functions (includingrisk aversion), 
+- paoffs,
+- strategies, and
+- "types" of players.
+
+### Perfect
+
 
 ## Extensive-Form Games
 

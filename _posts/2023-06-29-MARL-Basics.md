@@ -15,32 +15,35 @@ math: True
 1. MDP
    - Markov decision process
    - $(S, A, \mathcal{P}, R, \gamma)$
-   - It is single-agent, fully observable, and dynamic.
+   - Single-agent, fully observable, and dynamic.
 2. POMDP
    - Partially observable Markov decision process
    - $(S, A, \mathcal{P}, R, O, \mathcal{Q}, \gamma)$
-   - It is single-agent, partially observable, and dynamic.
+   - Single-agent, partially observable, and dynamic.
 3. Dec-POMDP
    - Decentralized partially observable Markov decision process
    - $(I, S,\set{A^i}\_{i\in I}, \mathcal{P}, R, \set{O^i}\_{i\in I}, \mathcal{Q}, \gamma)$
-   - It is multi-agent, fully observable, cooperative, and dynamic.
+   - Multi-agent, fully observable, cooperative, and dynamic.
 4. Stochastic games (or Markov games)
    - $(I, S,\set{A^i}\_{i\in I}, \mathcal{P}, \set{R^i}\_{i\in I}, \gamma)$
-   - It is multi-agent, fully observable, C/A/M (meaning that it can be cooperative, adversarial, or mixed-motive), and dynamic.
-5. Normal-form game (or repeated games)
-   - $(I,\set{A^i}\_{i\in I}, \set{R^i}\_{i\in I})$
-   - It is multi-agent, C/A/M, and static.
-6. Extensive-form game
-   - (TODO)
-   - It is multi-agent, C/A/M, and dynamic.
+   - Multi-agent, fully observable, C/A/M (meaning that it can be cooperative, adversarial, or mixed-motive), and dynamic.
 
-where:
+where
 - $I$ is a set of agents (and $\vert I\vert = n$, where $n\ge 2$),
 - $S$ is the state space, 
 - $A$ is the action space, 
 - $P: S\times A \to \Delta(S)$ is the state transition function, 
 - $R: S\times A$
 - (TODO)
+
+1. Normal-form game (or repeated games)
+   - $(I,\set{A^i}\_{i\in I}, \set{R^i}\_{i\in I})$
+   - Multi-agent, C/A/M, and static.
+2. Extensive-form game
+   - $(I, X, Z, f,\set{A^i}\_{i\in I}, \set{R^i}\_{i\in I})$
+   - Multi-agent, C/A/M, and dynamic.
+
+Check this [note]().
 
 
 (TODO)

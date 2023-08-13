@@ -6,8 +6,8 @@ tags: [theoretical computer science, computational complexity theory, reduction,
 math: True
 ---
 
-> This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
-{: .prompt-warning }
+> This note will be consistently updated.
+{: .prompt-info }
 
 ## What is TCS?
 *([Wikipedia](https://en.wikipedia.org/wiki/Theoretical_computer_science))*   

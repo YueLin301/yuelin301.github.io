@@ -42,8 +42,9 @@ where
 2. Extensive-form game
    - $(I, X, Z, f,\set{A^i}\_{i\in I}, \set{R^i}\_{i\in I})$
    - Multi-agent, C/A/M, and dynamic.
+3. Bayesian game
 
-Check this [note]().
+Check this note, [A Memo on Game Theory](https://yuelin301.github.io/posts/Game-Theory-Memo/).
 
 
 (TODO)
@@ -56,6 +57,7 @@ Some potentially confusing concepts:
 - Dynamic game
 - Normal-form game
 - Extensive-form game
+- Bayesian game
 
 
 
@@ -188,3 +190,6 @@ The algorithms designed for the fully cooperative scenarios without centralized 
 - [ ] Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms.  
    Kaiqing Zhang, Zhuoran Yang, Tamer Basar.  
    *Handbook of reinforcement learning and control 2021*.
+
+> Disclaimer: The above content partially uses materials from the cited papers. Corresponding links or references have been provided.
+{: .prompt-danger }

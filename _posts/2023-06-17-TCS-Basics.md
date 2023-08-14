@@ -21,8 +21,7 @@ Topics that I might come across:
 5. Information theory
 6. Machine learning
 
-> This note is basically a compilation of information from Wikipedia. 😂  
-> And currently I mainly focus on the computational complexity theory.
+> currently I mainly focus on the computational complexity theory.
 {: .prompt-info }
 
 
@@ -81,8 +80,12 @@ $$
 \begin{aligned}
 e^x =& 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\dots & \forall x \\
 =& 1+x+\frac{x^2}{2!}+O(x^3) & x\to 0\\
-=& 1+x+O(x^2) & x\to 0\\
+=& 1+x+O(x^2) & x\to 0  \\
 \end{aligned}
 $$
 
 Compared with $x^2$, $x^3$ is closer to $0$, when $x\to 0$.
+
+
+> Disclaimer: The above content is summarized from Wikipedia and other sources. Corresponding links or references have been provided.
+{: .prompt-danger }

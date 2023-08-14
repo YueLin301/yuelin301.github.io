@@ -316,11 +316,11 @@ for all $a^{j\prime}\in A^j$.
 4. Others:
    1. The receiver has private information
 
-## Closing Remarks
-
-> **An ethical justification:**  
+## An Ethical Justification
 I do not think information design is immoral. Information is a kind of property of the sender, and it is legal for it to profit from its information. (Unless the utilized information is a public resource.)  
 Furthermore, in those cases where the sender can improve its own expected payoff through information design, the receiver's payoff is not worse than that of the sender not reveal information at all.  
 Nevertheless, practice use of information design should take the sender's objective function into some serious consideration.
 {: .prompt-tip }
 
+> Disclaimer: The above content is summarized from the mentioned papers. Corresponding links or references have been provided.
+{: .prompt-danger }

@@ -177,7 +177,7 @@ It aims to align the interests of all agents.
 [^wiki-complete]: [Wikipedia: Complete Information](https://en.wikipedia.org/wiki/Complete_information).  
 [^wiki-perfect]: [Wikipedia: Perfect Information](https://en.wikipedia.org/wiki/Perfect_information).  
 [^wiki-boundedration]: [Wikipedia: Bounded Rationality](https://en.wikipedia.org/wiki/Bounded_rationality).  
-[^MIT-opencourse] [MIT OpenCourseWare: 14.12 Economic Applications of Game Theory](https://ocw.mit.edu/courses/14-12-economic-applications-of-game-theory-fall-2012/b90ef0b930888cc7a1828d5eaf91f5c9_MIT14_12F12_chapter3.pdf).
+[^MIT-opencourse]: [MIT OpenCourseWare: 14.12 Economic Applications of Game Theory](https://ocw.mit.edu/courses/14-12-economic-applications-of-game-theory-fall-2012/b90ef0b930888cc7a1828d5eaf91f5c9_MIT14_12F12_chapter3.pdf).
 
 
 > Disclaimer: The above content is summarized from Wikipedia and other sources. Corresponding links or references have been provided.

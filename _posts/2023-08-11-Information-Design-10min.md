@@ -72,7 +72,7 @@ Information design was first introduced in this paper (and it has been cited 246
 > Kamenica, Emir, and Matthew Gentzkow. "Bayesian persuasion." *American Economic Review* (2011).
 {: .prompt-info }
 
-In practical economic scenarios, persuasion is ubiquitous and plays a crucial role. As stated in the title and conclusion of McCloskey and Klamer’s paper, **“one quarter of the GDP is persuasion”**. This kind of persuasion demonstrates that communication is conceivable in mixed-motive scenarios.
+In practical economic scenarios, persuasion is ubiquitous and plays a crucial role. As stated in the title and conclusion of McCloskey and Klamer’s paper, **“one quarter of the GDP is persuasion”.** This kind of persuasion demonstrates that communication is conceivable in mixed-motive scenarios.
 
 > Research in this second strand includes applications to (in no particular order): financial sector stress tests, grading in schools, employee feedback, law enforcement deployment, censorship, entertainment, financial over-the-counter markets, voter coalition formation, research procurement, contests, medical testing, medical research, matching platforms, price discrimination, financing, insurance, transparency in organizations, and routing software.  
 
@@ -83,7 +83,7 @@ Among them, **routing software** is an relatively easily imaginable example.
 1. The central routing software and user vehicles are in a **mixed-motive** scenario, where the routing software aims to optimize the overall traffic speed, while each user wants to increase their individual speed. 
 2. Moreover, the routing software has more **informational advantage** than user vehicles; it can know the congestion status of all relevant road segments, while user vehicles are not allowed to do so. Each user is self-interested, which may lead to a decrease in collective benefits, known as a social dilemma. 
 
-A common example of this is **Braess's paradox**. Using information design can resolve this issue. For specific details, please refer to the article mentioned in this paper: 
+A common example of this is [**Braess's paradox**](https://en.wikipedia.org/wiki/Braess%27s_paradox). Using information design can resolve this issue. For specific details, please refer to the article mentioned in this paper: 
 
 > Das, Sanmay, Emir Kamenica, and Renee Mirka. "Reducing congestion through information design." *2017 55th annual allerton conference on communication, control, and computing (allerton)*. IEEE, 2017.
 {: .prompt-info }

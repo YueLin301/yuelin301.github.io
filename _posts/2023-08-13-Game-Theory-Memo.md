@@ -45,8 +45,11 @@ that
 
 ## Information Set
 
+**Definition 3.4**[^MIT-opencourse] An **information set** is a collection of nodes such that
+1. the same player $i$ is to move at each of these nodes; 
+2. the same moves are available at each of these nodes.
 
-
+**Definition 3.5**[^MIT-opencourse] An **information partition** is an allocation of each non-terminal node of the tree to an information set; the starting node must be "alone".
 
 ## Extensive-Form Games
 
@@ -55,6 +58,14 @@ that
 {: .prompt-info }
 
 The extensive-form representation of a game contains all the information about the game explicitly, by defining who moves when, what each player knows when he moves, what moves are available to him, and where each move leads to, etc. This is done by use of a **game tree** and **information sets**–as well as more basic information such as players and the payoffs.[^MIT-opencourse]
+
+
+**Definition 3.3**[^MIT-opencourse] (Extensive form) A Game consists of
+- a set of players, 
+- a tree,
+- an allocation of non-terminal nodes of the tree to the players,
+- an informational partition of the non-terminal nodes (to be made precise in the next subsection), and
+- payoffs for each player at each terminal node.
 
 ---
 
@@ -105,14 +116,9 @@ Each player is perfectly informed of all the events that have previously occurre
 
 ### Examples[^wiki-complete] [^wiki-perfect]
 
-Perfect and complete:
-- Chess, Tic-Tac-Toe, Go.
-
-Perfect but incomplete:
-- Bayesian game.
-
-Complte but imperfect:
-- Card games, where each player's cards are hidden from other players but objectives are known. The dealing event is not public (imperfect). 
+- Perfect and complete: Chess, Tic-Tac-Toe, Go.
+- Perfect but incomplete: Bayesian game.
+- Complte but imperfect: Card games, where each player's cards are hidden from other players but objectives are known. The dealing event is not public (imperfect). 
 
 
 ## Social Choice Function

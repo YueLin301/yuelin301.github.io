@@ -204,9 +204,9 @@ $s_0$,
 > Kakade, Sham, and John Langford. "Approximately optimal approximate reinforcement learning." Proceedings of the Nineteenth International Conference on Machine Learning. 2002.
 {: .prompt-info }
 
-But I cannot find this paper. The proof is provided in the appendix and I pu it here with additional details.
+But I cannot find this paper. The proof is provided in the appendix and I put it here with additional details.
 
-Let $\Pr^\pi(\tau | s_0 = s)$ denote the probability of observing a trajectory $\tau$ when starting in state $s$ and following the policy $\pi$. Using a telescoping argument, we have:
+Let $\Pr^\pi(\tau \mid s_0 = s)$ denote the probability of observing a trajectory $\tau$ when starting in state $s$ and following the policy $\pi$. Using a telescoping argument, we have:
 
 $$
 \begin{aligned}

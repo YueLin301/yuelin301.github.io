@@ -11,9 +11,9 @@ pin: True
 
 Information design focuses on scenarios of **mixed-motive** unidirectional communication, where one self-interested sender with informational advantage attempts to **persuade** a self-interested rational receiver to take actions that the sender prefers.
 
-- The "**informational advatage**" means that the sender has something that the receiver wants to know (i.e. which affects the receiver's payoff) but cannot know, 
-- "**self-interested**" refers to the agent being concerned only about its own expected payoff, and 
-- "**rational**" means that when it believes one action's payoff is greater than another's, the agent will choose the action with higher expected payoff.
+- The **"informational advatage"** means that the sender has something that the receiver wants to know (i.e. which affects the receiver's payoff) but cannot know, 
+- **"self-interested"** refers to the agent being concerned only about its own expected payoff, and 
+- **"rational"** means that when it believes one action's payoff is greater than another's, the agent will choose the action with higher expected payoff.
 
 Additionally, information design with a sender and a receiver is known as Bayesian persuasion. And the flow of an one-step Bayesian persuasion process is as follows:
 1. The sender commits a signaling scheme to the receiver. The receiver will use this to calculate its posterior expected payoff. (This is referred to as the **commitment assumption**.);
@@ -58,7 +58,7 @@ $$
 
 where $\mu$ represents the posterior probability. Therefore, a self-interested and rational receiver will definitely follow the sender's recommendations, because the posterior expected payoff of the action recommended by the sender is greater than or equal to the posterior expected payoffs of all other actions. 
 
-This greatly simplifies the problem, allowing **the sender to choose the receiver's action that maximizes its expected payoff, while ensuring that the receiver obeys, and then recommend the receiver to take that action**. Thus, the specific representation of the sender's optimization goal is:
+This greatly simplifies the problem, allowing **the sender to choose the receiver's action that maximizes its expected payoff, while ensuring that the receiver obeys, and then recommend the receiver to take that action.** Thus, the specific representation of the sender's optimization goal is:
 
 $$
 \begin{aligned}

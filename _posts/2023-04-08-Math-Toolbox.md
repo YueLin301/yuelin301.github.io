@@ -1,8 +1,8 @@
 ---
 title: Math Toolbox
-date: 2023-04-07 02:40:00 +0800
+date: 2023-04-08 02:40:00 +0800
 categories: [Mathematics]
-tags: [English, toolbox]
+tags: [math, toolbox]
 math: True
 ---
 
@@ -118,4 +118,9 @@ $$
 ### Moment
 
 ## Algebra
+
+## Notation
+$$
+[[n]] = \set{1, \ldots, n}
+$$
 

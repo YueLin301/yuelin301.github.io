@@ -1,6 +1,6 @@
 ---
 title: A Memo on Game Theory
-date: 2023-08-13 014:30:00 +0800
+date: 2023-08-13 14:30:00 +0800
 categories: [Economics & Game Theory]
 tags: [game theory]
 math: True
@@ -41,13 +41,19 @@ that
 2. for every other node, there is exactly one incoming edge;
 3. for any two nodes, there is a unique path that connect these two nodes.
 
-
+And:
+- The edges are actions. 
+- Each non-terminal node has been defined with who is to perform the action at this moment.
+- Payoffs for each player are defined at each terminal node.
 
 ## Information Set
 
 **Definition 3.4**[^MIT-opencourse] An **information set** is a collection of nodes such that
 1. the same player $i$ is to move at each of these nodes; 
 2. the same moves are available at each of these nodes.
+
+> In my understanding, the nodes in an information set share the same parent node, and they are at the same depth of the tree. The player taking actions at the current depth cannot figure out which node it is at. It cannot see the opponent's previous move.
+{: .prompt-tip }
 
 **Definition 3.5**[^MIT-opencourse] An **information partition** is an allocation of each non-terminal node of the tree to an information set; the starting node must be "alone".
 
@@ -64,8 +70,9 @@ The extensive-form representation of a game contains all the information about t
 - a set of players, 
 - a tree,
 - an allocation of non-terminal nodes of the tree to the players,
-- an informational partition of the non-terminal nodes (to be made precise in the next subsection), and
+- an informational partition of the non-terminal nodes, and
 - payoffs for each player at each terminal node.
+
 
 ---
 
@@ -168,6 +175,21 @@ It aims to align the interests of all agents.
 
 
 ## Regret
+
+## Potential Game
+
+## Backward Induction
+
+## Forward Induction
+
+
+## Solution concept
+
+### Nash equilibrium
+
+### Subgame perfect equilibrium
+
+### Perfect Bayesian equilibrium
 
 ---
 

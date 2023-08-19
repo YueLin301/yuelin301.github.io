@@ -55,11 +55,6 @@ math: True
 ## Grammar
 [GrammarBook.com](https://www.grammarbook.com)
 
-## For Research
-### Vocabulary
-1. The **canonical** formulation considers ...
-2. 
-
 ## TOEFL
 ### Resources
 1. [ETS](https://www.ets.org/toefl.html)
@@ -68,8 +63,9 @@ math: True
 
 
 ### Overview
-1. [Sections and time schedule](https://www.ets.org/toefl/test-takers/ibt/about/content.html)
-2. 
+> [Sections and time schedule](https://www.ets.org/toefl/test-takers/ibt/about/content.html)
+{: .prompt-info }
+
 
 ### Reading
 
@@ -77,9 +73,10 @@ math: True
 - 17 min.
 - 4 questions.
    1. Independent Speaking
-   2. Campus Announcement
-   3. General to Specific
-   4. Academic Lecture
+   2. Integrated Speaking
+      1. Campus Announcement
+      2. General to Specific
+      3. Academic Lecture
 
 ### Independent Speaking
 #### Template (15s prep, 45s answer)

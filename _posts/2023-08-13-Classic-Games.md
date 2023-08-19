@@ -1,6 +1,6 @@
 ---
 title: Classic Games
-date: 2023-08-13 016:30:00 +0800
+date: 2023-08-13 16:30:00 +0800
 categories: [Economics & Game Theory]
 tags: [game theory, matrix game]
 math: True

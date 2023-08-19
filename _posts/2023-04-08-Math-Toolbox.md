@@ -11,6 +11,16 @@ math: True
 
 ---
 
+## Notation
+$$
+[[n]] = \set{1, \ldots, n}
+$$
+
+$$
+A := B
+$$
+means $A$ is defined as $B$.
+
 ## Logic
 
 ## Inequality
@@ -119,8 +129,29 @@ $$
 
 ## Algebra
 
-## Notation
+## Information Theory
+
+### Self-information
 $$
-[[n]] = \set{1, \ldots, n}
+I(x) = -\log p(x)
 $$
 
+### Mutual Information
+
+### KL divergence
+$$
+\begin{aligned}
+   D_{KL} \left[p(X) \Vert q(X)\right]
+   =& \sum\limits_{x\in X} - p(x)\cdot \log q(x)
+   -p(x)\cdot \log p(x) \\
+   =& \sum\limits_{x\in X} p(x)\cdot \log \frac{p(x)}{q(x)}
+\end{aligned}
+$$
+
+### Entropy
+$$
+\begin{aligned}
+   H(X) =& \mathbb{E}\_{X}\left[I(x)\right]\\
+   =& -\sum\limits_{x} p(x) \cdot \log p(x)
+\end{aligned}
+$$

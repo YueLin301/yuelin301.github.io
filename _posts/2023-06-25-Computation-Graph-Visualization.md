@@ -126,7 +126,8 @@ if __name__ == '__main__':
     graph.view()
 ```
 
-
+> Applying Gumbel-Softmax may cause `NaN` during training. Changing the data type of the variable to float64 seems to have avoided this issue.
+{: .prompt-warning }
 
 ## Model Structure
 

@@ -126,8 +126,11 @@ if __name__ == '__main__':
     graph.view()
 ```
 
-> Applying Gumbel-Softmax may cause `NaN` during training. Changing the data type of the variable to float64 seems to have avoided this issue.
+> Applying Gumbel-Softmax may cause `NaN` during training. Changing the data type of the variable to `float64` seems to have avoided this issue.
 {: .prompt-warning }
+
+> Jang, Eric, Shixiang Gu, and Ben Poole. "Categorical reparameterization with gumbel-softmax." arXiv preprint arXiv:1611.01144 (2016).
+{: .prompt-info }
 
 ## Model Structure
 

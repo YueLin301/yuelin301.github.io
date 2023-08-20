@@ -249,6 +249,8 @@ Check this note: [Dynamic Epistemic Logic](https://yuelin301.github.io/posts/Dyn
 
 ## Poker
 
+## Braess's Paradox
+
 
 > Disclaimer: The description of games is from Wikipedia and other sources (books or papers). Corresponding links or references have been provided. The content regarding attractors is my personal understanding.
 {: .prompt-danger }

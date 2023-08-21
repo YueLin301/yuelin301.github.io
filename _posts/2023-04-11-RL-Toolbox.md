@@ -33,7 +33,7 @@ If $z\sim \mathcal{N}(\mu,\sigma^2)$, then $z = \mu + \sigma \cdot \epsilon$, wh
 
 ### What does Gumbel-Softmax do?
 
-We often use neural networks to generate a probability simplex (i.e., a profile of probability where $0\le p_i$ and $\sum\limits_{i} p_i = 1$). Then we will sample an $x$ based on this distribution. 
+We often use neural networks to generate a probability simplex, i.e., a profile of probability where $0\le p_i$ and $\sum\limits_{i} p_i = 1$. Then we will sample an $x$ based on this distribution. 
 
 An example scenario is in RL, where an agent needs to choose an action $a_t$. We output a distribution $\pi(\cdot \mid s_t)$ and then sample an action $a_t\sim \pi(\cdot \mid s_t)$ based on this distribution to execute.
 
@@ -51,7 +51,7 @@ $$
 \text{softmax}_T (x) = \frac{e^{x_j/T}}{\sum_k e^{x_k/T}}.
 $$
 
-If $T$ is small enough, then the output of the softmax can be seen as a one-hot vector which indicates $i$.
+If temperature $T$ is small enough, then the output of the softmax can be seen as a one-hot vector which indicates $i$.
 
 ### Example code
 Check [my note](https://yuelin301.github.io/posts/Computation-Graph-Visualization/#example-5-nabla_theta-a-with-gumbel-softmax-reparameterization).

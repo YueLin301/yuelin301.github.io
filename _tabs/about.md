@@ -73,7 +73,6 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 ## Other Campus Involvement
 - Achieved a perfect score (100/100) in Advanced Mathematics and served as a class representative. Initiated and organized a weekly seminar on Advanced Mathematics for classmates, promoting a harmonious learning environment.
 - Assisted classmates in preparing for final exams during the pandemic. Check out my [mind map notes](https://github.com/YueLin301/MindMap-bakcup) and you might be surprised by the amount of effort I committed.
-- Responsible for teaching robot simulation software ([Webots](https://cyberbotics.com)) to the laboratory group, and published relevant instructional videos on [bilibili video platform](https://space.bilibili.com/36040555).
 
 ---
 

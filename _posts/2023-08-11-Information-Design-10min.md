@@ -68,15 +68,15 @@ $$
 
 ## What are its applications in real-world scenarios?
 
-Information design was first introduced in this paper (and it has been cited 2460 times to date):
+Information design was first introduced in [this paper](https://www.nber.org/system/files/working_papers/w15540/w15540.pdf) (and it has been cited 2460 times to date):
 > Kamenica, Emir, and Matthew Gentzkow. "Bayesian persuasion." *American Economic Review* (2011).
 {: .prompt-info }
 
-In practical economic scenarios, persuasion is ubiquitous and plays a crucial role. As stated in the title and conclusion of McCloskey and Klamer’s paper, **“one quarter of the GDP is persuasion”.** This kind of persuasion demonstrates that communication is conceivable in mixed-motive scenarios.
+In practical economic scenarios, persuasion is ubiquitous and plays a crucial role. As stated in the title and conclusion of [McCloskey and Klamer’s paper](https://www.jstor.org/stable/2117917), **“one quarter of the GDP is persuasion”.** This kind of persuasion demonstrates that communication is conceivable in mixed-motive scenarios.
 
 > Research in this second strand includes applications to (in no particular order): financial sector stress tests, grading in schools, employee feedback, law enforcement deployment, censorship, entertainment, financial over-the-counter markets, voter coalition formation, research procurement, contests, medical testing, medical research, matching platforms, price discrimination, financing, insurance, transparency in organizations, and routing software.  
 
->  Kamenica, Emir. "Bayesian persuasion and information design." *Annual Review of Economics* (2019).
+>  [Kamenica, Emir. "Bayesian persuasion and information design." *Annual Review of Economics* (2019).](https://www.kevindorst.com/uploads/8/8/1/7/88177244/kamenica_-_bayesian_persuasion_and_information_design_-_2019.pdf)
 {: .prompt-info }
 
 Among them, **routing software** is an relatively easily imaginable example. 
@@ -86,4 +86,9 @@ Among them, **routing software** is an relatively easily imaginable example.
 A common example of this is [**Braess's paradox**](https://en.wikipedia.org/wiki/Braess%27s_paradox). Using information design can resolve this issue. For specific details, please refer to the article mentioned in this paper: 
 
 > Das, Sanmay, Emir Kamenica, and Renee Mirka. "Reducing congestion through information design." *2017 55th annual allerton conference on communication, control, and computing (allerton)*. IEEE, 2017.
+{: .prompt-info }
+
+A computational example about Braess's Paradox is in `Figure 18.2` of [this chapter](https://timroughgarden.org/papers/rg.pdf):
+
+> Roughgarden, Tim. "Routing games." Algorithmic game theory 18 (2007): 459-484.
 {: .prompt-info }

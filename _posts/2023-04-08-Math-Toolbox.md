@@ -11,6 +11,12 @@ math: True
 
 ---
 
+## Optimization
+
+### Convex
+
+### Duality
+
 ## Notation & Operators
 
 ### Misc
@@ -23,28 +29,28 @@ math: True
 > Check [here](https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols).
 {: .prompt-info }
 
-- $\alpha$ (`\alpha`), $\Alpha$ (`\Alpha`). /ˈælfə/.
-- $\beta$ (`\beta`), $\Beta$ (`\Beta`). UK: /ˈbiːtə/, US: /ˈbeɪtə/.
+- $\alpha$ (`\alpha`). /ˈælfə/.
+- $\beta$ (`\beta`). UK: /ˈbiːtə/, US: /ˈbeɪtə/.
 - $\gamma$ (`\gamma`), $\Gamma$ (`\Gamma`), $\varGamma$ (`\varGamma`). /ˈɡæmə/.
 - $\delta$ (`\delta`), $\Delta$ (`\Delta`), $\varDelta$ (`\varDelta`). /ˈdɛltə/.
-- $\epsilon$ (`\epsilon`), $\Epsilon$ (`\Epsilon`),  $\varepsilon$ (`\varepsilon`). /ˈɛpsɪlɒn, ɛpˈsaɪlən/.
-- $\zeta$ (`\zeta`), $\Zeta$ (`\Zeta`). UK: /ˈziːtə/,[1] US: /ˈzeɪtə/.
-- $\eta$ (`\eta`), $\Eta$ (`\Eta`). /ˈiːtə, ˈeɪtə/.
+- $\epsilon$ (`\epsilon`), $\varepsilon$ (`\varepsilon`). /ˈɛpsɪlɒn, ɛpˈsaɪlən/.
+- $\zeta$ (`\zeta`). UK: /ˈziːtə/,[1] US: /ˈzeɪtə/.
+- $\eta$ (`\eta`). /ˈiːtə, ˈeɪtə/.
 - $\theta$ (`\theta`), $\Theta$ (`\Theta`), $\vartheta$ (`\vartheta`), $\varTheta$ (`\varTheta`). UK: /ˈθiːtə/, US: /ˈθeɪtə/.
-- $\iota$ (`\iota`), $\Iota$ (`\Iota`). /aɪˈoʊtə/.
-- $\kappa$ (`\kappa`), $\Kappa$ (`\Kappa`), $\varkappa$ (`\varkappa`). /ˈkæpə/.
+- $\iota$ (`\iota`). /aɪˈoʊtə/.
+- $\kappa$ (`\kappa`), $\varkappa$ (`\varkappa`). /ˈkæpə/.
 - $\lambda$ (`\lambda`), $\Lambda$ (`\Lambda`), $\varLambda$ (`\varLambda`). /ˈlæmdə/.
-- $\mu$ (`\mu`), $\Mu$ (`\Mu`). /ˈm(j)uː/.
-- $\nu$ (`\nu`), $\Nu$ (`\Nu`). /ˈnjuː/.
+- $\mu$ (`\mu`). /ˈm(j)uː/.
+- $\nu$ (`\nu`). /ˈnjuː/.
 - $\xi$ (`\xi`), $\Xi$ (`\Xi`), $\varXi$ (`\varXi`). /zaɪ, ksaɪ/.
 - $o$ (`o`), $O$ (`O`). Omicron, /ˈoʊmɪkrɒn, ˈɒmɪkrɒn, oʊˈmaɪkrɒn/.
 - $\pi$ (`\pi`), $\Pi$ (`\Pi`), $\varpi$ (`\varpi`), $\varPi$ (`\varPi`). /ˈpaɪ/.
-- $\rho$ (`\rho`), $\Rho$ (`\Rho`), $\varrho$ (`\varrho`). /ˈroʊ/.
+- $\rho$ (`\rho`), $\varrho$ (`\varrho`). /ˈroʊ/.
 - $\sigma$ (`\sigma`), $\Sigma$ (`\Sigma`), $\varsigma$ (`\varsigma`), $\varSigma$ (`\varSigma`). /ˈsɪɡmə/.
-- $\tau$ (`\tau`), $\Tau$ (`\Tau`). /ˈtɔː, ˈtaʊ/.
+- $\tau$ (`\tau`). /ˈtɔː, ˈtaʊ/.
 - $\upsilon$ (`\upsilon`), $\Upsilon$ (`\Upsilon`), $\varUpsilon$ (`\varUpsilon`). /ˈʌpsɪˌlɒn, ˈ(j)uːp-, -lən/.
 - $\phi$ (`\phi`), $\Phi$ (`\Phi`),  $\varphi$ (`\varphi`), $\varPhi$ (`\varPhi`). /faɪ/.
-- $\chi$ (`\chi`), $\Chi$ (`\Chi`). /ˈkaɪ, ˈxiː/.
+- $\chi$ (`\chi`). /ˈkaɪ, ˈxiː/.
 - $\psi$ (`\psi`), $\Psi$ (`\Psi`), $\varPsi$ (`\varPsi`). /ˈ(p)saɪ, ˈ(p)siː/.
 - $\omega$ (`\omega`), $\Omega$ (`\Omega`), $\varOmega$ (`\varOmega`). /oʊˈmiːɡə, oʊˈmɛɡə, oʊˈmeɪɡə, əˈmiːɡə/.
 
@@ -151,6 +157,8 @@ $$
 \end{bmatrix}
 $$
 
+- Dot product of **vectors**. Or inner product, scalar product.
+  - $\mathbf{u} \cdot \mathbf{v} = \sum\limits_{i}^n u_i\cdot v_i$
 - Outer product of **vectors**. 
   - $\mathbf{u} = [u_1,\ldots, u_m]^\intercal$
   - $\mathbf{v} = [v_1,\ldots, v_n]^\intercal$

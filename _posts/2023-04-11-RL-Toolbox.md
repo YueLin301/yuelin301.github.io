@@ -74,3 +74,8 @@ In the principal-agent communication:
 $$
 r^i = D_{KL}\left[ \pi^j(a^j\mid\sigma^i) \Big\Vert \sum\limits_{\sigma'}\varphi^i(\sigma^{i\prime}\mid s)\cdot \pi^j(a^j\mid\sigma^{i\prime})\right]
 $$
+
+## PPO 37 Tricks
+> [The 37 Implementation Details of Proximal Policy Optimization](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/).
+{: .prompt-info }
+

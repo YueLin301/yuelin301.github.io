@@ -250,7 +250,17 @@ Check this note: [Dynamic Epistemic Logic](https://yuelin301.github.io/posts/Dyn
 ## Poker
 
 ## Braess's Paradox
+A computational example about Braess's Paradox is in `Figure 18.2` of [this chapter](https://timroughgarden.org/papers/rg.pdf):
 
+> Roughgarden, Tim. "Routing games." Algorithmic game theory 18 (2007): 459-484.
+{: .prompt-info }
+
+## [Iterated Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma#The_iterated_prisoner's_dilemma)
+
+
+
+> Axelrod, Robert, and William D. Hamilton. "The evolution of cooperation." science 211.4489 (1981): 1390-1396.
+{: .prompt-info }
 
 > Disclaimer: The description of games is from Wikipedia and other sources (books or papers). Corresponding links or references have been provided. The content regarding attractors is my personal understanding.
 {: .prompt-danger }

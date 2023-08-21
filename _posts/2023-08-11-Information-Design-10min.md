@@ -7,6 +7,9 @@ math: True
 pin: True
 ---
 
+> This note provides a simple introduction to the basic concepts of information design. More details can be found in [my other note on this topic](https://yuelin301.github.io/posts/Information-Design/).
+{: .prompt-info }
+
 ## What problems does information design study?
 
 Information design focuses on scenarios of **mixed-motive** unidirectional communication, where one self-interested sender with informational advantage attempts to **persuade** a self-interested rational receiver to take actions that the sender prefers.

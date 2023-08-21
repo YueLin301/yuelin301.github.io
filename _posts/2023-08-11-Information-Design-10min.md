@@ -86,12 +86,11 @@ Among them, **routing software** is an relatively easily imaginable example.
 1. The central routing software and user vehicles are in a **mixed-motive** scenario, where the routing software aims to optimize the overall traffic speed, while each user wants to increase their individual speed. 
 2. Moreover, the routing software has more **informational advantage** than user vehicles; it can know the congestion status of all relevant road segments, while user vehicles are not allowed to do so. Each user is self-interested, which may lead to a decrease in collective benefits, known as a social dilemma. 
 
-A common example of this is [**Braess's paradox**](https://en.wikipedia.org/wiki/Braess%27s_paradox). Using information design can resolve this issue. For specific details, please refer to the article mentioned in this paper: 
+A common example of this is [**Braess's paradox**](https://en.wikipedia.org/wiki/Braess%27s_paradox). Using information design can resolve this issue. For specific details, please refer to the article mentioned in these papers: 
 
-> Das, Sanmay, Emir Kamenica, and Renee Mirka. "Reducing congestion through information design." *2017 55th annual allerton conference on communication, control, and computing (allerton)*. IEEE, 2017.
+> - An illustration of Braess's paradox: `Figure 18.2`  
+> [Roughgarden, Tim. "Routing games." Algorithmic game theory 18 (2007): 459-484](https://timroughgarden.org/papers/rg.pdf).
+> - Braess's paradox by information design:  
+> [Das, Sanmay, Emir Kamenica, and Renee Mirka. "Reducing congestion through information design." *2017 55th annual allerton conference on communication, control, and computing (allerton)*. IEEE, 2017](https://cs.gmu.edu/~sanmay/papers/reducing-congestion-information.pdf).
 {: .prompt-info }
 
-A computational example about Braess's Paradox is in `Figure 18.2` of [this chapter](https://timroughgarden.org/papers/rg.pdf):
-
-> Roughgarden, Tim. "Routing games." Algorithmic game theory 18 (2007): 459-484.
-{: .prompt-info }

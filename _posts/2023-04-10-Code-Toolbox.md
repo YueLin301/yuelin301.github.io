@@ -11,6 +11,50 @@ math: True
 
 ---
 
+## Python Profile
+- Used to find performance bottlenecks.
+- Can be easily done by clicking the button in the upper right corner, if you are using `PyCharm (Professional Edition)`.
+
+> Check this [website](https://realpython.com/python-profiling/).
+{: .prompt-info }
+
+## Tmux
+- `tmux ls`
+- `tmux attach-session -t 0`
+
+## Terminal Python Environment Initialization
+```bash
+source ~/.bash_profile
+conda activate rlbasic
+```
+
+## Check the status of GPU or CPU
+(... in a terminal)
+- GPU: `nvidia-smi`
+- CPU: `top`
+
+## Github
+
+### Create a repo
+1. Click the green button `New` on the GitHub repo website.
+2. Do **not** check the `Add a README file`.
+3. Copy the link with the `.git` extension.
+4. Create a directory locally and enter it in a terminal.
+5. `git init`
+6. `git remote add origin xxx.git`
+
+### Lazy commit
+
+Create a `snippet` in the software `Terminus`:
+
+```bash
+git add .
+git commit -m "quick commit"
+git push origin main
+```
+
+Then enter your `github name` and your `git temporary token`.
+
 ## Random
 
 ### Integer

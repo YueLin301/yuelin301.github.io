@@ -171,6 +171,8 @@ It aims to align the interests of all agents.
     5. $\text{PoA} = \frac{2b}{2c}=\frac{b}{c}$，其跟表中的数值有关。
 
 
+## Shapley Value
+
 ## Public Goods v.s. Common Recourses
 
 

@@ -13,9 +13,54 @@ math: True
 
 ## Optimization
 
+### Basics
+The standard form for an optimization problem is the following:
+
+$$
+\begin{aligned}
+&\min\limits_{x} \quad f_0(x)  \\
+&\begin{array}{cc}
+\mathrm{s.t.} 	&f_i(x) \le 0,	& i=1,2,\ldots,m\\
+				&h_i(x) = 0,		& i=1,2,\ldots,p\\
+\end{array}
+\end{aligned}
+$$
+
+1. optimization variable: $x\in \mathbb{R}^n$
+
+2. $\mathrm{dom}(x)=D=\bigcap\limits_{i=1}^m \mathrm{dom}(f_i) \cap \bigcap\limits_{i=1}^p\mathrm{dom}(h_i)$
+
+3. objective function (cost function): $f_0(x):\mathbb{R}^n\to \mathbb{R}$
+
+4. $x^*=\arg\min\limits_{x\in D} f_0(x)$
+
+5. $p^*=f_0(x^*)$
+
 ### Convex
 
+Convex set:
+
+Epigraphs: $\{(x,y):y\ge f(x)\}$
+
+Convex function: a function is convex if and only if its epigraph is convex, and the epigraph of a pointwise supremum is the intersection of the epigraphs. Hence, the pointwise supremum of convex func tions is convex.
+
 ### Duality
+
+The Lagrangian function $L:\mathbb{R}^n \times \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}$
+$$
+L(x,\lambda,v)=f_0(x) + \sum\limits_{i=0}^m \lambda_i f_i(x) + \sum\limits_{i=0}^m v_i h_i(x)
+$$
+
+The Lagrange dual function $g:\times \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}$
+$$
+g(\lambda,v)=\inf\limits_{x\in D} L(x,\lambda,v)
+$$
+
+**The dual function is concave even when the optimization problem is not convex**, since the dual function is the pointwise infimum of a family of affine functions of $(\lambda,v)$.
+
+**Infimum = Greatest Lower Bound**: the infimum of a subset $S$ partially ordered set $P$ is a greatest element in $P$ that is less than or equal to all elements of $S$, if such an element exists.
+
+### KKT condition
 
 ## Notation & Operators
 
@@ -24,6 +69,7 @@ math: True
 - $A := B$ means $A$ is defined as $B$.
 - $(f\circ g)(x) = f(g(x))$. Function composition. `\circ`.
 - $A^\intercal$. vector/matrix transpose. `\intercal`.
+- Norm $\| x \|$. `\| x \|`.
 
 ### Greek alphabet
 > Check [here](https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols).
@@ -317,16 +363,20 @@ $$
 I(x) = -\log p(x)
 $$
 
-$I(x_i)$是事件$x_i$的自信息，事件$x_i$发生的概率越小，其发生后带来的信息越大
+信息源发消息，信息是消息中的语义，是抽象的，信号是消息的物理表示；
+
+信息源发什么消息是不确定的（确定的话就没有通信的必要了），所以消息有一个样本空间，和一个对应的概率分布；
+
+信息描述事件的不确定性。一个事件发生，会带来信息；事件发生的概率越小，则其出现后所带来的信息越大。事件的信息=事件的发生概率的某个函数，$I(a_i) = f[P(a_i)]$，这个叫自信息，自信息度量了随机事件信息量的大小，the amount of information；
+
+根据信息的特性找出这个函数：
+- 事件$x_i$发生的概率越小，其发生后带来的信息越大
 - 事件$x_i$发生概率为1，则其发生不带来信息
 - 事件$x_i$发生概率为0，则其发生带来无穷大的信息
 - 信息是关于事件发生概率的**递减**函数
 - 两个事件都发生的概率为两个事件的发生概率的乘积，两个事件都发生的信息为这两个事件发生的信息的和
 
-$$
-I(x_i) = -\log p(x_i)
-$$
-这个函数可以满足以上条件
+然后一些证明，自信息的函数为$-\log$，即 $I(x_i) = -\log P(x_i)$
 
 ### Entropy
 $$
@@ -341,6 +391,8 @@ $$
 - 事件$x_i$以$P(x_i)$的概率发生，发生后带来$I(x_i)$的信息
 - **熵 = 信源能带来的平均自信息**
 - 熵一定是正的（概率大于0小于1看看就知道）
+
+一个事件的自信息表示了该事件发生的不确定性，该事件发生的概率越小，则其发生的不确定性越大，则其发生带来的信息越大，则其自信息越大。信息熵是自信息的期望，表示一个消息的概率分布确定时这个信源能带来的信息的多少，也是平均每个信源符号（发送一次信息，出现一次发信息事件）所携带的信息量。
 
 ### Joint entropy
 $$
@@ -435,7 +487,117 @@ $$
 \end{aligned}
 $$
 
+# 
+
+| 发送的信号是哪个/事件：$X$                    | $a_1$ | $a_2$ |
+| --------------------------------------------- | ----- | ----- |
+| 信源1发送信号的概率/事件发生的概率1：$P_1(X)$ | 0.99  | 0.01  |
+| 信源2发送信号的概率/事件发生的概率2：$P_2(X)$ | 0.2   | 0.8   |
+
+不同的信源发不同的消息带来的自信息不同，因为他们发信息的概率不一样。（相同事件在不同概率分布下发生，带来的自信息不同，因为事件在不同概率分布下的概率不一样）
+
+KL散度就是描述这种差异，衡量两个信源发信号带来信息差的期望，也是两个概率分布的差异程度
+
+假如知道这个表，那么信源1发$a_1$信号/$a_1$事件发生，带来的信息/消除的不确定性/自信息是$-\log P_1(a_1)$，而信源2发$a_1$信息，自信息是$-\log P_2(a_1)$
+
+KL散度：$D_{KL}(P||Q) = \mathbb{E}_{x\sim P}\left[-\log Q(x) - \left(-\log P(x)\right) \right] = \mathbb{E}_{x\sim P} \left[\log\frac{P(x)}{Q(x)}\right]$
+
+上述例子中：$D_{KL}(P_1||P_2) = P_1(a_1)\cdot \log \frac{P(a_1)}{Q(a_1)} + P_1(a_2)\cdot \log \frac{P(a_2)}{Q(a_2)}$
+
+在ML中，一般$D_{KL}(P||Q)$是以$P$分布为真实分布/目标分布，衡量$Q$分布离$P$分布差多少。事件发生的概率是按$P$发生的，所以以$P$分布的概率作为求期望的分布。在真实分布/目标分布$P$下，事件按这样的分布$P$发生，发生后会带来xxx的自信息，而$Q$则带来了xxx的自信息，所以是相减然后对$P$求分布
+
+KL散度虽然是代表差异，但不是真正意义上的距离，因为它不是对称的：$D_{KL}(P||Q)\ne D_{KL}(Q||P)$
+
+在ML中优化时，是以最小化KL散度作为优化目标，让模型输出的$Q$分布接近目标分布$P$。那么其实可以发现，式子中的一部分是不用优化的，所以引出了交叉熵：$H(P,Q)=-\mathbb{E}_{x\sim P}\log Q(x)$。“最小化KL散度”等同于“最小化交叉熵”
+
 ## Algebra
+
+### Learning resources
+- [Linear Algebra Done Right](https://linear.axler.net) (Book).
+- [Videos by Gilbert Strang (reposted on bilibili)](https://www.bilibili.com/video/BV18K4y1R7MP/?spm_id_from=333.337.search-card.all.click&vd_source=da10e270ab81b4c1a3343cc28f4d6a37).
+- [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) (Book).
+
+### Inverse
+
+
+1. A square matrix $A$ is invertible 
+2. = $A$ has n pivots
+3. = $A$ is not singular
+4. = the columns/rows of $A$ are independent
+5. = the columns/rows are linearly independent
+6. = elimination can be completed: $PA=LDU$, with all n pivots
+7. = the nullspace of these vectors are $\{\mathbf 0\}$ 
+8. = the determinant of $A$ is not 0
+9. = the rank of $A$ is n
+10. = 0 is not an eigenvalue of $A$
+11. = $A^TA$ is positive definite
+
+### Rank
+
+rank of a matrix = the number of independent columns/rows of this matrix = the number of pivots of this matrix
+
+方程组求解 -> 写成矩阵形式 -> 知道什么是线性组合 -> 知道什么是生成子空间 -> 矩阵的秩是生成子空间的维度
+
+#### 方程组求解 -> 写成矩阵形式：
+
+$$
+a_{11}x_1+a_{12}x_2+a_{13}x_3=b_1\\ a_{21}x_1+a_{22}x_2+a_{23}x_3=b_2\\ a_{31}x_1+a_{32}x_2+a_{33}x_3=b_3
+$$
+可以写成$\mathbf{A}\mathbf{x}=\mathbf{b}$，矩阵和向量的乘法就是这么定义的，方便表达
+
+#### 知道什么是线性组合 -> 知道什么是生成子空间：
+
+$$
+\begin{bmatrix} a_{11} \\ a_{21} \\ a_{31}  \end{bmatrix} x_1 + \begin{bmatrix} a_{12} \\ a_{22} \\ a_{32}  \end{bmatrix} x_2 + \begin{bmatrix} a_{13} \\ a_{23} \\ a_{33}  \end{bmatrix} x_3  = \begin{bmatrix} b_{1} \\ b_{2} \\ b_{3}  \end{bmatrix}
+$$
+
+矩阵拆成列向量，一个列向量代表一个方向，每个列向量的乘积代表沿着这个列向量的方向走多远。
+
+解方程组的问题变成：在空间中给出几个方向，也给出了终点和起点（相对位置），要分别沿着这些方向走多远，可以从起点到达终点？
+
+看几个情况，欠定方程组的系数矩阵为矮矩阵，即系数矩阵$\mathbf{A}\in \mathbb{R}^{m\times n}$的行数$m$小于列数$n$，方程组有无穷多解，比如：
+
+$$
+\begin{bmatrix} a_{11} \\ a_{21} \end{bmatrix} x_1 + \begin{bmatrix} a_{12} \\ a_{22} \end{bmatrix} x_2 + \begin{bmatrix} a_{13} \\ a_{23}  \end{bmatrix} x_3  = \begin{bmatrix} b_{1} \\ b_{2}  \end{bmatrix}
+$$
+
+如果这三个列向量互相不成比例，那么他们是线性无关的，由于每个列向量是两个元素，可以在一个平面中画出来。我们知道在平面中任意两个不共线的向量的线性组合，就可以表示这个平面上的任意一个向量了，那么现在有3个，多了，想怎么走就怎么走了
+
+另一种情况，稀疏矩阵的列数小于行数，比如：
+
+$$
+\begin{bmatrix} a_{11} \\ a_{21} \\ a_{31}  \end{bmatrix} x_1 + \begin{bmatrix} a_{12} \\ a_{22} \\ a_{32}  \end{bmatrix} x_2  = \begin{bmatrix} b_{1} \\ b_{2} \\ b_{3}  \end{bmatrix}
+$$
+
+给的方向还有目标点都是在三维空间中的，但是只给了两个方向，怎么组合那也只能是在一个平面里折腾，如果恰好$b$这个目标点在这个平面上，那么可以完成任务，否则是不能完成的，方程组也就无解
+
+每一种$(x_1,x_2)$的取值都对应了一种$\mathbf{A}$的列向量的**线性组合 (linear combination)**，线性组合是对向量的操作，矩阵的列向量的线性组合 = 这个矩阵的**列空间（column space）** 或者是这个矩阵的值域（range）
+
+$\mathbf{A}\mathbf{x}=\mathbf{b}$，如果$\mathbf{b}$不在$\mathbf{A}$的列空间里，那么这个问题就无解了。所以如果要有解，那么首先维度得对得上，即$\mathbf{A}$的列空间的维度要大于等于$\mathbf{b}$的维度
+
+
+#### 
+
+一组向量的**生成子空间（span）**就是关于它的线性组合能到达的点，一个矩阵的列空间（列向量的生成子空间）的维度就是**秩（rank）**
+
+
+### Linear Independency
+
+If $\exists k\in \mathbb{R}$, s.t. $\mathbf{x_1} = k\cdot\mathbf{x_2}$, then $x_1$ and $x_2$ are  linear dependent.
+
+如果一个矩阵中有两个列向量是线性相关的，那么其中一个被删掉了也不会改变这个矩阵的列空间
+
+<!-- $\mathbf{A}\mathbf{x}=\mathbf{b}$，如果要对任意一个$\mathbf{b} \in \mathbb{R}^m$都有解，那么$\mathbf{A}$的列空间要覆盖$\mathbb{R}^m$，那么 -->
+
+### Eigenvalue
+
+### Determinant
+
+### Singular
+
+### Cramer’s rule
+
+### Adjugate matrix
 
 ## Topology
 

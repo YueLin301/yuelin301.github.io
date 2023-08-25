@@ -33,6 +33,7 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 - Currently
     - Multi-Agent Reinforcement Learning
     - [Information Design](https://yuelin301.github.io/posts/Information-Design/) (a subfield of computational economics and game theory)
+    - Sequential Social Dilemma
 - Formerly
     - Redundant Manipulator Control
     - Robotic Mechanism Design

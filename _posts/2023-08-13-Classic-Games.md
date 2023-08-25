@@ -234,7 +234,7 @@ $$
 
 ## Muddy Children Puzzle
 
-Check this note: [Dynamic Epistemic Logic](https://yuelin301.github.io/posts/Dynamic-Epistemic-Logic/#the-muddy-children-puzzle).
+Check my other note: [Dynamic Epistemic Logic](https://yuelin301.github.io/posts/Dynamic-Epistemic-Logic/#the-muddy-children-puzzle).
 
 
 ## Trust
@@ -245,10 +245,6 @@ Check this note: [Dynamic Epistemic Logic](https://yuelin301.github.io/posts/Dyn
 ## Ultimatum
 > The experimenter assigns a certain sum, and the Proposer can offer a share of it to the Responder. If the Responder (who knows the sum) accepts, the sum is split accordingly between the two players, and the game is over. If the Responder declines, the experimenter withdraws the money. Again, the game is over: but this time, neither of the two players gets anything.
 
-## Battleship
-
-## Poker
-
 ## Braess's Paradox
 A computational example about Braess's Paradox is in `Figure 18.2` of [this chapter](https://timroughgarden.org/papers/rg.pdf):
 
@@ -257,10 +253,30 @@ A computational example about Braess's Paradox is in `Figure 18.2` of [this chap
 
 ## [Iterated Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma#The_iterated_prisoner's_dilemma)
 
-
-
 > Axelrod, Robert, and William D. Hamilton. "The evolution of cooperation." science 211.4489 (1981): 1390-1396.
 {: .prompt-info }
+
+### Successful strategy conditions
+
+> Stated by Axelrod. The following conditions are adapted from [Wikipedia]((https://en.wikipedia.org/wiki/Prisoner%27s_dilemma#Axelrod's_contest_and_successful_strategy_conditions)).
+
+- Nice/optimistic: The strategy will not defect before its opponent does.
+- Retaliating: The strategy must sometimes retaliate. Otherwise it will be exploited by the opponent.
+- Forgiving: Though players will retaliate, they will cooperate again if the opponent does not continue to defect.
+- Non-envious: The strategy must not strive to score more than the opponent.
+
+
+
+### Strategies
+- Tit-for-tat.
+- Win-stay, lose-switch.
+- [Zero-determinant strategy](https://www.pnas.org/doi/pdf/10.1073/pnas.1206569109).
+
+### Zero-determinant strategy
+
+
+
+
 
 > Disclaimer: The description of games is from Wikipedia and other sources (books or papers). Corresponding links or references have been provided. The content regarding attractors is my personal understanding.
 {: .prompt-danger }

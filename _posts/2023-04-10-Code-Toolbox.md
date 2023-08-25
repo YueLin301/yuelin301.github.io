@@ -11,6 +11,39 @@ math: True
 
 ---
 
+## Per-Sample Gradient
+
+- $\mathrm{batch\_size} = n$,
+- $\boldsymbol x \to \mathrm{net}(\boldsymbol w) \to \boldsymbol y \to \boldsymbol L \to L_{scalar}$
+  - $\boldsymbol w \gets \boldsymbol w + \frac{\alpha}{n}\cdot \frac{\partial L_{scalar}}{L_i} \cdot \frac{L_i}{\partial \boldsymbol w}$
+- Accomplishing it by `for` costs lots of time.
+
+### [Hook]()
+- PyTorch中，可以自己定一个hook函数，给nn.Module登记
+  - 登记完后，nn.Module在forward的时候会触发这个hook函数
+  - 也可以选择让其在backward的时候触发hook函数
+- hook函数的参数是固定的：(module, grad_input, grad_output)
+  - hook函数被触发后，自动搜集当前触发状态下的这3个参数，因此可以用hook实现搜集一些中间量
+  - grad_input是反向传播的量对module的input的梯度
+- $\frac{\partial L}{\partial w} = \sum\limits_i \frac{\partial L}{\partial L_i} \cdot\frac{\partial L_i}{\partial y_i}\cdot\frac{\partial y_i}{\partial w}$
+  - $\frac{\partial L}{\partial L_i} \cdot\frac{\partial L_i}{\partial y_i}=\mathrm{grad\_output}$
+
+### Opacus
+- 让PyTorch训练模型时能做差分隐私的一个库
+- DP-SGD (Differentially-Private Stochastic Gradient Descent)
+  - 要让Loss对每个sample的grad都做一个clip，再加个噪声
+  - 所以要求per-sample gradient
+- 他们也是用的hook来做的，但是是封装好了，可以直接用
+
+### vmap
+- v = vectorization
+- 新函数 = `vmap`(要做的批量操作的函数，输入的量按哪个维度作分割)
+- 批量操作的结果 = 新函数(批量的原函数的输入)
+- 现在要批量求梯度，那么要给vmap传入个求梯度的函数
+- vmap不支持autograd，但有函数代替
+- 具体写在了22.9.14的实验进展里
+
+
 ## Python Profile
 - Used to find performance bottlenecks.
 - Can be easily done by clicking the button in the upper right corner, if you are using `PyCharm (Professional Edition)`.
@@ -89,7 +122,7 @@ torch.rand(2, 3) # size (2,3)，每一个数都是从[0,1)均匀采样的
 torch.randn(2, 3) # size (2,3)，每一个数都是从正态分布N(0,1)采样的
 ```
 
-> Check the [pytorch documentation](https://pytorch.org/docs/stable/distributions.html).
+> Check the [PyTorch documentation](https://pytorch.org/docs/stable/distributions.html).
 {: .prompt-info }
 
 ## Customized Module Template
@@ -140,3 +173,9 @@ class net_base(nn.Module):
 
 ```
 
+## Web Crawler
+
+### Resources
+
+1. [A nice blog cuiqingcai (in Chinese)](http://cuiqingcai.com/categories/Python/爬虫/).
+2. 

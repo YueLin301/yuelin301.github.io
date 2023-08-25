@@ -69,7 +69,7 @@ $$
 - $A := B$ means $A$ is defined as $B$.
 - $(f\circ g)(x) = f(g(x))$. Function composition. `\circ`.
 - $A^\intercal$. vector/matrix transpose. `\intercal`.
-- Norm $\| x \|$. `\| x \|`.
+- Norm $\Vert x \Vert$. `\Vert x \Vert`.
 
 ### Greek alphabet
 > Check [here](https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols).

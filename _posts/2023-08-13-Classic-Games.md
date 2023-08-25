@@ -258,7 +258,7 @@ A computational example about Braess's Paradox is in `Figure 18.2` of [this chap
 
 ### Successful strategy conditions
 
-> Stated by Axelrod. The following conditions are adapted from [Wikipedia]((https://en.wikipedia.org/wiki/Prisoner%27s_dilemma#Axelrod's_contest_and_successful_strategy_conditions)).
+> Stated by Axelrod. The following conditions are adapted from [Wikipedia](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma#Axelrod's_contest_and_successful_strategy_conditions).
 
 - Nice/optimistic: The strategy will not defect before its opponent does.
 - Retaliating: The strategy must sometimes retaliate. Otherwise it will be exploited by the opponent.

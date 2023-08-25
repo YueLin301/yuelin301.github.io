@@ -4,7 +4,6 @@ date: 2023-06-01 20:00:01 +0800
 categories: [Economics & Game Theory]
 tags: [information design, Bayesian persuasion, Bayes plausible, concavification, obedience, Bayes correlated equilibrium, Bayes nash equilibrium, multi agents, incentive compatibility]
 math: True
-pin: True
 ---
 
 > This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).

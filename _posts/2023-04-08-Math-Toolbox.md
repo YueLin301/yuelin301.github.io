@@ -34,7 +34,7 @@ $$
 
 4. $x^*=\arg\min\limits_{x\in D} f_0(x)$
 
-5. $p^*=f_0(x^*)$
+5. $p^\*=f_0(x^\*)$
 
 ### Convex
 

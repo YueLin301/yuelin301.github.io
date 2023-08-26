@@ -94,21 +94,37 @@ Then enter your `github name` and your `git temporary token`.
 
 ```python
 import torch
-torch.randint(1,5,[2])	# 1到4的整数，生成2个数，可重复
-torch.randint(5,[1,2])	# 0到4的整数，结果是类似这样的：tensor([[2, 4]])
+torch.randint(1,5,[2])	# [1,4]的整数，生成2个数，可重复
+torch.randint(5,[1,2])	# [0,4]的整数，结果是类似这样的：tensor([[2, 4]])
 ```
 
 ```python
 import random
-random.randint(-1,2) # -1到2的整数，包含-1和2，生成1个
+random.randint(-1,2) # [-1,2]的整数，生成1个
+```
+
+
+```python
+import random
+numbers = random.choices(range(101), k=10) # [0,100]，生成10个，可以重复
+print(numbers)
+
 ```
 
 ```python
 import random
-items = [i for i in range(1, 6)] # 1到5的整数列表
+numbers = random.sample(range(101), 10) # [0,100]的整数，生成10个，不会重复
+print(numbers)
+```
+
+```python
+import random
+items = [i for i in range(1, 6)] # [1,5]的整数列表
 random.shuffle(items)	#打乱顺序
 print(items[:k])		#保留前k个；k自己取
 ```
+
+
 
 ### Real
 

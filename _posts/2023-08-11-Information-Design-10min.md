@@ -2,7 +2,7 @@
 title: Information Design in 10 Minutes
 date: 2023-08-11 05:30:00 +0800
 categories: [Economics & Game Theory]
-tags: [information design, Bayesian persuasion, obedience, multi agents, incentive compatibility]
+tags: [game theory, information design, Bayesian persuasion, obedience, multi agents, incentive compatibility]
 math: True
 pin: True
 ---

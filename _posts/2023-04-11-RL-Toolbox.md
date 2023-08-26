@@ -15,6 +15,73 @@ math: True
 
 ## Mask
 
+## Embedding for Q-value Critic
+
+> Check [the implementation of DIAL](https://colab.research.google.com/gist/MJ10/2c0d1972f3dd1edcc3cd17c636aac8d2/dial.ipynb#scrollTo=YnoO2UA5L3pk).
+{: .prompt-info }
+
+In my understanding, after going through the embedding, inputs with different ranges can be considered as linearly independent quantities in the same space, so they can be added directly.
+
+```python
+class CNet(nn.Module):
+    def __init__(self, opts):
+        """
+        Initializes the CNet model
+        """
+        super(CNet, self).__init__()
+        self.opts = opts
+        self.comm_size = opts['game_comm_bits']
+        self.init_param_range = (-0.08, 0.08)
+
+        ## Lookup tables for the state, action and previous action.
+        self.action_lookup = nn.Embedding(opts['game_nagents'], opts['rnn_size'])
+        self.state_lookup = nn.Embedding(2, opts['rnn_size'])
+        self.prev_action_lookup = nn.Embedding(opts['game_action_space_total'], opts['rnn_size'])
+
+        # Single layer MLP(with batch normalization for improved performance) for producing embeddings for messages.
+        self.message = nn.Sequential(
+            nn.BatchNorm1d(self.comm_size),
+            nn.Linear(self.comm_size, opts['rnn_size']),
+            nn.ReLU(inplace=True)
+        )
+
+        # RNN to approximate the agent’s action-observation history.
+        self.rnn = nn.GRU(input_size=opts['rnn_size'], hidden_size=opts['rnn_size'], num_layers=2, batch_first=True)
+
+        # 2 layer MLP with batch normalization, for producing output from RNN top layer.
+        self.output = nn.Sequential(
+            nn.Linear(opts['rnn_size'], opts['rnn_size']),
+            nn.BatchNorm1d(opts['rnn_size']),
+            nn.ReLU(),
+            nn.Linear(opts['rnn_size'], opts['game_action_space_total'])
+        )
+
+    def forward(self, state, messages, hidden, prev_action, agent):
+        """
+        Returns the q-values and hidden state for the given step parameters
+        """
+        state = Variable(torch.LongTensor(state))
+        hidden = Variable(torch.FloatTensor(hidden))
+        prev_action = Variable(torch.LongTensor(prev_action))
+        agent = Variable(torch.LongTensor(agent))
+
+        # Produce embeddings for rnn from input parameters
+        z_a = self.action_lookup(agent)
+        z_o = self.state_lookup(state)
+        z_u = self.prev_action_lookup(prev_action)
+        z_m = self.message(messages.view(-1, self.comm_size))
+
+        # Add the input embeddings to calculate final RNN input.
+        z = z_a + z_o + z_u + z_m
+        z = z.unsqueeze(1)
+
+        rnn_out, h = self.rnn(z, hidden)
+        # Produce final CNet output q-values from GRU output.
+        out = self.output(rnn_out[:, -1, :].squeeze())
+
+        return h, out
+```
+
 
 ## Gumbel-Softmax
 - Reparameterization.

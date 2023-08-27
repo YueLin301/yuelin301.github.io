@@ -12,9 +12,6 @@ math: True
  
 ## What is Information Design?
 
-> "Sometimes, the truth is not good enough." *- Batman, The Dark Knight (2008).*
-{: .prompt-info }
-
 Communication does not just happen in fully cooperative scenarios. 
 In some cases, the sender can persuade the receiver by "strategically deceiving", to increase its own expected payoff. 
 Actually, "one quarter of gdp is persuasion." *(McCloskey & Klamer 1995)*.

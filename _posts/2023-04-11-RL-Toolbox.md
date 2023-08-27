@@ -15,7 +15,7 @@ math: True
 
 ## Mask
 
-## Embedding for Q-value Critic
+## Embedding for the Q-value Critic
 
 > Check [the implementation of DIAL](https://colab.research.google.com/gist/MJ10/2c0d1972f3dd1edcc3cd17c636aac8d2/dial.ipynb#scrollTo=YnoO2UA5L3pk).
 {: .prompt-info }
@@ -23,6 +23,7 @@ math: True
 In my understanding, after going through the embedding, inputs with different ranges can be considered as linearly independent quantities in the same space, so they can be added directly.
 
 ```python
+# From the CoLab: https://colab.research.google.com/gist/MJ10/2c0d1972f3dd1edcc3cd17c636aac8d2/dial.ipynb#scrollTo=G5e0IeqmIJJj
 class CNet(nn.Module):
     def __init__(self, opts):
         """

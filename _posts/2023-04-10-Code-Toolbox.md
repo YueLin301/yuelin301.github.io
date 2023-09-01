@@ -256,3 +256,49 @@ input_tensor = torch.randn(5, 10)  # 创建一个5x10的随机输入张量
 output = model(input_tensor)
 print(output)
 ```
+
+### Mask
+
+
+#### As indices
+```python
+import torch
+
+data = torch.arange(5)  # tensor([0, 1, 2, 3, 4])
+mask = data <= 2  # tensor([ True,  True,  True, False, False]); any condition is ok
+data[mask] = 0  # tensor([0, 0, 0, 3, 4])
+```
+
+#### Retain gradients
+```python
+import torch
+
+data_shape = 5, 3
+data = torch.arange(15, dtype=torch.float64).view(data_shape).requires_grad_(True)
+
+mask = data <= 6  # any condition is ok
+data_masked = data * mask
+
+loss = data_masked.sum()
+loss.backward()
+grad1 = data_masked.grad
+grad2 = data.grad
+
+'''
+data_masked: 
+tensor([[0., 1., 2.],
+        [3., 4., 5.],
+        [6., 0., 0.],
+        [0., 0., 0.],
+        [0., 0., 0.]], dtype=torch.float64, grad_fn=<MulBackward0>)
+
+data_masked.grad: None
+
+data.grad:
+tensor([[1., 1., 1.],
+        [1., 1., 1.],
+        [1., 0., 0.],
+        [0., 0., 0.],
+        [0., 0., 0.]], dtype=torch.float64)
+'''
+```

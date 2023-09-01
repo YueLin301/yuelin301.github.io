@@ -78,8 +78,9 @@ Here, I will consistently update my experiences, paper summaries, notes, and nea
 ---
 
 ## Personality
-- Big Five Personality Test: [My test result](https://bigfive-test.com/result/649d06c585aaa70008135b20).
-- Myers-Briggs Type Indicator (MBTI): [INTJ-T (my test result)](https://www.16personalities.com/profiles/8dc4f03308407).
+- Big Five Personality Test: [my test result](https://bigfive-test.com/result/649d06c585aaa70008135b20).
+- Myers-Briggs Type Indicator (MBTI): [my test result](https://www.16personalities.com/profiles/8dc4f03308407).
+  - Introverted, Intuitive, Thinking, Judging, and Turbulent.
   - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
 - Enneagram: [Type Five with a Four-Wing](https://www.enneagraminstitute.com/type-5).
 > I believe these are efficient communication protocols, and using them allows me to easily introduce my profile.

@@ -6,9 +6,6 @@ tags: [game theory, fictitious play, multi agents, reinforcement learning]
 math: True
 ---
 
- > This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
-{: .prompt-warning }
-
 ## What is Fictitious Play?
 *([Wikipedia](https://en.wikipedia.org/wiki/Fictitious_play))*
 
@@ -27,3 +24,6 @@ The basic idea behind fictitious play is that players continually revise their b
 Over time, as players repeatedly update their beliefs and adjust their strategies accordingly, it is believed that fictitious play can converge to a stable strategy profile. This profile represents a set of strategies where no player has an incentive to deviate from their chosen strategy given their beliefs about the strategies of others.
 
 Fictitious play has been used to analyze various types of games, including both cooperative and non-cooperative games. It provides insights into how players might learn and adapt their strategies in dynamic environments, even when they have limited information about the true intentions and strategies of their opponents.
+
+> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+{: .prompt-warning }

@@ -11,9 +11,7 @@ math: True
 
 ---
 
-## Standardization
-
-## Mask
+## Normalization
 
 ## Embedding for the Q-value Critic
 
@@ -123,6 +121,8 @@ If temperature $T$ is small enough, then the output of the softmax can be seen a
 
 ### Example code
 Check [my note](https://yuelin301.github.io/posts/Computation-Graph-Visualization/#example-5-nabla_theta-a-with-gumbel-softmax-reparameterization).
+
+
 
 ## Social Influence
 - A MARL method.

@@ -6,15 +6,11 @@ tags: [epistemic logic, common knowledge, logic, induction puzzles, multi agents
 math: True
 ---
 
-> This note is incomplete, and I have no intention of completing it because I realized it is not the topic I am looking for.
-{: .prompt-warning }
-
 > Three logicians walk into a bar.  
 The bartender asks: "Do you all want a drink?"  
 The first logician says: "I don't know."  
 The second logician says: "I don't know."  
 The third logician says: "Yes."
-{: .prompt-info }
 
 
 
@@ -169,7 +165,8 @@ Johan Van Benthem.
 > Common knowledge also arises in discourse understanding. Suppose Ann asks Bob “What did you think of the movie?” referring to a showing of Monkey Business they have just seen. Not only must Ann and Bob both know that “the movie” refers to Monkey Business, **but Ann must know that Bob knows (so that she can be sure that Bob will give a reasonable answer to her question), Bob must know that Ann knows that Bob knows (so that Bob knows that Ann will respond appropriately to his answer)**, and so on. In fact, by a closer analysis of this situation, it can be shown that there must be common knowledge of what movie is meant in order for Bob to answer the question appropriately.[^Common-knowledge-revisited]
 
 
-
+> This note is incomplete, and I have no intention of completing it because I realized it is not the topic I am looking for.
+{: .prompt-warning }
 
 
 ## References

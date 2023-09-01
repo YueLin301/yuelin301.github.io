@@ -7,13 +7,7 @@ math: True
 pin: True
 ---
 
-> This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
-{: .prompt-warning }
-
----
-
 > The only way to make sense out of change is to plunge into it, move with it, and join the dance. *- Alan Watts.*
-{: .prompt-info }
 
 ---
 
@@ -286,3 +280,6 @@ $$
 =& \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).
 \end{aligned}
 $$
+
+> The next part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+{: .prompt-warning }

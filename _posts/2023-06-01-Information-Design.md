@@ -6,9 +6,6 @@ tags: [game theory, information design, Bayesian persuasion, Bayes plausible, co
 math: True
 ---
 
-> This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
-{: .prompt-warning }
-
  
 ## What is Information Design?
 
@@ -302,6 +299,11 @@ $$
 $$
 
 for all $a^{j\prime}\in A^j$.
+
+---
+
+> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+{: .prompt-warning }
 
 ---
 

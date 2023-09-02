@@ -164,10 +164,27 @@ It aims to align the interests of all agents.
     3. 如果没有中心化的authority，每个人只优化自己，那么此时对于两个玩家来说，$\text{Defect}$都是占优策略（别人选择合作，那我背叛收益高；别人选择背叛，那我背叛收益高；不论别人怎么选择，我选背叛收益高）。会收敛到$(s_1=\text{Defect},s_2=\text{Defect})$的Nash equilibrium。$\text{Welf}$相比有中心化的情况，降低了。
     4. $\text{PoA} = \frac{2b}{2c}=\frac{b}{c}$，其跟表中的数值有关。
 
-
 ## Shapley Value
 
-## Public Goods v.s. Common Recourses
+In my understanding, the Shapley value reflects how significant an individual's effective contribution is to the total value of a certain coupling in a group. A real-world application is to determine how to distribute money: those who work more and contribute more effectively to the group should receive more money.
+
+Given a cooperative game with a set $N$ of players and a value function $v: 2^N \to \mathbb{R}$, which assigns a value to each coalition of players, the Shapley value of player $i$, denoted as $\phi_i(v)$, is defined as:
+
+$$
+\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{\vert S\vert! (\vert N\vert - \vert S\vert - 1)!}{\vert N\vert!} \left[v(S \cup \{i\}) - v(S)\right]
+$$
+
+Where:
+
+- $N$ is the set of all players.
+- $S$ is a subset of players not including player $i$.
+- $\vert S\vert$ is the number of players in subset $S$.
+- $\vert N\vert$ is the total number of players.
+- $v(S)$ is the value function, i.e., the value of coalition $S$.
+- The term $\left[v(S \cup \{i\}) - v(S)\right]$ represents the marginal contribution of player $i$ to coalition $S$.
+
+In words, the Shapley value of player $i$ is the average of its marginal contributions over all possible coalitions.
+
 
 
 ## Regret

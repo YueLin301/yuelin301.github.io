@@ -26,6 +26,16 @@ math: True
 
 $a \gt b \gt c \gt d$.
 
+If both cooperate, each gets R (for Reward).
+If both defect, each gets P (for Punishment).
+If one defects and the other cooperates, the defector gets T (for Temptation) and the cooperator gets S (for Sucker's payoff).
+
+In some studies, $a,b,c$ and $d$ are represented by $T,R,P$ and $S$ respectively.
+- $T$: Temptation
+- $R$: Reward
+- $P$: Punishment
+- $S$: Sucker's payoff
+
 Attractor of player1: Reversed N-like (or N-like)
 
 | $b\downarrow$ | $d\downarrow$   |
@@ -251,6 +261,93 @@ A computational example about Braess's Paradox is in `Figure 18.2` of [this chap
 > Roughgarden, Tim. "Routing games." Algorithmic game theory 18 (2007): 459-484.
 {: .prompt-info }
 
+
+## Public Goods v.s. Common Recourses
+
+These two kinds of games are **social dilemmas**, i.e., the situations in which individual actions that seem to be rational and in self-interest can lead to collective outcomes that are undesirable for everyone.
+
+### Public Goods Game
+#### Setup
+In this game, a group of players is each given a sum of money (or any resource). They are offered the choice to invest any portion of this sum into a common pool. This pool is then multiplied by a factor greater than one (but less than the number of players) and distributed evenly among all players, regardless of their individual contributions.
+
+#### Dilemma
+The group's best outcome is if everyone contributes the maximum amount because this would result in the highest multiplication and distribution to everyone. However, from an individual's perspective, the best strategy is to contribute nothing and free-ride on the contributions of others. If everyone thinks this way, no one contributes, and the group ends up worse off.
+
+#### Examples
+1. The Snowdrift Game (or Hawk-Dove Game)
+2. The Prisoner's Dilemma.
+    
+### Common Resources Game (or the Tragedy of the Commons)
+#### Setup
+Players have access to a shared resource (like a common grazing field for sheep). Each player decides how many units of the resource (e.g., how many sheep) to use. The resource can regenerate over time, but if overused, it can get depleted.
+
+#### Dilemma
+If all players use the resource sustainably, the resource persists, benefiting everyone continuously. However, each player has an incentive to use as much of the resource as quickly as possible to gain immediate benefits, especially before others use it up. If all players act on this individual incentive, the shared resource gets depleted, and everyone ends up worse off in the long run.
+
+### Differences
+1. **Nature of the Good**:
+   - **Public Goods**: These are non-excludable (one person's use doesn't exclude another's use) and non-rivalrous (use by one person doesn't reduce its availability to others). Examples include clean air, national defense, and public parks.
+   - **Common Resources**: These are non-excludable but rivalrous. One person's use directly impacts another person's ability to use it. Examples include fisheries, forests, and shared pastures.
+2. **Primary Challenge**:
+   - **Public Goods**: The challenge is about contributing to the provision of the good. The temptation is to free-ride on others' contributions.
+   - **Common Resources**: The challenge is about overuse and depletion of the resource. The temptation is to over-exploit before others do.
+3. **Outcome of Selfish Behavior**:
+   - **Public Goods**: If everyone acts selfishly, the public good is under-provided or not provided at all.
+   - **Common Resources**: If everyone acts selfishly, the common resource is quickly depleted, rendering it unavailable even for future use.
+
+## The Cooperative Game
+
+### Disambiguation
+
+The canonical  definition of the cooperative game in game theory is different from the current common sense of MARL.
+
+Cooperative game theory deals with situations where players can benefit by cooperating, and binding agreements are possible. In these games, **players form coalitions**, and the outcomes depend on the behavior of these coalitions. The primary goal in cooperative games is often to understand how the gains from cooperation should be fairly distributed among the players.
+
+Notably, a key difference between cooperative and non-cooperative game theory is the idea of commitment. In cooperative games, it's assumed that players can make binding commitments to each other, whereas in non-cooperative games, players choose strategies without the possibility of making binding agreements.
+
+### Formal definition
+
+Key elements of a cooperative game:
+
+1. **Players**: A finite set of players $N$.
+2. **Value function**: Given any subset $S$ of $N$ (a coalition), the value function $v: 2^N \to \mathbb{R}$ assigns a real number $v(S)$ representing the total value or utility that the coalition $S$ can achieve by cooperating. Note that $v(\emptyset) = 0$, meaning the value of an empty coalition is zero.
+3. **Characteristic function form**: Cooperative games often take this form, where for every subset $S$ of $N$, a value $v(S)$ is specified. The number $v(S)$ represents the payoff that the members of $S$ can guarantee by forming a coalition and excluding all other players.
+
+
+
+### An example: The "Airport Game"
+
+Certainly! Let's delve into a classic example of a cooperative game: The "Airport Game".
+
+**Scenario**:
+Imagine there are three airlines: A, B, and C. They are considering building a runway at a shared airport. Each airline can benefit from the runway, but they benefit differently based on the size of their planes and the number of flights they operate. They want to decide how much each should contribute to the construction costs.
+
+1. Airline A's planes are large, and it would be willing to pay up to $600,000 for the runway if it had to bear all the costs itself.
+2. Airline B operates smaller planes and would only be willing to pay $300,000.
+3. Airline C operates the smallest planes and would pay just $100,000.
+
+The total cost of the runway is $800,000.
+
+**Coalitional Values**:
+If they cooperate, the total cost can be divided among them. The value each coalition (subset of airlines) can generate (or save) is as follows:
+
+- $v(A) = 600,000$
+- $v(B) = 300,000$
+- $v(C) = 100,000$
+- $v(A,B) = 800,000$ (since together they can cover the total cost)
+- $v(A,C) = 700,000$
+- $v(B,C) = 400,000$
+- $v(A,B,C) = 800,000$ (since all three together can cover the total cost)
+
+The question now becomes: How should the $800,000 cost be distributed among A, B, and C in a way that reflects their individual benefits and the benefit of their cooperation?
+
+**Solution Concepts**:
+There are various ways to allocate the costs based on cooperative game solution concepts. One of the most famous methods is the Shapley value, which provides a unique way to fairly allocate the costs based on individual and collective benefits.
+
+By computing the Shapley value for this game, one would find a fair division of the costs among A, B, and C.
+
+
+
 ## [Iterated Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma#The_iterated_prisoner's_dilemma)
 
 > Axelrod, Robert, and William D. Hamilton. "The evolution of cooperation." science 211.4489 (1981): 1390-1396.
@@ -270,9 +367,7 @@ A computational example about Braess's Paradox is in `Figure 18.2` of [this chap
 ### Strategies
 - Tit-for-tat.
 - Win-stay, lose-switch.
-- [Zero-determinant strategy](https://www.pnas.org/doi/pdf/10.1073/pnas.1206569109).
-
-### Zero-determinant strategy
+- [Zero-determinant strategy](https://www.pnas.org/doi/pdf/10.1073/pnas.1206569109). (Check [my other note](https://yuelin301.github.io/posts/Zero-Determinant/).)
 
 
 

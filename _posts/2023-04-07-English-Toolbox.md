@@ -48,8 +48,8 @@ math: True
 10. versus, vs or v. 
     1.  Against. 
     2.  What are the enefits of organic versus inorganic foods?
-11. vice versaT
-    1.  he other way round.
+11. vice versa
+    1.  The other way round.
     2.  My phone serves me, and not vice versa.
 
 ## Grammar

@@ -21,7 +21,7 @@ Given a game with $n$ players, where each player $i$ has a strategy $\pi^i$.
 1. Players initialize their beliefs about the strategies of the other players. And $\hat{\pi}^{i,j}$ means the belief of $i$ regarding the $j$'s strategy.
 2. At each round $t$:
    - Player $i$ observes the action $a_{t-1}^j$ (or pure strategy) of every other player $j \neq i$.
-   - Player $i$ updates their belief of player $j$'s strategy based on the empirical frequency: $\hat{\pi}_t^{i,j} = \frac{1}{t-1} \sum_{k=1}^{t-1} a_k^j$. The actions are one-hot encoded.
+   - Player $i$ updates their belief of player $j$'s strategy based on the empirical frequency: $\hat{\pi}\_t^{i,j} = \frac{1}{t-1} \sum\_{k=1}^{t-1} a_k^j$. The actions are one-hot encoded.
    - Player $i$ then plays a **best response** to $\hat{\pi}_t^{i,j}$.
 
 

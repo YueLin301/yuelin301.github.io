@@ -166,12 +166,16 @@ It aims to align the interests of all agents.
 
 ## Shapley Value
 
-In my understanding, the Shapley value reflects how significant an individual's effective contribution is to the total value of a certain coupling in a group. A real-world application is to determine how to distribute money: those who work more and contribute more effectively to the group should receive more money.
+In my understanding, the Shapley value reflects how significant an individual's effective contribution is to the total value of a certain coupling in a group. A real-world application is to determine how to distribute money: those who work more and contribute more effectively to the group should receive more money. It is a fair distribution method.
 
 Given a cooperative game with a set $N$ of players and a value function $v: 2^N \to \mathbb{R}$, which assigns a value to each coalition of players, the Shapley value of player $i$, denoted as $\phi_i(v)$, is defined as:
 
 $$
-\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{\vert S\vert! (\vert N\vert - \vert S\vert - 1)!}{\vert N\vert!} \left[v(S \cup \{i\}) - v(S)\right]
+\begin{aligned}
+    \phi_i(v) 
+    &= \mathbb{E}_{s\sim \mathcal{P}(N\setminus \{i\})}\left[v(S \cup \{i\}) - v(S) \right] \\
+    &= \sum_{S \subseteq N \setminus \{i\}} \frac{\vert S\vert! (\vert N\vert - \vert S\vert - 1)!}{\vert N\vert!} \left[v(S \cup \{i\}) - v(S)\right]
+\end{aligned}
 $$
 
 Where:
@@ -182,6 +186,7 @@ Where:
 - $\vert N\vert$ is the total number of players.
 - $v(S)$ is the value function, i.e., the value of coalition $S$.
 - The term $\left[v(S \cup \{i\}) - v(S)\right]$ represents the marginal contribution of player $i$ to coalition $S$.
+- $\mathcal{P}(N \setminus \{i\})$ is the power set of $N \setminus \{i\}$, which includes all possible subsets of it, ranging from the empty set to $N \setminus \{i\}$ itself. And $S \sim \mathcal{P}(N \setminus \{i\})$ means that the subset $S$ is uniformly randomly chosen from $\mathcal{P}(N \setminus \{i\})$.
 
 In words, the Shapley value of player $i$ is the average of its marginal contributions over all possible coalitions.
 

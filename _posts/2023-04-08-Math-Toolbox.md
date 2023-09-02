@@ -617,3 +617,12 @@ If $\exists k\in \mathbb{R}$, s.t. $\mathbf{x_1} = k\cdot\mathbf{x_2}$, then $x_
 ## Logic
 
 ## Calculus
+
+## Combinatorics
+
+1. Permutation:
+    Permutation refers to the **arrangement** of a certain number of elements from a set **in a specific order**. The number of permutations of $k$ elements taken from a set of $n$ elements is denoted as $P(n, k)$, and it is calculated using the formula:
+    $$ P(n, k) = \frac{n!}{(n-k)!} $$ 
+2. Combination:
+    Combination refers to the selection of a certain number of elements from a set **without considering the order**. The number of combinations of $k$ elements taken from a set of $n$ elements is denoted as $C(n, k)$, and it is calculated using the formula:
+    $$ C(n, k) = \binom{n}{k} = \frac{n!}{r!(n-k)!} $$

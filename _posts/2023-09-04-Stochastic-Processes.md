@@ -17,7 +17,7 @@ These statements are equivalent:
 - State $j$ is accessible from state $i;$
 - $i$ can transition to $j$ in $n$ steps;
 - Starting from $i$, there’s a positive chance that we’ll get to $j$ at some point in the future;
-- $\exist n, \mathrm{s.t. }\mathbf{M}_{i,j}(n) > 0;$
+- $\exists n, \mathrm{s.t. }\mathbf{M}_{i,j}(n) > 0;$
 - $i \to j.$
 
 ### Communicates with

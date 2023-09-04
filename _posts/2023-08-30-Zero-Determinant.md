@@ -177,7 +177,7 @@ Derivation:
 - If a distribution $\mathbf{v} = \mathbf{v} \mathbf{M}$, then it is a stationary distribution.
 - It is a fixed point.
 
-#### [Positive recurrent Markov chain]((https://mpaldridge.github.io/math2750/S09-recurrence-transience.html))
+#### [Positive recurrent Markov chain](https://mpaldridge.github.io/math2750/S09-recurrence-transience.html)
 
 Important concepts include:
 - Recurrent states & Transient states

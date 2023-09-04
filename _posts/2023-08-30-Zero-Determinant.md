@@ -1,7 +1,7 @@
 ---
 title: Zero-Determinant Strategy
 date: 2023-08-30 02:40:00 +0800
-categories: [Multi-Agent Reinforcement Learning]
+categories: [Economics & Game Theory]
 tags: [game theory, sequential social dilemma, multi agents]
 math: True
 ---
@@ -50,11 +50,9 @@ The two agents repeatedly play this game $T$ times. It might be finite or infini
   - $\pi^j(a^j\mid \tau^i,\Delta\tau)$
 
 Derivation:
+
 $$
 \begin{aligned}
-    % &\boldsymbol{\pi}(\boldsymbol{a}\mid \cdot) \\
-    % =& \mathbb{E}\left[  \right] \\
-    % =& 
     &\sum\limits_{\tau^i,\Delta\tau} 
     \pi^i(a^i\mid \tau^i) \cdot
     \pi^j(a^j\mid \tau^i,\Delta\tau) \cdot
@@ -88,6 +86,7 @@ $$
 Some tedious parts were automatically filled in with the help of ChatGPT 4.
 
 ### Notation of 4 outcomes
+
 | Player1\Player2      | Cooperate (c)     | Defect (d)        |
 | -------------------- | ----------------  | ----------------  |
 | **Cooperate (c)**    | $\mathrm{cc}$ (1) | $\mathrm{cc}$ (2) |
@@ -149,9 +148,9 @@ $$
 > This knowledge belongs to the domain of stochastic processes. And the remaining part of this section is sourced from [the notes of MATH2750](https://mpaldridge.github.io/math2750/S10-stationary-distributions.html). Basically, I just copied them over and added some of my own understandings for my own convenience in reading.
 {: .prompt-info }
 
-- $\mathbf{M}$ is a Markov transition matrix of the outcome Markov chain.
-- "Existence: Every positive recurrent Markov chain has a stationary distribution."
-- "Uniqueness: For an irreducible, positive recurrent Markov chain, the stationary distribution is unique and is given by $v_i = 1/ \mu_i$."
+- $\mathbf{M}$ is a transition matrix of the outcome Markov chain.
+- "**Existence:** Every positive recurrent Markov chain has a stationary distribution."
+- "**Uniqueness:** For an irreducible, positive recurrent Markov chain, the stationary distribution is unique and is given by $v_s = 1/ m_s$."
 
 
 Derivation:
@@ -160,31 +159,14 @@ Derivation:
 - $\Rightarrow$ $\mathbf{M}$ has a stationary distribution $\mathbf{v} = \mathbf{v} \mathbf{M}.$
 - $\Rightarrow$ $\mathbf{M}$ has a unit eigenvalue: $1\cdot \mathbf{v} = \mathbf{v} \mathbf{M}.$
 
-
-#### Stack-style Questions
-- What is the definition of stationary distribution?
-- How to prove the Existence and Uniqueness?
-  - Theorem 10.1
-    - What is the definition of irreducible Markov chains?
-    - 
+y distribution exists.
+{: .prompt-info }
 
 
 
-#### Stationary distribution
-- The distribution is defined on the state set, representing the probability of each state occurring at a timestep.
-- E.g., a state set is $\{s_1, s_2\}$, then a distribution can be $(0.7, 0.3)$, meaning that $s_1, s_2$ will appear with the probability of $(0.7, 0.3)$ respectively.
-- If the current distribution is $\mathbf{v}$, then the distribution at the next timestep is $\mathbf{v} \mathbf{M}$.
-- If a distribution $\mathbf{v} = \mathbf{v} \mathbf{M}$, then it is a stationary distribution.
-- It is a fixed point.
 
-#### [Positive recurrent Markov chain](https://mpaldridge.github.io/math2750/S09-recurrence-transience.html)
 
-Important concepts include:
-- Recurrent states & Transient states
-  - Definitions: Theorem 9.1
-  - Comparison: A table
-- The return probability
-- 
+
 
 > The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
 {: .prompt-warning }

@@ -48,7 +48,7 @@ In computability theory and computational complexity theory, **a reduction is an
 
 
 ### Big $O$ notation
-> This part partially use material from [this website](https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/) and [Wikipedia](https://en.wikipedia.org/wiki/Big_O_notation).
+> This part partially uses material from [this website](https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/) and [Wikipedia](https://en.wikipedia.org/wiki/Big_O_notation).
 {: .prompt-info }
 
 > Big-oh is about finding an asymptotic upper bound.

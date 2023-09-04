@@ -40,9 +40,151 @@ The two agents repeatedly play this game $T$ times. It might be finite or infini
 
 ---
 
-## Longer-memory Strategies Offer No Advantage
+## Longer-Memory Strategies Offer No Advantage
+
+- Player $i$:
+  - Making decisions on short memories $\tau^i$.
+  - $\pi^i(a^i\mid \tau^i)$
+- Player $j$
+  - Making decisions on long memories $(\tau^i,\Delta\tau)$.
+  - $\pi^j(a^j\mid \tau^i,\Delta\tau)$
+
+Derivation:
+$$
+\begin{aligned}
+    % &\boldsymbol{\pi}(\boldsymbol{a}\mid \cdot) \\
+    % =& \mathbb{E}\left[  \right] \\
+    % =& 
+    &\sum\limits_{\tau^i,\Delta\tau} 
+    \pi^i(a^i\mid \tau^i) \cdot
+    \pi^j(a^j\mid \tau^i,\Delta\tau) \cdot
+    \mathrm{Pr}(\tau^i,\Delta\tau) \\
+    =& \sum\limits_{\tau^i} \pi^i(a^i\mid \tau^i) \cdot
+    \left[
+        \sum\limits_{\Delta\tau} \pi^j(a^j\mid \tau^i,\Delta\tau)
+        \cdot \mathrm{Pr}(\Delta\tau\mid \tau^i) \cdot \mathrm{Pr}(\tau^i)
+    \right] \\
+    =& \sum\limits_{\tau^i} \pi^i(a^i\mid \tau^i)  \cdot
+    \left[ \sum\limits_{\Delta\tau} \mathrm{Pr}(a^j, \Delta\tau\mid \tau^i) \right]
+    \cdot \mathrm{Pr}(\tau^i)\\
+    =& \sum\limits_{\tau^i} \pi^i(a^i\mid \tau^i) \cdot \mathrm{Pr}(a^j \mid \tau^i) \cdot \mathrm{Pr}(\tau^i)
+\end{aligned}
+$$
+
+$\mathrm{Pr}(a^j \mid \tau^i)$ is the player $j$'s marginalized strategy. And
+
+$$
+\mathrm{Pr}(a^j \mid \tau^i) = \sum\limits_{\Delta\tau} \mathrm{Pr}(a^j, \Delta\tau\mid \tau^i).
+$$
+
+- After some plays, $j$ can estimate the expectations, and it can switch to an equivalent short-memory strategy.
+- "$j$’s switching between a long- and short-memory strategy is completely undetectable (and irrelevant) to $i$."
+
+> Is this conclusion only suitable for repeated games?
+{: .prompt-tip }
+
+## Zero-Determinant Strategy
+
+Some tedious parts were automatically filled in with the help of ChatGPT 4.
+
+### Notation of 4 outcomes
+| Player1\Player2      | Cooperate (c)     | Defect (d)        |
+| -------------------- | ----------------  | ----------------  |
+| **Cooperate (c)**    | $\mathrm{cc}$ (1) | $\mathrm{cc}$ (2) |
+| **Defect (d)**       | $\mathrm{dc}$ (3) | $\mathrm{cc}$ (4) |
+
+### Notation of strategies
+- There are two players, $i$ and $j$, with memory-one strategies.
+- Strategies are based on the outcome of last play.
+
+$$
+\begin{aligned}
+\mathbf{p} =& \pi^i(a_t^i=\mathrm{Cooperate}\mid a_{t-1}^i,a_{t-1}^j) \\
+=&(p_{\mathrm{cc}}, p_{\mathrm{cd}}, p_{\mathrm{dc}}, p_{\mathrm{dd}}) \\
+=&(p_1, p_2, p_3, p_4)
+\end{aligned}
+$$
+
+$$
+\begin{cases}
+    p_{\mathrm{cc}} = \pi^i(a_t^i=\mathrm{Cooperate}\mid a_{t-1}^i =\mathrm{Cooperate},a_{t-1}^j=\mathrm{Cooperate}) \\
+    p_{\mathrm{cd}} = \pi^i(a_t^i=\mathrm{Cooperate}\mid a_{t-1}^i=\mathrm{Cooperate},a_{t-1}^j=\mathrm{Defect}) \\
+    p_{\mathrm{dc}} = \pi^i(a_t^i=\mathrm{Cooperate}\mid a_{t-1}^i=\mathrm{Defect},a_{t-1}^j=\mathrm{Cooperate}) \\
+    p_{\mathrm{dd}} = \pi^i(a_t^i=\mathrm{Cooperate}\mid a_{t-1}^i=\mathrm{Defect},a_{t-1}^j=\mathrm{Defect})
+\end{cases}
+$$
+
+$$
+\mathbf{q} = \pi^j(a_t^j=\mathrm{Cooperate}\mid a_{t-1}^i,a_{t-1}^j)
+$$
+
+### Markov transition matrix: $\mathbf{M}(\mathbf{p}, \mathbf{q})$
+
+- It is a transition kernel of an MDP.
+- The rows indicates the current states.
+- The columns indicates the next states.
+- Each entry indicates the probability of the current row state transitioning to the next column state.
 
 
+|               | $\mathrm{cc}$                              | $\mathrm{cd}$                           | $\mathrm{dc}$                           | $\mathrm{dd}$                           |
+| ------------- | ------------------------------------------ | -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| $\mathrm{cc}$ | $\mathrm{Pr}(\mathrm{cc}\mid \mathrm{cc})$ | $\mathrm{Pr}(\mathrm{cd}\mid \mathrm{cc})$ | $\mathrm{Pr}(\mathrm{dc}\mid \mathrm{cc})$ | $\mathrm{Pr}(\mathrm{dd}\mid \mathrm{cc})$ |
+| $\mathrm{cd}$ | $\mathrm{Pr}(\mathrm{cc}\mid \mathrm{cd})$ | $\mathrm{Pr}(\mathrm{cd}\mid \mathrm{cd})$ | $\mathrm{Pr}(\mathrm{dc}\mid \mathrm{cd})$ | $\mathrm{Pr}(\mathrm{dd}\mid \mathrm{cd})$ |
+| $\mathrm{dc}$ | $\mathrm{Pr}(\mathrm{cc}\mid \mathrm{dc})$ | $\mathrm{Pr}(\mathrm{cd}\mid \mathrm{dc})$ | $\mathrm{Pr}(\mathrm{dc}\mid \mathrm{dc})$ | $\mathrm{Pr}(\mathrm{dd}\mid \mathrm{dc})$ |
+| $\mathrm{dd}$ | $\mathrm{Pr}(\mathrm{cc}\mid \mathrm{dd})$ | $\mathrm{Pr}(\mathrm{cd}\mid \mathrm{dd})$ | $\mathrm{Pr}(\mathrm{dc}\mid \mathrm{dd})$ | $\mathrm{Pr}(\mathrm{dd}\mid \mathrm{dd})$ |
+
+
+|               | $\mathrm{cc}$      | $\mathrm{cd}$      | $\mathrm{dc}$      | $\mathrm{dd}$         |
+| ------------- | ------------------ | ------------------ | ------------------ | --------------------- |
+| $\mathrm{cc}$ | $p_1\cdot q_1$     | $p_1\cdot (1-q_1)$ | $(1-p_1)\cdot q_1$ | $(1-p_1)\cdot(1-q_1)$ |
+| $\mathrm{cd}$ | $p_2\cdot q_3$     | $p_2\cdot (1-q_3)$ | $(1-p_2)\cdot q_3$ | $(1-p_2)\cdot(1-q_3)$ |
+| $\mathrm{dc}$ | $p_3\cdot q_2$     | $p_3\cdot (1-q_2)$ | $(1-p_3)\cdot q_2$ | $(1-p_3)\cdot(1-q_2)$ |
+| $\mathrm{dd}$ | $p_4\cdot q_4$     | $p_4\cdot (1-q_4)$ | $(1-p_4)\cdot q_4$ | $(1-p_4)\cdot(1-q_4)$ |
+
+
+<!-- - Each row sums up to $1.$ -->
+
+### $\mathbf{M}$ has a unit eigenvalue
+
+> This knowledge belongs to the domain of stochastic processes. And the remaining part of this section is sourced from [the notes of MATH2750](https://mpaldridge.github.io/math2750/S10-stationary-distributions.html). Basically, I just copied them over and added some of my own understandings for my own convenience in reading.
+{: .prompt-info }
+
+- $\mathbf{M}$ is a Markov transition matrix of the outcome Markov chain.
+- "Existence: Every positive recurrent Markov chain has a stationary distribution."
+- "Uniqueness: For an irreducible, positive recurrent Markov chain, the stationary distribution is unique and is given by $v_i = 1/ \mu_i$."
+
+
+Derivation:
+
+- $\mathbf{M}$ is a positive recurrent Markov chain.
+- $\Rightarrow$ $\mathbf{M}$ has a stationary distribution $\mathbf{v} = \mathbf{v} \mathbf{M}.$
+- $\Rightarrow$ $\mathbf{M}$ has a unit eigenvalue: $1\cdot \mathbf{v} = \mathbf{v} \mathbf{M}.$
+
+
+#### Stack-style Questions
+- What is the definition of stationary distribution?
+- How to prove the Existence and Uniqueness?
+  - Theorem 10.1
+    - What is the definition of irreducible Markov chains?
+    - 
+
+
+
+#### Stationary distribution
+- The distribution is defined on the state set, representing the probability of each state occurring at a timestep.
+- E.g., a state set is $\{s_1, s_2\}$, then a distribution can be $(0.7, 0.3)$, meaning that $s_1, s_2$ will appear with the probability of $(0.7, 0.3)$ respectively.
+- If the current distribution is $\mathbf{v}$, then the distribution at the next timestep is $\mathbf{v} \mathbf{M}$.
+- If a distribution $\mathbf{v} = \mathbf{v} \mathbf{M}$, then it is a stationary distribution.
+- It is a fixed point.
+
+#### [Positive recurrent Markov chain]((https://mpaldridge.github.io/math2750/S09-recurrence-transience.html))
+
+Important concepts include:
+- Recurrent states & Transient states
+  - Definitions: Theorem 9.1
+  - Comparison: A table
+- The return probability
+- 
 
 > The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
 {: .prompt-warning }

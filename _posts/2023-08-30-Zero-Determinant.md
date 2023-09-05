@@ -104,6 +104,8 @@ $$
 \end{aligned}
 $$
 
+$p_1, p_2, p_3, p_4$ are independent and range from $[0,1].$
+
 $$
 \begin{cases}
     p_{\mathrm{cc}} = \pi^i(a_t^i=\mathrm{Cooperate}\mid a_{t-1}^i =\mathrm{Cooperate},a_{t-1}^j=\mathrm{Cooperate}) \\
@@ -145,15 +147,18 @@ $$
 
 ### $\mathbf{M}$ has a unit eigenvalue
 
-> This knowledge belongs to the domain of stochastic processes. And the remaining part of this section is sourced from [the notes of MATH2750](https://mpaldridge.github.io/math2750/S10-stationary-distributions.html). Basically, I just copied them over and added some of my own understandings for my own convenience in reading.
+> This part requires some knowledge of stochastic processes. Check [my other note](https://yuelin301.github.io/posts/Stochastic-Processes/).
 {: .prompt-info }
 
-- $\mathbf{M}$ is a transition matrix of the outcome Markov chain.
-- "**Existence:** Every positive recurrent Markov chain has a stationary distribution."
-- "**Uniqueness:** For an irreducible, positive recurrent Markov chain, the stationary distribution is unique and is given by $v_s = 1/ m_s$."
 
+> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+{: .prompt-warning }
 
-Derivation:
+- $\mathbf{M}$ is irreducible (?)
+- $\mathbf{M}$ is finite
+
+Then $\mathbf{M}$ is positive recurrent.
+
 
 - $\mathbf{M}$ is a positive recurrent Markov chain.
 - $\Rightarrow$ $\mathbf{M}$ has a stationary distribution $\mathbf{v} = \mathbf{v} \mathbf{M}.$
@@ -168,6 +173,5 @@ y distribution exists.
 
 
 
-> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
-{: .prompt-warning }
+
 

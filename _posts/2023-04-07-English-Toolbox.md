@@ -105,3 +105,42 @@ To begin with, the author believes that $X_1$. In contrast, the speaker argues t
 Additionally, the author claims that $X_2$. However, the speaker rebuts it with a counterargument that $\neg X_2$, but rather $Y_2$.
 
 Finally, the author puts forward that $X_3$. Instead, the speaker challenges the author's assertion and offers a different perspective that $Y_3$.
+
+### Listening dictation practice
+
+#### 1.1 *(2023-9-5-Tuesday-CST)*
+Listen to part of a conversation between a student and a librarian.
+Hi, I really hope you can help me.
+That's why I'm here. What can I do for you?
+I'm supposed to do a literature review for my psychology course. 
+But I'm having a hard time for finding articles.
+I don't even know where to start looking.
+You said this is for psychology course, right?
+So, you're focusing on... Dream interpretation.
+Well, you have a focus, so that's already a good start.
+Well there are few things... Oh wait. **Have you checked to see if your professor put any material for you to look at on reserve?**
+Aha, that's one thing that I did know to do.
+**I just copied an article, but I still need three more on my topic from three different journals.**
+**Let's get you going on looking for those then.**
+**We have plenty versions of twenty years old psychology journals on reference section.**
+**These are ones published within the last year.**
+And let me think about it. There is a journal named sleeping dreams. 
+Oh yeah. The article I just copy is from that journal.
+So I've gotta looking for other sources.
+Ok, actually most of the materials are available on electronically now.
+You can access psychology databases or electronic journals and articles through the librarian computers.
+And if you want to search by title with the word "dream", for example, just type it in and all the articles with "dream" in the title will come up in the screen.
+Cool, that's great. Too bad I can't do this from home.
+But, you can. All the librarian databeses and electronic sources can be accessed through any computer connected to the university network.
+Really? I can't believe I didn't know that.
+It's still sounds like it's gonna take a while though. You know, going through all of that information, all of the sources.
+Maybe. But you've already narrowed your search down to articles on dream interpretation.
+So it shouldn't be too bad.
+**And you probably notice that there is an abstract or summary at the topic at the first page of the article you copy.**
+When you go into the databases and the electronic sources, you have the option to display the abstract on the computer screen.
+**Skimming those to decide whether or not you want to read the whole article should cut down some time.**
+Right. Abstracts. They will definitely make the project more doable.
+I guess I should try out the electronic search while I'm still hear them. You know, just in case.
+Sure. That computer is for you over there. **And I will be here 'till 5 this afternoon.**
+Thanks. I **feel a lot better** about the assignment right now.
+

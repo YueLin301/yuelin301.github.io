@@ -144,3 +144,22 @@ I guess I should try out the electronic search while I'm still hear them. You kn
 Sure. That computer is for you over there. **And I will be here 'till 5 this afternoon.**
 Thanks. I **feel a lot better** about the assignment right now.
 
+#### 1.2 *(2023-9-6-Wednesday-CST)*
+Listen to part of a lecture, in a comtemporary class.
+OK, I'm going to begin this lecture by giving you your next assignment.
+Remember I said that some point during the semester I want you to attend an exhibit **at the Fairy Street** gallary and then write about it?
+Well, the exhibit that I want you to attend is comming up. It has already started in fact, but it will be at the gallary **for** the next month, which gives you plenty of time to complete this assignment.
+The name of the artist exhibiting there is Rose Frantzen.
+Frantzen's work maybe unfamiliar to you since she is a relatively young artist. 
+**But she's got a very unusual style compared to some of the artists we've looked at this term.**
+But anyway, Frantzen's style is what she **herself** call realistic impressionism.
+So, you've probably studied both of the movements, separatedly, separate movement, realism and impressionism in some of your history courses.
+So, who can just sum this up.
+Well, impressionism, **started in** the late 19 century.
+The basic impressionist style is very different from earlier styles.
+**It didn't depict the scenes or models exactly as they look.**
+Impressionist painter tented to paint really thickly, and in big brush strokes.
+So the texture of the canvas was rough.
+Good, what else? What were the subjects?
+Well, a lot of impressionist artists painted everyday things, like people on the streets, and **in** cafes, and lots of nature **scenes**, especially landscapes.
+Good. When you go to the exhibit I really want you to take a close look at a certain painting. It's a farm scene. **And you will see it right as you enter the gallary.**

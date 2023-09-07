@@ -163,3 +163,34 @@ So the texture of the canvas was rough.
 Good, what else? What were the subjects?
 Well, a lot of impressionist artists painted everyday things, like people on the streets, and **in** cafes, and lots of nature **scenes**, especially landscapes.
 Good. When you go to the exhibit I really want you to take a close look at a certain painting. It's a farm scene. **And you will see it right as you enter the gallary.**
+The reason that I think this painting is so important is that it stresses the impressionist aspect of Frantzen's style. It's an outdoor scene. An everyday scene. It's kind of bleak, but you can see those broad brushstrokes and the blurry lines.
+The color **aren't** realistic. The sky is kind of, well, an **unnatural** pinkish yellow. And the fence in the foreground is blue. But somehow the overall scene gives an impression of a cold bleak winter day on a farm.
+So that's the impressionist side of her work.
+Oh, and speaking about farms, that reminds me. One interesting thing I read about Frantzen is that when she first move back to Iowa after living abroad, she often visited this place in her town called the sales barn.
+And the sales barn, it was basically this place where the local farmers bought and sold their cattles, their farm animals.
+The reason Frantzen went there, and she later on would visit other places, like dance halls, was to observe people and the ways they moved.
+She really found this helped her work. And give her an understanding of body movements and actions, how humans move, and stand still. What their postures were like, too.
+So, what about Realism. What are the elements of Realism in Frantzen's work we should be looking for.
+Uh, real honest depictions of suject matter, pretty unidealized stuff, and pretty everyday subject matter, too.
+Good. One other painting that I really want you to look at is of a young woman surrounded by pumpkins.
+You will notice the woman's face is so realistic looking that it's almost like a photograph.
+The woman's nose is a little less than perfect, but her hair is kind of messed up. It's Realism.
+But then the background of the painting, this woman with the pumpkins is wrapped **in a blanket of** broad black and thick brushstrokes and it's all kinds of zigzagging brashstrokes with some lines kind of chaotic almost when you look close, and there are **vibrant** colors. There's lots of orange with little **hints** of electric blue **peeking** on it.
+I find Frantzen to be a very successiful artist.
+I mean, some artists, to appreaciate them you have to learn about their life stories.
+But there is a little about Rose Frantzen's life story anyway.
+She attended art school. But was told one of her **instructors** that she wasn't good at illustration.
+That she should go to the advertising instead.
+So she took advertising classes and fine art classes, too.
+Untill she was convinced by the head of an advertising agency, that her work was really good.
+That she could be an artist.
+But of course it's not as easy as that.
+And so Frantzen had to paint other people's portraits at places like art fairs.
+Just to make money to buy paint for money for her more serious art work.
+No matter what, she never stopped painting.
+And now Frantzen is doing extremely well.
+And the work has been shown all over the country.
+So I think most of us will be discouraged if we had to face challenges and difficulties like that.
+But what's important is that you keep at it.
+That you don't give up.
+That's what's really important to remember.

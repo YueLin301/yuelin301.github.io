@@ -8,7 +8,7 @@ pin: True
 ---
 
 ## What is Fictitious Play?
-> 洪七公叫他取过树枝，将打狗棒法中一招“棒打双犬”细细说给了他听。杨过一学即会，当即照式演出。欧阳锋见棒招神奇，果然厉害，一时难以化解，想了良久，将一式杖法说给杨过听了。杨过依言演出。洪七公微微一笑，赞了声：“好！” —— 《神雕侠侣》第十一回
+<!-- > 洪七公叫他取过树枝，将打狗棒法中一招“棒打双犬”细细说给了他听。杨过一学即会，当即照式演出。欧阳锋见棒招神奇，果然厉害，一时难以化解，想了良久，将一式杖法说给杨过听了。杨过依言演出。洪七公微微一笑，赞了声：“好！” —— 《神雕侠侣》第十一回 -->
 
 1. Fictitious play is a learning rule. 
 2. In it, each player presumes that the opponents are playing stationary (possibly mixed) strategies. 
@@ -50,6 +50,7 @@ Self-play involves an agent (or a model) playing against itself or versions of i
 3. **Update**: After each game, or a batch of games, update the agent's model based on the results, rewards, and feedback from the games.
 4. **Iterate**: Repeat the Play and Update steps for a desired number of iterations or until the agent's strategy converges to an optimal or satisfactory level.
 
+
 ### Significance
 
 1. **Unlimited Opponents**: Self-play provides an infinite supply of opponents since the agent is essentially playing against itself. This eliminates the need for external opponent data or human opponents, which can be limited or introduce variability.
@@ -59,6 +60,64 @@ Self-play involves an agent (or a model) playing against itself or versions of i
 ### Applications
 
 The most famous application of self-play is perhaps in the training of **AlphaGo** and its successors by DeepMind. AlphaGo utilized self-play to achieve superhuman performance in the game of Go, a feat that was previously thought to be decades away. Following this, **AlphaZero** utilized a generalized version of this self-play approach to achieve superhuman performance not only in Go but also in Chess and Shogi.
+
+### A resampling technique: bootstrapping
+Resampling techniques are a class of statistical methods that involve creating new samples by repeatedly drawing observations from the original data sample.
+
+Bootstrapping is a method where new "bootstrap samples" are created by drawing observations **with replacement** from the original sample.
+
+In RL, a common example is the Temporal Difference (TD) learning. This method bootstraps from the current estimate of the value function.
+
+#### Incremental mean
+I have a dataset with $n$ samples $\{x_1, x_2, \ldots, x_n\}$. The expectation of $X$ is calculated as 
+
+$$
+\mu_n = \frac{1}{n}\sum\limits_{i=1}^n x_i
+$$
+
+Then I get a new sample $x_{n+1}$, then the expectation of $X$ should be updated. And it can be represented by the current expectation: 
+
+$$
+\mu_{n+1} = \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
+$$
+
+Derivation:
+
+$$
+\begin{aligned}
+  \mu_{n+1} =& \frac{1}{n+1}\sum\limits_{i=1}^{n+1} x_i 
+  =  \frac{1}{n+1}\left(x_{n+1} + \sum\limits_{i=1}^n x_i \right) \\
+  =&  \frac{1}{n+1}x_{n+1} + \frac{n}{n+1} \sum\limits_{i=1}^n x_i \\
+  =&  \frac{1}{n+1}x_{n+1} + \left(1 - \frac{1}{n+1}\right) \mu_n \\
+  =& \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
+\end{aligned}
+$$
+
+To reduce the impact of previous samples, the coefficient is fixed as a constant $\alpha$:
+
+$$
+\begin{aligned}
+  \mu_{n+1} 
+  =& \mu_n + \alpha\left(x_{n+1} - \mu_n \right) \\
+  =& \alpha\cdot x_{n+1} - \left(1-\alpha\right)\cdot\mu_n 
+\end{aligned}
+$$
+
+
+#### Temporal difference
+
+According to the Bellman equation, the value function is
+
+$$
+V(s) = \mathbb{E}[R_{t+1} + \gamma V(S_{t+1}) | S_t = s]
+$$
+
+Now I get a new sample of $R_{t+1}$, I can use it to update $V(s_t)$.
+
+$$
+V(s_t) \gets V(s_t) + \alpha\left(x_{n+1} - V(s_t) \right)
+$$
+
 
 ---
 

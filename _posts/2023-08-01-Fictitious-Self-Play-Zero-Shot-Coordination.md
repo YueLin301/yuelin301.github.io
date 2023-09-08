@@ -7,7 +7,7 @@ math: True
 pin: True
 ---
 
-## What is Fictitious Play?
+## Fictitious Play
 <!-- > 洪七公叫他取过树枝，将打狗棒法中一招“棒打双犬”细细说给了他听。杨过一学即会，当即照式演出。欧阳锋见棒招神奇，果然厉害，一时难以化解，想了良久，将一式杖法说给杨过听了。杨过依言演出。洪七公微微一笑，赞了声：“好！” —— 《神雕侠侣》第十一回 -->
 
 1. Fictitious play is a learning rule. 
@@ -41,7 +41,7 @@ E.g., in the [Matching Pennies game](https://yuelin301.github.io/posts/Classic-G
 
 > 小龙女奇道：“自己跟自己打架？怎生打法？” —— 《神雕侠侣》第二十五回
 
-Self-play involves an agent (or a model) playing against itself or versions of itself. This can be thought of as a kind of **bootstrapping** method where an agent learns and refines its strategies through continuous iterations of gameplay against its own evolving strategies.
+Self-play involves an agent (or a model) playing against itself or versions of itself. This can be thought of as a kind of [**bootstrapping**](https://yuelin301.github.io/posts/RL-Toolbox/#TD(0)) method where an agent learns and refines its strategies through continuous iterations of gameplay against its own evolving strategies.
 
 ### Process
 
@@ -61,64 +61,6 @@ Self-play involves an agent (or a model) playing against itself or versions of i
 
 The most famous application of self-play is perhaps in the training of **AlphaGo** and its successors by DeepMind. AlphaGo utilized self-play to achieve superhuman performance in the game of Go, a feat that was previously thought to be decades away. Following this, **AlphaZero** utilized a generalized version of this self-play approach to achieve superhuman performance not only in Go but also in Chess and Shogi.
 
-### A resampling technique: bootstrapping
-Resampling techniques are a class of statistical methods that involve creating new samples by repeatedly drawing observations from the original data sample.
-
-Bootstrapping is a method where new "bootstrap samples" are created by drawing observations **with replacement** from the original sample.
-
-In RL, a common example is the Temporal Difference (TD) learning. This method bootstraps from the current estimate of the value function.
-
-#### Incremental mean
-I have a dataset with $n$ samples $\{x_1, x_2, \ldots, x_n\}$. The expectation of $X$ is calculated as 
-
-$$
-\mu_n = \frac{1}{n}\sum\limits_{i=1}^n x_i
-$$
-
-Then I get a new sample $x_{n+1}$, then the expectation of $X$ should be updated. And it can be represented by the current expectation: 
-
-$$
-\mu_{n+1} = \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
-$$
-
-Derivation:
-
-$$
-\begin{aligned}
-  \mu_{n+1} =& \frac{1}{n+1}\sum\limits_{i=1}^{n+1} x_i 
-  =  \frac{1}{n+1}\left(x_{n+1} + \sum\limits_{i=1}^n x_i \right) \\
-  =&  \frac{1}{n+1}x_{n+1} + \frac{n}{n+1} \sum\limits_{i=1}^n x_i \\
-  =&  \frac{1}{n+1}x_{n+1} + \left(1 - \frac{1}{n+1}\right) \mu_n \\
-  =& \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
-\end{aligned}
-$$
-
-To reduce the impact of previous samples, the coefficient is fixed as a constant $\alpha$:
-
-$$
-\begin{aligned}
-  \mu_{n+1} 
-  =& \mu_n + \alpha\left(x_{n+1} - \mu_n \right) \\
-  =& \alpha\cdot x_{n+1} - \left(1-\alpha\right)\cdot\mu_n 
-\end{aligned}
-$$
-
-
-#### Temporal difference
-
-According to the Bellman equation, the value function is
-
-$$
-V(s) = \mathbb{E}[R_{t+1} + \gamma V(S_{t+1}) | S_t = s]
-$$
-
-Now I get a new sample of $R_{t+1}$, I can use it to update $V(s_t)$.
-
-$$
-V(s_t) \gets V(s_t) + \alpha\left(x_{n+1} - V(s_t) \right)
-$$
-
-
 ---
 
 ## Zero-Shot Coordination
@@ -127,17 +69,59 @@ $$
 > —— 《红楼梦》第三回
 
 ### Definition
-Zero-shot coordination is about developing agents capable of coordinating with some other agents (even humans) they have never seen before.
+Zero-shot coordination is about developing agents capable of coordinating in the testing phase with some other agents (even humans) that they have never seen in the training phase.
 
 1. **No Prior Coordination**: Agents do not have the opportunity to coordinate or train to learn how to work together before starting the task. Essentially, agents start “from scratch” without any prior coordination strategies.
 2. **No Communication**: Agents cannot communicate with each other during task execution.
 
 ### The self-play is not good enough
 
+Self-play is a bootstrapping method. And
+- **It assumes sample is representative**: Bootstrapping works under an assumption based on the original sample data, i.e., the sample data is randomly drawn and is representative of the population. If the original sample is not a good representative of the population, bootstrapping can yield misleading results.
+- **It may cuases potential overfitting**: Given that bootstrapping is based on multiple resamples of the sample data, it may overemphasize certain features or outliers in the sample, leading to overfitting.
+
+In the current setting, the self-play agent's policy may converge to overfit its own policy, thus forming a specialized **convention**. 
+
+After training with self-play, agents might develop different conventions if there are multiple maxima in the sense of the joint policy, which can potentially be symmetric to each other. 
+Thus, without a good way to **break the symmetries**, agents may fail to coordinate.
+
+### Example: [Lever](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
+
+It is a matrix game. There are two agents with the same action space, each of size $m$. If the two agents choose the same actions, then they each receive a reward of 1; otherwise, they get 0.
+
+|       | $a_1$ | $a_2$ | $a_3$ |
+|-------|-------|-------|-------|
+| $a_1$ | (1,1) | (0,0) | (0,0) |
+| $a_2$ | (0,0) | (1,1) | (0,0) |
+| $a_3$ | (0,0) | (0,0) | (1,1) |
+
+If the two agents are trained by self-play successfully, then they will both choose a same action, and that's a convention dependent on the random seeds. Different pairs may converge to different outcomes. And thus the agent across the pair may failed to coordiante.
+
+By the way, the mixed strategy Nash equilibrium is $\left(\frac{1}{3}, \frac{1}{3}, \frac{1}{3}\right).$ The calculation is like the [Matching Pennies](https://yuelin301.github.io/posts/Classic-Games/#matching-pennies) case.
+
+In the paper "Other-Play," which proposed this task, there is another version of it:
+
+|       | $a_1$ | $a_2$ | $a_3$     |
+|-------|-------|-------|-------    |
+| $a_1$ | (1,1) | (0,0) | (0,0)     |
+| $a_2$ | (0,0) | (1,1) | (0,0)     |
+| $a_3$ | (0,0) | (0,0) | (0.9,0.9) |
+
+And the authors claimed that the most robust strategy is for everyone to choose the action $a_3$, which which would result in a payoff expectation $0.9.$ Otherwise, some pairs may choose $a_1$ and the others may choose $a_2$, it would lead to a payoff expectation $0.5$.
+
+> [@fortytwo6364](https://www.youtube.com/watch?v=Sy2Z7alDgAE): But 0.9 is actually not the only unique answer to the lever problem, there is a unique 1.0 lever directly opposite to the .9 lever. This is stable to the symmetries implied by the problem statement where both players are shown the same set of levers, as well as being robust to different reflections and rotations being presented to different players (though not arbitrary permutations). So assuming whoever I am paired with is also optimizing we would both earn 1. This strategy doesn't work if there are an odd number of buttons to begin with.
+
+The task introduced in the paper includes an illustration where the actions are circled up. However, the authors claim that these actions are not labeled. A more accurate description would be that the actions are uniformly sampled within a closed space, meaning that they cannot be identified by their positions.
+
+
+> In my understanding, despite agents in zero-shot coordination never having interacted with others before, the designer assumes they are aware of the presence of others participating in the same task and are rational (with some level of [theory of mind](https://yuelin301.github.io/posts/ToM-MM/)). There is no free lunch here.
+{: .prompt-tip }
 
 ---
+
 ## Other-Play
 [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
+
 
 
 
@@ -152,21 +136,24 @@ Zero-shot coordination is about developing agents capable of coordinating with s
 
 ### Jakob Foerster
 
-- [ ] Other-play  
+- [ ] SAD [[code](https://github.com/facebookresearch/hanabi_SAD)]  
+  [Hu, Hengyuan, and Jakob N. Foerster. "Simplified Action Decoder for Deep Multi-Agent Reinforcement Learning." International Conference on Learning Representations. 2019.](https://arxiv.org/abs/1912.02288)
+- [ ] Other-Play [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
-- [ ] A New Formalism, Method and OpenIssues  
+- [ ] A New Formalism, Method and Open Issues  
   [Treutlein, Johannes, et al. "A new formalism, method and open issues for zero-shot coordination." International Conference on Machine Learning. PMLR, 2021.](http://proceedings.mlr.press/v139/treutlein21a/treutlein21a.pdf)
-- [ ] Trajectory diversity  
+- [ ] Trajectory Diversity  
   [Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
-- [ ] Off-belief learning  
+- [ ] Off-Belief Learning  
   [Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](http://proceedings.mlr.press/v139/hu21c/hu21c.pdf)
 
 ### Tencent
 
-- [ ] Maximum Entropy Population-Based  
+- [ ] Maximum Entropy Population-Based Training  
   [Zhao, Rui, et al. "Maximum entropy population-based training for zero-shot human-ai coordination." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023.](https://ojs.aaai.org/index.php/AAAI/article/view/25758)
 
 ### Env
+- [x] Lever [[code](https://bit.ly/2vYkfI7)][[paper](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)]
 - [ ] Corridor [[paper](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
 - [ ] Overcooked [[code](https://github.com/HumanCompatibleAI/overcooked_ai)]
 - [ ] Hanabi [[code](https://github.com/deepmind/hanabi-learning-environment)] [[paper](https://www.sciencedirect.com/science/article/pii/S0004370219300116)]

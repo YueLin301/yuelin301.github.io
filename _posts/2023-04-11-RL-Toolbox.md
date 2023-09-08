@@ -147,3 +147,68 @@ $$
 > [The 37 Implementation Details of Proximal Policy Optimization](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/).
 {: .prompt-info }
 
+## Basics
+
+### Incremental mean
+I have a dataset with $n$ samples $\{x_1, x_2, \ldots, x_n\}$. The expectation of $X$ is calculated as 
+
+$$
+\mu_n = \frac{1}{n}\sum\limits_{i=1}^n x_i
+$$
+
+Then I get a new sample $x_{n+1}$, then the expectation of $X$ should be updated. And it can be represented by the current expectation: 
+
+$$
+\mu_{n+1} = \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
+$$
+
+Derivation:
+
+$$
+\begin{aligned}
+  \mu_{n+1} =& \frac{1}{n+1}\sum\limits_{i=1}^{n+1} x_i 
+  =  \frac{1}{n+1}\left(x_{n+1} + \sum\limits_{i=1}^n x_i \right) \\
+  =&  \frac{1}{n+1}x_{n+1} + \frac{n}{n+1} \sum\limits_{i=1}^n x_i \\
+  =&  \frac{1}{n+1}x_{n+1} + \left(1 - \frac{1}{n+1}\right) \mu_n \\
+  =& \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
+\end{aligned}
+$$
+
+To reduce the impact of previous samples, the coefficient is fixed as a constant $\alpha$:
+
+$$
+\begin{aligned}
+  \mu_{n+1} 
+  =& \mu_n + \alpha\left(x_{n+1} - \mu_n \right) \\
+  =& \alpha\cdot x_{n+1} - \left(1-\alpha\right)\cdot\mu_n 
+\end{aligned}
+$$
+
+### TD(0)
+Resampling techniques are a class of statistical methods that involve creating new samples by repeatedly drawing observations from the original data sample.
+
+Bootstrapping is a method where new "bootstrap samples" are created by drawing observations **with replacement** from the original sample.
+
+In RL, a common example is the Temporal Difference (TD) learning. This method bootstraps from the current estimate of the value function. The value function is defined as
+
+$$
+V(s) = \mathbb{E}\left[\sum\limits_{t=0}^\infty \gamma^t \cdot r_t | s_0 = s\right]
+$$
+
+But if the trajectory will never end, then we cannot get all the $r_t$ that we need to calculate the expectation.
+
+According to the Bellman equation, the value function can be calculated as
+
+$$
+V(s) = \mathbb{E}\left[r_{t+1} + \gamma V(s_{t+1}) | s_t = s\right]
+$$
+
+Now I get a new sample of $R_{t+1}$, I can use it to update $V(s_t)$, using the [incremental mean](https://yuelin301.github.io/posts/RL-Toolbox/#Incremental-mean) trick.
+
+$$
+V(s_t) \gets V(s_t) + \alpha\left(x_{n+1} - V(s_t) \right),
+$$
+
+where $x_{n+1} = r_{t+1} + \gamma V(s_{t+1}).$ The $V(s_{t+1})$ is not the ground true value, but we can used it. (Proving convergence is another thing to do.) 
+
+So we can say that the value function is updated based on itself. And this method uses $V(s_{t+1})$ instead of $\sum\limits_{k=t}^\infty \gamma^{k-t}\cdot r_{k+2}.$ And that's what bootstrapping means. 

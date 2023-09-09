@@ -41,7 +41,7 @@ E.g., in the [Matching Pennies game](https://yuelin301.github.io/posts/Classic-G
 
 > 小龙女奇道：“自己跟自己打架？怎生打法？” —— 《神雕侠侣》第二十五回
 
-Self-play involves an agent (or a model) playing against itself or versions of itself. This can be thought of as a kind of [**bootstrapping**](https://yuelin301.github.io/posts/RL-Toolbox/#TD(0)) method where an agent learns and refines its strategies through continuous iterations of gameplay against its own evolving strategies.
+Self-play involves an agent (or a model) playing against itself or versions of itself. This can be thought of as a kind of [**bootstrapping**](https://yuelin301.github.io/posts/RL-Toolbox/#td0) method where an agent learns and refines its strategies through continuous iterations of gameplay against its own evolving strategies.
 
 ### Process
 
@@ -95,7 +95,7 @@ It is a matrix game. There are two agents with the same action space, each of si
 | $a_2$ | (0,0) | (1,1) | (0,0) |
 | $a_3$ | (0,0) | (0,0) | (1,1) |
 
-If the two agents are trained by self-play successfully, then they will both choose a same action, and that's a convention dependent on the random seeds. Different pairs may converge to different outcomes. And thus the agent across the pair may failed to coordiante.
+If the two agents are trained through self-play successfully, then they will both choose the same action, a convention influenced by the initial random seeds used in the training process. Different pairs may converge to different outcomes, thus agents from different pairs may fail to coordinate.
 
 By the way, the mixed strategy Nash equilibrium is $\left(\frac{1}{3}, \frac{1}{3}, \frac{1}{3}\right).$ The calculation is like the [Matching Pennies](https://yuelin301.github.io/posts/Classic-Games/#matching-pennies) case.
 
@@ -114,8 +114,55 @@ And the authors claimed that the most robust strategy is for everyone to choose 
 The task introduced in the paper includes an illustration where the actions are circled up. However, the authors claim that these actions are not labeled. A more accurate description would be that the actions are uniformly sampled within a closed space, meaning that they cannot be identified by their positions.
 
 
-> In my understanding, despite agents in zero-shot coordination never having interacted with others before, the designer assumes they are aware of the presence of others participating in the same task and are rational (with some level of [theory of mind](https://yuelin301.github.io/posts/ToM-MM/)). There is no free lunch here.
+> In my understanding, despite agents in zero-shot coordination never having interacted with others before, the designer assumes they are aware of the presence of others participating in the same task and are rational (and with some level of [theory of mind](https://yuelin301.github.io/posts/ToM-MM/)). There is no free lunch here.
 {: .prompt-tip }
+
+### Equivalence mapping
+
+This definition is from the paper "other-play" and it is based on the Dec-POMDPs. It resembles the one used for [finding Nash equilibria in large games like poker](https://dl.acm.org/doi/abs/10.1145/1284320.1284324). It aims to reduce the number of states in the game by exploiting state symmetry.
+
+An equivalence mapping of can find the states and actions that share the same reward, transition probability, and observation. Formally,
+
+$$
+\begin{aligned}
+  \phi \in \Phi \iff & P(\phi(s')\mid\phi(s),\phi(a)) 
+  = P(s'\mid s,a) \\ 
+  &\land R(\phi(s'), \phi(a), \phi(s)) = R(s', a, s) \\
+  &\land O(\phi(o)\mid\phi(s), \phi(a), i) = O(o\mid s, a, i) \\
+  &\forall s', s, a, o, i.
+\end{aligned}
+$$
+And it's a shorthand for
+$$
+\phi = \{\phi_S, \phi_A, \phi_O\}.
+$$
+
+It thus can be extended to trajectories and the policies.
+
+- 
+  $$
+  \phi(\tau_{t}^{i}) = \{\phi(o_{0}^{i}), \phi(a_{0}^{i}), \phi(r_{0}), \ldots , \phi(o_{t}^{i})\},
+  $$
+- 
+  $$
+  \pi' = \phi(\pi) \iff \pi'(\phi(a)\mid\phi(\tau)) = \pi(a\mid\tau), \forall \tau, a.
+  $$
+
+In this way, a Dec-POMDP with two players has the following properties.
+
+- 
+  $$
+  J(\pi_A, \pi_B) = J(\phi(\pi_{A}^1), \phi(\pi_{B}^2)), \forall \phi \in \Phi, \pi_A, \pi_B.
+  $$
+- 
+  $$
+  \{ \phi \cdot \phi' : \phi' \in \Phi \} = \Phi, \quad \forall \phi \in \Phi.
+  $$
+
+In my understanding, the `\cdot` here means function composition. That is, $(\phi \cdot \phi')(x)$ means $\phi(\phi'(x))$.
+
+
+
 
 ---
 
@@ -124,6 +171,17 @@ The task introduced in the paper includes an illustration where the actions are 
 
 
 
+---
+
+Consider a Dec-POMDP with two players, the optimization problem in the sense of the other-play is xxx
+
+$$
+\arg\max\limits_{\boldsymbol\pi} \mathbb{E}_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right],
+$$
+
+where the distribution is unifrom, and $\mathbb{E}_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is denoted as $J_{OP}(\boldsymbol\pi).$
+
+If the , ifferent pairs
 
 ---
 
@@ -157,3 +215,20 @@ The task introduced in the paper includes an illustration where the actions are 
 - [ ] Corridor [[paper](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
 - [ ] Overcooked [[code](https://github.com/HumanCompatibleAI/overcooked_ai)]
 - [ ] Hanabi [[code](https://github.com/deepmind/hanabi-learning-environment)] [[paper](https://www.sciencedirect.com/science/article/pii/S0004370219300116)]
+
+
+- 
+  $$
+  \begin{align*}
+  y &= mx + b \\
+  y - y_1 &= m(x - x_1) \\
+  \end{align*}
+  $$
+- 
+  $$
+  E = mc^2
+  $$
+- 
+  $$
+  a^2 + b^2 = c^2
+  $$

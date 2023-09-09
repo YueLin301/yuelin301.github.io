@@ -10,7 +10,7 @@ order: 4
 ---
 Hi, this is Yue Lin (or 林越, in Chinese), and welcome to my personal website. 
 Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang.
-Here, I will consistently update my experiences, paper summaries, notes, and nearly everything that interests me. 
+Here, I will regularly update my experiences, notes, and the computational magic spells of all the techniques that interest me.
 
 > And how could I bear to be a man, if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
 > 

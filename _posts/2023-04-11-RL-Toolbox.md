@@ -203,7 +203,7 @@ $$
 V(s) = \mathbb{E}\left[r_{t+1} + \gamma V(s_{t+1}) | s_t = s\right]
 $$
 
-Now I get a new sample of $R_{t+1}$, I can use it to update $V(s_t)$, using the [incremental mean](https://yuelin301.github.io/posts/RL-Toolbox/#Incremental-mean) trick.
+Now I get a new sample of $R_{t+1}$, I can use it to update $V(s_t)$, using the [incremental mean](https://yuelin301.github.io/posts/RL-Toolbox/#incremental-mean) trick.
 
 $$
 V(s_t) \gets V(s_t) + \alpha\left(x_{n+1} - V(s_t) \right),

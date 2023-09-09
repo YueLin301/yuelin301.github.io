@@ -305,7 +305,7 @@ If a Markov chain is irreducible (the entire state space is a single communicati
 
 If a distribution $\mathbf{v} = \mathbf{v} \mathbf{M}$, then it is a stationary distribution.
 
-If a distribution $\mathbf{v}_i = \sum_j \mathbf{v}_i \cdot \mathbf{M}_{ij}$, then it is a stationary distribution.
+If a distribution $\mathbf{v}\_i = \sum_j \mathbf{v}_i \cdot \mathbf{M}\_{ij}$, then it is a stationary distribution.
 
 
 A stationary distribution is a fixed point.

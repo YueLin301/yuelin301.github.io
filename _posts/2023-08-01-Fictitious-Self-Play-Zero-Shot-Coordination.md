@@ -85,6 +85,13 @@ In the current setting, the self-play agent's policy may converge to overfit its
 After training with self-play, agents might develop different conventions if there are multiple maxima in the sense of the joint policy, which can potentially be symmetric to each other. 
 Thus, without a good way to **break the symmetries**, agents may fail to coordinate.
 
+### Perspectives
+In my understanding, the zero-shot coordination problem exists beacuse:
+- There are symmetric descriptions in the tasks. Some quantities are not (and should not be) labeled.
+- There are multiple maxima in the optimization problem of the task. Different pairs of agent cannot know which maxima their partner is at.
+- In different runs of the same experimental code, the agents may have different random seeds.
+- Self-play is a biased learning rule.
+
 ### Example: [Lever](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
 
 It is a matrix game. There are two agents with the same action space, each of size $m$. If the two agents choose the same actions, then they each receive a reward of 1; otherwise, they get 0.
@@ -107,7 +114,7 @@ In the paper "Other-Play," which proposed this task, there is another version of
 | $a_2$ | (0,0) | (1,1) | (0,0)     |
 | $a_3$ | (0,0) | (0,0) | (0.9,0.9) |
 
-And the authors claimed that the most robust strategy is for everyone to choose the action $a_3$, which which would result in a payoff expectation $0.9.$ Otherwise, some pairs may choose $a_1$ and the others may choose $a_2$, it would lead to a payoff expectation $0.5$.
+And the authors claimed that the most robust strategy is for everyone to choose the action $a_3$, which which would result in a payoff expectation $0.9.$ Otherwise, some pairs may choose $a_1$ and the others may choose $a_2$, it would lead to a payoff expectation $0.5.$
 
 > [@fortytwo6364](https://www.youtube.com/watch?v=Sy2Z7alDgAE): But 0.9 is actually not the only unique answer to the lever problem, there is a unique 1.0 lever directly opposite to the .9 lever. This is stable to the symmetries implied by the problem statement where both players are shown the same set of levers, as well as being robust to different reflections and rotations being presented to different players (though not arbitrary permutations). So assuming whoever I am paired with is also optimizing we would both earn 1. This strategy doesn't work if there are an odd number of buttons to begin with.
 
@@ -119,7 +126,7 @@ The task introduced in the paper includes an illustration where the actions are 
 
 ### Equivalence mapping
 
-This definition is from the paper "other-play" and it is based on the Dec-POMDPs. It resembles the one used for [finding Nash equilibria in large games like poker](https://dl.acm.org/doi/abs/10.1145/1284320.1284324). It aims to reduce the number of states in the game by exploiting state symmetry.
+This definition used to describe the symmetry is from the paper "other-play" and it is based on the Dec-POMDPs. It resembles the one used for [finding Nash equilibria in large games like poker](https://dl.acm.org/doi/abs/10.1145/1284320.1284324).
 
 An equivalence mapping of can find the states and actions that share the same reward, transition probability, and observation. Formally,
 
@@ -132,12 +139,8 @@ $$
   &\forall s', s, a, o, i.
 \end{aligned}
 $$
-And it's a shorthand for
-$$
-\phi = \{\phi_S, \phi_A, \phi_O\}.
-$$
 
-It thus can be extended to trajectories and the policies.
+And it's a shorthand for $\phi = \{\phi_S, \phi_A, \phi_O\}.$ It thus can be extended to trajectories and the policies.
 
 - 
   $$
@@ -162,26 +165,56 @@ In this way, a Dec-POMDP with two players has the following properties.
 In my understanding, the `\cdot` here means function composition. That is, $(\phi \cdot \phi')(x)$ means $\phi(\phi'(x))$.
 
 
+### Evaluation: Cross-Play
 
+- The algorithm aimed to be tested is written in code, used to train the agents. 
+- The code runs the traning experiment multiple times, each time with a different random seed.
+- The agents in different runs (with different random seeds) are required to play the coordination task in the test time.
+
+Success in cross-play is a **necessary condition** for the algorithm to achieve a level of zero-shot coordination.
+
+![pic](/assets/img/23-08-01-zsc/cross-play.png){: width="500" height="500" }
+_Illustration of Cross-Play from the paper "[A New Formalism, Method and Open Issues for Zero-Shot Coordination.](http://proceedings.mlr.press/v139/treutlein21a/treutlein21a.pdf)"_
 
 ---
 
 ## Other-Play
 [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
 
-
+- Other-play is a learning rule.
+- The optimization problem explicitly involves considerations related to policy symmetry.
 
 ---
 
-Consider a Dec-POMDP with two players, the optimization problem in the sense of the other-play is xxx
+Consider a Dec-POMDP with two players, the optimization problem in the sense of the other-play is
 
 $$
 \arg\max\limits_{\boldsymbol\pi} \mathbb{E}_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right],
 $$
 
-where the distribution is unifrom, and $\mathbb{E}_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is denoted as $J_{OP}(\boldsymbol\pi).$
+where the distribution is unifrom, and $\mathbb{E}\_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is denoted as $J\_{OP}(\boldsymbol\pi).$
 
-If the , ifferent pairs
+> The expected OP return of $\boldsymbol{\pi}$ is equal to the expected return of each player independently playing a policy $\pi_\Phi^i$ which is the uniform mixture of $\phi(\pi^i)$ for all $\phi\in\Phi.$
+
+$$
+\begin{aligned}
+  \mathbb{E}_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]
+  =& \mathbb{E}_{\phi_1 \sim \Phi, \phi_2 \sim \Phi}\left[J(\phi_1(\pi^1), \phi_1(\phi_2(\pi^2))) \right] \\
+  =& \mathbb{E}_{\phi_1 \sim \Phi, \phi_2 \sim \Phi}\left[J(\phi_1(\pi^1), (\phi_2(\pi^2))) \right] \\
+\end{aligned}
+$$
+
+> The distribution $\boldsymbol{\pi}^*\_{OP}$ produced by OP will be the uniform mixture $\boldsymbol{\pi}\_{\Phi}$ with the highest return $J(\boldsymbol{\pi}\_{\Phi}).$
+
+This means the optimal solution $\boldsymbol{\pi}^*\_{OP} = \arg\max\limits_{\boldsymbol\pi} \mathbb{E}_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is the uniform mixture of the maxima of $\boldsymbol{\pi}^* = \arg\max\limits_{\boldsymbol\pi} J(\pi^1, \pi^2).$
+
+OP's best response is also OP. Since OP is a learning rule, the equilibrium reached can be seen as a kind of meta-equilibrium.
+
+---
+
+## Simplified Action Decoder
+
+
 
 ---
 
@@ -196,10 +229,8 @@ If the , ifferent pairs
 
 - [ ] SAD [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, and Jakob N. Foerster. "Simplified Action Decoder for Deep Multi-Agent Reinforcement Learning." International Conference on Learning Representations. 2019.](https://arxiv.org/abs/1912.02288)
-- [ ] Other-Play [[code](https://github.com/facebookresearch/hanabi_SAD)]  
+- [x] Other-Play [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
-- [ ] A New Formalism, Method and Open Issues  
-  [Treutlein, Johannes, et al. "A new formalism, method and open issues for zero-shot coordination." International Conference on Machine Learning. PMLR, 2021.](http://proceedings.mlr.press/v139/treutlein21a/treutlein21a.pdf)
 - [ ] Trajectory Diversity  
   [Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
 - [ ] Off-Belief Learning  
@@ -212,23 +243,6 @@ If the , ifferent pairs
 
 ### Env
 - [x] Lever [[code](https://bit.ly/2vYkfI7)][[paper](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)]
-- [ ] Corridor [[paper](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
+- [x] Corridor [[paper](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
 - [ ] Overcooked [[code](https://github.com/HumanCompatibleAI/overcooked_ai)]
-- [ ] Hanabi [[code](https://github.com/deepmind/hanabi-learning-environment)] [[paper](https://www.sciencedirect.com/science/article/pii/S0004370219300116)]
-
-
-- 
-  $$
-  \begin{align*}
-  y &= mx + b \\
-  y - y_1 &= m(x - x_1) \\
-  \end{align*}
-  $$
-- 
-  $$
-  E = mc^2
-  $$
-- 
-  $$
-  a^2 + b^2 = c^2
-  $$
+- [x] Hanabi [[code](https://github.com/deepmind/hanabi-learning-environment)] [[paper](https://www.sciencedirect.com/science/article/pii/S0004370219300116)]

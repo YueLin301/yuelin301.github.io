@@ -14,7 +14,7 @@ math: True
 ## Optimization
 
 ### Basics
-The standard form for an optimization problem is the following:
+The standard form for an optimization problem (the primal problem) is the following:
 
 $$
 \begin{aligned}
@@ -32,7 +32,7 @@ $$
 
 3. objective function (cost function): $f_0(x):\mathbb{R}^n\to \mathbb{R}$
 
-4. $x^*=\arg\min\limits_{x\in D} f_0(x)$
+4. $x^*=\arg\min\limits_{x\in D} f_0(x),$ subjects to the constraints.
 
 5. $p^\*=f_0(x^\*)$
 
@@ -48,7 +48,7 @@ Convex function: a function is convex if and only if its epigraph is convex, and
 
 The Lagrangian function $L:\mathbb{R}^n \times \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}$
 $$
-L(x,\lambda,v)=f_0(x) + \sum\limits_{i=0}^m \lambda_i f_i(x) + \sum\limits_{i=0}^m v_i h_i(x)
+L(x,\lambda,v)=f_0(x) + \sum\limits_{i=0}^m \lambda_i f_i(x) + \sum\limits_{i=0}^p v_i h_i(x)
 $$
 
 The Lagrange dual function $g:\times \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}$
@@ -60,7 +60,78 @@ $$
 
 **Infimum = Greatest Lower Bound**: the infimum of a subset $S$ partially ordered set $P$ is a greatest element in $P$ that is less than or equal to all elements of $S$, if such an element exists.
 
-### KKT condition
+The Lagrange dual problem, then, is to maximize this dual function:
+
+$$
+\begin{align*}
+\max\limits_{\lambda,v} \quad & g(\lambda,v) \\
+\mathrm{s.t.} \quad & \lambda_i \ge 0, \, i = 1, \ldots, m \\
+\end{align*}
+$$
+
+Formulating a dual problem gives a lower bound for the primal problem.
+
+$$
+f_0(x) \ge L(x, \lambda, \nu) \ge g(\lambda, \nu)
+$$
+
+Solving the dual problem can provide useful insights into the primal problem, and in some circumstances, it is easier to find the solution to the primal problem through solving its dual.
+
+In certain cases (under certain conditions such as the Slater condition), the solutions to the original and dual problems will match, showcasing “strong duality”.
+
+### Slater's Condition
+
+Slater's condition is a criterion in convex optimization used to ensure strong duality. It imposes requirements on the existence of interior points concerning the constraints of the primal problem. Specifically, it requires there to be a point $x \in \text{relint}(D)$ (where $\text{relint}(D)$ is the relative interior of the domain $D$) such that:
+
+$$
+\begin{align*}
+f_i(x) & < 0, & i = 1, \ldots, m \\
+h_i(x) & = 0, & i = 1, \ldots, p \\
+\end{align*}
+$$
+
+Meeting Slater's condition ensures that there is zero duality gap between the primal and dual problems, **affirming strong duality**.
+
+Slater's condition ensures that there is a point that lies strictly within all inequality constraints and satisfies all equality constraints. This condition is employed to assure strong duality, i.e., the optimal value of the primal problem equals the optimal value of the dual problem.
+
+1. **Existence**: By assuring there is a feasible point that meets all constraint conditions, Slater's condition guarantees that both the primal and dual problems are solvable.
+
+2. **Gap-Free**: Slater's condition ensures a zero duality gap, i.e., there is no "gap" between the optimal solution of the primal problem and that of the dual problem, thus assuring strong duality.
+
+### KKT Conditions
+
+The KKT (Karush-Kuhn-Tucker) conditions are a set of equations and inequalities necessary for finding the optimal solutions to a nonlinear constrained optimization problem. The KKT conditions comprise the following equations and inequalities:
+
+1. **Stationarity condition**:
+   $$
+   \nabla f_0(x) + \sum_{i=1}^m \lambda_i \nabla f_i(x) + \sum_{i=1}^p v_i \nabla h_i(x) = 0
+   $$
+
+2. **Primal feasibility**:
+   $$
+   \begin{align*}
+   f_i(x) & \leq 0, & i = 1, \ldots, m \\
+   h_i(x) & = 0, & i = 1, \ldots, p \\
+   \end{align*}
+   $$
+
+3. **Dual feasibility**:
+   $$
+   \lambda_i \geq 0, \, i = 1, \ldots, m
+   $$
+
+4. **Complementary slackness**:
+   $$
+   \lambda_i f_i(x) = 0, \, i = 1, \ldots, m
+   $$
+
+If a set of solutions $x^*$, $\lambda^*$, and $v^*$ satisfy these conditions, then $x^*$ is a local optimal solution to the primal problem.
+
+1. **Primal Feasibility and Dual Feasibility**: These two conditions ensure that the solution we find satisfies all constraint conditions of the primal and dual problems, respectively.
+
+2. **Complementary Slackness**: This condition implies that for each inequality constraint, either it is tight (i.e., the equality holds) or its corresponding Lagrange multiplier is zero. This ensures that at the optimal solution, the solutions to the primal and dual problems are "aligned," thereby affirming strong duality.
+
+3. **Stationarity Condition**: This condition, by setting the gradient of the Lagrangian to zero, provides us with a system to solve for the potential optimal solutions.
 
 ## Notation & Operators
 
@@ -391,8 +462,96 @@ $$
 - 事件$x_i$以$P(x_i)$的概率发生，发生后带来$I(x_i)$的信息
 - **熵 = 信源能带来的平均自信息**
 - 熵一定是正的（概率大于0小于1看看就知道）
+- 熵是凸函数，用Jensen不等式证明
+- 均匀分布的时候，熵最大
 
 一个事件的自信息表示了该事件发生的不确定性，该事件发生的概率越小，则其发生的不确定性越大，则其发生带来的信息越大，则其自信息越大。信息熵是自信息的期望，表示一个消息的概率分布确定时这个信源能带来的信息的多少，也是平均每个信源符号（发送一次信息，出现一次发信息事件）所携带的信息量。
+
+#### The uniform distribution has the max entropy
+
+要证明在给定条件下均匀分布具有最大熵，我们可以使用拉格朗日乘数法来找到概率分布的最优解。假设我们有一个离散的概率分布$p(x)$，其中$x$可以取$n$个不同的值，优化问题是
+
+$$
+\begin{aligned}
+\max\limits_{p}\quad &H(p) = - \sum_{i=1}^{n} p(x_i) \log p(x_i) \\
+\textrm{s.t.}\quad &\sum_{i=1}^{n} p(x_i) = 1, \\
+\quad &p(x_i) > 0, \forall i.
+\end{aligned}
+$$
+
+首先构造拉格朗日函数如下：
+
+$$
+L(p, \lambda) = -\sum_{i=1}^{n} p(x_i) \log p(x_i) - \lambda \left( \sum_{i=1}^{n} p(x_i) - 1 \right),
+$$
+
+其中 $\lambda$ 是拉格朗日乘数。
+
+接下来，我们将对$L$分别对$p(x_i)$和$\lambda$求偏导，并将其设为0以找到驻点。得到：
+
+$$
+\frac{\partial L}{\partial p(x_i)} = -\log p(x_i) -1 - \lambda = 0, \quad \forall i,
+$$
+
+$$
+\frac{\partial L}{\partial \lambda} = - \sum_{i=1}^{n} p(x_i) + 1 = 0.
+$$
+
+从第一个偏导数方程中我们可以解出：
+
+$$
+-\log p(x_i) -1 - \lambda = 0 \implies \log p(x_i) = -\lambda - 1 \implies p(x_i) = e^{-1-\lambda}.
+$$
+
+接着，我们可以将这个解代回约束条件
+
+$$
+\sum_{i=1}^{n} p(x_i) = 1 \implies \sum_{i=1}^{n} e^{-1-\lambda} = 1 \implies n e^{-1-\lambda} = 1 \implies e^{-1-\lambda} = \frac{1}{n}.
+$$
+
+现在我们找到了$\lambda$的值：
+
+$$
+-\lambda -1 = \log \frac{1}{n} \implies \lambda = -\log \frac{1}{n} + 1.
+$$
+
+然后我们可以找到$p(x_i)$的解：
+
+$$
+p(x_i) = e^{-1-\lambda} \implies p(x_i) = e^{-1 - (-\log \frac{1}{n} + 1)} = \frac{1}{n}.
+$$
+
+我们验证这确实是一个最大点，通过证明Hessian矩阵是负定的。最终我们得到最优解是均匀分布：
+
+$$
+p(x_i) = \frac{1}{n}, \quad \forall i.
+$$
+
+
+#### The more random the signal is, the less informative it will be
+
+熵和KL散度是信息论中的两个核心概念。熵是用来衡量一个随机变量的不确定性的量，而KL散度用来衡量两个概率分布之间的差异。我们可以使用KL散度来证明一个信号的分布越随机，则其熵越高。以下是证明步骤：
+
+1. 为了证明一个分布越随机其熵越高，我们可以假设有一个分布 $P$ 与一个完全均匀分布 $U$，其中 $U$ 的每个状态的概率都是 $\frac{1}{n}$。
+
+2. 然后我们计算 $P$ 与 $U$ 之间的 KL 散度：
+   $$
+   D_{\text{KL}}(P||U) = \sum_{i=1}^{n} p(x_i) \log \frac{p(x_i)}{\frac{1}{n}} = \sum_{i=1}^{n} p(x_i) \log (n p(x_i)) - \log n \sum_{i=1}^{n} p(x_i)
+   $$
+   
+3. 我们可以发现：
+   $$
+   D_{\text{KL}}(P||U) = H(U) - H(P) + \log n
+   $$
+
+4. 由于KL散度总是非负的，我们有：
+   $$
+   H(U) - H(P) + \log n \geq 0 \quad \Rightarrow \quad H(P) \leq H(U) + \log n
+   $$
+
+5. 由于均匀分布的熵是最大的，所以我们可以得出结论：一个分布越随机，其熵就越高。
+
+
 
 ### Joint entropy
 $$

@@ -194,3 +194,45 @@ So I think most of us will be discouraged if we had to face challenges and diffi
 But what's important is that you keep at it.
 That you don't give up.
 That's what's really important to remember.
+
+#### 1.3 *(2023-9-10-Sunday-CST)*
+Listen to part of a lecture in geology class.
+Ok, let's get started.
+Great. Today I want to talk about a way in which we are able to determine how old a piece of land or some other geologic feture is. Dating techniques.
+I'm going to talk about particular technique, why? Good dating is key to good analysis. In other words, if you want to know how a land formation is formed, the first thing you probably want to know is how old it is. It's fundamental.
+Take the **Grand Canyon** for instance.
+Now, we geologists thought we had a pretty great idea of how the Grand Canyon in the southwestern United American was formed.
+We knew that it was formed from sandstone that solidified somewhere between 150 and 300 millions years ago.
+Before it solidified, it was just regular sand. Essentially it was part of desert. And until just recently, most of us thought that the sand had come from an ancient mountain range faily close by flattened out over time. 
+That's been a conventional **wisdom** among geologits for quite some time.
+But now, we've learned something different and quite surprising. Using the technique called Uranium-Lead Dating. 
+Should say that Uranium-Lead Dating has been around for **quite a while**. But there has been some recent refinments. I'll get **into** this in a minute.
+Anyway, Uranium-Lead Dating has produced some surprises.
+Two geologists discovered that about half of the sand from the Grand Canyon was actually once part of the Appalachian mountains.
+That's really eyes-opening news. Since the Appalachian mountains ranges, of cource, thousands of kilometers to the east of the Grand Canyon.
+Sounds pretty unbelivable, right?
+Of course the obvious question is, how did that sand end up so far west? 
+The theory is that huge rivers and wind carried the sand west, **where it mixed in with the sand that was already there.**
+Well, this was a pretty revolutionary finding.
+And it was basically because of the Uranium-Lead Dating. 
+Why? Well is everyone in this class should know, we usually look at the grain type within the sandstone, meaning the actual particle of the sandstone, to determine where it came from.
+You can do other things, too. Like look at the wind or water that brought the grain to the location and figure out which way it was flowing.
+But that's only useful up to a point, and that's not what the two geologists did.
+Uradium-lead dating allow them to go about in an entirely different way.
+What they did was, they look at the grains of **Zircon** in the sandstone. Zircon is a material that contains radioactive Uranium, which is pretty useful for dating purposes.
+Zircon starts off as **molten magma**, the hot lava from **volcanoes** when crystalized. And when Zircon crystallizes, the uranium inside it begins to changed into lead. Some if you measure the amount of lead in the Zircon grain, you can figure out when the grain was formed.
+After that, you can determine the age of the Zircon from different mountain ranges.
+Once you do that, you can compare the age of the Zircon in the sandstone in your sample, to the age of the Zircon of the mountains.
+If the age of Zircon matches the age of one of your mountain ranges, then it means the sandstone actually used to be part of that particular mountain range.
+Is everybody with me on that? Good.
+So in this case, uranium-lead dating was used to establish that half the sandstone in the samples was formed at the same time that the **granite** in the Appalachian ancient mountain was formed.
+So because of this, this new way of doing your uranium-lead dating, we've been able to determine one of major assumptions about the Grand Canyon was wrong.
+Like I said before, uranium-lead dating has been with us for a while. 
+But uh untill recently, in order to do it, you really have to study many individual grains. And it took a long time before you got results.
+It just was not efficient. And it wasn't very accurate. 
+But techinical advances had cut down on the number of the grains you have to study. So you get your results faster.
+So I predict that uranium-lead dating is going to become an increasingly popular dating method.
+There are a few pretty exciting possibilities for uranium-lead dating. 
+Here is the one that comes to mine. You know, theory of the earth continents were once joined together, and only split apart relatively recently? 
+Well, with uranium-lead dating, we can prove that more conclusively.
+If they show evidence of once having been joined. That can tell us a lot about the early history of the planet's geology. 

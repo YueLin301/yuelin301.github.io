@@ -206,7 +206,7 @@ $$
 
 > The distribution $\boldsymbol{\pi}^*\_{OP}$ produced by OP will be the uniform mixture $\boldsymbol{\pi}\_{\Phi}$ with the highest return $J(\boldsymbol{\pi}\_{\Phi}).$
 
-This means the optimal solution $\boldsymbol{\pi}^*\_{OP} = \arg\max\limits_{\boldsymbol\pi} \mathbb{E}_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is the uniform mixture of the maxima of $\boldsymbol{\pi}^* = \arg\max\limits_{\boldsymbol\pi} J(\pi^1, \pi^2).$
+This means the optimal solution $\boldsymbol{\pi}^*\_{OP} = \arg\max\limits_{\boldsymbol\pi} \mathbb{E}\_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is the uniform mixture of the maxima of $\boldsymbol{\pi}^* = \arg\max\limits_{\boldsymbol\pi} J(\pi^1, \pi^2).$
 
 OP's best response is also OP. Since OP is a learning rule, the equilibrium reached can be seen as a kind of meta-equilibrium.
 
@@ -214,7 +214,35 @@ OP's best response is also OP. Since OP is a learning rule, the equilibrium reac
 
 ## Simplified Action Decoder
 
+[Hu, Hengyuan, and Jakob N. Foerster. "Simplified Action Decoder for Deep Multi-Agent Reinforcement Learning." International Conference on Learning Representations. 2019.](https://arxiv.org/abs/1912.02288)
 
+### Motivation
+
+> Fundamentally, RL requires agents to explore in order to discover good policies. However, when done naively, this **randomness** will inherently make their actions **less informative** to others during training.
+
+The more random the signal is, the less informative it will be. Can be . In my experience, this can be easily seen by the Recommendation Letter example in information design. The randomness 
+
+
+### Definition
+The SAD is an algorithm with the CTDE framework,
+
+---
+
+## Trajectory Diversity
+
+[Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
+
+---
+
+## Off-Belief Learning
+
+[Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](http://proceedings.mlr.press/v139/hu21c/hu21c.pdf)
+
+---
+
+## Population-Based Training
+
+[Zhao, Rui, et al. "Maximum entropy population-based training for zero-shot human-ai coordination." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023.](https://ojs.aaai.org/index.php/AAAI/article/view/25758)
 
 ---
 

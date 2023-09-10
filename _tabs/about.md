@@ -9,7 +9,7 @@ order: 4
 
 ---
 
-![pic name](/assets/img/photo.png){: width="150" height="150" .w-50 .left}
+![pic name](/assets/img/photo.png){: width="150" height="150" .w-25 .left}
 
 Hi, this is Yue Lin (or 林越, in Chinese), and welcome to my personal website. 
 Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang.

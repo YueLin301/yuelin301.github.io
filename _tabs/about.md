@@ -9,11 +9,18 @@ order: 4
 
 ---
 
-![me](/assets/img/photo.png){: style="float: left; width: 22%; height: auto;" }
+<!-- ![me](/assets/img/photo.png){: width="150" height="150" .w .left} -->
 
-Hi, this is Yue Lin (or 林越, in Chinese), and welcome to my personal website. 
+![me](/assets/img/photo.png){: width="130" height="130" .w-22 .left}
+
+<!-- <img src="/assets/img/photo.png" alt="me" style="float: left; width: 25%; height: auto; margin-right: 10px;"/> -->
+
+
+Hi, this is Yue Lin (or 林越, in Chinese), and welcome to my personal website.
+
 Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang.
 Here, I will regularly update my experiences, notes, and the computational magic spells of all the techniques that interest me.
+<br clear="all"/>
 
 > And how could I bear to be a man, if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
 > 

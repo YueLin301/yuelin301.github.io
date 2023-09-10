@@ -206,7 +206,7 @@ $$
 
 > The distribution $\boldsymbol{\pi}^*\_{OP}$ produced by OP will be the uniform mixture $\boldsymbol{\pi}\_{\Phi}$ with the highest return $J(\boldsymbol{\pi}\_{\Phi}).$
 
-This means the optimal solution $\boldsymbol{\pi}^*\_{OP} = \arg\max\limits_{\boldsymbol\pi} \mathbb{E}\_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is the uniform mixture of the maxima of $\boldsymbol{\pi}^* = \arg\max\limits_{\boldsymbol\pi} J(\pi^1, \pi^2).$
+This means the optimal solution $\boldsymbol{\pi}^\*\_{OP} = \arg\max\limits_{\boldsymbol\pi} \mathbb{E}\_{\phi \sim \Phi}\left[J(\pi^1, \phi(\pi^2)) \right]$ is the uniform mixture of the maxima of $\boldsymbol{\pi}^\* = \arg\max\limits_{\boldsymbol\pi} J(\pi^1, \pi^2).$
 
 OP's best response is also OP. Since OP is a learning rule, the equilibrium reached can be seen as a kind of meta-equilibrium.
 

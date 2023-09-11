@@ -126,7 +126,7 @@ The task introduced in the paper includes an illustration where the actions are 
 
 ### Equivalence mapping
 
-This definition used to describe the symmetry is from the paper "other-play" and it is based on the Dec-POMDPs. It resembles the one used for [finding Nash equilibria in large games like poker](https://dl.acm.org/doi/abs/10.1145/1284320.1284324).
+This definition used to describe the symmetry is from the paper "other-play" and it is based on the **Dec-POMDPs**. It resembles the one used for [finding Nash equilibria in large games like poker](https://dl.acm.org/doi/abs/10.1145/1284320.1284324).
 
 An equivalence mapping of can find the states and actions that share the same reward, transition probability, and observation. Formally,
 
@@ -173,7 +173,7 @@ In my understanding, the `\cdot` here means function composition. That is, $(\ph
 
 Success in cross-play is a **necessary condition** for the algorithm to achieve a level of zero-shot coordination.
 
-![pic](/assets/img/23-08-01-zsc/cross-play.png){: width="500" height="500" }
+![pic](/assets/img/23-08-01-zsc/cross-play.png){: width="400" height="400" }
 _Illustration of Cross-Play from the paper "[A New Formalism, Method and Open Issues for Zero-Shot Coordination.](http://proceedings.mlr.press/v139/treutlein21a/treutlein21a.pdf)"_
 
 ---
@@ -220,11 +220,90 @@ OP's best response is also OP. Since OP is a learning rule, the equilibrium reac
 
 > Fundamentally, RL requires agents to explore in order to discover good policies. However, when done naively, this **randomness** will inherently make their actions **less informative** to others during training.
 
-The more random the signal is, the less informative it will be. Can be . In my experience, this can be easily seen by the Recommendation Letter example in information design. The randomness 
+The more random the signal is, the less informative it will be. 
+
+In my experience, this can be easily seen by the Recommendation Letter example from information design, or by the differential privacy.
+
+A communication protocol is a mapping $f:X\to Y,$ where $X$ is the observation set, $Y$ is the signal set, and they are two random variables. 
+"Informative" here refers to the degree to which $Y$ is related to $X.$ 
+- If they are the same then the agent reveals all of the information.
+- If $Y$ is irrelevant to $X$ then the agent reveals no information.
+
+Thus the necessary randomness for exploration (of the sender) is harmful to the communication, as it might cause the receiver to lose faith in the sender and eventually learn to ignore the signals.
+
+In the paper, equations $(3)$ to $(7)$ demonstrate that $\epsilon$-greedy exploration is harmful.
+
+### Technique list
+- CTDE (TODO)
+- Joint Q-functions (VDN, QMIX) (TODO)
+- Recurrent DQN
+- Auxiliary tasks
+- Theory of mind and Bayesian reasoning
 
 
-### Definition
-The SAD is an algorithm with the CTDE framework,
+### Bayesian reasoning
+
+The basic setting is the Dec-POMDPs. 
+- The complete trajectory $\tau = (s_0, \boldsymbol{a}_0, r_1, \ldots, r_T, S_T).$
+- The partially observable trajectory of agent $i$ is $\tau^i = (o_0^i, \boldsymbol{a}_0, r_1, \ldots, r_T, S_T).$
+  - The observation $o_t^i = O(s_t,i)$ is deterministic.
+  - The agents are fully coorperative and they share the same reward at each timestep.
+
+Each agent will calculate its prior guess about the complete trajectory, based on its own trajectory. That is $P(\tau_t\mid \tau_t^i),$ and it is denoted as $B(\tau_t).$
+
+If the agent can observe another agent's action $a_t^j$, then it can update its belief.
+
+$$
+\begin{aligned}
+  P(\tau_t \mid \tau_t^i, a_t^j) 
+  =& \frac{P(a_t^j\mid \tau_t)\cdot P(\tau_t\mid \tau_t^i)}
+  {P(a_t^j \mid \tau_t^i)}
+  = \frac{P(a_t^j\mid \tau_t)\cdot P(\tau_t\mid \tau_t^i)}
+  {\sum\limits_{\tau_t'} P(a_t^j \mid \tau_t')\cdot P(\tau_t'\mid \tau_t^i)} \\
+  =& \frac{\pi^j\left(a_t^j\mid O(\tau_t,j) \right)\cdot B(\tau_t)}{\sum\limits_{\tau_t'} \pi^j\left(a_t^j\mid O(\tau_t',j) \right)\cdot B(\tau_t')}
+\end{aligned}
+$$
+
+$\pi^j\left(a_t^j\mid O(\tau_t,j) \right)$ represents how agent $i$ perceives the strategy of agent $j$. And this is the theory of mind.
+- Agent $i$ needs to have access to the policy of agent $j$ during training. Can be justified by CTDE.
+- If this explicit belief is inputed into the network then it will cause higher order beliefs.
+- The authors use RNN to learn it implicitly. (How? TODO.)
+
+### Simplified belief
+
+If agent $j$'s policy is with the $\epsilon$-greedy exploration, then agent $i$'s belief of it is like
+
+$$
+\pi^j\left(a_t^i\mid O(\tau_t, j)\right) 
+= (1-\epsilon)\cdot \mathbf{I}\left(a^*(\tau_t) = a_t^j\right) 
++ \epsilon / \vert A \vert,
+$$
+
+where $\mathbf{I}\left(a^\*(\tau_t) = a_t^j\right)$ is the indicator function (one-hot encoded), and $a^\*(\tau_t) = \arg\max\limits_{a} Q^j\left(O(\tau_t, a), a\right)$.
+
+Then, equations $(3)$ to $(7)$ demonstrate that $\epsilon$-greedy exploration is harmful, by substitute it into the equation
+
+$$
+\begin{aligned}
+  P(\tau_t \mid \tau_t^i, a_t^j) 
+  =& \frac{\pi^j\left(a_t^j\mid O(\tau_t,j) \right)\cdot B(\tau_t)}{\sum\limits_{\tau_t'} \pi^j\left(a_t^j\mid O(\tau_t',j) \right)\cdot B(\tau_t')}.
+\end{aligned}
+$$
+
+Now, if agent $i$ can get agent $j$'s greedy action (in the centralized training phase), then $i$'s posterior can be
+
+$$
+\begin{aligned}
+  P(\tau_t \mid \tau_t^i, a^{j*}) 
+  =& \frac{\mathbf{I}\left(a^{j*}(\tau_t) = a^{j*}\right)\cdot B(\tau_t)}
+  {\sum\limits_{\tau'} \mathbf{I}\left(a^{j*}(\tau') = a^{j*}\right)\cdot B(\tau')}.
+\end{aligned}
+$$
+
+Note that the agent $i$ only takes $j$'s greedy action into account. And this stabilizes the training process.
+
+
+
 
 ---
 
@@ -255,6 +334,8 @@ The SAD is an algorithm with the CTDE framework,
 
 ### Jakob Foerster
 
+- [ ] BAD  
+  [Foerster, Jakob, et al. "Bayesian action decoder for deep multi-agent reinforcement learning." International Conference on Machine Learning. PMLR, 2019.](https://proceedings.mlr.press/v97/foerster19a.html)
 - [ ] SAD [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, and Jakob N. Foerster. "Simplified Action Decoder for Deep Multi-Agent Reinforcement Learning." International Conference on Learning Representations. 2019.](https://arxiv.org/abs/1912.02288)
 - [x] Other-Play [[code](https://github.com/facebookresearch/hanabi_SAD)]  
@@ -270,7 +351,12 @@ The SAD is an algorithm with the CTDE framework,
   [Zhao, Rui, et al. "Maximum entropy population-based training for zero-shot human-ai coordination." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023.](https://ojs.aaai.org/index.php/AAAI/article/view/25758)
 
 ### Env
+- [ ] A matrix-game[[code](https://bit.ly/2P3YOyd)][[paper](https://proceedings.mlr.press/v97/foerster19a.html)]
+  - communication through action challenge
+  - BAD
 - [x] Lever [[code](https://bit.ly/2vYkfI7)][[paper](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)]
+  - Other-Play
 - [x] Corridor [[paper](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
+  - Trajectory Diversity
 - [ ] Overcooked [[code](https://github.com/HumanCompatibleAI/overcooked_ai)]
 - [x] Hanabi [[code](https://github.com/deepmind/hanabi-learning-environment)] [[paper](https://www.sciencedirect.com/science/article/pii/S0004370219300116)]

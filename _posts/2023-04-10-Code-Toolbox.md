@@ -81,7 +81,7 @@ conda activate rlbasic
 
 ### Lazy commit
 
-Create a `snippet` in the software `Terminus`:
+Create a `snippet` in the software `Termius`:
 
 ```bash
 git add .
@@ -93,15 +93,28 @@ Then enter your `github name` and your `git temporary token`.
 
 ### Download
 1. Create a new terminal at the folder where you want to download the repo. The downloaded repo will be a subfolder, and its contents are what you see on the webpage.
-2. Download: `git clone [repo_URL(xxx.git)]`
+2. `git clone [repo_URL(xxx.git)]` (Download.) 
 3. Enter the subfolder.
-4. Retrieve the latest changes from a remote repository: `git fetch origin`
-5. List all the braches: `git branch -a`
-6. Switch to a branch `git checkout [branch_name]`
-7. Create a branch `git checkout -b [branch_name]`
-8. You are now ready to create something new.
+
+The `git clone` will create a subfolder (named after the repo) in your current folder.
+
+### Branch
+
+- `git branch -a` (List all the braches.)
+- `git checkout [branch_name]` (Switch to a branch.) 
+- `git checkout -b [branch_name]` (Create a branch.)
+
+### Get updated
+
+#### Way 1
+1. `git fetch origin` (Retrieve the changes from all branches.)
+2. `git merge origin/[remote_branch_name] [local_branch_name]`
 
 
+#### Way 2
+`pull` = `fetch` + `merge`
+
+`git pull origin [remote_branch_name]` (Update the code in your current local branch.)
 
 
 ## Random

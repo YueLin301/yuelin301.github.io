@@ -22,9 +22,9 @@ Currently, I am a research assistant in School of Data Science at The Chinese Un
 Here, I will regularly update my experiences, notes, and the computational magic spells of all the techniques that interest me.
 <br clear="all"/>
 
-> And how could I bear to be a man, if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it"—that alone should I call redemption.
+> And how could I bear to be a man, if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption.
 > 
-> *- Friedrich Nietzsche, Thus Spoke Zarathustra.*
+> *— Friedrich Nietzsche, Thus Spoke Zarathustra.*
 {: .prompt-info }
 
 ---

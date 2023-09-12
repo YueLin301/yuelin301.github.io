@@ -11,7 +11,7 @@ math: True
 
 ---
 
-> Like any toolbox, what you get out of it depends on what you put into it. *- Adrian McKinty, Hidden River (2004).*
+> Like any toolbox, what you get out of it depends on what you put into it. *— Adrian McKinty, Hidden River (2004).*
 {: .prompt-info }
 
 ## Latin expressions (Loanwords)
@@ -236,3 +236,34 @@ There are a few pretty exciting possibilities for uranium-lead dating.
 Here is the one that comes to mine. You know, theory of the earth continents were once joined together, and only split apart relatively recently? 
 Well, with uranium-lead dating, we can prove that more conclusively.
 If they show evidence of once having been joined. That can tell us a lot about the early history of the planet's geology. 
+
+#### 1.4 *(2023-9-12-Tuesday-CST)*
+Listen to part of a conversation between a student and his professor.
+Hi Mathew, I'm glad you could **come in** today.
+You've been observing Mr.Grabell's third-grade class for you **Approaches to Education** paper, right?
+Um yes, I go over the **Johnson elementary school**, you know, to watch Mr.Grabell teach the children the class.
+It's been amazing, I mean, **I'm just learning so much from just watching him.**
+**I'm so glad the classroom observations are a requirement for the education program.**
+I mean it's like the best thing ever to prepare you to be a good teacher.
+Well I'm glad to see you feel that way Mathew, you know, that's the goal.
+So, I've been reading over your observation notes, and I'm quite interested in what's going on, in particular, with the astronomy unit he's been teaching.
+The astronomy unit?
+It's seem that Mr.Grabell has mastered the **interdisciplinary** approach to teaching. The way we've been talking about **in class**.
+Oh, Ok, yeah. So like when he is teaching the astronomy, he didn't just teach them the name of the planets, he used it **as way to teach** mythology.
+Really, so **how did he do that?**
+Well, some of the student could already name the planets, but they didn't know that the name has any meaning, the stories behind them.
+So, he...
+He introduced Greek and Roman mythology as a way of explaining.
+Like you know, how like, the Jupiter is the biggest plannet, right, and how Jupiter was the name of the king of the gods in Roman mythology, right?
+So since Jupiter the planet, is the largest planet in the solar system. It's like the king of the planets, like Jupiter is the king of all the gods.
+Oh Mathew, that's a great example.
+Yeah, and each student chose a planet, and **then did research on it to write a report** and make a presentation.
+They went to the library to do the research, then they made presentations about the planet the chose.
+**So in one science unit, in which the forcus was astronomy, the students also learn about the literature of Greek and Roman mythology, used research skills in the library, wrote a repost, and practiced their oral presentation skills.**
+Exactly, he used this one topic to teach third-graders all that stuffs, how to use the book in the library, to write a report, and even how to speak in public.
+Plus they had a great time doing it.
+You know Mathew, this is just we've been talking in our class, I'm sure everyone can learn something from you experience.
+You know Mathew, I'd love for you to talk about this astronomy unit in class on Wednesday. 
+Really, um, because I don't really think I'll have any time to write my paper by then.
+Oh you won't have to write anything new just yet. For Wednesday, use your class observation notes and explain the things we discussed today.
+OK, that sounds all right.

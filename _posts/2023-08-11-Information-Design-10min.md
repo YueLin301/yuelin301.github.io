@@ -11,8 +11,7 @@ pin: True
 {: .prompt-info }
 
 ## What problems does information design study?
-
-> "Sometimes, the truth is not good enough." *- Batman, The Dark Knight (2008).*
+> "Sometimes, the truth is not good enough." *— Batman, The Dark Knight (2008).*
 
 Information design focuses on scenarios of **mixed-motive** unidirectional communication, where one self-interested sender with informational advantage attempts to **persuade** a self-interested rational receiver to take actions that the sender prefers.
 

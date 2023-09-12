@@ -119,8 +119,80 @@ $$
 
 If temperature $T$ is small enough, then the output of the softmax can be seen as a one-hot vector which indicates $i$.
 
+### $x\ne \log(\mathrm{softmax}(x))$
+
+```python
+import torch
+
+x = torch.rand(5)
+
+x1 = torch.nn.Softmax(dim=0)(x)
+x2 = torch.nn.functional.softmax(x, dim=0)
+x3 = torch.nn.functional.log_softmax(x, dim=0)
+
+print(x1)
+print(x2)
+print(torch.log(x1))
+print(x3)
+```
+
+```bash
+tensor([0.1385, 0.1978, 0.2231, 0.2861, 0.1543])
+tensor([0.1385, 0.1978, 0.2231, 0.2861, 0.1543])
+tensor([-1.9766, -1.6204, -1.4999, -1.2512, -1.8686])
+tensor([-1.9766, -1.6204, -1.4999, -1.2512, -1.8686])
+```
+
 ### Example code
-Check [my note](https://yuelin301.github.io/posts/Computation-Graph-Visualization/#example-5-nabla_theta-a-with-gumbel-softmax-reparameterization).
+
+```python
+import torch
+
+if __name__ == '__main__':
+    batch_size = int(1e7)
+    logits_distribution = [2, 3]
+
+    logits_batch = torch.tensor(logits_distribution, dtype=torch.float64) \
+        .unsqueeze(dim=0).expand(batch_size, len(logits_distribution))
+    softmax = torch.nn.Softmax(dim=-1)
+    pi = softmax(logits_batch)
+
+    # -----
+    # The standard way.
+    temperature = 1
+    actions_sampled = torch.nn.functional.gumbel_softmax(logits_batch, tau=temperature, hard=True)
+
+    a0_num = torch.sum(actions_sampled[:, 0])
+    a1_num = torch.sum(actions_sampled[:, 1])
+
+    print(pi[0], a0_num, a1_num, sep="\n")
+
+    # -----
+    # In RL, the common epsilon-greedy is a operation on the policy space.
+    # To sample it, we need to edit the policy first, and then put log(pi) into the gumbel-softmax.
+    # See https://stackoverflow.com/questions/64980330/input-for-torch-nn-functional-gumbel-softmax
+    print('===============')
+    temperature = 1
+    actions_sampled = torch.nn.functional.gumbel_softmax(torch.log(pi), tau=temperature, hard=True)
+
+    a0_num = torch.sum(actions_sampled[:, 0])
+    a1_num = torch.sum(actions_sampled[:, 1])
+
+    print(pi[0], a0_num, a1_num, sep="\n")
+```
+
+```bash
+tensor([0.2689, 0.7311], dtype=torch.float64)
+tensor(2687766., dtype=torch.float64)
+tensor(7312234., dtype=torch.float64)
+===============
+tensor([0.2689, 0.7311], dtype=torch.float64)
+tensor(2690092., dtype=torch.float64)
+tensor(7309908., dtype=torch.float64)
+```
+
+### Computation graph
+Check [my note on computation graph](https://yuelin301.github.io/posts/Computation-Graph-Visualization/#example-5-nabla_theta-a-with-gumbel-softmax-reparameterization).
 
 
 

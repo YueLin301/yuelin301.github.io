@@ -315,3 +315,68 @@ tensor([[1., 1., 1.],
         [0., 0., 0.]], dtype=torch.float64)
 '''
 ```
+
+## argparse
+
+> - [A tutorial](https://docs.python.org/3/howto/argparse.html).
+> - [Documentation](https://docs.python.org/3/library/argparse.html).
+{: .prompt-info }
+
+`argparse_test.py`:
+```python
+import argparse
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("positional_arg1", help="A message to the user.")
+    parser.add_argument("positional_arg2")
+    parser.add_argument("-o1", "--optional_arg1")
+    parser.add_argument("-o2", "--optional_arg2", action="store_true", help="Input -o2 will set it True.")
+    parser.add_argument("-o3", "--optional_arg3", default="wuwu")
+    args = parser.parse_args()
+    print(args, args.positional_arg1, args.positional_arg2, sep="\n")
+
+```
+
+Run (help):
+- `python3 argparse_test.py -h`
+- `python3 argparse_test.py --help`
+
+Result:
+```bash
+usage: argparse_test.py [-h] [-o1 OPTIONAL_ARG1] [-o2] [-o3 OPTIONAL_ARG3] positional_arg1 positional_arg2
+
+positional arguments:
+  positional_arg1       A message to the user.
+  positional_arg2
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o1 OPTIONAL_ARG1, --optional_arg1 OPTIONAL_ARG1
+  -o2, --optional_arg2  Input -o2 will set it True.
+  -o3 OPTIONAL_ARG3, --optional_arg3 OPTIONAL_ARG3
+```
+
+Run:
+```bash
+python3 argparse_test.py xixi haha
+```
+
+Result:
+```bash
+Namespace(optional_arg1=None, optional_arg2=False, optional_arg3='wuwu', positional_arg1='xixi', positional_arg2='haha')
+xixi
+haha
+```
+
+Run:
+```bash
+python3 argparse_test.py xixi haha -o2 -o1 heihei
+```
+
+Result:
+```bash
+Namespace(optional_arg1='heihei', optional_arg2=True, optional_arg3='wuwu', positional_arg1='xixi', positional_arg2='haha')
+xixi
+haha
+```

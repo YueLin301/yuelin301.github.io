@@ -380,3 +380,52 @@ Namespace(optional_arg1='heihei', optional_arg2=True, optional_arg3='wuwu', posi
 xixi
 haha
 ```
+
+## Change Dir to the Project Dir
+
+> Make sure that there is a `README.md` file under the project directory. This file is used as an identifier.
+{: .prompt-warning }
+
+```python
+import os
+
+
+def find_project_directory(identifier_file):
+    current_path = "."
+
+    while True:
+        if identifier_file in os.listdir(current_path):
+            return os.path.abspath(current_path)
+
+        parent_path = os.path.join(current_path, "..")
+        if os.path.abspath(parent_path) == os.path.abspath(current_path):
+            return None
+
+        current_path = parent_path
+
+
+def cd_project_directory():
+    project_directory = find_project_directory("README.md")
+
+    if project_directory:
+        os.chdir(project_directory)
+    else:
+        print("Project directory not found.")
+
+    return project_directory
+
+
+if __name__ == '__main__':
+    project_directory = cd_project_directory()
+    print('All done.')
+```
+
+## print
+
+### Separator line
+```python
+import shutil
+
+terminal_columns = shutil.get_terminal_size().columns
+print('=' * terminal_columns)
+```

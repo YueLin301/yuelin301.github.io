@@ -121,6 +121,18 @@ If temperature $T$ is small enough, then the output of the softmax can be seen a
 
 ### $x\ne \log(\mathrm{softmax}(x))$
 
+$$
+\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}
+$$
+
+$$
+\begin{aligned}
+    \log(\mathrm{softmax}(x_i)) 
+    =& \log\left(\frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}\right) \\
+    =& x_i - \log\left(\sum_{j=1}^{n} e^{x_j}\right)
+\end{aligned}
+$$
+
 ```python
 import torch
 
@@ -190,6 +202,9 @@ tensor([0.2689, 0.7311], dtype=torch.float64)
 tensor(2690092., dtype=torch.float64)
 tensor(7309908., dtype=torch.float64)
 ```
+
+> Applying Gumbel-Softmax may cause `NaN` during training. Changing the data type of the variable to `float64` seems to have avoided this issue.
+{: .prompt-warning }
 
 ### Computation graph
 Check [my note on computation graph](https://yuelin301.github.io/posts/Computation-Graph-Visualization/#example-5-nabla_theta-a-with-gumbel-softmax-reparameterization).

@@ -351,7 +351,7 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
   [Zhao, Rui, et al. "Maximum entropy population-based training for zero-shot human-ai coordination." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023.](https://ojs.aaai.org/index.php/AAAI/article/view/25758)
 
 ### Env
-- [ ] A matrix-game[[code](https://bit.ly/2P3YOyd)][[paper](https://proceedings.mlr.press/v97/foerster19a.html)]
+- [ ] A matrix-game [[code](https://bit.ly/2P3YOyd)][[paper](https://proceedings.mlr.press/v97/foerster19a.html)]
   - communication through action challenge
   - BAD
 - [x] Lever [[code](https://bit.ly/2vYkfI7)][[paper](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)]

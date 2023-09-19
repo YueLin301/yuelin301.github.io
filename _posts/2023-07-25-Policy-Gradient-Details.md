@@ -11,16 +11,154 @@ pin: True
 
 ---
 
+
+
+## Policy Gradient Theorem
+
+> The proof of the stochastic and deterministic policy gradient theorem are mainly summarized from [this blog](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/#off-policy-policy-gradient) and the supplementary of the paper "[Deterministic Policy Gradient Algorithms](https://scholar.archive.org/work/v7bb4lgn2zhnta3bassfawrane/access/wayback/https://hal.inria.fr/hal-00938992/file/dpg-icml2014.pdf)," respectively.
+{: .prompt-info }
+
+
+
+### Stochastic Policy Gradient
+
+#### Objectitve
+
+$$
+\max\limits_{\theta} J(\theta) = \mathbb{E}_{s_0\sim d_0}\left[ \textcolor{red}{V^{\pi_\theta} (s_0)} \right].
+$$
+
+
+
+#### Gradient
+
+$$
+\begin{aligned}
+\nabla_\theta V^{\pi_\theta}(s_0) 
+=& (1-\gamma)\cdot \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \pi_\theta(a\mid s) \\
+=& (1-\gamma)\cdot \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} \pi(a\mid s) \cdot Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s) \\
+=& (1-\gamma)\cdot \mathbb{E}_{s \sim d^{\pi_\theta}(\cdot \mid s_0)} \mathbb{E}_{a\sim \pi(\cdot \mid s)} \left[Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s)\right] 
+\end{aligned}
+$$
+
+
+
+#### Proof
+
+> This technique has been ingrained in my DNA :)
+
+$$
+\begin{aligned}
+\nabla_\theta V^\pi(s) =& \nabla_\theta \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a) \\
+=& \sum\limits_{a} \left[Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \pi(a\mid s) \cdot \nabla_\theta Q^\pi(s,a)\right] \\
+=& \sum\limits_{a} \left[Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \pi(a\mid s) \cdot \nabla_\theta \sum\limits_{s',r} P(s',r\mid s,a)\cdot \left(r+ \gamma \cdot V^\pi(s')\right)\right] \\
+=& \sum\limits_{a} \left[Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \gamma \cdot  \pi(a\mid s) \cdot \sum\limits_{s'} P(s'\mid s,a)\cdot \nabla_\theta V^\pi(s')\right] \\
+=& \sum\limits_{a} Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \gamma \sum\limits_{s',a} \pi(a\mid s) \cdot  P(s'\mid s,a)\cdot \nabla_\theta V^\pi(s') \\
+\end{aligned}
+$$
+
+Note that the action $a$ is sampled from the parameterized policy $\pi_\theta.$ Thus $\nabla_\theta a$ is $0,$ without using the gumbel-softmax technique. In the deterministic policy, $\nabla_\theta a$ is not $0,$ and thus the derivation is different.
+
+$$
+\begin{aligned}
+\nabla_\theta V^\pi(s) 
+=& \sum\limits_{a} Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \sum\limits_{s',\textcolor{red}{a}} \textcolor{red}{\gamma \cdot \pi(a\mid s) \cdot  P(s'\mid s,a)} \cdot \nabla_\theta V^\pi(s') \\
+=& \sum\limits_{a} Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \sum\limits_{s'} \textcolor{red}{\gamma \cdot \mathrm{Pr}(s\to s', k=1, \pi_\theta)} \cdot \nabla_\theta V^\pi(s') \\
+=& \sum\limits_{a} Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \sum\limits_{s'} \gamma \cdot \mathrm{Pr}(s\to s', k=1, \pi_\theta) \left[\sum\limits_{a} Q^\pi(s',a) \cdot \nabla_\theta\pi(a\mid s') + \sum\limits_{s''} \gamma \cdot \mathrm{Pr}(s'\to s'', k=1, \pi_\theta)\cdot \nabla_\theta V^\pi(s'')\right] \\
+=& \sum\limits_{a} Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \gamma \sum\limits_{s'} \mathrm{Pr}(s\to s', k=1, \pi_\theta) \sum\limits_{a} Q^\pi(s',a) \cdot \nabla_\theta\pi(a\mid s') \\
+	&+ \textcolor{red}{\gamma^2 \sum\limits_{s'} \mathrm{Pr}(s\to s', k=1, \pi_\theta) \sum\limits_{s''} \mathrm{Pr}(s'\to s'', k=1, \pi_\theta)}\cdot \nabla_\theta V^\pi(s'') \\
+=& \sum\limits_{a} Q^\pi(s,a) \cdot \nabla_\theta\pi(a\mid s) + \gamma \sum\limits_{s'} \mathrm{Pr}(s\to s', k=1) \sum\limits_{a} Q^\pi(s',a) \cdot \nabla_\theta\pi(a\mid s') \\
+	&+ \textcolor{red}{\gamma^2 \sum\limits_{s'} \mathrm{Pr}(s\to s'', k=2, \pi_\theta) }\cdot \nabla_\theta V^\pi(s'') \\
+=&\ldots \\
+=& \sum\limits_{x\in S} \textcolor{blue}{\sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s\to x, k, \pi_\theta)} \cdot \sum\limits_{a} Q^\pi(x,a) \cdot \nabla_\theta\pi(a\mid x)
+\end{aligned}
+$$
+
+The blue part is defined as the discounted state visitation distribution $$d^{\pi_\theta}(s\mid s_0) = (1-\gamma )\cdot \sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s_0\to s, k, \pi_\theta).$$
+
+$$
+\begin{aligned}
+\sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s_0\to s, k, \pi_\theta) \le \sum\limits_{k=0}^\infty \gamma^k = \frac{1}{1-\gamma}
+\end{aligned}
+$$
+
+The distribution should beshould lie within the range of $[0,1]$ and thus the coefficient $(1-\gamma)$ is is for normalization.
+
+$$
+\begin{aligned}
+\nabla_\theta V^{\pi_\theta}(s_0) 
+=& \textcolor{blue}{(1-\gamma)}\cdot \sum\limits_{s} \textcolor{blue}{d^{\pi_\theta}(s\mid s_0)} \sum\limits_{a} Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \pi_\theta(a\mid s) \\
+=& (1-\gamma)\cdot \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} \pi(a\mid s) \cdot Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s) \\
+=& (1-\gamma)\cdot \mathbb{E}_{s \sim d^{\pi_\theta}(\cdot \mid s_0)} \mathbb{E}_{a\sim \pi(\cdot \mid s)} \left[Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s)\right] 
+\end{aligned}
+$$
+
+Q.E.D.
+
+
+
+### Deterministic Policy Gradient
+
+#### Basics
+
+- $a = \mu_\theta (s)$
+- $V^{\mu_\theta}(s) = Q^{\mu_\theta}(s,a) = Q^{\mu_\theta}(s,\mu_\theta(s))$
+- $\nabla_\theta a \ne 0$
+    - $\nabla_\theta r(s,a)\ne 0$
+    - $\nabla_\theta P(s'\mid s,a)\ne 0$
+- $P(s'\mid s,\mu_\theta(s)) = \mathrm{Pr}(s\to s', k=1, \mu_\theta)$
+
+
+
+
+#### Gradient
+
+$$
+\begin{aligned}
+\nabla_\theta V^{\mu_\theta}(s) 
+=& (1-\gamma)\int_{x\in S} d^{\mu_\theta}(s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
+=&(1-\gamma) \cdot \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
+\end{aligned}
+$$
+
+
+#### Proof
+
+
+$$
+\begin{aligned}
+\nabla_\theta V^{\mu_\theta}(s) 
+=& \textcolor{blue}{\nabla_\theta Q^{\mu_\theta} (s, \mu_\theta(s))} \\
+=& \nabla_\theta \left( r(s,\mu_\theta(s)) + \gamma \int_S P\left(s'\mid s,\mu_\theta(s)\right)\cdot V^{\mu_\theta}(s') \,\mathrm{d} s' \right) \\
+=& \textcolor{red}{\nabla_\theta r(s,\mu_\theta(s))} + \gamma \int_S V^{\mu_\theta}(s') \cdot \textcolor{red}{\nabla_\theta P\left(s'\mid s,\mu_\theta(s)\right)} \,\mathrm{d} s' + \gamma \int_S P\left(s'\mid s,\mu_\theta(s)\right)\cdot \nabla_\theta V^{\mu_\theta}(s') \,\mathrm{d} s' \\
+=& \nabla_\theta \mu_\theta(s)\cdot \textcolor{blue}{\nabla_a} \left( r(s,\mu_\theta(s)) + \gamma \int_S \textcolor{blue}{V^{\mu_\theta}(s')} \cdot P\left(s'\mid s,\mu_\theta(s)\right) \,\mathrm{d} s' \right)\Bigg\vert_{a=\mu_\theta(s)} + \gamma \int_S P\left(s'\mid s,\mu_\theta(s)\right)\cdot \nabla_\theta V^{\mu_\theta}(s') \,\mathrm{d} s' \\
+=& \textcolor{blue}{\nabla_\theta \mu_\theta(s)\cdot \nabla_a Q^{\mu_\theta} (s, \mu_\theta(s))\Big\vert_{a=\mu_\theta(s)}} + \gamma \int_S \textcolor{green}{P\left(s'\mid s,\mu_\theta(s)\right)}\cdot \nabla_\theta V^{\mu_\theta}(s') \,\mathrm{d} s' \\
+=& \nabla_\theta \mu_\theta(s)\cdot \nabla_a Q^{\mu_\theta} (s, \mu_\theta(s))\Big\vert_{a=\mu_\theta(s)} + \gamma \int_S \textcolor{green}{\mathrm{Pr}(s\to s', k=1, \mu_\theta)} \cdot \nabla_\theta V^{\mu_\theta}(s') \,\mathrm{d} s' \\
+=& \nabla_\theta \mu_\theta(s)\cdot \nabla_a Q^{\mu_\theta} (s, \mu_\theta(s))\Big\vert_{a=\mu_\theta(s)} + \gamma \int_S \mathrm{Pr}(s\to s', k=1, \mu_\theta) \cdot \left( \nabla_\theta \mu_\theta(s')\cdot \nabla_a Q^{\mu_\theta} (s', \mu_\theta(s'))\Big\vert_{a=\mu_\theta(s')} + \gamma \int_S \mathrm{Pr}(s'\to s'', k=1, \mu_\theta) \cdot \nabla_\theta V^{\mu_\theta}(s'') \,\mathrm{d} s'' \right) \,\mathrm{d} s' \\
+=& \nabla_\theta \mu_\theta(s)\cdot \nabla_a Q^{\mu_\theta} (s, \mu_\theta(s))\Big\vert_{a=\mu_\theta(s)} + \gamma \int_S \mathrm{Pr}(s\to s', k=1, \mu_\theta) \cdot \nabla_\theta \mu_\theta(s')\cdot \nabla_a Q^{\mu_\theta} (s', \mu_\theta(s'))\Big\vert_{a=\mu_\theta(s')} \,\mathrm{d} s' \\
+	&+ \gamma^2 \int_S \mathrm{Pr}(s\to s', k=1, \mu_\theta) \int_S \mathrm{Pr}(s'\to s'', k=1, \mu_\theta) \cdot \nabla_\theta V^{\mu_\theta}(s'') \,\mathrm{d} s'' \,\mathrm{d} s' \\
+=&\ldots \\
+=& \int_{x\in S} \sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s\to x, k, \mu_\theta) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
+=& (1-\gamma)\int_{x\in S} d^{\mu_\theta}(s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
+=&(1-\gamma) \cdot \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
+\end{aligned}
+$$
+
+Q.E.D.
+
+
+
 ## About
-This note is based on the awesome paper:
+
+This following part of this note is based on the awesome paper:
 
 > Agarwal, Alekh, et al. "On the theory of policy gradient methods: Optimality, approximation, and distribution shift." The Journal of Machine Learning Research 22.1 (2021): 4431-4506.
-{: .prompt-info }
+> {: .prompt-info }
 
 And I will provide some omitted details here. 
 The writing of the entire note may be somewhat **verbose**, and this is to familiarize myself with the content.
 
----
+
 
 ## Details of Setting
 
@@ -73,6 +211,7 @@ As shown in the appendix, there is a MDP where exists policy points $\pi_1, \pi_
 ---
 
 ### Why is there a coefficient $(1-\gamma)$ in $(4)$?
+
 $$
 d_{s_0}^\pi(s) := (1-\gamma) \sum_{t=0}^\infty \gamma^t {\Pr}^\pi(s_t=s|s_0).
 $$
@@ -80,7 +219,7 @@ $$
 Recall that [the derivation of the policy gradient theorem](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/):
 
 $$
-\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} \sum\limits_{k=0}^{\infty} \gamma^k \cdot \text{Pr}(s_0\to s, k) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\log \pi(a\mid s).
+\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} \sum\limits_{k=0}^{\infty} \gamma^k \cdot \text{Pr}(s_0\to s, k) \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a)\cdot \nabla_{\theta}\ln \pi(a\mid s).
 $$
 
 > Policy Gradient
@@ -93,6 +232,7 @@ Note that $\lim\limits_{k\to\infty} \sum\limits_{k=0}^{\infty} \gamma^k = \frac{
 ---
 
 ### Why is there a coefficient $\frac{1}{1-\gamma}$ in $(5)$?
+
 $$
 \begin{aligned}
 \nabla_\theta V^{\pi_\theta}(s_0) 
@@ -108,6 +248,7 @@ It is used to cancel that normalization.
 ---
 
 ### Advantage
+
 $$
 \begin{aligned}
 A^{\pi}(s,a)
@@ -132,10 +273,12 @@ $$
 
 To reduce it, a natural solution is to subtract a baseline $b(s)$ from $Q^\pi$ which can be any function, even a random variable, as long as it does not depend on the action $a$, i.e., 
 
-$$\nabla_{\theta} V^{\pi_\theta}(s_0) =\frac{1}{1-\gamma} \mathbb{E}_{s\sim d_{s_0}^\pi}\mathbb{E}_{a\sim\pi(\cdot\mid s)}\left[ \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s)\right],
+$$
+\nabla_{\theta} V^{\pi_\theta}(s_0) =\frac{1}{1-\gamma} \mathbb{E}_{s\sim d_{s_0}^\pi}\mathbb{E}_{a\sim\pi(\cdot\mid s)}\left[ \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s)\right],
 $$
 
-$$\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s),
+$$
+\nabla_{\theta} V^{\pi_\theta}(s_0) = \sum\limits_{s} d^\pi_{s_0}(s) \sum\limits_{a} \pi(a\mid s) \cdot \left(Q^\pi(s,a) - b(s)\right)\cdot \nabla_{\theta}\log \pi(a\mid s),
 $$
 
 or
@@ -146,7 +289,8 @@ $$
 
 This is still unbiased:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 &\sum\limits_a b(s)\cdot \nabla_{\theta} \pi(a\mid s) \\
 =& b(s) \cdot\nabla_\theta\sum\limits_a \pi(a\mid s) \\
 =& b(s) \cdot\nabla_\theta 1 \\
@@ -178,6 +322,7 @@ $$ -->
 ---
 
 ### Equation (6) does not hold for the direct parameterization
+
 $$
 \begin{aligned}
    \sum\limits_a \nabla_\theta \pi(a) =& \left(\sum\limits_a\frac{\partial \pi(a)}{\partial \theta_1},\ldots, \sum\limits_a\frac{\partial \pi(a)}{\partial \theta_m}\right)\\ 

@@ -11,7 +11,232 @@ math: True
 
 ---
 
-## Normalization
+## Algorithms
+
+This table has not been finished.
+
+|            |     Memorable Points      | Model-Free | On-policy | Critic | Actor  | ReplayBuffer |     Exploration      |                     Critic Value Update                      | Actor GAE | Stochastic |   Deterministic   | Target Nets | Soft Update |
+| :--------: | :-----------------------: | :--------: | :-------: | :----: | :----: | :----------: | :------------------: | :----------------------------------------------------------: | :-------: | :--------: | :---------------: | :---------: | :---------: |
+|     DP     |        Pred + Ctrl        |     ✗      |     ✓     |   ✓    | Greedy | ✗ (per step) | $\varepsilon$-Greedy | DP: $V(s) \gets \sum\limits_{a}\pi(a\mid s)\left(r(s,a)+\gamma\cdot\sum\limits_{s'}P(s'\mid s,a)\cdot V(s')\right), \forall s$ |     ✗     |     ✓      |         ✓         |      ✗      |      -      |
+|   SARSA    |             -             |     ✓      |     ✓     |   ✓    | Greedy | ✗ (per step) | $\varepsilon$-Greedy | TD-like: $Q(s_t,a_t)\gets Q(s_t,a_t)+\alpha\cdot(r_t+\gamma\cdot Q(s_{t+1},a_{t+1})-Q(s_t,a_t))$ |     ✗     |     ✓      |         ✗         |      ✗      |      -      |
+| Q-Learning |       Max Q target        |     ✓      |     ✗     |   ✓    | Greedy | ✗ (per step) | $\varepsilon$-Greedy | $Q(s_t,a_t)\gets Q(s_t,a_t)+\alpha\cdot(r_t+\gamma\cdot\max\limits_a Q(s_{t+1},a)-Q(s_t,a_t))$ |     ✗     |     ✓      |         ✗         |      ✗      |      -      |
+|    DQN     |      Deep Q; Buffer;      |     ✓      |     ✗     |   ✓    | Greedy |      ✓       | $\varepsilon$-Greedy | $Q(s_t,a_t)\gets Q(s_t,a_t)+\alpha\cdot(r_t+\gamma\cdot\max\limits_a Q(s_{t+1},a)-Q(s_t,a_t))$ |     ✗     |     ✓      |         ✗         |      ✓      |      ✗      |
+| REINFORCE  |       Stochastic PG       |     ✓      |     ✓     |   ✗    |   ✓    |      ✗       |   (Policy Entropy)   |                              -                               |           |     ✓      |         ✗         |      ✗      |      -      |
+| Vanilla AC |       Actor-Critic        |     ✓      |     ✓     |   ✓    |   ✓    |      ✗       |   (Policy Entropy)   |                                                              |           |     ✓      |         ✗         |      ✗      |      -      |
+|    A2C     |       Advantage AC        |     ✓      |     ✓     |   ✓    |   ✓    |      ✗       |   (Policy Entropy)   |                                                              | Advantage |     ✓      |         ✗         |      ✗      |      -      |
+|    A3C     |     Asynchronous A2C      |     ✓      |     ✗     |   ✓    |   ✓    |      ✗       |    Policy Entropy    |                                                              | Advantage |     ✓      |         ✗         |      ✗      |      -      |
+|    PPO     | Clip; Importance sampling |     ✓      |     ✗     |   ✓    |   ✓    |      ✗       |    Policy Entropy    |                                                              |           |     ✓      | ✓ (Gaussian/Beta) |      ✗      |      -      |
+|    DPG     |     Deterministic PG      |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |       OU Noise       |                                                              |           |     ✗      |         ✓         |      ✗      |      -      |
+|    DDPG    |         Deep DPG          |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |       OU Noise       |                                                              |           |     ✗      |         ✓         |      ✓      |      ✓      |
+|    TD3     |     Twin Delayed DDPG     |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |    Gaussian Noise    | $L(\theta) = \hat{E}_t\left[ \min\left( r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t \right) \right]$ |           |     ✗      |         ✓         |      ✓      |      ✓      |
+|    SAC     |        Max Entropy        |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |    Policy Entropy    |                                                              |           |     ✓      |         ✗         |      ✓      |      ✓      |
+
+
+
+## PPO Tricks
+
+There are a total of 37 tricks, among which 13 are relatively core.
+
+> - [PPO paper](https://arxiv.org/pdf/1707.06347.pdf)
+> - [The 37 Implementation Details of Proximal Policy Optimization](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/).
+> - [影响PPO算法性能的10个关键技巧（附PPO算法简洁Pytorch实现） - Beaman的文章 - 知乎](https://zhuanlan.zhihu.com/p/512327050)
+{: .prompt-info }
+
+### Adam Optimizer Epsilon Parameter
+
+```python
+self.actor_optim = torch.optim.Adam(self.actor.parameters(), lr=config.lr_actor, eps=1e-5)
+self.critic_optim = torch.optim.Adam(self.critic.parameters(), lr=config.lr_critic, eps=1e-5)
+```
+
+### Gradient Clip
+
+```python
+self.critic_optim.zero_grad()
+critic_loss.backward()
+torch.nn.utils.clip_grad_norm_(self.critic.parameters(), config.clip_range) # here
+self.critic_optim.step()
+
+self.actor_optim.zero_grad()
+loss_actor.mean().backward()
+torch.nn.utils.clip_grad_norm_(self.actor.parameters(), config.clip_range) # here
+self.actor_optim.step()
+```
+
+### Tanh Activation Function
+
+```python
+# A continuous actor
+class Actor(torch.nn.Module):
+    def __init__(self):
+        super(Actor, self).__init__()
+        self.mlp = torch.nn.Sequential(
+            torch.nn.Linear(config.state_size, config.mlp_dim), torch.nn.Tanh(),
+            torch.nn.LayerNorm(config.mlp_dim),
+            torch.nn.Linear(config.mlp_dim, config.action_num),
+            torch.nn.Tanh()
+        )
+        self.log_std = torch.nn.Parameter(torch.zeros(1, config.action_num))  # Gaussian std, learnable
+
+    def forward(self, state):
+        mean_raw = self.mlp(state)  # [-1, 1]
+        mean = mean_raw * config.action_space_range  # [-max_a, max_a]
+
+        std = torch.exp(self.log_std)  # std=exp(log_std)>0
+        distribution = torch.distributions.Normal(mean, std)
+        return distribution
+```
+
+### Policy Entropy
+
+```python
+def choose_action(self, state):
+    state_tensor = torch.tensor(state).to(torch.float32).squeeze()
+    distribution = self.actor(state_tensor)
+    dist_entropy = distribution.entropy()
+    action = distribution.sample().squeeze(dim=0)
+    log_prob = distribution.log_prob(action)
+    return action.detach().numpy(), log_prob, dist_entropy
+
+negative_loss_actor = log_prob * TD_error.detach() + dist_entropy * config.entropy_coe
+loss_actor = - negative_loss_actor
+self.actor_optim.zero_grad()
+loss_actor.mean().backward()
+self.actor_optim.step()
+
+```
+
+### Reward Scaling
+
+#### Incremental mean
+
+I have a dataset with $n$ samples $\{x_1, x_2, \ldots, x_n\}$. The expectation of $X$ is calculated as 
+
+$$
+\mu_n = \frac{1}{n}\sum\limits_{i=1}^n x_i
+$$
+
+Then I get a new sample $x_{n+1}$, then the expectation of $X$ should be updated. And it can be represented by the current expectation: 
+
+$$
+\mu_{n+1} = \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
+$$
+
+Derivation:
+
+$$
+\begin{aligned}
+  \mu_{n+1} =& \frac{1}{n+1}\sum\limits_{i=1}^{n+1} x_i 
+  =  \frac{1}{n+1}\left(x_{n+1} + \sum\limits_{i=1}^n x_i \right) \\
+  =&  \frac{1}{n+1}x_{n+1} + \frac{n}{n+1} \sum\limits_{i=1}^n x_i \\
+  =&  \frac{1}{n+1}x_{n+1} + \left(1 - \frac{1}{n+1}\right) \mu_n \\
+  =& \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
+\end{aligned}
+$$
+
+To reduce the impact of previous samples, the coefficient is fixed as a constant $\alpha$:
+
+$$
+\begin{aligned}
+  \mu_{n+1} 
+  =& \mu_n + \alpha\left(x_{n+1} - \mu_n \right) \\
+  =& \alpha\cdot x_{n+1} - \left(1-\alpha\right)\cdot\mu_n 
+\end{aligned}
+$$
+
+#### Incremental Variance
+
+$$
+s_n^2 = s_{n-1}^2 + \frac{(x_n - \mu_{n-1})(x_n - \mu_n)}{n}
+$$
+
+---
+
+$$
+s_n^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu_n)^2
+$$
+
+$$
+\mu_n = \mu_{n-1} + \frac{1}{n}(x_n - \mu_{n-1})
+$$
+
+$$
+\begin{aligned}
+s_n^2 =& \frac{1}{n} \sum_{i=1}^n \left(x_i - \mu_{n-1} - \frac{1}{n}(x_n - \mu_{n-1})\right)^2 \\
+=& \frac{1}{n} \sum_{i=1}^{n-1}(x_i - \mu_{n-1})^2 + \frac{1}{n}(x_n - \mu_{n-1})^2 - 2\frac{1}{n}(x_n - \mu_{n-1})\sum_{i=1}^{n-1}(x_i - \mu_{n-1}) + \frac{1}{n^2}(x_n - \mu_{n-1})^2\sum_{i=1}^{n-1}1
+\end{aligned}
+$$
+
+
+$$
+\sum_{i=1}^{n-1}(x_i - \mu_{n-1}) = 0
+$$
+
+$$
+\begin{aligned}
+s_n^2 =& \frac{1}{n} \sum_{i=1}^{n-1}(x_i - \mu_{n-1})^2 + \frac{1}{n}(x_n - \mu_{n-1})^2 - \frac{n-1}{n^2}(x_n - \mu_{n-1})^2 \\
+=& \frac{n-1}{n}s_{n-1}^2 + \frac{1}{n}(x_n - \mu_{n-1})^2 - \frac{n-1}{n^2}(x_n - \mu_{n-1})^2 \\
+=& s_{n-1}^2 + \frac{1}{n}(x_n - \mu_{n-1})(x_n - \mu_n)
+\end{aligned}
+$$
+
+<!-- #### Code
+
+```python
+class RunningMeanVariance():
+    def __init__(self):
+        self.reset()
+
+    def update(self, x):
+        self.num_sample += 1
+        if self.num_sample == 1:
+            self.mean = x
+        else:
+            mean_old = self.mean
+            self.mean = mean_old + (x - mean_old) / self.num_sample
+            self.variance = (self.variance + (x - mean_old) * (x - self.mean)) / self.num_sample
+            self.std_variance = self.variance ** 0.5
+
+    def reset(self):
+        self.num_sample, self.mean, self.variance, self.std_variance = 0, 0, 0, 0
+
+
+class RewardScaling():
+    def __init__(self):
+        self.running_mean_variance = RunningMeanVariance()
+        self.reset()
+
+    def __call__(self, x):
+        self.R = config.gamma * self.R + x
+        self.running_mean_variance.update(self.R)
+        if self.running_mean_variance.num_sample > 1:
+            x = x / (self.running_mean_variance.std_variance + 1e-8)
+        return x
+
+    def reset(self):
+        self.R = 0
+        # self.running_mean_variance does not need to be resset.
+
+agent = Agent()
+reward_scaling = RewardScaling() # here
+for i_episode in range(config.max_num_episode):
+    state, _ = env.reset()
+    reward_episode = 0
+    agent.buffer.reset()
+    reward_scaling.reset() # here
+    for i_step in range(env_max_episode_steps):
+        action, log_prob = agent.choose_action(state)
+        state_next, reward_env, done, _, _ = env.step(action)
+        reward = reward_scaling(reward_env) # here
+        agent.buffer.add(state, state_next, reward, log_prob, done) # here
+        reward_episode += reward_env
+        state = state_next
+        if done:
+            break
+    rewards.append(reward_episode)
+    agent.learn(*agent.buffer.dump(agent.buffer.__len__()))
+``` -->
+
 
 ## Embedding for the Q-value Critic
 
@@ -114,7 +339,7 @@ where $g_i = -\log(-\log (u_i)), u_i\sim U(0,1)$.
 The argmax is non-differentiable, it can be replaced with softmax. $i = \arg\max\limits_{j} (x_j)$.
 
 $$
-\text{softmax}_T (x) = \frac{e^{x_j/T}}{\sum_k e^{x_k/T}}.
+\mathrm{softmax}_T (x) = \frac{e^{x_j/T}}{\sum_k e^{x_k/T}}.
 $$
 
 If temperature $T$ is small enough, then the output of the softmax can be seen as a one-hot vector which indicates $i$.
@@ -122,7 +347,7 @@ If temperature $T$ is small enough, then the output of the softmax can be seen a
 ### $x\ne \log(\mathrm{softmax}(x))$
 
 $$
-\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}
+\mathrm{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}
 $$
 
 $$
@@ -230,46 +455,11 @@ $$
 r^i = D_{KL}\left[ \pi^j(a^j\mid\sigma^i) \Big\Vert \sum\limits_{\sigma'}\varphi^i(\sigma^{i\prime}\mid s)\cdot \pi^j(a^j\mid\sigma^{i\prime})\right]
 $$
 
-## PPO 37 Tricks
-> [The 37 Implementation Details of Proximal Policy Optimization](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/).
-{: .prompt-info }
+
 
 ## Basics
 
-### Incremental mean
-I have a dataset with $n$ samples $\{x_1, x_2, \ldots, x_n\}$. The expectation of $X$ is calculated as 
 
-$$
-\mu_n = \frac{1}{n}\sum\limits_{i=1}^n x_i
-$$
-
-Then I get a new sample $x_{n+1}$, then the expectation of $X$ should be updated. And it can be represented by the current expectation: 
-
-$$
-\mu_{n+1} = \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
-$$
-
-Derivation:
-
-$$
-\begin{aligned}
-  \mu_{n+1} =& \frac{1}{n+1}\sum\limits_{i=1}^{n+1} x_i 
-  =  \frac{1}{n+1}\left(x_{n+1} + \sum\limits_{i=1}^n x_i \right) \\
-  =&  \frac{1}{n+1}x_{n+1} + \frac{n}{n+1} \sum\limits_{i=1}^n x_i \\
-  =&  \frac{1}{n+1}x_{n+1} + \left(1 - \frac{1}{n+1}\right) \mu_n \\
-  =& \mu_n + \frac{1}{n+1}\left(x_{n+1} - \mu_n \right)
-\end{aligned}
-$$
-
-To reduce the impact of previous samples, the coefficient is fixed as a constant $\alpha$:
-
-$$
-\begin{aligned}
-  \mu_{n+1} 
-  =& \mu_n + \alpha\left(x_{n+1} - \mu_n \right) \\
-  =& \alpha\cdot x_{n+1} - \left(1-\alpha\right)\cdot\mu_n 
-\end{aligned}
-$$
 
 ### TD(0)
 Resampling techniques are a class of statistical methods that involve creating new samples by repeatedly drawing observations from the original data sample.
@@ -290,7 +480,7 @@ $$
 V(s) = \mathbb{E}\left[r_{t+1} + \gamma V(s_{t+1}) | s_t = s\right]
 $$
 
-Now I get a new sample of $R_{t+1}$, I can use it to update $V(s_t)$, using the [incremental mean](https://yuelin301.github.io/posts/RL-Toolbox/#incremental-mean) trick.
+Now I get a new sample of $R_{t+1}$, I can use it to update $V(s_t)$, using the incremental mean trick.
 
 $$
 V(s_t) \gets V(s_t) + \alpha\left(x_{n+1} - V(s_t) \right),

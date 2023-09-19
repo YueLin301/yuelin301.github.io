@@ -16,7 +16,7 @@ order: 4
 <!-- <img src="/assets/img/photo.png" alt="me" style="float: left; width: 25%; height: auto; margin-right: 10px;"/> -->
 
 
-Hi, this is Yue Lin (or 林越, in Chinese), and welcome to my personal website.
+Hi, this is Yue Lin (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
 
 Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang.
 Here, I will regularly update my experiences, notes, and the computational magic spells of all the techniques that interest me.
@@ -103,11 +103,11 @@ Here, I will regularly update my experiences, notes, and the computational magic
 > Of eyes that vainly crave the light, of the objects mean, of the struggle ever renew’d,  
 > Of the poor results of all, of the plodding and sordid crowds I see around me,  
 > Of the empty and useless years of the rest, with the rest me intertwined, -->
-> The question, O me! so sad, recurring—What good amid these, O me, O life?  
+> The question, O me! so sad, recurring — What good amid these, O me, O life?  
 > 
 > *Answer.*  
-> That you are here—that life exists and identity,  
+> That you are here — that life exists and identity,  
 > That the powerful play goes on, and you may contribute a verse.  
 > 
-> *- Walt Whitman, O Me! O Life!*
+> *— Walt Whitman, O Me! O Life!*
 {: .prompt-info }

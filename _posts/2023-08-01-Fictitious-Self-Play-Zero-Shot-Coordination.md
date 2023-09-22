@@ -334,9 +334,9 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
 
 ### Jakob Foerster
 
-- [ ] BAD  
-  [Foerster, Jakob, et al. "Bayesian action decoder for deep multi-agent reinforcement learning." International Conference on Machine Learning. PMLR, 2019.](https://proceedings.mlr.press/v97/foerster19a.html)
-- [ ] SAD [[code](https://github.com/facebookresearch/hanabi_SAD)]  
+<!-- - [ ] BAD  
+  [Foerster, Jakob, et al. "Bayesian action decoder for deep multi-agent reinforcement learning." International Conference on Machine Learning. PMLR, 2019.](https://proceedings.mlr.press/v97/foerster19a.html) -->
+- [x] SAD [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, and Jakob N. Foerster. "Simplified Action Decoder for Deep Multi-Agent Reinforcement Learning." International Conference on Learning Representations. 2019.](https://arxiv.org/abs/1912.02288)
 - [x] Other-Play [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
@@ -351,7 +351,7 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
   [Zhao, Rui, et al. "Maximum entropy population-based training for zero-shot human-ai coordination." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023.](https://ojs.aaai.org/index.php/AAAI/article/view/25758)
 
 ### Env
-- [ ] A matrix-game [[code](https://bit.ly/2P3YOyd)][[paper](https://proceedings.mlr.press/v97/foerster19a.html)]
+- [x] A matrix-game [[code](https://bit.ly/2P3YOyd)][[paper](https://proceedings.mlr.press/v97/foerster19a.html)]
   - communication through action challenge
   - BAD
 - [x] Lever [[code](https://bit.ly/2vYkfI7)][[paper](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)]

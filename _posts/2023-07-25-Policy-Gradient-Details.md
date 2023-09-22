@@ -144,7 +144,12 @@ $$
 \end{aligned}
 $$
 
+Note that the Bellman equation here is different from the one in the stochastic case: the reward is not dependent on the next state.
+
 Q.E.D.
+
+> Calculating $\nabla_a Q(s,a)$ is the result of accounting for both $\nabla_\theta r(s,a)$ and $\nabla_\theta p(s'\mid s,a)$.
+{: .prompt-tip }
 
 
 

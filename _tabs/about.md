@@ -8,18 +8,12 @@ order: 4
 {: .prompt-tip }
 
 ---
-
-<!-- ![me](/assets/img/photo.png){: width="150" height="150" .w .left} -->
-
 ![me](/assets/img/photo.png){: width="130" height="130" .w-22 .left}
-
-<!-- <img src="/assets/img/photo.png" alt="me" style="float: left; width: 25%; height: auto; margin-right: 10px;"/> -->
-
 
 Hi, this is Yue Lin (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
 
 Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang.
-Here, I will regularly update my experiences, notes, and the computational magic spells of all the techniques that interest me.
+Here, I will regularly update my experiences, notes, and computational magic spells of all the techniques that interest me.
 <br clear="all"/>
 
 > And how could I bear to be a man, if man were not also a creator and guesser of riddles and redeemer of accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption.
@@ -40,31 +34,31 @@ Here, I will regularly update my experiences, notes, and the computational magic
 ---
 
 ## Research Interests
-- Currently
-    - Multi-Agent Reinforcement Learning
-    - [Information Design](https://yuelin301.github.io/posts/Information-Design-10min/) (a subfield of computational economics and game theory)
-    - Sequential Social Dilemma
-- Formerly
-    - Redundant Manipulator Control
-    - Robotic Mechanism Design
+
+*Currently*
+- Multi-Agent Reinforcement Learning
+- [Information Design](https://yuelin301.github.io/posts/Information-Design-10min/)
+- Sequential Social Dilemma
+
+*Formerly*
+- Redundant Manipulator Control
+- Robotic Mechanism Design
 
 ---
 
 ## [Publications](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN)
-- Information Design in Multi-Agent Reinforcement Learning.  
+- Information Design in Multi-Agent Reinforcement Learning. [[Paper](https://arxiv.org/abs/2305.06807)] [[Code](https://github.com/YueLin301/InformationDesignMARL)]  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *Neural Information Processing Systems (NeurIPS) 2023*.
-    > This is currently my most representative work, and the next few works will be based on this.
-
-- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
+    > This is currently my most representative work.
+- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. [[Paper](https://ieeexplore.ieee.org/abstract/document/9561060)] [[Overview](https://yuelin301.github.io/posts/RHex-T3/)]  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
     > Delivered a presentation at the Xi'an conference venue.
-
-- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
-    **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu and Fatao Qin.  
+- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. [[Paper](https://journals.sagepub.com/doi/full/10.1177/17298806221110022)] [[Overview](https://yuelin301.github.io/posts/SSCC/)] [[Code](https://github.com/YueLin301/Swinging-Search-Crawling-Control)]  
+    **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.  
     *International Journal of Advanced Robotic Systems (IJARS) 2022*. 
-- Self-adaptive Walking Speed Control on Underactuated Rimless Wheel.  
+- Self-adaptive Walking Speed Control on Underactuated Rimless Wheel. [[Paper](https://ieeexplore.ieee.org/abstract/document/9233853)]  
     Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.  
     *IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.
 
@@ -78,9 +72,16 @@ Here, I will regularly update my experiences, notes, and the computational magic
 
 ---
 
-## Other Campus Involvement
-- Achieved a perfect score (100/100) in Advanced Mathematics and served as a class representative. Initiated and organized a weekly seminar on Advanced Mathematics for classmates, promoting a harmonious learning environment.
-- Assisted classmates in preparing for final exams during the pandemic. Check out my [mind map notes](https://github.com/YueLin301/MindMap-bakcup) and you might be surprised by the amount of effort I committed.
+## Campus Involvement
+- Assisted classmates in preparing for final exams during the pandemic. Check out my [mind map notes](https://github.com/YueLin301/MindMap-bakcup).
+- Initiated and organized a weekly seminar on Advanced Mathematics for classmates, promoting a harmonious learning environment.
+
+The high-scoring courses at the undergraduate level include the following: 
+  - **Mathematics:** Advanced Mathematics (100), Discrete Mathematics (96);
+  - **Computer Science:** Compiler Theory (99), Embedded System Design (99), Software Engineering (98), Operating System (95), Computer Networks (96), Curriculum Design on Database (95), Application Development Practice (97), Internet of Things Technology (99), Software Development Practice (95), Distributed and Cloud Computing (95);
+  - **Artificial Intelligence:** Digital Image Processing (98), Speech Recognition and Natural Language Understanding (96), Computerized Vision (96), Machine Learning (95);
+  - **Robotics:** Intelligent Mobile Robot (99), Electrical and Electronic Technology (98), College Physics (97).
+
 
 ---
 

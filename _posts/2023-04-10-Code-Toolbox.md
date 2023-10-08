@@ -222,7 +222,7 @@ class net_base(nn.Module):
 
 ### Resources
 
-1. [A nice blog cuiqingcai (in Chinese)](http://cuiqingcai.com/categories/Python/爬虫/).
+1. [A nice blog cuiqingcai (in Chinese)](https://cuiqingcai.com/categories/Python/爬虫/).
 
 
 ## ML Tricks

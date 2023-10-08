@@ -41,7 +41,7 @@ Our communication will be smoother if you have read some of the following papers
 
 ### MARL in Sequential Social Dilemmas
 1. [MARL in Sequential Social Dilemmas](https://arxiv.org/abs/1702.03037)
-2. [Melting Pot](http://proceedings.mlr.press/v139/leibo21a.html)
+2. [Melting Pot](https://proceedings.mlr.press/v139/leibo21a.html)
 
 ### [Information Design](https://yuelin301.github.io/posts/Information-Design/)
 1. [Bayesian Persuasion](https://www.aeaweb.org/articles?id=10.1257/aer.101.6.2590)

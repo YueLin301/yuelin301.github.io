@@ -188,6 +188,10 @@ i {
 }
 
 #panel-wrapper {
+  // position: absolute;
+  // left: 0;
+  // float: right;
+
   /* the headings */
   .panel-heading {
     font-family: inherit;
@@ -903,6 +907,7 @@ $btn-mb: 0.5rem;
 #topbar-wrapper {
   height: $topbar-height;
   background-color: var(--topbar-bg);
+  // display: flex;
 }
 
 #topbar {
@@ -972,7 +977,9 @@ $btn-mb: 0.5rem;
 
 search {
   display: flex;
-  width: 100%;
+  // margin-left: auto !important;
+  // width: 100%;
+  max-width: $search-max-width;
   border-radius: 1rem;
   border: 1px solid var(--search-border-color);
   background: var(--main-bg);
@@ -992,6 +999,7 @@ search {
 
 /* 'Cancel' link */
 #search-cancel {
+  margin-left: auto !important;
   color: var(--link-color);
   display: none;
   white-space: nowrap;
@@ -1119,7 +1127,8 @@ search {
 
 #topbar-wrapper.row,
 #main-wrapper > .container > .row,
-#search-result-wrapper > .row {
+#search-result-wrapper > .row 
+{
   @include ml-mr(0);
 }
 
@@ -1211,11 +1220,10 @@ search {
 }
 
 /*
-  Responsive Design:
+  LY's Responsive Design:
 
  {sidebar, content, panel} >= 1200px screen width
- {sidebar, content} >= 850px screen width
- {content} <= 849px screen width
+ {content, panel} <= 1199px screen width
 
 */
 
@@ -1252,8 +1260,8 @@ search {
   }
 }
 
-/* hide sidebar and panel */
-@media all and (max-width: 849px) {
+/* hide sidebar */
+@media all and (max-width: 1199px) {
   @mixin slide($append: null) {
     $basic: transform 0.4s ease;
 
@@ -1305,8 +1313,7 @@ search {
     width: 100%;
   }
 
-  #breadcrumb,
-  search {
+  #breadcrumb{
     display: none;
   }
 
@@ -1322,7 +1329,10 @@ search {
   }
 
   #topbar-title,
-  #sidebar-trigger,
+  #sidebar-trigger{
+    display: block;
+  }
+
   #search-trigger {
     display: block;
   }
@@ -1342,10 +1352,11 @@ search {
       margin-top: 2.5rem;
     }
   }
-} /* max-width: 849px */
+}
+
 
 /* Sidebar is visible */
-@media all and (min-width: 850px) {
+@media all and (min-width: 1200px) {
   /* Solved jumping scrollbar */
   html {
     overflow-y: scroll;
@@ -1371,7 +1382,7 @@ search {
 
   #search-result-wrapper {
     max-width: $main-content-max-width;
-    justify-content: start !important;
+    // justify-content: start !important;
   }
 
   main {
@@ -1418,16 +1429,16 @@ search {
   }
 }
 
-/* panel hidden */
-@media all and (max-width: 1199px) {
-  #panel-wrapper {
-    display: none;
-  }
+// /* panel hidden */
+// @media all and (max-width: 1199px) {
+//   #panel-wrapper {
+//     display: none;
+//   }
 
-  #main-wrapper > .container > div.row {
-    justify-content: center !important;
-  }
-}
+//   #main-wrapper > .container > div.row {
+//     justify-content: center !important;
+//   }
+// }
 
 /* --- desktop mode, both sidebar and panel are visible --- */
 

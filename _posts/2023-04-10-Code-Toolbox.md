@@ -18,7 +18,7 @@ math: True
   - $\boldsymbol w \gets \boldsymbol w + \frac{\alpha}{n}\cdot \frac{\partial L_{scalar}}{L_i} \cdot \frac{L_i}{\partial \boldsymbol w}$
 - Accomplishing it by `for` costs lots of time.
 
-### [Hook]()
+### Hook
 - PyTorch中，可以自己定一个hook函数，给nn.Module登记
   - 登记完后，nn.Module在forward的时候会触发这个hook函数
   - 也可以选择让其在backward的时候触发hook函数

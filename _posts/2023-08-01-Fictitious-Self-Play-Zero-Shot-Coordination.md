@@ -92,7 +92,7 @@ In my understanding, the zero-shot coordination problem exists beacuse:
 - In different runs of the same experimental code, the agents may have different random seeds.
 - Self-play is a biased learning rule.
 
-### Example: [Lever](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
+### Example: [Lever](https://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
 
 It is a matrix game. There are two agents with the same action space, each of size $m$. If the two agents choose the same actions, then they each receive a reward of 1; otherwise, they get 0.
 
@@ -174,12 +174,12 @@ In my understanding, the `\cdot` here means function composition. That is, $(\ph
 Success in cross-play is a **necessary condition** for the algorithm to achieve a level of zero-shot coordination.
 
 ![pic](/assets/img/23-08-01-zsc/cross-play.png){: width="400" height="400" }
-_Illustration of Cross-Play from the paper "[A New Formalism, Method and Open Issues for Zero-Shot Coordination.](http://proceedings.mlr.press/v139/treutlein21a/treutlein21a.pdf)"_
+_Illustration of Cross-Play from the paper "[A New Formalism, Method and Open Issues for Zero-Shot Coordination.](https://proceedings.mlr.press/v139/treutlein21a/treutlein21a.pdf)"_
 
 ---
 
 ## Other-Play
-[Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
+[Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](https://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
 
 - Other-play is a learning rule.
 - The optimization problem explicitly involves considerations related to policy symmetry.
@@ -309,13 +309,13 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
 
 ## Trajectory Diversity
 
-[Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
+[Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](https://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
 
 ---
 
 ## Off-Belief Learning
 
-[Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](http://proceedings.mlr.press/v139/hu21c/hu21c.pdf)
+[Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](https://proceedings.mlr.press/v139/hu21c/hu21c.pdf)
 
 ---
 
@@ -339,11 +339,11 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
 - [x] SAD [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, and Jakob N. Foerster. "Simplified Action Decoder for Deep Multi-Agent Reinforcement Learning." International Conference on Learning Representations. 2019.](https://arxiv.org/abs/1912.02288)
 - [x] Other-Play [[code](https://github.com/facebookresearch/hanabi_SAD)]  
-  [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
+  [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](https://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
 - [ ] Trajectory Diversity  
-  [Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
+  [Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](https://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
 - [ ] Off-Belief Learning  
-  [Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](http://proceedings.mlr.press/v139/hu21c/hu21c.pdf)
+  [Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](https://proceedings.mlr.press/v139/hu21c/hu21c.pdf)
 
 ### Tencent
 
@@ -354,9 +354,9 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
 - [x] A matrix-game [[code](https://bit.ly/2P3YOyd)][[paper](https://proceedings.mlr.press/v97/foerster19a.html)]
   - communication through action challenge
   - BAD
-- [x] Lever [[code](https://bit.ly/2vYkfI7)][[paper](http://proceedings.mlr.press/v119/hu20a/hu20a.pdf)]
+- [x] Lever [[code](https://bit.ly/2vYkfI7)][[paper](https://proceedings.mlr.press/v119/hu20a/hu20a.pdf)]
   - Other-Play
-- [x] Corridor [[paper](http://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
+- [x] Corridor [[paper](https://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
   - Trajectory Diversity
 - [ ] Overcooked [[code](https://github.com/HumanCompatibleAI/overcooked_ai)]
 - [x] Hanabi [[code](https://github.com/deepmind/hanabi-learning-environment)] [[paper](https://www.sciencedirect.com/science/article/pii/S0004370219300116)]

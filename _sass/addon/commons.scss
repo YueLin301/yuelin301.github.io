@@ -188,10 +188,6 @@ i {
 }
 
 #panel-wrapper {
-  // position: absolute;
-  // left: 0;
-  // float: right;
-
   /* the headings */
   .panel-heading {
     font-family: inherit;
@@ -1414,7 +1410,7 @@ search {
   }
 }
 
-/* Compact icons in sidebar & panel hidden */
+/* Compact icons in sidebar */
 @media all and (min-width: 850px) and (max-width: 1199px) {
   #search-results > div {
     max-width: 700px;
@@ -1429,16 +1425,17 @@ search {
   }
 }
 
-// /* panel hidden */
-// @media all and (max-width: 1199px) {
-//   #panel-wrapper {
-//     display: none;
-//   }
+/* panel hidden & search hidden */
+@media all and (max-width: 575px) {
+  #panel-wrapper,
+  search {
+    display: none;
+  }
 
-//   #main-wrapper > .container > div.row {
-//     justify-content: center !important;
-//   }
-// }
+  #main-wrapper > .container > div.row {
+    justify-content: center !important;
+  }
+}
 
 /* --- desktop mode, both sidebar and panel are visible --- */
 

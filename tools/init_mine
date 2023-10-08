@@ -77,11 +77,7 @@ check_env() {
   _check_init
 }
 
-checkout_latest_release() {
-  hash=$(git log --grep="chore(release):" -1 --pretty="%H")
-  echo "$hash"
-  git reset --hard "$hash"
-}
+
 
 init_files() {
   if $_no_gh; then

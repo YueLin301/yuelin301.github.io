@@ -11,8 +11,113 @@ math: True
 
 ---
 
-> Like any toolbox, what you get out of it depends on what you put into it. *— Adrian McKinty, Hidden River (2004).*
-{: .prompt-info }
+<!-- > Like any toolbox, what you get out of it depends on what you put into it. *— Adrian McKinty, Hidden River (2004).*
+{: .prompt-info } -->
+
+## 5 Principles and 7 Actions
+
+> This part is summarized from [this talk](https://www.youtube.com/watch?v=d0yGdNEWdn0).
+
+### Principles
+
+#### 1: Focus on langurage content that is relevant to you
+
+Information that helps achieve personal goals has **relevance**. If the content is relevant to you, then you will pay **attention** to it.
+
+This brings us to **tools**. We master tools by using tools, and we learn tools the fastest when they are relevant to us (e.g. a **crisis**). Because it was relevant, meaningful and important.
+
+#### 2: Use your new language as a tool to communicate from day 1
+
+As a kid does.
+
+#### 3: When you first understand the message, you will unconsciously acquire the language
+
+Comprehension is key. Comprehensible input approach is better than grammar focus language teaching.
+
+Language learning is not about accumulating a lot of knowldge. It's about **physiological training**. 
+
+Because we have filters in our brain that filter in the sounds that we are familiar with and they filter out the sounds of languages that we're not. And if you can't hear it, you won't understand it. If you can't understand it, you're not going to learn it.
+
+#### 4: Talking takes muscle
+
+Practice coordinating your face muscle in a way that you make sounds that other people will understand. When you face hurts, you are doing it right.
+
+#### 5: Psycho-physiological state matters
+
+If you are sad, angry, worried, upset, you are not going to learn. If you are happy, relaxed, in an Alpha brain state, curious, you are going to learn really quickly.
+
+You must learn to **tolerate ambiguity**. 
+
+If you are one of those people who needs to understand 100 percent every word you are hearing, you will go nuts. Because you will be incredibly upset all the time, because you are not perfect.
+
+If you are comfortable with getting some, not getting some, just pay attention to what you do understand, you will be fine, relaxed, and you will be learning quickly.
+
+
+### Actions
+
+#### 1: Listen a lot
+
+It is brain soaking.
+
+you put yourself in a context where you are hearing tons and tons and tons of a language, and it does not matter if you understand it or not. You are listening to the rhythms, to the patterns that repeat, you are lisening to things that stand out.
+
+#### 2: Focus on getting the meaning first (before the words)
+
+E.g. by observing the body language.
+
+#### 3: Start mixing
+
+If you have got 10 verbs, 10 nouns and 10 adjectives, you can say 1000 different things.
+
+Language is a creative process.
+
+#### 4: Focus on the core
+
+Any language is high frequency content. In English 1000 words covers 85 percent of anything you are ever going to say in daily communication. And 3000 words gives you 98 percent of anything you are going to say in daily conversation. You got 3000 words, you are speaking the language. The rest is icing on the cake.
+
+Start with your tool box:
+1. Week 1
+   - What is this?
+   - How do you say?
+   - I don't understand...
+   - Repeat that pelase
+   - what does that mean?
+2. Week 2-3: Pronounds, common verbs, adjectives. Communicating like a baby
+   - you 
+   - that
+   - me
+   - give
+   - hot
+3. Week 4: Glue words
+   - And
+   - But
+   - Even though
+   - therefore
+
+#### 5: Get yourself a language parent
+
+When a child is speaking, it will be using simple words, simple combinations. Sometimes quite strange, other people from outside the family don't understand it. But the parents do.
+
+And so the kid has a safe environment, gets confidence. The parents talk to the children with body language, and with simple language they know the child understands. So you have a comprehensible input environment that is safe.
+
+So you get yourself a language parent, who is somebody interested in you as a person who will communicate with you, essentially as an equal but pay attention to hel you understand the language. Spouses are not very good at this.
+
+Language parent rules:
+- Works to understand what you are saying.
+- Does not correct mistakes.
+- Confirms understanding by using correct language.
+- Use words the learner knows.
+
+#### 6: Copy the face
+
+You got to get the muscles working right, so you can sound in a way that people will understand you. There is a couple of things you do.
+
+You hear how it feels, and feel how it sounds, which means you have a feedback loop operating in your face. If you can look at a native speaker, and just observe how they use their face, and let your unconscious mind absorb the rules, then you are going to be able to pick it up.
+
+#### 7: Direct connect to mental images
+
+Don't translate it to your familiar language. Everything you know is an image inside your mind, its feelings. You go into that imagery and all of that memory and you come out with another pathway. Same box, different path.
+
 
 ## Latin expressions (Loanwords)
 (Organized from [this note](https://zhuanlan.zhihu.com/p/464774114).)

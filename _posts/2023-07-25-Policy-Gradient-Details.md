@@ -15,7 +15,7 @@ pin: True
 
 ## Policy Gradient Theorem
 
-> The proof of the stochastic and deterministic policy gradient theorem are mainly summarized from [this blog](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/#off-policy-policy-gradient) and the supplementary of the paper "[Deterministic Policy Gradient Algorithms](https://scholar.archive.org/work/v7bb4lgn2zhnta3bassfawrane/access/wayback/https://hal.inria.fr/hal-00938992/file/dpg-icml2014.pdf)," respectively.
+> The proofs of the stochastic and deterministic policy gradient theorem are mainly summarized from [this blog](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/#off-policy-policy-gradient) and the supplementary of the paper "[Deterministic Policy Gradient Algorithms](https://scholar.archive.org/work/v7bb4lgn2zhnta3bassfawrane/access/wayback/https://hal.inria.fr/hal-00938992/file/dpg-icml2014.pdf)," respectively.
 {: .prompt-info }
 
 
@@ -74,7 +74,7 @@ $$
 \end{aligned}
 $$
 
-The blue part is defined as the discounted state visitation distribution $$d^{\pi_\theta}(s\mid s_0) = (1-\gamma )\cdot \sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s_0\to s, k, \pi_\theta).$$
+The blue part is defined as the **discounted state visitation distribution** $$d^{\pi_\theta}(s\mid s_0) = (1-\gamma )\cdot \sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s_0\to s, k, \pi_\theta).$$
 
 $$
 \begin{aligned}
@@ -90,10 +90,9 @@ $$
 =& \textcolor{blue}{(1-\gamma)}\cdot \sum\limits_{s} \textcolor{blue}{d^{\pi_\theta}(s\mid s_0)} \sum\limits_{a} Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \pi_\theta(a\mid s) \\
 =& (1-\gamma)\cdot \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} \pi(a\mid s) \cdot Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s) \\
 =& (1-\gamma)\cdot \mathbb{E}_{s \sim d^{\pi_\theta}(\cdot \mid s_0)} \mathbb{E}_{a\sim \pi(\cdot \mid s)} \left[Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s)\right] 
+& \blacksquare
 \end{aligned}
 $$
-
-Q.E.D.
 
 
 
@@ -144,18 +143,92 @@ $$
 \end{aligned}
 $$
 
-Note that the Bellman equation here is different from the one in the stochastic case: the reward is not dependent on the next state.
-
-Q.E.D.
+Note that the Bellman equation here is different from the one in the stochastic case: the reward is not dependent on the next state. $\blacksquare$
 
 > Calculating $\nabla_a Q(s,a)$ is the result of accounting for both $\nabla_\theta r(s,a)$ and $\nabla_\theta p(s'\mid s,a)$.
 {: .prompt-tip }
 
 
+## Performance Difference Lemma
 
-## About
+For all policies $\pi, \pi^\prime$ and states
+$s_0$,
 
-This following part of this note is based on the awesome paper:
+$$\begin{aligned} V^\pi(s_0) - V^{\pi^\prime}(s_0) =& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) } \left[\sum_{t=0}^\infty \gamma^t A^{\pi'}(s_t,a_t)\right] \\ =& \frac{1}{1-\gamma}\mathbb{E}_{s\sim d_{s_0}^\pi }\mathbb{E}_{a\sim \pi(\cdot|s) } \left[ \gamma^t A^{\pi^\prime}(s,a)\right]. \end{aligned} $$
+
+> Kakade, Sham, and John Langford. "Approximately optimal approximate reinforcement learning." Proceedings of the Nineteenth International Conference on Machine Learning. 2002.
+{: .prompt-info }
+
+### Proof
+
+The proof is provided in the appendix of "On the theory of policy gradient methods: Optimality, approximation, and distribution shift" and I just transcribed it here with additional details.
+
+Let $\Pr^\pi(\tau \mid s_0 = s)$ denote the probability of observing a trajectory $\tau$ when starting in state $s$ and following the policy $\pi$. Using a telescoping argument, we have:
+
+$$
+\begin{aligned}
+&V^\pi(s) - V^{\pi'}(s) \\
+=&  \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
+\left[\sum_{t=0}^\infty \gamma^t r(s_t,a_t)\right] - V^{\pi'}(s) \\
+=& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
+\left[\sum_{t=0}^\infty \gamma^t \left(r(s_t,a_t)+V^{\pi'}(s_t)-V^{\pi'}(s_t) \right)\right]-V^{\pi'}(s)\\
+\stackrel{(a)}{=}& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
+    \left[\sum_{t=0}^\infty \gamma^t \left(r(s_t,a_t)+\gamma V^{\pi'}(s_{t+1})-V^{\pi'}(s_t)\right)\right]\\
+\stackrel{(b)}{=}&\mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
+    \left[\sum_{t=0}^\infty \gamma^t \left(r(s_t,a_t)+\gamma \mathbb{E}[V^{\pi'}(s_{t+1})|s_t,a_t]-V^{\pi'}(s_t)\right)\right]\\
+\stackrel{(c)}{=}& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
+    \left[\sum_{t=0}^\infty \gamma^t A^{\pi'}(s_t,a_t)\right] \\
+=& \frac{1}{1-\gamma}\mathbb{E}_{s'\sim d^\pi_s }\,\mathbb{E}_{a\sim \pi(\cdot | s)}
+    \left[ \gamma^t A^{\pi'}(s',a) \right],
+\end{aligned}
+$$
+
+where $(a)$ rearranges terms in the summation and cancels the $V^{\pi'}(s_0)$ term with the $-V^{\pi'}(s)$ outside the summation, and $(b)$ uses the tower property of conditional expectations and the final equality follows from the definition of $d^\pi_s$. $\blacksquare$
+
+### Details
+
+$(a)$:
+
+$$
+- a_0 +\sum\limits_{k=0}^{\infty} \left(a_k - b_k \right) = \sum\limits_{k=0}^{\infty} \left(a_{k+1} - b_k\right).
+$$
+
+$(b)$: The tower property of conditional expectations (or law of total probability):
+If $\mathcal{H} \subseteq \mathcal{G}$, then
+
+$$
+\mathbb{E}\left[\mathbb{E}\left[X\mid \mathcal{G} \right] \mid \mathcal{H} \right] = \mathbb{E}\left[X\mid \mathcal{H} \right].
+$$
+
+Correspondingly, 
+- $\mathcal{G} = \tau \sim {\Pr}^\pi(\tau \mid s_0=s)$, 
+- $\mathcal{H} = (s_t,a_t)$.
+
+$(c)$: Step $(b)$ is necessary. Note that
+
+$$
+Q^{\pi}(s, a) \ne r(s, a) + \gamma \cdot V^{\pi}(s').
+$$
+
+But
+
+$$
+Q^{\pi}(s, a) = r(s, a) + \gamma \cdot \sum\limits_{s'} P(s' \mid s,a) \cdot V^{\pi}(s').
+$$
+
+### Other proofs
+
+> Check other proofs [here](https://people.cs.umass.edu/~akshay/courses/coms6998-11/files/lec7.pdf) and [here](https://wensun.github.io/CS4789_data/PDL.pdf).
+{: .prompt-info }
+
+###
+
+
+## Convergence
+
+### About
+
+This section is based on the awesome paper:
 
 > Agarwal, Alekh, et al. "On the theory of policy gradient methods: Optimality, approximation, and distribution shift." The Journal of Machine Learning Research 22.1 (2021): 4431-4506.
 > {: .prompt-info }
@@ -165,9 +238,9 @@ The writing of the entire note may be somewhat **verbose**, and this is to famil
 
 
 
-## Details of Setting
+### Details of Setting
 
-### $V(s) \le \frac{1}{1-\gamma}$
+#### $V(s) \le \frac{1}{1-\gamma}$
 $V(s)$ reaches its upper bound when $r(s,a)=1,\forall s,a$, which equals $\sum\limits_{t=0}^\infty \gamma^t$.
 
 And it is a geometric progression:
@@ -180,7 +253,7 @@ And it is a geometric progression:
 
 ---
 
-### The famous theorem of Bellman and Dreyfus (1959)
+#### The famous theorem of Bellman and Dreyfus (1959)
 
 > The famous theorem of Bellman and Dreyfus (1959) shows there exists a policy $\pi^\star$ which simultaneously maximizes $V^\pi(s_0)$, for all states $s_0\in S$.
 
@@ -190,7 +263,8 @@ However this statement is intuitive and is not hard to understand. Assume there 
 
 ---
 
-### Direct parameterization
+#### Direct parameterization
+
 $\theta\in\Delta(A)^{\vert S\vert}$ means for every state $s$ the parameters are  a point in a simplex. 
 
 For eample, for state $s_0$, there are actions $a_1, a_2$, the parameters of the current policy $\pi_\theta(\cdot \mid s_0)$ are 
@@ -199,7 +273,7 @@ For eample, for state $s_0$, there are actions $a_1, a_2$, the parameters of the
 
 ---
 
-### Softmax parameterization
+#### Softmax parameterization
 
 Sometimes it can be $\pi_\theta(a\mid s) = \frac{\exp(\tau\cdot \theta_{s,a})}{\sum\limits_{a'}\exp(\tau\cdot \theta_{s,a'})}$, which is called energy-based policy, where $\tau$ is the temperature parameter (inverse temperature) and $\theta_{s,a}$ is the energy function.
 
@@ -208,14 +282,14 @@ Sometimes it can be $\pi_\theta(a\mid s) = \frac{\exp(\tau\cdot \theta_{s,a})}{\
 
 ---
 
-### $V^{\pi_\theta}(s)$ is non-concave (Lemma 1)
+#### $V^{\pi_\theta}(s)$ is non-concave (Lemma 1)
 We want to **maximize** $V^{\pi_\theta}(s)$, so if $V^{\pi_\theta}(s)$ is **concave** then we can apply standard tools of convex optimization.  Unfortunately it is not.
 
 As shown in the appendix, there is a MDP where exists policy points $\pi_1, \pi_2$ that $V^{\pi_1}(s)+V^{\pi_2}(s)> 2\cdot V^{\frac{1}{2}(\pi_1+\pi_2)}(s)$. This shows a property of convex, so $V^{\pi_\theta}(s)$ is non-concave.
 
 ---
 
-### Why is there a coefficient $(1-\gamma)$ in $(4)$?
+#### Why is there a coefficient $(1-\gamma)$ in $(4)$?
 
 $$
 d_{s_0}^\pi(s) := (1-\gamma) \sum_{t=0}^\infty \gamma^t {\Pr}^\pi(s_t=s|s_0).
@@ -236,7 +310,7 @@ Note that $\lim\limits_{k\to\infty} \sum\limits_{k=0}^{\infty} \gamma^k = \frac{
 
 ---
 
-### Why is there a coefficient $\frac{1}{1-\gamma}$ in $(5)$?
+#### Why is there a coefficient $\frac{1}{1-\gamma}$ in $(5)$?
 
 $$
 \begin{aligned}
@@ -252,7 +326,7 @@ It is used to cancel that normalization.
 
 ---
 
-### Advantage
+#### Advantage
 
 $$
 \begin{aligned}
@@ -266,7 +340,7 @@ Given $s$ and $\pi$, $A^{\pi}(s,a)$ measures how much better the expected future
 
 ---
 
-### Baseline
+#### Baseline
 > This part partially use material from Prof. Wang's [Lecture note 18: Variance reduction](https://drive.google.com/drive/folders/1u1oyOMsvo4bJ765NE_2HSR5x40uXWwxD) and *Reinforcement learning: An introduction*.
 {: .prompt-info }
 
@@ -326,7 +400,7 @@ $$ -->
 
 ---
 
-### Equation (6) does not hold for the direct parameterization
+#### Equation (6) does not hold for the direct parameterization
 
 $$
 \begin{aligned}
@@ -338,86 +412,18 @@ If every $\frac{\partial \pi(a)}{\partial \theta_1}$ has the same variables, the
 
 ---
 
-### The performance difference lemma (Lemma 2)
-
-> For all policies $\pi, \pi^\prime$ and states
-$s_0$,
-> 
-> $$\begin{aligned} V^\pi(s_0) - V^{\pi^\prime}(s_0) =& \frac{1}{1-\gamma}\mathbb{E}_{s\sim d_{s_0}^\pi }\mathbb{E}_{a\sim \pi(\cdot|s) } \left[A^{\pi^\prime}(s,a)\right]. \end{aligned} $$
-
-> Kakade, Sham, and John Langford. "Approximately optimal approximate reinforcement learning." Proceedings of the Nineteenth International Conference on Machine Learning. 2002.
-{: .prompt-info }
-
-But I cannot find this paper. The proof is provided in the appendix and I put it here with additional details.
-
-Let $\Pr^\pi(\tau \mid s_0 = s)$ denote the probability of observing a trajectory $\tau$ when starting in state $s$ and following the policy $\pi$. Using a telescoping argument, we have:
-
-$$
-\begin{aligned}
-&V^\pi(s) - V^{\pi'}(s) \\
-=&  \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
-\left[\sum_{t=0}^\infty \gamma^t r(s_t,a_t)\right] - V^{\pi'}(s) \\
-=& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
-\left[\sum_{t=0}^\infty \gamma^t \left(r(s_t,a_t)+V^{\pi'}(s_t)-V^{\pi'}(s_t) \right)\right]-V^{\pi'}(s)\\
-\stackrel{(a)}{=}& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
-    \left[\sum_{t=0}^\infty \gamma^t \left(r(s_t,a_t)+\gamma V^{\pi'}(s_{t+1})-V^{\pi'}(s_t)\right)\right]\\
-\stackrel{(b)}{=}&\mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
-    \left[\sum_{t=0}^\infty \gamma^t \left(r(s_t,a_t)+\gamma \mathbb{E}[V^{\pi'}(s_{t+1})|s_t,a_t]-V^{\pi'}(s_t)\right)\right]\\
-\stackrel{(c)}{=}& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
-    \left[\sum_{t=0}^\infty \gamma^t A^{\pi'}(s_t,a_t)\right] \\
-=& \frac{1}{1-\gamma}\mathbb{E}_{s'\sim d^\pi_s }\,\mathbb{E}_{a\sim \pi(\cdot | s)}
-    \gamma^t A^{\pi'}(s',a),
-\end{aligned}
-$$
-
-where $(a)$ rearranges terms in the summation and cancels the $V^{\pi'}(s_0)$ term with the $-V^{\pi'}(s)$ outside the summation, and $(b)$ uses the tower property of conditional expectations and the final equality follows from the definition of $d^\pi_s$.
-
-$(a)$:
-
-$$
-- a_0 +\sum\limits_{k=0}^{\infty} \left(a_k - b_k \right) = \sum\limits_{k=0}^{\infty} \left(a_{k+1} - b_k\right).
-$$
-
-$(b)$: The tower property of conditional expectations (or law of total probability):
-If $\mathcal{H} \subseteq \mathcal{G}$, then
-
-$$
-\mathbb{E}\left[\mathbb{E}\left[X\mid \mathcal{G} \right] \mid \mathcal{H} \right] = \mathbb{E}\left[X\mid \mathcal{H} \right].
-$$
-
-Correspondingly, 
-- $\mathcal{G} = \tau \sim {\Pr}^\pi(\tau \mid s_0=s)$, 
-- $\mathcal{H} = (s_t,a_t)$.
-
-$(c)$: Step $(b)$ is necessary. Note that
-
-$$
-Q^{\pi}(s, a) \ne r(s, a) + \gamma \cdot V^{\pi}(s').
-$$
-
-But
-
-$$
-Q^{\pi}(s, a) = r(s, a) + \gamma \cdot \sum\limits_{s'} P(s' \mid s,a) \cdot V^{\pi}(s').
-$$
-
-> Check another proof [here](https://people.cs.umass.edu/~akshay/courses/coms6998-11/files/lec7.pdf).
-{: .prompt-info }
-
----
-
-### Distribution mismatch coefficient (pass)
+#### Distribution mismatch coefficient (pass)
 I think this concept is introduced too soon. Let's discuss it later.
 
 
 ---
 
 
-## Details on Constrained Tabular Parameterization
+### Details on Constrained Tabular Parameterization
 
 > This algorithm is **projected gradient ascent** on the **direct policy parametrization** of the MDP.
 
-### Equation $(7)$
+#### Equation $(7)$
 $\mu$ is a distribution of $s_0$.
 
 $$

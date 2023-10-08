@@ -11,28 +11,6 @@ math: True
 
 ---
 
-## Algorithms
-
-This table has not been finished.
-
-|            |     Memorable Points      | Model-Free | On-policy | Critic | Actor  | ReplayBuffer |     Exploration      |                     Critic Value Update                      | Actor GAE | Stochastic |   Deterministic   | Target Nets | Soft Update |
-| :--------: | :-----------------------: | :--------: | :-------: | :----: | :----: | :----------: | :------------------: | :----------------------------------------------------------: | :-------: | :--------: | :---------------: | :---------: | :---------: |
-|     DP     |        Pred + Ctrl        |     ✗      |     ✓     |   ✓    | Greedy | ✗ (per step) | $\varepsilon$-Greedy | DP: $V(s) \gets \sum\limits_{a}\pi(a\mid s)\left(r(s,a)+\gamma\cdot\sum\limits_{s'}P(s'\mid s,a)\cdot V(s')\right), \forall s$ |     ✗     |     ✓      |         ✓         |      ✗      |      -      |
-|   SARSA    |             -             |     ✓      |     ✓     |   ✓    | Greedy | ✗ (per step) | $\varepsilon$-Greedy | TD-like: $Q(s_t,a_t)\gets Q(s_t,a_t)+\alpha\cdot(r_t+\gamma\cdot Q(s_{t+1},a_{t+1})-Q(s_t,a_t))$ |     ✗     |     ✓      |         ✗         |      ✗      |      -      |
-| Q-Learning |       Max Q target        |     ✓      |     ✗     |   ✓    | Greedy | ✗ (per step) | $\varepsilon$-Greedy | $Q(s_t,a_t)\gets Q(s_t,a_t)+\alpha\cdot(r_t+\gamma\cdot\max\limits_a Q(s_{t+1},a)-Q(s_t,a_t))$ |     ✗     |     ✓      |         ✗         |      ✗      |      -      |
-|    DQN     |      Deep Q; Buffer;      |     ✓      |     ✗     |   ✓    | Greedy |      ✓       | $\varepsilon$-Greedy | $Q(s_t,a_t)\gets Q(s_t,a_t)+\alpha\cdot(r_t+\gamma\cdot\max\limits_a Q(s_{t+1},a)-Q(s_t,a_t))$ |     ✗     |     ✓      |         ✗         |      ✓      |      ✗      |
-| REINFORCE  |       Stochastic PG       |     ✓      |     ✓     |   ✗    |   ✓    |      ✗       |   (Policy Entropy)   |                              -                               |           |     ✓      |         ✗         |      ✗      |      -      |
-| Vanilla AC |       Actor-Critic        |     ✓      |     ✓     |   ✓    |   ✓    |      ✗       |   (Policy Entropy)   |                                                              |           |     ✓      |         ✗         |      ✗      |      -      |
-|    A2C     |       Advantage AC        |     ✓      |     ✓     |   ✓    |   ✓    |      ✗       |   (Policy Entropy)   |                                                              | Advantage |     ✓      |         ✗         |      ✗      |      -      |
-|    A3C     |     Asynchronous A2C      |     ✓      |     ✗     |   ✓    |   ✓    |      ✗       |    Policy Entropy    |                                                              | Advantage |     ✓      |         ✗         |      ✗      |      -      |
-|    PPO     | Clip; Importance sampling |     ✓      |     ✗     |   ✓    |   ✓    |      ✗       |    Policy Entropy    |                                                              |           |     ✓      | ✓ (Gaussian/Beta) |      ✗      |      -      |
-|    DPG     |     Deterministic PG      |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |       OU Noise       |                                                              |           |     ✗      |         ✓         |      ✗      |      -      |
-|    DDPG    |         Deep DPG          |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |       OU Noise       |                                                              |           |     ✗      |         ✓         |      ✓      |      ✓      |
-|    TD3     |     Twin Delayed DDPG     |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |    Gaussian Noise    | $L(\theta) = \hat{E}_t\left[ \min\left( r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t \right) \right]$ |           |     ✗      |         ✓         |      ✓      |      ✓      |
-|    SAC     |        Max Entropy        |     ✓      |     ✗     |   ✓    |   ✓    |      ✓       |    Policy Entropy    |                                                              |           |     ✓      |         ✗         |      ✓      |      ✓      |
-
-
-
 ## PPO Tricks
 
 There are a total of 37 tricks, among which 13 are relatively core.

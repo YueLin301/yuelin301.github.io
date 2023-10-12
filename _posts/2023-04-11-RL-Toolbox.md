@@ -1,7 +1,7 @@
 ---
 title: RL Toolbox
 date: 2023-04-11 02:40:00 +0800
-categories: [Code]
+categories: [Reinforcement Learning]
 tags: [toolbox, reinforcement learning]
 math: True
 ---

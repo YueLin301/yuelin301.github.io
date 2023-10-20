@@ -5,9 +5,16 @@ The main purpose of building this repository is to showcase my work and experien
 
 ## Customized Features
 
+### Layout
 1. New responsive design: hide sidebar. (Check /_sass/addon/commons.scss)
 2. Panel reposition. (Check /_layouts/default.html)
 3. Cut down sidebar width. (Check /_sass/addon/variables.scss)
+
+### Tabs
+1. No "tabs" tab. (Check /_tabs/tags.md)
+2. No "home" tab. (Check /_includes/sidebar.html)
+3. New "Tech" and "Life" tabs. (Check /_includes/child-home.html and /_tabs)
+4. New icons.
 
 ## License
 

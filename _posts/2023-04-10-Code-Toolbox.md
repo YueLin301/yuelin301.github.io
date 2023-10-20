@@ -2,7 +2,7 @@
 title: Code Toolbox
 date: 2023-04-10 02:40:00 +0800
 categories: [Code]
-tags: [toolbox]
+tags: [tech, toolbox]
 math: True
 ---
 

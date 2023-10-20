@@ -1,5 +1,5 @@
 ---
 layout: tags
-icon: fas fa-tag
-order: 2
+icon: fa-solid fa-puzzle-piece
+order: 5
 ---

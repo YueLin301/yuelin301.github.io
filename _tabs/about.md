@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
-icon: fas fa-info-circle
-order: 4
+icon: fa-solid fa-hat-wizard
+order: 6
 ---
 
 > Greetings! 🎉
@@ -29,9 +29,49 @@ Here, I will regularly update my experiences, notes, and computational magic spe
 - **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
 - **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
-        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127 (Tied with another student.)
+        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127
     - School of Mechanical Engineering (2018.9 - 2019.6)  
         > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
+
+<!-- <div style="height: 20px;"></div>
+
+<p style="text-align:left;height:20px;"><b>
+The Chinese University of Hong Kong, Shenzhen</b><span style="float:right;">
+Shenzhen, China</span></p >
+
+<p style="text-align:left;height:20px;">
+Research Assistant - School of Data Science<span style="float:right;">
+2022.2 - Present</span></p >
+
+<div style="height: 15px;"></div>
+
+<p style="text-align:left;height:20px;"><b>
+Tiangong University</b><span style="float:right;">
+Tianjin, China</span></p >
+
+<p style="text-align:left;height:20px;">
+Bachelor of Engineering - Computer Science and Technology<span style="float:right;">
+2018.9 - 2022.6</span></p >
+
+<div class="align-container" style="color:DarkGray;">
+    <span style="text-align:left;height:20px;"><b>
+        Major: Computer Science and Technology</b><span style="float:right;">
+        2019.9 - 2022.6</span></span>
+    <div class="align-content">
+        <span style="margin-right: 2em;">GPA:  3.89 / 4 (92.22 / 100)</span><span>Rank: 1 / 127</span>
+    </div>
+</div>
+
+<div class="align-container" style="color:DarkGray;">
+    <span style="text-align:left;height:20px;"><b>
+    Major: Mechanical Engineering</b><span style="float:right;">
+    2018.9 - 2019.6</span></span>
+    <div class="align-content">
+        <span style="margin-right: 2em;">GPA: 3.90 / 4 (92.00 / 100)</span><span>Rank: 1 / 60</span>
+    </div>
+</div>
+
+<div style="height: 25px;"></div> -->
 
 ---
 
@@ -64,7 +104,7 @@ Here, I will regularly update my experiences, notes, and computational magic spe
     Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.  
     *IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.
 
----
+<!-- ---
 
 ## Honors & Awards
 - First Prize in the 16th Tianjin "The Challenge Cup" Competition - 2021.6
@@ -82,17 +122,23 @@ The high-scoring courses at the undergraduate level include the following:
   - **Mathematics:** Advanced Mathematics (100), Discrete Mathematics (96);
   - **Computer Science:** Compiler Theory (99), Embedded System Design (99), Software Engineering (98), Operating System (95), Computer Networks (96), Curriculum Design on Database (95), Application Development Practice (97), Internet of Things Technology (99), Software Development Practice (95), Distributed and Cloud Computing (95);
   - **Artificial Intelligence:** Digital Image Processing (98), Speech Recognition and Natural Language Understanding (96), Computerized Vision (96), Machine Learning (95);
-  - **Robotics:** Intelligent Mobile Robot (99), Electrical and Electronic Technology (98), College Physics (97).
+  - **Robotics:** Intelligent Mobile Robot (99), Electrical and Electronic Technology (98), College Physics (97). -->
 
 
 ---
 
 ## Personality
-- Big Five Personality Test: [my test result](https://bigfive-test.com/result/649d06c585aaa70008135b20).
-- Myers-Briggs Type Indicator (MBTI): [my test result](https://www.16personalities.com/profiles/8dc4f03308407).
-  - Introverted, Intuitive, Thinking, Judging, and Turbulent.
-  - Dominant Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
-- Enneagram: [Type Five with a Four-Wing](https://www.enneagraminstitute.com/type-5).
+- Big Five Personality Test: [my test result in 2023](https://bigfive-test.com/result/649d06c585aaa70008135b20).
+  - Scored highly in [Openness to Experience](https://bigfive-test.com/result/649d06c585aaa70008135b20#openness%20to%20experience), especially in the categories of [Imagination](https://bigfive-test.com/result/649d06c585aaa70008135b20#imagination) and [Intellect](https://bigfive-test.com/result/649d06c585aaa70008135b20#intellect).
+  - Scored highly in [Conscientiousness](https://bigfive-test.com/result/649d06c585aaa70008135b20#conscientiousness), especially in the categories of [Orderliness](https://bigfive-test.com/result/649d06c585aaa70008135b20#orderliness) and [Achievement-Striving](https://bigfive-test.com/result/649d06c585aaa70008135b20#achievement-striving).
+- Myers-Briggs Type Indicator (MBTI): [my test result in 2023](https://www.16personalities.com/profiles/8dc4f03308407). 
+  - INTJ-T: [Introverted](https://www.16personalities.com/articles/mind-introverted-vs-extraverted), [Intuitive](https://www.16personalities.com/articles/energy-intuitive-vs-observant), [Thinking](https://www.16personalities.com/articles/nature-thinking-vs-feeling), [Judging](https://www.16personalities.com/articles/tactics-judging-vs-prospecting), and [Turbulent](https://www.16personalities.com/articles/identity-assertive-vs-turbulent);
+  - Dominant (Jung) Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
+- [Enneagram](https://www.enneagraminstitute.com/type-descriptions): [Type Five with a Four-Wing (The Iconoclast)](https://www.enneagraminstitute.com/type-5); Tritye: [458](https://wiki.personality-database.com/books/enneagram/page/458-the-scholar-archetype).
+  - [Fives (The Investigators)](https://www.enneagraminstitute.com/type-5) are perceptive, innovative, secretive, and isolated. They want to be capable and competent;
+  - [Fours (The Individualists)](https://www.enneagraminstitute.com/type-4) are expressive, dramatic, self-absorbed, and temperamental. They want to find themselves and their significance (to create an identity);
+  - [Eights (The Challengers)](https://www.enneagraminstitute.com/type-8) are self-confident, decisive, willful, and confrontational. They want to protect themselves (to be in control of their own life and destiny).
+
 > I believe these are efficient communication protocols, and using them allows me to easily introduce my profile.
 
 ---

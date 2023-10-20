@@ -16,7 +16,8 @@ $topbar-height: 3rem !default;
 $search-max-width: 200px !default;
 $footer-height: 5rem !default;
 $footer-height-large: 6rem !default; /* screen width: < 850px */
-$main-content-max-width: 1250px !default;
+// $main-content-max-width: 1250px !default;
+$main-content-max-width: 100% !default;
 $base-radius: 0.625rem !default;
 $back2top-size: 2.75rem !default;
 

@@ -2,7 +2,7 @@
 title: English Toolbox
 date: 2023-04-07 02:40:01 +0800
 categories: [Misc Notes]
-tags: [English, toolbox]
+tags: [tech, English, toolbox]
 math: True
 ---
 

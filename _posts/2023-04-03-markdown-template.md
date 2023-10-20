@@ -2,7 +2,7 @@
 title: Markdown Syntax
 date: 2023-04-03 15:48:44 +0800
 categories: [Misc Notes]
-tags: [misc note]     # TAG names should always be lowercase
+tags: [tech, misc note]     # TAG names should always be lowercase
 math: True
 ---
 

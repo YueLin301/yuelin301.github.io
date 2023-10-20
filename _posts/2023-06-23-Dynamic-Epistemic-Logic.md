@@ -2,7 +2,7 @@
 title: Dynamic Epistemic Logic
 date: 2023-06-23 02:00:00 +0800
 categories: [Mathematics]
-tags: [epistemic logic, common knowledge, logic, induction puzzles, multi agents]
+tags: [tech, math, epistemic logic, common knowledge, logic, induction puzzles, multi agents]
 math: True
 ---
 

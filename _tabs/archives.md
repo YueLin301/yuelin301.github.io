@@ -1,5 +1,5 @@
 ---
 layout: archives
-icon: fas fa-archive
-order: 3
+icon: fa-solid fa-scroll
+order: 2
 ---

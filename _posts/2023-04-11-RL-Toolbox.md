@@ -1,8 +1,8 @@
 ---
 title: RL Toolbox
 date: 2023-04-11 02:40:00 +0800
-categories: [Reinforcement Learning]
-tags: [toolbox, reinforcement learning]
+categories: [Artificial Intelligence, Reinforcement Learning]
+tags: [tech, toolbox, reinforcement learning]
 math: True
 ---
 

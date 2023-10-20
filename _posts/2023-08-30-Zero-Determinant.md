@@ -2,7 +2,7 @@
 title: Zero-Determinant Strategy
 date: 2023-08-30 02:40:00 +0800
 categories: [Economics & Game Theory]
-tags: [game theory, sequential social dilemma, multi agents]
+tags: [tech, game theory, sequential social dilemma, multi agents]
 math: True
 ---
 

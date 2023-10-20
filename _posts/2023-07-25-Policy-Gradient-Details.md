@@ -1,8 +1,8 @@
 ---
 title: Details on the Analysis of Policy Gradient Methods
 date: 2023-07-25 02:40:00 +0800
-categories: [Mathematics]
-tags: [convergence, policy gradient, reinforcement learning]
+categories: [Artificial Intelligence, Reinforcement Learning]
+tags: [tech, convergence, policy gradient, reinforcement learning, tech]
 math: True
 pin: True
 ---
@@ -35,9 +35,9 @@ $$
 $$
 \begin{aligned}
 \nabla_\theta V^{\pi_\theta}(s_0) 
-=& \frac{1}{(1-\gamma)}\cdot \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \pi_\theta(a\mid s) \\
-=& \frac{1}{(1-\gamma)}\cdot \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} \pi(a\mid s) \cdot Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s) \\
-=& \frac{1}{(1-\gamma)}\cdot \mathbb{E}_{s \sim d^{\pi_\theta}(\cdot \mid s_0)} \mathbb{E}_{a\sim \pi(\cdot \mid s)} \left[Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s)\right] 
+=& \frac{1}{(1-\gamma)} \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \pi_\theta(a\mid s) \\
+=& \frac{1}{(1-\gamma)} \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} \pi(a\mid s) \cdot Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s) \\
+=& \frac{1}{(1-\gamma)} \mathbb{E}_{s \sim d^{\pi_\theta}(\cdot \mid s_0)} \mathbb{E}_{a\sim \pi(\cdot \mid s)} \left[Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s)\right] 
 \end{aligned}
 $$
 
@@ -87,9 +87,9 @@ The distribution should beshould lie within the range of $[0,1]$ and thus the co
 $$
 \begin{aligned}
 \nabla_\theta V^{\pi_\theta}(s_0) 
-=& \textcolor{blue}{\frac{1}{(1-\gamma)}}\cdot \sum\limits_{s} \textcolor{blue}{d^{\pi_\theta}(s\mid s_0)} \sum\limits_{a} Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \pi_\theta(a\mid s) \\
-=& \frac{1}{(1-\gamma)}\cdot \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} \pi(a\mid s) \cdot Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s) \\
-=& \frac{1}{(1-\gamma)}\cdot \mathbb{E}_{s \sim d^{\pi_\theta}(\cdot \mid s_0)} \mathbb{E}_{a\sim \pi(\cdot \mid s)} \left[Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s)\right] 
+=& \textcolor{blue}{\frac{1}{(1-\gamma)}} \sum\limits_{s} \textcolor{blue}{d^{\pi_\theta}(s\mid s_0)} \sum\limits_{a} Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \pi_\theta(a\mid s) \\
+=& \frac{1}{(1-\gamma)} \sum\limits_{s} d^{\pi_\theta}(s\mid s_0) \sum\limits_{a} \pi(a\mid s) \cdot Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s) \\
+=& \frac{1}{(1-\gamma)} \mathbb{E}_{s \sim d^{\pi_\theta}(\cdot \mid s_0)} \mathbb{E}_{a\sim \pi(\cdot \mid s)} \left[Q^{\pi_\theta}(s,a) \cdot \nabla_\theta \ln \pi_\theta(a\mid s)\right] 
 & \blacksquare
 \end{aligned}
 $$
@@ -116,7 +116,7 @@ $$
 \begin{aligned}
 \nabla_\theta V^{\mu_\theta}(s) 
 =& \frac{1}{(1-\gamma)}\int_{x\in S} d^{\mu_\theta}(s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
-=&\frac{1}{(1-\gamma)} \cdot \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
+=&\frac{1}{(1-\gamma)} \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
 \end{aligned}
 $$
 
@@ -139,7 +139,7 @@ $$
 =&\ldots \\
 =& \int_{x\in S} \sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s\to x, k, \mu_\theta) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
 =& \frac{1}{(1-\gamma)}\int_{x\in S} d^{\mu_\theta}(s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
-=&\frac{1}{(1-\gamma)} \cdot \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
+=&\frac{1}{(1-\gamma)} \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
 \end{aligned}
 $$
 
@@ -154,7 +154,7 @@ Note that the Bellman equation here is different from the one in the stochastic 
 For all policies $\pi, \pi^\prime$ and states
 $s_0$,
 
-$$\begin{aligned} V^\pi(s_0) - V^{\pi^\prime}(s_0) =& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) } \left[\sum_{t=0}^\infty \gamma^t A^{\pi'}(s_t,a_t)\right] \\ =& \frac{1}{1-\gamma}\mathbb{E}_{s\sim d_{s_0}^\pi }\mathbb{E}_{a\sim \pi(\cdot|s) } \left[ \gamma^t A^{\pi^\prime}(s,a)\right]. \end{aligned} $$
+$$\begin{aligned} V^\pi(s_0) - V^{\pi^\prime}(s_0) =& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) } \left[\sum_{t=0}^\infty \gamma^t A^{\pi'}(s_t,a_t)\right] \\ =& \frac{1}{1-\gamma}\mathbb{E}_{s\sim d_{s_0}^\pi }\mathbb{E}_{a\sim \pi(\cdot|s) } \left[  A^{\pi^\prime}(s,a)\right]. \end{aligned} $$
 
 > Kakade, Sham, and John Langford. "Approximately optimal approximate reinforcement learning." Proceedings of the Nineteenth International Conference on Machine Learning. 2002.
 {: .prompt-info }
@@ -178,8 +178,8 @@ $$
     \left[\sum_{t=0}^\infty \gamma^t \left(r(s_t,a_t)+\gamma \mathbb{E}[V^{\pi'}(s_{t+1})|s_t,a_t]-V^{\pi'}(s_t)\right)\right]\\
 \stackrel{(c)}{=}& \mathbb{E}_{\tau \sim {\Pr}^\pi(\tau|s_0=s) }
     \left[\sum_{t=0}^\infty \gamma^t A^{\pi'}(s_t,a_t)\right] \\
-=& \frac{1}{1-\gamma}\mathbb{E}_{s'\sim d^\pi_s }\,\mathbb{E}_{a\sim \pi(\cdot | s)}
-    \left[ \gamma^t A^{\pi'}(s',a) \right],
+=& \frac{1}{1-\gamma}\mathbb{E}_{s'\sim d^\pi_s }\,\mathbb{E}_{a\sim \pi(\cdot | s')}
+    \left[ A^{\pi'}(s',a) \right],
 \end{aligned}
 $$
 

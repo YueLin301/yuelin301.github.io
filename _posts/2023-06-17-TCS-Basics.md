@@ -2,7 +2,7 @@
 title: Theoretical Computer Science (TCS)
 date: 2023-06-17 20:00:01 +0800
 categories: [Mathematics]
-tags: [theoretical computer science, computational complexity theory, reduction, complexity classes]
+tags: [tech, math, theoretical computer science, computational complexity theory, reduction, complexity classes]
 math: True
 ---
 

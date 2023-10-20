@@ -2,7 +2,7 @@
 title: A Memo on Game Theory
 date: 2023-08-13 14:30:00 +0800
 categories: [Economics & Game Theory]
-tags: [game theory]
+tags: [tech, game theory]
 math: True
 ---
 

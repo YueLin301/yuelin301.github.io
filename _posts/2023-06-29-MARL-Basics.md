@@ -1,8 +1,8 @@
 ---
 title: MARL Basics
 date: 2023-06-29 17:38:00 +0800
-categories: [Multi-Agent Reinforcement Learning]
-tags: [multi agents, reinforcement learning, Markov model]
+categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
+tags: [tech, multi agents, reinforcement learning, Markov model]
 math: True
 ---
 

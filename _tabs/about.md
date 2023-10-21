@@ -138,7 +138,7 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
   </div>
   <div class="spacer"></div> <!-- 这是中间的 5% 空白 -->
   <div class="flex-item" style="text-align: center;">
-    <img src="/assets/img/about/crow1.png" style="max-height: 100%; margin: auto;" />
+    <img src="/assets/img/about/crow1.png" alt="pic1" style="max-height: 100%; margin: auto;" />
     <p><a href="https://falseknees.com/about.html">— Joshua, False Knees.</a></p>
   </div>
   <div class="auto-spacer"></div> <!-- 这是右边的自动填充空白 -->

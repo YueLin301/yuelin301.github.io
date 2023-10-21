@@ -77,14 +77,82 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
 
 ## Research Interests
 
-*Currently*
+<!-- ![pic1](/assets/img/about/crow1.png){: width="250" .w-50 .left}
+_[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
+
+<!-- *Currently*
 - Multi-Agent Reinforcement Learning
 - [Information Design](https://yuelin301.github.io/posts/Information-Design-10min/)
 - Sequential Social Dilemma
 
 *Formerly*
 - Redundant Manipulator Control
-- Robotic Mechanism Design
+- Robotic Mechanism Design -->
+
+
+<style>
+  .flex-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .flex-item {
+    /* width: 45%; */
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .spacer {
+    width: 15%;
+  }
+  .auto-spacer {
+    flex-grow: 1;
+  }
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .flex-item, .spacer, .auto-spacer {
+      width: 85%;
+    }
+  }
+</style>
+
+<div class="flex-container">
+  <div class="flex-item">
+    <div>
+      <p><strong>Currently</strong></p>
+      <ul>
+        <li>Multi-Agent Reinforcement Learning</li>
+        <li><a href="https://yuelin301.github.io/posts/Information-Design-10min/">Information Design</a></li>
+        <li>Sequential Social Dilemma</li>
+      </ul>
+      <p><strong>Formerly</strong></p>
+      <ul>
+        <li>Redundant Manipulator Control</li>
+        <li>Robotic Mechanism Design</li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div> <!-- 这是中间的 5% 空白 -->
+  <div class="flex-item" style="text-align: center;">
+    <img src="/assets/img/about/crow1.png" style="max-height: 100%; margin: auto;" />
+    <p><a href="https://falseknees.com/about.html">— Joshua, False Knees.</a></p>
+  </div>
+  <div class="auto-spacer"></div> <!-- 这是右边的自动填充空白 -->
+</div>
+
+
+
+
+
+
+
+
+
+<br clear="all"/>
 
 ---
 
@@ -142,7 +210,6 @@ The high-scoring courses at the undergraduate level include the following:
 > I believe these are efficient communication protocols, and using them allows me to easily introduce my profile.
 
 ---
-  
 <!-- > Oh me! Oh life! of the questions of these recurring,  
 > Of the endless trains of the faithless, of cities fill’d with the foolish,  
 > Of myself forever reproaching myself, (for who more foolish than I, and who more faithless?)  
@@ -157,3 +224,7 @@ The high-scoring courses at the undergraduate level include the following:
 > 
 > *— Walt Whitman, O Me! O Life!*
 {: .prompt-info }
+
+
+![pic2](/assets/img/about/bird1.png){: width="500" }
+_[— Joshua, False Knees.](https://falseknees.com/about.html)_

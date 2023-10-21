@@ -24,7 +24,7 @@ Note that $0 = d(x,x)\le d(x,y)+d(y,x),$ so the second axiom can be weakened to 
 ### Cauchy sequence
 
 > [**Definition.**](https://en.wikipedia.org/wiki/Cauchy_sequence#In_a_metric_space)
-> Let $\{x_t\}_{t}^\infty$ be a sequence in a metric space $(M,d),$ then it is a Cauchy sequence, if for every positive real number $\epsilon>0,$ there is a positive integer $N$ such that for all positive integers $m,n > N,$ the distance $d(x_m, x_n) < \epsilon.$
+> Let $\set{x_t}_{t}^\infty$ be a sequence in a metric space $(M,d),$ then it is a Cauchy sequence, if for every positive real number $\epsilon>0,$ there is a positive integer $N$ such that for all positive integers $m,n > N,$ the distance $d(x_m, x_n) < \epsilon.$
 {: .prompt-info }
 
 Symbolically, this is:
@@ -36,7 +36,7 @@ $$
 ### Convergent sequence
 
 > **Definition.**
-> Let $\{x_t\}_{t}^\infty$ be a sequence in a metric space $(M,d),$ then it is a convergent sequence, if there is a $x\in M$ such that for every positive real number $\epsilon>0,$ there is a positive integer $N$ such that for all positive integer $n\ge N,$ the distance $d(x_n, x) < \epsilon.$
+> Let $\set{x_t}_{t}^\infty$ be a sequence in a metric space $(M,d),$ then it is a convergent sequence, if there is a $x\in M$ such that for every positive real number $\epsilon>0,$ there is a positive integer $N$ such that for all positive integer $n\ge N,$ the distance $d(x_n, x) < \epsilon.$
 {: .prompt-info }
 
 > [**Definition.**](https://en.wikipedia.org/wiki/Limit_of_a_sequence#Metric_spaces)
@@ -78,7 +78,7 @@ Examples:
 ### Lemma
 
 > **Lemma.**
-> Let $(M,d)$ be a metric space, $f:M\to M$ be a function, $x_0\in M$, and $x_{t+1} = f(x_t), t=0,1,\ldots,$ then $\{x_t\}_{t}^\infty$ is a Cauchy sequence. 
+> Let $(M,d)$ be a metric space, $f:M\to M$ be a function, $x_0\in M$, and $x_{t+1} = f(x_t), t=0,1,\ldots,$ then $\set{x_t}_{t}^\infty$ is a Cauchy sequence. 
 {: .prompt-info }
 
 ### Proof
@@ -120,9 +120,9 @@ $$
 N > \frac{\ln \frac{(1-\beta) \epsilon}{d(x_1, x_0)}}{\ln \beta},
 $$
 
-we have for any $m, n \geq N$, that $d(x_m, x_n) \leq \frac{\beta^N}{1-\beta} d(x_1, x_0) < \epsilon$, hence $\{x_t\}\_{t=0}^{\infty}$ is a Cauchy sequence. 
+we have for any $m, n \geq N$, that $d(x_m, x_n) \leq \frac{\beta^N}{1-\beta} d(x_1, x_0) < \epsilon$, hence $\set{x_t}\_{t=0}^{\infty}$ is a Cauchy sequence. 
 
-If $d(x_1, x_0) = 0$, then $\{x_t\}\_{t=0}^{\infty}$ is a constant sequence, and therefore also a Cauchy sequence. $\blacksquare$
+If $d(x_1, x_0) = 0$, then $\set{x_t}\_{t=0}^{\infty}$ is a constant sequence, and therefore also a Cauchy sequence. $\blacksquare$
 
 ## Contraction Mapping Theorem
 
@@ -140,9 +140,9 @@ $$
 
 The above inequality holds only when $d(x_1, x_2) = 0$, i.e., $x_1 = x_2$. 
 
-**Convergence**: Since $M$ is complete, there exists a point $x^\* \in M$ such that the sequence $\{x_t\}$ converges to $x^\*$.
+**Convergence**: Since $M$ is complete, there exists a point $x^\* \in M$ such that the sequence $\set{x_t}$ converges to $x^\*$.
 
-**Fixed Point**: Let $\epsilon > 0$. Since $\{x_t\}$ is a Cauchy sequence and converges to $x^\*$, there exists a positive integer $T$ such that for any $t \geq T$, we have $d(x^\*, x_t) < \frac{\epsilon}{3}$ and $d(x_{t+1}, x_t) < \frac{\epsilon}{3}$. For $t \geq T$, by the triangle inequality, we have
+**Fixed Point**: Let $\epsilon > 0$. Since $\set{x_t}$ is a Cauchy sequence and converges to $x^\*$, there exists a positive integer $T$ such that for any $t \geq T$, we have $d(x^\*, x_t) < \frac{\epsilon}{3}$ and $d(x_{t+1}, x_t) < \frac{\epsilon}{3}$. For $t \geq T$, by the triangle inequality, we have
 
 $$
 d(x^*, f(x^*)) \leq d(x^*, x_t) + d(x_t, f(x_t)) + d(f(x_t), f(x^*)).

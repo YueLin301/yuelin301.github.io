@@ -26,10 +26,12 @@ Here, I will regularly update my experiences, notes, and computational magic spe
 ---
 
 ## Education & Experience
-- **The Chinese University of Hong Kong, Shenzhen**, Research Assistant - School of Data Science (2022.2 - Present)
-- **Tiangong University**, B.E. - Computer Science and Technology (2018.9 - 2022.6)
+- **The Chinese University of Hong Kong, Shenzhen**  
+  Research Assistant - School of Data Science (2022.2 - Present)
+- **Tiangong University**  
+  Bachelor of Engineering - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
-        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127
+        > [GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127](https://yuelin301.github.io/posts/Certification-Rank/)
     - School of Mechanical Engineering (2018.9 - 2019.6)  
         > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
 
@@ -125,9 +127,9 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
     <div>
       <p><strong>Currently</strong></p>
       <ul>
+        <li>Sequential Social Dilemma</li>
         <li>Multi-Agent Reinforcement Learning</li>
         <li><a href="https://yuelin301.github.io/posts/Information-Design-10min/">Information Design</a></li>
-        <li>Sequential Social Dilemma</li>
       </ul>
       <p><strong>Formerly</strong></p>
       <ul>
@@ -136,21 +138,13 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
       </ul>
     </div>
   </div>
-  <div class="spacer"></div> <!-- 这是中间的 5% 空白 -->
+  <div class="spacer"></div>
   <div class="flex-item" style="text-align: center;">
     <img src="/assets/img/about/crow1.png" alt="pic1" style="max-height: 100%; margin: auto;" />
     <p><a href="https://falseknees.com/about.html">— Joshua, False Knees.</a></p>
   </div>
-  <div class="auto-spacer"></div> <!-- 这是右边的自动填充空白 -->
+  <div class="auto-spacer"></div>
 </div>
-
-
-
-
-
-
-
-
 
 <br clear="all"/>
 
@@ -161,11 +155,11 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *Neural Information Processing Systems (NeurIPS) 2023*.
     > This is currently my most representative work.
-- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. [[Paper](https://ieeexplore.ieee.org/abstract/document/9561060)] [[Overview](https://yuelin301.github.io/posts/RHex-T3/)]  
+- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. [[Overview](https://yuelin301.github.io/posts/RHex-T3/)] [[Paper](https://ieeexplore.ieee.org/abstract/document/9561060)]  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
     > Delivered a presentation at the Xi'an conference venue.
-- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. [[Paper](https://journals.sagepub.com/doi/full/10.1177/17298806221110022)] [[Overview](https://yuelin301.github.io/posts/SSCC/)] [[Code](https://github.com/YueLin301/Swinging-Search-Crawling-Control)]  
+- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. [[Overview](https://yuelin301.github.io/posts/SSCC/)] [[Paper](https://journals.sagepub.com/doi/full/10.1177/17298806221110022)] [[Code](https://github.com/YueLin301/Swinging-Search-Crawling-Control)]  
     **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.  
     *International Journal of Advanced Robotic Systems (IJARS) 2022*. 
 - Self-adaptive Walking Speed Control on Underactuated Rimless Wheel. [[Paper](https://ieeexplore.ieee.org/abstract/document/9233853)]  
@@ -196,10 +190,10 @@ The high-scoring courses at the undergraduate level include the following:
 ---
 
 ## Personality
-- Big Five Personality Test: [my test result in 2023](https://bigfive-test.com/result/649d06c585aaa70008135b20).
+- Big Five Personality Test: [My Test Result in 2023](https://bigfive-test.com/result/649d06c585aaa70008135b20).
   - Scored highly in [Openness to Experience](https://bigfive-test.com/result/649d06c585aaa70008135b20#openness%20to%20experience), especially in the categories of [Imagination](https://bigfive-test.com/result/649d06c585aaa70008135b20#imagination) and [Intellect](https://bigfive-test.com/result/649d06c585aaa70008135b20#intellect).
   - Scored highly in [Conscientiousness](https://bigfive-test.com/result/649d06c585aaa70008135b20#conscientiousness), especially in the categories of [Orderliness](https://bigfive-test.com/result/649d06c585aaa70008135b20#orderliness) and [Achievement-Striving](https://bigfive-test.com/result/649d06c585aaa70008135b20#achievement-striving).
-- Myers-Briggs Type Indicator (MBTI): [my test result in 2023](https://www.16personalities.com/profiles/8dc4f03308407). 
+- Myers-Briggs Type Indicator (MBTI): [My Test Result in 2023](https://www.16personalities.com/profiles/8dc4f03308407). 
   - INTJ-T: [Introverted](https://www.16personalities.com/articles/mind-introverted-vs-extraverted), [Intuitive](https://www.16personalities.com/articles/energy-intuitive-vs-observant), [Thinking](https://www.16personalities.com/articles/nature-thinking-vs-feeling), [Judging](https://www.16personalities.com/articles/tactics-judging-vs-prospecting), and [Turbulent](https://www.16personalities.com/articles/identity-assertive-vs-turbulent);
   - Dominant (Jung) Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
 - [Enneagram](https://www.enneagraminstitute.com/type-descriptions): [Type Five with a Four-Wing (The Iconoclast)](https://www.enneagraminstitute.com/type-5); Tritye: [458](https://wiki.personality-database.com/books/enneagram/page/458-the-scholar-archetype).
@@ -207,7 +201,7 @@ The high-scoring courses at the undergraduate level include the following:
   - [Fours (The Individualists)](https://www.enneagraminstitute.com/type-4) are expressive, dramatic, self-absorbed, and temperamental. They want to find themselves and their significance (to create an identity);
   - [Eights (The Challengers)](https://www.enneagraminstitute.com/type-8) are self-confident, decisive, willful, and confrontational. They want to protect themselves (to be in control of their own life and destiny).
 
-> I believe these are efficient communication protocols, and using them allows me to easily introduce my profile.
+> I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile.
 
 ---
 <!-- > Oh me! Oh life! of the questions of these recurring,  

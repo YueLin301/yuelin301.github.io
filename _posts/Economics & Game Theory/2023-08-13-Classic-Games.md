@@ -172,6 +172,80 @@ Attractor of player2:
 ## Battle of the Sexes
 Also known as **Bach or Stravinsky**.
 
+### Normal form
+
+| Player1\Player2      | Bach             | Stravinsky       |
+| -------------------- | ---------------- | ---------------- |
+| **Bach**             | $2,1$            | $0,0$            |
+| **Stravinsky**       | $0,0$            | $1,2$            |
+
+### Nash equilibrium
+
+| Player1\Player2      | Bach                                | Stravinsky                      |
+| -------------------- | ----------------                    | ----------------                |
+| **Bach**             | $2(\checkmark),1(\checkmark)$       | $0(\downarrow),0(\leftarrow)$   |
+| **Stravinsky**       | $0(\uparrow),(\rightarrow)0$        | $1(\checkmark),2(\checkmark)$   |
+
+
+### Mixed strategy Nash equilibrium
+
+| policy   |                     | q         | 1-q            |
+| -------- | ---------           | --------  | ---------      |
+|          | **Player1\Player2** | **Bach**  | **Stravinsky** |
+| **p**    | **Bach**            | $2,1$     | $0,0$          |
+| **1-p**  | **Stravinsky**      | $0,0$     | $1,2$          |
+
+If player1 chooses "Bach", its expected payoff is
+
+$$
+\mathbb{E}\left(r^1\mid a^1 = \text{Bach}\right) = 2q + 0\cdot (1-q) = 2q.
+$$
+
+And if it chooses "Stravinsky", its expected payoff is $(1-q)$. It should be indifferent about playing heads or tails, otherwise it can improve its expected payoff by increasing the probability of the action that causes higher expected payoff. In this way,
+
+$$
+\begin{aligned}
+    \quad & \mathbb{E}\left(r^1\mid a^1 = \text{Bach}\right) = 
+        \mathbb{E}\left(r^1\mid a^1 = \text{Stravinsky}\right) \\
+    \Rightarrow \quad & 2q = 1-q \\
+    \Rightarrow \quad & q = 1/3
+\end{aligned}
+$$
+
+If player2 chooses "Bach", its expected payoff is
+
+$$
+\mathbb{E}\left(r^2\mid a^2 = \text{Bach}\right) = p.
+$$
+
+And if it chooses "Stravinsky", its expected payoff is $(2-2p)$. It should be indifferent about playing heads or tails, otherwise it can improve its expected payoff by increasing the probability of the action that causes higher expected payoff. In this way,
+
+$$
+\begin{aligned}
+    \quad & \mathbb{E}\left(r^2\mid a^2 = \text{Bach}\right) = 
+        \mathbb{E}\left(r^2\mid a^2 = \text{Stravinsky}\right) \\
+    \Rightarrow \quad & p = 2-2p \\
+    \Rightarrow \quad & p = 2/3
+\end{aligned}
+$$
+
+The outcome is
+
+| policy   |                     | 1/3       | 2/3            |
+| -------- | ---------           | --------  | ---------      |
+|          | **Player1\Player2** | **Bach**  | **Stravinsky** |
+| **2/3**  | **Bach**            | $2,1$     | $0,0$          |
+| **1/3**  | **Stravinsky**      | $0,0$     | $1,2$          |
+
+$$\mathbb{E}\left( r^1 \right) = \frac{2}{3}\cdot \frac{1}{3} \cdot 2 + \frac{1}{3}\cdot \frac{2}{3} \cdot 1 = \frac{2}{3}$$
+
+$$\mathbb{E}\left( r^2 \right) = \frac{2}{3}\cdot \frac{1}{3} \cdot 1 + \frac{1}{3}\cdot \frac{2}{3} \cdot 2 = \frac{2}{3}$$
+
+And this outcome is worse than any of the pure strategy equilibria.
+
+### Introducing a Trusted Authority
+
+
 
 ---
 
@@ -187,7 +261,7 @@ It is zero-sum (at each entry). Players are fully competitive.
 | **Heads**            | $1,-1$           | $-1,1$           |
 | **Tails**            | $-1,1$           | $1,-1$           |
 
-### Nash equilibrium
+### Mixed strategy Nash equilibrium
 
 No pure strategy works.
 

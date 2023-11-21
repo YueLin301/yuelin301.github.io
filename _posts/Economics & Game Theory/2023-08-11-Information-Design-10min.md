@@ -10,7 +10,6 @@ pin: True
 > This note provides a simple introduction to the basic concepts of information design. More details can be found in [my other note on this topic](https://yuelin301.github.io/posts/Information-Design/).
 {: .prompt-info }
 
-## What problems does information design study?
 > "Sometimes, the truth is not good enough." *— Batman, The Dark Knight (2008).*
 
 Information design focuses on scenarios of **mixed-motive** unidirectional communication, where one self-interested sender with informational advantage attempts to **persuade** a self-interested rational receiver to take actions that the sender prefers.
@@ -69,29 +68,3 @@ $$
 \max\limits_{\varphi} \mathbb{E}_{\varphi}[\ r^i(s, a) \ ],\;\;\textrm{s.t. Obedience Constraints.}
 \end{aligned}
 $$
-
-## What are its applications in real-world scenarios?
-
-Information design was first introduced in [this paper](https://www.nber.org/system/files/working_papers/w15540/w15540.pdf) (and it has been cited 2460 times to date):
-> Kamenica, Emir, and Matthew Gentzkow. "Bayesian persuasion." *American Economic Review* (2011).
-{: .prompt-info }
-
-In practical economic scenarios, persuasion is ubiquitous and plays a crucial role. As stated in the title and conclusion of [McCloskey and Klamer’s paper](https://www.jstor.org/stable/2117917), **“one quarter of the GDP is persuasion”.** This kind of persuasion demonstrates that communication is conceivable in mixed-motive scenarios.
-
-> Research in this second strand includes applications to (in no particular order): financial sector stress tests, grading in schools, employee feedback, law enforcement deployment, censorship, entertainment, financial over-the-counter markets, voter coalition formation, research procurement, contests, medical testing, medical research, matching platforms, price discrimination, financing, insurance, transparency in organizations, and routing software.  
-
->  [Kamenica, Emir. "Bayesian persuasion and information design." *Annual Review of Economics* (2019).](https://www.kevindorst.com/uploads/8/8/1/7/88177244/kamenica_-_bayesian_persuasion_and_information_design_-_2019.pdf)
-{: .prompt-info }
-
-Among them, **routing software** is an relatively easily imaginable example. 
-1. The central routing software and user vehicles are in a **mixed-motive** scenario, where the routing software aims to optimize the overall traffic speed, while each user wants to increase their individual speed. 
-2. Moreover, the routing software has more **informational advantage** than user vehicles; it can know the congestion status of all relevant road segments, while user vehicles are not allowed to do so. Each user is self-interested, which may lead to a decrease in collective benefits, known as a social dilemma. 
-
-A common example of this is [**Braess's paradox**](https://en.wikipedia.org/wiki/Braess%27s_paradox). Using information design can resolve this issue. For specific details, please refer to the article mentioned in these papers: 
-
-> - An illustration of Braess's paradox: `Figure 18.2`  
-> [Roughgarden, Tim. "Routing games." Algorithmic game theory 18 (2007): 459-484](https://timroughgarden.org/papers/rg.pdf).
-> - Braess's paradox by information design:  
-> [Das, Sanmay, Emir Kamenica, and Renee Mirka. "Reducing congestion through information design." *2017 55th annual allerton conference on communication, control, and computing (allerton)*. IEEE, 2017](https://cs.gmu.edu/~sanmay/papers/reducing-congestion-information.pdf).
-{: .prompt-info }
-

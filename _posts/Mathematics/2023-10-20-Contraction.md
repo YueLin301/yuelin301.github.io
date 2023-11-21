@@ -2,7 +2,7 @@
 title: Contraction Mapping Theorem
 date: 2023-10-20 02:40:00 +0800
 categories: [Mathematics]
-tags: [tech, math, contraction]
+tags: [tech, math, contraction, convergence]
 math: True
 ---
 

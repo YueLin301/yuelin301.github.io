@@ -31,7 +31,7 @@ Here, I will regularly update my experiences, notes, and computational magic spe
 - **Tiangong University**  
   Bachelor of Engineering - Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
-        > [GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127](https://yuelin301.github.io/posts/Certification-Rank/)
+        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127 [[Certification]](https://yuelin301.github.io/posts/Certification-Rank/)
     - School of Mechanical Engineering (2018.9 - 2019.6)  
         > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
 
@@ -127,9 +127,12 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
     <div>
       <p><strong>Currently</strong></p>
       <ul>
-        <li>Sequential Social Dilemma</li>
+        <li>Social Dilemma</li>
         <li>Multi-Agent Reinforcement Learning</li>
-        <li><a href="https://yuelin301.github.io/posts/Information-Design-10min/">Information Design</a></li>
+        <li>Algorithmic Game Theory</li>
+        <ul>
+          <li>Information Design <a href="https://yuelin301.github.io/posts/Information-Design-10min/">[Intro]</a></li>
+        </ul>
       </ul>
       <p><strong>Formerly</strong></p>
       <ul>
@@ -141,7 +144,7 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
   <div class="spacer"></div>
   <div class="flex-item" style="text-align: center;">
     <img src="/assets/img/about/crow1.png" alt="pic1" style="max-height: 100%; margin: auto;" />
-    <p><a href="https://falseknees.com/about.html">— Joshua, False Knees.</a></p>
+    <p><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
   </div>
   <div class="auto-spacer"></div>
 </div>
@@ -150,19 +153,20 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 
 ---
 
-## [Publications](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN)
-- Information Design in Multi-Agent Reinforcement Learning. [[Paper](https://arxiv.org/abs/2305.06807)] [[Code](https://github.com/YueLin301/InformationDesignMARL)]  
+## Publications [[Google Scholar]](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN)
+
+- Information Design in Multi-Agent Reinforcement Learning. [[Paper]](https://arxiv.org/abs/2305.06807) [[Code]](https://github.com/YueLin301/InformationDesignMARL)  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *Neural Information Processing Systems (NeurIPS) 2023*.
     > This is currently my most representative work.
-- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. [[Overview](https://yuelin301.github.io/posts/RHex-T3/)] [[Paper](https://ieeexplore.ieee.org/abstract/document/9561060)]  
+- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. [[Overview]](https://yuelin301.github.io/posts/RHex-T3/) [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060)  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
     > Delivered a presentation at the Xi'an conference venue.
-- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. [[Overview](https://yuelin301.github.io/posts/SSCC/)] [[Paper](https://journals.sagepub.com/doi/full/10.1177/17298806221110022)] [[Code](https://github.com/YueLin301/Swinging-Search-Crawling-Control)]  
+- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. [[Overview]](https://yuelin301.github.io/posts/SSCC/) [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
     **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.  
     *International Journal of Advanced Robotic Systems (IJARS) 2022*. 
-- Self-adaptive Walking Speed Control on Underactuated Rimless Wheel. [[Paper](https://ieeexplore.ieee.org/abstract/document/9233853)]  
+- Self-adaptive Walking Speed Control on Underactuated Rimless Wheel. [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)  
     Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.  
     *IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.
 
@@ -204,12 +208,7 @@ The high-scoring courses at the undergraduate level include the following:
 > I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile.
 
 ---
-<!-- > Oh me! Oh life! of the questions of these recurring,  
-> Of the endless trains of the faithless, of cities fill’d with the foolish,  
-> Of myself forever reproaching myself, (for who more foolish than I, and who more faithless?)  
-> Of eyes that vainly crave the light, of the objects mean, of the struggle ever renew’d,  
-> Of the poor results of all, of the plodding and sordid crowds I see around me,  
-> Of the empty and useless years of the rest, with the rest me intertwined, -->
+
 > The question, O me! so sad, recurring — What good amid these, O me, O life?  
 > 
 > *Answer.*  
@@ -221,4 +220,4 @@ The high-scoring courses at the undergraduate level include the following:
 
 
 ![pic2](/assets/img/about/bird1.png){: width="500" }
-_[— Joshua, False Knees.](https://falseknees.com/about.html)_
+_["False Knees" by Joshua](https://falseknees.com/about.html)_

@@ -200,16 +200,26 @@ In words, the Shapley value of player $i$ is the average of its marginal contrib
 
 ## Forward Induction
 
-
-## Solution concept
+## Solution Concept
 
 ### Nash equilibrium
+
+<!-- Formally, let $S_i$ be the set of all possible strategies for player $i$, where $i=1, \ldots, N$. Let $s^*=\left(s_i^*, s_{-i}^*\right)$ be a strategy profile, a set consisting of one strategy for each player, where $s_{-i}^*$ denotes the $N-1$ strategies of all the players except $i$. Let $u_i\left(s_i, s_{-i}^*\right)$ be player i's payoff as a function of the strategies. The strategy profile $s^*$ is a Nash equilibrium if $u_i\left(s_i^*, s_{-i}^*\right) \geq u_i\left(s_i, s_{-i}^*\right)$ for all $s_i \in S_i$ -->
+
+
+### Correlated equilibrium
+
+
+### Coarse correlated equilibrium
+
+
 
 ### Subgame perfect equilibrium
 
 ### Perfect Bayesian equilibrium
 
 ---
+
 
 ## References
 

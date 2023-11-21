@@ -4,7 +4,7 @@ date: 2023-08-01 02:40:00 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
 tags: [tech, game theory, fictitious play, self-play, multi agents, reinforcement learning]
 math: True
-pin: True
+# pin: True
 ---
 
 ## Fictitious Play

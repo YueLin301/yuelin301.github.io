@@ -8,7 +8,7 @@ math: True
 
 
 ## Introduction
-[[Paper]](http://arxiv.org/abs/1511.06295): Policy Distillation
+[[Paper]](https://arxiv.org/abs/1511.06295): Policy Distillation
 
 The following statements from the paper are key to understand this technique:
 1. Distillation is a method to transfer knowledge from a teacher model $T$ to a student model $S$.

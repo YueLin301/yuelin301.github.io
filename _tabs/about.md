@@ -153,22 +153,32 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 
 ---
 
-## Publications [[Google Scholar]](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN)
+## Publications
 
-- Information Design in Multi-Agent Reinforcement Learning. [[Paper]](https://arxiv.org/abs/2305.06807) [[Code]](https://github.com/YueLin301/InformationDesignMARL)  
+<!-- [[Google Scholar]](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN) -->
+
+- Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *Neural Information Processing Systems (NeurIPS) 2023*.
-    > This is currently my most representative work.
-- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. [[Overview]](https://yuelin301.github.io/posts/RHex-T3/) [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060)  
+    > This is currently my most representative work.  
+    [[Paper]](https://arxiv.org/abs/2305.06807) 
+    [[Blog]](https://yuelin301.github.io/posts/IDMARL/) 
+    [[Code]](https://github.com/YueLin301/InformationDesignMARL)  
+- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
-    > Delivered a presentation at the Xi'an conference venue.
-- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. [[Overview]](https://yuelin301.github.io/posts/SSCC/) [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
+    > Delivered a presentation at the Xi'an conference venue.  
+    [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060) 
+    [[Blog]](https://yuelin301.github.io/posts/RHex-T3/)  
+- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
     **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.  
-    *International Journal of Advanced Robotic Systems (IJARS) 2022*. 
-- Self-adaptive Walking Speed Control on Underactuated Rimless Wheel. [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)  
+    *International Journal of Advanced Robotic Systems (IJARS) 2022*.  
+    > [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Blog]](https://yuelin301.github.io/posts/SSCC/) 
+    [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
+- Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.  
     Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.  
-    *IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.
+    *IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.  
+    > [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)  
 
 <!-- ---
 
@@ -194,18 +204,21 @@ The high-scoring courses at the undergraduate level include the following:
 ---
 
 ## Personality
-- Big Five Personality Test: [My Test Result in 2023](https://bigfive-test.com/result/649d06c585aaa70008135b20).
-  - Scored highly in [Openness to Experience](https://bigfive-test.com/result/649d06c585aaa70008135b20#openness%20to%20experience), especially in the categories of [Imagination](https://bigfive-test.com/result/649d06c585aaa70008135b20#imagination) and [Intellect](https://bigfive-test.com/result/649d06c585aaa70008135b20#intellect).
-  - Scored highly in [Conscientiousness](https://bigfive-test.com/result/649d06c585aaa70008135b20#conscientiousness), especially in the categories of [Orderliness](https://bigfive-test.com/result/649d06c585aaa70008135b20#orderliness) and [Achievement-Striving](https://bigfive-test.com/result/649d06c585aaa70008135b20#achievement-striving).
-- Myers-Briggs Type Indicator (MBTI): [My Test Result in 2023](https://www.16personalities.com/profiles/8dc4f03308407). 
-  - INTJ-T: [Introverted](https://www.16personalities.com/articles/mind-introverted-vs-extraverted), [Intuitive](https://www.16personalities.com/articles/energy-intuitive-vs-observant), [Thinking](https://www.16personalities.com/articles/nature-thinking-vs-feeling), [Judging](https://www.16personalities.com/articles/tactics-judging-vs-prospecting), and [Turbulent](https://www.16personalities.com/articles/identity-assertive-vs-turbulent);
-  - Dominant (Jung) Cognitive Functions: [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
-- [Enneagram](https://www.enneagraminstitute.com/type-descriptions): [Type Five with a Four-Wing (The Iconoclast)](https://www.enneagraminstitute.com/type-5); Tritye: [458](https://wiki.personality-database.com/books/enneagram/page/458-the-scholar-archetype).
-  - [Fives (The Investigators)](https://www.enneagraminstitute.com/type-5) are perceptive, innovative, secretive, and isolated. They want to be capable and competent;
-  - [Fours (The Individualists)](https://www.enneagraminstitute.com/type-4) are expressive, dramatic, self-absorbed, and temperamental. They want to find themselves and their significance (to create an identity);
-  - [Eights (The Challengers)](https://www.enneagraminstitute.com/type-8) are self-confident, decisive, willful, and confrontational. They want to protect themselves (to be in control of their own life and destiny).
 
-> I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile.
+- Big Five Personality Test: [**SCOAI**](https://bigfive-test.com/result/649d06c585aaa70008135b20). 
+  <!-- [[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20). -->
+  - Scored highly in **Openness to Experience**, especially in *Imagination* and *Intellect*.
+  - Scored highly in **Conscientiousness**, especially in *Orderliness* and *Achievement-Striving*.
+- Myers-Briggs Type Indicator (MBTI): 
+  [**INTJ-T**](https://www.16personalities.com/intj-personality). 
+  <!-- [[My Test Result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407). -->
+- Enneagram: 
+  [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5); 
+  Tritye: 548.
+  <!-- [Instincts](https://www.enneagrammer.com/the-three-instincts): SX/SP; -->
+  <!-- [[My Test Result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1). -->
+
+> Detailed description and my test results can be found in [my blog](https://yuelin301.github.io/posts/Personality). I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile. 
 
 ---
 

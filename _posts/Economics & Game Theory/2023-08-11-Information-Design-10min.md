@@ -7,8 +7,10 @@ math: True
 pin: True
 ---
 
-> This note provides a simple introduction to the basic concepts of information design. More details can be found in [my other note on this topic](https://yuelin301.github.io/posts/Information-Design/).
+> This note provides a brief introduction to the basic concepts of information design. More details can be found in [my other note on this topic](https://yuelin301.github.io/posts/Information-Design/).
 {: .prompt-info }
+
+<!-- ## A Brief Introduction -->
 
 > "Sometimes, the truth is not good enough." *— Batman, The Dark Knight (2008).*
 
@@ -68,3 +70,28 @@ $$
 \max\limits_{\varphi} \mathbb{E}_{\varphi}[\ r^i(s, a) \ ],\;\;\textrm{s.t. Obedience Constraints.}
 \end{aligned}
 $$
+
+<!-- ## A View of D&D Alignment
+
+![](../../assets/img/2023-08-11-Information-Design-10min/img_2023-12-09-05-39-14.png){: width="500" }
+_Illustration from this [web page](https://www.reddit.com/r/DnD/comments/xd16rh/a_different_interpretation_of_the_alignment_chart/)_
+
+![](../../assets/img/2023-08-11-Information-Design-10min/img_2023-12-09-05-39-51.png){: width="300" }
+
+> This section is entirely based on my understanding, so please consider it accordingly.
+{: .prompt-danger}
+
+The circle denotes the boundary of interests. The left circle represents self-interest and the right circle represents altruistic interest. The intersection of the two circles signifies the mixed-motive part. 
+<!-- The vertical line defines what is good or evil. The area to the left of the line is considered evil and can cause harm to others, while the area to the right is seen as good and will benefit others. -->
+With these in mind, we can say that...
+
+The sender's original motivation is $\text{Chaotic Evil}$, as the basic assumption is that it is self-interested and rational. 
+Acting upon this, the sender won't do anything that benefits others out of the consideration for altruism.
+
+However, through information design, the sender is constrained to send messages that cause no harm to the receiver thereby showing care for others and thus eliminating the left part of $\text{Chaotic Evil}$. 
+In this way, we can say that the sender's actions can be described as ranging from $(\text{Neutral Good} - \text{Lawful Good})$. -->
+
+<!-- ![](../../assets/img/2023-08-11-Information-Design-10min/img_2023-12-09-06-58-37.png){: width="100" }
+_$(\text{Neutral Good} - \text{Lawful Good})$_ 
+-->
+

@@ -45,8 +45,6 @@ $$
 
 #### Proof
 
-> This technique has been ingrained in my DNA :)
-
 $$
 \begin{aligned}
 \nabla_\theta V^\pi(s) =& \nabla_\theta \sum\limits_{a} \pi(a\mid s) \cdot Q^\pi(s,a) \\

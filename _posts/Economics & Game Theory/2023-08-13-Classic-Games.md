@@ -81,6 +81,8 @@ Can be found by iterated elimination of strictly dominated strategies (**IESDS**
 > - Harsanyi, John C., and Reinhard Selten. "A general theory of equilibrium selection in games." MIT Press Books 1 (1988).
 {: .prompt-info }
 
+Stag Hunt is an [Assurance Game](https://www.gametheory.net/dictionary/Games/AssuranceGame.html).
+
 ### Normal form
 
 | Player1\Player2      | Cooperate (Hunt) | Defect (Forage) |

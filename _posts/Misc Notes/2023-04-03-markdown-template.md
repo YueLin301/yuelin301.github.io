@@ -10,6 +10,13 @@ math: True
 {: .prompt-info }
 
 ---
+
+## Pasting Image in VS Code
+Extension: Dendron Paste Image
+
+`Command+Option+V`
+
+
 ## Prompts
 > green tip
 {: .prompt-tip }

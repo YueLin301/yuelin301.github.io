@@ -4,7 +4,7 @@ date: 2023-08-01 02:40:00 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
 tags: [tech, game theory, fictitious play, self-play, multi agents, reinforcement learning]
 math: True
-# pin: True
+pin: True
 ---
 
 ## Fictitious Play
@@ -39,7 +39,7 @@ E.g., in the [Matching Pennies game](https://yuelin301.github.io/posts/Classic-G
 
 ## Self-Play
 
-> 小龙女奇道：“自己跟自己打架？怎生打法？” —— 《神雕侠侣》第二十五回
+<!-- > 小龙女奇道：“自己跟自己打架？怎生打法？” —— 《神雕侠侣》第二十五回 -->
 
 Self-play involves an agent (or a model) playing against itself or versions of itself. This can be thought of as a kind of [**bootstrapping**](https://yuelin301.github.io/posts/RL-Toolbox/#td0) method where an agent learns and refines its strategies through continuous iterations of gameplay against its own evolving strategies.
 
@@ -65,8 +65,8 @@ The most famous application of self-play is perhaps in the training of **AlphaGo
 
 ## Zero-Shot Coordination
 
-> 宝玉看罢，因笑道：“这个妹妹我曾见过的。”贾母笑道：“可又是胡说，你又何曾见过她？”
-> —— 《红楼梦》第三回
+<!-- > 宝玉看罢，因笑道：“这个妹妹我曾见过的。”贾母笑道：“可又是胡说，你又何曾见过她？”
+> —— 《红楼梦》第三回 -->
 
 ### Definition
 Zero-shot coordination is about developing agents capable of coordinating in the testing phase with some other agents (even humans) that they have never seen in the training phase.

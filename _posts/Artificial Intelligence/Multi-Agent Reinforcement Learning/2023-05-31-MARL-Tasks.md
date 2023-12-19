@@ -87,3 +87,6 @@ At the end of the game, the score is calculated based on the number of cards suc
 - **Non-verbal cues**: Players are not allowed to give extra hints through non-verbal cues or suggestive comments. All hints must be given using hint tokens officially in one’s turn.
 - **Hint Efficiency**: Given the limited number of hint tokens, players should strive to give hints that convey the maximum amount of information.
 
+
+
+## Petting Zoo

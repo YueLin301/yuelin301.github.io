@@ -175,13 +175,32 @@ Don't translate it to your familiar language. Everything you know is an image in
 ### Reading
 
 ### Speaking
-- 17 min.
+- 16 min.
 - 4 questions.
    1. Independent Speaking
    2. Integrated Speaking
       1. Campus Announcement
       2. General to Specific
       3. Academic Lecture
+
+#### Tips
+
+1. Q1
+   1. 15s prep. 45s speaking.
+2. Q2
+   1. Q2 is about a campus envent. The reading material is a proposal or an announcement. The listening material is usually a conversation about the reading material.
+   2. 30s prep. 60s speaking.
+   3. Reading summary in around 20s: Summarize the subject in a single sentence, followed by a separate sentence for each key point.
+   4. Speak while wathcing the timer. 
+3. Q3
+   1. Q3 requires me to introduce a scientific concept. The reading material is a brief introduction exerpt from the textbook. The listening material is a part of a lecture containing explanation with examples.
+   2. 30s prep. 60s speaking.
+
+
+
+
+
+
 
 ### Independent Speaking
 #### Template (15s prep, 45s answer)
@@ -211,7 +230,7 @@ Additionally, the author claims that $X_2$. However, the speaker rebuts it with 
 
 Finally, the author puts forward that $X_3$. Instead, the speaker challenges the author's assertion and offers a different perspective that $Y_3$.
 
-### Listening dictation practice
+<!-- ### Listening dictation practice
 
 #### 1.1 *(2023-9-5-Tuesday-CST)*
 Listen to part of a conversation between a student and a librarian.
@@ -371,4 +390,4 @@ You know Mathew, this is just we've been talking in our class, I'm sure everyone
 You know Mathew, I'd love for you to talk about this astronomy unit in class on Wednesday. 
 Really, um, because I don't really think I'll have any time to write my paper by then.
 Oh you won't have to write anything new just yet. For Wednesday, use your class observation notes and explain the things we discussed today.
-OK, that sounds all right.
+OK, that sounds all right. -->

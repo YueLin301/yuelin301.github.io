@@ -449,6 +449,10 @@ $$
 
 然后一些证明，自信息的函数为$-\log$，即 $I(x_i) = -\log P(x_i)$
 
+我看到[有说这个也叫log-perplexity](https://www.youtube.com/watch?v=EzYXbU-ZE3s&list=PLmd_zeMNzSvRRNpoEWkVo6QY_6rR3SHjp&index=2)，困惑程度。
+- 概率越大，越有可能发生，越符合习惯，困惑程度低，比如"Mary had a little lamb."
+- 概率越小，越不可能发生，越奇怪，困惑程度高，比如"Correct horse battery stapler."
+
 ### Entropy
 $$
 \begin{aligned}

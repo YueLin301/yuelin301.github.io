@@ -83,13 +83,13 @@ _Illustration from this [web page](https://www.reddit.com/r/DnD/comments/xd16rh/
 
 The circle denotes the boundary of interests. The left circle represents self-interest and the right circle represents altruistic interest. The intersection of the two circles signifies the mixed-motive part. 
 <!-- The vertical line defines what is good or evil. The area to the left of the line is considered evil and can cause harm to others, while the area to the right is seen as good and will benefit others. -->
-With these in mind, we can say that...
+<!-- With these in mind, we can say that... -->
 
-The sender's original motivation is $\text{Chaotic Evil}$, as the basic assumption is that it is self-interested and rational. 
+<!-- The sender's original motivation is $\text{Chaotic Evil}$, as the basic assumption is that it is self-interested and rational. 
 Acting upon this, the sender won't do anything that benefits others out of the consideration for altruism.
 
 However, through information design, the sender is constrained to send messages that cause no harm to the receiver thereby showing care for others and thus eliminating the left part of $\text{Chaotic Evil}$. 
-In this way, we can say that the sender's actions can be described as ranging from $(\text{Neutral Good} - \text{Lawful Good})$. -->
+In this way, we can say that the sender's actions can be described as ranging from $(\text{Neutral Good} - \text{Lawful Good})$.  -->
 
 <!-- ![](../../assets/img/2023-08-11-Information-Design-10min/img_2023-12-09-06-58-37.png){: width="100" }
 _$(\text{Neutral Good} - \text{Lawful Good})$_ 

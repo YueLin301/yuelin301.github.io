@@ -199,9 +199,6 @@ Don't translate it to your familiar language. Everything you know is an image in
 
 
 
-
-
-
 ### Independent Speaking
 #### Template (15s prep, 45s answer)
 
@@ -217,18 +214,46 @@ To be more specific, ... (and a few more details).
 #### 
 
 ### Integrated Writing
-#### Template (?s prep, ?s answer)
+#### Template
+
 
 A's points are denoted by $X_1, X_2, X_3$,
 And B's are denoted by $Y_1, Y_2, Y_3$.
 
-The author in the reading and the speaker in the lecture are discussing whether ... is beneficial or not. The author holds a positive opinion, while the speaker expresses opposite concerns.
+**Tips:**
+1. Identify key points.
+   1. Focus on the lecture.
+   2. Summarize the passage.
+2. Remember that all the points should be paraphrased.
+   1. Vocabulary.
+   2. Use synonyms.
+3. 225 words.
+4. 20 min.
 
-To begin with, the author believes that $X_1$. In contrast, the speaker argues that $Y_1$.
+---
 
-Additionally, the author claims that $X_2$. However, the speaker rebuts it with a counterargument that $\neg X_2$, but rather $Y_2$.
+<!-- The author in the reading and the speaker in the lecture are discussing whether ... is beneficial or not.  -->
+<!-- The author holds a positive opinion, while the speaker expresses opposite concerns. -->
 
-Finally, the author puts forward that $X_3$. Instead, the speaker challenges the author's assertion and offers a different perspective that $Y_3$.
+In the passage, the author mentions 
+- 3 benefits coming from posing high taxes on cigarettes and unhealthy food. 
+- 3 potential solutions to the increasing salinity of the Salton Sea in California.
+However, in the lecture, the speaker casts doubts on them.
+
+Initially, the author believes that $X_1$. In contrast, the speaker argues that $Y_1$. 
+(Then focus on the speaker's argument.)
+
+Furthermore, the author claims that $X_2$. However, the speaker disproves it by pointing out that $Y_2$. 
+(Then focus on the speaker's argument.)
+
+Additionally, the author puts forward that $X_3$. Instead, the speaker challenges the author's opinion and offers a different perspective that $Y_3$. 
+(Then focus on the speaker's argument.)
+
+#### Academic discussion
+
+10 minutes.
+
+
 
 <!-- ### Listening dictation practice
 

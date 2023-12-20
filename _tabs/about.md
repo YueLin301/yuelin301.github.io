@@ -205,20 +205,34 @@ The high-scoring courses at the undergraduate level include the following:
 
 ## Personality
 
-- Big Five Personality Test: [**SCOAI**](https://bigfive-test.com/result/649d06c585aaa70008135b20). 
-  <!-- [[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20). -->
-  - Scored highly in **Openness to Experience**, especially in *Imagination* and *Intellect*.
-  - Scored highly in **Conscientiousness**, especially in *Orderliness* and *Achievement-Striving*.
-- Myers-Briggs Type Indicator (MBTI): 
-  [**INTJ-T**](https://www.16personalities.com/intj-personality). 
+- Big Five Personality Test: 
+  <!-- [**SCOAI**](https://bigfive-test.com/result/649d06c585aaa70008135b20);  -->
+  [[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20)
+  <!-- - Scored highly in **Openness to Experience**, especially in *Imagination* and *Intellect*. -->
+  <!-- - Scored highly in **Conscientiousness**, especially in *Orderliness* and *Achievement-Striving*. -->
+
+| Openness To Experience (101) 	| Conscientiousness (96)        	| Agreeableness (76) 	| Neuroticism (67)        	| Extraversion (76)       	|
+|------------------------------	|-------------------------------	|--------------------	|-------------------------	|-------------------------	|
+| **Imagination (19)**         	| Self-Efficacy (16)            	| Trust (9)          	| Anxiety (14)            	| Friendliness (11)       	|
+| Artistic Interests (15)      	| **Orderliness (18)**          	| Morality (15)      	| Anger (9)               	| Gregariousness (9)      	|
+| Emotionality (16)            	| Dutifulness (13)              	| Altruism (14)      	| Depression (9)          	| Assertiveness (15)      	|
+| **Adventurousness (17)**     	| **Achievement-Striving (17)** 	| Cooperation (15)   	| Self-Consciousness (12) 	| Activity Level (16)     	|
+| **Intellect (20)**           	| Self-Discipline (16)          	| Modesty (10)       	| Immoderation (12)       	| Excitement-Seeking (14) 	|
+| Liberalism (14)              	| Cautiousness (16)             	| Sympathy (13)      	| Vulnerability (11)      	| Cheerfulness (11)       	|
+
+In the first row, each item has a full score of 120, while in the other rows, each item has a full score of 20.
+
+<!-- - Myers-Briggs Type Indicator (MBTI):  -->
+  <!-- [**INTJ-T**](https://www.16personalities.com/intj-personality).  -->
   <!-- [[My Test Result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407). -->
-- Enneagram: 
-  [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5); 
-  Tritye: 548.
+<!-- - Enneagram:  -->
+  <!-- [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5);  -->
+  <!-- Tritye: 548. -->
   <!-- [Instincts](https://www.enneagrammer.com/the-three-instincts): SX/SP; -->
   <!-- [[My Test Result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1). -->
 
-> Detailed description and my test results can be found in [my blog](https://yuelin301.github.io/posts/Personality). I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile. 
+> Detailed descriptions and other personality test results are available on [my blog](https://yuelin301.github.io/posts/Personality). 
+<!-- > I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile.  -->
 
 ---
 

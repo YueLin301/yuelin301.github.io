@@ -9,12 +9,15 @@ pin: True
 
 ## Foreword
 
+One may choose to disregard their own labels (and bear the consequences, good or bad, of doing so), believing that the labeling system is flawed. However, they cannot claim to be without labels or cannot be defined.
+
 This post aims to briefly introduce three personality models: The Big Five, Myers-Briggs Type Indicator (MBTI), and Enneagram. The Big Five is generally well-regarded and supported by research in the psychology community, whereas the MBTI and Enneagram are viewed more critically, with concerns about their scientific validity and reliability.
 
 But I believe that these tools are all efficient communication protocols, and using them allows me to easily introduce my profile.
 Because if these models are common knowledge between me and my readers, then my test results will encapsulate a wealth of information about my behavioral habits and thought preferences.
 
 After understanding these models, analyzing the characters in film and literary works will also yield many interesting new perspectives.
+
 
 
 ## Big Five Personality Test
@@ -217,6 +220,8 @@ _Table 2 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functi
 
 ![](../../../assets/img/2023-05-20-Personality/img_2023-12-18-22-51-41.png)
 _Table 3 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Myers-Briggs_Type_Indicator_2)._
+
+![](../../../assets/img/2023-05-20-Personality/img_2023-12-26-08-58-02.png)
 
 
 [**Introverted Intuition (Ni)**](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) is an information-gathering function, but unlike its counterpart, Extroverted Intuition, it processes information in a more internal and reflective manner. Individuals who primarily use Introverted Intuition tend to focus on the future, relying on insights and impressions rather than concrete facts. They often perceive patterns and connections that are not immediately obvious to others. Ni users are typically deep thinkers, valuing concepts, theories, and abstract ideas. They have a natural inclination towards understanding complex systems and are often driven by a vision or a sense of where things are heading. This introspective function can sometimes lead them to seem detached from the present, as they are more engaged with their internal world of ideas and possibilities.

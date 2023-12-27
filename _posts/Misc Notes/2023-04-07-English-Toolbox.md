@@ -203,7 +203,6 @@ Don't translate it to your familiar language. Everything you know is an image in
 #### Template (15s prep, 45s answer)
 
 Well, personally, I agree/disagree with the statement that [just read the statement].
-I think it's (not) a great idea for [sb.] to [do sth.].
 
 I feel this way for several reasons.
 First of all, ...
@@ -211,11 +210,40 @@ For example, ... (and a personal example).
 Additionally, ...
 To be more specific, ... (and a few more details).
 
-#### 
+#### Arguments
+
+1. Expand horizons
+   1. I think it can broaden my horizons because
+   2. I think it can enrich citizen's cultrual life
+   3. 
+2. Learn
+   1. I can learn practical skills, in addition to academic knowledge
+   2. I can learn lots of vital skills and knowledge
+   3. e.g., presentation skills, communication skills, organization skills
+3. Money, finance, economy
+   1. Because it can help me become financially independent
+   2. I can save money by doing so.
+   3. It can generate more revenues in order to enhance city's image
+4. Relax, enjoy, have fun
+   1. I love sports games and outdoor activities. Because they are fun.
+   2. I can make new friends, breathe in the fresh air
+   3. I can have a good balance between work and leisure.
+   4. It can improve quality of life. It can reduce stress.
+5. Emotion
+   1. A good friend/mentor can tell me how to distinguish right from wrong.
+   2. A good friend will help me establish my value and belief.
+   3. I can have lots of emotional support from my friends. They stand by me. They are always there for me when I need help.
+6. Health
+   1. 
+7. Efficiency
+8. Communication
+   1. It can help me make friends with people from different backgrounds.
+9.  Trait, characteristic
+10. Interest
+
 
 ### Integrated Writing
 #### Template
-
 
 A's points are denoted by $X_1, X_2, X_3$,
 And B's are denoted by $Y_1, Y_2, Y_3$.

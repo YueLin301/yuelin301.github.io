@@ -19,6 +19,42 @@ Because if these models are common knowledge between me and my readers, then my 
 After understanding these models, analyzing the characters in film and literary works will also yield many interesting new perspectives.
 
 
+## My Types in Summary
+
+- Big Five Personality Test: 
+  <!-- [**SCOAI**](https://bigfive-test.com/result/649d06c585aaa70008135b20);  -->
+  **SCOAI**;
+  [[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20).
+  - Scored highly in **Openness to Experience**, especially in *Imagination* and *Intellect*.
+  - Scored highly in **Conscientiousness**, especially in *Orderliness* and *Achievement-Striving*.
+
+<!-- | Openness To Experience (101) 	| Conscientiousness (96)        	| Agreeableness (76) 	| Neuroticism (67)        	| Extraversion (76)       	|
+|------------------------------	|-------------------------------	|--------------------	|-------------------------	|-------------------------	|
+| **Imagination (19)**         	| Self-Efficacy (16)            	| Trust (9)          	| Anxiety (14)            	| Friendliness (11)       	|
+| Artistic Interests (15)      	| **Orderliness (18)**          	| Morality (15)      	| Anger (9)               	| Gregariousness (9)      	|
+| Emotionality (16)            	| Dutifulness (13)              	| Altruism (14)      	| Depression (9)          	| Assertiveness (15)      	|
+| **Adventurousness (17)**     	| **Achievement-Striving (17)** 	| Cooperation (15)   	| Self-Consciousness (12) 	| Activity Level (16)     	|
+| **Intellect (20)**           	| Self-Discipline (16)          	| Modesty (10)       	| Immoderation (12)       	| Excitement-Seeking (14) 	|
+| Liberalism (14)              	| Cautiousness (16)             	| Sympathy (13)      	| Vulnerability (11)      	| Cheerfulness (11)       	|
+
+In the first row, each item has a full score of 120, while in the other rows, each item has a full score of 20. -->
+
+- Myers-Briggs Type Indicator (MBTI): 
+  [**INTJ-T**](https://www.16personalities.com/intj-personality). 
+  [[My Test Result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407).
+  - Introverted, Intuitive, Thinking, Judging, and Turbulent;
+  - Dominant (Jungian) Cognitive Functions: 
+    [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and 
+    [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking);
+  - Strategy: [Constant Improvement](https://www.16personalities.com/articles/strategies-constant-improvement).
+- Enneagram: 
+  [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5); 
+  [[My Test Result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1).
+  - Tritye: 548;
+  - [Instincts](https://www.enneagrammer.com/the-three-instincts): SP/SX.
+  
+
+
 
 ## Big Five Personality Test
 
@@ -55,12 +91,12 @@ This model is empirically driven and is considered robust for understanding pers
 
 In the first row, each item has a full score of 120, while in the other rows, each item has a full score of 20.
 
-> The detailed description of each dimension can be found in [[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20).
-{: .prompt-info}
+> The detailed description of each dimension can be found in [[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20). **The remaining part of this section is just my copy of it.**
+{: .prompt-warning}
 
 
 <!-- > The following part of this section is to describe the 5 traits. The description is from [this website](https://bigfive-test.com/).
-{: .prompt-info}
+{: .prompt-info} -->
 
 ### **Extraversion**
 Extraversion is marked by pronounced engagement with the external world.
@@ -168,10 +204,13 @@ High scorers on adventurousness are eager to try new activities, travel to forei
 Intellect and artistic interests are the two most important, central aspects of openness to experience. High scorers on Intellect love to play with ideas. They are open-minded to new and unusual ideas, and like to debate intellectual issues. They enjoy riddles, puzzles, and brain teasers. Low scorers on Intellect prefer dealing with either people or things rather than ideas. They regard intellectual exercises as a waste of time. Intellect should not be equated with intelligence. Intellect is an intellectual style, not an intellectual ability, although high scorers on Intellect score slightly higher than low-Intellect individuals on standardized intelligence tests.
 
 #### Liberalism
-Psychological liberalism refers to a readiness to challenge authority, convention, and traditional values. In its most extreme form, psychological liberalism can even represent outright hostility toward rules, sympathy for law-breakers, and love of ambiguity, chaos, and disorder. Psychological conservatives prefer the security and stability brought by conformity to tradition. Psychological liberalism and conservatism are not identical to political affiliation, but certainly incline individuals toward certain political parties. -->
+Psychological liberalism refers to a readiness to challenge authority, convention, and traditional values. In its most extreme form, psychological liberalism can even represent outright hostility toward rules, sympathy for law-breakers, and love of ambiguity, chaos, and disorder. Psychological conservatives prefer the security and stability brought by conformity to tradition. Psychological liberalism and conservatism are not identical to political affiliation, but certainly incline individuals toward certain political parties.
 
 
 ## Myers-Briggs Type Indicator (MBTI)
+
+> This section is adapted from the answer generated by ChatGPT-4.
+{: .prompt-info }
 
 The Myers-Briggs Type Indicator (MBTI) is another popular personality framework, particularly in non-academic settings like business and career counseling. It categorizes people into 16 distinct personality types based on four dichotomies: 
 - [**Introversion vs. Extraversion.**](https://www.16personalities.com/articles/mind-introverted-vs-extraverted) This dimension describes how individuals draw and expend their energy. Extraverts (E) are energized by interaction with others and the external world. They tend to be sociable, outgoing, and more comfortable in groups or social situations. Introverts (I), in contrast, are energized by spending time alone or in quiet environments. They are often reflective, reserved, and more comfortable working independently or in smaller groups. This preference doesn't necessarily determine social skills or shyness; it's more about where one gets their energy from.
@@ -195,7 +234,6 @@ Developed from Carl Jung's theory of psychological types, MBTI is often used for
 
 ### Jungian cognitive functions
 
-
 The MBTI is heavily influenced by the theories of Swiss psychiatrist Carl Jung, particularly his concept of cognitive functions.
 
 Jung proposed a theory of psychological types in his 1921 work "Psychological Types."
@@ -218,35 +256,56 @@ _Table 1 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functi
 ![](../../../assets/img/2023-05-20-Personality/img_2023-12-18-22-49-26.png)
 _Table 2 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Carl_Jung)._
 
-![](../../../assets/img/2023-05-20-Personality/img_2023-12-18-22-51-41.png)
-_Table 3 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Myers-Briggs_Type_Indicator_2)._
+<!-- ![](../../../assets/img/2023-05-20-Personality/img_2023-12-18-22-51-41.png)
+_Table 3 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Myers-Briggs_Type_Indicator_2)._ -->
 
 ![](../../../assets/img/2023-05-20-Personality/img_2023-12-26-08-58-02.png)
+_Table 3 by 特洛伊木马_
 
 
-[**Introverted Intuition (Ni)**](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) is an information-gathering function, but unlike its counterpart, Extroverted Intuition, it processes information in a more internal and reflective manner. Individuals who primarily use Introverted Intuition tend to focus on the future, relying on insights and impressions rather than concrete facts. They often perceive patterns and connections that are not immediately obvious to others. Ni users are typically deep thinkers, valuing concepts, theories, and abstract ideas. They have a natural inclination towards understanding complex systems and are often driven by a vision or a sense of where things are heading. This introspective function can sometimes lead them to seem detached from the present, as they are more engaged with their internal world of ideas and possibilities.
+
+#### Ni: Introverted Intuition
+**Introverted Intuition (Ni)** is an information-gathering function that focuses on internal insights and foresight. Unlike Extraverted Intuition, which explores a breadth of possibilities and ideas in the external world, Ni delves deeply into a few concepts, often looking for underlying meanings and future implications. Individuals who primarily use Ni are typically future-oriented, valuing insights and intuitions that come from a deep understanding of the past and present. They are drawn to theories and abstract ideas, and are skilled at recognizing patterns and predicting outcomes. Ni users often have a strong vision or sense of where things are heading, leading them to be strategic in their approach. This introspective function can sometimes make them seem detached from current realities, as they are more focused on their internal world of ideas and possibilities.
+
+#### Te: Extraverted Thinking
+**Extraverted Thinking (Te)** is a decision-making function that emphasizes organization, efficiency, and logic in the external world. In contrast to Introverted Thinking, which is concerned with internal logical consistency, Te is focused on applying logic and reasoning to achieve tangible results and objectives. Individuals with a dominant Te function are often practical, systematic, and goal-oriented, excelling in planning and execution. They value clear structures and are adept at organizing people and resources effectively to accomplish tasks. Te users are typically decisive and direct, preferring objective criteria and measurable outcomes in decision-making. However, this focus on external efficiency can sometimes lead to overlooking personal values or the emotional aspects of situations.
 
 
-[**Extroverted Thinking (Te)**](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking) is an extroverted function, meaning it is oriented towards the external world. Te is logical, systematic, and focused on organizing and structuring the environment. Individuals with a dominant Extroverted Thinking function are typically very good at setting goals, making plans, and implementing strategies. They prioritize efficiency, productivity, and are often drawn to positions of management or leadership due to their ability to make objective, logical decisions and to create order and consistency in their surroundings. Te users are practical and straightforward, preferring clear communication and measurable outcomes. They excel in taking complex ideas and organizing them in a way that is understandable and actionable, often thriving in environments where their skills in organization and leadership can be put to good use.
+#### Fi: Introverted Feeling
+**Introverted Feeling (Fi)** is a decision-making function that centers on personal values, emotions, and authenticity. Contrasting with Extraverted Feeling, which is attuned to external emotions and social dynamics, Fi focuses on understanding and aligning with one's own emotional experiences and moral compass. Individuals who primarily use Fi are often introspective and value authenticity highly. They are deeply in touch with their own feelings and values and make decisions based on what feels right and true to them. Fi users are typically empathetic and compassionate, with a strong sense of individuality. They strive for inner harmony and integrity, but this inward focus can sometimes lead them to feel misunderstood or out of step with the broader social context.
 
-[**Introverted Feeling (Fi)**](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_feeling) is featured in the Myers-Briggs Type Indicator (MBTI). Fi is a decision-making function that is focused inwardly, dealing with emotions and values. Individuals who primarily use Introverted Feeling process their feelings internally and place a high emphasis on personal, often subjective, values and morals. They tend to be guided by these internal values when making decisions, rather than external sources of morality or societal expectations. Fi users are often very aware of their own emotions and seek to understand and align their actions with their inner sense of integrity and authenticity. This can make them seem reserved or private, as they prefer to reflect deeply on their feelings rather than express them openly. They are often empathetic and compassionate, with a strong sense of individualism and a deep commitment to living in harmony with their personal ethical code.
+#### Se: Extraverted Sensing
+**Extraverted Sensing (Se)** is an information-gathering function that focuses on the immediate sensory experience in the external world. Unlike Introverted Sensing, which relies on past experiences and internal sensations, Se is about being attuned to the present moment and the physical environment. Individuals with a dominant Se function are typically very aware of their surroundings and enjoy engaging with the physical world. They are often action-oriented, spontaneous, and adaptable, thriving in situations that require quick responses and presence. Se users are drawn to tangible experiences and enjoy sensory pleasures. They tend to be practical and realistic, preferring concrete facts over abstract theories. However, this focus on the immediate can sometimes lead to a lack of long-term planning or consideration of future implications.
 
-[**Extroverted Sensing (Se)**](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_sensation) is a perceiving function that focuses on the external world, emphasizing the present moment and concrete sensory experience. Individuals with a dominant Extroverted Sensing function are typically very aware of their physical environment and enjoy engaging with it. They are often pragmatic and realistic, preferring direct interaction with the world around them. Se users tend to be action-oriented, enjoying activities that involve sensory stimulation and physical engagement. They are often adept at responding to immediate situations and can be very spontaneous and adaptable. This focus on the here and now can sometimes lead to a lesser emphasis on planning for the future or reflecting on the past. Extroverted Sensing is associated with a love for aesthetics, a keen awareness of their surroundings, and a preference for hands-on experiences.
+#### Ne: Extraverted Intuition
+**Extraverted Intuition (Ne)** is an information-gathering function that focuses on exploring the external world of possibilities and ideas. Unlike its introverted counterpart, Ne operates by actively seeking out and connecting a wide array of external stimuli, concepts, and ideas. Individuals with a dominant Ne are often seen as innovative and creative, constantly scanning the environment for new opportunities and patterns. They are adept at seeing multiple perspectives and are often excited by the potential and what could be, rather than what is. Ne users have a tendency to jump from one idea to another, driven by their curiosity and a desire to understand the broader context of things. This function enables them to be flexible and adaptable, but it can also lead to a lack of focus on current realities.
+
+
+#### Ti: Introverted Thinking
+**Introverted Thinking (Ti)** is a decision-making function that focuses on internal logic and precision. Ti analyzes information in a detached and objective manner, aiming for a clear understanding of principles and underlying structures. Unlike Extraverted Thinking, which is concerned with external organization and efficiency, Ti seeks to develop an internal framework that makes logical sense. Individuals who primarily use Ti are often analytical and critical thinkers, valuing accuracy and coherence in their thought processes. They are driven to understand how things work and are skilled at identifying inconsistencies. Ti users can appear reserved and thoughtful, as they prefer to take their time to process information internally before reaching conclusions. This function, however, can sometimes lead to overthinking or getting lost in complex, abstract concepts.
+
+#### Fe: Extraverted Feeling
+**Extraverted Feeling (Fe)** is a decision-making function that is attuned to the emotions and needs of others. It is oriented towards creating harmony and building relationships in the external world. Unlike Introverted Feeling, which is focused on personal values and inner emotional experiences, Fe is concerned with maintaining social dynamics and understanding the emotional states of others. People who use Fe as a dominant function are often empathetic, cooperative, and sensitive to the feelings of those around them. They are adept at reading social cues and adjusting their behavior to suit the group's needs or to avoid conflict. Fe users value community and seek to establish a sense of belonging, often placing a high priority on group consensus and shared values. However, this focus on external harmony can sometimes lead to neglecting their own emotional needs or conforming too much to social expectations.
+
+
+#### Si: Introverted Sensing
+**Introverted Sensing (Si)** is an information-gathering function that focuses on internal sensations, experiences, and memories. It contrasts with Extraverted Sensing, which is more about immediate sensory perception. Si involves storing and recalling past experiences to understand and navigate the present. Individuals with a dominant Si function tend to be detail-oriented, reliable, and have a strong connection to their past experiences and learned knowledge. They value tradition and consistency, often preferring familiar routines and methods. Si users are skilled at noticing changes in their environment, as they have a deep understanding of how things usually are or should be. This function contributes to a strong sense of practicality and realism. However, an overreliance on past experiences can sometimes limit their openness to new possibilities and change.
 
 ## Enneagram
 
 The Enneagram is a personality system that describes nine primary personality types, each with its own set of characteristics, motivations, fears, and desires. Its origins are more spiritual and mystical, tracing back to ancient traditions. The Enneagram has become popular in various self-help and spiritual contexts and is sometimes used in counseling for personal and relational growth. Despite its popularity in these areas, the Enneagram is viewed with skepticism by the mainstream psychology community due to its lack of empirical evidence and scientific grounding. Critics point out that its categories are too vague and subjective, making it difficult to validate and study scientifically.
 
-[This website](https://www.enneagraminstitute.com/type-descriptions) provides a great introduction to the various types of the Enneagram.
+[This website](https://www.enneagraminstitute.com/type-descriptions) provides a great introduction to the nine types of the Enneagram.
 
 ### My test result
 
 [[My test result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1): [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5).
-  <!-- [Instincts](https://www.enneagrammer.com/the-three-instincts): SX/SP; -->
+  <!-- [Instincts](https://www.enneagrammer.com/the-three-instincts): SP/SX; -->
 
 ![](../../../assets/img/2023-05-20-Personality/img_2023-12-18-21-07-04.png){: width="350" }
 _My test result at [this website](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1)._
 
+#### Type 5
 
 > **Fives (The Investigators)** are alert, insightful, and curious. They are able to concentrate and focus on developing complex ideas and skills. Independent, innovative, and inventive, they can also become preoccupied with their thoughts and imaginary constructs. They become detached, yet high-strung and intense. They typically have problems with eccentricity, nihilism, and isolation. At their Best: visionary pioneers, often ahead of their time, and able to see the world in an entirely new way.
 >
@@ -272,13 +331,13 @@ My tritye is [548](https://wiki.personality-database.com/books/enneagram/page/45
 - [Eights (The Challengers)](https://www.enneagraminstitute.com/type-8) are self-confident, decisive, willful, and confrontational. They want to protect themselves (to be in control of their own life and destiny). -->
 
 
-
+#### Type 4
 > **Fours (The Individualists)** are self-aware, sensitive, and reserved. They are emotionally honest, creative, and personal, but can also be moody and self-conscious. Withholding themselves from others due to feeling vulnerable and defective, they can also feel disdainful and exempt from ordinary ways of living. They typically have problems with melancholy, self-indulgence, and self-pity. At their Best: inspired and highly creative, they are able to renew themselves and transform their experiences.
 > 
-> **Basic Fear:** That they have no identity or personal significance
-> **Basic Desire:** To find themselves and their significance (to create an identity)
-> **Enneagram Four with a Three-Wing:** "The Aristocrat"
-> **Enneagram Four with a Five-Wing:** "The Bohemian"
+> - **Basic Fear:** That they have no identity or personal significance  
+> - **Basic Desire:** To find themselves and their significance (to create an identity)  
+> - **Enneagram Four with a Three-Wing:** "The Aristocrat"  
+> - **Enneagram Four with a Five-Wing:** "The Bohemian"
 > 
 > **Key Motivations:** Want to express themselves and their individuality, to create and surround themselves with beauty, to maintain certain moods and feelings, to withdraw to protect their self-image, to take care of emotional needs before attending to anything else, to attract a "rescuer."
 >
@@ -286,15 +345,44 @@ My tritye is [548](https://wiki.personality-database.com/books/enneagram/page/45
 >
 > — From [this webpage](https://www.enneagraminstitute.com/type-4).
 
+#### Type 8
 > **Eights (The Challengers)** are self-confident, strong, and assertive. Protective, resourceful, straight-talking, and decisive, but can also be ego-centric and domineering. Eights feel they must control their environment, especially people, sometimes becoming confrontational and intimidating. Eights typically have problems with their tempers and with allowing themselves to be vulnerable. At their Best: self- mastering, they use their strength to improve others' lives, becoming heroic, magnanimous, and inspiring.
 > 
-> **Basic Fear:** Of being harmed or controlled by others
-> **Basic Desire:** To protect themselves (to be in control of their own life and destiny)
-> **Enneagram Eight with a Seven-Wing:** "The Maverick"
-> **Enneagram Eight with a Nine-Wing:** "The Bear"
+> - **Basic Fear:** Of being harmed or controlled by others
+> - **Basic Desire:** To protect themselves (to be in control of their own life and destiny)
+> - **Enneagram Eight with a Seven-Wing:** "The Maverick"
+> - **Enneagram Eight with a Nine-Wing:** "The Bear"
 > 
 > **Key Motivations:** Want to be self-reliant, to prove their strength and resist weakness, to be important in their world, to dominate the environment, and to stay in control of their situation.
 > 
 > When moving in their Direction of Disintegration (stress), self-confident Eights suddenly become secretive and fearful at Five. However, when moving in their Direction of Integration (growth), lustful, controlling Eights become more open-hearted and caring, like healthy Twos.
 > 
 > — From [this webpage](https://www.enneagraminstitute.com/type-8).
+
+
+### Instincts
+
+> This section is generated by ChatGPT-4.
+{: .prompt-info }
+
+The Enneagram, a model of the human psyche, includes a concept known as the three instincts. These instincts are thought to be key drivers in human behavior and are combined in different ways to form six distinct instinctual variants. Here's an overview of each instinct and the combinations:
+
+1. **Self-Preservation (SP)**: This instinct focuses on survival and well-being. Individuals with a dominant self-preservation instinct are often concerned with their safety, comfort, health, and financial security. They are inclined to prioritize personal needs and may excel in managing practical aspects of life.
+
+2. **Sexual (SX)**: Also known as the "one-to-one" instinct, this is centered around intensity, passion, and personal connections. Individuals with a dominant sexual instinct seek deep and intense interpersonal experiences. They are often very passionate and focused on creating strong bonds with others, sometimes at the expense of wider social relationships.
+
+3. **Social (SO)**: This instinct is about belonging, status, and interpersonal relationships within groups. Individuals with a dominant social instinct are attuned to their position and role in social contexts and are often skilled at navigating social dynamics. They prioritize group needs and community involvement.
+
+The six combinations of these instincts are:
+
+1. **SP/SX (Self-Preservation/Sexual)**: Individuals with this variant balance concerns for personal needs and safety with a desire for intense interpersonal relationships. They may prioritize their wellbeing but also seek depth and passion in their close relationships.
+
+2. **SP/SO (Self-Preservation/Social)**: Here, the focus on self-preservation is coupled with an awareness of social dynamics. These individuals are often practical and security-oriented, but also value their roles and status within their communities.
+
+3. **SX/SP (Sexual/Self-Preservation)**: This variant combines the desire for intense personal connections with a concern for self-preservation. Individuals with this combination are passionate and seek deep bonds, while also being mindful of their personal safety and comfort.
+
+4. **SX/SO (Sexual/Social)**: Individuals with this combination seek intense relationships and are also attuned to their social environment. They are passionate about their connections and often play significant roles in their social circles.
+
+5. **SO/SP (Social/Self-Preservation)**: This variant emphasizes social belonging and group dynamics, along with a concern for personal safety and needs. These individuals are community-oriented but also mindful of their personal security and wellbeing.
+
+6. **SO/SX (Social/Sexual)**: Here, the social instinct blends with the desire for intense personal connections. Individuals with this combination are often deeply involved in their social groups and seek meaningful, passionate relationships within these communities.

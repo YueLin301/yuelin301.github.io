@@ -83,7 +83,7 @@ $$
 
 ## Zero-Determinant Strategy
 
-Some tedious parts were automatically filled in with the help of ChatGPT 4.
+Some tedious parts were automatically filled in with the help of ChatGPT-4.
 
 ### Notation of 4 outcomes
 

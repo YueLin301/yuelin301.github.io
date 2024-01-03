@@ -160,14 +160,14 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *Neural Information Processing Systems (NeurIPS) 2023*.
-    > This is currently my most representative work.  
+    > Poster. This is currently my most representative work.  
     [[Paper]](https://arxiv.org/abs/2305.06807) 
-    [[Blog]](https://yuelin301.github.io/posts/IDMARL/) 
+    <!-- [[Blog]](https://yuelin301.github.io/posts/IDMARL/)  -->
     [[Code]](https://github.com/YueLin301/InformationDesignMARL)  
 - Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
-    > Delivered a presentation at the Xi'an conference venue.  
+    > Oral. Delivered a presentation at the Xi'an conference venue.  
     [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060) 
     [[Blog]](https://yuelin301.github.io/posts/RHex-T3/)  
 - A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
@@ -228,7 +228,7 @@ In the first row, each item has a full score of 120, while in the other rows, ea
 <!-- - Enneagram:  -->
   <!-- [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5);  -->
   <!-- Tritye: 548. -->
-  <!-- [Instincts](https://www.enneagrammer.com/the-three-instincts): SX/SP; -->
+  <!-- [Instincts](https://www.enneagrammer.com/the-three-instincts): SP/SX; -->
   <!-- [[My Test Result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1). -->
 
 > Detailed descriptions and other personality test results are available on [my blog](https://yuelin301.github.io/posts/Personality). 

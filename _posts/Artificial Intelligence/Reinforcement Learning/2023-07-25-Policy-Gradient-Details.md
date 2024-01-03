@@ -11,6 +11,23 @@ pin: True
 
 ---
 
+## Bellman Equations
+
+$$
+V(s_t) = \mathbb{E}\left[ r_t  + \gamma\cdot V(s_{t+1}) \right]
+$$
+
+<!-- $$
+Q(s_t, a_t) = \mathbb{E}\left[ r_t  + \gamma\cdot Q(s_{t+1}, a_{t+1}) \right]
+$$ -->
+
+$$
+V(s) = \sum\limits_{a} \pi(a\mid s) \cdot Q(s,a)
+$$
+
+$$
+Q(s,a) = r(s,a) + \gamma \sum\limits_{s'}  p(s'\mid s,a) \cdot V(s')
+$$
 
 
 ## Policy Gradient Theorem

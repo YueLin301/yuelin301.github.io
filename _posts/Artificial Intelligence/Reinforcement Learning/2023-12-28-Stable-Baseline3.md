@@ -78,7 +78,7 @@ pyreverse -o pdf -p stable_baseline3_diagram /opt/anaconda3/envs/rlbasic/lib/pyt
 - `stable_baselines3/common/on_policy_algorithm.py/OnPolicyAlgorithm`
 - `stable_baselines3/a2c/a2c.py/A2C` -->
 
-For Abstract Base Class, you can check [my blog]({{site.baseurl}}/posts/Python/#abstract-base-class) for details.
+For Abstract Base Class, you can check [my blog]({{site.baseurl}}/posts/Python-Toolbox/#abstract-base-class) for details.
 
 Paths:
 `/opt/anaconda3/envs/rlbasic/lib/python3.8/site-packages/`

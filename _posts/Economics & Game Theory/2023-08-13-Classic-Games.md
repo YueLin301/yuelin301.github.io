@@ -2,7 +2,7 @@
 title: Classic Games
 date: 2023-08-13 16:30:00 +0800
 categories: [Economics & Game Theory]
-tags: [tech, game theory, matrix game]
+tags: [Tech, Economics, Game Theory, Environment, Social Dilemma, Multi Agents, Classic]
 math: True
 ---
 
@@ -320,7 +320,7 @@ $$
 
 ## Muddy Children Puzzle
 
-Check my other note: [Dynamic Epistemic Logic](https://yuelin301.github.io/posts/Dynamic-Epistemic-Logic/#the-muddy-children-puzzle).
+Check my other note: [Dynamic Epistemic Logic]({{site.baseurl}}/posts/Dynamic-Epistemic-Logic/#the-muddy-children-puzzle).
 
 
 ## Trust
@@ -443,7 +443,7 @@ By computing the Shapley value for this game, one would find a fair division of 
 ### Strategies
 - Tit-for-tat.
 - Win-stay, lose-switch.
-- [Zero-determinant strategy](https://www.pnas.org/doi/pdf/10.1073/pnas.1206569109). (Check [my other note](https://yuelin301.github.io/posts/Zero-Determinant/).)
+- [Zero-determinant strategy](https://www.pnas.org/doi/pdf/10.1073/pnas.1206569109). (Check [my other note]({{site.baseurl}}/posts/Zero-Determinant/).)
 
 
 

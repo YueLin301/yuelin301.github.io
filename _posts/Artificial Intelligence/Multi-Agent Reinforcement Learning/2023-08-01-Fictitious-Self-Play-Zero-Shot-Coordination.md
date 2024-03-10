@@ -2,7 +2,7 @@
 title: Fictitious Self-Play and Zero-Shot Coordination
 date: 2023-08-01 02:40:00 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [tech, game theory, fictitious play, self-play, multi agents, reinforcement learning]
+tags: [Tech, AI, Multi Agents, RL, Game Theory, Framework]
 math: True
 ---
 
@@ -34,13 +34,13 @@ Given a game with $n$ players, where each player $i$ has a strategy $\pi^i$.
 ### Convergence?
 Fictitious play doesn't always converge to a Nash equilibrium in all games. It's been proven that fictitious play converges to the set of Nash equilibria in certain classes of games, like zero-sum games and potential games. However, there are games where fictitious play does not necessarily converge to a Nash equilibrium.
 
-E.g., in the [Matching Pennies game](https://yuelin301.github.io/posts/Classic-Games/#matching-pennies), the trajectory of Fictitious Play tends to circle around the mixed-strategy Nash equilibrium rather than directly converging to it.
+E.g., in the [Matching Pennies game]({{site.baseurl}}/posts/Classic-Games/#matching-pennies), the trajectory of Fictitious Play tends to circle around the mixed-strategy Nash equilibrium rather than directly converging to it.
 
 ## Self-Play
 
 <!-- > 小龙女奇道：“自己跟自己打架？怎生打法？” —— 《神雕侠侣》第二十五回 -->
 
-Self-play involves an agent (or a model) playing against itself or versions of itself. This can be thought of as a kind of [**bootstrapping**](https://yuelin301.github.io/posts/RL-Toolbox/#td0) method where an agent learns and refines its strategies through continuous iterations of gameplay against its own evolving strategies.
+Self-play involves an agent (or a model) playing against itself or versions of itself. This can be thought of as a kind of [**bootstrapping**]({{site.baseurl}}/posts/RL-Toolbox/#td0) method where an agent learns and refines its strategies through continuous iterations of gameplay against its own evolving strategies.
 
 ### Process
 
@@ -103,7 +103,7 @@ It is a matrix game. There are two agents with the same action space, each of si
 
 If the two agents are trained through self-play successfully, then they will both choose the same action, a convention influenced by the initial random seeds used in the training process. Different pairs may converge to different outcomes, thus agents from different pairs may fail to coordinate.
 
-By the way, the mixed strategy Nash equilibrium is $\left(\frac{1}{3}, \frac{1}{3}, \frac{1}{3}\right).$ The calculation is like the [Matching Pennies](https://yuelin301.github.io/posts/Classic-Games/#matching-pennies) case.
+By the way, the mixed strategy Nash equilibrium is $\left(\frac{1}{3}, \frac{1}{3}, \frac{1}{3}\right).$ The calculation is like the [Matching Pennies]({{site.baseurl}}/posts/Classic-Games/#matching-pennies) case.
 
 In the paper "Other-Play," which proposed this task, there is another version of it:
 
@@ -120,7 +120,7 @@ And the authors claimed that the most robust strategy is for everyone to choose 
 The task introduced in the paper includes an illustration where the actions are circled up. However, the authors claim that these actions are not labeled. A more accurate description would be that the actions are uniformly sampled within a closed space, meaning that they cannot be identified by their positions.
 
 
-> In my understanding, despite agents in zero-shot coordination never having interacted with others before, the designer assumes they are aware of the presence of others participating in the same task and are rational (and with some level of [theory of mind](https://yuelin301.github.io/posts/ToM-MM/)). There is no free lunch here.
+> In my understanding, despite agents in zero-shot coordination never having interacted with others before, the designer assumes they are aware of the presence of others participating in the same task and are rational (and with some level of [theory of mind]({{site.baseurl}}/posts/ToM-MM/)). There is no free lunch here.
 {: .prompt-tip }
 
 ### Equivalence mapping
@@ -324,7 +324,7 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
 
 ---
 
-> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+> The following part has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
 {: .prompt-warning }
 
 ---

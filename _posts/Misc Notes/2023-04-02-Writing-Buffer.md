@@ -2,7 +2,7 @@
 title: Writing Buffer
 date: 2023-04-02 02:40:00 +0800
 categories: [Misc Notes]
-tags: [misc note, writing buffer]
+tags: [Misc Notes]
 math: True
 ---
 

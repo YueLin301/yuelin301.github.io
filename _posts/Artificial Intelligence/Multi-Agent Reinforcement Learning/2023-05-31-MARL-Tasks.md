@@ -2,7 +2,7 @@
 title: MARL Tasks
 date: 2023-05-31 20:00:01 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [tech, multi agents, environment]
+tags: [Tech, AI, Multi Agents, RL, Environment, Social Dilemma]
 math: True
 ---
 

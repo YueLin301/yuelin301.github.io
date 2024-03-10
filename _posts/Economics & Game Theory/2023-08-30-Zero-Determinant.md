@@ -2,7 +2,7 @@
 title: Zero-Determinant Strategy
 date: 2023-08-30 02:40:00 +0800
 categories: [Economics & Game Theory]
-tags: [tech, game theory, sequential social dilemma, multi agents]
+tags: [Tech, Economics, Game Theory, Social Dilemma, Multi Agents, Classic]
 math: True
 ---
 
@@ -147,11 +147,11 @@ $$
 
 ### $\mathbf{M}$ has a unit eigenvalue
 
-> This part requires some knowledge of stochastic processes. Check [my other note](https://yuelin301.github.io/posts/Stochastic-Processes/).
+> This part requires some knowledge of stochastic processes. Check [my other note]({{site.baseurl}}/posts/Stochastic-Processes/).
 {: .prompt-info }
 
 
-> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+> The following part has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
 {: .prompt-warning }
 
 - $\mathbf{M}$ is irreducible (?)

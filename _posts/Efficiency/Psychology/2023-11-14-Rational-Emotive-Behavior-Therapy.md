@@ -2,7 +2,7 @@
 title: Rational Emotive Behavior Therapy (REBT)
 date: 2023-11-14 02:40:00 +0800
 categories: [Efficiency, Psychology]
-tags: [life, efficiency, psychology, personality]
+tags: [Life, Efficiency, Psychology]
 math: True
 ---
 

@@ -20,13 +20,17 @@ timezone: +0800
 
 title: Yue Lin # the main title
 
-tagline: Redemption lies within. # it will display as the sub-title
+# tagline: Redemption lies within. # it will display as the sub-title
+# tagline: "(A soft, continuous buzzing hums in the background, barely perceptible.)"
+# tagline: "Contemplate the moments that are beyond your control."
+tagline: "<b>THINK!</b> THINK WILDLY!!"
 
 description: >- # used by seo meta and the atom feed
   Yue Lin's personal website.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://yuelin301.github.io"
+# url: "https://yuelin301.github.io"
+url: "https://linyue.space"
 
 github:
   username: YueLin301 # change to your github username
@@ -72,6 +76,7 @@ google_analytics:
 #
 theme_mode: # [light|dark]
 
+mouse_click_effect: true
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -81,7 +86,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: assets/img/meow.png
+avatar: assets/img/avatar/meow5.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true

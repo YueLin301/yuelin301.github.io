@@ -2,7 +2,7 @@
 title: Decision Transformers
 date: 2023-11-12 02:40:00 +0800
 categories: [Artificial Intelligence, Machine Learning Basics]
-tags: [tech, transformer, generalist]
+tags: [Tech, AI, ML, Transformer]
 math: True
 ---
 

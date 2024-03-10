@@ -1476,66 +1476,66 @@ search {
   }
 }
 
-@media all and (min-width: 1650px) {
-  $icon-gap: 1rem;
+// @media all and (min-width: 1650px) {
+//   $icon-gap: 1rem;
 
-  #main-wrapper {
-    margin-left: $sidebar-width-large;
-  }
+//   #main-wrapper {
+//     margin-left: $sidebar-width-large;
+//   }
 
-  #topbar-wrapper {
-    left: $sidebar-width-large;
-  }
+//   #topbar-wrapper {
+//     left: $sidebar-width-large;
+//   }
 
-  search {
-    margin-right: calc(
-      $main-content-max-width / 4 - $search-max-width - 0.75rem
-    );
-  }
+//   search {
+//     margin-right: calc(
+//       $main-content-max-width / 4 - $search-max-width - 0.75rem
+//     );
+//   }
 
-  #main-wrapper > .container {
-    max-width: $main-content-max-width;
-    padding-left: 1.75rem !important;
-    padding-right: 1.75rem !important;
-  }
+//   #main-wrapper > .container {
+//     max-width: $main-content-max-width;
+//     padding-left: 1.75rem !important;
+//     padding-right: 1.75rem !important;
+//   }
 
-  main.col-12,
-  #tail-wrapper {
-    padding-right: 4.5rem !important;
-  }
+//   main.col-12,
+//   #tail-wrapper {
+//     padding-right: 4.5rem !important;
+//   }
 
-  #back-to-top {
-    right: calc(
-      (100vw - $sidebar-width-large - $main-content-max-width) / 2 + 2rem
-    );
-  }
+//   #back-to-top {
+//     right: calc(
+//       (100vw - $sidebar-width-large - $main-content-max-width) / 2 + 2rem
+//     );
+//   }
 
-  #sidebar {
-    width: $sidebar-width-large;
+//   #sidebar {
+//     width: $sidebar-width-large;
 
-    .profile-wrapper {
-      margin-top: 3.5rem;
-      margin-bottom: 2.5rem;
-      padding-left: 3.5rem;
-    }
+//     .profile-wrapper {
+//       margin-top: 3.5rem;
+//       margin-bottom: 2.5rem;
+//       padding-left: 3.5rem;
+//     }
 
-    ul {
-      li.nav-item {
-        @include pl-pr(2.75rem);
-      }
-    }
+//     ul {
+//       li.nav-item {
+//         @include pl-pr(2.75rem);
+//       }
+//     }
 
-    .sidebar-bottom {
-      padding-left: 2.75rem;
-      margin-bottom: 1.75rem;
+//     .sidebar-bottom {
+//       padding-left: 2.75rem;
+//       margin-bottom: 1.75rem;
 
-      a:not(:last-child) {
-        margin-right: $sb-btn-gap-lg;
-      }
+//       a:not(:last-child) {
+//         margin-right: $sb-btn-gap-lg;
+//       }
 
-      .icon-border {
-        @include ml-mr(calc(($sb-btn-gap-lg - $btn-border-width) / 2));
-      }
-    }
-  }
-} /* min-width: 1650px */
+//       .icon-border {
+//         @include ml-mr(calc(($sb-btn-gap-lg - $btn-border-width) / 2));
+//       }
+//     }
+//   }
+// } /* min-width: 1650px */

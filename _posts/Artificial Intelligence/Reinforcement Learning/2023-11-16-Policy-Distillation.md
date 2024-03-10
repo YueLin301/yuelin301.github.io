@@ -2,7 +2,7 @@
 title: Policy Distillation
 date: 2023-11-16 02:40:00 +0800
 categories: [Artificial Intelligence, Reinforcement Learning]
-tags: [tech, policy distillation]
+tags: [Tech, AI, RL]
 math: True
 ---
 

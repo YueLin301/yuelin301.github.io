@@ -2,7 +2,7 @@
 title: Information Design
 date: 2023-06-01 20:00:01 +0800
 categories: [Economics & Game Theory]
-tags: [tech, game theory, information design, Bayesian persuasion, Bayes plausible, concavification, obedience, Bayes correlated equilibrium, Bayes nash equilibrium, multi agents, incentive compatibility]
+tags: [Tech, Economics, Game Theory, Information Design, Theory, Multi Agents, Classic]
 math: True
 pin: True
 ---
@@ -303,7 +303,7 @@ for all $a^{j\prime}\in A^j$.
 
 ---
 
-> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+> The following part has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
 {: .prompt-warning }
 
 ---

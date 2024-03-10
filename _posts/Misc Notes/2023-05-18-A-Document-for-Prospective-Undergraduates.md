@@ -2,7 +2,7 @@
 title: For Prospective Undergraduates
 date: 2023-05-18 20:00:00 +0800
 categories: [Misc Notes]
-tags: [misc note]
+tags: [Misc Notes]
 ---
 
 > Welcome! 🎉
@@ -27,7 +27,7 @@ Reproduce A2C to complete any RL task (development needs to take place within a 
 
 ### interested in our topic:
 
-Currently, we are focusing on [information design](https://yuelin301.github.io/posts/Information-Design/) (a subfield of computational economics and game theory) and multi-agent reinforcement learning (MARL). Our next few works will be based on:
+Currently, we are focusing on [information design]({{site.baseurl}}/posts/Information-Design/) (a subfield of computational economics and game theory) and multi-agent reinforcement learning (MARL). Our next few works will be based on:
    - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
     *[arXiv](https://arxiv.org/abs/2305.06807) 2023*.
@@ -43,7 +43,7 @@ Our communication will be smoother if you have read some of the following papers
 1. [MARL in Sequential Social Dilemmas](https://arxiv.org/abs/1702.03037)
 2. [Melting Pot](https://proceedings.mlr.press/v139/leibo21a.html)
 
-### [Information Design](https://yuelin301.github.io/posts/Information-Design/)
+### [Information Design]({{site.baseurl}}/posts/Information-Design/)
 1. [Bayesian Persuasion](https://www.aeaweb.org/articles?id=10.1257/aer.101.6.2590)
 2. [Bayes Correlated Equilibrium and the Comparison of Information Structures in Games](https://onlinelibrary.wiley.com/doi/abs/10.3982/TE1808)
 3. Surveys:

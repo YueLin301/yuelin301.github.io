@@ -2,7 +2,7 @@
 title: Math Toolbox
 date: 2023-04-08 02:40:00 +0800
 categories: [Mathematics]
-tags: [tech, math, toolbox]
+tags: [Tech, Math, Toolbox]
 math: True
 ---
 

@@ -11,6 +11,8 @@
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
   >
 
+  <link rel="stylesheet" href="/assets/css/cursor.css">
+
   {% capture seo_tags %}
     {% seo title=false %}
   {% endcapture %}
@@ -90,6 +92,10 @@
   {% endif %}
 
   <!-- JavaScript -->
+
+  {% if site.mouse_click_effect %}
+    <script async src="/assets/js/lib/fireworks.js"></script>
+  {% endif %}
 
   {% unless site.theme_mode %}
     {% include mode-toggle.html %}

@@ -2,7 +2,7 @@
 title: Interesting Facts
 date: 2023-12-07 02:40:00 +0800
 categories: [Misc Notes]
-tags: [life, misc note, writing buffer]
+tags: [Life, Misc Notes]
 math: True
 ---
 

@@ -2,7 +2,7 @@
 title: Details on the Analysis of Policy Gradient Methods
 date: 2023-07-25 02:40:00 +0800
 categories: [Artificial Intelligence, Reinforcement Learning]
-tags: [tech, convergence, policy gradient, reinforcement learning, tech]
+tags: [Tech, AI, RL, Theory, Classic]
 math: True
 pin: True
 ---
@@ -452,5 +452,5 @@ $$
 \end{aligned}
 $$
 
-> The following part has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+> The following part has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
 {: .prompt-warning }

@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Life"
-order: 4
+order: 5
 icon: fa-solid fa-broom
 ---
 
-{% include child-home.html category="life" %}
+{% include child-home.html category="Life" %}

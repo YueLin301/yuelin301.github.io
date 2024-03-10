@@ -2,7 +2,7 @@
 title: A Note on Stochastic Processes
 date: 2023-09-04 02:40:00 +0800
 categories: [Mathematics]
-tags: [tech, math, stochastic processes]
+tags: [Tech, Math, Stochastic Processes]
 math: True
 ---
 

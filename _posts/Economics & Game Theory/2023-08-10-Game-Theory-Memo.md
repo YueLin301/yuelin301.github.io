@@ -2,7 +2,7 @@
 title: A Memo on Game Theory
 date: 2023-08-10 14:30:00 +0800
 categories: [Economics & Game Theory]
-tags: [tech, game theory]
+tags: [Tech, Economics, Game Theory, Multi Agents, Toolbox]
 math: True
 pin: True
 ---
@@ -146,6 +146,9 @@ Each player is perfectly informed of all the events that have previously occurre
 ## Social Choice Function
 It aims to align the interests of all agents.
 
+1. Utilitarian function
+2. Egalitarian function
+
 
 ## Price of Anarchy v.s. Price of Stability
 
@@ -173,7 +176,7 @@ It aims to align the interests of all agents.
     6. $\text{PoS} = \frac{\max\limits_{s\in S}\text{Welf}(s)} {\max\limits_{s\in \text{Equil}}\text{Welf}(s)}$，分子和PoA一样，分母是fully decentralized设置下的最好情况的收益。
     7. $\text{PoS} = \frac{\min\limits_{s\in \text{Equil}}\text{Cost}(s)} {\min\limits_{s\in S}\text{Cost}(s)}$
     8. 根据定义，$\text{PoA}\ge\text{PoS}\ge1$，wiki里是这么说的，是负数我不知道咋办，比如：分母<0<分子<-分母，这样加绝对值也不对。
-5. 例子：[Prisoner's Dilemma](https://yuelin301.github.io/posts/Classic-Games/#prisoners-dilemma)
+5. 例子：[Prisoner's Dilemma]({{site.baseurl}}/posts/Classic-Games/#prisoners-dilemma)
     1. 希望最大化的东西是social walfare，即，我们想优化$\text{Welf}=u_1(s_1,s_2)+u_2(s_1,s_2)$
     2. 如果有中心化的authority，则最优的情况肯定是$(s_1=\text{Cooperate},s_2=\text{Cooperate})$，此时$\text{Welf}=2b$。
     3. 如果没有中心化的authority，每个人只优化自己，那么此时对于两个玩家来说，$\text{Defect}$都是占优策略（别人选择合作，那我背叛收益高；别人选择背叛，那我背叛收益高；不论别人怎么选择，我选背叛收益高）。会收敛到$(s_1=\text{Defect},s_2=\text{Defect})$的Nash equilibrium。$\text{Welf}$相比有中心化的情况，降低了。

@@ -2,7 +2,7 @@
 title: RL Toolbox
 date: 2023-04-11 02:40:00 +0800
 categories: [Artificial Intelligence, Reinforcement Learning]
-tags: [tech, toolbox, reinforcement learning]
+tags: [Tech, AI, RL, Toolbox]
 math: True
 ---
 
@@ -410,7 +410,7 @@ tensor(7309908., dtype=torch.float64)
 {: .prompt-warning }
 
 ### Computation graph
-Check [my note on computation graph](https://yuelin301.github.io/posts/Computation-Graph-Visualization/#example-5-nabla_theta-a-with-gumbel-softmax-reparameterization).
+Check [my note on computation graph]({{site.baseurl}}/posts/Computation-Graph-Visualization/#example-5-nabla_theta-a-with-gumbel-softmax-reparameterization).
 
 
 

@@ -2,7 +2,7 @@
 title: Stable Baseline 3
 date: 2023-12-28 10:40:00 +0800
 categories: [Artificial Intelligence, Reinforcement Learning]
-tags: [tech, toolbox, reinforcement learning]
+tags: [Tech, AI, RL, Framework]
 math: True
 ---
 
@@ -78,7 +78,7 @@ pyreverse -o pdf -p stable_baseline3_diagram /opt/anaconda3/envs/rlbasic/lib/pyt
 - `stable_baselines3/common/on_policy_algorithm.py/OnPolicyAlgorithm`
 - `stable_baselines3/a2c/a2c.py/A2C` -->
 
-For Abstract Base Class, you can check [my blog](https://yuelin301.github.io/posts/Python/#abstract-base-class) for details.
+For Abstract Base Class, you can check [my blog]({{site.baseurl}}/posts/Python/#abstract-base-class) for details.
 
 Paths:
 `/opt/anaconda3/envs/rlbasic/lib/python3.8/site-packages/`

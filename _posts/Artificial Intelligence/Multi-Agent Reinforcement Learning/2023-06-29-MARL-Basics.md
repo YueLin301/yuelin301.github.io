@@ -2,11 +2,11 @@
 title: MARL Basics
 date: 2023-06-29 17:38:00 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [tech, multi agents, reinforcement learning, Markov model]
+tags: [Tech, AI, Multi Agents, RL, Markov Models, Classic]
 math: True
 ---
 
-> This note has not been finished yet. One may check my [writing schedule](https://yuelin301.github.io/posts/Schedule/).
+> This note has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
 {: .prompt-warning }
 
 
@@ -27,6 +27,24 @@ math: True
 4. Stochastic games (or Markov games)
    - $(I, S,\set{A^i}\_{i\in I}, \mathcal{P}, \set{R^i}\_{i\in I}, \gamma)$
    - Multi-agent, fully observable, C/A/M (meaning that it can be cooperative, adversarial, or mixed-motive), and dynamic.
+   ```
+   % Markov Game
+   @incollection{MarkovGame1994,
+   title={Markov games as a framework for multi-agent reinforcement learning},
+   author={Littman, Michael L},
+   booktitle={Machine learning proceedings 1994},
+   pages={157--163},
+   year={1994},
+   publisher={Elsevier}
+   }
+   % Stochastic Game (= Markov Game)
+   @book{StochasticGame2013,
+   title={Game theory},
+   author={Owen, Guillermo},
+   year={2013},
+   publisher={Emerald Group Publishing}
+   }
+   ```
 
 where
 - $I$ is a set of agents (and $\vert I\vert = n$, where $n\ge 2$),
@@ -44,13 +62,11 @@ where
    - Multi-agent, C/A/M, and dynamic.
 3. Bayesian game
 
-Check this note, [A Memo on Game Theory](https://yuelin301.github.io/posts/Game-Theory-Memo/).
+Check this note, [A Memo on Game Theory]({{site.baseurl}}/posts/Game-Theory-Memo/).
 
 
 (TODO)
 Some potentially confusing concepts:
-- Stochastic game
-- Markov game
 - Repeated game
 - Matrix game
 - Static game

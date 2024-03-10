@@ -2,12 +2,12 @@
 title: Information Design in 10 Minutes
 date: 2023-08-11 05:30:00 +0800
 categories: [Economics & Game Theory]
-tags: [tech, game theory, information design, Bayesian persuasion, obedience, multi agents, incentive compatibility]
+tags: [Tech, Economics, Game Theory, Multi Agents, Information Design]
 math: True
 pin: True
 ---
 
-> This note provides a brief introduction to the basic concepts of information design. More details can be found in [my other note on this topic](https://yuelin301.github.io/posts/Information-Design/).
+> This note provides a brief introduction to the basic concepts of information design. More details can be found in [my other note on this topic]({{site.baseurl}}/posts/Information-Design/).
 {: .prompt-info }
 
 <!-- ## A Brief Introduction -->

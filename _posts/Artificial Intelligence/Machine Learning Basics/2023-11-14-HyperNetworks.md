@@ -2,7 +2,7 @@
 title: HyperNetworks
 date: 2023-11-14 02:40:00 +0800
 categories: [Artificial Intelligence, Machine Learning Basics]
-tags: [tech, HyperNetworks]
+tags: [Tech, AI, ML]
 math: True
 ---
 

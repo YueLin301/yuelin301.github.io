@@ -1,8 +1,8 @@
 ---
-title: TED | Efficiency Tips
+title: Efficiency Tips from TED
 date: 2023-11-05 02:30:00 +0800
 categories: [Efficiency]
-tags: [life, efficiency, TED]
+tags: [Life, Efficiency, Toolbox]
 math: True
 ---
 

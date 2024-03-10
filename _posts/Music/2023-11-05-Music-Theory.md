@@ -2,7 +2,7 @@
 title: Music Theory
 date: 2023-11-05 02:40:00 +0800
 categories: [Music]
-tags: [life, music]
+tags: [Life, Music]
 ---
 
 > The following part has not been finished yet.

@@ -126,7 +126,6 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 ## Education & Experience
 
 - **The Chinese University of Hong Kong, Shenzhen**  
-  <!-- Ph.D. Student in Data Science (2024.8 - Present)   -->
   Research Assistant in School of Data Science (2022.2 - Present)
 - **Tiangong University**  
   Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)

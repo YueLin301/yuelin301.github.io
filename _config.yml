@@ -29,8 +29,7 @@ description: >- # used by seo meta and the atom feed
   Yue Lin's personal website.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-# url: "https://yuelin301.github.io"
-url: "https://linyue.space"
+url: "https://yuelin301.github.io"
 
 github:
   username: YueLin301 # change to your github username

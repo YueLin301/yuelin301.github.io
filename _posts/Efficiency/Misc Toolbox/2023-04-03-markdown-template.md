@@ -15,6 +15,11 @@ math: True
 
 <span style="color: transparent; background-color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='transparent'">Have a good day, mate!</span>
 
+## site.baseurl Link
+```
+[[my blog]]({{site.baseurl}}/posts/Information-Design-10min/)
+```
+
 
 ## Prompts
 > green tip

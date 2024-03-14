@@ -243,3 +243,177 @@ Decorators are a powerful feature in Python, commonly used for logging, enforcin
     ```
 
 In summary, `@classmethod` is used for methods that need to interact with class-level data or provide alternate ways to create class instances, while `@property` is used to manage the access to an instance's attributes in a controlled manner, allowing for data encapsulation, validation, and potentially complex attribute access logic.
+
+
+## Python Launch
+### An Import Error
+
+`MyProject`:
+
+```
+MyProject/
+├── A/
+│   └── module_a.py
+├── B/
+│   └── module_b.py
+├── C/
+│   └── module_c.py
+```
+
+`MyProject/A/module_a.py`:
+
+```python
+from B.module_b import b_function
+```
+
+Run `MyProject/A/module_a.py` in directory `MyProject`:
+
+```
+ModuleNotFoundError: No module named 'B'
+```
+
+Run `MyProject/A/module_a.py` in directory `MyProject/A`:
+
+```
+ModuleNotFoundError: No module named 'B'
+```
+
+### Launch File
+1. Click `Run and Debug` button on the left sidebar.
+2. Click `create a launch.json file` button.
+   1. Choose `Python Debugger`.
+   2. Choose `Python File`.
+3. Edit `launch.json`
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File (Dynamic CWD)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}"
+        }
+    ]
+}
+```
+
+Debugging `MyProject/A/module_a.py` using this `launch.json` file equivalent to running `MyProject/A/module_a.py` in directory `MyProject/A`.
+
+
+### My Import Style
+
+`MyProject`:
+
+```
+MyProject/
+├── A/
+│   ├── module_a.py
+│   └── Util_import.py
+├── B/
+│   └── module_b.py
+├── C/
+│   └── module_c.py
+```
+
+`MyProject/A/Util_import.py`:
+
+```python
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+```
+
+
+`MyProject/A/module_a.py`:
+```python
+import Util_import
+from B.module_b import b_function
+```
+
+Running `MyProject/A/module_a.py` in directory `MyProject/A` works.
+
+Debugging `MyProject/A/module_a.py` using this `launch.json` file works.
+
+
+## Tips Learned from Youtube
+
+### Interactive Mode
+
+```python
+# example.py
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+```
+
+```bash
+$ python -i example.py
+Hello, World!
+>>> greet("Python")
+'Hello, Python!'
+```
+
+### Sorted
+
+The `sorted()` built-in function in Python is used to sort iterable objects, such as lists, tuples, and dictionaries, and returns a new sorted list without altering the original iterable object.
+
+No need of import.
+
+```python
+sorted(iterable, *, key=None, reverse=False)
+```
+
+- `iterable`: The iterable object to be sorted.
+- `key`: A function that takes one argument and returns a key to be used for sorting purposes.
+- `reverse`: A boolean value. If set to `True`, then the list elements are sorted as if each comparison were reversed. The default is `False`, which means the list is sorted in ascending order.
+
+#### Simple Sorting
+
+```python
+nums = [3, 1, 4, 1, 5, 9, 2]
+sorted_nums = sorted(nums)
+print(sorted_nums)  # Output: [1, 1, 2, 3, 4, 5, 9]
+```
+
+#### Sorting Strings
+
+```python
+words = ['banana', 'apple', 'cherry']
+sorted_words = sorted(words)
+print(sorted_words)  # Output: ['apple', 'banana', 'cherry']
+```
+
+#### Descending Order
+
+```python
+nums = [3, 1, 4, 1, 5, 9, 2]
+sorted_nums_desc = sorted(nums, reverse=True)
+print(sorted_nums_desc)  # Output: [9, 5, 4, 3, 2, 1, 1]
+```
+
+#### Using the `key` Parameter
+
+```python
+# Sort by string length
+words = ['banana', 'apple', 'cherry']
+sorted_words_by_length = sorted(words, key=len)
+print(sorted_words_by_length)  # Output: ['apple', 'banana', 'cherry']
+```
+
+```python
+# Sort based on a value in a dictionary
+data = [{'name': 'John', 'age': 45}, {'name': 'Diana', 'age': 35}, {'name': 'Mike', 'age': 25}]
+sorted_data = sorted(data, key=lambda x: x['age'])
+print(sorted_data)  # Output: list sorted by the 'age' key in ascending order
+```
+
+### String Tricks
+
+```python
+
+```

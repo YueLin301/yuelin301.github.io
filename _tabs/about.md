@@ -192,7 +192,8 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
     > Poster. This is currently my most representative work.  
     [[Paper]](https://arxiv.org/abs/2305.06807) 
     [[Code]](https://github.com/YueLin301/InformationDesignMARL) 
-    [[Blog]]({{site.baseurl}}/posts/IDMARL/) 
+    [[Blog en]]({{site.baseurl}}/posts/IDMARL/) 
+    [[Blog cn]]({{site.baseurl}}/posts/IDMARL-cn/) 
     [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
     [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
     [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825) 

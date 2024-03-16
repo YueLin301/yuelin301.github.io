@@ -194,9 +194,10 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
     [[Code]](https://github.com/YueLin301/InformationDesignMARL) 
     [[Blog en]]({{site.baseurl}}/posts/IDMARL/) 
     [[Blog cn]]({{site.baseurl}}/posts/IDMARL-cn/) 
+    [[Zhihu cn]](https://zhuanlan.zhihu.com/p/687305626) 
     [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
     [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
-    [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825) 
+    [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)  
 
 <!-- > Of the empty and useless years of the rest, with the rest me intertwined,  
 > The question, O me! so sad, recurring — What good amid these, O me, O life?  

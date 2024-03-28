@@ -44,7 +44,8 @@
 <div id="lysidebar">
     <div style="display: flex; justify-content: space-between;">
         <h2 class="panel-heading" style="margin-right: 5px;">LyTopia Map</h2>
-        <button id="collapseAll"><i class="fa-solid fa-signs-post"></i></button>
+        <button id="collapseAll">+/- <i class="fa-regular fa-map"></i></button>
+        <!-- <button id="collapseAll"><i class="fa-solid fa-signs-post"></i></button> -->
         <!-- <button id="collapseAll"><i class="fa-solid fa-water"></i></button> -->
     </div>
     <div style="display: flex; justify-content: space-evenly;">
@@ -166,13 +167,14 @@
         });
     });
 
+
+
+
     document.getElementById('collapseAll').addEventListener('click', function() {
         const postsElements = document.querySelectorAll('#lysidebar .posts');
-
         const isAnyPostVisible = Array.from(postsElements).some(function(posts) {
             return posts.style.display !== 'none';
         });
-
         postsElements.forEach(function(posts, index) {
             if (isAnyPostVisible) {
                 posts.style.display = 'none';

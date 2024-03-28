@@ -11,6 +11,15 @@ math: True
 
 ---
 
+## 折叠
+
+<details>
+<summary>点击展开/收起</summary>
+
+这里是折叠起来的内容。
+
+</details>
+
 ## 删除
 
 ~~删除~~

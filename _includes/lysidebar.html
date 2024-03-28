@@ -142,7 +142,6 @@
 
 
 <script>
-    // 恢复目录的展开/折叠状态
     document.querySelectorAll('#lysidebar .category > a').forEach(function (categoryLink, index) {
         const postsDisplay = localStorage.getItem('postsDisplay' + index);
         if (postsDisplay) {
@@ -155,53 +154,32 @@
             var posts = this.nextElementSibling;
             if (posts.style.display === 'block') {
                 posts.style.display = 'none';
-                localStorage.setItem('postsDisplay' + index, 'none'); // 保存状态为折叠
-            } else {
-                // document.querySelectorAll('#lysidebar .posts').forEach(function (el, elIndex) {
-                //     el.style.display = 'none'; // 折叠其他目录
-                //     localStorage.setItem('postsDisplay' + elIndex, 'none'); // 更新存储状态
-                // });
-                posts.style.display = 'block';
-                localStorage.setItem('postsDisplay' + index, 'block'); // 保存状态为展开
-            }
-        });
-    });
-
-    // ====================================
-    // // 为折叠所有分类的按钮添加点击事件处理器
-    // document.getElementById('collapseAll').addEventListener('click', function() {
-    //     document.querySelectorAll('#lysidebar .posts').forEach(function(posts, index) {
-    //         posts.style.display = 'none'; // 折叠所有目录
-    //         localStorage.setItem('postsDisplay' + index, 'none'); // 更新存储状态
-    //     });
-    // });
-
-    document.getElementById('collapseAll').addEventListener('click', function() {
-        const postsElements = document.querySelectorAll('#lysidebar .posts');
-
-        // 检查是否至少有一个目录是展开的
-        const isAnyPostVisible = Array.from(postsElements).some(function(posts) {
-            return posts.style.display !== 'none';
-        });
-
-        // 根据目录是否展开来决定是折叠还是展开所有目录
-        postsElements.forEach(function(posts, index) {
-            if (isAnyPostVisible) {
-                // 如果当前至少有一个目录展开，则折叠所有目录
-                posts.style.display = 'none';
                 localStorage.setItem('postsDisplay' + index, 'none');
             } else {
-                // 如果所有目录都已折叠，则展开所有目录
                 posts.style.display = 'block';
                 localStorage.setItem('postsDisplay' + index, 'block');
             }
         });
     });
 
+    document.getElementById('collapseAll').addEventListener('click', function() {
+        const postsElements = document.querySelectorAll('#lysidebar .posts');
 
+        const isAnyPostVisible = Array.from(postsElements).some(function(posts) {
+            return posts.style.display !== 'none';
+        });
 
-    // ====================================
-    // 定义保存和恢复滚动位置的函数
+        postsElements.forEach(function(posts, index) {
+            if (isAnyPostVisible) {
+                posts.style.display = 'none';
+                localStorage.setItem('postsDisplay' + index, 'none');
+            } else {
+                posts.style.display = 'block';
+                localStorage.setItem('postsDisplay' + index, 'block');
+            }
+        });
+    });
+
     function savelysidebar_contentScrollPosition() {
         const lysidebar_content = document.getElementById('lysidebar_content');
         if (lysidebar_content) {
@@ -218,10 +196,8 @@
         }
     }
 
-    // 页面加载完成时恢复lysidebar_content的滚动位置
     restorelysidebar_contentScrollPosition();
 
-    // 为lysidebar_content添加滚动事件监听器，保存滚动位置
     const lysidebar_content = document.getElementById('lysidebar_content');
     if (lysidebar_content) {
         lysidebar_content.addEventListener('scroll', savelysidebar_contentScrollPosition);

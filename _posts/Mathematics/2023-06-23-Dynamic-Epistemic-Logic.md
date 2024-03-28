@@ -1,8 +1,8 @@
 ---
 title: Dynamic Epistemic Logic
 date: 2023-06-23 02:00:00 +0800
-categories: [Mathematics]
-tags: [Tech, Math, Logic, Multi Agents]
+categories: [Interdisciplinarity, Mathematics]
+tags: [Tech, Interdisciplinarity, Math, Logic, Multi Agents]
 math: True
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Python Toolbox
 date: 2023-12-28 12:40:00 +0800
-categories: [Code Utils]
-tags: [Tech, Code Utils]
+categories: [Efficiency, Code Utils]
+tags: [Tech, Efficiency, Code Utils]
 math: True
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Interesting Facts
 date: 2023-12-07 02:40:00 +0800
-categories: [Misc Notes]
-tags: [Life, Misc Notes]
+categories: [Efficiency, Misc Toolbox]
+tags: [Tech, Toolbox]
 math: True
 ---
 

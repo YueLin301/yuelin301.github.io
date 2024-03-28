@@ -1,8 +1,8 @@
 ---
 title: Zero-Determinant Strategy
 date: 2023-08-30 02:40:00 +0800
-categories: [Economics & Game Theory]
-tags: [Tech, Economics, Game Theory, Social Dilemma, Multi Agents, Classic]
+categories: [Interdisciplinarity, Economics & Game Theory]
+tags: [Tech, Interdisciplinarity, Economics, Game Theory, Social Dilemma, Multi Agents, Classic]
 math: True
 ---
 

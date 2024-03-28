@@ -9,6 +9,7 @@ The main purpose of building this repository is to showcase my work and experien
 1. New responsive design: hide sidebar. (Check '/_sass/addon/commons.scss')
 2. Panel reposition. (Check '/_layouts/default.html')
 3. Cut down sidebar width. (Check '/_sass/addon/variables.scss')
+4. New panel: `lysidebar`. (Check '/_includes/lysidebar.html')
 
 ### Tabs
 1. No "tabs" tab. (Check '/_tabs/tags.html')

@@ -1,8 +1,8 @@
 ---
 title: A Note on Stochastic Processes
 date: 2023-09-04 02:40:00 +0800
-categories: [Mathematics]
-tags: [Tech, Math, Stochastic Processes]
+categories: [Interdisciplinarity, Mathematics]
+tags: [Tech, Interdisciplinarity, Math, Stochastic Processes]
 math: True
 ---
 

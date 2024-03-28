@@ -1,7 +1,7 @@
 ---
 title: Paper Toolbox
 date: 2023-04-09 02:40:00 +0800
-categories: [Misc Notes]
+categories: [Efficiency, Misc Toolbox]
 tags: [Tech, Toolbox]
 math: True
 ---

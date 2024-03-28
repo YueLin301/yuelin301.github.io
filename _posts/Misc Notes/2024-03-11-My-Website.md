@@ -1,8 +1,8 @@
 ---
-title: My Personal Website
+title: My Website
 date: 2024-03-11 00:20:00 +0800
-categories: [Misc Notes]
-tags: [Misc Notes]
+categories: [Efficiency, Misc Toolbox]
+tags: [Tech, Toolbox]
 ---
 
 > 这东西懒得花精力，随便记录，就写中文得了

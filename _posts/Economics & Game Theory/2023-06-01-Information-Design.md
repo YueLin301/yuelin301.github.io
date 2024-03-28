@@ -1,8 +1,8 @@
 ---
 title: Information Design
 date: 2023-06-01 20:00:01 +0800
-categories: [Economics & Game Theory]
-tags: [Tech, Economics, Game Theory, Information Design, Theory, Multi Agents, Classic]
+categories: [Interdisciplinarity, Economics & Game Theory]
+tags: [Tech, Interdisciplinarity, Economics, Game Theory, Information Design, Theory, Multi Agents, Classic]
 math: True
 pin: True
 ---

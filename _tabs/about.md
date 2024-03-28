@@ -135,7 +135,8 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
     - School of Mechanical Engineering (2018.9 - 2019.6)  
         > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
 
-> <p style="font-size: 18px; color: #588142"><b>If I'm going to have a past, I prefer it to be multiple choice! HA! HA! HA! <i>—&nbsp;The&nbsp;Killing&nbsp;Joke.</i></b></p>
+<!-- #588142-->
+<!-- > <p style="font-size: 18px; color: #495485"><b>If I'm going to have a past, I prefer it to be multiple choice! HA! HA! HA! <i>—&nbsp;The&nbsp;Killing&nbsp;Joke.</i></b></p> -->
 
 
 <!-- <div style="height: 20px;"></div>
@@ -192,6 +193,7 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
     > Poster. This is currently my most representative work.  
     [[Paper]](https://arxiv.org/abs/2305.06807) 
     [[Code]](https://github.com/YueLin301/InformationDesignMARL) 
+    [[Experiments]](https://wandb.ai/yuelin301/IND+MARL?nw=nwuseryuelin301) 
     [[Blog en]]({{site.baseurl}}/posts/IDMARL/) 
     [[Blog cn]]({{site.baseurl}}/posts/IDMARL-cn/) 
     [[Zhihu cn]](https://zhuanlan.zhihu.com/p/687305626) 

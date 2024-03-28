@@ -1,8 +1,8 @@
 ---
 title: Personality
 date: 2023-06-01 02:40:00 +0800
-categories: [Efficiency, Psychology]
-tags: [Life, Efficiency, Psychology, Personality]
+categories: [Interdisciplinarity, Psychology]
+tags: [Life, Interdisciplinarity, Psychology, Personality]
 math: True
 pin: True
 ---

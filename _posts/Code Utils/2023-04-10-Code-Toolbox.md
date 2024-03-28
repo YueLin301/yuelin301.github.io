@@ -1,8 +1,8 @@
 ---
 title: Misc Code Toolbox
 date: 2023-04-10 02:40:00 +0800
-categories: [Code Utils]
-tags: [Tech, Code Utils, Toolbox]
+categories: [Efficiency, Code Utils]
+tags: [Tech, Efficiency, Code Utils, Toolbox]
 math: True
 ---
 
@@ -19,8 +19,119 @@ math: True
 {: .prompt-info }
 
 ## Tmux
-- `tmux ls`
-- `tmux attach-session -t 0`
+太久没连服务器连这个怎么用都快忘了...不要想太复杂的操作，我用这个的原因就只有两个，第一个原因是用这个在服务器上运行python文件后，我再断开服务器的连接，这个还能在后台跑；第二个原因是，可以只用ssh连服务器一次就可以用tmux来用多个shell，比如同时跑两个python文件，这个应噶就是终端复用的意思
+
+Tmux有3个逻辑层次，分别是：session会话、window窗口、panel窗格。打开这个进程后，底下显示的是session会话的名字，进去session之后能输入终端命令的那个直接交互的地方就是panel窗格
+
+进入一个session会话默认有一个window窗口并在这个窗口里有一个panel窗格，我根本不需要用到多窗口和多窗格；如果我要跑多个python文件我只要多个会话就行了
+
+### 会话操作
+
+#### 创建会话
+
+下面这个命令：如果tmux里啥也没有就创建个名字是0的会话，如果tmux里面已经有创建的会话了的话会怎么样就不好说了，不用管（我试过有时候是重连到最新的那个会话，有时候是创建个新的名字是编号的会话；可能和“有没有再创建新会话”、“新创建的会话名字是不是编号”有关）
+
+```bash
+tmux
+```
+
+创建一个会话，名字是默认的数字，这个数字具体是多少不用管，反正是递增的（应该是`历史创建过多少名字是编号数字的会话数 -1 +1`，其中`-1`是因为编号从0开始，`+1`是因为是新多加了个会话）
+
+```bash
+tmux new
+```
+
+创建指定名字的会话，`-s`是指的`session_name`的意思
+
+```bash
+tmux new -s ${session_name}
+```
+
+#### 从会话中脱离
+
+快捷键`Command + B` `D`，等价于下面这个命令
+
+```bash
+tmux detach
+```
+
+#### 显示所有会话
+
+```bash
+tmux ls
+```
+
+#### 重新连到指定会话
+
+这里的`-t`表示的是`target`
+
+```bash
+tmux attach-session -t ${session_name}
+```
+
+简写是
+
+```bash
+tmux at -t ${session_name}
+```
+
+#### 重命名会话
+
+把指定编号的会话名重命名，这里的`-t`表示的也是`target`
+
+```bash
+tmux rename-session -t ${session_name} ${session_new_name}
+```
+
+#### 关闭会话
+
+关闭指定会话，这里的`-t`表示的也是`target`
+
+```bash
+tmux kill-session -t ${session_name}
+```
+
+关闭所有会话
+
+```bash
+tmux kill-server
+```
+
+### 窗口操作
+
+我不用
+
+### 窗格操作
+
+少用但是记一下备用
+
+#### 翻页
+
+进入翻页模式的快捷键是`Control + B` `[`，然后`page up/down`和`up/down`和鼠标触控板就都可以用来翻页了；退出翻页模式是`Control + C`
+
+#### 新窗格
+
+1. 右边创建个新窗格，左右分屏：`Control + B` `%`
+2. 下面创建个新窗格，上下分屏：`Control + B` `"`
+
+#### 关闭当前窗格
+
+`Control + B` `x`
+
+#### 选择窗格
+
+1. 选上次用过的窗格：`Control + B` `;`
+2. 根据屏幕位置来选窗格：`Control + B` `（方向键）`
+3. 根据编号连选窗格：`Control + B` `q`，此时会显示窗格编号，然后按下数字就行
+
+#### 切换布局
+
+就是可以把水平分屏换成垂直分屏这种
+
+1. 换成下一个布局：`Control + B` `space`
+2. 换成指定布局：`Control + B` `Option + (1-5)`
+3. 最大化当前窗格：`Control + B` `Z`；再按一次就又恢复成之前的布局
+
 
 ## Terminal Python Environment Initialization
 ```bash

@@ -1,7 +1,7 @@
 ---
 title: English Toolbox
 date: 2023-04-07 02:40:01 +0800
-categories: [Misc Notes]
+categories: [Efficiency, Misc Toolbox]
 tags: [Tech, Toolbox]
 math: True
 ---
@@ -13,8 +13,6 @@ math: True
 
 <!-- > Like any toolbox, what you get out of it depends on what you put into it. *— Adrian McKinty, Hidden River (2004).*
 {: .prompt-info } -->
-
-
 
 ## 5 Principles and 7 Actions
 
@@ -206,7 +204,7 @@ Don't translate it to your familiar language. Everything you know is an image in
 
 虚拟语气在英语中是一个复杂的概念，涉及许多不同的结构和用法。掌握虚拟语气可以帮助更准确地表达假设性或非现实性的想法和情感。
 
-
+<!-- 
 ## Culture & Misc Knowledge
 
 
@@ -402,8 +400,6 @@ And B's are denoted by $Y_1, Y_2, Y_3$.
 
 ---
 
-<!-- The author in the reading and the speaker in the lecture are discussing whether ... is beneficial or not.  -->
-<!-- The author holds a positive opinion, while the speaker expresses opposite concerns. -->
 
 In the passage, the author mentions 
 - 3 benefits coming from posing high taxes on cigarettes and unhealthy food. 
@@ -423,171 +419,6 @@ Additionally, the author puts forward that $X_3$. Instead, the speaker challenge
 #### Academic discussion
 
 10 minutes.
-
-
-
-<!-- ### Listening dictation practice
-
-#### 1.1 *(2023-9-5-Tuesday-CST)*
-Listen to part of a conversation between a student and a librarian.
-Hi, I really hope you can help me.
-That's why I'm here. What can I do for you?
-I'm supposed to do a literature review for my psychology course. 
-But I'm having a hard time for finding articles.
-I don't even know where to start looking.
-You said this is for psychology course, right?
-So, you're focusing on... Dream interpretation.
-Well, you have a focus, so that's already a good start.
-Well there are few things... Oh wait. **Have you checked to see if your professor put any material for you to look at on reserve?**
-Aha, that's one thing that I did know to do.
-**I just copied an article, but I still need three more on my topic from three different journals.**
-**Let's get you going on looking for those then.**
-**We have plenty versions of twenty years old psychology journals on reference section.**
-**These are ones published within the last year.**
-And let me think about it. There is a journal named sleeping dreams. 
-Oh yeah. The article I just copy is from that journal.
-So I've gotta looking for other sources.
-Ok, actually most of the materials are available on electronically now.
-You can access psychology databases or electronic journals and articles through the librarian computers.
-And if you want to search by title with the word "dream", for example, just type it in and all the articles with "dream" in the title will come up in the screen.
-Cool, that's great. Too bad I can't do this from home.
-But, you can. All the librarian databeses and electronic sources can be accessed through any computer connected to the university network.
-Really? I can't believe I didn't know that.
-It's still sounds like it's gonna take a while though. You know, going through all of that information, all of the sources.
-Maybe. But you've already narrowed your search down to articles on dream interpretation.
-So it shouldn't be too bad.
-**And you probably notice that there is an abstract or summary at the topic at the first page of the article you copy.**
-When you go into the databases and the electronic sources, you have the option to display the abstract on the computer screen.
-**Skimming those to decide whether or not you want to read the whole article should cut down some time.**
-Right. Abstracts. They will definitely make the project more doable.
-I guess I should try out the electronic search while I'm still hear them. You know, just in case.
-Sure. That computer is for you over there. **And I will be here 'till 5 this afternoon.**
-Thanks. I **feel a lot better** about the assignment right now.
-
-#### 1.2 *(2023-9-6-Wednesday-CST)*
-Listen to part of a lecture, in a comtemporary class.
-OK, I'm going to begin this lecture by giving you your next assignment.
-Remember I said that some point during the semester I want you to attend an exhibit **at the Fairy Street** gallary and then write about it?
-Well, the exhibit that I want you to attend is comming up. It has already started in fact, but it will be at the gallary **for** the next month, which gives you plenty of time to complete this assignment.
-The name of the artist exhibiting there is Rose Frantzen.
-Frantzen's work maybe unfamiliar to you since she is a relatively young artist. 
-**But she's got a very unusual style compared to some of the artists we've looked at this term.**
-But anyway, Frantzen's style is what she **herself** call realistic impressionism.
-So, you've probably studied both of the movements, separatedly, separate movement, realism and impressionism in some of your history courses.
-So, who can just sum this up.
-Well, impressionism, **started in** the late 19 century.
-The basic impressionist style is very different from earlier styles.
-**It didn't depict the scenes or models exactly as they look.**
-Impressionist painter tented to paint really thickly, and in big brush strokes.
-So the texture of the canvas was rough.
-Good, what else? What were the subjects?
-Well, a lot of impressionist artists painted everyday things, like people on the streets, and **in** cafes, and lots of nature **scenes**, especially landscapes.
-Good. When you go to the exhibit I really want you to take a close look at a certain painting. It's a farm scene. **And you will see it right as you enter the gallary.**
-The reason that I think this painting is so important is that it stresses the impressionist aspect of Frantzen's style. It's an outdoor scene. An everyday scene. It's kind of bleak, but you can see those broad brushstrokes and the blurry lines.
-The color **aren't** realistic. The sky is kind of, well, an **unnatural** pinkish yellow. And the fence in the foreground is blue. But somehow the overall scene gives an impression of a cold bleak winter day on a farm.
-So that's the impressionist side of her work.
-Oh, and speaking about farms, that reminds me. One interesting thing I read about Frantzen is that when she first move back to Iowa after living abroad, she often visited this place in her town called the sales barn.
-And the sales barn, it was basically this place where the local farmers bought and sold their cattles, their farm animals.
-The reason Frantzen went there, and she later on would visit other places, like dance halls, was to observe people and the ways they moved.
-She really found this helped her work. And give her an understanding of body movements and actions, how humans move, and stand still. What their postures were like, too.
-So, what about Realism. What are the elements of Realism in Frantzen's work we should be looking for.
-Uh, real honest depictions of suject matter, pretty unidealized stuff, and pretty everyday subject matter, too.
-Good. One other painting that I really want you to look at is of a young woman surrounded by pumpkins.
-You will notice the woman's face is so realistic looking that it's almost like a photograph.
-The woman's nose is a little less than perfect, but her hair is kind of messed up. It's Realism.
-But then the background of the painting, this woman with the pumpkins is wrapped **in a blanket of** broad black and thick brushstrokes and it's all kinds of zigzagging brashstrokes with some lines kind of chaotic almost when you look close, and there are **vibrant** colors. There's lots of orange with little **hints** of electric blue **peeking** on it.
-I find Frantzen to be a very successiful artist.
-I mean, some artists, to appreaciate them you have to learn about their life stories.
-But there is a little about Rose Frantzen's life story anyway.
-She attended art school. But was told one of her **instructors** that she wasn't good at illustration.
-That she should go to the advertising instead.
-So she took advertising classes and fine art classes, too.
-Untill she was convinced by the head of an advertising agency, that her work was really good.
-That she could be an artist.
-But of course it's not as easy as that.
-And so Frantzen had to paint other people's portraits at places like art fairs.
-Just to make money to buy paint for money for her more serious art work.
-No matter what, she never stopped painting.
-And now Frantzen is doing extremely well.
-And the work has been shown all over the country.
-So I think most of us will be discouraged if we had to face challenges and difficulties like that.
-But what's important is that you keep at it.
-That you don't give up.
-That's what's really important to remember.
-
-#### 1.3 *(2023-9-10-Sunday-CST)*
-Listen to part of a lecture in geology class.
-Ok, let's get started.
-Great. Today I want to talk about a way in which we are able to determine how old a piece of land or some other geologic feture is. Dating techniques.
-I'm going to talk about particular technique, why? Good dating is key to good analysis. In other words, if you want to know how a land formation is formed, the first thing you probably want to know is how old it is. It's fundamental.
-Take the **Grand Canyon** for instance.
-Now, we geologists thought we had a pretty great idea of how the Grand Canyon in the southwestern United American was formed.
-We knew that it was formed from sandstone that solidified somewhere between 150 and 300 millions years ago.
-Before it solidified, it was just regular sand. Essentially it was part of desert. And until just recently, most of us thought that the sand had come from an ancient mountain range faily close by flattened out over time. 
-That's been a conventional **wisdom** among geologits for quite some time.
-But now, we've learned something different and quite surprising. Using the technique called Uranium-Lead Dating. 
-Should say that Uranium-Lead Dating has been around for **quite a while**. But there has been some recent refinments. I'll get **into** this in a minute.
-Anyway, Uranium-Lead Dating has produced some surprises.
-Two geologists discovered that about half of the sand from the Grand Canyon was actually once part of the Appalachian mountains.
-That's really eyes-opening news. Since the Appalachian mountains ranges, of cource, thousands of kilometers to the east of the Grand Canyon.
-Sounds pretty unbelivable, right?
-Of course the obvious question is, how did that sand end up so far west? 
-The theory is that huge rivers and wind carried the sand west, **where it mixed in with the sand that was already there.**
-Well, this was a pretty revolutionary finding.
-And it was basically because of the Uranium-Lead Dating. 
-Why? Well is everyone in this class should know, we usually look at the grain type within the sandstone, meaning the actual particle of the sandstone, to determine where it came from.
-You can do other things, too. Like look at the wind or water that brought the grain to the location and figure out which way it was flowing.
-But that's only useful up to a point, and that's not what the two geologists did.
-Uradium-lead dating allow them to go about in an entirely different way.
-What they did was, they look at the grains of **Zircon** in the sandstone. Zircon is a material that contains radioactive Uranium, which is pretty useful for dating purposes.
-Zircon starts off as **molten magma**, the hot lava from **volcanoes** when crystalized. And when Zircon crystallizes, the uranium inside it begins to changed into lead. Some if you measure the amount of lead in the Zircon grain, you can figure out when the grain was formed.
-After that, you can determine the age of the Zircon from different mountain ranges.
-Once you do that, you can compare the age of the Zircon in the sandstone in your sample, to the age of the Zircon of the mountains.
-If the age of Zircon matches the age of one of your mountain ranges, then it means the sandstone actually used to be part of that particular mountain range.
-Is everybody with me on that? Good.
-So in this case, uranium-lead dating was used to establish that half the sandstone in the samples was formed at the same time that the **granite** in the Appalachian ancient mountain was formed.
-So because of this, this new way of doing your uranium-lead dating, we've been able to determine one of major assumptions about the Grand Canyon was wrong.
-Like I said before, uranium-lead dating has been with us for a while. 
-But uh untill recently, in order to do it, you really have to study many individual grains. And it took a long time before you got results.
-It just was not efficient. And it wasn't very accurate. 
-But techinical advances had cut down on the number of the grains you have to study. So you get your results faster.
-So I predict that uranium-lead dating is going to become an increasingly popular dating method.
-There are a few pretty exciting possibilities for uranium-lead dating. 
-Here is the one that comes to mine. You know, theory of the earth continents were once joined together, and only split apart relatively recently? 
-Well, with uranium-lead dating, we can prove that more conclusively.
-If they show evidence of once having been joined. That can tell us a lot about the early history of the planet's geology. 
-
-#### 1.4 *(2023-9-12-Tuesday-CST)*
-Listen to part of a conversation between a student and his professor.
-Hi Mathew, I'm glad you could **come in** today.
-You've been observing Mr.Grabell's third-grade class for you **Approaches to Education** paper, right?
-Um yes, I go over the **Johnson elementary school**, you know, to watch Mr.Grabell teach the children the class.
-It's been amazing, I mean, **I'm just learning so much from just watching him.**
-**I'm so glad the classroom observations are a requirement for the education program.**
-I mean it's like the best thing ever to prepare you to be a good teacher.
-Well I'm glad to see you feel that way Mathew, you know, that's the goal.
-So, I've been reading over your observation notes, and I'm quite interested in what's going on, in particular, with the astronomy unit he's been teaching.
-The astronomy unit?
-It's seem that Mr.Grabell has mastered the **interdisciplinary** approach to teaching. The way we've been talking about **in class**.
-Oh, Ok, yeah. So like when he is teaching the astronomy, he didn't just teach them the name of the planets, he used it **as way to teach** mythology.
-Really, so **how did he do that?**
-Well, some of the student could already name the planets, but they didn't know that the name has any meaning, the stories behind them.
-So, he...
-He introduced Greek and Roman mythology as a way of explaining.
-Like you know, how like, the Jupiter is the biggest plannet, right, and how Jupiter was the name of the king of the gods in Roman mythology, right?
-So since Jupiter the planet, is the largest planet in the solar system. It's like the king of the planets, like Jupiter is the king of all the gods.
-Oh Mathew, that's a great example.
-Yeah, and each student chose a planet, and **then did research on it to write a report** and make a presentation.
-They went to the library to do the research, then they made presentations about the planet the chose.
-**So in one science unit, in which the forcus was astronomy, the students also learn about the literature of Greek and Roman mythology, used research skills in the library, wrote a repost, and practiced their oral presentation skills.**
-Exactly, he used this one topic to teach third-graders all that stuffs, how to use the book in the library, to write a report, and even how to speak in public.
-Plus they had a great time doing it.
-You know Mathew, this is just we've been talking in our class, I'm sure everyone can learn something from you experience.
-You know Mathew, I'd love for you to talk about this astronomy unit in class on Wednesday. 
-Really, um, because I don't really think I'll have any time to write my paper by then.
-Oh you won't have to write anything new just yet. For Wednesday, use your class observation notes and explain the things we discussed today.
-OK, that sounds all right. -->
-
 
 
 ## Vocabulary
@@ -1356,4 +1187,4 @@ OK, that sounds all right. -->
     2.  What are the enefits of organic versus inorganic foods?
 11. vice versa
     1.  The other way round.
-    2.  My phone serves me, and not vice versa.
+    2.  My phone serves me, and not vice versa. -->

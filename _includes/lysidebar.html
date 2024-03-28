@@ -1,0 +1,230 @@
+<!-- <script>
+    // 这一整块代码如果没被注释，就是显示部分目录，并且是按下面的sort那里排序，如果注释了就是显示全部的目录
+    document.addEventListener('DOMContentLoaded', function() {
+        // 定义要显示的目录名称列表
+        var displayedCategories = ["Efficiency", "Code Utils", "Literature"];
+
+        // 隐藏所有目录
+        document.querySelectorAll('#lysidebar .category').forEach(function(category) {
+            category.style.display = 'none';
+        });
+
+        // 根据 displayedCategories 数组显示指定的目录
+        displayedCategories.forEach(function(categoryName) {
+            document.querySelectorAll('#lysidebar .category').forEach(function(categoryElement) {
+                var categoryTitle = categoryElement.querySelector('a').textContent.trim();
+                if (categoryName === categoryTitle) {
+                    categoryElement.style.display = ''; // 使用 CSS 显示这个元素
+                }
+            });
+        });
+    });
+</script>
+
+
+这一块是显示所有目录的
+<div id="lysidebar">
+    <h2 class="panel-heading">Categories</h2>
+    <button id="collapseAll">Collapse All</button>
+    {% assign sorted_categories = site.categories | sort %}
+    {% for category in sorted_categories %}
+    <div class="category">
+        <a href="#">{{ category[0] }}</a>
+        <ul class="posts">
+            {% for post in category[1] %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</div> -->
+
+
+<!-- 显示部分目录，并且按我给出的顺序显示 -->
+<div id="lysidebar">
+    <div style="display: flex; justify-content: space-between;">
+        <h2 class="panel-heading" style="margin-right: 5px;">LyTopia Map</h2>
+        <button id="collapseAll"><i class="fa-solid fa-signs-post"></i></button>
+        <!-- <button id="collapseAll"><i class="fa-solid fa-water"></i></button> -->
+    </div>
+    <div style="display: flex; justify-content: space-evenly;">
+        <a href="{{site.baseurl}}/categories/" style="text-decoration: none;">
+            <button id="fullCategories" style="margin-right: 1.5px;"><i class="fa-solid fa-chess"></i></button>
+        </a>
+        <a href="{{site.baseurl}}/archives/" style="text-decoration: none;">
+            <button id="toArchives" style="margin-right: 1.5px;"><i class="fa-solid fa-scroll"></i></button>
+        </a>
+        <a href="{{site.baseurl}}/tags/" style="text-decoration: none;">
+            <button id="toTags" style="margin-right: 1.5px;"><i class="fa-solid fa-puzzle-piece"></i></button>
+        </a>
+        <a href="{{site.baseurl}}/about/" style="text-decoration: none;">
+            <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i></button>
+        </a>
+    </div>
+    <div id="lysidebar_content">
+        {% assign display_order = "Reinforcement Learning\\Multi-Agent Reinforcement Learning\\Economics & Game Theory\\Mathematics\\Robotics\\Psychology\\Code Utils\\Misc Toolbox\\Literature" | split: "\\" %}
+        {% for category_name in display_order %}
+            <!-- {% assign category_posts = site.categories[category_name] %} -->
+            <!-- 下面这个是把时间最早的放最前面 -->
+            {% assign category_posts = site.categories[category_name] | sort: 'date' %}
+            {% if category_posts %}
+            <div class="category">
+                <a href="#">+ {{ category_name }}</a>
+                <ul class="posts">
+                    {% for post in category_posts %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+<style>
+    ul.posts {
+        list-style-type: circle;
+    }
+
+    #lysidebar {
+        border: 0.5px dashed #b9b9b9; /* 添加边框 */
+        border-radius: 10px; /* 设置圆角 */
+        padding: 10px; /* 在边框内部添加一些内边距，使内容不会紧贴边框 */
+    }
+
+    #lysidebar_content{
+        max-height: 500px;
+        overflow-y: auto; /* 启用垂直滚动条 */
+    }
+
+    #lysidebar .category {
+        margin-bottom: 5px;
+    }
+
+    #lysidebar .category a {
+      cursor: pointer;
+      color: grey;
+      /* display: block; */
+    }
+
+    #lysidebar .category > a {
+    /* font-weight: bold;  */
+    /* font-size: large; */
+    /* text-align: center; */
+    margin: auto;
+}
+
+    #lysidebar .posts {
+      display: none;
+      padding-left: 30px;
+    }
+  
+    #lysidebar .posts a {
+      /* margin-bottom: 10px; */
+      display: block;
+      color: grey;
+    }
+
+    #collapseAll, #fullCategories, #toTags, #toArchives, #toAbout {
+        background-color: transparent;
+        color: grey;
+        border: none;
+        border-radius: 5px;
+        line-height: 1;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+</style>
+
+
+
+<script>
+    // 恢复目录的展开/折叠状态
+    document.querySelectorAll('#lysidebar .category > a').forEach(function (categoryLink, index) {
+        const postsDisplay = localStorage.getItem('postsDisplay' + index);
+        if (postsDisplay) {
+            categoryLink.nextElementSibling.style.display = postsDisplay;
+        }
+    });
+
+    document.querySelectorAll('#lysidebar .category > a').forEach(function (categoryLink, index) {
+        categoryLink.addEventListener('click', function () {
+            var posts = this.nextElementSibling;
+            if (posts.style.display === 'block') {
+                posts.style.display = 'none';
+                localStorage.setItem('postsDisplay' + index, 'none'); // 保存状态为折叠
+            } else {
+                // document.querySelectorAll('#lysidebar .posts').forEach(function (el, elIndex) {
+                //     el.style.display = 'none'; // 折叠其他目录
+                //     localStorage.setItem('postsDisplay' + elIndex, 'none'); // 更新存储状态
+                // });
+                posts.style.display = 'block';
+                localStorage.setItem('postsDisplay' + index, 'block'); // 保存状态为展开
+            }
+        });
+    });
+
+    // ====================================
+    // // 为折叠所有分类的按钮添加点击事件处理器
+    // document.getElementById('collapseAll').addEventListener('click', function() {
+    //     document.querySelectorAll('#lysidebar .posts').forEach(function(posts, index) {
+    //         posts.style.display = 'none'; // 折叠所有目录
+    //         localStorage.setItem('postsDisplay' + index, 'none'); // 更新存储状态
+    //     });
+    // });
+
+    document.getElementById('collapseAll').addEventListener('click', function() {
+        const postsElements = document.querySelectorAll('#lysidebar .posts');
+
+        // 检查是否至少有一个目录是展开的
+        const isAnyPostVisible = Array.from(postsElements).some(function(posts) {
+            return posts.style.display !== 'none';
+        });
+
+        // 根据目录是否展开来决定是折叠还是展开所有目录
+        postsElements.forEach(function(posts, index) {
+            if (isAnyPostVisible) {
+                // 如果当前至少有一个目录展开，则折叠所有目录
+                posts.style.display = 'none';
+                localStorage.setItem('postsDisplay' + index, 'none');
+            } else {
+                // 如果所有目录都已折叠，则展开所有目录
+                posts.style.display = 'block';
+                localStorage.setItem('postsDisplay' + index, 'block');
+            }
+        });
+    });
+
+
+
+    // ====================================
+    // 定义保存和恢复滚动位置的函数
+    function savelysidebar_contentScrollPosition() {
+        const lysidebar_content = document.getElementById('lysidebar_content');
+        if (lysidebar_content) {
+            const scrollPosition = lysidebar_content.scrollTop;
+            sessionStorage.setItem('lysidebar_contentScrollPosition', scrollPosition);
+        }
+    }
+
+    function restorelysidebar_contentScrollPosition() {
+        const lysidebar_content = document.getElementById('lysidebar_content');
+        const savedPosition = sessionStorage.getItem('lysidebar_contentScrollPosition');
+        if (lysidebar_content && savedPosition) {
+            lysidebar_content.scrollTop = parseInt(savedPosition, 10);
+        }
+    }
+
+    // 页面加载完成时恢复lysidebar_content的滚动位置
+    restorelysidebar_contentScrollPosition();
+
+    // 为lysidebar_content添加滚动事件监听器，保存滚动位置
+    const lysidebar_content = document.getElementById('lysidebar_content');
+    if (lysidebar_content) {
+        lysidebar_content.addEventListener('scroll', savelysidebar_contentScrollPosition);
+    }
+
+</script>

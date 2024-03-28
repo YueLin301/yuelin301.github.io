@@ -1,8 +1,8 @@
 ---
 title: Theoretical Computer Science (TCS)
 date: 2023-06-17 20:00:01 +0800
-categories: [Mathematics]
-tags: [Tech, Math, Theory, Complexity]
+categories: [Interdisciplinarity, Mathematics]
+tags: [Tech, Interdisciplinarity, Math, Theory, Complexity]
 math: True
 ---
 

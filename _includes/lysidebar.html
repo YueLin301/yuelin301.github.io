@@ -48,14 +48,17 @@
         <!-- <button id="collapseAll"><i class="fa-solid fa-water"></i></button> -->
     </div>
     <div style="display: flex; justify-content: space-evenly;">
+        <a href="{{site.baseurl}}/" style="text-decoration: none;">
+            <button id="toHome"><i class="fa-brands fa-fort-awesome"></i></button>
+        </a>
         <a href="{{site.baseurl}}/categories/" style="text-decoration: none;">
-            <button id="fullCategories" style="margin-right: 1.5px;"><i class="fa-solid fa-chess"></i></button>
+            <button id="fullCategories"><i class="fa-solid fa-chess"></i></button>
         </a>
         <a href="{{site.baseurl}}/archives/" style="text-decoration: none;">
-            <button id="toArchives" style="margin-right: 1.5px;"><i class="fa-solid fa-scroll"></i></button>
+            <button id="toArchives"><i class="fa-solid fa-scroll"></i></button>
         </a>
         <a href="{{site.baseurl}}/tags/" style="text-decoration: none;">
-            <button id="toTags" style="margin-right: 1.5px;"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <button id="toTags"><i class="fa-solid fa-puzzle-piece"></i></button>
         </a>
         <a href="{{site.baseurl}}/about/" style="text-decoration: none;">
             <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i></button>
@@ -91,11 +94,12 @@
         border: 0.5px dashed #b9b9b9; /* 添加边框 */
         border-radius: 10px; /* 设置圆角 */
         padding: 10px; /* 在边框内部添加一些内边距，使内容不会紧贴边框 */
+        overflow-x: auto;
     }
 
     #lysidebar_content{
         max-height: 500px;
-        overflow-y: auto; /* 启用垂直滚动条 */
+        overflow-y: auto;
     }
 
     #lysidebar .category {
@@ -126,7 +130,7 @@
       color: grey;
     }
 
-    #collapseAll, #fullCategories, #toTags, #toArchives, #toAbout {
+    #collapseAll, #toHome, #fullCategories, #toTags, #toArchives, #toAbout {
         background-color: transparent;
         color: grey;
         border: none;

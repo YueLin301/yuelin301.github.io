@@ -90,465 +90,28 @@ layout: compress
     {% include_cached search-loader.html %}
 
 
-    <!-- <script>
-      let lastTime = 0; // 上次掉落的时间
-      const interval = 100; // 控制掉落的最小时间间隔（毫秒）
-      
-      document.addEventListener('mousemove', function(e) {
-          const currentTime = Date.now();
-          if (currentTime - lastTime < interval) return; // 如果未到时间间隔，不触发掉落
-          lastTime = currentTime; // 更新上次掉落的时间
-      
-          // var emoji = ['🃏', '🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-          // var emoji = ['😅'];
-          // var emoji = ['🃏'];
-          // var emoji = ['⭐'];
-          var emoji = ['*'];
-          
-          var dropEmoji = function(x, y) {
-              var span = document.createElement('span');
-              span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-              span.style.position = 'absolute';
-
-              // var initialX = x
-              // var initialY = y
-              // var initialX = x + (Math.random() - 0.5) * 100; // 在鼠标附近的随机位置
-              // var initialY = y + (Math.random() - 0.5) * 100;
-              var initialX = x + (Math.random()) * 20; // 在鼠标附近的随机位置
-              var initialY = y
-
-              span.style.left = initialX + 'px';
-              span.style.top = initialY + 'px';
-              span.style.fontSize = '24px';
-              document.body.appendChild(span);
-      
-              var rotate = Math.random() * 200 - 100; // 随机旋转角度
-              var moveX = 100 * (Math.random() - 0.5); // 水平移动距离，向左或向右
-      
-              var animation = span.animate([
-                  {transform: `translate(0px, 0px) rotate(${rotate}deg)`, opacity: 1},
-                  {transform: `translate(${moveX}px, 100px) rotate(${rotate}deg)`, opacity: 0}
-              ], {
-                  duration: Math.random() * 500 + 300, // 随机持续时间
-                  iterations: 1
-              });
-      
-              animation.onfinish = function() {
-                  span.remove();
-              };
-          };
-      
-          dropEmoji(e.pageX, e.pageY);
-      });
-      </script> -->
-        
-      <!-- <script>
-        let mouseX = 0; // 初始化鼠标位置变量
-        let mouseY = 0;
-        
-        // 更新鼠标位置
-        document.addEventListener('mousemove', function(e) {
-            mouseX = e.pageX;
-            mouseY = e.pageY;
-        });
-        
-        const interval = 200; // 控制生成卡牌的时间间隔（毫秒）
-        
-        var emoji = ['🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-        
-        function dropEmoji(x, y) {
-            var span = document.createElement('span');
-            span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-            span.style.position = 'absolute';
-            var initialX = x + (Math.random() - 0.5) * 100; // 在鼠标附近的随机位置
-            var initialY = y + (Math.random() - 0.5) * 100;
-            span.style.left = initialX + 'px';
-            span.style.top = initialY + 'px';
-            span.style.fontSize = '15px';
-            document.body.appendChild(span);
-        
-            var rotate = Math.random() * 20 - 10; // 随机旋转角度
-            var moveX = 100 * (Math.random() - 0.5); // 水平移动距离，向左或向右
-        
-            var animation = span.animate([
-                {transform: `translate(0px, 0px) rotate(${rotate}deg)`, opacity: 1},
-                {transform: `translate(${moveX}px, 100px) rotate(${rotate}deg)`, opacity: 0}
-            ], {
-                duration: Math.random() * 500 + 500, // 随机持续时间
-                iterations: 1
-            });
-        
-            animation.onfinish = function() {
-                span.remove();
-            };
-        }
-        
-        // 定时触发卡牌生成
-        setInterval(function() {
-            dropEmoji(mouseX, mouseY);
-        }, interval);
-        </script> -->
-
-    <!-- <script>
-      let mouseX = 0; // 初始化鼠标位置变量
-      let mouseY = 0;
-      
-      // 更新鼠标位置
-      document.addEventListener('mousemove', function(e) {
-          mouseX = e.pageX;
-          mouseY = e.pageY;
-      });
-      
-      const interval = 200; // 控制生成卡牌的时间间隔（毫秒）
-      
-      var emoji = ['🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-      
-      function dropEmoji(x, y) {
-          var span = document.createElement('span');
-          span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-          span.style.position = 'absolute';
-          var initialX = x + (Math.random()) * 50; // 在鼠标附近的随机位置
-          var initialY = y + (Math.random()) * 50;
-          span.style.left = initialX + 'px';
-          span.style.top = initialY + 'px';
-          span.style.fontSize = '20px';
-          document.body.appendChild(span);
-      
-          var rotate = Math.random() * 20 - 10; // 随机旋转角度（垂直旋转）
-          var flip = Math.random() > 0.5 ? 180 : 360; // 随机翻转角度，决定卡牌翻转的程度
-          var moveX = 100 * (Math.random() - 0.5); // 水平移动距离，向左或向右
-      
-          var animation = span.animate([
-              {transform: `translate(0px, 0px) rotate(${rotate}deg) rotateY(0deg)`, opacity: 1},
-              {transform: `translate(${moveX}px, 100px) rotate(${rotate}deg) rotateY(${flip}deg)`, opacity: 0}
-          ], {
-              duration: Math.random() * 500 + 1000, // 随机持续时间
-              iterations: 1
-          });
-      
-          animation.onfinish = function() {
-              span.remove();
-          };
-      }
-      
-      // 定时触发卡牌生成
-      setInterval(function() {
-          dropEmoji(mouseX, mouseY);
-      }, interval);
-      </script> -->
-
-
-    <!-- <script>
-      let lastX = 0; // 上一次鼠标位置
-      let currentX = 0; // 当前鼠标位置
-      let mouseX = 0; // 用于生成卡牌的鼠标位置
-      let mouseY = 0;
-      
-      document.addEventListener('mousemove', function(e) {
-          currentX = e.pageX;
-          mouseY = e.pageY;
-          
-          // 根据鼠标移动方向调整生成卡牌的位置
-          if (currentX > lastX) {
-              // 鼠标向右移动，卡牌在鼠标左边生成
-              mouseX = e.pageX;
-          } else {
-              // 鼠标向左移动，卡牌在鼠标右边生成
-              mouseX = e.pageX;
-          }
-          lastX = e.pageX; // 更新上一次鼠标位置
-      
-          dropEmoji(mouseX, mouseY);
-      });
-      
-      var emoji = ['🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-      
-      function dropEmoji(x, y) {
-          var span = document.createElement('span');
-          span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-          span.style.position = 'absolute';
-          span.style.left = x + 'px';
-          span.style.top = y + 'px';
-          span.style.fontSize = '24px';
-          document.body.appendChild(span);
-      
-          var moveDirection = currentX > lastX ? 100 : -100; // 根据鼠标移动方向确定卡牌的水平移动方向和距离
-          var flipDirection = currentX > lastX ? 180 : -180; // 根据鼠标移动方向确定卡牌翻转方向
-      
-          var animation = span.animate([
-              {transform: `translate(0px, 0px) rotateY(0deg)`, opacity: 1},
-              {transform: `translate(${moveDirection}px, 100px) rotateY(${flipDirection}deg)`, opacity: 0}
-          ], {
-              duration: 1000, // 固定持续时间
-              iterations: 1
-          });
-      
-          animation.onfinish = function() {
-              span.remove();
-          };
-      }
-      </script> -->
-        
-    <!-- <script>
-      let lastTime = 0;
-      const interval = 100;
-      let lastX = 0; // 用于记录上一次鼠标的X位置
-    
-      document.addEventListener('mousemove', function(e) {
-          const currentTime = Date.now();
-          if (currentTime - lastTime < interval) return;
-          lastTime = currentTime;
-    
-          var emoji = ['🃏', '🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-          
-          var dropEmoji = function(x, y) {
-              var span = document.createElement('span');
-              span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-              span.style.position = 'absolute';
-              var initialX = x + (Math.random()) * 20; // 在鼠标附近的随机位置
-              var initialY = y;
-    
-              span.style.left = initialX + 'px';
-              span.style.top = initialY + 'px';
-              span.style.fontSize = '20px';
-              document.body.appendChild(span);
-      
-              var rotate = Math.random() * 360; // 全方位旋转角度
-              var flipDirection = Math.random() < 0.5 ? -1 : 1; // 随机翻转方向
-              var moveDirection = x > lastX ? 1 : -1; // 判断鼠标移动方向
-              var moveX = 100 * moveDirection + (Math.random() - 0.5) * 50; // 根据鼠标移动方向调整水平移动距离
-          
-              var animation = span.animate([
-                  {transform: `translate(0px, 0px) rotate(${rotate}deg) rotateY(0deg)`, opacity: 1},
-                  {transform: `translate(${moveX}px, 100px) rotate(${rotate}deg) rotateY(${flipDirection * 180}deg)`, opacity: 0}
-              ], {
-                  duration: Math.random() * 500 + 500, // 随机持续时间，使动画更自然
-                  iterations: 1
-              });
-      
-              animation.onfinish = function() {
-                  span.remove();
-              };
-          };
-    
-          dropEmoji(e.pageX, e.pageY);
-          lastX = e.pageX; // 更新上一次鼠标的X位置
-      });
-    </script> -->
-
-    <!-- <script>
-      let lastTime = 0;
-      const interval = 100;
-      let lastX = 0; // 用于记录上一次鼠标的X位置
-      let lastEventTime = Date.now(); // 上次事件发生的时间
-      let velocity = 0; // 鼠标移动速度
-    
-      document.addEventListener('mousemove', function(e) {
-          const currentTime = Date.now();
-          if (currentTime - lastTime < interval) return;
-          lastTime = currentTime;
-    
-          const timeDelta = currentTime - lastEventTime; // 时间差
-          const xDelta = e.pageX - lastX; // X轴位置差
-          velocity = xDelta / timeDelta; // 计算速度（像素/毫秒）
-    
-          var emoji = ['🃏', '🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-          
-          var dropEmoji = function(x, y) {
-              var span = document.createElement('span');
-              span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-              span.style.position = 'absolute';
-              var initialX = x;
-              var initialY = y;
-    
-              span.style.left = initialX + 'px';
-              span.style.top = initialY + 'px';
-              span.style.fontSize = '24px';
-              document.body.appendChild(span);
-      
-              var rotate = Math.random() * 360; // 全方位旋转角度
-              var moveX = velocity * 50; // 将速度转换为偏移量，乘以一个因子以调整效果显著性
-    
-              var animation = span.animate([
-                  {transform: `translate(0px, 0px) rotate(${rotate}deg)`, opacity: 1},
-                  {transform: `translate(${moveX}px, 100px) rotate(${rotate}deg)`, opacity: 0}
-              ], {
-                  duration: Math.random() * 500 + 500, // 随机持续时间，使动画更自然
-                  iterations: 1
-              });
-      
-              animation.onfinish = function() {
-                  span.remove();
-              };
-          };
-    
-          dropEmoji(e.pageX, e.pageY);
-          lastX = e.pageX; // 更新上一次鼠标的X位置
-          lastEventTime = currentTime; // 更新事件时间
-      });
-    </script> -->
-
   <!-- <script>
-    // 成功的1
     let lastTime = 0;
-    const interval = 10;
-    let lastX = 0; // 用于记录上一次鼠标的X位置
-    let lastEventTime = Date.now(); // 上次事件发生的时间
-    let velocity = 0; // 鼠标移动速度
+    const interval = 200;
+    let lastX = 0;
+    let lastEventTime = Date.now();
+    let velocity = 0;
   
     document.addEventListener('mousemove', function(e) {
         const currentTime = Date.now();
         if (currentTime - lastTime < interval) return;
         lastTime = currentTime;
   
-        const timeDelta = currentTime - lastEventTime; // 时间差
-        const xDelta = e.pageX - lastX; // X轴位置差
-        velocity = xDelta / timeDelta; // 计算速度（像素/毫秒）
+        const timeDelta = currentTime - lastEventTime; 
+        const xDelta = e.pageX - lastX;
+        velocity = xDelta / timeDelta;
   
-        // var emoji = ['🃏', '🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-        // var emoji = ['🃏'];
-        // var emoji = ['😅'];
-        // var emoji = ['⭐'];
-        // var emoji = ['*'];
-        var emoji = ['-'];
-        // var emoji = ['`'];
-        // var emoji = ['-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','🃏'];
-        // var emoji = ['HA'];
-        // var emoji = ['?'];
-        
-        var dropEmoji = function(x, y) {
-            var span = document.createElement('span');
-            span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-            span.style.position = 'absolute';
-            // var initialX = x + (Math.random()) * 25; // 在鼠标附近的随机位置
-            // var initialY = y + (Math.random()) * 25;
-            var initialX = x + 3;
-            var initialY = y + 3;
-  
-            span.style.left = initialX + 'px';
-            span.style.top = initialY + 'px';
-            span.style.fontSize = '24px';
-            document.body.appendChild(span);
-    
-            var rotate = Math.random() * 360; // 围绕Z轴的旋转角度
-            var flipY = Math.random() * 360; // 围绕Y轴的翻转角度
-            var moveX = velocity * 100; // 将速度转换为偏移量，乘以一个因子以调整效果显著性
-  
-            var animation = span.animate([
-                {transform: `translate(0px, 0px) rotateZ(${rotate}deg) rotateY(0deg)`, opacity: 1},
-                {transform: `translate(${moveX}px, 100px) rotateZ(${rotate}deg) rotateY(${flipY}deg)`, opacity: 0}
-            ], {
-                duration: Math.random() * 500 + 1000, // 随机持续时间，使动画更自然
-                iterations: 1
-            });
-    
-            animation.onfinish = function() {
-                span.remove();
-            };
-        };
-  
-        dropEmoji(e.pageX, e.pageY);
-        lastX = e.pageX; // 更新上一次鼠标的X位置
-        lastEventTime = currentTime; // 更新事件时间
-    });
-  </script> -->
-
-  <!-- <script>
-    // 成功的2，初始不旋转
-    let lastTime = 0;
-    const interval = 120;
-    let lastX = 0; // 用于记录上一次鼠标的X位置
-    let lastEventTime = Date.now(); // 上次事件发生的时间
-    let velocity = 0; // 鼠标移动速度
-  
-    document.addEventListener('mousemove', function(e) {
-        const currentTime = Date.now();
-        if (currentTime - lastTime < interval) return;
-        lastTime = currentTime;
-  
-        const timeDelta = currentTime - lastEventTime; // 时间差
-        const xDelta = e.pageX - lastX; // X轴位置差
-        velocity = xDelta / timeDelta; // 计算速度（像素/毫秒）
-  
-        // var emoji = ['🃏', '🂠', '🂡', '🂢', '🂣', '🂤', '🂥', '🂦', '🂧', '🂨', '🂩', '🂪', '🂫', '🂬', '🂭', '🂮', '🂱', '🂲', '🂳', '🂴', '🂵', '🂶', '🂷', '🂸', '🂹', '🂺', '🂻', '🂼', '🂽', '🂾'];
-        // var emoji = ['🃏'];
-        // var emoji = ['😅'];
-        // var emoji = ['⭐'];
-        // var emoji = ['*'];
-        // var emoji = ['-'];
-        // var emoji = ['`'];
-        // var emoji = ['-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','🃏'];
-        // var emoji = ['HA'];
-        // var emoji = ['Reply!', 'If You Please.'];
-        // var emoji = ['?'];
-        var emoji = ['hah', 'HA', 'ha'];
-        
-        var dropEmoji = function(x, y) {
-            var span = document.createElement('span');
-            span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
-            span.style.position = 'absolute';
-            // var initialX = x + (Math.random()) * 25; // 在鼠标附近的随机位置
-            // var initialY = y + (Math.random()) * 25;
-            var initialX = x + 3;
-            var initialY = y + 3;
-  
-            span.style.left = initialX + 'px';
-            span.style.top = initialY + 'px';
-            span.style.fontSize = '15px';
-            document.body.appendChild(span);
-    
-            var rotate = (Math.random() - 0.5) * 50; // 围绕Z轴的旋转角度
-            var flipY = (Math.random() - 0.5) * 100; // 围绕Y轴的翻转角度
-            var moveX = velocity * 100; // 将速度转换为偏移量，乘以一个因子以调整效果显著性
-  
-            var animation = span.animate([
-                {transform: `translate(0px, 0px) rotateZ(${rotate}deg) rotateY(0deg)`, opacity: 1},
-                {transform: `translate(${moveX}px, 100px) rotateZ(${rotate}deg) rotateY(${flipY}deg)`, opacity: 0}
-            ], {
-                duration: Math.random() * 500 + 1000, // 随机持续时间，使动画更自然
-                iterations: 1
-            });
-    
-            animation.onfinish = function() {
-                span.remove();
-            };
-        };
-  
-        dropEmoji(e.pageX, e.pageY);
-        lastX = e.pageX; // 更新上一次鼠标的X位置
-        lastEventTime = currentTime; // 更新事件时间
-    });
-  </script> -->
-
-  <script>
-    // 成功的3，往右上角飘
-    let lastTime = 0;
-    const interval = 70;
-    let lastX = 0; // 用于记录上一次鼠标的X位置
-    let lastEventTime = Date.now(); // 上次事件发生的时间
-    let velocity = 0; // 鼠标移动速度
-  
-    document.addEventListener('mousemove', function(e) {
-        const currentTime = Date.now();
-        if (currentTime - lastTime < interval) return;
-        lastTime = currentTime;
-  
-        const timeDelta = currentTime - lastEventTime; // 时间差
-        const xDelta = e.pageX - lastX; // X轴位置差
-        velocity = xDelta / timeDelta; // 计算速度（像素/毫秒）
-  
-        // var emoji = ['hah', 'HA', 'ha'];
         var emoji = ['HA'];
-        // var emoji = ['z', 'Z', 'zz', 'zzz'];
-        // var emoji = ['ha', 'hah'];
-        // var emoji = ['🦇'];
         
         var dropEmoji = function(x, y) {
             var span = document.createElement('span');
             span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
             span.style.position = 'absolute';
-            // var initialX = x + (Math.random()) * 25; // 在鼠标附近的随机位置
-            // var initialY = y + (Math.random()) * 25;
             var initialX = x + 30;
             var initialY = y - 30;
   
@@ -557,15 +120,15 @@ layout: compress
             span.style.fontSize = '12px';
             document.body.appendChild(span);
     
-            var rotate = (Math.random() - 0.5) * 70; // 围绕Z轴的旋转角度
-            var flipY = (Math.random() - 0.5) * 50; // 围绕Y轴的翻转角度
-            var moveX = velocity * 100 + 150; // 将速度转换为偏移量，乘以一个因子以调整效果显著性
+            var rotate = (Math.random() - 0.5) * 70;
+            var flipY = (Math.random() - 0.5) * 50;
+            var moveX = velocity * 100 + 150; 
   
             var animation = span.animate([
                 {transform: `translate(0px, 0px) rotateZ(${rotate}deg) rotateY(0deg)`, opacity: 1},
                 {transform: `translate(${moveX}px, -150px) rotateZ(${-rotate*2}deg) rotateY(${flipY}deg)`, opacity: 0}
             ], {
-                duration: Math.random() * 500 + 900, // 随机持续时间，使动画更自然
+                duration: Math.random() * 500 + 900, 
                 iterations: 1
             });
     
@@ -575,12 +138,10 @@ layout: compress
         };
   
         dropEmoji(e.pageX, e.pageY);
-        lastX = e.pageX; // 更新上一次鼠标的X位置
-        lastEventTime = currentTime; // 更新事件时间
+        lastX = e.pageX; 
+        lastEventTime = currentTime; 
     });
-  </script>
+  </script> -->
     
-    
-      
   </body>
 </html>

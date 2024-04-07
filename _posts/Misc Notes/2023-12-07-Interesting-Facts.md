@@ -25,3 +25,4 @@ math: True
 
 ## Psychology
 1. [INTJ vs INFJ](https://www.youtube.com/watch?v=HLGQ-sFCBZA)
+2. [胆小的人注定一事无成吗？ - 贰零的回答 - 知乎](https://www.zhihu.com/question/650320217/answer/3454303815)

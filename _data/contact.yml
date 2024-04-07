@@ -1,5 +1,13 @@
 #  The contact options.
 
+- type: contact
+  icon: "fa-solid fa-at"
+  url:  'https://yuelin301.github.io/about/#contact'
+
+# - type: public personal website
+#   icon: "fa-brands fa-fort-awesome"
+#   url:  'https://yuelin301.github.io/'
+
 - type: github
   icon: "fab fa-github"
 
@@ -10,9 +18,9 @@
   icon: "fas fa-graduation-cap"
   url:  'https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl'
 
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+# - type: email
+#   icon: "fas fa-envelope"
+#   noblank: true # open link in current tab
 
 # - type: rss
 #   icon: "fas fa-rss"

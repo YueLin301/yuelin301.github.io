@@ -2,7 +2,7 @@
 title: Markdown Syntax
 date: 2023-04-03 15:48:44 +0800
 categories: [Efficiency, Misc Toolbox]
-tags: [Tech, Efficiency, Toolbox]     # TAG names should always be lowercase
+tags: [Tech, Efficiency, Toolbox]
 math: True
 ---
 
@@ -11,7 +11,15 @@ math: True
 
 ---
 
-## 折叠
+## 文字样式
+
+### 下划线
+
+```html
+这是<u>带下划线的文本</u>
+```
+
+### 折叠
 
 <details>
 <summary>点击展开/收起</summary>
@@ -20,16 +28,25 @@ math: True
 
 </details>
 
-## 删除
+### 删除
 
 ~~删除~~
 ```
 ~~删除~~
 ```
 
-## Spoiler Prevention
+### Spoiler Prevention
 
 <span style="color: transparent; background-color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='transparent'">Have a good day, mate!</span>
+
+
+### 斜体和加粗
+```
+*Italian*
+**Bold**
+```
+
+
 
 ## site.baseurl Link
 ```
@@ -122,17 +139,13 @@ The indentation determines the structure, and the choice of `*` or `-` or `+` is
 ---
 
 ## Description
+
+Sun
+: the star around which the earth orbits
+
 ```
 Sun
 : the star around which the earth orbits
-```
-
----
-
-## Emphasis
-```
-*Italian*
-**Bold**
 ```
 
 ---

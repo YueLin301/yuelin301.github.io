@@ -11,13 +11,6 @@ math: True
 
 ---
 
-## Python Profile
-- Used to find performance bottlenecks.
-- Can be easily done by clicking the button in the upper right corner, if you are using `PyCharm (Professional Edition)`.
-
-> Check this [website](https://realpython.com/python-profiling/).
-{: .prompt-info }
-
 ## Tmux
 太久没连服务器连这个怎么用都快忘了...不要想太复杂的操作，我用这个的原因就只有两个，第一个原因是用这个在服务器上运行python文件后，我再断开服务器的连接，这个还能在后台跑；第二个原因是，可以只用ssh连服务器一次就可以用tmux来用多个shell，比如同时跑两个python文件，这个应噶就是终端复用的意思
 
@@ -143,56 +136,6 @@ conda activate rlbasic
 (... in a terminal)
 - GPU: `nvidia-smi`
 - CPU: `top`
-
-## Github
-
-### Create a repo
-1. Click the green button `New` on the GitHub repo website.
-2. Do **not** check the `Add a README file`.
-3. Copy the link with the `.git` extension.
-4. Create a directory locally and enter it in a terminal.
-5. `git init`
-6. `git remote add origin [xxx.git]`
-
-- The content inside `[]` is a variable.
-- The `origin` is a default name that refers to the original location (i.e., the remote repository's URL) from which you cloned the repository. When you use the `git clone [URL]` command to clone a repository, Git automatically names the remote repository's URL as `origin`.
-
-### Lazy commit
-
-Create a `snippet` in the software `Termius`:
-
-```bash
-git add .
-git commit -m "[commit_info]"
-git push origin [branch_name]
-```
-
-Then enter your `github name` and your `git temporary token`.
-
-### Download
-1. Create a new terminal at the folder where you want to download the repo. The downloaded repo will be a subfolder, and its contents are what you see on the webpage.
-2. `git clone [repo_URL(xxx.git)]` (Download.) 
-3. Enter the subfolder.
-
-The `git clone` will create a subfolder (named after the repo) in your current folder.
-
-### Branch
-
-- `git branch -a` (List all the braches.)
-- `git checkout [branch_name]` (Switch to a branch.) 
-- `git checkout -b [branch_name]` (Create a branch.)
-
-### Get updated
-
-#### Way 1
-1. `git fetch origin` (Retrieve the changes from all branches.)
-2. `git merge origin/[remote_branch_name] [local_branch_name]`
-
-
-#### Way 2
-`pull` = `fetch` + `merge`
-
-`git pull origin [remote_branch_name]` (Update the code in your current local branch.)
 
 
 ## Random
@@ -408,143 +351,12 @@ if __name__ == '__main__':
     print('All done.')
 ```
 
-## print
-
-### Separator line
-```python
-import shutil
-
-terminal_columns = shutil.get_terminal_size().columns
-print('=' * terminal_columns)
-```
-
 
 ## Code Visualization Tools
 
 TODO
 
 [Sourcetrail](https://github.com/CoatiSoftware/Sourcetrail)
-
-## ConfigDict
-
-### Source
-
-`configdict.py`
-
-```python
-# https://github.com/google-research/exoplanet-ml/blob/master/exoplanet-ml/tf_util/configdict.py
-# Copyright 2018 The Exoplanet ML Authors.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-# 1/8/2020 - edited for Python 3
-
-"""Configuration container for TensorFlow models.
-A ConfigDict is simply a dict whose values can be accessed via both dot syntax
-(config.key) and dict syntax (config['key']).
-"""
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
-
-def _convert_sub_configs(value):
-    if isinstance(value, dict):
-        return ConfigDict(value)
-
-    if isinstance(value, list):
-        return [_convert_sub_configs(subvalue) for subvalue in value]
-
-    return value
-
-
-class ConfigDict(dict):
-    """Configuration container class."""
-
-    def __init__(self, initial_dictionary=None):
-        """Creates an instance of ConfigDict.
-        Args:
-          initial_dictionary: Optional dictionary or ConfigDict containing initial
-          parameters.
-        """
-        if initial_dictionary:
-            for field, value in initial_dictionary.items():
-                initial_dictionary[field] = _convert_sub_configs(value)
-            super().__init__(initial_dictionary)
-        else:
-            super().__init__()
-
-    def __setattr__(self, attribute, value):
-        self[attribute] = _convert_sub_configs(value)
-
-    def __getattr__(self, attribute):
-        try:
-            return self[attribute]
-        except KeyError as e:
-            raise AttributeError(e)
-
-    def __delattr__(self, attribute):
-        try:
-            del self[attribute]
-        except KeyError as e:
-            raise AttributeError(e)
-
-    def __setitem__(self, key, value):
-        super().__setitem__(key, _convert_sub_configs(value))
-```
-
-### Example
-
-```python
-from util_configdict import ConfigDict
-
-config = ConfigDict()
-
-config.main = ConfigDict()
-config.main.exp_name = 'exp1a_aligned_honest_map3'
-
-# ==================================================
-config.env = ConfigDict()
-config.env.map_height = 3
-config.env.map_width = 3
-config.env.max_step = 50
-
-# ==================================================
-config.train = ConfigDict()
-config.train.n_episodes = 200000
-config.train.period = 500
-
-if __name__ == '__main__':
-    print(f"config: {config}")
-    print(f"type(config): {type(config)}")
-    print(f"config.env: {config.env}")
-
-    print(f"config.env.max_step: {config.env.max_step}")
-    print(f"config.env['max_step']: {config.env['max_step']}")
-    print(f"config['env']['max_step']: {config['env']['max_step']}")
-    print(f"config['env'].max_step.: {config['env'].max_step}")
-```
-
-```
-config: {'main': {'exp_name': 'exp1a_aligned_honest_map3'}, 'env': {'map_height': 3, 'map_width': 3, 'max_step': 50}, 'train': {'n_episodes': 200000, 'period': 500}}
-type(config): <class 'util_configdict.ConfigDict'>
-config.env: {'map_height': 3, 'map_width': 3, 'max_step': 50}
-config.env.max_step: 50
-config.env['max_step']: 50
-config['env']['max_step']: 50
-config['env'].max_step.: 50
-```
 
 ## Python Type
 

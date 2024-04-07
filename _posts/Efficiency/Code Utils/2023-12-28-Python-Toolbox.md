@@ -9,7 +9,6 @@ math: True
 > This post was completed with the assistance of ChatGPT-4.
 {: .prompt-info }
 
-
 ## Inheritance
 
 Inheritance allows a class (known as a child class) to inherit attributes and methods from another class (known as a parent class). This leads to code reusability and a hierarchical organization of classes.
@@ -412,8 +411,264 @@ sorted_data = sorted(data, key=lambda x: x['age'])
 print(sorted_data)  # Output: list sorted by the 'age' key in ascending order
 ```
 
-### String Tricks
+## Print Tricks
+
+### Separator
 
 ```python
+import os
 
+def print_separator(separator="="):
+    size = os.get_terminal_size()
+    width = size.columns
+    print(separator * width)
 ```
+
+### Print Clear
+
+```python
+import sys
+import time
+
+def overwrite_stdout(lines=1):
+    sys.stdout.write(f"\033[{lines}A")  # 向上移动光标`lines`行
+    sys.stdout.write("\033[K")  # 清除光标所在行
+
+for i in range(10):
+    print(f"i: {i}")
+    time.sleep(1)
+    if i < 9:  # 防止最后一次迭代也清除
+        overwrite_stdout()
+```
+
+```python
+import time
+
+for i in range(10):
+    print("\033c", end="")  # 清除屏幕
+    print(f"i: {i}")  # 打印新内容
+    time.sleep(1)
+```
+
+### Progress Bar
+
+```python
+import sys
+def overwrite_stdout(lines=1):
+    sys.stdout.write(f"\033[{lines}A")  # 向上移动光标`lines`行
+    sys.stdout.write("\033[K")  # 清除光标所在行
+
+if __name__ == "__main__":
+    import time
+    for i in range(10):
+        print(f"i: {i}")
+        time.sleep(1)
+        if i < 9:  # 防止最后一次迭代也清除
+            overwrite_stdout()
+```
+
+```python
+# 打印消息而不干扰进度条；之前打印的消息不会被清除
+from tqdm import tqdm
+import time
+
+for i in tqdm(range(10)):
+    time.sleep(0.1)
+    tqdm.write(f"当前迭代：{i}")  
+```
+## Running Time
+
+### time
+
+```python
+import time
+
+def some_function():
+    time.sleep(1)
+
+start_time = time.time()
+some_function()
+end_time = time.time()
+
+elapsed_time = end_time - start_time
+print(f"函数运行耗时：{elapsed_time}秒")
+```
+
+### Python Profile
+- Used to find performance bottlenecks.
+- Can be easily done by clicking the button in the upper right corner, if you are using `PyCharm (Professional Edition)`.
+
+> Check this [website](https://realpython.com/python-profiling/).
+{: .prompt-info }
+
+
+## Package Release
+
+> Official Guide: [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+{: .prompt-info }
+
+### Quick Guide
+
+把自己的代码变成可以通过终端安装的库，主要涉及以下几个步骤：
+
+1. **整理代码结构**：首先，需要将你的代码组织成一个清晰的结构。通常情况下，一个Python库的目录结构大致如下：
+
+   ```
+   your_package_name/
+   ├─ your_package_name/
+   │  ├─ __init__.py
+   │  ├─ module1.py
+   │  └─ module2.py
+   ├─ tests/
+   ├─ setup.py
+   └─ README.md
+   ```
+
+   其中，`your_package_name/`文件夹内部包含了你的库文件，`__init__.py`文件标识这个文件夹是一个Python包。`setup.py`是安装、分发、打包你的库的脚本。
+
+2. **编写`setup.py`文件**：`setup.py`是一个非常关键的文件，它包含了关于你的包的元数据和安装依赖等信息。一个基本的`setup.py`文件看起来像这样：
+
+   ```python
+   from setuptools import setup, find_packages
+
+   setup(
+       name="your_package_name",
+       version="0.1",
+       packages=find_packages(),
+       install_requires=[
+           # 你的包依赖的其他包
+       ],
+       # 其他元数据
+   )
+   ```
+
+3. **打包**：在你的包的根目录下运行以下命令，这会生成一个分发包，通常是`.whl`文件和/或一个`.tar.gz`文件。确保你已经安装了`wheel`包(`pip install wheel`)。
+
+   ```
+   python setup.py sdist bdist_wheel
+   ```
+
+4. **发布到PyPI**：首先需要在[PyPI](https://pypi.org/)注册一个账号，然后安装`twine`（`pip install twine`），最后使用以下命令上传你的包：
+
+   ```
+   twine upload dist/*
+   ```
+
+5. **安装测试**：一旦你的包被成功上传到PyPI，你就可以使用`pip`来安装它了，就像安装其他任何包一样：
+
+   ```
+   pip install your_package_name
+   ```
+
+这就是将代码变成可通过终端安装的库的基本步骤。建议在打包和发布前仔细阅读Python官方文档关于[打包和发布项目](https://packaging.python.org/tutorials/packaging-projects/)的指南，以确保遵循最佳实践。
+
+### 编写`setup.py`文件
+
+在Python中，`setup.py`是一个构建和分发Python包的脚本。它描述了你的项目的元数据，比如包的名称、版本、作者等信息，以及如何安装和打包的指令。这里提供一个更详细的`setup.py`示例：
+
+```python
+from setuptools import setup, find_packages
+
+setup(
+    name                          = "LyPythonToolbox",                              # 包名
+    version                       = "0.1.2",                                        # 版本号
+    author                        = "Yue Lin",                                      # 作者名字
+    author_email                  = "linyue3h1@gmail.com",                          # 作者邮箱
+    description                   = "Ly's personal python toolbox.",                # 简短描述
+    long_description              = open("README.md").read(),                       # 长描述，通常是README文件
+    long_description_content_type = "text/markdown",                                # 长描述内容的格式，这里为Markdown
+    url                           = "https://github.com/YueLin301/LyPythonToolbox", # 项目的URL，通常是GitHub的URL
+    packages                      = find_packages(where='src'),
+    package_dir                   = {'': 'src'},
+    install_requires              = [
+        # 'torch>=1.7.1',  # 表示安装torch时，版本需要1.7.1或更高
+    ],
+    classifiers=[
+        "Programming Language :: Python :: 3",  # 3.x
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",  # suitable for any OS.
+    ],
+)
+```
+
+### 打包命令
+
+打包命令主要有两个步骤，首先是生成分发包，其次是生成wheel包。
+
+1. **生成分发包** (`sdist`)：这一步会创建一个源代码包，通常是一个`.tar.gz`文件。使用以下命令：
+
+   ```
+   python setup.py sdist
+   ```
+
+2. **生成wheel包** (`bdist_wheel`)：`wheel`是Python的二进制包格式，相比源代码包，它安装速度更快。在运行此命令之前，确保你已经安装了`wheel`包。如果没有安装，可以通过`pip install wheel`进行安装。生成`wheel`包的命令如下：
+
+   ```
+   python setup.py bdist_wheel
+   ```
+
+`wheel`是Python的一个包格式，是一种用于Python包分发的二进制包格式，扩展名为`.whl`。它的目的是替代旧的`.egg`格式，解决一些存在的问题，并提高包的安装速度。通过使用`wheel`格式，可以使得Python包的安装更加快速、高效。
+
+
+### 编写和使用
+
+如果你的项目`LyPythonToolbox`中有两个模块文件，并且每个模块文件中都包含一个函数，你可以按照下面的方式来组织和使用它们。假设你有两个模块文件，`module1.py`和`module2.py`，每个文件中都定义了一个函数。
+
+1. **项目结构调整**：
+
+   ```
+   LyPythonToolbox/
+   ├── LyPythonToolbox/
+   │   ├── __init__.py
+   │   ├── module1.py
+   │   └── module2.py
+   ├── tests/
+   ├── setup.py
+   └── README.md
+   ```
+
+2. **编写函数**：
+
+   在`module1.py`中：
+
+   ```python
+   # LyPythonToolbox/LyPythonToolbox/module1.py
+
+   def function1():
+       print("This is function1 from module1.")
+   ```
+
+   在`module2.py`中：
+
+   ```python
+   # LyPythonToolbox/LyPythonToolbox/module2.py
+
+   def function2():
+       print("This is function2 from module2.")
+   ```
+
+3. **在`__init__.py`中导入函数**：
+
+   为了使这些函数能够被包的用户轻松导入，你应该在`__init__.py`文件中导入它们：
+
+   ```python
+   # LyPythonToolbox/LyPythonToolbox/__init__.py
+
+   from .module1 import function1
+   from .module2 import function2
+   ```
+
+   这样做允许用户直接从你的包名导入这些函数，而不需要指定模块名。
+
+按照前面讨论的步骤，使用`wheel`和`twine`打包并发布你的包到PyPI。
+
+安装了`LyPythonToolbox`包之后，用户可以很容易地导入并使用这两个函数：
+
+```python
+from LyPythonToolbox import function1, function2
+
+function1()  # 打印: This is function1 from module1.
+function2()  # 打印: This is function2 from module2.
+```
+
+这就是如何在你的Python包中包含多个模块和函数，以及如何使它们可以被包的用户导入和使用。通过这种方式，你可以组织复杂的包结构，使得功能模块化，便于管理和使用。

@@ -7,6 +7,9 @@ math: True
 pin: True
 ---
 
+
+> It is not from the benevolence of the butcher, the brewer, or the baker, that we expect our dinner, but from their regard to their own interest. We address ourselves, not to their humanity but to their self-love, and never talk to them of our own necessities but of their advantages. 
+> — Adam Smith, The Wealth of Nations.
  
 ## What is Information Design?
 

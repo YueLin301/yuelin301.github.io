@@ -2,7 +2,7 @@
 title: Thoughts on "The Last of Us 2"
 date: 2023-09-30 09:40:00 +0800
 categories: [Literature]
-tags: [Life, Literature, Video Game]
+tags: [Life, Literature, Game]
 math: True
 ---
 

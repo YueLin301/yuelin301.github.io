@@ -1,7 +1,7 @@
 <!-- The Side Bar -->
 <!-- <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end"> -->
   <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column">
-    <div class="d-flex flex-column align-items-end flex-grow-1">
+    <!-- <div class="d-flex flex-column align-items-end flex-grow-1"> -->
 
       <header class="profile-wrapper" style="margin-top: 3rem; margin-bottom: 0;">
         <a href="{{site.baseurl}}/" id="avatar" class="rounded-circle" style="margin-left: 0;">
@@ -34,54 +34,102 @@
         <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p> -->
       </header>
 
-      <div id="lysidebar" class="profile-wrapper" style="margin-top: 5px;">
-        <div style="display: flex; justify-content: space-evenly;">
-          <a href="https://yuelin301.github.io/" style="text-decoration: none;" title="Home">
-            <button id="toHome"><i class="fa-brands fa-fort-awesome"></i></button>
-          </a>
-          <a href="{{site.baseurl}}/tech/" style="text-decoration: none;" title="Technology">
-            <button id="toAbout"><i class="fa-solid fa-wand-sparkles"></i></button>
-          </a>
-          <a href="{{site.baseurl}}/life/" style="text-decoration: none;" title="Life">
-            <button id="toAbout"><i class="fa-solid fa-broom"></i></button>
-          </a>
-          <button id="collapseAll"><i class="fa-regular fa-map"></i></button>
-          
-        </div>
 
-        <div style="display: flex; justify-content: space-evenly;">
-          <a href="{{site.baseurl}}/categories/" style="text-decoration: none;" title="Categories">
-              <button id="fullCategories"><i class="fa-solid fa-chess"></i></button>
+      <div class="nav-grid">
+        <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+          <a href="{{ '/' | relative_url }}" class="nav-link">
+            <i class="fa-brands fa-fort-awesome"></i>
+            <!-- <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span> -->
           </a>
-          <a href="{{site.baseurl}}/archives/" style="text-decoration: none;" title="Archives">
-              <button id="toArchives"><i class="fa-solid fa-scroll"></i></button>
+        </li>
+        {% for tab in site.tabs %}
+            <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+              <a href="{{ tab.url | relative_url }}" class="nav-link">
+                <i class="fa-fw {{ tab.icon }}"></i>
+                <!-- {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %} -->
+                <!-- <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span> -->
+              </a>
+            </li>
+          <!-- .nav-item -->
+        {% endfor %}
+        <li class="nav-item">
+          <a class="nav-link">
+            <button id="collapseAll"><i class="fa-solid fa-expand"></i></button>
           </a>
-          <a href="{{site.baseurl}}/tags/" style="text-decoration: none;" title="Tags">
-              <button id="toTags"><i class="fa-solid fa-puzzle-piece"></i></button>
-          </a>
-          <a href="{{site.baseurl}}/about/" style="text-decoration: none;" title="About Me">
-            <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i></button>
-          </a>
-        </div>
+        </li>
+      </div>
+      <!-- .nav-grids -->
 
-        <div id="lysidebar_content" style="margin-top: 5px;">
-            {% assign display_order = "Reinforcement Learning\\Multi-Agent Reinforcement Learning\\Machine Learning Basics\\Economics & Game Theory\\Mathematics\\Robotics\\Psychology\\Code Utils\\Misc Toolbox\\Literature\\Entertainment" | split: "\\" %}
-            {% for category_name in display_order %}
-                <!-- {% assign category_posts = site.categories[category_name] %} -->
-                <!-- 下面这个是把时间最早的放最前面 -->
-                {% assign category_posts = site.categories[category_name] | sort: 'date' %}
-                {% if category_posts %}
-                <div class="category">
-                    <a href="#">+ {{ category_name }}</a>
-                    <ul class="posts">
-                        {% for post in category_posts %}
-                        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
+      <div class="nav-category"  id="lysidebar_content">
+        {% assign sort_categories = site.categories | sort %}
+        {% for category in sort_categories %}
+          {% assign category_name = category | first %}
+          {% assign posts_of_category = category | last %}
+          {% assign first_post = posts_of_category | first %}
+
+          {% if category_name == first_post.categories[0] %}
+            {% assign sub_categories = '' | split: '' %}
+
+            {% for post in posts_of_category %}
+              {% assign second_category = post.categories[1] %}
+              {% if second_category %}
+                {% unless sub_categories contains second_category %}
+                  {% assign sub_categories = sub_categories | push: second_category %}
+                {% endunless %}
+              {% endif %}
             {% endfor %}
-        </div>
+
+            {% assign sub_categories = sub_categories | sort %}
+            {% assign sub_categories_size = sub_categories | size %}
+            <!-- get sub-category info -->
+
+            
+            <div class="category-whole">
+                {% capture _category_url %}/categories/{{ category_name | slugify | url_encode }}/{% endcapture %}
+                <a class="category" href="{{ _category_url | relative_url }}">
+                  {{ category_name }}
+                </a >
+                <!-- display main-category -->
+
+                {% if sub_categories_size > 0 %}
+                  {% for sub_category in sub_categories %}
+
+                      <div class="sub-category">
+                        {% capture _sub_ctg_url %}/categories/{{ sub_category | slugify | url_encode }}/{% endcapture %}
+                        <i class="toggle-icon fas fa-angle-down" data-target="posts-{{ sub_category | slugify }}"></i>
+                        <a class="sub-category-link" href="{{ _sub_ctg_url | relative_url }}" class="mx-2">{{ sub_category }}</a>
+                        <!-- display sub-category  -->
+
+                        {% assign posts_under_subcate = '' | split: '' %}
+
+                        {% for post in posts_of_category %}
+                          {% if post.categories[1] == sub_category %}
+                            {% assign posts_under_subcate = posts_under_subcate | push: post %}
+                          {% endif %}
+                        {% endfor %}
+
+                        {% assign posts_size = posts_under_subcate | size %}
+                        {% if posts_size > 0 %}
+                            <div class="posts" id="posts-{{ sub_category | slugify }}">
+                                {% for post in posts_under_subcate %}
+                                    <li><a href="{{ post.url }}"><b>|</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post.title }}</a ></li>
+                                {% endfor %}
+                            </div>
+                          <!-- display posts  -->
+                        {% endif %}
+
+                      </div>
+                      <!-- posts in sub-categories -->
+
+                  {% endfor %}
+                {% endif %}
+                <!-- sub-categories -->
+
+            </div>
+            
+
+          {% endif %}
+        {% endfor %}
       </div>
   
       <!-- <div class="profile-wrapper" style="margin-top: 0;">
@@ -128,7 +176,7 @@
         {% endif %}
         {% endfor %}
       </div>
-    </div>
+    <!-- </div> -->
     <!-- .sidebar-bottom -->
   </aside>
   <!-- #sidebar -->
@@ -207,44 +255,41 @@
 
 
 <script>
-  document.querySelectorAll('#lysidebar .category > a').forEach(function (categoryLink, index) {
-      const postsDisplay = localStorage.getItem('postsDisplay' + index);
-      if (postsDisplay) {
-          categoryLink.nextElementSibling.style.display = postsDisplay;
-      }
+  document.querySelectorAll('.toggle-icon').forEach(function(icon) {
+    var targetId = icon.getAttribute('data-target');
+    var target = document.getElementById(targetId);
+
+    var isVisible = localStorage.getItem('toggle_' + targetId) === 'true';
+    target.style.display = isVisible ? 'block' : 'none';
+    icon.classList.toggle('fa-angle-up', isVisible);
+    icon.classList.toggle('fa-angle-down', !isVisible);
+
+    icon.addEventListener('click', function() {
+      var isCurrentlyVisible = target.style.display !== 'none';
+      target.style.display = isCurrentlyVisible ? 'none' : 'block';
+      icon.classList.toggle('fa-angle-up', !isCurrentlyVisible);
+      icon.classList.toggle('fa-angle-down', isCurrentlyVisible);
+      localStorage.setItem('toggle_' + targetId, !isCurrentlyVisible);
+    });
   });
 
-  document.querySelectorAll('#lysidebar .category > a').forEach(function (categoryLink, index) {
-      categoryLink.addEventListener('click', function () {
-          var posts = this.nextElementSibling;
-          if (posts.style.display === 'block') {
-              posts.style.display = 'none';
-              localStorage.setItem('postsDisplay' + index, 'none');
-          } else {
-              posts.style.display = 'block';
-              localStorage.setItem('postsDisplay' + index, 'block');
-          }
-      });
-  });
+document.getElementById('collapseAll').addEventListener('click', function() {
+    var posts = document.querySelectorAll('.posts');
+    var icons = document.querySelectorAll('.toggle-icon');
+    var isVisible = Array.from(posts).some(post => post.style.display === 'block' || post.style.display === '');
 
+    posts.forEach(post => {
+        post.style.display = isVisible ? 'none' : 'block';
+        localStorage.setItem('toggle_' + post.id, !isVisible);
+    });
 
+    icons.forEach(icon => {
+        icon.className = isVisible ? 'toggle-icon fas fa-angle-down' : 'toggle-icon fas fa-angle-up';
+    });
 
-
-  document.getElementById('collapseAll').addEventListener('click', function() {
-      const postsElements = document.querySelectorAll('#lysidebar .posts');
-      const isAnyPostVisible = Array.from(postsElements).some(function(posts) {
-          return posts.style.display !== 'none';
-      });
-      postsElements.forEach(function(posts, index) {
-          if (isAnyPostVisible) {
-              posts.style.display = 'none';
-              localStorage.setItem('postsDisplay' + index, 'none');
-          } else {
-              posts.style.display = 'block';
-              localStorage.setItem('postsDisplay' + index, 'block');
-          }
-      });
-  });
+    var buttonIcon = document.getElementById('collapseAll').querySelector('i');
+    buttonIcon.className = isVisible ? 'fa-solid fa-expand' : 'fa-solid fa-compress';
+});
 
 
 
@@ -271,4 +316,18 @@
       lysidebar_content.addEventListener('scroll', savelysidebar_contentScrollPosition);
   }
 
+  function updateCollapseAllIcon() {
+      var posts = document.querySelectorAll('.posts');
+      var collapseAllIcon = document.getElementById('collapseAll').querySelector('i');
+
+      var allCollapsed = Array.from(posts).every(post => post.style.display === 'none');
+      if (allCollapsed) {
+          collapseAllIcon.className = 'fa-solid fa-expand';
+      } else {
+          collapseAllIcon.className = 'fa-solid fa-compress';
+      }
+  }
+
+  updateCollapseAllIcon();
+  
 </script>

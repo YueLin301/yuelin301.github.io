@@ -1,8 +1,8 @@
 ---
 title: The "Meaning" of Life?
 date: 2024-01-01 09:00:00 +0800
-categories: [Literature]
-tags: [Life, Literature, Philosophy]
+categories: [Pastimes, Literature]
+tags: [Life, Pastimes, Literature, Philosophy]
 math: True
 ---
 

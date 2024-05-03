@@ -1,0 +1,274 @@
+<!-- The Side Bar -->
+<!-- <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end"> -->
+  <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column">
+    <div class="d-flex flex-column align-items-end flex-grow-1">
+
+      <header class="profile-wrapper" style="margin-top: 3rem; margin-bottom: 0;">
+        <a href="{{site.baseurl}}/" id="avatar" class="rounded-circle" style="margin-left: 0;">
+          {% if site.avatar != empty and site.avatar %}
+          {% capture avatar_url %}
+          {% if site.avatar contains '://' %}
+          {{ site.avatar }}
+          {% elsif site.img_cdn != empty and site.img_cdn %}
+          {{ site.avatar | prepend: site.img_cdn }}
+          {% else %}
+          {{ site.avatar | relative_url }}
+          {% endif %}
+          {% endcapture %}
+          <div style="text-align: center;">
+            <img src="{{ avatar_url | strip }}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+          </div>
+          {% endif %}
+        </a>
+
+        <p class="site-subtitle fst-bold" style="font-size:20px; margin-top: -3rem; margin-left: 7rem;">
+          <a href="{{site.baseurl}}/about/"  title="About Me" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+            <b>Yue Lin</b>
+            <!-- <button id="toHome"><i class="fa-brands fa-fort-awesome"></i></button> -->
+          </a>
+        </p>
+  
+        <!-- <h1 class="site-title">
+          <a href="{{site.baseurl}}/about">{{ site.title }}</a>
+        </h1>
+        <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p> -->
+      </header>
+
+      <div id="lysidebar" class="profile-wrapper" style="margin-top: 5px;">
+        <div style="display: flex; justify-content: space-evenly;">
+          <a href="https://yuelin301.github.io/" style="text-decoration: none;" title="Home">
+            <button id="toHome"><i class="fa-brands fa-fort-awesome"></i></button>
+          </a>
+          <a href="{{site.baseurl}}/tech/" style="text-decoration: none;" title="Technology">
+            <button id="toAbout"><i class="fa-solid fa-wand-sparkles"></i></button>
+          </a>
+          <a href="{{site.baseurl}}/life/" style="text-decoration: none;" title="Life">
+            <button id="toAbout"><i class="fa-solid fa-broom"></i></button>
+          </a>
+          <button id="collapseAll"><i class="fa-regular fa-map"></i></button>
+          
+        </div>
+
+        <div style="display: flex; justify-content: space-evenly;">
+          <a href="{{site.baseurl}}/categories/" style="text-decoration: none;" title="Categories">
+              <button id="fullCategories"><i class="fa-solid fa-chess"></i></button>
+          </a>
+          <a href="{{site.baseurl}}/archives/" style="text-decoration: none;" title="Archives">
+              <button id="toArchives"><i class="fa-solid fa-scroll"></i></button>
+          </a>
+          <a href="{{site.baseurl}}/tags/" style="text-decoration: none;" title="Tags">
+              <button id="toTags"><i class="fa-solid fa-puzzle-piece"></i></button>
+          </a>
+          <a href="{{site.baseurl}}/about/" style="text-decoration: none;" title="About Me">
+            <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i></button>
+          </a>
+        </div>
+
+        <div id="lysidebar_content" style="margin-top: 5px;">
+            {% assign display_order = "Reinforcement Learning\\Multi-Agent Reinforcement Learning\\Machine Learning Basics\\Economics & Game Theory\\Mathematics\\Robotics\\Psychology\\Code Utils\\Misc Toolbox\\Literature\\Entertainment" | split: "\\" %}
+            {% for category_name in display_order %}
+                <!-- {% assign category_posts = site.categories[category_name] %} -->
+                <!-- 下面这个是把时间最早的放最前面 -->
+                {% assign category_posts = site.categories[category_name] | sort: 'date' %}
+                {% if category_posts %}
+                <div class="category">
+                    <a href="#">+ {{ category_name }}</a>
+                    <ul class="posts">
+                        {% for post in category_posts %}
+                        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+  
+      <!-- <div class="profile-wrapper" style="margin-top: 0;">
+        <p class="site-subtitle fst-italic mb-0">{{ site.tips | sample }}</p>
+      </div> -->
+  
+      <div class="flex-column flex-grow-1"></div>
+  
+      <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+        {% unless site.theme_mode %}
+        <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+          <i class="fas fa-adjust"></i>
+        </button>
+  
+        {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+        {% endif %}
+        {% endunless %}
+  
+        {% for entry in site.data.contact %}
+        {% case entry.type %}
+        {% when 'github', 'twitter' %}
+        {%- capture url -%}
+        https://{{ entry.type }}.com/{{ site[entry.type].username }}
+        {%- endcapture -%}
+        {% when 'email' %}
+        {% assign email = site.social.email | split: '@' %}
+        {%- capture url -%}
+        javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+        {%- endcapture -%}
+        {% when 'rss' %}
+        {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+        {% assign url = entry.url %}
+        {% endcase %}
+  
+        {% if url %}
+        <a href="{{ url }}" aria-label="{{ entry.type }}" {% assign link_types='' %} {% unless entry.noblank %}
+          target="_blank" {% assign link_types='noopener noreferrer' %} {% endunless %} {% if entry.type=='mastodon' %} {%
+          assign link_types=link_types | append: ' me' | strip %} {% endif %} {% unless link_types==empty %}
+          rel="{{ link_types }}" {% endunless %}>
+          <i class="{{ entry.icon }}"></i>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <!-- .sidebar-bottom -->
+  </aside>
+  <!-- #sidebar -->
+  
+
+
+<style>
+  ul.posts {
+      list-style-type: circle;
+  }
+
+  #lysidebar {
+      /* border: 0.5px dashed #b9b9b9; */
+      /* border-radius: 10px;  */
+      border: none; /* 添加边框 */
+      padding: 10px; /* 在边框内部添加一些内边距，使内容不会紧贴边框 */
+      overflow-x: auto;
+  }
+
+  #lysidebar_content{
+      max-height: 450px;
+      overflow-y: auto;
+  }
+
+  #lysidebar .category {
+      margin-bottom: 5px;
+  }
+
+  #lysidebar .category a {
+    /* cursor: pointer; */
+    color: grey;
+    font-size: 16px;
+    /* display: block; */
+  }
+
+  #lysidebar .category > a {
+  /* font-weight: bold;  */
+  /* font-size: 16px; */
+  /* text-align: center; */
+  margin: auto;
+}
+
+  #lysidebar .posts {
+    display: none;
+    padding-left: 30px;
+  }
+
+  #lysidebar .posts a {
+    /* margin-bottom: 10px; */
+    font-size: 16px;
+    display: block;
+    color: grey;
+  }
+
+  #lysidebar .category a:hover, #lysidebar .posts a:hover {
+      /* color: darkgrey;  */
+      /* font-weight: bold; */
+      /* font-size: 15.5px; */
+      text-decoration: underline;
+  }
+
+
+  #collapseAll, #toHome, #fullCategories, #toTags, #toArchives, #toAbout {
+      background-color: transparent;
+      color: grey;
+      border: none;
+      border-radius: 5px;
+      line-height: 1;
+      margin-top: 0px;
+      margin-bottom: 10px;
+      /* cursor: pointer; */
+  }
+
+</style>
+
+
+
+<script>
+  document.querySelectorAll('#lysidebar .category > a').forEach(function (categoryLink, index) {
+      const postsDisplay = localStorage.getItem('postsDisplay' + index);
+      if (postsDisplay) {
+          categoryLink.nextElementSibling.style.display = postsDisplay;
+      }
+  });
+
+  document.querySelectorAll('#lysidebar .category > a').forEach(function (categoryLink, index) {
+      categoryLink.addEventListener('click', function () {
+          var posts = this.nextElementSibling;
+          if (posts.style.display === 'block') {
+              posts.style.display = 'none';
+              localStorage.setItem('postsDisplay' + index, 'none');
+          } else {
+              posts.style.display = 'block';
+              localStorage.setItem('postsDisplay' + index, 'block');
+          }
+      });
+  });
+
+
+
+
+  document.getElementById('collapseAll').addEventListener('click', function() {
+      const postsElements = document.querySelectorAll('#lysidebar .posts');
+      const isAnyPostVisible = Array.from(postsElements).some(function(posts) {
+          return posts.style.display !== 'none';
+      });
+      postsElements.forEach(function(posts, index) {
+          if (isAnyPostVisible) {
+              posts.style.display = 'none';
+              localStorage.setItem('postsDisplay' + index, 'none');
+          } else {
+              posts.style.display = 'block';
+              localStorage.setItem('postsDisplay' + index, 'block');
+          }
+      });
+  });
+
+
+
+  function savelysidebar_contentScrollPosition() {
+      const lysidebar_content = document.getElementById('lysidebar_content');
+      if (lysidebar_content) {
+          const scrollPosition = lysidebar_content.scrollTop;
+          sessionStorage.setItem('lysidebar_contentScrollPosition', scrollPosition);
+      }
+  }
+
+  function restorelysidebar_contentScrollPosition() {
+      const lysidebar_content = document.getElementById('lysidebar_content');
+      const savedPosition = sessionStorage.getItem('lysidebar_contentScrollPosition');
+      if (lysidebar_content && savedPosition) {
+          lysidebar_content.scrollTop = parseInt(savedPosition, 10);
+      }
+  }
+
+  restorelysidebar_contentScrollPosition();
+
+  const lysidebar_content = document.getElementById('lysidebar_content');
+  if (lysidebar_content) {
+      lysidebar_content.addEventListener('scroll', savelysidebar_contentScrollPosition);
+  }
+
+</script>

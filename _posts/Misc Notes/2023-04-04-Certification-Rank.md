@@ -1,7 +1,7 @@
 ---
 title: Certification of Rank
 date: 2023-04-04 20:00:00 +0800
-categories: [Misc Notes]
+categories: [Uncategorized, Misc Notes]
 tags: [Misc Notes]
 ---
 

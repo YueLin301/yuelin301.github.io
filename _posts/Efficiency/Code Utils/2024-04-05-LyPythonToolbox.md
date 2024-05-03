@@ -12,8 +12,14 @@ math: True
 
 ## Install
 
+Install:
 ```bash
 pip install LyPythonToolbox
+```
+
+Update:
+```bash
+pip install --upgrade LyPythonToolbox
 ```
 
 ## Print Tricks
@@ -23,10 +29,6 @@ pip install LyPythonToolbox
 ```python
 from LyPythonToolbox import lyprint_separator
 lyprint_separator()  # print "=" * terminal_width
-```
-
-```python
-from LyPythonToolbox import lyprint_separator
 lyprint_separator("-")  # print "-" * terminal_width
 ```
 
@@ -34,28 +36,34 @@ lyprint_separator("-")  # print "-" * terminal_width
 
 ```python
 from LyPythonToolbox import lyprint_flash
-if __name__ == "__main__":
-    import time
-    for i in range(100):
-        lyprint_flash(f"Fake Epoch: {i}; Info: {str(i) * 240}")
-        time.sleep(0.5)
+import time
+
+for i in range(20):
+    lyprint_flash(f"Fake Epoch: {i}; Info: {str(i) * 240}")
+    time.sleep(0.5)
 ```
 
 ### `@lyprint_elapsed_time`
 
 ```python
 from LyPythonToolbox import lyprint_elapsed_time
-if __name__ == "__main__":
 
-    @lyprint_elapsed_time
-    def print_howmanyhaha(times=2):
-        for i in range(times):
-            print("haha")
-            r = i
-        return r
+@lyprint_elapsed_time
+def print_howmanyhaha(times):
+    for i in range(times):
+        print("haha")
+        result = i
+    return result
 
-    r = print_howmanyhaha(3)
-    print(r)
+result = print_howmanyhaha(2)
+print(f"result={result}")
+```
+
+```
+haha
+haha
+Elapsed Time of print_howmanyhaha: 2.7894973754882812e-05s
+result=1
 ```
 
 
@@ -124,4 +132,58 @@ config.env.max_step: 50
 config.env['max_step']: 50
 config['env']['max_step']: 50
 config['env'].max_step.: 50
+```
+
+### Global Access
+
+In Python, mutable data types like lists and dictionaries are passed by reference. When you pass a list or dictionary to a function, what you are actually passing is a reference to the original data. Therefore, when you modify the data inside the function, it affects the same piece of data, resulting in changes to the data outside the function as well.
+
+```python
+def modify_data(my_list, my_dict):
+    my_list.append(4)  # 向列表中添加一个元素
+    my_dict['d'] = 4  # 向字典中添加一个键值对
+
+# 定义列表和字典
+original_list = [1, 2, 3]
+original_dict = {'a': 1, 'b': 2, 'c': 3}
+
+# 调用函数
+modify_data(original_list, original_dict)
+
+# 查看修改后的列表和字典
+print(original_list)  # 输出: [1, 2, 3, 4]
+print(original_dict)  # 输出: {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+```
+
+```python
+from LyPythonToolbox import ConfigDict
+
+config = ConfigDict()
+config.haha = "haha"
+
+
+class a_class:
+    def __init__(self, input_config) -> None:
+        self.config = input_config
+
+    def cat1(self):
+        self.config.haha += "wuwu"
+        return
+    
+a = a_class(config)
+b = a_class(config)
+a.cat1()
+print(f"a.config.haha: {a.config.haha}")
+print(f"b.config.haha: {b.config.haha}")
+print(f"config.haha: {config.haha}")
+print(f"id(a.config.haha) == id(b.config.haha) == id(config.haha): {id(a.config.haha) == id(b.config.haha) == id(config.haha)}")
+print(f"a.config.haha is config.haha and b.config.haha is config.haha: {a.config.haha is config.haha and b.config.haha is config.haha}")
+```
+
+```
+a.config.haha: hahawuwu
+b.config.haha: hahawuwu
+config.haha: hahawuwu
+id(a.config.haha) == id(b.config.haha) == id(config.haha): True
+a.config.haha is config.haha and b.config.haha is config.haha: True
 ```

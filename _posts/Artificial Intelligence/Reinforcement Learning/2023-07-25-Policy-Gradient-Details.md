@@ -1,10 +1,9 @@
 ---
-title: Details on the Analysis of Policy Gradient Methods
+title: Policy Gradient Details
 date: 2023-07-25 02:40:00 +0800
 categories: [Artificial Intelligence, Reinforcement Learning]
 tags: [Tech, AI, RL, Theory, Classic]
 math: True
-pin: True
 ---
 
 > The only way to make sense out of change is to plunge into it, move with it, and join the dance. *— Alan Watts.*
@@ -130,8 +129,8 @@ $$
 $$
 \begin{aligned}
 \nabla_\theta V^{\mu_\theta}(s) 
-=& \frac{1}{(1-\gamma)}\int_{x\in S} d^{\mu_\theta}(s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
-=&\frac{1}{(1-\gamma)} \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
+=& \frac{1}{(1-\gamma)}\int_{x\in S} d^{\mu_\theta}(x\mid s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
+=&\frac{1}{(1-\gamma)} \mathbb{E}_{x\sim d^{\mu_\theta}(\cdot\mid s)} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
 \end{aligned}
 $$
 
@@ -153,8 +152,8 @@ $$
 	&+ \gamma^2 \int_S \mathrm{Pr}(s\to s', k=1, \mu_\theta) \int_S \mathrm{Pr}(s'\to s'', k=1, \mu_\theta) \cdot \nabla_\theta V^{\mu_\theta}(s'') \,\mathrm{d} s'' \,\mathrm{d} s' \\
 =&\ldots \\
 =& \int_{x\in S} \sum\limits_{k=0}^\infty \gamma^k \cdot \mathrm{Pr}(s\to x, k, \mu_\theta) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
-=& \frac{1}{(1-\gamma)}\int_{x\in S} d^{\mu_\theta}(s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
-=&\frac{1}{(1-\gamma)} \mathbb{E}_{s\sim d^{\mu_\theta}} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
+=& \frac{1}{(1-\gamma)}\int_{x\in S} d^{\mu_\theta}(x\mid s) \cdot \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)} \,\mathrm{d} x \\
+=&\frac{1}{(1-\gamma)} \mathbb{E}_{x\sim d^{\mu_\theta}(\cdot\mid s)} \bigg[ \nabla_\theta \mu_\theta(x)\cdot \nabla_a Q^{\mu_\theta} (x, \mu_\theta(x))\Big\vert_{a=\mu_\theta(x)}\bigg]
 \end{aligned}
 $$
 
@@ -235,8 +234,6 @@ $$
 
 > Check other proofs [here](https://people.cs.umass.edu/~akshay/courses/coms6998-11/files/lec7.pdf) and [here](https://wensun.github.io/CS4789_data/PDL.pdf).
 {: .prompt-info }
-
-###
 
 
 ## Convergence

@@ -1,118 +1,98 @@
 ---
 layout: default
-refactor: true
+title: Home
+icon: fa-solid fa-hat-wizard
+toc: true
 ---
 
-{% include lang.html %}
+<div style="margin-bottom: 35px;"></div>
 
-{% assign pinned = site.posts | where: 'pin', 'true' %}
-{% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
-
-{% assign posts = '' | split: '' %}
-
-<!-- Get pinned posts -->
-
-{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign pinned_num = pinned.size | minus: offset %}
-
-{% if pinned_num > 0 %}
-  {% for i in (offset..pinned.size) limit: pinned_num %}
-    {% assign posts = posts | push: pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_num = 0 %}
-{% endif %}
-
-<!-- Get default posts -->
-
-{% assign default_beg = offset | minus: pinned.size %}
-
-{% if default_beg < 0 %}
-  {% assign default_beg = 0 %}
-{% endif %}
-
-{% assign default_num = paginator.posts | size | minus: pinned_num %}
-{% assign default_end = default_beg | plus: default_num | minus: 1 %}
-
-{% if default_num > 0 %}
-  {% for i in (default_beg..default_end) %}
-    {% assign posts = posts | push: default[i] %}
-  {% endfor %}
-{% endif %}
-
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in posts %}
-    <article class="card-wrapper card">
-      <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
-        {% assign card_body_col = '12' %}
-
-        {% if post.image %}
-          {% assign src = post.image.path | default: post.image %}
-          {% unless src contains '//' %}
-            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
-          {% endunless %}
-
-          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
-
-          {% assign lqip = null %}
-
-          {% if post.image.lqip %}
-            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
-          {% endif %}
-
-          <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
-          </div>
-
-          {% assign card_body_col = '7' %}
-        {% endif %}
-
-        <div class="col-md-{{ card_body_col }}">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                {% include no-linenos.html content=post.content %}
-                {{ content | markdownify | strip_html | truncate: 200 | escape }}
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                {% include datetime.html date=post.date lang=lang %}
-
-                <!-- categories -->
-                {% if post.categories.size > 0 %}
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    {% for category in post.categories %}
-                      {{ category }}
-                      {%- unless forloop.last -%},{%- endunless -%}
-                    {% endfor %}
-                  </span>
-                {% endif %}
-              </div>
-
-              {% if post.pin %}
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-                </div>
-              {% endif %}
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  {% endfor %}
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+  <div style="flex-shrink: 0; width: 130px; height: 130px; background-image: url('/assets/img/photo2_transparent.png'); background-size: cover; background-position: center; margin-right: 30px;" onmouseover="this.style.backgroundImage='url(/assets/img/photo2_cooler_transparent.png)'" onmouseout="this.style.backgroundImage='url(/assets/img/photo2_transparent.png)'">
+  <!-- <div style="flex-shrink: 0; width: 130px; height: 130px; background-image: url('/assets/img/ly2024.jpeg'); background-size: cover;"> -->
+    
+  </div>
+  <div style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+    <!-- <div style="font-style: italic; color: #555; border-left: 5px solid #eee; padding-left: 20px;"> -->
+    <div style="color: #495485; font-size: 22px">
+      <!-- <b>The world only makes sense if you force it to. <i>—&nbsp;Batman.</i></b> -->
+      <b>"The powerful play goes on...<br>And you may contribute a verse."</b>
+    </div>
+  </div>
 </div>
-<!-- #post-list -->
 
-{% if paginator.total_pages > 1 %}
-  {% include post-paginator.html %}
-{% endif %}
+Hi, this is Yue Lin (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
+Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
+
+<div style="color: #999;">
+  And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption. <i>—&nbsp;Friedrich&nbsp;Nietzsche,&nbsp;Thus&nbsp;Spoke&nbsp;Zarathustra.</i>
+</div>
+
+<hr>
+
+<style type="text/css">
+  .tg  {border:none;border-collapse:collapse;border-spacing:0;}
+  .tg td{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;
+    padding:10px 5px;word-break:normal;}
+  .tg th{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-18eh{border-color:#000000;font-weight:bold;text-align:center;vertical-align:middle}
+  .tg .tg-xwyw{border-color:#000000;text-align:center;vertical-align:middle}
+  </style>
+  <table class="tg" style="table-layout: fixed; width: 429px">
+  <colgroup>
+  <col style="width: 151px">
+  <col style="width: 136px">
+  <col style="width: 142px">
+  </colgroup>
+  <thead>
+    <tr>
+      <th class="tg-18eh"><span style="font-weight:700;font-style:normal">Basic Information</span></th>
+      <th class="tg-18eh"><span style="font-weight:600;font-style:normal">Post Browsers</span></th>
+      <th class="tg-18eh"><span style="font-weight:600;font-style:normal">Post Topics</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="tg-xwyw" rowspan="2">
+        <a href="{{site.baseurl}}/" style="text-decoration: none;" title="Home">
+          <button id="toHome"><i class="fa-brands fa-fort-awesome"></i> Home</button>
+        </a>
+      </td>
+      <td class="tg-xwyw">
+        <a href="{{site.baseurl}}/categories/" style="text-decoration: none;" title="Categories">
+          <button id="fullCategories"><i class="fa-solid fa-chess"></i> Categories</button>
+        </a>
+      </td>
+      <td class="tg-xwyw" rowspan="2">
+        <a href="{{site.baseurl}}/tech/" style="text-decoration: none;" title="Technology">
+          <button id="toAbout"><i class="fa-solid fa-wand-sparkles"></i> Technology</button>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td class="tg-xwyw">
+        <a href="{{site.baseurl}}/archives/" style="text-decoration: none;" title="Archives">
+          <button id="toArchives"><i class="fa-solid fa-scroll"></i> Archives</button>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td class="tg-xwyw">
+        <a href="{{site.baseurl}}/about/" style="text-decoration: none;" title="About Me">
+          <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i> More About Me</button>
+        </a>
+      </td>
+      <td class="tg-xwyw">
+        <a href="{{site.baseurl}}/tags/" style="text-decoration: none;" title="Tags">
+          <button id="toTags"><i class="fa-solid fa-puzzle-piece"></i> Tags</button>
+        </a>
+      </td>
+      <td class="tg-xwyw"><span style="font-weight:400;font-style:normal">
+        <a href="{{site.baseurl}}/life/" style="text-decoration: none;" title="Life">
+          <button id="toAbout"><i class="fa-solid fa-broom"></i> Life</button>
+        </a>
+      </span></td>
+    </tr>
+  </tbody>
+  </table>

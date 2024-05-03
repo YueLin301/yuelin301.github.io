@@ -19,43 +19,6 @@ Because if these models are common knowledge between me and my readers, then my 
 After understanding these models, analyzing the characters in film and literary works will also yield many interesting new perspectives.
 
 
-## My Types in Summary
-
-- Big Five Personality Test: 
-  <!-- [**SCOAI**](https://bigfive-test.com/result/649d06c585aaa70008135b20);  -->
-  **SCOAI**;
-  [[My Test Result in 2024]](https://bigfive-test.com/result/65e8ffaf59460b0008351b6d).
-  - Scored highly in **Openness to Experience**, especially in *Imagination* and *Intellect*.
-  - Scored highly in **Conscientiousness**, especially in *Orderliness* and *Achievement-Striving*.
-
-<!-- | Openness To Experience (101) 	| Conscientiousness (96)        	| Agreeableness (76) 	| Neuroticism (67)        	| Extraversion (76)       	|
-|------------------------------	|-------------------------------	|--------------------	|-------------------------	|-------------------------	|
-| **Imagination (19)**         	| Self-Efficacy (16)            	| Trust (9)          	| Anxiety (14)            	| Friendliness (11)       	|
-| Artistic Interests (15)      	| **Orderliness (18)**          	| Morality (15)      	| Anger (9)               	| Gregariousness (9)      	|
-| Emotionality (16)            	| Dutifulness (13)              	| Altruism (14)      	| Depression (9)          	| Assertiveness (15)      	|
-| **Adventurousness (17)**     	| **Achievement-Striving (17)** 	| Cooperation (15)   	| Self-Consciousness (12) 	| Activity Level (16)     	|
-| **Intellect (20)**           	| Self-Discipline (16)          	| Modesty (10)       	| Immoderation (12)       	| Excitement-Seeking (14) 	|
-| Liberalism (14)              	| Cautiousness (16)             	| Sympathy (13)      	| Vulnerability (11)      	| Cheerfulness (11)       	|
-
-In the first row, each item has a full score of 120, while in the other rows, each item has a full score of 20. -->
-
-- Myers-Briggs Type Indicator (MBTI): 
-  [**INTJ-T**](https://www.16personalities.com/intj-personality). 
-  [[My Test Result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407).
-  - Introverted, Intuitive, Thinking, Judging, and Turbulent;
-  - Dominant (Jungian) Cognitive Functions: 
-    [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and 
-    [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking);
-  - Strategy: [Constant Improvement](https://www.16personalities.com/articles/strategies-constant-improvement).
-- Enneagram: 
-  [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5); 
-  [[My Test Result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1).
-  - Tritye: 548;
-  - Instincts: SX/SP.
-  
-
-
-
 ## Big Five Personality Test
 
 The Big Five personality traits system is a widely accepted framework in psychology, consisting of five broad dimensions that describe human personality: 
@@ -67,38 +30,8 @@ The Big Five personality traits system is a widely accepted framework in psychol
 
 This model is empirically driven and is considered robust for understanding personality due to its extensive research base, cross-cultural validity, and ability to predict various life outcomes. It's praised for capturing the complexity of human personality traits in a comprehensive yet flexible manner.
 
-### My test result
-
-[[My Test Result in 2024]](https://bigfive-test.com/result/65e8ffaf59460b0008351b6d): **SCOAI**.  
-[[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20): **SCOAI**.
-
-|                        	    | Abbr. 	| High    	| Low 	|
-|------------------------	    |-------	|------   	|-----	|
-| **Extraversion**           	| E     	| **S**    	| R   	|
-| **Neuroticism**            	| N     	| L       	| **C** |
-| **Conscientiousness**      	| C     	| **O**    	| U   	|
-| **Agreeableness**          	| A     	| **A**    	| E   	|
-| **Openness To Experience** 	| O     	| **I**    	| N   	|
-
-
-| Openness To Experience 	| 107/120 	|   Conscientiousness  	| 101/120 	|    Extraversion    	| 95/120 	| Agreeableness 	| 82/120 	|     Neuroticism    	| 64/120 	|
-|:----------------------:	|:-------:	|:--------------------:	|:-------:	|:------------------:	|:------:	|:-------------:	|:------:	|:------------------:	|:------:	|
-|       Imagination      	|  20/20  	|      Orderliness     	|  18/20  	|   Activity Level   	|  19/20 	|    Modesty    	|  16/20 	|    Vulnerability   	|  8/20  	|
-|        Intellect       	|  20/20  	|    Self-Discipline   	|  18/20  	|    Cheerfulness    	|  18/20 	|    Sympathy   	|  15/20 	|     Depression     	|  9/20  	|
-|   Artistic Interests   	|  19/20  	| Achievement-Striving 	|  18/20  	|    Friendliness    	|  15/20 	|    Altruism   	|  14/20 	| Self-Consciousness 	|  10/20 	|
-|      Emotionality      	|  18/20  	|     Self-Efficacy    	|  17/20  	|    Assertiveness   	|  15/20 	|  Cooperation  	|  13/20 	|    Immoderation    	|  11/20 	|
-|     Adventurousness    	|  17/20  	|     Cautiousness     	|  16/20  	| Excitement-Seeking 	|  15/20 	|    Morality   	|  13/20 	|        Anger       	|  11/20 	|
-|       Liberalism       	|  13/20  	|      Dutifulness     	|  14/20  	|   Gregariousness   	|  13/20 	|     Trust     	|  11/20 	|       Anxiety      	|  15/20 	|
-
-
-In the first row, each item has a full score of 120, while in the other rows, each item has a full score of 20.
-
 > The detailed description of each dimension can be found in [[My Test Result in 2024]](https://bigfive-test.com/result/65e8ffaf59460b0008351b6d). **The remaining part of this section is just my copy of it.**
 {: .prompt-warning}
-
-
-<!-- > The following part of this section is to describe the 5 traits. The description is from [this website](https://bigfive-test.com/).
-{: .prompt-info} -->
 
 ### **Extraversion**
 Extraversion is marked by pronounced engagement with the external world.
@@ -209,7 +142,9 @@ Intellect and artistic interests are the two most important, central aspects of 
 Psychological liberalism refers to a readiness to challenge authority, convention, and traditional values. In its most extreme form, psychological liberalism can even represent outright hostility toward rules, sympathy for law-breakers, and love of ambiguity, chaos, and disorder. Psychological conservatives prefer the security and stability brought by conformity to tradition. Psychological liberalism and conservatism are not identical to political affiliation, but certainly incline individuals toward certain political parties.
 
 
-## Myers-Briggs Type Indicator (MBTI)
+## MBTI and Cognitive Functions
+
+### Myers-Briggs Type Indicator (MBTI)
 
 > This section is adapted from the answer generated by ChatGPT-4.
 {: .prompt-info }
@@ -224,15 +159,6 @@ Furthermore, there is a fifth letter in some MBTI representations, such as "INTJ
 - [**Assertive vs. Turbulent.**](https://www.16personalities.com/articles/identity-assertive-vs-turbulent) This dimension is divided into "Assertive" (A) and "Turbulent" (T) traits. Assertive individuals are typically confident, relaxed, and resistant to stress, maintaining a stable level of emotional resilience. In contrast, Turbulent individuals are more likely to be self-conscious, sensitive to stress, and driven by a desire for improvement, often experiencing wider emotional fluctuations and a strong sense of ambition. This Assertive/Turbulent aspect, blending elements from the Big Five personality traits, adds another layer to personality assessment, offering a nuanced view of one's overall disposition and reaction to stress and change.
 
 Developed from Carl Jung's theory of psychological types, MBTI is often used for personal development, career planning, and team building. However, it has faced criticism from the academic psychology community due to concerns about its scientific validity, reliability, and lack of empirical support, as people may receive different type designations upon retaking the test.
-
-### My test result
-
-[[My test result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407): [**INTJ-T (The Turbulent Architect)**](https://www.16personalities.com/intj-personality).
-  - Introverted, Intuitive, Thinking, Judging, and Turbulent;
-  - Strategy: [Constant Improvement](https://www.16personalities.com/articles/strategies-constant-improvement);
-  - Dominant (Jungian) Cognitive Functions: 
-    [Introverted Intuition (Ni)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Introverted_intuition) and 
-    [Extraverted Thinking (Te)](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Extraverted_thinking).
 
 ### Jungian cognitive functions
 
@@ -257,6 +183,9 @@ _Table 1 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functi
 
 ![](../../../assets/img/2023-06-01-Personality/img_2023-12-18-22-49-26.png)
 _Table 2 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Carl_Jung)._
+
+
+#### Overview
 
 <!-- ![](../../../assets/img/2023-06-01-Personality/img_2023-12-18-22-51-41.png)
 _Table 3 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Myers-Briggs_Type_Indicator_2)._ -->
@@ -291,7 +220,7 @@ _Table 3 from [Wikipedia](https://en.wikipedia.org/wiki/Jungian_cognitive_functi
 #### Si: Introverted Sensing
 **Introverted Sensing (Si)** is an information-gathering function that focuses on internal sensations, experiences, and memories. It contrasts with Extraverted Sensing, which is more about immediate sensory perception. Si involves storing and recalling past experiences to understand and navigate the present. Individuals with a dominant Si function tend to be detail-oriented, reliable, and have a strong connection to their past experiences and learned knowledge. They value tradition and consistency, often preferring familiar routines and methods. Si users are skilled at noticing changes in their environment, as they have a deep understanding of how things usually are or should be. This function contributes to a strong sense of practicality and realism. However, an overreliance on past experiences can sometimes limit their openness to new possibilities and change.
 
-#### Related Material
+### Related Material
 [MBTI的e和i/八维概念/双高问题一次讲清](https://www.bilibili.com/video/BV18i4y1z7Rj?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
 
 ## Enneagram
@@ -300,13 +229,7 @@ The Enneagram is a personality system that describes nine primary personality ty
 
 [This website](https://www.enneagraminstitute.com/type-descriptions) provides a great introduction to the nine types of the Enneagram.
 
-### My test result
-
-[[My test result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1): [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5).
-  <!-- Instincts: SX/SP; -->
-
-![](../../../assets/img/2023-06-01-Personality/img_2023-12-18-21-07-04.png){: width="350" }
-_My test result at [this website](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1)._
+### Some of the Types
 
 #### Type 5
 
@@ -327,17 +250,6 @@ Related Reading Material:
 - [5号 贪婪与病理性抽离 Avarice and Pathological Detachment（上） - 福斯塔夫的文章 - 知乎](https://zhuanlan.zhihu.com/p/682039849)
 - [5号 贪婪与病理性抽离 Avarice and Pathological Detachment（中） - 福斯塔夫的文章 - 知乎](https://zhuanlan.zhihu.com/p/682099112)
 - [5号 贪婪与病理性抽离 Avarice and Pathological Detachment（下） - 福斯塔夫的文章 - 知乎](https://zhuanlan.zhihu.com/p/682122967)
-
-### Tritype
-The tritype theory suggests that while individuals have a primary Enneagram type, they also exhibit significant characteristics of two other types.
-These three types – one from each of the Enneagram's centers of intelligence (Heart/Feeling, Head/Thinking, Gut/Instinct) – combine to form a person's tritype. For example, someone could have a tritype of 4-7-1, meaning their primary type is in the Heart center (type 4), but they also strongly identify with a type in the Head center (type 7) and the Gut center (type 1).
-
-My tritye is [548](https://wiki.personality-database.com/books/enneagram/page/458-the-scholar-archetype).
-
-<!-- - [Fives (The Investigators)](https://www.enneagraminstitute.com/type-5) are perceptive, innovative, secretive, and isolated. They want to be capable and competent;
-- [Fours (The Individualists)](https://www.enneagraminstitute.com/type-4) are expressive, dramatic, self-absorbed, and temperamental. They want to find themselves and their significance (to create an identity);
-- [Eights (The Challengers)](https://www.enneagraminstitute.com/type-8) are self-confident, decisive, willful, and confrontational. They want to protect themselves (to be in control of their own life and destiny). -->
-
 
 #### Type 4
 > **Fours (The Individualists)** are self-aware, sensitive, and reserved. They are emotionally honest, creative, and personal, but can also be moody and self-conscious. Withholding themselves from others due to feeling vulnerable and defective, they can also feel disdainful and exempt from ordinary ways of living. They typically have problems with melancholy, self-indulgence, and self-pity. At their Best: inspired and highly creative, they are able to renew themselves and transform their experiences.
@@ -377,6 +289,12 @@ Related Reading Material:
 - [8号 施虐狂性格和色欲 Sadistic Character and Lust（中） - 福斯塔夫的文章 - 知乎](https://zhuanlan.zhihu.com/p/682613139)
 - [8号 施虐狂性格和色欲 Sadistic Character and Lust（下） - 福斯塔夫的文章 - 知乎](https://zhuanlan.zhihu.com/p/682879125)
 
+### Tritype
+The tritype theory suggests that while individuals have a primary Enneagram type, they also exhibit significant characteristics of two other types.
+These three types – one from each of the Enneagram's centers of intelligence (Heart/Feeling, Head/Thinking, Gut/Instinct) – combine to form a person's tritype. For example, someone could have a tritype of 4-7-1, meaning their primary type is in the Heart center (type 4), but they also strongly identify with a type in the Head center (type 7) and the Gut center (type 1).
+
+<!-- My tritye is [548](https://wiki.personality-database.com/books/enneagram/page/458-the-scholar-archetype). -->
+
 ### Instincts
 
 > This section is generated by ChatGPT-4.
@@ -406,9 +324,87 @@ The six combinations of these instincts are:
 
 
 
-## My Doubts about MBTI and Enneagram
+## My Doubts
 
 In my understanding, each type combination from these two systems indicates a cognitive pattern. But
 1. Can a person's cognitive pattern be scenario-dependent? Is it possible for a person to be equipped with two or more cognitive patterns and to be able to use them depending on the current situation or moods? If so, we may need a meta-system to sort out the meta-policies for people coping with different scenarios. For example, a common defense for MBTI is the metaphor about handedness: When catching a ball flying toward their face, some people tend to use their left hand while others tend to use their right hand. But, I've seen some people who use their left hand when eating and their right hand when writing.
 2. Is there a more general way to describe cognitive functions? Such as using the time series model, maybe?
 3. I know that we should type a person by analyzing the way they think. But is it possible that there are two or more perspectives that fit the ground true thinking pattern? If so, it means that the mapping from people's cognitive patterns to the types is a mess and typing a person is intractable. And from my experience, I think that some questions in the tests are not appropriate, for there can be deep complex different reasons for tending to do the same thing.
+
+See more in [my blog]({{site.baseurl}}/posts/MBTI-misc/).
+
+
+## My Types
+
+
+### Big Five
+
+[[My Test Result in 2024]](https://bigfive-test.com/result/65e8ffaf59460b0008351b6d): **SCOAI**.  
+[[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20): **SCOAI**.
+
+|                        	    | Abbr. 	| High    	| Low 	|
+|------------------------	    |-------	|------   	|-----	|
+| **Extraversion**           	| E     	| **S**    	| R   	|
+| **Neuroticism**            	| N     	| L       	| **C** |
+| **Conscientiousness**      	| C     	| **O**    	| U   	|
+| **Agreeableness**          	| A     	| **A**    	| E   	|
+| **Openness To Experience** 	| O     	| **I**    	| N   	|
+
+
+My test result in 2024: 
+
+| Openness To Experience 	| 107/120 	|   Conscientiousness  	| 101/120 	|    Extraversion    	| 95/120 	| Agreeableness 	| 82/120 	|     Neuroticism    	| 64/120 	|
+|:----------------------:	|:-------:	|:--------------------:	|:-------:	|:------------------:	|:------:	|:-------------:	|:------:	|:------------------:	|:------:	|
+|       Imagination      	|  20/20  	|      Orderliness     	|  18/20  	|   Activity Level   	|  19/20 	|    Modesty    	|  16/20 	|    Vulnerability   	|  8/20  	|
+|        Intellect       	|  20/20  	|    Self-Discipline   	|  18/20  	|    Cheerfulness    	|  18/20 	|    Sympathy   	|  15/20 	|     Depression     	|  9/20  	|
+|   Artistic Interests   	|  19/20  	| Achievement-Striving 	|  18/20  	|    Friendliness    	|  15/20 	|    Altruism   	|  14/20 	| Self-Consciousness 	|  10/20 	|
+|      Emotionality      	|  18/20  	|     Self-Efficacy    	|  17/20  	|    Assertiveness   	|  15/20 	|  Cooperation  	|  13/20 	|    Immoderation    	|  11/20 	|
+|     Adventurousness    	|  17/20  	|     Cautiousness     	|  16/20  	| Excitement-Seeking 	|  15/20 	|    Morality   	|  13/20 	|        Anger       	|  11/20 	|
+|       Liberalism       	|  13/20  	|      Dutifulness     	|  14/20  	|   Gregariousness   	|  13/20 	|     Trust     	|  11/20 	|       Anxiety      	|  15/20 	|
+
+
+In the first row, each item has a full score of 120, while in the other rows, each item has a full score of 20.
+
+My test result in 2023, which is the first one: 
+
+| Openness To Experience (101) 	| Conscientiousness (96)        	| Agreeableness (76) 	| Neuroticism (67)        	| Extraversion (76)       	|
+|------------------------------	|-------------------------------	|--------------------	|-------------------------	|-------------------------	|
+| **Imagination (19)**         	| Self-Efficacy (16)            	| Trust (9)          	| Anxiety (14)            	| Friendliness (11)       	|
+| Artistic Interests (15)      	| **Orderliness (18)**          	| Morality (15)      	| Anger (9)               	| Gregariousness (9)      	|
+| Emotionality (16)            	| Dutifulness (13)              	| Altruism (14)      	| Depression (9)          	| Assertiveness (15)      	|
+| **Adventurousness (17)**     	| **Achievement-Striving (17)** 	| Cooperation (15)   	| Self-Consciousness (12) 	| Activity Level (16)     	|
+| **Intellect (20)**           	| Self-Discipline (16)          	| Modesty (10)       	| Immoderation (12)       	| Excitement-Seeking (14) 	|
+| Liberalism (14)              	| Cautiousness (16)             	| Sympathy (13)      	| Vulnerability (11)      	| Cheerfulness (11)       	|
+
+<!-- > The following part of this section is to describe the 5 traits. The description is from [this website](https://bigfive-test.com/).
+{: .prompt-info} -->
+
+
+### MBTI
+
+[[My test result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407): [**INTJ-T (The Turbulent Architect)**](https://www.16personalities.com/intj-personality).
+  - Introverted, Intuitive, Thinking, Judging, and Turbulent;
+  - Strategy: [Constant Improvement](https://www.16personalities.com/articles/strategies-constant-improvement);
+  - Dominant (Jungian) Cognitive Functions: 
+    [Introverted Intuition (Ni)]({{site.baseurl}}/posts/Personality/#fe-extraverted-feeling) and 
+    [Introverted Feeling (Fi)]({{site.baseurl}}/posts/Personality/#fi-introverted-feeling).
+  - Some of my friends believe that I am an ENTP. (Okay, one of them just claimed that he was joking.)
+
+![](../../../assets/img/2023-06-01-Personality/img_2024-04-22-16-59-32.png){: width="400" height="400" }
+_https://www.idrlabs.com/cognitive-function/test.php_
+
+### Enneagram
+
+<!-- - [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5);  -->
+
+[[My test result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1): [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5).
+- Tritye: 548;
+- Instincts: SX/SP.
+
+![](../../../assets/img/2023-06-01-Personality/img_2023-12-18-21-07-04.png){: width="350" }
+_My test result at [this website](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1)._
+
+
+## Other Resources
+
+1. [Personality Database](https://www.personality-database.com/)

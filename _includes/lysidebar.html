@@ -66,7 +66,7 @@
         </a>
     </div>
     <div id="lysidebar_content">
-        {% assign display_order = "Reinforcement Learning\\Multi-Agent Reinforcement Learning\\Machine Learning Basics\\Economics & Game Theory\\Mathematics\\Robotics\\Psychology\\Code Utils\\Misc Toolbox\\Literature" | split: "\\" %}
+        {% assign display_order = "Reinforcement Learning\\Multi-Agent Reinforcement Learning\\Machine Learning Basics\\Economics & Game Theory\\Mathematics\\Robotics\\Psychology\\Code Utils\\Misc Toolbox\\Literature\\Entertainment" | split: "\\" %}
         {% for category_name in display_order %}
             <!-- {% assign category_posts = site.categories[category_name] %} -->
             <!-- 下面这个是把时间最早的放最前面 -->
@@ -83,6 +83,10 @@
             {% endif %}
         {% endfor %}
     </div>
+    <div> 
+        <!-- ==================================== -->
+        <hr>
+    </div>
 </div>
 
 
@@ -92,8 +96,9 @@
     }
 
     #lysidebar {
-        border: 0.5px dashed #b9b9b9; /* 添加边框 */
-        border-radius: 10px; /* 设置圆角 */
+        /* border: 0.5px dashed #b9b9b9; */
+        /* border-radius: 10px;  */
+        border: none; /* 添加边框 */
         padding: 10px; /* 在边框内部添加一些内边距，使内容不会紧贴边框 */
         overflow-x: auto;
     }
@@ -108,14 +113,15 @@
     }
 
     #lysidebar .category a {
-      cursor: pointer;
+      /* cursor: pointer; */
       color: grey;
+      font-size: 16px;
       /* display: block; */
     }
 
     #lysidebar .category > a {
     /* font-weight: bold;  */
-    /* font-size: large; */
+    /* font-size: 16px; */
     /* text-align: center; */
     margin: auto;
 }
@@ -127,9 +133,17 @@
   
     #lysidebar .posts a {
       /* margin-bottom: 10px; */
+      font-size: 16px;
       display: block;
       color: grey;
     }
+
+    #lysidebar .category a:hover, #lysidebar .posts a:hover {
+        /* color: darkgrey;  */
+        font-weight: bold;
+        font-size: 15.5px;
+    }
+
 
     #collapseAll, #toHome, #fullCategories, #toTags, #toArchives, #toAbout {
         background-color: transparent;
@@ -139,7 +153,7 @@
         line-height: 1;
         margin-top: 0px;
         margin-bottom: 10px;
-        cursor: pointer;
+        /* cursor: pointer; */
     }
 
 </style>
@@ -185,6 +199,8 @@
             }
         });
     });
+
+
 
     function savelysidebar_contentScrollPosition() {
         const lysidebar_content = document.getElementById('lysidebar_content');

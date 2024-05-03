@@ -63,6 +63,20 @@ git commit -m "quick commit"
 git push origin main
 ```
 
+Template:
+
+1. Create a file `/bin/lazy_commit.sh`
+2. ```bash
+   #!/bin/bash
+   echo "Input a commit message: "
+   read commit_message
+   git add .
+   git commit -m "$commit_message"
+   git push origin main
+   ```
+3. `chmod +x ./bin/lazy_commit.sh`
+4. `./bin/lazy_commit.sh`
+
 ## .gitignore
 
 Put a `${project_name}/.gitignore` file right under the project directory, then `git commit` will ignore the files listedin the `.gitignore` file.

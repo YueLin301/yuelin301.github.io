@@ -133,3 +133,28 @@ Apache 相比 MIT 的多出来的限制就是：
 1. 专利授权：如果是Apache，如果有专利，使用者会被自动授权专利的使用权，可以用没关系；
 2. 禁止使用贡献者的商标；
 3. 做了哪些更改要标明
+
+
+## requirement.txt
+
+Create:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Use (list all libs in current env):
+
+```bash
+pip install -r requirements.txt
+```
+
+Use (list libs used in the current project):
+
+```bash
+pip install pipreqs
+```
+
+```bash
+pipreqs ./
+```

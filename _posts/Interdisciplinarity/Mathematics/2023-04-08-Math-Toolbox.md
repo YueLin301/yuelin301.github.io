@@ -427,6 +427,11 @@ $$
 
 ### Moment
 
+### Probability simplex and its illustration
+
+![](../../../assets/img/2023-04-08-Math-Toolbox/img_2024-04-27-22-07-52.png)
+_https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/exa_prob_simplex.html_
+
 ## Information Theory
 
 ### Self-information
@@ -650,7 +655,6 @@ $$
 \end{aligned}
 $$
 
-# 
 
 | 发送的信号是哪个/事件：$X$                    | $a_1$ | $a_2$ |
 | --------------------------------------------- | ----- | ----- |
@@ -761,6 +765,10 @@ If $\exists k\in \mathbb{R}$, s.t. $\mathbf{x_1} = k\cdot\mathbf{x_2}$, then $x_
 ### Cramer’s rule
 
 ### Adjugate matrix
+
+
+
+
 
 ## Set
 

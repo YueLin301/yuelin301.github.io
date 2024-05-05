@@ -65,7 +65,7 @@ tail_includes:
                 {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
               {% endfor %}
             {% else %}
-              <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
+              <a href="{{ site.social.links[0] }}"><span translate="no">{{ site.social.name }}</span></a>
             {% endif %}
           </em>
         </span>

@@ -30,7 +30,7 @@ At each timestep, two agents are playing Prisoner's Dilemma:
 | **Cooperate (Deny)** | $R,R$            | $S,T$            |
 | **Defect (Confess)** | $T,S$            | $P,P$            |
 
-where $T > R > P > S$, and the meanings are as follows.
+where $T > R > P > S$ and $2R > T+S$, and the meanings are as follows.
 - $T$: Temptation
 - $R$: Reward
 - $P$: Punishment
@@ -150,11 +150,7 @@ $$
 > This part requires some knowledge of stochastic processes. Check [my other note]({{site.baseurl}}/posts/Stochastic-Processes/).
 {: .prompt-info }
 
-
-> The following part has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
-{: .prompt-warning }
-
-- $\mathbf{M}$ is irreducible (?)
+- $\mathbf{M}$ is [irreducible]({{site.baseurl}}/posts/Stochastic-Processes/#irreducible-markov-chain)
 - $\mathbf{M}$ is finite
 
 Then $\mathbf{M}$ is positive recurrent.

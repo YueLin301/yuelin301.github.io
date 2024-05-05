@@ -27,7 +27,18 @@ layout: page
       <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
         {{ post.date | date: df_strftime_m }}
       </span>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <a href="{{ post.url | relative_url }}">
+        {% if post.categories[1] %}
+          {{ post.categories[1] }}
+        {% elsif post.categories[0] %}
+          {{ post.categories[0] }}
+        {% endif %}
+        {% if post.categories[1] or post.categories[0] %}
+          | {{ post.title }}
+        {% else %}
+          {{ post.title }}
+        {% endif %}
+      </a>
     </li>
 
     {% if forloop.last %}</ul>{% endif %}

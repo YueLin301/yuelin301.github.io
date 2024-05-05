@@ -13,6 +13,12 @@ math: True
 
 ## 文字样式
 
+### 强制不翻译
+
+```html
+<span translate="no"></span>
+```
+
 ### 下划线
 
 ```html

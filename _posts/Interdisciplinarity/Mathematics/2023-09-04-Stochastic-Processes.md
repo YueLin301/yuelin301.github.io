@@ -210,7 +210,7 @@ $\eta_{iS'}$ can only be finite if $h_{iS'} = 1.$
 
 Given a state $i \in S$ of a Markov chain, the first return time $T_i$ to state $i$ is defined as:
 
-$$ T_i = \min \{ n > 0 : X_n = i | X_0 = i \} $$
+$$ T_i = \min \{ n > 0 : X_n = i \mid X_0 = i \} $$
 
 This is the number of time steps required to return to state $i$ for the first time, given that we start at $i$. Essentially, $T_i$ represents the first occurrence of the state $i$ after the initial time, assuming the chain started at state $i$.
 
@@ -220,7 +220,7 @@ The expected return time, $m_i$, to state $i$ is the average number of time step
 
 $$ 
 \begin{aligned}
-m_i =& \mathbb{E}[T_i | X_0 = i] \\
+m_i =& \mathbb{E}[T_i \mid X_0 = i] \\
 =& \sum\limits_{n=1}^\infty n\cdot \mathbf{M}^n_{ii}
 \end{aligned}
 $$
@@ -251,15 +251,15 @@ The following statements are equivalent:
 State $i$ is a recurrent state if and only if $\sum\limits_{n\ge 1}\mathbf{M}_{ii}^n = \infty$
 
 
-#### Positive ecurrent state
+#### Positive recurrent state
 
-If there exists a constant $m_i$ (expected return time) such that $\mathbb{E}[T_i | X_0 = i] = m_i < \infty$. This means that the expected time to return to state $i$ is finite.
+If there exists a constant $m_i$ (expected return time) such that $\mathbb{E}[T_i \mid X_0 = i] = m_i < \infty$. This means that the expected time to return to state $i$ is finite.
 
 - If the state space of a Markov chain is finite (has a finite number of states), then all its recurrent states are positive recurrent.
 - **If the state space of an irreducible Markov chain is finite (has a finite number of states), then all its states are positive recurrent.**
 
 #### Null recurrent state
-If $\mathbb{E}[T_i | X_0 = i] = \infty$. This means that the expected time to return to state $i$ is infinite.
+If $\mathbb{E}[T_i \mid X_0 = i] = \infty$. This means that the expected time to return to state $i$ is infinite.
 
 #### Transient State
 
@@ -328,17 +328,17 @@ stationary distribution, supported only on that closed class.
 
 ### Proof of Existence
 
-Let $X_n$ be the Markov chain, and let $\pi_j$ be the probability that the chain is in state $j$ at time $n$ given it starts in state $i$ at time 0, i.e., $\pi_j = P(X_n = j | X_0 = i)$.
+Let $X_n$ be the Markov chain, and let $\pi_j$ be the probability that the chain is in state $j$ at time $n$ given it starts in state $i$ at time 0, i.e., $\pi_j = P(X_n = j \mid X_0 = i)$.
 
 
 <!-- From the definition of positive recurrence, it is also known that:
-$$ \lim_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} P(X_k = i | X_0 = i) = \frac{1}{m_i} $$ -->
+$$ \lim_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} P(X_k = i \mid X_0 = i) = \frac{1}{m_i} $$ -->
 
 Recall the definitions and basic concepts associated with positive recurrence:
 
 1. For state $i$, the first return time $T_i$ is defined as $T_i = \min\{ n > 0 : X_n = i \}$. In other words, it's the time required for the chain to return to state $i$ for the first time after starting from $i$.
 
-2. State $i$ is said to be positively recurrent if $E(T_i | X_0 = i) = m_i < \infty$. That is, the expected time to return to $i$ starting from $i$ is finite.
+2. State $i$ is said to be positively recurrent if $E(T_i \mid X_0 = i) = m_i < \infty$. That is, the expected time to return to $i$ starting from $i$ is finite.
 
 Now, think about the long-time trajectory starting in state $i$. Given the positive recurrence, you'd expect the chain to return to state $i$ multiple times over a long period. Specifically, if you think of $m_i$ steps, you'd expect, on average, that one of these $m_i$ steps is in state $i$.
 
@@ -347,7 +347,7 @@ So, when you think over even longer durations, say $n$ steps, you'd expect the c
 From the discussion above, we have:
 
 $$ 
-\lim_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} P(X_k = i | X_0 = i) 
+\lim_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} P(X_k = i \mid X_0 = i) 
 $$
 
 This represents the average proportion of the first $n$ steps where the chain is in state $i$ given it started in state $i$. And indeed, this should equate to $\frac{1}{m_i}$.
@@ -356,7 +356,7 @@ This represents the average proportion of the first $n$ steps where the chain is
 Now, let's consider the average probability of being in state $j$ at time $n$ given we start in state $i$ at time 0:
 
 $$ 
-\lim_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} P(X_k = j | X_0 = i) = \pi_j 
+\lim_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} P(X_k = j \mid X_0 = i) = \pi_j 
 $$
 
 This $\pi_j$ is our desired stationary distribution for state $j$.

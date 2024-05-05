@@ -10,7 +10,7 @@
   <p>
     {{ '©' }}
     <time>{{ 'now' | date: '%Y' }}</time>
-    <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+    <a href="{{ site.social.links[0] }}"><span translate="no">{{ site.social.name }}</span></a>.
     {% if site.data.locales[include.lang].copyright.brief %}
       <span
         data-bs-toggle="tooltip"
@@ -31,6 +31,11 @@
       <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
     {%- endcapture -%}
 
-    {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
+    {%- capture _mine -%}
+    <a href="https://github.com/YueLin301/yuelin301.github.io" target="_blank" rel="noopener">LyTopia</a>
+    {%- endcapture -%}
+
+    <!-- {{ "Adapted from the :THEME theme for :PLATFORM" | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }} -->
+    {{ ":MINE, adapted from the :THEME theme" | replace: ':MINE', _mine | replace: ':THEME', _theme }}
   </p>
 </footer>

@@ -25,8 +25,8 @@ toc: true
 > *— Walt Whitman, O Me! O Life!*
 {: .prompt-info } -->
 
-Hi, this is Yue Lin (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
+Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
+Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
 
 
 <div style="color: #999;">
@@ -130,9 +130,9 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 
 ## Education & Experience
 
-- **The Chinese University of Hong Kong, Shenzhen**  
+- <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
   Research Assistant in School of Data Science (2022.2 - Present)
-- **Tiangong University**  
+- <span translate="no">**Tiangong University**</span>  
   Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
         > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127 
@@ -192,9 +192,9 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
 
 ### Data Science
 
-- Information Design in Multi-Agent Reinforcement Learning.  
-    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
-    *Neural Information Processing Systems (NeurIPS) 2023*.
+- <span translate="no">Information Design in Multi-Agent Reinforcement Learning.</span>  
+    <span translate="no">**Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*Neural Information Processing Systems (NeurIPS) 2023*.</span>
     > Poster. This is currently my most representative work.  
     [[Paper]](https://arxiv.org/abs/2305.06807) 
     [[Code]](https://github.com/YueLin301/InformationDesignMARL) 
@@ -206,6 +206,20 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
     [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
     [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)  
 
+<!-- - Information Design in Multi-Agent Reinforcement Learning.  
+    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
+    *Neural Information Processing Systems (NeurIPS) 2023*.
+    > Poster. This is currently my most representative work.  
+    [[Paper]](https://arxiv.org/abs/2305.06807) 
+    [[Code]](https://github.com/YueLin301/InformationDesignMARL) 
+    [[Experiments]](https://wandb.ai/yuelin301/IND+MARL?nw=nwuseryuelin301) 
+    [[Blog en]]({{site.baseurl}}/posts/IDMARL/) 
+    [[Blog cn]]({{site.baseurl}}/posts/IDMARL-cn/) 
+    [[Zhihu cn]](https://zhuanlan.zhihu.com/p/687305626) 
+    [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
+    [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
+    [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   -->
+
 <!-- > Of the empty and useless years of the rest, with the rest me intertwined,  
 > The question, O me! so sad, recurring — What good amid these, O me, O life?  
 > *— Walt Whitman, O Me! O Life!*
@@ -213,7 +227,23 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
 
 ### Robotics
 
-- Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
+- <span translate="no">Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.</span>  
+    <span translate="no">**Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.</span>  
+    <span translate="no">*International Conference on Robotics and Automation (ICRA) 2021*.</span>
+    > Oral. Delivered a presentation at the Xi'an conference venue.  
+    [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060) 
+    [[Blog]]({{site.baseurl}}/posts/RHex-T3/)  
+- <span translate="no">A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.</span>  
+    <span translate="no">**Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.</span>  
+    <span translate="no">*International Journal of Advanced Robotic Systems (IJARS) 2022*.</span>  
+    > [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Blog]]({{site.baseurl}}/posts/SSCC/) 
+    [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
+- <span translate="no">Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.</span>  
+    <span translate="no">Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.</span>  
+    <span translate="no">*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.</span>  
+    > [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)  
+
+<!-- - Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
     *International Conference on Robotics and Automation (ICRA) 2021*.
     > Oral. Delivered a presentation at the Xi'an conference venue.  
@@ -227,7 +257,7 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
 - Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.  
     Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.  
     *IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.  
-    > [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)  
+    > [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)   -->
 
 <!-- ---
 
@@ -326,15 +356,15 @@ _Generated by ChatGPT-4._ -->
   </tr>
   <tr>
     <td class="tg-mqa1">Google Scholar</td>
-    <td class="tg-wp8o"><a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer">Yue Lin</a></td>
+    <td class="tg-wp8o"><a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer"><span translate="no">Yue Lin</span></a></td>
   </tr>
   <tr>
     <td class="tg-mqa1">Zhihu</td>
-    <td class="tg-wp8o"><a href="https://www.zhihu.com/people/R01SVP/answers" target="_blank" rel="noopener noreferrer">R01SVP</a></td>
+    <td class="tg-wp8o"><a href="https://www.zhihu.com/people/R01SVP/answers" target="_blank" rel="noopener noreferrer"><span translate="no">R01SVP</span></a></td>
   </tr>
   <tr>
     <td class="tg-mqa1">Bilibili</td>
-    <td class="tg-wp8o"><a href="https://space.bilibili.com/36040555" target="_blank" rel="noopener noreferrer">不梦眠</a></td>
+    <td class="tg-wp8o"><a href="https://space.bilibili.com/36040555" target="_blank" rel="noopener noreferrer"><span translate="no">不梦眠</span></a></td>
   </tr>
 </tbody>
 </table>
@@ -347,7 +377,7 @@ _Generated by ChatGPT-4._ -->
 
 <details>
 <summary>Click to see the meanings of my names.</summary>
-
+<span translate="no">
 <ul>
   <li>In Chinese, the phonetic abbreviation for <code>301</code> is <code>sbly,</code> where <code>sb</code> stands for "silly," and <code>ly</code> is my name.</li>
   <li>When applying for the email address, I was worried that others might confuse the number <code>0</code> with the letter <code>o</code>, so I changed <code>301</code> to <code>3h1</code>, but actually, <code>3h1</code> is <code>310</code>. Haha, silly me indeed!</li>
@@ -355,7 +385,7 @@ _Generated by ChatGPT-4._ -->
   <li>Here, <code>R01SVP</code> acts like a cry or a spell from a bystander's perspective, and the entity I am inviting is <strong>the objective world!</strong></li>
   <li>"不梦眠" means "Dreamless Sleep" in English, referring to a deep, uninterrupted sleep or metaphorically, to death.</li>
 </ul>
-
+</span>
 
 </details>
 

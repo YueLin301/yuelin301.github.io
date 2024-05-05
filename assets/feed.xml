@@ -11,14 +11,14 @@ permalink: /feed.xml
   <subtitle>{{ site.description }}</subtitle>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <author>
-    <name>{{ site.social.name }}</name>
+    <name><span translate="no">{{ site.social.name }}</span></name>
     <uri>{{ "/" | absolute_url }}</uri>
   </author>
   <link rel="self" type="application/atom+xml" href="{{ page.url | absolute_url }}"/>
   <link rel="alternate" type="text/html" hreflang="{{ site.alt_lang | default: site.lang }}"
     href="{{ '/' | absolute_url }}"/>
   <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
-  <rights> © {{ 'now' | date: '%Y' }} {{ site.social.name }} </rights>
+  <rights> © {{ 'now' | date: '%Y' }} <span translate="no">{{ site.social.name }}</span> </rights>
   <icon>{{ site.baseurl }}/assets/img/favicons/favicon.ico</icon>
   <logo>{{ site.baseurl }}/assets/img/favicons/favicon-96x96.png</logo>
 
@@ -36,7 +36,7 @@ permalink: /feed.xml
     <id>{{ post_absolute_url }}</id>
     <content src="{{ post_absolute_url }}" />
     <author>
-      <name>{{ post.author | default: site.social.name }}</name>
+      <name><span translate="no">{{ post.author | default: site.social.name }}</span></name>
     </author>
 
   {% if post.categories %}

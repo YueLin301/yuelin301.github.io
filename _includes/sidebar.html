@@ -114,7 +114,10 @@
                         {% if posts_size > 0 %}
                             <div class="posts" id="posts-{{ sub_category | slugify }}">
                                 {% for post in posts_under_subcate %}
-                                    <li><b><span style="color: rgb(129, 130, 136);">|</span></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ post.url }}">{{ post.title }}</a ></li>
+                                    <li class="{% if post.url == page.url %}active{% endif %}">
+                                      <b><span style="color: rgb(129, 130, 136);">|</span></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <a href="{{ post.url }}">{{ post.title }}</a >
+                                    </li>
                                 {% endfor %}
                             </div>
                           <!-- display posts  -->
@@ -250,6 +253,13 @@
       margin-top: 0px;
       margin-bottom: 10px;
       /* cursor: pointer; */
+  }
+
+  .posts li.active {
+    background-color: rgba(153, 107, 77, 0.3);
+    /* color: red; */
+    border-radius: 5px;
+    font-weight: bold;
   }
 
 </style>

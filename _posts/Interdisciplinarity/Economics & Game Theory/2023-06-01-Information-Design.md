@@ -8,8 +8,8 @@ pin: True
 ---
 
 
-> It is not from the benevolence of the butcher, the brewer, or the baker, that we expect our dinner, but from their regard to their own interest. We address ourselves, not to their humanity but to their self-love, and never talk to them of our own necessities but of their advantages. 
-> — Adam Smith, The Wealth of Nations.
+> It is not from the benevolence of the butcher, the brewer, or the baker, that we expect our dinner, but from their regard to their own interest. We address ourselves, not to their humanity but to their self-love, and never talk to them of our own necessities but of their advantages.  
+> *— Adam Smith, The Wealth of Nations.*
  
 ## What is Information Design?
 
@@ -231,9 +231,16 @@ $$
 for all $a^{j\prime}\in A^j$.
 
 > The definitions of obedience in *(Bergemann & Morris 2011a, 2011b)* is a bit different from this.
-{: .prompt-tip }
+{: .prompt-info }
 
 A decision rule $\varphi$ is a **Bayes correlated equilibrium (BCE)** of $(G,M)$ if it is obedient for $(G,M)$.
+
+> In my understanding, it can be seen that: 
+> - The receiver still makes decisions based on its calculated posterior beliefs after receiving the messages. 
+> - When the sender's signaling scheme satisfies the obedience constraints, then the receiver's best responses to its calculated posterior beliefs are exactly the sender's recommendations.
+>
+> The receiver calculating the posteriror beliefs still needs the commitment assumption.
+{: .prompt-tip }
 
 ### Degenerated BCE
 
@@ -303,6 +310,8 @@ $$
 $$
 
 for all $a^{j\prime}\in A^j$.
+
+
 
 ---
 

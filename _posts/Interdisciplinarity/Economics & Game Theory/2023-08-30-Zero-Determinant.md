@@ -6,7 +6,7 @@ tags: [Tech, Interdisciplinarity, Economics, Game Theory, Social Dilemma, Multi 
 math: True
 ---
 
-> This note aims to summarize the essence of this paper:  
+> This note aims to explain the parts omitted in this paper:  
 > [Press, William H., and Freeman J. Dyson. "Iterated Prisoner’s Dilemma contains strategies that dominate any evolutionary opponent." Proceedings of the National Academy of Sciences 109.26 (2012): 10409-10413.](https://www.pnas.org/doi/pdf/10.1073/pnas.1206569109)
 {: .prompt-info }
 
@@ -53,7 +53,8 @@ Derivation:
 
 $$
 \begin{aligned}
-    &\sum\limits_{\tau^i,\Delta\tau} 
+    \mathrm{Pr}(a^i, a^j)
+    =&\sum\limits_{\tau^i,\Delta\tau} 
     \pi^i(a^i\mid \tau^i) \cdot
     \pi^j(a^j\mid \tau^i,\Delta\tau) \cdot
     \mathrm{Pr}(\tau^i,\Delta\tau) \\
@@ -150,24 +151,107 @@ $$
 > This part requires some knowledge of stochastic processes. Check [my other note]({{site.baseurl}}/posts/Stochastic-Processes/).
 {: .prompt-info }
 
-- $\mathbf{M}$ is [irreducible]({{site.baseurl}}/posts/Stochastic-Processes/#irreducible-markov-chain)
-- $\mathbf{M}$ is finite
+- $\mathbf{M}$ is irreducible. It means that the entire state space is on communicating class, i.e., for every two states $i$ and $j$, it holds that $i\leftrightarrow j.$
+- $\mathbf{M}$ is finite. It means that $\mathbf{M}$ has a finite number of states.
 
-Then $\mathbf{M}$ is positive recurrent.
+$\Rightarrow$ $\mathbf{M}$ is positive recurrent. It means that every state can return to itself in finite steps. Formally, $\mathbb{E}[T_i \mid X_0 = i] = m_i < \infty,$ where $T_i$ is the first return time and $T_i = \min \set{ n > 0 : X_n = i \mid X_0 = i }.$ (If the state space of an irreducible Markov chain is finite, then all its states are positive recurrent.) 
+
+$\Rightarrow$ $\mathbf{M}$ has a stationary distribution $\mathbf{v}^\intercal = \mathbf{v}^\intercal \mathbf{M}.$ (If the irreducible Markov chain is positive recurrent, then a stationary distribution $\mathrm{v}$ exists, is unique, and is given by $\mathrm{v}_i = 1/m_i$, where $m_i$ is the expected return time to state $i$.)
+
+$\Rightarrow$ $\mathbf{M}$ has a unit eigenvalue: $1\cdot \mathbf{v}^\intercal = \mathbf{v}^\intercal \mathbf{M}.$
+
+### $\operatorname{det}(\mathbf{M'}) = 0$
+
+$\mathbf{M}$ has a unit eigenvalue: $1\cdot \mathbf{v}^\intercal = \mathbf{v}^\intercal \mathbf{M}.$
+
+$\Rightarrow$ $\mathbf{v}^\intercal \mathbf{M'} = \boldsymbol{0},$ where $\mathbf{M'} := \mathbf{M} - \mathbf{I}.$
+
+$\Rightarrow$ $\mathbf{M'}$ is singular. Because $\mathbf{v}$ is not a zero vetor, meaning that there is a non-zero vector in the null space of $\mathbf{M'}.$
+
+$\Rightarrow$ $\operatorname{det}(\mathbf{M'}) = 0,$ by definition.
+
+### Every row of $\operatorname{Adj}(\mathbf{M}')$ is proportional to $\mathbf{v}$
+
+$$
+\mathbf{M} = \left[\begin{array}{llll}
+p_1 q_1 & p_1\left(1-q_1\right) & \left(1-p_1\right) q_1 & \left(1-p_1\right)\left(1-q_1\right) \\
+p_2 q_3 & p_2\left(1-q_3\right) & \left(1-p_2\right) q_3 & \left(1-p_2\right)\left(1-q_3\right) \\
+p_3 q_2 & p_3\left(1-q_2\right) & \left(1-p_3\right) q_2 & \left(1-p_3\right)\left(1-q_2\right) \\
+p_4 q_4 & p_4\left(1-q_4\right) & \left(1-p_4\right) q_4 & \left(1-p_4\right)\left(1-q_4\right)
+\end{array}\right]
+$$
+
+$$
+\mathbf{M'} = \left[\begin{array}{llll}
+p_1 q_1 - 1 & p_1\left(1-q_1\right) & \left(1-p_1\right) q_1 & \left(1-p_1\right)\left(1-q_1\right) \\
+p_2 q_3 & p_2\left(1-q_3\right) - 1 & \left(1-p_2\right) q_3 & \left(1-p_2\right)\left(1-q_3\right) \\
+p_3 q_2 & p_3\left(1-q_2\right) & \left(1-p_3\right) q_2 - 1 & \left(1-p_3\right)\left(1-q_2\right) \\
+p_4 q_4 & p_4\left(1-q_4\right) & \left(1-p_4\right) q_4 & \left(1-p_4\right)\left(1-q_4\right) - 1
+\end{array}\right]
+$$
+
+The cofactor of $\mathbf{M'}:$
+
+$$
+C_{ij} = (-1)^{i+j} \cdot \operatorname{det}(\mathbf{M'}_{ij}),
+$$
+
+where $\mathbf{M'}\_{ij}$ is the $3 \times 3$ submatrix, with the row and column containing the element $\mathbf{M'}\_{ij}$ removed from the matrix $\mathbf{M'}.$
+
+$$
+\operatorname{Adj}(\mathbf{M'}) = \begin{bmatrix}
+C_{11} & C_{21} & C_{31} & C_{41} \\
+C_{12} & C_{22} & C_{32} & C_{42} \\
+C_{13} & C_{23} & C_{33} & C_{43} \\
+C_{14} & C_{24} & C_{34} & C_{44}
+\end{bmatrix}
+$$
+
+A basic lemma in Linear Algebra:   
+
+$$
+\mathbf{A} \cdot \operatorname{Adj}(\mathbf{A}) = \operatorname{Adj}(\mathbf{A}) \cdot \mathbf{A} = \operatorname{det}(\mathbf{A}) \cdot \mathbf{I}.
+$$
+
+Here:
+
+$$
+\operatorname{Adj}(\mathbf{M'}) \cdot \mathbf{M'} = \operatorname{det}(\mathbf{M'}) \cdot \mathbf{I} = 0 \cdot \mathbf{I} = 0.
+$$
+
+Then we have $\operatorname{Adj}(\mathbf{M'}) \cdot \mathbf{M'} = \mathbf{v}^\intercal \mathbf{M'} = \boldsymbol{0}.$ It follows that every row of $\operatorname{Adj}(\mathbf{M'})$ and \mathbf{v} is in the null space of $\mathbf{M'}.$ And thus every row of $\operatorname{Adj}(\mathbf{M}')$ is proportional to $\mathbf{v}.$
+
+### Adding the first column of $\mathbf{M′}$ into the second and third columns
+
+$$
+\mathbf{M}^{\prime\prime}=\left[\begin{array}{llll}
+p_1 q_1 - 1 & p_1-1 & q_1-1   & \left(1-p_1\right)\left(1-q_1\right) \\
+p_2 q_3 & p_2-1     & q_3     & \left(1-p_2\right)\left(1-q_3\right) \\
+p_3 q_2 & p_3       & q_2 - 1 & \left(1-p_3\right)\left(1-q_2\right) \\
+p_4 q_4 & p_4       & q_4     & \left(1-p_4\right)\left(1-q_4\right) - 1
+\end{array}\right]
+$$
+
+The 4-th row of $\operatorname{Adj}(\mathbf{M'})$ is $(C_{14}, C_{24}, C_{34}, C_{44}).$ The signs and the determinants of these cofactors are not changed compared to the ones of $\mathbf{M}^{\prime\prime}.$
+
+### $\mathbf{v'} \cdot \mathbf{f} \equiv \operatorname{D}(\mathbf{p}, \mathbf{q}, \mathbf{f})$
+
+$$
+\mathbf{v'} \cdot \mathbf{f} \equiv
+\operatorname{D}(\mathbf{p}, \mathbf{q}, \mathbf{f}) = 
+\operatorname{det}
+\left[\begin{array}{llll}
+p_1 q_1 - 1 & p_1-1 & q_1-1   & f_1 \\
+p_2 q_3 & p_2-1     & q_3     & f_2 \\
+p_3 q_2 & p_3       & q_2 - 1 & f_3 \\
+p_4 q_4 & p_4       & q_4     & f_4 
+\end{array}\right]
+$$
+
+Here $\mathbf{v'} = k\cdot\mathbf{v} = (C_{14}, C_{24}, C_{34}, C_{44}),$ where $k$ is an integer. The equation holds by the definition of determinant.
 
 
-- $\mathbf{M}$ is a positive recurrent Markov chain.
-- $\Rightarrow$ $\mathbf{M}$ has a stationary distribution $\mathbf{v} = \mathbf{v} \mathbf{M}.$
-- $\Rightarrow$ $\mathbf{M}$ has a unit eigenvalue: $1\cdot \mathbf{v} = \mathbf{v} \mathbf{M}.$
-
-y distribution exists.
-{: .prompt-info }
 
 
-
-
-
-
-
-
-
+> The rest of the paper is not hard to parse.
+{: .prompt-tip }

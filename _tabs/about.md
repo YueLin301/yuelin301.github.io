@@ -26,7 +26,7 @@ toc: true
 {: .prompt-info } -->
 
 Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
+I am about to become a Ph.D. student in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
 
 
 <div style="color: #999;">
@@ -131,6 +131,8 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 ## Education & Experience
 
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
+  Ph.D. Student in Data Science (As for 2024.9)  
+  <!-- Ph.D. Student in Data Science (2024.9 - Present)   -->
   Research Assistant in School of Data Science (2022.2 - Present)
 - <span translate="no">**Tiangong University**</span>  
   Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)

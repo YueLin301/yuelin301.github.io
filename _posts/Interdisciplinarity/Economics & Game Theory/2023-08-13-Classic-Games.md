@@ -446,8 +446,48 @@ By computing the Shapley value for this game, one would find a fair division of 
 - [Zero-determinant strategy](https://www.pnas.org/doi/pdf/10.1073/pnas.1206569109). (Check [my other note]({{site.baseurl}}/posts/Zero-Determinant/).)
 
 
+## Entry Deterrence Game
 
+![](../../../assets/img/2023-08-13-Classic-Games/img_2024-05-22-17-41-08.png){: width="300"}
+_Entry Deterrence Game._
 
+> - There are two players.
+> - Player 1, the entrant, can choose to enter the market or stay out. Player 2, the incumbent, after observing the action of the entrant, chooses to accommodate him or fight with him.
+
+(From [MIT 6.254 2010: Game Theory With Engineering Applications](https://ocw.mit.edu/courses/6-254-game-theory-with-engineering-applications-spring-2010/pages/lecture-notes/) Lecture 12)
+
+### Nash Equilibrium
+
+Equivalent strategic form representation:
+
+| Entrant $\backslash$ Incumbent | Accommodate | Fight |
+| :---: | :---: | :---: |
+| In | $(2,1)$ | $(0,0)$ |
+| Out | $(1,2)$ | $(1,2)$ |
+
+Two pure Nash equilibria: (In,A) and (Out,F).
+
+### Subgame Perfect Equilibrium
+
+The equilibrium (Out,F) is sustained by a noncredible threat of the monopolist. 
+This Nash equilibrium means that the monopolist will bluff that "if you choose to be in, then I will choose fight."
+
+But by backward induction, we can see that (In, F) can be eliminated, since the monopolist will get more in (In, A).
+
+So in the first depth of nodes, the entrant will choose to be in because in (In, A) it gets 2 while it gets 1 in (Out, F).
+
+In this way, there is only one SPE, which is (In, A). The noncredible threat (Out, F) Nash equilibrium is eliminated.
+
+### The Value of Commitment
+
+Exchanging the timing of agents, then the threat turns to be credible.
+
+![](../../../assets/img/2023-08-13-Classic-Games/img_2024-05-23-00-36-04.png){: width="300"}
+_Entry Deterrence Game with Timing Exchanged._
+
+This implies that the incumbent can now commit to fighting. And it is straightforward to see that the unique SPE now involves the incumbent committing to fighting and the entrant not entering.
+
+---
 
 > Disclaimer: The description of games is from Wikipedia and other sources (books or papers). Corresponding links or references have been provided. The content regarding attractors is my personal understanding.
 {: .prompt-danger }

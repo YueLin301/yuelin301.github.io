@@ -2,10 +2,13 @@
 layout: default
 title: Home
 icon: fa-solid fa-hat-wizard
-toc: true
+panel_includes:
+  - toc
 ---
 
 <div style="margin-bottom: 35px;"></div>
+
+<!-- <div class="ani-hello"></div> -->
 
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
   <div style="flex-shrink: 0; width: 130px; height: 130px; background-image: url('/assets/img/avatar/meow9.png'); background-size: cover; background-position: center; margin-right: 30px;" onmouseover="this.style.backgroundImage='url(/assets/img/avatar/meow8.png)'" onmouseout="this.style.backgroundImage='url(/assets/img/avatar/meow9.png)'">
@@ -23,7 +26,7 @@ toc: true
 </div>
 
 Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Professor <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
+I am about to become a Ph.D. student in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Professor <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
 
 <div style="color: #999;">
   And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption. <i>—&nbsp;Friedrich&nbsp;Nietzsche,&nbsp;Thus&nbsp;Spoke&nbsp;Zarathustra.</i>
@@ -98,3 +101,44 @@ Currently, I am a research assistant in School of Data Science at The Chinese Un
   </tbody>
 </table>
 
+
+<!-- 
+
+<script>
+  const el = document.querySelector('.ani-hello');
+  const text = 'Ta-Da!';
+  let idx = 0;
+
+  function typeWriter() {
+      if (idx < text.length) {
+          el.textContent += text.charAt(idx);
+          idx++;
+          setTimeout(typeWriter, 150);
+      } else {
+          el.style.animation = 'none';
+          el.style.borderRight = 'none';
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', typeWriter);
+</script>
+
+
+<style>    
+  .ani-hello {
+      font-size: 42px;
+      font-weight: bold;
+      color: rgb(224, 157, 109);
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block; 
+      line-height: 80px;
+      border-right: 0.15em solid rgb(236, 223, 201);
+      margin-bottom: -30px;
+  }
+
+  @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: rgb(236, 223, 201); }
+  }
+</style> -->

@@ -1,5 +1,5 @@
 ---
-title: MacOS
+title: MacOS Workspace
 date: 2024-03-03 02:40:00 +0800
 categories: [Efficiency, Misc Toolbox]
 tags: [Tech, Efficiency, Toolbox]

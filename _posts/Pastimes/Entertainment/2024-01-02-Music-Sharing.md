@@ -15,11 +15,11 @@ The order matters. It reflects how much I like them.
 <!-- <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/playlist/millie-turner-essentials/pl.u-06oxDlbCY9WklyM?l=en-GB"></iframe> -->
 
 1. You and I
-2. Swimming Pool (Stripped)
-3. Swimming Pool
+2. Swimming Pool (Stripped) / Swimming Pool
+3. The Shadow
 4. Made a Vow
-5. January
-6. Concrete Tragedy
+5. Concrete Tragedy
+6. January
 7. Jungle
 8. Sway
 9. Night Running

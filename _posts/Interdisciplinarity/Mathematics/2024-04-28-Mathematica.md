@@ -41,7 +41,50 @@ Reduce[{ x^2 + y^2 - 2 x <= 1}, x]
 
 ## 向量和矩阵
 
-这块做不了笔记，出现两个右大括号jekyll就会抽风
+### 定义
+{% raw %}
+```mathematica
+matrix = {{a, b}, {c, d }};  (* Replace a, b, c, d with actual numbers or symbols *)
+vector = {x, y};            (* Replace x, y with actual numbers or symbols *)
+result = matrix . vector;
+```
+{% endraw %}
+
+### 索引
+
+使用双重中括号 `[[...]]` 来索引矩阵或向量的元素
+
+对于向量：
+
+```mathematica
+vector = {v1, v2, v3};
+element = vector[[2]];  (* 这会返回向量的第二个元素，v2 *)
+```
+
+对于矩阵：
+
+{% raw %}
+```mathematica
+matrix = {{a1, b1}, {a2, b2} };
+element = matrix[[1, 2]];  (* 这会返回矩阵第一行第二列的元素，b1 *)
+```
+{% endraw %}
+
+索引矩阵的某一行或某一列：
+
+- **索引某一行**：只给出行号
+
+```mathematica
+row = matrix[[1]];  (* 返回第一行，{a1, b1} *)
+```
+
+- **索引某一列**：使用 `All` 关键字来表示所有行，并给出列号
+
+```mathematica
+column = matrix[[All, 2]];  (* 返回第二列，{b1, b2} *)
+```
+
+要记住的重要事项是，这种索引方法返回的是原始数据结构中的实际元素，而不是它们的副本，这意味着如果你修改返回的元素，那么原始矩阵或向量中对应的元素也会被修改。如果你只想获得一个副本而不影响原始数据，你应该在索引操作后使用 `Copy` 函数。 -->
 
 ## 删除变量
 
@@ -67,3 +110,52 @@ $c\in \mathbb{R}$
 ```mathematica
 Element[c, Reals]
 ```
+
+
+## 画图
+
+```mathematica
+Plot[x^2, {x, -2, 2}]
+```
+
+```mathematica
+Plot3D[x^2 + y^2, {x, -2, 2}, {y, -2, 2}]
+```
+
+```mathematica
+Plot3D[x*y, {x, -5, 5}, {y, -5, 5}]
+```
+
+```mathematica
+Plot3D[x*y, {x, 0, 10}, {y, 0, 10}, 
+ RegionFunction -> Function[{x, y, z}, y < 5/x], PlotRange -> All, 
+ Axes -> True, AxesOrigin -> {0, 0, 0}, 
+ AxesStyle -> Directive[Red, Thick], AxesLabel -> {"x", "y", "z"}, 
+ AxesStyle -> Arrowheads[0.03], Boxed -> False]
+```
+
+```mathematica
+Plot3D[x*y, {x, 0, 10}, {y, 0, 10}, 
+ RegionFunction -> Function[{x, y, z}, Abs[y - 1] < 5/Abs[x - 1]], 
+ PlotRange -> All, Axes -> True, AxesOrigin -> {0, 0, 0}, 
+ AxesStyle -> Directive[Red, Thick], AxesLabel -> {"x", "y", "z"}, 
+ AxesStyle -> Arrowheads[0.03], Boxed -> False]
+```
+
+```mathematica
+ContourPlot[y^2 == 1/x^2, {x, -2, 2}, {y, -2, 2}]
+```
+
+Multiple lines:
+```mathematica
+Plot[{1 - x, 0.25/x, x, 0.3/x}, {x, 0, 1}, PlotRange -> {All, {0, 1}},
+  PlotLegends -> "Expressions", AspectRatio -> Automatic]
+```
+
+Fill with color:
+{% raw %}
+```mathematica
+Plot[1 - x, {x, 0, 1.2}, Filling -> Axis, 
+ PlotRange -> {{0, 1.2}, {0, 1.2}}, AspectRatio -> Automatic]
+```
+{% endraw %}

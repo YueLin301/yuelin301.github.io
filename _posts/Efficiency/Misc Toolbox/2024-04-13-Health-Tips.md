@@ -2,7 +2,7 @@
 title: Health Tips
 date: 2024-04-13 14:40:00 +0800
 categories: [Efficiency, Misc Toolbox]
-tags: [Tech, Efficiency, Toolbox]
+tags: [Life, Efficiency, Toolbox]
 math: True
 ---
 

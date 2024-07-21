@@ -6,7 +6,7 @@ tags: [Life, Pastimes, Literature, Movie]
 math: True
 pin: True
 image:
-  path: ../../assets/img/2024-02-09-Movie-Perfume/WechatIMG1.jpg
+  path: /assets/img/2024-02-09-Movie-Perfume/WechatIMG1.jpg
 ---
 
 ![](../../assets/img/2024-02-09-Movie-Perfume/WechatIMG2.jpg)

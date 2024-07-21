@@ -324,7 +324,7 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
 
 ---
 
-> The following part has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
+> The following part has not been finished yet.
 {: .prompt-warning }
 
 ---

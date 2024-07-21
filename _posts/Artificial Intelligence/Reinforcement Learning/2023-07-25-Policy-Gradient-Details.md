@@ -449,5 +449,5 @@ $$
 \end{aligned}
 $$
 
-> The following part has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
+> The following part has not been finished yet.
 {: .prompt-warning }

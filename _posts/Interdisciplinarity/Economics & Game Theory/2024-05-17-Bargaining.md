@@ -6,14 +6,6 @@ tags: [Tech, Interdisciplinarity, Economics, Game Theory, Social Dilemma, Multi 
 math: True
 ---
 
-## Resources
-This post uses the material from the following works:
-
-- [MIT 6.254 2010: Game Theory With Engineering Applications](https://ocw.mit.edu/courses/6-254-game-theory-with-engineering-applications-spring-2010/pages/lecture-notes/); And I think the SPNE in Page 24 is wrong.
-- [如何用经济学知识讨价还价？ - 星日马的回答 - 知乎](https://www.zhihu.com/question/51540816/answer/147891426)；这篇也有错，玩家B的提议定义是乱的，应该是某处的笔误
-- [[(AGT3E8) [Game Theory] Solving Rubinstein's Infinite Horizon Alternating Offer Bargaining Game]](https://youtu.be/4T8tOI034QA?si=Lf838lgwcZR9vR-U)
-- Bargaining and Repeated Games - Jonathan Levin - Feb. 2002
-
 ## An Extensive-Form Game Model
 
 ### Ultimatum
@@ -408,3 +400,31 @@ Plot[{1 - x, 0.25/x, x, 1.2 - x, -6 x + 3.5, 0.28/x}, {x, 0, 1},
 Since $U^{\prime}$ is bounded, we can find a rectangle $U^{\prime \prime}$ symmetric with respect to the line $v_1=v_2$, such that $U^{\prime} \subseteq U^{\prime \prime}$ and $(1 / 2,1 / 2)$ is on the boundary of $U^{\prime \prime}$.
 
 By Axioms 1 and $2, f\left(U^{\prime \prime}, 0\right)=(1 / 2,1 / 2)$. By Axiom 4, since $U^{\prime} \subseteq U^{\prime \prime}$, we have $f\left(U^{\prime}, 0\right)=(1 / 2,1 / 2)$, completing the proof.
+
+### An Important Example
+
+> Nash, John F. "The bargaining problem." Econometrica 18.2 (1950): 155-162.
+
+![](../../../assets/img/2024-05-17-Bargaining/img_2024-06-06-21-13-41.png){:width="400"}
+
+![](../../../assets/img/2024-05-17-Bargaining/img_2024-06-06-21-15-00.png){:width="400"}
+
+They get the max social welfare at the intersection point of the oval and the blue line.
+So they will reach an agreement here.
+And they can move to the intersection point of the red line and the blue line, by exchanging their utilities.
+
+
+## Resources
+This post uses the material from the following works:
+
+- [MIT 6.254 2010: Game Theory With Engineering Applications](https://ocw.mit.edu/courses/6-254-game-theory-with-engineering-applications-spring-2010/pages/lecture-notes/); And I think the SPNE in Page 24 is wrong.
+- [如何用经济学知识讨价还价？ - 星日马的回答 - 知乎](https://www.zhihu.com/question/51540816/answer/147891426)；这篇也有错，玩家B的提议定义是乱的，应该是某处的笔误
+- [[(AGT3E8) [Game Theory] Solving Rubinstein's Infinite Horizon Alternating Offer Bargaining Game]](https://youtu.be/4T8tOI034QA?si=Lf838lgwcZR9vR-U)
+- Bargaining and Repeated Games - Jonathan Levin - Feb. 2002
+
+
+### To-Read
+
+1. [Reputations in Repeated Games](https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/1/313/files/2017/02/Handbook-Reputations-8-11-2013-29o1xz6.pdf)
+2. [The Unreasonable Fairness of Maximum Nash Welfare](https://www.cs.toronto.edu/~nisarg/papers/mnw.pdf)
+3. [Equity and bargaining power in ultimatum games](https://www.sciencedirect.com/science/article/pii/S0167268116301366)

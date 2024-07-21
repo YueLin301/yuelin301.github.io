@@ -765,7 +765,7 @@ $btn-mb: 0.5rem;
 
   .nav-grid {
     display: grid;
-    grid-template-columns: repeat(4, 20%); /* 2 columns */
+    grid-template-columns: repeat(5, 15%); /* 2 columns */
     gap: 5px;
     list-style: none;
     justify-content: center;
@@ -773,8 +773,8 @@ $btn-mb: 0.5rem;
     font-size: 95%;
     // opacity: 0.7;
     margin-top: 20px;
-    margin-left: 5%;
-    margin-right: 10%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
 
   .nav-grid li.nav-item {

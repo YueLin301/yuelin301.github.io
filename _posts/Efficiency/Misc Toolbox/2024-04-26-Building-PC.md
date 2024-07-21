@@ -13,7 +13,9 @@ math: True
 - 装系统：[【【装机教程】超详细WIN10系统安装教程，官方ISO直装与PE两种方法教程，UEFI+GUID分区与Legacy+MBR分区】](https://www.bilibili.com/video/BV1DJ411D79y?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
 
 - CPU：[【【硬核科普】CPU是如何命名的，数字更大就一定更好吗？】](https://www.bilibili.com/video/BV17u4y1979X?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
-- 主板：[【【硬核科普】从零开始认识主板】](https://www.bilibili.com/video/BV1xQ4y1b7JS?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
+- 主板：
+  - [【【硬核科普】从零开始认识主板】](https://www.bilibili.com/video/BV1xQ4y1b7JS?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
+  - [【装机课堂：ATX、M-ATX、ITX主板都是什么？】](https://www.bilibili.com/video/BV1Wb411C7Zd?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
 - 内存：
   - [【【硬核科普】内存频率到底由谁决定上下限？不同频率的内存混插按谁算？如何为你的CPU和主板选择合适频率的内存？】](https://www.bilibili.com/video/BV12J411G7Tj?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
   - [【你的内存买对了么？买内存前你最该知道的6件事儿】](https://www.bilibili.com/video/BV1wS4y1e7SW?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
@@ -21,6 +23,10 @@ math: True
 
 
 - NAS：[【【硬核科普】NAS究竟是什么东西？你需要一台NAS吗？】](https://www.bilibili.com/video/BV1kZ4y1F733?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
+
+
+- [CPU天梯图](https://www.mydrivers.com/zhuanti/tianti/cpu/index.html)
+- [显卡天梯图](https://www.mydrivers.com/zhuanti/tianti/gpu/)
 
 
 ## 偏好清单概览
@@ -228,6 +234,8 @@ Intel频率规律：
 6. 显卡位置留大点，因为后选
 
 ### 显卡
+
+一般用的PCIE插槽
 
 3090和4090通常是指英伟达（NVIDIA）生产的显卡芯片型号，全称分别是GeForce RTX 3090和GeForce RTX 4090。英伟达作为显卡芯片的设计和制造商，负责开发这些高性能GPU芯片。
 

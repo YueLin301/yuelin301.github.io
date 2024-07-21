@@ -6,7 +6,7 @@ panel_includes:
   - toc
 ---
 
-<div style="margin-bottom: 35px;"></div>
+<!-- <div style="margin-bottom: 35px;"></div> -->
 
 <!-- <div class="ani-hello"></div> -->
 
@@ -34,7 +34,7 @@ I am about to become a Ph.D. student in School of Data Science at The Chinese Un
 
 <hr>
 
-<style type="text/css">
+<!-- <style type="text/css">
   .tg  {border:none;border-collapse:collapse;border-spacing:0;}
   .tg td{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;
     padding:10px 5px;word-break:normal;}
@@ -52,8 +52,8 @@ I am about to become a Ph.D. student in School of Data Science at The Chinese Un
   <thead>
     <tr>
       <th class="tg-18eh"><span style="font-weight:700;font-style:normal; color:rgb(153, 107, 77)">Basic Information</span></th>
-      <th class="tg-18eh"><span style="font-weight:600;font-style:normal; color:rgb(153, 107, 77)">Post Browsers</span></th>
       <th class="tg-18eh"><span style="font-weight:600;font-style:normal; color:rgb(153, 107, 77)">Post Topics</span></th>
+      <th class="tg-18eh"><span style="font-weight:600;font-style:normal; color:rgb(153, 107, 77)">Post Browsers</span></th>
     </tr>
   </thead>
   <tbody>
@@ -63,14 +63,14 @@ I am about to become a Ph.D. student in School of Data Science at The Chinese Un
           <button id="toHome"><i class="fa-brands fa-fort-awesome"></i> Home</button>
         </a>
       </td>
-      <td class="tg-xwyw">
-        <a href="{{site.baseurl}}/categories/" style="text-decoration: none;" title="Categories">
-          <button id="fullCategories"><i class="fa-solid fa-chess"></i> Categories</button>
-        </a>
-      </td>
       <td class="tg-xwyw" rowspan="2">
         <a href="{{site.baseurl}}/tech/" style="text-decoration: none;" title="Technology">
           <button id="toAbout"><i class="fa-solid fa-wand-sparkles"></i> Technology</button>
+        </a>
+      </td>
+      <td class="tg-xwyw">
+        <a href="{{site.baseurl}}/categories/" style="text-decoration: none;" title="Categories">
+          <button id="fullCategories"><i class="fa-solid fa-chess"></i> Categories</button>
         </a>
       </td>
     </tr>
@@ -84,12 +84,7 @@ I am about to become a Ph.D. student in School of Data Science at The Chinese Un
     <tr>
       <td class="tg-xwyw">
         <a href="{{site.baseurl}}/about/" style="text-decoration: none;" title="About Me">
-          <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i> More About Me</button>
-        </a>
-      </td>
-      <td class="tg-xwyw">
-        <a href="{{site.baseurl}}/tags/" style="text-decoration: none;" title="Tags">
-          <button id="toTags"><i class="fa-solid fa-puzzle-piece"></i> Tags</button>
+          <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i> About Me</button>
         </a>
       </td>
       <td class="tg-xwyw"><span style="font-weight:400;font-style:normal">
@@ -97,9 +92,14 @@ I am about to become a Ph.D. student in School of Data Science at The Chinese Un
           <button id="toAbout"><i class="fa-solid fa-broom"></i> Life</button>
         </a>
       </span></td>
+      <td class="tg-xwyw">
+        <a href="{{site.baseurl}}/tags/" style="text-decoration: none;" title="Tags">
+          <button id="toTags"><i class="fa-solid fa-puzzle-piece"></i> Tags</button>
+        </a>
+      </td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
 <!-- 
@@ -142,3 +142,86 @@ I am about to become a Ph.D. student in School of Data Science at The Chinese Un
       50% { border-color: rgb(236, 223, 201); }
   }
 </style> -->
+
+
+
+<table>
+  <tr>
+      <td>
+        <a href="{{site.baseurl}}/" style="text-decoration: none;" title="Home">
+          <button id="toHome" style="color: rgb(153, 107, 77);"><i class="fa-brands fa-fort-awesome"></i><span style="font-weight:700;font-style:normal;"> Home</span></button>
+        </a>
+      </td>
+      <td>
+        <a href="{{site.baseurl}}/about/" style="text-decoration: none;" title="About Me">
+          <button id="toAbout"><i class="fa-solid fa-hat-wizard"></i><span style="font-weight:600;font-style:normal;"> About Me</span></button>
+        </a>
+      </td>
+      <td>
+        <a href="{{site.baseurl}}/categories/" style="text-decoration: none;" title="Categories">
+          <button id="fullCategories"><i class="fa-solid fa-chess"></i><span style="font-weight:600;font-style:normal;"> Categories</span></button>
+        </a>
+      </td>
+      <td>
+        <a href="{{site.baseurl}}/archives/" style="text-decoration: none;" title="Archives">
+          <button id="toArchives"><i class="fa-solid fa-scroll"></i><span style="font-weight:600;font-style:normal;"> Archives</span></button>
+        </a>
+      </td>
+      <td>
+        <a href="{{site.baseurl}}/tags/" style="text-decoration: none;" title="Tags">
+          <button id="toTags"><i class="fa-solid fa-puzzle-piece"></i><span style="font-weight:600;font-style:normal;"> Tags</span></button>
+        </a>
+      </td>
+  </tr>
+  <tr>
+      <td>
+        <a href="{{site.baseurl}}/publication/" style="text-decoration: none;" title="Selected Publications">
+          <button id="toAbout"><i class="fa-solid fa-feather-pointed"></i><span style="font-weight:600;font-style:normal;"> Publications</span></button>
+        </a>
+      </td>
+      <td>
+        <a href="{{site.baseurl}}/teaching/" style="text-decoration: none;" title="Teaching">
+          <button id="toAbout"><i class="fa-solid fa-seedling"></i><span style="font-weight:600;font-style:normal;"> Teaching</span></button>
+        </a>
+      </td>
+      <td>
+        <a href="{{site.baseurl}}/tech/" style="text-decoration: none;" title="Technology">
+          <button id="toAbout"><i class="fa-solid fa-wand-sparkles"></i><span style="font-weight:600;font-style:normal;"> Technology</span></button>
+        </a>
+      </td>
+      <td>
+        <a href="{{site.baseurl}}/life/" style="text-decoration: none;" title="Life">
+          <button id="toAbout"><i class="fa-solid fa-broom"></i><span style="font-weight:600;font-style:normal;"> Life</span></button>
+        </a>
+      </td>
+      <td></td>
+  </tr>
+</table>
+
+
+<div style="width: 100%; max-width: 600px; margin: auto;">
+  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=dc9e71&w=300&t=tt&d=jdy-KeNo_f3zL8VC2_O8su6clmH9O5qDNkJ8DDtpMm0&co=e9d9ca&cmo=808080&cmn=966b50&ct=000000'></script>
+</div>
+
+<style>
+  table {
+      border-collapse: collapse; /* 合并边框 */
+  }
+  td {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+  }
+  /* 移除所有边框 */
+  td {
+      border: none;
+  }
+
+  tr:first-child td {
+      border-bottom: 1px solid #999;
+  }
+
+  td:nth-child(2) {
+      border-right: 1px solid #999;
+  }
+</style>

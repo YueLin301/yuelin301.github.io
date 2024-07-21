@@ -29,10 +29,16 @@ math: True
 
 <details>
 <summary>点击展开/收起</summary>
-
-这里是折叠起来的内容。
-
+哈哈哈哈哈哈
 </details>
+
+
+```html
+<details>
+<summary>点击展开/收起</summary>
+哈哈哈哈哈哈
+</details>
+```
 
 ### 删除
 

@@ -1,9 +1,9 @@
 ---
 # the default layout is 'page'
 layout: post
-title: Greetings! 🎉
+title: About Me
 icon: fa-solid fa-hat-wizard
-order: 6
+order: 2
 toc: true
 ---
 
@@ -102,12 +102,13 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
     <div>
       <p><strong>Currently</strong></p>
       <ul>
-        <li>Social Dilemma</li>
-        <li>Multi-Agent Reinforcement Learning</li>
+        <!-- <li>Social Dilemma</li> -->
+        <li>Mixed-Motive Multi-Agent RL</li>
         <li>Algorithmic Game Theory</li>
-        <ul>
-          <li>Information Design <a href="{{site.baseurl}}/posts/Information-Design-10min/">[Blog]</a></li>
+        <ul style="margin-left: -20px;">
+          <li>Information Design</li>
         </ul>
+        <li>Large Language Models</li>
       </ul>
       <p><strong>Formerly</strong></p>
       <ul>
@@ -130,17 +131,23 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 
 ## Education & Experience
 
+### Education 
+
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
   Ph.D. Student in Data Science (As for 2024.9)  
   <!-- Ph.D. Student in Data Science (2024.9 - Present)   -->
-  Research Assistant in School of Data Science (2022.2 - Present)
 - <span translate="no">**Tiangong University**</span>  
   Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
-        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127 
+        > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127  
         [[Certification]]({{site.baseurl}}/posts/Certification-Rank/)
     - School of Mechanical Engineering (2018.9 - 2019.6)  
         > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
+
+### Experience
+
+- <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
+  Research Assistant in School of Data Science (2022.2 - Present)
 
 <!-- #588142-->
 <!-- > <p style="font-size: 18px; color: #495485"><b>If I'm going to have a past, I prefer it to be multiple choice! HA! HA! HA! <i>—&nbsp;The&nbsp;Killing&nbsp;Joke.</i></b></p> -->
@@ -188,7 +195,7 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
 
 ---
 
-## Publications
+## Selected Publications
 
 <!-- [[Google Scholar]](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN) -->
 
@@ -206,7 +213,8 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
     [[Zhihu cn]](https://zhuanlan.zhihu.com/p/687305626) 
     [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
     [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
-    [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)  
+    [[Talk RLChina]](https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
+    <!-- [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   -->
 
 <!-- - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
@@ -240,10 +248,10 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
     <span translate="no">*International Journal of Advanced Robotic Systems (IJARS) 2022*.</span>  
     > [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Blog]]({{site.baseurl}}/posts/SSCC/) 
     [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
-- <span translate="no">Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.</span>  
+<!-- - <span translate="no">Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.</span>  
     <span translate="no">Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.</span>  
     <span translate="no">*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.</span>  
-    > [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)  
+    > [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)   -->
 
 <!-- - Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
     **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
@@ -281,38 +289,148 @@ The high-scoring courses at the undergraduate level include the following:
   - **Artificial Intelligence:** Digital Image Processing (98), Speech Recognition and Natural Language Understanding (96), Computerized Vision (96), Machine Learning (95);
   - **Robotics:** Intelligent Mobile Robot (99), Electrical and Electronic Technology (98), College Physics (97). -->
 
+<!-- ---
+
+## Teaching
+
+N/A -->
+
+---
+
+## Professional Services
+
+Served as an independent reviewer for NeurIPS 2024.
+
+<!-- ---
+
+## Patents
+
+- <span translate="no">多智能体强化学习通信方法、终端设备及存储介质</span>  
+    <span translate="no">状态：专利待审</span>  
+    <span translate="no">申请人：香港中文大学（深圳）</span>  
+    <span translate="no">发明人：**林越**、李文浩、查宏远、王趵翔</span>  
+    <span translate="no">申请公布号：CN116455754A；申请号：2023103977440；申请公布日：2023.07.18；申请日：2023.04.06</span> -->
+    
 ---
 
 ## Personality
 
-- Big Five Personality Test: 
-  <!-- [**SCOAI**](https://bigfive-test.com/result/649d06c585aaa70008135b20);  -->
-  [[My Test Result in 2024]](https://bigfive-test.com/result/65e8ffaf59460b0008351b6d)
-  <!-- [[My Test Result in 2023]](https://bigfive-test.com/result/649d06c585aaa70008135b20) -->
-  <!-- - Scored highly in **Openness to Experience**, especially in *Imagination* and *Intellect*. -->
-  <!-- - Scored highly in **Conscientiousness**, especially in *Orderliness* and *Achievement-Striving*. -->
+<!-- <ul>
+<li> -->
+<details>
+<summary>Big Five Personality Test [Click to see]</summary>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+.tg .tg-mwxe{text-align:right;vertical-align:middle}
+.tg .tg-yla0{font-weight:bold;text-align:left;vertical-align:middle}
+.tg .tg-zt7h{font-weight:bold;text-align:right;vertical-align:middle}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-yla0">Openness To Experience</th>
+    <th class="tg-zt7h">107/120</th>
+    <th class="tg-yla0">Conscientiousness</th>
+    <th class="tg-zt7h">101/120</th>
+    <th class="tg-yla0">Extraversion</th>
+    <th class="tg-zt7h">95/120</th>
+    <th class="tg-yla0">Agreeableness</th>
+    <th class="tg-zt7h">82/120</th>
+    <th class="tg-yla0">Neuroticism</th>
+    <th class="tg-zt7h">64/120</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-cly1">Adventurousness</td>
+    <td class="tg-mwxe">17/20</td>
+    <td class="tg-cly1">Achievement-Striving</td>
+    <td class="tg-mwxe">18/20</td>
+    <td class="tg-cly1">Activity Level</td>
+    <td class="tg-mwxe">19/20</td>
+    <td class="tg-cly1">Altruism</td>
+    <td class="tg-mwxe">14/20</td>
+    <td class="tg-cly1">Anger</td>
+    <td class="tg-mwxe">11/20</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1">Artistic Interests</td>
+    <td class="tg-mwxe">19/20</td>
+    <td class="tg-cly1">Cautiousness</td>
+    <td class="tg-mwxe">16/20</td>
+    <td class="tg-cly1">Assertiveness</td>
+    <td class="tg-mwxe">15/20</td>
+    <td class="tg-cly1">Cooperation</td>
+    <td class="tg-mwxe">13/20</td>
+    <td class="tg-cly1">Anxiety</td>
+    <td class="tg-mwxe">15/20</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1">Emotionality</td>
+    <td class="tg-mwxe">18/20</td>
+    <td class="tg-cly1">Dutifulness</td>
+    <td class="tg-mwxe">14/20</td>
+    <td class="tg-cly1">Cheerfulness</td>
+    <td class="tg-mwxe">18/20</td>
+    <td class="tg-cly1">Modesty</td>
+    <td class="tg-mwxe">16/20</td>
+    <td class="tg-cly1">Depression</td>
+    <td class="tg-mwxe">9/20</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1">Imagination</td>
+    <td class="tg-mwxe">20/20</td>
+    <td class="tg-cly1">Orderliness</td>
+    <td class="tg-mwxe">18/20</td>
+    <td class="tg-cly1">Excitement-Seeking</td>
+    <td class="tg-mwxe">15/20</td>
+    <td class="tg-cly1">Morality</td>
+    <td class="tg-mwxe">13/20</td>
+    <td class="tg-cly1">Immoderation</td>
+    <td class="tg-mwxe">11/20</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1">Intellect</td>
+    <td class="tg-mwxe">20/20</td>
+    <td class="tg-cly1">Self-Discipline</td>
+    <td class="tg-mwxe">18/20</td>
+    <td class="tg-cly1">Friendliness</td>
+    <td class="tg-mwxe">15/20</td>
+    <td class="tg-cly1">Sympathy</td>
+    <td class="tg-mwxe">15/20</td>
+    <td class="tg-cly1">Self-Consciousness</td>
+    <td class="tg-mwxe">10/20</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1">Liberalism</td>
+    <td class="tg-mwxe">13/20</td>
+    <td class="tg-cly1">Self-Efficacy</td>
+    <td class="tg-mwxe">17/20</td>
+    <td class="tg-cly1">Gregariousness</td>
+    <td class="tg-mwxe">13/20</td>
+    <td class="tg-cly1">Trust</td>
+    <td class="tg-mwxe">11/20</td>
+    <td class="tg-cly1">Vulnerability</td>
+    <td class="tg-mwxe">8/20</td>
+  </tr>
+</tbody></table>
+</details>
 
-| Openness To Experience 	| 107/120 	|   Conscientiousness  	| 101/120 	|    Extraversion    	| 95/120 	| Agreeableness 	| 82/120 	|     Neuroticism    	| 64/120 	|
-|:----------------------:	|:-------:	|:--------------------:	|:-------:	|:------------------:	|:------:	|:-------------:	|:------:	|:------------------:	|:------:	|
-|       Imagination      	|  20/20  	|      Orderliness     	|  18/20  	|   Activity Level   	|  19/20 	|    Modesty    	|  16/20 	|    Vulnerability   	|  8/20  	|
-|        Intellect       	|  20/20  	|    Self-Discipline   	|  18/20  	|    Cheerfulness    	|  18/20 	|    Sympathy   	|  15/20 	|     Depression     	|  9/20  	|
-|   Artistic Interests   	|  19/20  	| Achievement-Striving 	|  18/20  	|    Friendliness    	|  15/20 	|    Altruism   	|  14/20 	| Self-Consciousness 	|  10/20 	|
-|      Emotionality      	|  18/20  	|     Self-Efficacy    	|  17/20  	|    Assertiveness   	|  15/20 	|  Cooperation  	|  13/20 	|    Immoderation    	|  11/20 	|
-|     Adventurousness    	|  17/20  	|     Cautiousness     	|  16/20  	| Excitement-Seeking 	|  15/20 	|    Morality   	|  13/20 	|        Anger       	|  11/20 	|
-|       Liberalism       	|  13/20  	|      Dutifulness     	|  14/20  	|   Gregariousness   	|  13/20 	|     Trust     	|  11/20 	|       Anxiety      	|  15/20 	|
+<!-- 
+</li>
+<li>Myers-Briggs Type Indicator (MBTI): INTJ-T</li>
+<li>Enneagram: 548</li>
+</ul> 
+-->
 
-<!-- - Myers-Briggs Type Indicator (MBTI):  -->
-  <!-- [**INTJ-T**](https://www.16personalities.com/intj-personality).  -->
-  <!-- [[My Test Result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407). -->
-<!-- - Enneagram:  -->
-  <!-- [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5);  -->
-  <!-- Tritye: 548. -->
-  <!-- [Instincts](https://www.enneagrammer.com/the-three-instincts): SX/SP; -->
-  <!-- [[My Test Result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1). -->
 
-> Detailed descriptions and other personality test results (i.e., MBTI and Enneagram) are available on [my blog]({{site.baseurl}}/posts/Personality). 
 
-<!-- > I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile.  -->
+> The first row is the five factors, and the six columns corresponding to each factor are its sub-dimensions, sorted alphabetically. Detailed descriptions and other personality test results (i.e., MBTI and Enneagram) are available on [my blog]({{site.baseurl}}/posts/Personality). 
+
+<!-- > Detailed descriptions are available on [my blog]({{site.baseurl}}/posts/Personality). I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile.  -->
 
 <!-- ![garage](/assets/img/avatar/garage3c.png)
 _Generated by ChatGPT-4._ -->
@@ -384,7 +502,7 @@ _Generated by ChatGPT-4._ -->
   <li>In Chinese, the phonetic abbreviation for <code>301</code> is <code>sbly,</code> where <code>sb</code> stands for "silly," and <code>ly</code> is my name.</li>
   <li>When applying for the email address, I was worried that others might confuse the number <code>0</code> with the letter <code>o</code>, so I changed <code>301</code> to <code>3h1</code>, but actually, <code>3h1</code> is <code>310</code>. Haha, silly me indeed!</li>
   <li><code>RSVP</code> is an abbreviation for the French phrase "Répondez s'il vous plaît," which translates to "<em>Respond, if you please</em>" in English. It is commonly used on invitations to request that the invitee confirm whether or not they will attend the event.</li>
-  <li>Here, <code>R01SVP</code> acts like a cry or a spell from a bystander's perspective, and the entity I am inviting is <strong>the objective world!</strong></li>
+  <li>Here, <code>R01SVP</code> acts like a cry or a spell from a bystander's perspective, and the entity I am inviting is the objective world.</li>
   <li>"不梦眠" means "Dreamless Sleep" in English, referring to a deep, uninterrupted sleep or metaphorically, to death.</li>
 </ul>
 </span>

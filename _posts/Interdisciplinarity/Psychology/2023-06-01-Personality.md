@@ -5,6 +5,8 @@ categories: [Interdisciplinarity, Psychology]
 tags: [Life, Interdisciplinarity, Psychology, Personality]
 math: True
 pin: True
+image:
+  path: ../../../assets/img/2023-06-01-Personality/img_2024-07-10-04-47-06.png
 ---
 
 ## Foreword
@@ -18,6 +20,17 @@ Because if these models are common knowledge between me and my readers, then my 
 
 After understanding these models, analyzing the characters in film and literary works will also yield many interesting new perspectives.
 
+## Resources
+
+1. [Personality Database](https://www.personality-database.com/)
+2. Big Five Personality
+   1. [IPIP](https://ipip.ori.org/)
+   2. [Test: bigfive-test.com](https://bigfive-test.com/)
+3. MBTI Test
+   1. [Jungus](https://www.jungus.cn)
+   2. [16 Personalities](https://www.16personalities.com/)
+4. [Enneagram Test](https://personalitypath.com/)
+
 
 ## Big Five Personality Test
 
@@ -30,7 +43,18 @@ The Big Five personality traits system is a widely accepted framework in psychol
 
 This model is empirically driven and is considered robust for understanding personality due to its extensive research base, cross-cultural validity, and ability to predict various life outcomes. It's praised for capturing the complexity of human personality traits in a comprehensive yet flexible manner.
 
-> The detailed description of each dimension can be found in [[My Test Result in 2024]](https://bigfive-test.com/result/65e8ffaf59460b0008351b6d). **The remaining part of this section is just my copy of it.**
+
+
+| Openness To Experience |  Conscientiousness   |    Extraversion    | Agreeableness |    Neuroticism     |
+| :--------------------: | :------------------: | :----------------: | :-----------: | :----------------: |
+|      Imagination       |     Orderliness      |   Activity Level   |    Modesty    |   Vulnerability    |
+|       Intellect        |   Self-Discipline    |    Cheerfulness    |   Sympathy    |     Depression     |
+|   Artistic Interests   | Achievement-Striving |    Friendliness    |   Altruism    | Self-Consciousness |
+|      Emotionality      |    Self-Efficacy     |   Assertiveness    |  Cooperation  |    Immoderation    |
+|    Adventurousness     |     Cautiousness     | Excitement-Seeking |   Morality    |       Anger        |
+|       Liberalism       |     Dutifulness      |   Gregariousness   |     Trust     |      Anxiety       |
+
+> The detailed description of each dimension can be found in [[this repo]](https://github.com/rubynor/bigfive-web). **The remaining part of this section is just my copy of it.**
 {: .prompt-warning}
 
 ### **Extraversion**
@@ -365,7 +389,7 @@ My test result in 2024:
 
 In the first row, each item has a full score of 120, while in the other rows, each item has a full score of 20.
 
-My test result in 2023, which is the first one: 
+My test result in 2023, which is my first test and I did not the details of this system: 
 
 | Openness To Experience (101) 	| Conscientiousness (96)        	| Agreeableness (76) 	| Neuroticism (67)        	| Extraversion (76)       	|
 |------------------------------	|-------------------------------	|--------------------	|-------------------------	|-------------------------	|
@@ -385,10 +409,12 @@ My test result in 2023, which is the first one:
 [[My test result in 2023]](https://www.16personalities.com/profiles/8dc4f03308407): [**INTJ-T (The Turbulent Architect)**](https://www.16personalities.com/intj-personality).
   - Introverted, Intuitive, Thinking, Judging, and Turbulent;
   - Strategy: [Constant Improvement](https://www.16personalities.com/articles/strategies-constant-improvement);
-  - Dominant (Jungian) Cognitive Functions: 
-    [Introverted Intuition (Ni)]({{site.baseurl}}/posts/Personality/#fe-extraverted-feeling) and 
-    [Introverted Feeling (Fi)]({{site.baseurl}}/posts/Personality/#fi-introverted-feeling).
-  - Some of my friends believe that I am an ENTP. (Okay, one of them just claimed that he was joking.)
+  - Dominant (Jungian) Cognitive Functions: [Introverted Intuition (Ni)]({{site.baseurl}}/posts/Personality/#fe-extraverted-feeling) 
+    <!-- [Introverted Feeling (Fi)]({{site.baseurl}}/posts/Personality/#fi-introverted-feeling). -->
+  <!-- - Some of my friends believe that I am an ENTP. (Okay, one of them just claimed that he was joking.) -->
+
+![](../../../assets/img/2023-06-01-Personality/img_2024-07-20-16-04-05.png){: width="500" height="500" }
+_https://www.jungus.cn_
 
 ![](../../../assets/img/2023-06-01-Personality/img_2024-04-22-16-59-32.png){: width="400" height="400" }
 _https://www.idrlabs.com/cognitive-function/test.php_
@@ -405,6 +431,3 @@ _https://www.idrlabs.com/cognitive-function/test.php_
 _My test result at [this website](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1)._
 
 
-## Other Resources
-
-1. [Personality Database](https://www.personality-database.com/)

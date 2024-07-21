@@ -2,7 +2,7 @@
 title: Muisc Sharing
 date: 2024-01-02 14:40:00 +0800
 categories: [Pastimes, Entertainment]
-tags: [Life, Pastimes, Entertainment]
+tags: [Life, Pastimes, Entertainment, Music]
 ---
 
 > After logging in, please refresh this site.

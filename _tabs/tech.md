@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Tech"
-order: 4
+title: "Technology"
+order: 8
 icon: fa-solid fa-wand-sparkles
 ---
 

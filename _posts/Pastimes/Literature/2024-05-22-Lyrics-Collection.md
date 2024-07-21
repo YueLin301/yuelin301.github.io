@@ -2,7 +2,7 @@
 title: "Lyrics Collection"
 date: 2024-05-22 11:00:00 +0800
 categories: [Pastimes, Literature]
-tags: [Life, Pastimes, Literature]
+tags: [Life, Pastimes, Literature, Music]
 math: True
 ---
 

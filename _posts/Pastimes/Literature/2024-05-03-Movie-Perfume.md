@@ -5,11 +5,11 @@ categories: [Pastimes, Literature]
 tags: [Life, Pastimes, Literature, Movie]
 math: True
 pin: True
+image:
+  path: ../../assets/img/2024-02-09-Movie-Perfume/WechatIMG1.jpg
 ---
 
 ![](../../assets/img/2024-02-09-Movie-Perfume/WechatIMG2.jpg)
-
-他在自己最后的满意杰作里回想起卖李子的少女，才明白自己想要的什么
 
 ## 赏析
 

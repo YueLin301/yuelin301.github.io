@@ -118,6 +118,16 @@ Element[c, Reals]
 Plot[x^2, {x, -2, 2}]
 ```
 
+{% raw %}
+```mathematica
+plot = Plot[{1 - x, 2/3 - x}, {x, 0, 1}, 
+   PlotRange -> {{0, 1}, {0, 1}}, AspectRatio -> Automatic];
+points = Graphics[{PointSize[Large], Point[{1/3, 1/3}], 
+    Point[{2/3, 0}]}];
+Show[plot, points]
+```
+{% endraw %}
+
 ```mathematica
 Plot3D[x^2 + y^2, {x, -2, 2}, {y, -2, 2}]
 ```

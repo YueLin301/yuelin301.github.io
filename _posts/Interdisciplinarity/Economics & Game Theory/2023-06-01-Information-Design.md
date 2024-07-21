@@ -5,6 +5,7 @@ categories: [Interdisciplinarity, Economics & Game Theory]
 tags: [Tech, Interdisciplinarity, Economics, Game Theory, Information Design, Theory, Multi Agents, Classic]
 math: True
 pin: True
+description: A sender with informational advantage wants to send messages to steer a receiver's action policy. They may have different objects. Information design is to optimize the sender's signaling schemes.
 ---
 
 
@@ -122,6 +123,10 @@ If an arbitrary $\tau$ satisfies $\mathbb{E}_{\mu\sim\tau}(\mu) = \mu_0$, then t
 ### Concavification
  > Does the sender **benefit** from persuasion? What is an **optimal** mechanism?
 {: .prompt-tip }
+
+
+![](../../../assets/img/2023-06-01-Information-Design/img_2024-07-07-03-00-09.png){:width="500"}
+_Figure 1 of Kamenica & Gentzkow 2011, Kamenica 2019. Sender’s value function and its concavification (thick red line)._
 
 This technique is best described with a **two-signal** example *(Figure 1 of Kamenica & Gentzkow 2011, Kamenica 2019)*:
 - Assume that there are $n$ states. Then a posterior belief $\mu$ is a point in $\mathbb{R}^{n-1}$. *(2011)*

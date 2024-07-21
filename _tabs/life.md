@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Life"
-order: 5
+order: 9
 icon: fa-solid fa-broom
 ---
 

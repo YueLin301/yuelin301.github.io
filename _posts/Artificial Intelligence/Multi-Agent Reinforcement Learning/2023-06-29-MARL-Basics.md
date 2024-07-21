@@ -6,7 +6,7 @@ tags: [Tech, AI, Multi Agents, RL, Markov Models, Classic]
 math: True
 ---
 
-> This note has not been finished yet. One may check my [writing schedule]({{site.baseurl}}/posts/Schedule/).
+> This note has not been finished yet.
 {: .prompt-warning }
 
 

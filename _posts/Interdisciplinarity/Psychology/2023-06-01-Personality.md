@@ -6,7 +6,7 @@ tags: [Life, Interdisciplinarity, Psychology, Personality]
 math: True
 pin: True
 image:
-  path: ../../../assets/img/2023-06-01-Personality/img_2024-07-10-04-47-06.png
+  path: /assets/img/2023-06-01-Personality/img_2024-07-10-04-47-06.png
 ---
 
 ## Foreword

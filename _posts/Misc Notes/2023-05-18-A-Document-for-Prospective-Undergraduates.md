@@ -2,7 +2,7 @@
 title: For Prospective Undergraduates
 date: 2023-05-18 20:00:00 +0800
 categories: [Uncategorized, Misc Notes]
-tags: [Misc Notes]
+tags: [Misc_Notes]
 ---
 
 > Welcome! 🎉

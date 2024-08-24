@@ -2,7 +2,7 @@
 title: PyTorch Toolbox
 date: 2024-03-02 02:40:00 +0800
 categories: [Efficiency, Code Utils]
-tags: [Tech, Efficiency, Code Utils, Toolbox, Framework]
+tags: [Tech, Efficiency, Code_Utils, Toolbox, Framework, Library]
 math: True
 ---
 

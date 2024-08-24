@@ -2,7 +2,7 @@
 title: Python Toolbox
 date: 2023-12-28 12:40:00 +0800
 categories: [Efficiency, Code Utils]
-tags: [Tech, Efficiency, Code Utils]
+tags: [Tech, Efficiency, Code_Utils]
 math: True
 ---
 

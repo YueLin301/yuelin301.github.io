@@ -2,7 +2,7 @@
 title: "Some Insights of Misc Economics Papers"
 date: 2024-06-06 14:40:00 +0800
 categories: [Interdisciplinarity, Economics & Game Theory]
-tags: [Tech, Interdisciplinarity, Economics, Game Theory, Multi Agents]
+tags: [Tech, Interdisciplinarity, Economics, Game_Theory, Multi_Agents]
 math: True
 ---
 

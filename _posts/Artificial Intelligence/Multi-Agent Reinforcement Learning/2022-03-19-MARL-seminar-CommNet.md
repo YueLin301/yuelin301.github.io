@@ -2,7 +2,7 @@
 title: MARL Seminar | CommNet
 date: 2022-03-19 20:00:01 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [Tech, AI, Multi Agents, RL, Communication]
+tags: [Tech, AI, Multi_Agents, RL, Communication]
 math: True
 ---
 

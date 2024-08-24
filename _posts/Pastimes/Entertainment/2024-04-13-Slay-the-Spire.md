@@ -2,7 +2,7 @@
 title: Slay the Spire
 date: 2024-04-13 09:00:00 +0800
 categories: [Pastimes, Entertainment]
-tags: [Life, Pastimes, Entertainment, Video Game]
+tags: [Life, Pastimes, Entertainment, Video_Game]
 math: True
 ---
 

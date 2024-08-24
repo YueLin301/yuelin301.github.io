@@ -2,7 +2,7 @@
 title: MARL Basics
 date: 2023-06-29 17:38:00 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [Tech, AI, Multi Agents, RL, Markov Models, Classic]
+tags: [Tech, AI, Multi_Agents, RL, Markov_Models, Classic]
 math: True
 ---
 
@@ -183,7 +183,7 @@ The algorithms designed for the fully cooperative scenarios without centralized 
 - [ ] Playing is Believing: The Role of Beliefs in Multi-Agent Learning.  
    Yu-Han Chang, Leslie Pack Kaelbling.  
    Advances in Neural Information Processing Systems (NIPS) 2001.
-- [x] Nash Q-Learning for General-Sum Stochastic Games.  
+- [ ] Nash Q-Learning for General-Sum Stochastic Games.
    Junling Hu, Michael P. Wellman.  
    Journal of machine learning research (JMLR) 2003.
 - [ ] [Convergence of Q-learning: A Simple Proof](https://users.isr.ist.utl.pt/~mtjspaan/readingGroup/ProofQlearning.pdf).  

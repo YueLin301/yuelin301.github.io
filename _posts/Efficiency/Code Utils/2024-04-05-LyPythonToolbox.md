@@ -2,7 +2,7 @@
 title: LyPythonToolbox
 date: 2024-04-05 14:40:00 +0800
 categories: [Efficiency, Code Utils]
-tags: [Tech, Efficiency, Code Utils, Toolbox]
+tags: [Tech, Efficiency, Code_Utils, Toolbox, Library]
 math: True
 ---
 

@@ -2,7 +2,7 @@
 title: Information Design
 date: 2023-06-01 20:00:01 +0800
 categories: [Interdisciplinarity, Economics & Game Theory]
-tags: [Tech, Interdisciplinarity, Economics, Game Theory, Information Design, Theory, Multi Agents, Classic]
+tags: [Tech, Interdisciplinarity, Economics, Game_Theory, Information_Design, Theory, Multi_Agents, Classic]
 math: True
 pin: True
 description: A sender with informational advantage wants to send messages to steer a receiver's action policy. They may have different objects. Information design is to optimize the sender's signaling schemes.
@@ -94,6 +94,10 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
    - Given a sent $\sigma$, its posterior belief is $\mu(\cdot\mid \sigma)$.
    - Then it chooses $a^{\*}(\sigma) = a^{\*}(\mu(\cdot\mid\sigma)) = \arg\max_{a}\mathbb{E}_{s\sim\mu(\cdot\mid\sigma)}\left[r^j(s,a)\right]$.
    - The mapping from signals to posterior beliefs is **many-to-one**: All the $\sigma$ that induce the same posterior belief $\mu(\cdot\mid \sigma)$, the receiver will behave the same way (thus the payoffs of both agents).
+
+> "Making decisions based on the posterior beliefs" are always better than "making decisions based on the prior belief." Actually, the receiver's action policy is the Bayesian decision rule. Regarding Bayesian decision theory, [these slides](https://cse.buffalo.edu/~jcorso/t/CSE555/files/lecture_bayesiandecision.pdf) provide a very thorough introduction.
+{: .prompt-info }
+
 - The distribution of posterior beliefs $\tau$
    - **Every sent signal induces a specific posterior belief**: Given a committed signaling scheme $\varphi$ and a sent signal $\sigma$, the receiver's posterior belief is $\mu(\cdot\mid\sigma)$. Calculated as $\mu(s_i \mid\sigma) = \frac{\mu_0(s_i)\cdot \varphi(\sigma\mid s_i)}{\sum\limits_{s_j}\mu_0(s_j)\cdot \varphi(\sigma\mid s_j)}$. 
    - Again: The mapping from signals to posterior beliefs is **many-to-one**.
@@ -151,7 +155,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
 - Corollary 2: **The sender benefits from persuasion if and only if** $f(\mu_0)>\hat{v}(\mu_0)$, where $\hat{v}(\mu) = \mathbb{E}\_{s\sim\mu}\big[r^i(s,a^{\*}(\mu))\big]$, and $f(\mu)$ is the concavification of $\hat{v}(\mu)$. **The sender's optimal expected payoff is** $f(\mu_0)$.
 - Proposition 2: If $\hat{v}(\mu)$ is **concave**, the sender **does not benefit** from persuasion for any prior $\mu_0$. If $\hat{v}(\mu)$ is **convex and not concave**, the sender benefits from persuasion for every prior $\mu_0$.
 - Proposition 3: If there is **no information** the sender would share, the sender **does not benefit** from persuasion.
-  - *"There is information the sender would share"* is defined as $\exists \mu$, s.t. $\hat{v}(\mu)> \sum\limits_{s} \mu(s)\cdot r^j(s, a^{\*}(\mu_0))$.
+  - *"There is information the sender would share"* is defined as $\exists \mu$, s.t. $\hat{v}(\mu)> \sum\limits_{s} \mu(s)\cdot r^i(s, a^{\*}(\mu_0))$.
   - In other words, there must exist a $\mu$ such that, if the sender had private information that led it induces $\mu$, it would prefer to share this information with the receiver rather than have the receiver act based on $\mu_0$.
   - Otherwise, the sender does not have the motivation to share its information.
 - Proposition 4: If there is information the sender would share, and the receiver's preference is discrete at the prior, the sender **benefits** from persuasion. (sufficient)

@@ -2,7 +2,7 @@
 title: Stable Baseline 3
 date: 2023-12-28 10:40:00 +0800
 categories: [Artificial Intelligence, Reinforcement Learning]
-tags: [Tech, AI, RL, Framework]
+tags: [Tech, AI, RL, Framework, Library]
 math: True
 ---
 

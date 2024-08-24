@@ -2,7 +2,7 @@
 title: Python Project Template
 date: 2024-03-31 14:00:00 +0800
 categories: [Efficiency, Code Utils]
-tags: [Tech, Efficiency, Code Utils, Toolbox, Template]
+tags: [Tech, Efficiency, Code_Utils, Toolbox, Template]
 math: True
 ---
 

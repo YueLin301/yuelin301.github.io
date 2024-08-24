@@ -2,7 +2,7 @@
 title: Classic Games
 date: 2023-08-13 16:30:00 +0800
 categories: [Interdisciplinarity, Economics & Game Theory]
-tags: [Tech, Interdisciplinarity, Economics, Game Theory, Environment, Social Dilemma, Multi Agents, Classic]
+tags: [Tech, Interdisciplinarity, Economics, Game_Theory, Environment, Social_Dilemma, Multi_Agents, Classic]
 math: True
 ---
 

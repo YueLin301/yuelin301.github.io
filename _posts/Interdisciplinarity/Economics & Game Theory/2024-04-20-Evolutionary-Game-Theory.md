@@ -2,7 +2,7 @@
 title: Evolutionary Game Theory
 date: 2024-04-20 14:40:00 +0800
 categories: [Interdisciplinarity, Economics & Game Theory]
-tags: [Tech, Interdisciplinarity, Economics, Game Theory, Multi Agents, Classic]
+tags: [Tech, Interdisciplinarity, Economics, Game_Theory, Multi_Agents, Classic]
 math: True
 ---
 

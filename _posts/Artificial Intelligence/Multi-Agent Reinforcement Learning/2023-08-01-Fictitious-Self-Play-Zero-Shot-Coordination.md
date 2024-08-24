@@ -2,7 +2,7 @@
 title: Fictitious Self-Play and Zero-Shot Coordination
 date: 2023-08-01 02:40:00 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [Tech, AI, Multi Agents, RL, Game Theory, Framework]
+tags: [Tech, AI, Multi_Agents, RL, Game_Theory, Framework]
 math: True
 ---
 
@@ -339,7 +339,7 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
   [Hu, Hengyuan, and Jakob N. Foerster. "Simplified Action Decoder for Deep Multi-Agent Reinforcement Learning." International Conference on Learning Representations. 2019.](https://arxiv.org/abs/1912.02288)
 - [x] Other-Play [[code](https://github.com/facebookresearch/hanabi_SAD)]  
   [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](https://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
-- [ ] Trajectory Diversity  
+- [/] Trajectory Diversity  
   [Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](https://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
 - [ ] Off-Belief Learning  
   [Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](https://proceedings.mlr.press/v139/hu21c/hu21c.pdf)

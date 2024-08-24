@@ -1,9 +1,15 @@
 ---
 title: Misc Code Toolbox
 date: 2023-04-10 02:40:00 +0800
-categories: [Efficiency, Code Utils]
-tags: [Tech, Efficiency, Code Utils, Toolbox]
-math: True
+categories:
+  - Efficiency
+  - Code Utils
+tags:
+  - Tech
+  - Efficiency
+  - Code_Utils
+  - Toolbox
+math: true
 ---
 
 > This note will be consistently updated.

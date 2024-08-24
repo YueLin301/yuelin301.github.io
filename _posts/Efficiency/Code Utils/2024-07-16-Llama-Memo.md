@@ -1,12 +1,21 @@
 ---
-title: Ollama Memo
+title: Llama Memo
 date: 2024-07-16 12:30:00 +0800
 categories: [Efficiency, Code Utils]
-tags: [Tech, Efficiency, Code Utils, Llama, LLM]
+tags: [Tech, Efficiency, Code_Utils, Llama, LLM]
 math: True
 ---
 
-## Installation
+## Sources
+
+1. Ollama. It is easy to use.
+2. Hugging Face. It provides tokenizer in Python API.
+
+
+
+## Ollama
+
+### Installation
 
 
 1. Download the app on [the website](https://ollama.com/download).
@@ -18,7 +27,7 @@ math: True
 
 Once we open the app, the server will run at [http://localhost:11434](http://localhost:11434).
 
-## Using in Command Line
+### Using in Command Line
 
 My snippet in `Termius`:
 
@@ -28,10 +37,10 @@ conda activate rlbasic
 ollama run llama3
 ```
 
-## Using by Python
+### Using by Python
 
 
-### Way 1: Server
+#### Way 1: Server
 [[Official Guide]](https://github.com/ollama/ollama/blob/main/docs/api.md)
 
 ```python
@@ -67,7 +76,7 @@ while True:
     query_model(user_input)
 ```
 
-### Way 2: Python API
+#### Way 2: Python API
 
 [[Official Guide]](https://pypi.org/project/ollama/)
 
@@ -104,3 +113,17 @@ stream = ollama.chat(
 for chunk in stream:
     print(chunk['message']['content'], end='', flush=True)
 ```
+
+
+## Hugging Face
+
+
+### Download
+
+1. Fill a form in [the website](https://huggingface.co/docs/transformers/main/model_doc/llama3).
+   1. And then we will get an email. There is a URL in there.
+2. Clone [the repo](https://github.com/meta-llama/llama3).
+   1. Run the `download.sh` script.
+   2. Copy and paste the URL.
+3. Specify which model weights to download.
+

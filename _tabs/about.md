@@ -26,7 +26,7 @@ toc: true
 {: .prompt-info } -->
 
 Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-I am about to become a Ph.D. student in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
+Currently I am a Ph.D. student in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
 
 
 <div style="color: #999;">
@@ -104,11 +104,13 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
       <ul>
         <!-- <li>Social Dilemma</li> -->
         <li>Mixed-Motive Multi-Agent RL</li>
-        <li>Algorithmic Game Theory</li>
-        <ul style="margin-left: -20px;">
+        <li>Game Theory: Information Design</li>
+        <!-- <li>Algorithmic Game Theory</li> -->
+        <!-- <ul style="margin-left: -20px;">
           <li>Information Design</li>
-        </ul>
+        </ul> -->
         <li>Large Language Models</li>
+        <li>Psychology: Personality</li>
       </ul>
       <p><strong>Formerly</strong></p>
       <ul>
@@ -134,7 +136,7 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 ### Education 
 
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
-  Ph.D. Student in Data Science (As for 2024.9)  
+  Ph.D. Student in Data Science (2024.8 - Present)  
   <!-- Ph.D. Student in Data Science (2024.9 - Present)   -->
 - <span translate="no">**Tiangong University**</span>  
   Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)
@@ -147,7 +149,7 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 ### Experience
 
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
-  Research Assistant in School of Data Science (2022.2 - Present)
+  Research Assistant in School of Data Science (2022.2 - 2024.8)
 
 <!-- #588142-->
 <!-- > <p style="font-size: 18px; color: #495485"><b>If I'm going to have a past, I prefer it to be multiple choice! HA! HA! HA! <i>—&nbsp;The&nbsp;Killing&nbsp;Joke.</i></b></p> -->
@@ -242,12 +244,15 @@ Bachelor of Engineering - Computer Science and Technology<span style="float:righ
     <span translate="no">*International Conference on Robotics and Automation (ICRA) 2021*.</span>
     > Oral. Delivered a presentation at the Xi'an conference venue.  
     [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060) 
-    [[Blog]]({{site.baseurl}}/posts/RHex-T3/)  
+    [[Blog]]({{site.baseurl}}/posts/RHex-T3/) 
+    [[Demo Videos]]({{site.baseurl}}/posts/RHex-T3/#videos)  
 - <span translate="no">A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.</span>  
     <span translate="no">**Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.</span>  
     <span translate="no">*International Journal of Advanced Robotic Systems (IJARS) 2022*.</span>  
-    > [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Blog]]({{site.baseurl}}/posts/SSCC/) 
-    [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
+    > [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) 
+    [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control) 
+    [[Blog]]({{site.baseurl}}/posts/SSCC/) 
+    [[Demo Video]]({{site.baseurl}}/posts/SSCC/#videos)
 <!-- - <span translate="no">Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.</span>  
     <span translate="no">Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.</span>  
     <span translate="no">*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.</span>  
@@ -318,7 +323,7 @@ Served as an independent reviewer for NeurIPS 2024.
 <!-- <ul>
 <li> -->
 <details>
-<summary>Big Five Personality Test [Click to see]</summary>
+<summary>Big Five Personality Test: [Click to expand]</summary>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -428,7 +433,7 @@ Served as an independent reviewer for NeurIPS 2024.
 
 
 
-> The first row is the five factors, and the six columns corresponding to each factor are its sub-dimensions, sorted alphabetically. Detailed descriptions and other personality test results (i.e., MBTI and Enneagram) are available on [my blog]({{site.baseurl}}/posts/Personality). 
+> The first row is the five factors, and the six columns corresponding to each factor are its sub-dimensions, sorted alphabetically. Detailed descriptions and other personality test results (e.g., MBTI) are available on [my blog]({{site.baseurl}}/posts/Personality). 
 
 <!-- > Detailed descriptions are available on [my blog]({{site.baseurl}}/posts/Personality). I believe these tools are efficient communication protocols, and using them allows me to easily introduce my profile.  -->
 
@@ -491,12 +496,8 @@ _Generated by ChatGPT-4._ -->
 
 </div>
 
-<!-- - In Chinese, the phonetic abbreviation for `301` is `sbly,` where `sb` stands for "silly," and `ly` is my name. When applying for the email address, I was worried that others might confuse the number `0` with the letter `o`, so I changed `301` to `3h1`, but actually, `3h1` is `310`. Haha, silly me indeed!
-- `RSVP` is an abbreviation for the French phrase "Répondez s'il vous plaît," which translates to `"Respond, if you please"` in English. It is commonly used on invitations to request that the invitee confirm whether or not they will attend the event.
-- Here, `R01SVP` acts like a cry or a spell from a bystander's perspective, and the entity I am inviting is **the objective world!** -->
-
-<details>
-<summary>Click to see the meanings of my names.</summary>
+<!-- <details>
+<summary>The meanings of my names: [Click to expand]</summary>
 <span translate="no">
 <ul>
   <li>In Chinese, the phonetic abbreviation for <code>301</code> is <code>sbly,</code> where <code>sb</code> stands for "silly," and <code>ly</code> is my name.</li>
@@ -506,8 +507,7 @@ _Generated by ChatGPT-4._ -->
   <li>"不梦眠" means "Dreamless Sleep" in English, referring to a deep, uninterrupted sleep or metaphorically, to death.</li>
 </ul>
 </span>
-
-</details>
+</details> -->
 
 
 

@@ -2,7 +2,7 @@
 title: "Bargaining"
 date: 2024-05-17 14:40:00 +0800
 categories: [Interdisciplinarity, Economics & Game Theory]
-tags: [Tech, Interdisciplinarity, Economics, Game Theory, Social Dilemma, Multi Agents, Bargaining, Classic]
+tags: [Tech, Interdisciplinarity, Economics, Game_Theory, Social_Dilemma, Multi_Agents, Bargaining, Classic]
 math: True
 ---
 

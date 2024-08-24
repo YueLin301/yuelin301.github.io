@@ -2,7 +2,7 @@
 title: Fairness Versus Reason in the Ultimatum Game
 date: 2024-04-22 14:40:00 +0800
 categories: [Interdisciplinarity, Economics & Game Theory]
-tags: [Tech, Interdisciplinarity, Economics, Game Theory, Social Dilemma, Multi Agents, Classic]
+tags: [Tech, Interdisciplinarity, Economics, Game_Theory, Social_Dilemma, Multi_Agents, Classic]
 math: True
 ---
 

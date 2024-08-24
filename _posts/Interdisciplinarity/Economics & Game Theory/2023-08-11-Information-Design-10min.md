@@ -2,7 +2,7 @@
 title: Information Design in 10 Minutes
 date: 2023-08-11 05:30:00 +0800
 categories: [Interdisciplinarity, Economics & Game Theory]
-tags: [Tech, Interdisciplinarity, Economics, Game Theory, Multi Agents, Information Design]
+tags: [Tech, Interdisciplinarity, Economics, Game_Theory, Multi_Agents, Information_Design]
 math: True
 pin: True
 description: A brief introduction from the perspective of BCE (Bayes correlated equilibrium), with some examples.

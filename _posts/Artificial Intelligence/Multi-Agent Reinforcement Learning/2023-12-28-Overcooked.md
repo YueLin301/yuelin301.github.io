@@ -2,7 +2,7 @@
 title: "Overcooked: A MARL Task"
 date: 2023-12-28 08:00:00 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [Tech, AI, Multi Agents, RL, Environment, Social Dilemma]
+tags: [Tech, AI, Multi_Agents, RL, Environment, Social_Dilemma]
 math: True
 ---
 

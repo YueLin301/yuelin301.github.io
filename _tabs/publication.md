@@ -5,7 +5,7 @@ order: 6
 icon: fa-solid fa-feather-pointed
 ---
 
-{% include child-home.html category="My Work" %}
+{% include child-home.html category="My_Work" %}
 
 <!-- <i class="fa-solid fa-feather"></i> -->
 

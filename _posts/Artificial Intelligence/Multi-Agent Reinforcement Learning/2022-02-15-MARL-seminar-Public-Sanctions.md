@@ -2,7 +2,7 @@
 title: MARL Seminar | Public Sanctions
 date: 2022-02-15 20:00:01 +0800
 categories: [Artificial Intelligence, Multi-Agent Reinforcement Learning]
-tags: [Tech, AI, Multi Agents, RL, Social Dilemma]
+tags: [Tech, AI, Multi_Agents, RL, Social_Dilemma]
 math: True
 ---
 

@@ -8,6 +8,9 @@ pin: True
 description: LLM = Large Language Model
 ---
 
+> This note has not been finished yet.
+{: .prompt-warning }
+
 ## Main Storyline
 
 ### Transformer

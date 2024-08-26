@@ -180,30 +180,30 @@ The algorithms designed for the fully cooperative scenarios without centralized 
    L. Busoniu, R. Babuska, B. De Schutter.  
    *International Conference on Control, Automation, Robotics and Vision (ICARCV) 2006*.
    - This note is basically built on the framework of this paper.
-- [ ] Playing is Believing: The Role of Beliefs in Multi-Agent Learning.  
+- [/] Playing is Believing: The Role of Beliefs in Multi-Agent Learning.  
    Yu-Han Chang, Leslie Pack Kaelbling.  
    Advances in Neural Information Processing Systems (NIPS) 2001.
-- [ ] Nash Q-Learning for General-Sum Stochastic Games.
+- [/] Nash Q-Learning for General-Sum Stochastic Games.
    Junling Hu, Michael P. Wellman.  
    Journal of machine learning research (JMLR) 2003.
-- [ ] [Convergence of Q-learning: A Simple Proof](https://users.isr.ist.utl.pt/~mtjspaan/readingGroup/ProofQlearning.pdf).  
+- [/] [Convergence of Q-learning: A Simple Proof](https://users.isr.ist.utl.pt/~mtjspaan/readingGroup/ProofQlearning.pdf).  
    Francisco S. Melo.
-- [ ] Online Convex Programming and Generalized Infinitesimal Gradient Ascent.  
+- [/] Online Convex Programming and Generalized Infinitesimal Gradient Ascent.  
    Martin Zinkevich.  
    International Conference on Machine Learning (ICML) 2003.
-- [ ] Value-Function Reinforcement Learning in Markov Games.  
+- [/] Value-Function Reinforcement Learning in Markov Games.  
    Michael L. Littman.  
    Cognitive Systems Research 2001.
-- [ ] Multi-Agent Reinforcement Learning: A Critical Survey.  
+- [/] Multi-Agent Reinforcement Learning: A Critical Survey.  
    Yoav Shoham, Rob Powers, Trond Grenager.  
    *Technical report, Stanford University 2003*.
-- [ ] An Overview of Multi-Agent Reinforcement Learning from Game Theoretical Perspective.  
+- [/] An Overview of Multi-Agent Reinforcement Learning from Game Theoretical Perspective.  
    Yaodong Yang, Jun Wang.  
    *arXiv 2020*.
-- [ ] A Survey and Critique of Multiagent Deep Reinforcement Learning.  
+- [/] A Survey and Critique of Multiagent Deep Reinforcement Learning.  
    Pablo Hernandez-Leal, Bilal Kartal, Matthew E. Taylor.  
    *Autonomous Agents and Multi-Agent Systems (AAMAS) 2019*.
-- [ ] Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms.  
+- [/] Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms.  
    Kaiqing Zhang, Zhuoran Yang, Tamer Basar.  
    *Handbook of reinforcement learning and control 2021*.
 

@@ -341,12 +341,12 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
   [Hu, Hengyuan, et al. "“other-play” for zero-shot coordination." International Conference on Machine Learning. PMLR, 2020.](https://proceedings.mlr.press/v119/hu20a/hu20a.pdf)
 - [/] Trajectory Diversity  
   [Andrei Lupu, Brandon Cui, Hengyuan Hu, Jakob Foerster. "Trajectory diversity for zero-shot coordination." International conference on machine learning. PMLR, 2021.](https://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)
-- [ ] Off-Belief Learning  
+- [/] Off-Belief Learning  
   [Hengyuan Hu, Adam Lerer, Brandon Cui, Luis Pineda, Noam Brown, Jakob Foerster. "Off-belief learning." International Conference on Machine Learning. PMLR, 2021.](https://proceedings.mlr.press/v139/hu21c/hu21c.pdf)
 
 ### Tencent
 
-- [ ] Maximum Entropy Population-Based Training  
+- [/] Maximum Entropy Population-Based Training  
   [Zhao, Rui, et al. "Maximum entropy population-based training for zero-shot human-ai coordination." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023.](https://ojs.aaai.org/index.php/AAAI/article/view/25758)
 
 ### Env
@@ -357,5 +357,5 @@ Note that the agent $i$ only takes $j$'s greedy action into account. And this st
   - Other-Play
 - [x] Corridor [[paper](https://proceedings.mlr.press/v139/lupu21a/lupu21a.pdf)]
   - Trajectory Diversity
-- [ ] Overcooked [[code](https://github.com/HumanCompatibleAI/overcooked_ai)]
+- [/] Overcooked [[code](https://github.com/HumanCompatibleAI/overcooked_ai)]
 - [x] Hanabi [[code](https://github.com/deepmind/hanabi-learning-environment)] [[paper](https://www.sciencedirect.com/science/article/pii/S0004370219300116)]

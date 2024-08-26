@@ -145,7 +145,7 @@ Currently I am a Ph.D. student in School of Data Science at The Chinese Universi
 
 
 
-<table>
+<!-- <table>
   <tr>
       <td>
         <a href="{{site.baseurl}}/" style="text-decoration: none;" title="Home">
@@ -196,8 +196,31 @@ Currently I am a Ph.D. student in School of Data Science at The Chinese Universi
       </td>
       <td></td>
   </tr>
-</table>
+</table> -->
 
+
+<div class="nav-grid-home">
+    <li class="nav-item-home{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-home"></i>
+        <span>&nbsp;&nbsp;&nbsp;Home</span>
+      </a>
+    </li>
+    {% for tab in site.tabs %}
+        <li class="nav-item-home{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+          <a href="{{ tab.url | relative_url }}" class="nav-link">
+            <i class="fa-fw {{ tab.icon }}"></i>
+            {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+            <!-- &nbsp;&nbsp;&nbsp;<span>{{ site.data.locales[include.lang].tabs[tab_name] | default: tab.title | upcase }}</span> -->
+            &nbsp;&nbsp;&nbsp;<span>{{ site.data.locales[include.lang].tabs[tab_name] | default: tab.title }}</span>
+          </a>
+        </li>
+      <!-- .nav-item-home -->
+    {% endfor %}
+  </div>
+  <!-- .nav-grid-homes -->
+
+  <div style="margin-bottom: 35px;"></div>
 
 <div style="width: 100%; max-width: 600px; margin: auto;">
   <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=dc9e71&w=300&t=tt&d=jdy-KeNo_f3zL8VC2_O8su6clmH9O5qDNkJ8DDtpMm0&co=e9d9ca&cmo=808080&cmn=966b50&ct=000000'></script>
@@ -205,14 +228,14 @@ Currently I am a Ph.D. student in School of Data Science at The Chinese Universi
 
 <style>
   table {
-      border-collapse: collapse; /* 合并边框 */
+      border-collapse: collapse;
   }
   td {
       width: 50px;
       height: 50px;
       text-align: center;
   }
-  /* 移除所有边框 */
+
   td {
       border: none;
   }
@@ -223,5 +246,53 @@ Currently I am a Ph.D. student in School of Data Science at The Chinese Universi
 
   td:nth-child(2) {
       border-right: 1px solid #999;
+  }
+
+
+  .nav-grid-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 150px));
+    /* gap: 15px; */
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0px;
+    font-size: 95%;
+    opacity: 0.7;
+    /* width: min(700px, 100%); */
+    width: 100%;
+  }
+
+  .nav-grid-home li.nav-item-home {
+
+    a.nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      border-radius: 0.75rem;
+      padding-top: 0.6rem;
+      padding-left: 1rem;
+      padding-bottom: 0.6rem;
+
+      &:hover {
+        background-color: var(--sidebar-hover-bg);
+        cursor: pointer;
+      }
+
+      span {
+        font-size: 90%;
+        letter-spacing: 0.2px;
+      }
+    }
+
+    &.active {
+      .nav-link {
+        color: rgb(153, 107, 77);
+        background-color: var(--sidebar-hover-bg);
+
+        span {
+          opacity: 1;
+        }
+      }
+    }
   }
 </style>

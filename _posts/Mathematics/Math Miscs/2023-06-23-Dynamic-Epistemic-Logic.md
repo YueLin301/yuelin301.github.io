@@ -1,9 +1,15 @@
 ---
 title: Dynamic Epistemic Logic
 date: 2023-06-23 02:00:00 +0800
-categories: [Interdisciplinarity, Mathematics]
-tags: [Tech, Interdisciplinarity, Math, Logic, Multi_Agents]
-math: True
+categories:
+  - Mathematics
+  - Math Miscs
+tags:
+  - Tech
+  - Math
+  - Logic
+  - Multi_Agents
+math: true
 ---
 
 > Three logicians walk into a bar.  

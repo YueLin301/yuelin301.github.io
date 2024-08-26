@@ -1,10 +1,20 @@
 ---
 title: A Quick Guide to LLMs
 date: 2024-06-05 12:40:00 +0800
-categories: [Artificial Intelligence, Machine Learning Basics]
-tags: [Tech, AI, ML, NLP, Transformer, GPT, LLM, Classic]
-math: True
-pin: True
+categories:
+  - Artificial Intelligence
+  - Machine Learning Basics
+tags:
+  - Tech
+  - AI
+  - ML
+  - NLP
+  - Transformer
+  - GPT
+  - LLM
+  - Classic
+math: true
+pin: false
 description: LLM = Large Language Model
 ---
 
@@ -17,6 +27,8 @@ description: LLM = Large Language Model
 > Google. 2017.6. "Attention is all you need."
 
 For more detailed introduction, see [my blog]({{site.baseurl}}/posts/Transformer/).
+
+<!-- [obsidian test](_posts/Artificial%20Intelligence/Machine%20Learning%20Basics/2024-06-06-Transformer) -->
 
 1. Encoder-Decoder Framework. No RNNs.
 2. Positional Encoding. 

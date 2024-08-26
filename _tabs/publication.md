@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Selected Publications"
+title: "Publications"
 order: 6
 icon: fa-solid fa-feather-pointed
 ---

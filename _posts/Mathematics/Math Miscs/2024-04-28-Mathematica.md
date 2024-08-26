@@ -1,9 +1,13 @@
 ---
 title: Mathematica Memos
 date: 2024-04-27 22:40:00 +0800
-categories: [Interdisciplinarity, Mathematics]
-tags: [Tech, Interdisciplinarity, Math]
-math: True
+categories:
+  - Mathematics
+  - Math Miscs
+tags:
+  - Tech
+  - Math
+math: true
 ---
 
 > 听说python里用sympy也能做一些推导和化简，之后去看看；mathematica占硬盘太多地了

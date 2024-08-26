@@ -1,9 +1,15 @@
 ---
 title: Contraction Mapping Theorem
 date: 2023-10-20 02:40:00 +0800
-categories: [Interdisciplinarity, Mathematics]
-tags: [Tech, Interdisciplinarity, Math, Convergence, Theory]
-math: True
+categories:
+  - Mathematics
+  - Math Miscs
+tags:
+  - Tech
+  - Math
+  - Convergence
+  - Theory
+math: true
 ---
 
 ## Metric Space

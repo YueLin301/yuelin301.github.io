@@ -1,9 +1,14 @@
 ---
 title: Math Toolbox
 date: 2023-04-08 02:40:00 +0800
-categories: [Interdisciplinarity, Mathematics]
-tags: [Tech, Interdisciplinarity, Math, Toolbox]
-math: True
+categories:
+  - Mathematics
+  - Math Miscs
+tags:
+  - Tech
+  - Math
+  - Toolbox
+math: true
 ---
 
 > This note will be consistently updated.

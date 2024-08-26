@@ -1,9 +1,14 @@
 ---
 title: A Note on Stochastic Processes
 date: 2023-09-04 02:40:00 +0800
-categories: [Interdisciplinarity, Mathematics]
-tags: [Tech, Interdisciplinarity, Math, Stochastic_Processes]
-math: True
+categories:
+  - Mathematics
+  - Math Miscs
+tags:
+  - Tech
+  - Math
+  - Stochastic_Processes
+math: true
 ---
 
 > This note partially uses the materials from [the notes of MATH2750](https://mpaldridge.github.io/math2750/S10-stationary-distributions.html).

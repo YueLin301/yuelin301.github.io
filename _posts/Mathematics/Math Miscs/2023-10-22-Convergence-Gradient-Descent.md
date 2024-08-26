@@ -1,9 +1,15 @@
 ---
 title: Convergence Analysis of Gradient Descent
 date: 2023-10-22 02:40:00 +0800
-categories: [Interdisciplinarity, Mathematics]
-tags: [Tech, Interdisciplinarity, Math, Convergence, Theory]
-math: True
+categories:
+  - Mathematics
+  - Math Miscs
+tags:
+  - Tech
+  - Math
+  - Convergence
+  - Theory
+math: true
 ---
 
 > The following part has not been finished yet.

@@ -358,8 +358,11 @@ In my understanding, each type combination from these two systems indicates a co
 See more in [my blog]({{site.baseurl}}/posts/MBTI-misc/).
 
 
-## My Types
 
+
+<!-- 
+
+## My Types
 
 ### Big Five
 
@@ -400,8 +403,6 @@ My test result in 2023, which is my first test and I did not the details of this
 | **Intellect (20)**           	| Self-Discipline (16)          	| Modesty (10)       	| Immoderation (12)       	| Excitement-Seeking (14) 	|
 | Liberalism (14)              	| Cautiousness (16)             	| Sympathy (13)      	| Vulnerability (11)      	| Cheerfulness (11)       	|
 
-<!-- > The following part of this section is to describe the 5 traits. The description is from [this website](https://bigfive-test.com/).
-{: .prompt-info} -->
 
 
 ### MBTI
@@ -410,8 +411,7 @@ My test result in 2023, which is my first test and I did not the details of this
   - Introverted, Intuitive, Thinking, Judging, and Turbulent;
   - Strategy: [Constant Improvement](https://www.16personalities.com/articles/strategies-constant-improvement);
   - Dominant (Jungian) Cognitive Functions: [Introverted Intuition (Ni)]({{site.baseurl}}/posts/Personality/#fe-extraverted-feeling) 
-    <!-- [Introverted Feeling (Fi)]({{site.baseurl}}/posts/Personality/#fi-introverted-feeling). -->
-  <!-- - Some of my friends believe that I am an ENTP. (Okay, one of them just claimed that he was joking.) -->
+
 
 ![](../../../assets/img/2023-06-01-Personality/img_2024-07-20-16-04-05.png){: width="500" height="500" }
 _https://www.jungus.cn_
@@ -421,8 +421,6 @@ _https://www.idrlabs.com/cognitive-function/test.php_
 
 ### Enneagram
 
-<!-- - [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5);  -->
-
 [[My test result in 2023]](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1): [**Type 5 with a 4-Wing**](https://www.enneagraminstitute.com/type-5).
 - Tritye: 548;
 - Instincts: SX/SP.
@@ -430,4 +428,4 @@ _https://www.idrlabs.com/cognitive-function/test.php_
 ![](../../../assets/img/2023-06-01-Personality/img_2023-12-18-21-07-04.png){: width="350" }
 _My test result at [this website](https://personalitypath.com/enneagram/personality-test-result/?t=6565fb05b6e90&swcfpc=1)._
 
-
+ -->

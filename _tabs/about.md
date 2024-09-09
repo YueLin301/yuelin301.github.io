@@ -26,7 +26,7 @@ toc: true
 {: .prompt-info } -->
 
 Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-Currently I am a Ph.D. student in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no">Baoxiang Wang</span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
+Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha</a></span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
 
 
 <div style="color: #999;">

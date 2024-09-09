@@ -9,9 +9,6 @@ math: True
 > I am not a philosophy major; this post represents my own views.
 {: .prompt-warning }
 
-> [快抑郁了，人生的意义是什么？ - R01SVP的回答 - 知乎](https://www.zhihu.com/question/629459419/answer/3428328231)
-{: .prompt-info }
-
 From the perspective of agent research, I argue that everyone should also think about value from their own solipsistic perspective, and all derivations of value should be traced back to oneself; otherwise, the meaning derived is hollow, and any persuasion from other angles is ineffective.
 
 Discussing "what meaning is" I think is like talking in one's sleep. Many people take an abstract proposition and start to wax poetic and share their irrational insights, when in fact, this question should be treated with seriousness. The implicit premise when talking about meaning is that the existence of meaning depends on an optimization goal; only with such a goal can you discuss what meaning is.
@@ -37,3 +34,6 @@ If maintaining existence is the initial process, then the process that should oc
 人应当有权利被允许厌恶客体的规则，这种厌恶可以被视为与主体历史成长环境造成的意识习惯的冲突，当然，也可能是因为现实本身就太过疯狂。为什么地球上要划分地盘互相斗争？为什么有些人躺着就能赚钱而另一些人要当牛做马地干活？为什么大家不能和平相处？为什么有人天生就比我聪明可以不用那么费力？这些问题总有答案，而且很多是必然的答案，而这些必然的答案就是你不得不面对和遵守的规律和现实，但是人不一定要认可和喜欢它。作为主体，意识并不能完全控制周围的环境，但却是有一些力量去辐射影响的，是可以去解决之前那些“为什么”的答案当中不是必然的那部分的。
 
 如果说维持存在是初始进程，那么最占内核的进程应该就是“人不断辐射自身影响，把周围环境变成自己理想情况”的进程了，个体自认的价值将从这里诞生，这也是你作为生物最直接的欲望。因此，我的建议是就事论事，什么事不顺心就解决什么，解决不了就接受或者换路、跑路，那么人就不会emo。最后，如果情绪避无可避，哥们建议你选择愤怒而不是哭泣。
+
+> [快抑郁了，人生的意义是什么？ - R01SVP的回答 - 知乎](https://www.zhihu.com/question/629459419/answer/3428328231)
+{: .prompt-info }

@@ -27,45 +27,32 @@ toc: true
 
 Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
 Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha</a></span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
-
+<details style="margin-top: -10px; margin-bottom: 10px;">
+<summary>My current research interest lies in using computational methods to study mechanisms, to address some social dilemma issues in game theory. In these scenarios, everyone being self-interested may lead to the detriment of social welfare. [Click here to see details of my research interests]</summary>
+<ul>
+  <li>
+    <ul>
+      <li>The method I use is Multi-Agent Reinforcement Learning (MARL), essentially with the rationality assumption. And I have recently started working with some tools that seem more "human-like", like large language models.</li>
+      <li>Specifically I am focusing on the problem of Bayesian persuasion (BP) in economics: a sender with an informational advantage tries to persuade a receiver, who has different motives, to take actions that are beneficial to the sender. My research is on sequential decision-making situations.</li>
+      <li>A representative work on this is <a href="{{site.baseurl}}/posts/IDMARL/">this</a> (NeurIPS), where we proposed a general model-free RL algorithm for multi-agent communication (for the cognoscenti: policy gradient for communication), and expanded the constraints in BP so that mixed-motive communication (even between two agents) in MARL is conceivable.</li>
+    </ul>
+  </li>
+  <li>During my undergraduate years (specifically, from 2019 to 2021), I dabbled in robotics, understood kinematics, and played a bit with <a href="https://github.com/YueLin301/robot-dynamics-mynotes">dynamics</a>.
+    <ul>
+      <li>I presented a purely simulation-based robotic mechanism design <a href="{{site.baseurl}}/posts/RHex-T3/">work</a> at ICRA. It is about a hybrid leg can transform into various forms (wheel, legs, RHex) to adapt to different terrains, and can even climb ladders.</li>
+      <li>Also I <a href="{{site.baseurl}}/posts/SSCC/">have implemented</a> a "gimbal" using a hyper-redundant manipulator (purely based on kinematics), allowing it to efficiently reach into barrels.</li>
+    </ul>
+  </li>
+</ul>
+</details>
 
 <div style="color: #999;">
   And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption. <i>—&nbsp;Friedrich&nbsp;Nietzsche,&nbsp;Thus&nbsp;Spoke&nbsp;Zarathustra.</i>
 </div>
 
-
-<!-- <div class="w-22 left" style="width: 130px; height: 130px; background-image: url('/assets/img/photo2.jpeg'); background-size: cover; background-position: center; float: left;" onmouseover="this.style.backgroundImage='url(/assets/img/photo2_cooler.jpeg)'" onmouseout="this.style.backgroundImage='url(/assets/img/photo2.jpeg)'"></div>
-
-And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption. *— Friedrich Nietzsche, Thus Spoke Zarathustra.*
-
-
-<br clear="all"/>
-
-Hi, this is Yue Lin (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-Currently, I am a research assistant in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. Baoxiang Wang. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
-
-
-> And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents?
-> To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption. 
-> *— Friedrich Nietzsche, Thus Spoke Zarathustra.*
-{: .prompt-info } -->
-
 ---
 
 ## Research Interests
-
-<!-- ![pic1](/assets/img/about/crow1.png){: width="250" .w-50 .left}
-_[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
-
-<!-- *Currently*
-- Multi-Agent Reinforcement Learning
-- [Information Design]({{site.baseurl}}/posts/Information-Design-10min/)
-- Sequential Social Dilemma
-
-*Formerly*
-- Redundant Manipulator Control
-- Robotic Mechanism Design -->
-
 
 <style>
   .flex-container {
@@ -149,51 +136,7 @@ _[— Joshua, False Knees.](https://falseknees.com/about.html)_ -->
 ### Experience
 
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
-  Research Assistant in School of Data Science (2022.2 - 2024.8)
-
-<!-- #588142-->
-<!-- > <p style="font-size: 18px; color: #495485"><b>If I'm going to have a past, I prefer it to be multiple choice! HA! HA! HA! <i>—&nbsp;The&nbsp;Killing&nbsp;Joke.</i></b></p> -->
-
-
-<!-- <div style="height: 20px;"></div>
-
-<p style="text-align:left;height:20px;"><b>
-The Chinese University of Hong Kong, Shenzhen</b><span style="float:right;">
-Shenzhen, China</span></p >
-
-<p style="text-align:left;height:20px;">
-Research Assistant - School of Data Science<span style="float:right;">
-2022.2 - Present</span></p >
-
-<div style="height: 15px;"></div>
-
-<p style="text-align:left;height:20px;"><b>
-Tiangong University</b><span style="float:right;">
-Tianjin, China</span></p >
-
-<p style="text-align:left;height:20px;">
-Bachelor of Engineering - Computer Science and Technology<span style="float:right;">
-2018.9 - 2022.6</span></p >
-
-<div class="align-container" style="color:DarkGray;">
-    <span style="text-align:left;height:20px;"><b>
-        Major: Computer Science and Technology</b><span style="float:right;">
-        2019.9 - 2022.6</span></span>
-    <div class="align-content">
-        <span style="margin-right: 2em;">GPA:  3.89 / 4 (92.22 / 100)</span><span>Rank: 1 / 127</span>
-    </div>
-</div>
-
-<div class="align-container" style="color:DarkGray;">
-    <span style="text-align:left;height:20px;"><b>
-    Major: Mechanical Engineering</b><span style="float:right;">
-    2018.9 - 2019.6</span></span>
-    <div class="align-content">
-        <span style="margin-right: 2em;">GPA: 3.90 / 4 (92.00 / 100)</span><span>Rank: 1 / 60</span>
-    </div>
-</div>
-
-<div style="height: 25px;"></div> -->
+  Research Assistant in School of Data Science (2022.2 - Present)
 
 ---
 
@@ -462,10 +405,10 @@ _Generated by ChatGPT-4._ -->
     <td class="tg-mqa1">WeChat</td>
     <td class="tg-wp8o">R01SVP</td>
   </tr>
-  <tr>
+  <!-- <tr>
     <td class="tg-mqa1">Website</td>
     <td class="tg-wp8o"><a href="{{site.baseurl}}/" target="_blank" rel="noopener noreferrer">yuelin301.github.io</a></td>
-  </tr>
+  </tr> -->
   <tr>
     <td class="tg-mqa1">GitHub</td>
     <td class="tg-wp8o"><a href="https://github.com/YueLin301" target="_blank" rel="noopener noreferrer">github.com/YueLin301</a></td>
@@ -474,14 +417,14 @@ _Generated by ChatGPT-4._ -->
     <td class="tg-mqa1">Google Scholar</td>
     <td class="tg-wp8o"><a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer"><span translate="no">Yue Lin</span></a></td>
   </tr>
-  <tr>
+  <!-- <tr>
     <td class="tg-mqa1">Zhihu</td>
     <td class="tg-wp8o"><a href="https://www.zhihu.com/people/R01SVP/answers" target="_blank" rel="noopener noreferrer"><span translate="no">R01SVP</span></a></td>
   </tr>
   <tr>
     <td class="tg-mqa1">Bilibili</td>
     <td class="tg-wp8o"><a href="https://space.bilibili.com/36040555" target="_blank" rel="noopener noreferrer"><span translate="no">不梦眠</span></a></td>
-  </tr>
+  </tr> -->
 </tbody>
 </table>
 

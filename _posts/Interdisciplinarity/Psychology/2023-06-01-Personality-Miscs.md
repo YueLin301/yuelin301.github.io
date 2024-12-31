@@ -378,7 +378,7 @@ In my understanding, each type combination from these two systems indicates a co
 2. Is there a more general way to describe cognitive functions? Such as using the time series model, maybe?
 3. I know that we should type a person by analyzing the way they think. But is it possible that there are two or more perspectives that fit the ground true thinking pattern? If so, it means that the mapping from people's cognitive patterns to the types is a mess and typing a person is intractable. And from my experience, I think that some questions in the tests are not appropriate, for there can be deep complex different reasons for tending to do the same thing.
 
-See more in [my blog]({{site.baseurl}}/posts/MBTI-misc/).
+<!-- See more in [my blog]({{site.baseurl}}/posts/MBTI-misc/). -->
 
 
 

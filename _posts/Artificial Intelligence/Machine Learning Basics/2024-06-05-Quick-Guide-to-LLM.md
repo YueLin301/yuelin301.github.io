@@ -45,7 +45,7 @@ For more detailed introduction, see [my blog]({{site.baseurl}}/posts/Transformer
 ### GPT-1
 > OpenAI. 2018. "Improving language understanding by generative pre-training."
 
-For more detailed introduction, see [my blog]({{site.baseurl}}/posts/GPT-1-2/).
+For more detailed introduction, see [my blog]({{site.baseurl}}/posts/GPT/).
 
 1. GPT-1 = Decoder (in Transformer, with learnable positional encoding) + Pre-Training + Fine-Tuning.
 2. Pre-Training: Unsupervised learning. The model is trained using unlabeled data to predict the next word. It is used to make the model to be familiar with human common knowledge.
@@ -62,7 +62,7 @@ For more detailed introduction, see [my blog]({{site.baseurl}}/posts/GPT-1-2/).
 ### GPT-2
 > OpenAI. 2019. "Language models are unsupervised multitask learners."
 
-For more detailed introduction, see [my blog]({{site.baseurl}}/posts/GPT-1-2/#gpt-2).
+For more detailed introduction, see [my blog]({{site.baseurl}}/posts/GPT/#gpt-2).
 
 1. GPT-2 = Decoder (in Transformer) + Pre-Training + Turning Fine-tuning to Pre-Training + More Parameters.
 2. Enhanced pre-training. Eliminated fine-tuning.

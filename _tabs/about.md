@@ -98,7 +98,6 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
           <li>Information Design</li>
         </ul> -->
         <li>Large Language Models</li>
-        <li>Psychology: Personality</li>
       </ul>
       <p><strong>Formerly</strong></p>
       <ul>
@@ -161,8 +160,46 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
     [[Zhihu cn]](https://zhuanlan.zhihu.com/p/687305626) 
     [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
     [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
-    [[Talk RLChina]](https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
+    [[Talk RLChina]](https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978)  
     <!-- [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   -->
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Reinforcement learning (RL) is inspired by the way human infants and animals learn from the environment. The setting is somewhat idealized because, in actual tasks, other agents in the environment have their own goals and behave adaptively to the ego agent. To thrive in those environments, the agent needs to influence other agents so their actions become more helpful and less harmful. Research in computational economics distills two ways to influence others directly: by providing tangible goods (mechanism design) and by providing information (information design). This work investigates information design problems for a group of RL agents. The main challenges are two-fold. One is the information provided will immediately affect the transition of the agent trajectories, which introduces additional non-stationarity. The other is the information can be ignored, so the sender must provide information that the receiver is willing to respect. We formulate the Markov signaling game, and develop the notions of signaling gradient and the extended obedience constraints that address these challenges. Our algorithm is efficient on various mixed-motive tasks and provides further insights into computational economics. Our code is publicly available at https://github.com/YueLin301/InformationDesignMARL.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2023information,
+    title={Information design in multi-agent reinforcement learning},
+    author={Lin, Yue and Li, Wenhao and Zha, Hongyuan and Wang, Baoxiang},
+    journal={Advances in Neural Information Processing Systems},
+    volume={36},
+    pages={25584--25597},
+    year={2023}
+}</code></pre></div>
+    </details>
+
+<!-- <details>
+<summary>The meanings of my names: [Click to expand]</summary>
+<span translate="no">
+<ul>
+  <li>In Chinese, the phonetic abbreviation for <code>301</code> is <code>sbly,</code> where <code>sb</code> stands for "silly," and <code>ly</code> is my name.</li>
+  <li>When applying for the email address, I was worried that others might confuse the number <code>0</code> with the letter <code>o</code>, so I changed <code>301</code> to <code>3h1</code>, but actually, <code>3h1</code> is <code>310</code>. Haha, silly me indeed!</li>
+  <li><code>RSVP</code> is an abbreviation for the French phrase "Répondez s'il vous plaît," which translates to "<em>Respond, if you please</em>" in English. It is commonly used on invitations to request that the invitee confirm whether or not they will attend the event.</li>
+  <li>Here, <code>R01SVP</code> acts like a cry or a spell from a bystander's perspective, and the entity I am inviting is the objective world.</li>
+  <li>"不梦眠" means "Dreamless Sleep" in English, referring to a deep, uninterrupted sleep or metaphorically, to death.</li>
+</ul>
+</span>
+</details> -->
 
 <!-- - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
@@ -192,6 +229,33 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
     [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060) 
     [[Blog]]({{site.baseurl}}/posts/RHex-T3/) 
     [[Demo Videos]]({{site.baseurl}}/posts/RHex-T3/#videos)  
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>This paper presents a transformable RHex-inspired robot, RHex-T3, with high energy efficiency, excellent flexibility and versatility. By using the innovative 2-DoF transformable structure, RHex-T3 inherits most of RHex’s mobility, and can also switch to other 4 modes for handling various missions. The wheel-mode improves the efficiency of RHex-T3, and the leg-mode helps to generate a smooth locomotion when RHex-T3 is overcoming obstacles. In addition, RHex-T3 can switch to the claw-mode for transportation missions, and even climb ladders by using the hook-mode. The simulation model is conducted based on the mechanical structure, and thus the properties in different modes are verified and analyzed through numerical simulations.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex Code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@inproceedings{lin2021innovative,
+    title={Innovative design and simulation of a transformable robot with flexibility and versatility, RHex-T3},
+    author={Lin, Yue and Tian, Yujia and Xue, Yongjiang and Han, Shujun and Zhang, Huaiyu and Lai, Wenxin and Xiao, Xuan},
+    booktitle={2021 IEEE International Conference on Robotics and Automation (ICRA)},
+    pages={6992--6998},
+    year={2021},
+    organization={IEEE}
+}</code></pre></div>
+    </details>
+
+
 - <span translate="no">A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.</span>  
     <span translate="no">**Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.</span>  
     <span translate="no">*International Journal of Advanced Robotic Systems (IJARS) 2022*.</span>  
@@ -199,6 +263,34 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
     [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control) 
     [[Blog]]({{site.baseurl}}/posts/SSCC/) 
     [[Demo Video]]({{site.baseurl}}/posts/SSCC/#videos)
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Redundant manipulators are flexible enough to adapt to complex environments, but their controller is also required to be specific for their extra degrees of freedom. Inspired by the morphology of snakes, we propose a path planning algorithm named Swinging Search and Crawling Control, which allows the snake-like redundant manipulators to explore in complex pipeline environments without collision. The proposed algorithm consists of the Swinging Search and the Crawling Control. In Swinging Search, a collision-free manipulator configuration that of the end-effector in the target point is found by applying reinforcement learning to self-motion, instead of designing joint motion. The self-motion narrows the search space to the null space, and the reinforcement learning makes the algorithm use the information of the environment, instead of blindly searching. Then in Crawling Control, the manipulator is controlled to crawl to the target point like a snake along the collision-free configuration. It only needs to search for a collision-free configuration for the manipulator, instead of searching collision-free configurations throughout the process of path planning. Simulation experiments show that the algorithm can complete path planning tasks of hyper-redundant manipulators in complex environments. The 16 DoFs and 24 DoFs manipulators can achieve 83.3% and 96.7% success rates in the pipe, respectively. In the concentric pipe, the 24 DoFs manipulator has a success rate of 96.1%.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2022snake,
+    title={A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators},
+    author={Lin, Yue and Wang, Jianming and Xiao, Xuan and Qu, Ji and Qin, Fatao},
+    journal={International Journal of Advanced Robotic Systems},
+    volume={19},
+    number={4},
+    pages={17298806221110022},
+    year={2022},
+    publisher={SAGE Publications Sage UK: London, England}
+}</code></pre></div>
+    </details>
+
 <!-- - <span translate="no">Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.</span>  
     <span translate="no">Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.</span>  
     <span translate="no">*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.</span>  
@@ -250,9 +342,23 @@ N/A -->
 
 ## Professional Services
 
-Served as an independent reviewer for 
-- NeurIPS 2024
-- ICLR 2025
+Independent Reviewer
+- NeurIPS 2024 [6]
+- ICLR 2025 [3]
+- IMCL 2025 [0]
+- TMLR 2025 [0]
+
+Assistant Reviewer (for Advisor)
+- AAMAS 2024 [3], 2025 [2]
+
+> Numbers in brackets indicate how many manuscripts were reviewed. A "0" indicates that the invitation was accepted, but no review assignment has been made yet. Total: 14.
+
+---
+
+## Teaching
+
+Teaching Assistant
+-  CSC6021/AIR6001 Artificial Intelligence (2024-25 Term 2). Professor: Chris Ding.
 
 <!-- ---
 
@@ -418,6 +524,10 @@ _Generated by ChatGPT-4._ -->
     <td class="tg-mqa1">Google Scholar</td>
     <td class="tg-wp8o"><a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer"><span translate="no">Yue Lin</span></a></td>
   </tr>
+  <!-- <tr>
+    <td class="tg-mqa1">LinkedIn</td>
+    <td class="tg-wp8o"><a href="https://www.linkedin.com/in/linyue3h1" target="_blank" rel="noopener noreferrer"><span translate="no">linyue3h1</span></a></td>
+  </tr> -->
   <tr>
     <td class="tg-mqa1">Zhihu</td>
     <td class="tg-wp8o"><a href="https://www.zhihu.com/people/R01SVP/answers" target="_blank" rel="noopener noreferrer"><span translate="no">R01SVP</span></a></td>

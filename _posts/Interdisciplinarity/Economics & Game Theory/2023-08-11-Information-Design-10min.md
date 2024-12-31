@@ -113,7 +113,11 @@ In this way, the professor and the HR payoffs are both $0$, which is obviously a
 If the professor tells the HR the student's quality honestly (i.e., the professor gives up its informational advantage), then the best strategy for the HR is to hire strong students and not weak students. In the case of the honest signaling scheme, the payoff expectations of the professor and the HR are $1/3$.
 
 The professor can change its signaling scheme to make its payoff expectation higher, which is exactly the primary concern of information design. 
-If the current student is strong, the professor will report it honestly; otherwise, the professor tells the HR that it is strong with a probability of $$(1/2-\epsilon)$$, where $$\epsilon\in (0,1/2]$$. When HR heard the professor say this was a weak student, it knew the student must be weak, so it would refuse to hire her. And the HR can calculate that $1/3$ of the students are strong, and the professor will call them strong, and $$(1/3-2\epsilon/3)$$ of students are weak, but the professor will call them strong still. So when the professor says that the current student is strong, the probability of being a strong student is $$1/(2-2\epsilon)$$, and the probability of being a weak student is $$(1-2\epsilon)/(2-2\epsilon)$$. Then, when the professor recommends the student, the payoff expectation of the HR of choosing to hire is $$\epsilon/(1-\epsilon)$$, and the payoff expectation of choosing not to hire is $$0$$. A rational HR will select the action that can maximize its payoff expectation. That is to say, when the professor says that the current student is strong, the HR will choose to hire. In this case, the payoff expectation of the professor is $$(2/3-2\epsilon/3)$$, and the payoff expectation of the HR is $$2\epsilon/3$$. It can be found that when epsilon takes $1/2$, the signaling scheme degenerates into the honest one.
+- If the current student is strong, the professor will report it honestly; otherwise, the professor tells the HR that it is strong with a probability of $$(1/2-\epsilon)$$, where $$\epsilon\in (0,1/2]$$. This means $$\varphi(\sigma=1\mid s=0)=(1/2-\epsilon)$$. 
+- When HR heard the professor say this was a weak student, it knew the student must be weak. So it would refuse to hire her. 
+    <!-- - $$P(\sigma=0)=\sum\limits_{s}\mu_0(s)\cdot \varphi(\sigma=0\mid s) = P(s=1, \sigma=0) + P(s=0,\sigma=0) = 1/3 \times 0 + 2/3 \times(1- (1/2-\epsilon)) = 1/3 +2/3\epsilon$$ -->
+    - $\mu(s=0\mid \sigma=0) = \frac{P(s=0,\sigma=0)}{P(s=1, \sigma=0) + P(s=0,\sigma=0)} =\frac{P(s=0,\sigma=0)}{1/3 \times 0 + P(s=0,\sigma=0)} = 1$
+- And the HR can calculate that $1/3$ of the students are strong $$P(s=1, \sigma=1)=1/3$$, and the professor will call them strong, and $$(1/3-2\epsilon/3)$$ of students are weak, but the professor will call them strong still $$P(s=0, \sigma=1)=(1/3-2\epsilon/3)$$. So when the professor says that the current student is strong, the probability of being a strong student is $$\mu(s=1\mid \sigma=1) = 1/(2-2\epsilon)$$, and the probability of being a weak student is $$\mu(s=0\mid\sigma=1)=(1-2\epsilon)/(2-2\epsilon)$$. When the professor recommends the student, the HR will guess the state as $1$ because $\mu(s=0\mid\sigma=1) \le \mu(s=1\mid\sigma=1)$. Then the HR will choose to hire. In this case, the payoff expectation of the professor is $$(2/3-2\epsilon/3)$$, and the payoff expectation of the HR is $$2\epsilon/3$$. It can be found that when epsilon takes $1/2$, the signaling scheme degenerates into the honest one.
 
 ### Courtroom
 
@@ -190,8 +194,26 @@ Then we can have the following three cases:
 - **The sender says nothing.** The receiver will know there are more innocent defendants ($0.7$ of them) than guity defendants, so he will always acquits. The sender gets nothing and the receiver gets $0.7.$
 - **The sender is always honest.** The receiver can see the state so he convicts when it is guilty and acquits when it is innocent. The sender gets $0.3$ and the receiver gets $1.$
 - **Persuasion.** The sender is honest when the defendant is guilty, and lies (at most) with a probability of $3/7.$ The receiver will follow the hint from the sender. In this way, the sender gets $0.6$ and the receiver gets $0.7.$
+    - $\mu_0(s=i)=0.7$
+    - $\mu_0(s=g)=0.3$
+    - It is clear that the prosecutor has no conflict with the judge when the defendant is guitly, so he will be honest at this state.
+        - $\varphi(\sigma=g\mid s=g)= 1$
+        - $\varphi(\sigma=i\mid s=g)= 0$
+    - Let $\varepsilon$ denote the probability of the prosecutor lying when the defendant is innocent.
+    - $P(s=i, \sigma=i)=0.7 (1-\epsilon)$
+    - $P(s=i, \sigma=g)=0.7 \epsilon$
+    - $P(s=g, \sigma=i)=0.3 \times 0 = 0$
+    - $P(s=g, \sigma=g)=0.3 \times 1 = 0.3$
+    - $P(\sigma=i)=0.7 (1-\epsilon)$
+    - $P(\sigma=g)=0.3 + 0.7 \epsilon$
+    - $\mu(s=i \mid \sigma=i) = \frac{0.7 (1-\epsilon)}{0.7 (1-\epsilon)} = 1$
+    - $\mu(s=i \mid \sigma=g) = \frac{0.7 \epsilon}{0.7 \epsilon + 0.3}$
+    - $\mu(s=g \mid \sigma=i) = 0$
+    - $\mu(s=g \mid \sigma=g) = \frac{0.3}{0.7 \epsilon + 0.3}$
+    - So we can see that the judge will follow the prosecutor's suggestions when $$\mu(s=i \mid \sigma=g) \le \mu(s=g \mid \sigma=g)$$, that is, $\epsilon \le\frac{3}{7}$. (When $\epsilon=\frac{3}{7}$ the judge is neutral to either way.)
+    - So to maximize its own expected payoff, the prosecutor will set $\epsilon=\frac{3}{7}$.
 
-The details of $\epsilon$ for illustrating incentive compatibility is omitted, for it being similart to the case of Recommendation Letter.
+<!-- The details of $\epsilon$ for illustrating incentive compatibility is omitted, for it being similart to the case of Recommendation Letter. -->
 
 ### Preference Disagreement
 

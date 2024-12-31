@@ -109,7 +109,27 @@ Consider a persuasion between a sender and a receiver (named as Bayesian persuas
      - An equivalent objective function: $\mathbb{E}\_{\mu\sim\tau}\Big[\mathbb{E}\_{s\sim\mu}\big[r^i(s,a^*(\mu))\big]\Big]$.
      - The only contraint: $\mathbb{E}\_{\mu\sim\tau}(\mu) = \mu_0$. (i.e. $\tau = \tau_{\mu_0,\varphi}$. This is named as Bayes plausible. See the next subsection.)
 
-### Bayes plausible
+
+> 每个signal会引起一个receiver的对state猜测的后验分布，这个对应关系是多对一的关系：可能有多个signal引起同一个receiver的后验分布。所以$\sum\_{\sigma: \mu(\cdot\mid \sigma) = \mu}$这个求和就是在做这件事，把所有引起$\mu$这个后验的$\sigma$的概率加起来。但其实这个用不到...看下列推导
+{: .prompt-tip }
+
+$$
+\begin{aligned}
+\mathbb{E}_{\mu\sim\tau_{\mu_0, \varphi}}(\mu) 
+=& \sum\limits_{\mu} \mathbb{P}(\mu)\cdot \mu \\
+=& \sum\limits_{\sigma} \mathbb{P}(\sigma) \cdot \mu(\cdot\mid\sigma) \\
+=& \sum\limits_{\sigma} \mathbb{P}(\sigma) \cdot \frac{\mu_0(\cdot)\cdot \varphi(\sigma\mid\cdot)}{\mathbb{P}(\sigma)} \\
+=& \sum\limits_{\sigma} \mu_0(\cdot)\cdot \varphi(\sigma\mid\cdot) \\
+=& \mu_0(\cdot) \cdot \sum\limits_{\sigma} \varphi(\sigma\mid\cdot) \\
+=& \mu_0(\cdot)
+% =& \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu} \mathbb{P}(\sigma) \cdot \mu(\cdot\mid\sigma) \\
+% =& \sum\limits_{\mu} \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits_{s} \mu_0(s)\cdot\varphi(\sigma\mid s) \cdot \mu(\cdot\mid \sigma) \\
+% =& \sum\limits_{\mu} \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits_{s} \mu_0(s)\cdot\varphi(\sigma\mid s) \cdot \frac{\mu_0(\cdot)\cdot \varphi(\sigma\mid \cdot)}{\sum\limits_{s'}\mu_0(s')\cdot \varphi(\sigma\mid s')} \\
+\end{aligned}
+$$
+
+
+### Bayes Plausible
  > The sender's optimization problem can be approached from the perspective of **any arbitrary** distribution of induced posterior beliefs **that satisfies the Bayes plausible**.  
  Understanding this is important for grasping the concepts of geometric interpretation (concavification) in the next subsection.
 {: .prompt-tip }
@@ -145,6 +165,14 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
   - The concavification of $\hat{v}(\mu)$ evaluated at $\mu_0$ equals $\max\set{y\mid(\mu_0, y)\in co(\hat{v})}$, where $co(\hat{v})$ denotes the convex hull of the graph of $\hat{v}$, i.e., the light blue region in Figure 1 of 2011.
 
 - In this case, a signaling scheme with more than two signals cannot improve the sender’s expected payoff. *(Kamenica 2019)*
+
+> 简单再理一遍，就是说
+> - 现在有两个signal，所以对应有两个后验分布；两个signal意味着横坐标上两个点，这两个点在横坐标上可以任意动，想象我们抓着这俩点左右晃动，然后有两根长长的棍子往上指
+> - 这两个signal会各自对应一个收益期望，就是这个点对应的函数线上的点的纵坐标，就是那两根棍子指到的点的纵坐标
+> - 约束是取$\tau_{\mu_0,\varphi}$，意味着这两个横坐标要取两个系数让它加权后（就是期望）等于$\mu_0$，系数记为$(k_1, k_2)$
+> - 那么纵坐标也取这个系数之后，其实我们根据几何关系可以知道是line segment，就是“我们那两根棍子指到的点的连线”和“$x=\mu_0$”的交点，的那个纵坐标，就是当前我们手的两个横坐标profile的收益期望
+> - 现在我们就是要晃动我们的手，使得这个交点最大，那么就是找凸包和$x=\mu_0$”的交点就行了，这个晃一晃就懂了
+{: .prompt-tip }
 
 
 ### Corollaries and propositions
@@ -205,6 +233,7 @@ This technique is best described with a **two-signal** example *(Figure 1 of Kam
  > This paper studies the persuasion of **a group of receivers** with **private channels**.
 {: .prompt-tip }
 - A game of incomplete information can be decomposed into **a basic game** and **an observation structure** (or information structure).
+  - The "omniscient mediator" is the sender. And players are the receivers.
   - The basic game defines the set of actions, the set of payoff states, the payoff functions, and the common prior over the payoff states.
   - The observation structure refers to the **function of partial observations** that the players receive in the game.
 - An incomplete information game $\mathcal{G} = (G, M)$.

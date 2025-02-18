@@ -188,18 +188,6 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
 }</code></pre></div>
     </details>
 
-<!-- <details>
-<summary>The meanings of my names: [Click to expand]</summary>
-<span translate="no">
-<ul>
-  <li>In Chinese, the phonetic abbreviation for <code>301</code> is <code>sbly,</code> where <code>sb</code> stands for "silly," and <code>ly</code> is my name.</li>
-  <li>When applying for the email address, I was worried that others might confuse the number <code>0</code> with the letter <code>o</code>, so I changed <code>301</code> to <code>3h1</code>, but actually, <code>3h1</code> is <code>310</code>. Haha, silly me indeed!</li>
-  <li><code>RSVP</code> is an abbreviation for the French phrase "Répondez s'il vous plaît," which translates to "<em>Respond, if you please</em>" in English. It is commonly used on invitations to request that the invitee confirm whether or not they will attend the event.</li>
-  <li>Here, <code>R01SVP</code> acts like a cry or a spell from a bystander's perspective, and the entity I am inviting is the objective world.</li>
-  <li>"不梦眠" means "Dreamless Sleep" in English, referring to a deep, uninterrupted sleep or metaphorically, to death.</li>
-</ul>
-</span>
-</details> -->
 
 <!-- - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
@@ -332,26 +320,53 @@ The high-scoring courses at the undergraduate level include the following:
   - **Artificial Intelligence:** Digital Image Processing (98), Speech Recognition and Natural Language Understanding (96), Computerized Vision (96), Machine Learning (95);
   - **Robotics:** Intelligent Mobile Robot (99), Electrical and Electronic Technology (98), College Physics (97). -->
 
-<!-- ---
 
-## Teaching
+### Preprints
 
-N/A -->
+- <span translate="no">Verbalized Bayesian Persuasion.</span>  
+    <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*arXiv preprint*.</span>
+    > 
+    [[Paper]](https://arxiv.org/abs/2502.01587) 
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Information design (ID) explores how a sender influence the optimal behavior of receivers to achieve specific objectives. While ID originates from everyday human communication, existing game-theoretic and machine learning methods often model information structures as numbers, which limits many applications to toy games. This work leverages LLMs and proposes a verbalized framework in Bayesian persuasion (BP), which extends classic BP to real-world games involving human dialogues for the first time. Specifically, we map the BP to a verbalized mediator-augmented extensive-form game, where LLMs instantiate the sender and receiver. To efficiently solve the verbalized game, we propose a generalized equilibrium-finding algorithm combining LLM and game solver. The algorithm is reinforced with techniques including verbalized commitment assumptions, verbalized obedience constraints, and information obfuscation. Numerical experiments in dialogue scenarios, such as recommendation letters, courtroom interactions, and law enforcement, validate that our framework can both reproduce theoretical results in classic BP and discover effective persuasion strategies in more complex natural language and multi-stage scenarios.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{li2025verbalized,
+  title={Verbalized Bayesian Persuasion},
+  author={Li, Wenhao and Lin, Yue and Wang, Xiangfeng and Jin, Bo and Zha, Hongyuan and Wang, Baoxiang},
+  journal={arXiv preprint arXiv:2502.01587},
+  year={2025}
+}</code></pre></div>
+    </details>
 
 ---
 
 ## Professional Services
 
 Independent Reviewer
-- NeurIPS 2024 [6]
+- NeurIPS 2024 [6], 2025 [0]
 - ICLR 2025 [3]
-- IMCL 2025 [0]
+- ICML 2025 [5]
 - TMLR 2025 [0]
 
 Assistant Reviewer (for Advisor)
 - AAMAS 2024 [3], 2025 [2]
+- ICML (Position) 2025 [2]
 
-> Numbers in brackets indicate how many manuscripts were reviewed. A "0" indicates that the invitation was accepted, but no review assignment has been made yet. Total: 14.
+> Numbers in brackets indicate how many manuscripts were reviewed. A "0" indicates that the invitation was accepted, but no review assignment has been made yet. Total: 21.
 
 ---
 

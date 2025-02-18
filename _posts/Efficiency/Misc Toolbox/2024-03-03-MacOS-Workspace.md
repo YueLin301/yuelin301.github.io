@@ -92,34 +92,62 @@ Effect:
 
 ## Writing Tools
 
-1. VSCode: code, blog
+1. VSCode: code, blog; use github account to sync settings
 2. Scapple: mindmap
 3. Typora: draft
-4. Notes: memo
-5. (Cooperation)
+4. Obsidian: blog, draft
+5. Notes: memo
+6. Notability
+7. (Cooperation)
     1. Overleaf
     2. [HackMD](https://hackmd.io/)
-6. (Remote Connection)
+8. (Remote Connection)
     1. Termius
     2. CUHKSZ VPN
-    3. Parsec
-7. (Miscs)
+9. (Miscs)
     1. Mathpix
-    2. GitHub Copilot
-    3. Grammarly
+    2. The Unarchiver (in app store)
 
+## Code Tools
+
+1. anaconda navigator
 
 ## Reading Tools
 
 1. Arc: browser
 2. Zotero: papers
-3. Skim: misc pdf
-4. Pigcha: VPN
+3. updf: misc pdf
+4. (VPN)
+	1. Pigcha (R.I.P.)
+	2. monocloud
+
+How to use monocloud in terminal:
+1. check the proxy port, like, an example of a HTTP proxy: `127.0.0.1: 8117`
+2. Add some code to the bash or zsh file
+	1. `echo $SHELL` to check the type of the using shell
+		1. if `/bin/bash`: `nano ~/.bashrc`
+		2. if `/bin/zsh`: `nano ~/.zshrc`
+
+Then 
+```
+# HTTP Proxy Configuration
+export http_proxy=http://127.0.0.1:8117
+export https_proxy=http://127.0.0.1:8117
+```
+
+And use `source` to activate every time before you do something
+- `source ~/.bashrc`
+- `source ~/.zshrc`
 
 ## Entertainment APPs
 
-1. Bilibili
-2. Steam
+1. WeChat
+2. QQ
+3. Bilibili
+4. Steam
+5. Crossover
+6. NetEase Music
+7. Baidu NetDisk
 
 
 ## Storage
@@ -145,25 +173,39 @@ Effect:
 
 还有一个是`~/Library/Chaches/`和`~/Library/Logs/`，删了一般没啥关系的，注意看文件名
 
+## Shortcuts
 
+- `Control + Command + Space`: 打开emoji选择框
+
+## Automator
+
+### Shutdown screen
+
+For my mac mini:
+1. Open: Applications -> Automator
+2. Quick Action
+3. Search: run shell script
+4. Workflow receives: `no input` in `any application`
+5. `pmset displaysleepnow`
+6. Open: Settings -> Keyboard -> Keyboard Shortcuts -> Services -> General -> set shortcut `Control + F12`
 
 
 <!-- ## Why Mac
 
 优点：
-1. 稳定
+7. 稳定
    1. win电脑牌子多，品控有问题
    2. win常出现蓝屏重启问题，应该是CPU散热原因
    3. 集成度高，不容易坏；我之前的win电脑出现过硬盘和主板的问题，浪费了很多时间和精力，且售后和维修很不专业
    4. win更新不稳定
-2. 便携
+8. 便携
    1. 带去上课风扇安静
    2. 待机很久，不用带电源
    3. 触控板和手势，无需多言
    4. 轻薄
-3. 性能：满足便携性的轻薄本不能拿来跑实验
-4. 环境：平板来说iPad是垄断般的存在，配合笔记什么的用Mac很舒服
-5. 软件
+9. 性能：满足便携性的轻薄本不能拿来跑实验
+10. 环境：平板来说iPad是垄断般的存在，配合笔记什么的用Mac很舒服
+11. 软件
    1. 类Unix内核
    2. 应用调度和检索比win舒服，习惯之后真的很快
 
@@ -172,12 +214,12 @@ Effect:
 如果我不学工科，不用工科软件，早点上mac，我早就可以开始到处带着作笔记了，泪目
 
 缺点：
-1. 硬件性价比低
+12. 硬件性价比低
    1. 丐版是性价比最高的，但是这个性能根本不够用
    2. 加钱能很爽但是哪有内存条和硬盘这么贵的？32GB内存的机型价格都起飞了
    3. 封装起来了，自己加不了条子
-2. 不支持exe以及其他许多工业软件
-3. 打不了多少游戏
-4. 厂商刀法精湛且迭代太快，选购太揪心不痛快（还是没钱造成的）
-5. Pytorch CUDA配置麻烦，而且代码要改变一些写法，还是不用了
-6. 我的这台老版pro还得接拓展坞才够用，而且只能外接一台显示器 -->
+13. 不支持exe以及其他许多工业软件
+14. 打不了多少游戏
+15. 厂商刀法精湛且迭代太快，选购太揪心不痛快（还是没钱造成的）
+16. Pytorch CUDA配置麻烦，而且代码要改变一些写法，还是不用了
+17. 我的这台老版pro还得接拓展坞才够用，而且只能外接一台显示器 -->

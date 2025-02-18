@@ -86,9 +86,8 @@ An equilibrium consists of a family of signaling rules for $S$, denoted as $q(n\
 Remarks:
 1. 第二个条件中，where后面是贝叶斯，意思是receiver选的动作会优化它自己的后验收益期望
     1. 所以这里看起来不是用后验来用bayes decision rule先猜一个最可能的state，而是拿整个后验分布来优化收益期望
-2. 第一个条件中，前两个小条件是用来约束$q$是一个概率，最后那个条件很绕，意思是假如receiver的策略$y(n)$是给出的，那么它发信号会引起一个确定的动作$y$，那么有一个信号$n$是可以最大化sender自己的收益的，这个$n$记为$$n^*$$，那么sender的signaling scheme的约束就是$$n^*$$的概率大于0就行了
-    1. 大于0就行，还是比较宽松的
-    2. 但它不能一直发这个信号，因为要引入noise来干扰receiver的后验从而印象它的决策
+    2. 这里sender没有commit to this signaling scheme。receiver之所以可以用这个是因为均衡的定义，所有人“给定对方的策略”之后自己不能再改变来提高收益，所以这里均衡里receiver的公式可以带对方策略
+2. 第一个条件中，前两个小条件是用来约束$q$是一个概率，最后那个条件很绕，意思是假如receiver的策略$y(n)$是给出的，那么它发信号会引起一个确定的动作$y$，那么：如果sender有可能发这个信号（$$n^*$$的概率大于0），那么说明这个信号是可以最大化sender自己的收益的
 3. 再看第二个条件，现在我们想结合之前的假设看看有什么性质
     1. 发现receiver的优化目标对$y$是strictly concave的
         1. 因为$U^R_{11}<0$

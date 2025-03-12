@@ -325,7 +325,7 @@ The high-scoring courses at the undergraduate level include the following:
 
 - <span translate="no">Verbalized Bayesian Persuasion.</span>  
     <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
-    <span translate="no">*arXiv preprint*.</span>
+    <span translate="no">*arXiv preprint. 2025.2.*</span>
     > 
     [[Paper]](https://arxiv.org/abs/2502.01587) 
     <details style="margin-top: -10px;">
@@ -351,22 +351,47 @@ The high-scoring courses at the undergraduate level include the following:
   year={2025}
 }</code></pre></div>
     </details>
+- <span translate="no">Bayesian Persuasion Is a Bargaining Game.</span>  
+    <span translate="no">**Yue Lin**, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang</span>  
+    > 
+    [[Paper]](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=fbvQHX4AAAAJ&citation_for_view=fbvQHX4AAAAJ:qjMakFHDy7sC) 
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Bayesian persuasion studies how a sender with an informational advantage can persuade a receiver with a different motive to take actions that benefit the sender. This problem is previously formulated from an equilibrium perspective, where the sender is to choose a Bayes correlated equilibrium and the receiver is willing to respect the signaling scheme based on posterior beliefs. However, evidence in real-world scenarios and studies in farsighted receivers suggest otherwise: senders tend to be much more honest than the equilibrium. In this work, we show that Bayesian persuasion is reducible to a bargaining game. This reduction suggests that the receiver in Bayesian persuasion can be aware of the game structure and can develop an anti-exploitation strategy. This equalizes the power of commitment of the two parties and prevents the sender from taking the maximum possible payoff. Through experiments on large language models, we demonstrate the receiver's retaliatory strategies and the sender's compromise to that. More findings on the impact of the context and alignments further suggest that bargaining behavior emerges in persuasion tasks. The insights given by our results have potential implications on various scenarios to reduce exploitation, improve equality, and improve social welfare.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{linbayesian,
+  title={Bayesian Persuasion Is a Bargaining Game},
+  author={Lin, Yue and Zhu, Shuhui and Cunningham, William A and Li, Wenhao and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang}
+}</code></pre></div>
+    </details>
 
 ---
 
 ## Professional Services
 
 Independent Reviewer
-- NeurIPS 2024 [6], 2025 [0]
-- ICLR 2025 [3]
-- ICML 2025 [5]
-- TMLR 2025 [0]
+- NeurIPS 2024 [6, 45615], 2025 [0]
+- ICLR 2025 [3, 21831]
+- ICML 2025 [5, 23320+]
+- TMLR 2025 [1, 0+]
 
-Assistant Reviewer (for Advisor)
-- AAMAS 2024 [3], 2025 [2]
-- ICML (Position) 2025 [2]
+Volunteer
+- AAMAS 2024 [3, 9876], 2025 [2, 4792]
+- ICML (Position) 2025 [2, 5016]
 
-> Numbers in brackets indicate how many manuscripts were reviewed. A "0" indicates that the invitation was accepted, but no review assignment has been made yet. Total: 21.
+> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. Total reviews: 22.
 
 ---
 
@@ -375,7 +400,8 @@ Assistant Reviewer (for Advisor)
 Teaching Assistant
 -  CSC6021/AIR6001 Artificial Intelligence (2024-25 Term 2). Professor: Chris Ding.
 
-<!-- ---
+
+---
 
 ## Patents
 
@@ -383,7 +409,46 @@ Teaching Assistant
     <span translate="no">状态：专利待审</span>  
     <span translate="no">申请人：香港中文大学（深圳）</span>  
     <span translate="no">发明人：**林越**、李文浩、查宏远、王趵翔</span>  
-    <span translate="no">申请公布号：CN116455754A；申请号：2023103977440；申请公布日：2023.07.18；申请日：2023.04.06</span> -->
+    <span translate="no">申请公布号：CN116455754A；申请号：2023103977440；申请公布日：2023.07.18；申请日：2023.04.06</span>
+
+<!-- http://epub.cnipa.gov.cn/Dxb/IndexQuery -->
+
+---
+
+## Hobbies
+
+<ul>
+<li>
+    <details>
+    <summary>Video Games</summary>
+    <ul>
+    <li>王者荣耀 Honor of Kings
+        <ul>
+        <li>浙江省第64 诸葛亮 10169战力；胜率57.6%，场次1824</li>
+        <li>巅峰赛1843分</li>
+        </ul>
+    </li>
+    <li>Overwatch 1
+        <ul>
+        <li>Doomfist: 284 hours, 1669 matches, win rate 54%, kill/death 26068/13137</li>
+        </ul>
+    </li>
+    <li>Steam
+        <ul>
+        <li>Hollow Knight, Batman: Arkham Knight, Marvel Rivals, Lost Castle 2, ...</li>
+        </ul>
+    </li>
+    </ul>
+    </details>
+</li>
+
+<li>Movies</li>
+<li>DC Comics</li>
+<li>Ping-Pong</li>
+<li>Psychology</li>
+
+</ul>
+
 
 <!-- ## Personality
 

@@ -23,7 +23,7 @@ math: True
 > - Notes: https://econweb.ucsd.edu/~jsobel/Paris_Lectures/20070612_cheaptalknotes.pdf
 {:.prompt-info}
 
-这篇文章是经典中的经典，cheap talk和bayesian persuasion都拿了诺贝尔经济学奖，bp中的通信阶段就是cheap talk，作者也claim说了persuasion就是sender's commitent + cheap talk
+这篇文章是经典中的经典，bp中的通信阶段就是cheap talk，作者也claim说了persuasion就是sender's commitent + cheap talk
 
 里面的这个二次例子也非常重要，在很多文献中都出现了，性质很好，而且解释得很明白，结果要算的话也很简单（但我没有check过是否这个是在这里第一次提出的）
 

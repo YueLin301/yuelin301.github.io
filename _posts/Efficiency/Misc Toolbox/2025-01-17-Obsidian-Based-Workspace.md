@@ -13,6 +13,8 @@ pin: false
 ---
 ## 前言
 
+[Github Repo: draft01_empty](https://github.com/YueLin301/draft01_empty)
+
 用了很久的电脑，要记点东西
 1. 要么就是随手记，
 2. 要么是找半天分类再在专门的文件夹里创建md再记录

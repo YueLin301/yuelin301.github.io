@@ -45,18 +45,18 @@ Steps of developing a science of traits:
 1. The measurement and classification of traits.
     1. Verbal report
         1. self-report
-        2. ask the repondent
-    2. Behaviour tasks in the laboratory
-        1. In practice, howerver, personality measures based on objective behaviour tests have had only limited success, and few have been validated.
-        2. (Verbal report has been the preferred method of trait assesment used by personality researchers.)
+        2. ask the respondent
+    2. Behavior tasks in the laboratory
+        1. In practice, however, personality measures based on objective behavior tests have had only limited success, and few have been validated.
+        2. (Verbal report has been the preferred method of trait assessment used by personality researchers.)
     3. (What is the number of broad dimensions needed to describe the main elements of any individual personality?)
         1. Many of these (personality traits) words have rather similar meanings.
         2. Such overlapping traits can be grouped together as a broad aspect or dimension of personality.
-2. To test whether and how traits relate to behaviours.
+2. To test whether and how traits relate to behaviors.
     1. There is no guarantee that people's self-descriptions are accurate.
     2. Traits may also be useful in applied settings, in predicting a person's job performance, or the response of a patient to therapy, for example.
 3. Development of a satisfactory theory of personality traits.
-    1. (We may be able to access people's levels of extraversion and other traits, and show that our assessment predicts some aspects of their behaviour)
+    1. (We may be able to access people's levels of extraversion and other traits, and show that our assessment predicts some aspects of their behavior)
     2. But in themselves these observations tell us nothing about **why the personality dimension predicts behaviour.**
     3. One difficulty is that personality may be represented at a variety of levels of psychological description.
     4. For example, extraversion might be associated

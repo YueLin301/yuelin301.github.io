@@ -127,3 +127,29 @@ The `git clone` will create a subfolder (named after the repo) in your current f
 `pull` = `fetch` + `merge`
 
 `git pull origin ${remote_branch_name}` (Update the code in your current local branch.)
+
+
+## Cooperation
+
+My Style
+
+Set up
+- Accept the invitation in email. Star.
+- `git clone ${xxx.git}`
+- Create new branch locally and switch to it.
+    - `git checkout -b ${branch_name}`
+- Do some modification.
+- `git add .` + `git commit -m "lazy commit"`
+- Push to the remote branch. (Create a new branch and set the pair)
+    - `git push --set-upstream origin ${branch_name}`
+- Go to the website. Click the button `Compare & Pull Request`
+
+Common use
+- `git checkout main`
+- `git pull origin main`
+- `git checkout ${branch_name}` (no `-b`)
+- `git merge main`
+- Do some modification.
+- `git add .` + `git commit -m "lazy commit"`
+- `git push` (since the pair is built before)
+- Go to the website. Click the button `Compare & Pull Request`

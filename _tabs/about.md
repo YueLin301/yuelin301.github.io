@@ -188,6 +188,63 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
 }</code></pre></div>
     </details>
 
+- <span translate="no">Information Bargaining: Bilateral Commitment in Bayesian Persuasion.</span>  
+    <span translate="no">**Yue Lin**, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*EC 2025 Workshop: Information Economics and Large Language Models.*</span>  
+    > The title of an alternative version: Bayesian Persuasion as a Bargaining Game.  
+    [[Paper]](https://arxiv.org/abs/2506.05876) 
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Bayesian persuasion, an extension of cheap-talk communication, involves an informed sender committing to a signaling scheme to influence a receiver’s actions. Compared to cheap talk, this sender’s commitment enables the receiver to verify the incentive compatibility of signals beforehand, facilitating cooperation. While effective in one-shot scenarios, Bayesian persuasion faces computational complexity (NP-hardness) when extended to long-term interactions, where the receiver may adopt dynamic strategies conditional on past outcomes and future expectations. To address this complexity, we introduce the bargaining perspective, which allows: (1) a unified framework and well-structured solution concept for long-term persuasion, with desirable properties such as fairness and Pareto efficiency; (2) a clear distinction between two previously conflated advantages: the sender’s informational advantage and first-proposer advantage. With only modest modifications to the standard setting, this perspective makes explicit the common knowledge of the game structure and grants the receiver comparable commitment capabilities, thereby reinterpreting classic one-sided persuasion as a balanced information bargaining framework. The framework is validated through a two-stage validationand-inference paradigm: We first demonstrate that GPT-o3 and DeepSeek-R1, out of publicly available LLMs, reliably handle standard tasks; We then apply them to persuasion scenarios to test that the outcomes align with what our informationbargaining framework suggests. All code, results, and terminal logs are publicly available at https://github.com/YueLin301/InformationBargaining.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2025bayesian,
+  title={Bayesian Persuasion as a Bargaining Game},
+  author={Lin, Yue and Zhu, Shuhui and Cunningham, William A and Li, Wenhao and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang},
+  journal={arXiv preprint arXiv:2506.05876},
+  year={2025}
+}</code></pre></div>
+    </details>
+
+- <span translate="no">Verbalized Bayesian Persuasion.</span>  
+    <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*EC 2025 Workshop: Information Economics and Large Language Models.*</span>
+    > 
+    [[Paper]](https://arxiv.org/abs/2502.01587) 
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Information design (ID) explores how a sender influence the optimal behavior of receivers to achieve specific objectives. While ID originates from everyday human communication, existing game-theoretic and machine learning methods often model information structures as numbers, which limits many applications to toy games. This work leverages LLMs and proposes a verbalized framework in Bayesian persuasion (BP), which extends classic BP to real-world games involving human dialogues for the first time. Specifically, we map the BP to a verbalized mediator-augmented extensive-form game, where LLMs instantiate the sender and receiver. To efficiently solve the verbalized game, we propose a generalized equilibrium-finding algorithm combining LLM and game solver. The algorithm is reinforced with techniques including verbalized commitment assumptions, verbalized obedience constraints, and information obfuscation. Numerical experiments in dialogue scenarios, such as recommendation letters, courtroom interactions, and law enforcement, validate that our framework can both reproduce theoretical results in classic BP and discover effective persuasion strategies in more complex natural language and multi-stage scenarios.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{li2025verbalized,
+  title={Verbalized Bayesian Persuasion},
+  author={Li, Wenhao and Lin, Yue and Wang, Xiangfeng and Jin, Bo and Zha, Hongyuan and Wang, Baoxiang},
+  journal={arXiv preprint arXiv:2502.01587},
+  year={2025}
+}</code></pre></div>
+    </details>
 
 <!-- - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
@@ -321,84 +378,32 @@ The high-scoring courses at the undergraduate level include the following:
   - **Robotics:** Intelligent Mobile Robot (99), Electrical and Electronic Technology (98), College Physics (97). -->
 
 
-### Preprints
+<!-- ### Preprints -->
 
-- <span translate="no">Verbalized Bayesian Persuasion.</span>  
-    <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
-    <span translate="no">*arXiv preprint. 2025.2.*</span>
-    > 
-    [[Paper]](https://arxiv.org/abs/2502.01587) 
-    <details style="margin-top: -10px;">
-    <summary>[Click to check the Abstract]</summary>
-    <div class="language-plaintext highlighter-rouge">
-    <div class="code-header">
-    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-    <span></span>
-    </div>
-    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Information design (ID) explores how a sender influence the optimal behavior of receivers to achieve specific objectives. While ID originates from everyday human communication, existing game-theoretic and machine learning methods often model information structures as numbers, which limits many applications to toy games. This work leverages LLMs and proposes a verbalized framework in Bayesian persuasion (BP), which extends classic BP to real-world games involving human dialogues for the first time. Specifically, we map the BP to a verbalized mediator-augmented extensive-form game, where LLMs instantiate the sender and receiver. To efficiently solve the verbalized game, we propose a generalized equilibrium-finding algorithm combining LLM and game solver. The algorithm is reinforced with techniques including verbalized commitment assumptions, verbalized obedience constraints, and information obfuscation. Numerical experiments in dialogue scenarios, such as recommendation letters, courtroom interactions, and law enforcement, validate that our framework can both reproduce theoretical results in classic BP and discover effective persuasion strategies in more complex natural language and multi-stage scenarios.</code></pre></div>
-    </details>  
-    <details>
-    <summary>[Click to check the BibTex code]</summary>
-    <div class="language-plaintext highlighter-rouge">
-    <div class="code-header">
-    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
-    <span></span>
-    </div>
-    <pre class="highlight" style="margin-left: 20px;"><code>@article{li2025verbalized,
-  title={Verbalized Bayesian Persuasion},
-  author={Li, Wenhao and Lin, Yue and Wang, Xiangfeng and Jin, Bo and Zha, Hongyuan and Wang, Baoxiang},
-  journal={arXiv preprint arXiv:2502.01587},
-  year={2025}
-}</code></pre></div>
-    </details>
-- <span translate="no">Bayesian Persuasion Is a Bargaining Game.</span>  
-    <span translate="no">**Yue Lin**, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang</span>  
-    > 
-    [[Paper]](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=fbvQHX4AAAAJ&citation_for_view=fbvQHX4AAAAJ:qjMakFHDy7sC) 
-    <details style="margin-top: -10px;">
-    <summary>[Click to check the Abstract]</summary>
-    <div class="language-plaintext highlighter-rouge">
-    <div class="code-header">
-    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-    <span></span>
-    </div>
-    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Bayesian persuasion studies how a sender with an informational advantage can persuade a receiver with a different motive to take actions that benefit the sender. This problem is previously formulated from an equilibrium perspective, where the sender is to choose a Bayes correlated equilibrium and the receiver is willing to respect the signaling scheme based on posterior beliefs. However, evidence in real-world scenarios and studies in farsighted receivers suggest otherwise: senders tend to be much more honest than the equilibrium. In this work, we show that Bayesian persuasion is reducible to a bargaining game. This reduction suggests that the receiver in Bayesian persuasion can be aware of the game structure and can develop an anti-exploitation strategy. This equalizes the power of commitment of the two parties and prevents the sender from taking the maximum possible payoff. Through experiments on large language models, we demonstrate the receiver's retaliatory strategies and the sender's compromise to that. More findings on the impact of the context and alignments further suggest that bargaining behavior emerges in persuasion tasks. The insights given by our results have potential implications on various scenarios to reduce exploitation, improve equality, and improve social welfare.</code></pre></div>
-    </details>  
-    <details>
-    <summary>[Click to check the BibTex code]</summary>
-    <div class="language-plaintext highlighter-rouge">
-    <div class="code-header">
-    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
-    <span></span>
-    </div>
-    <pre class="highlight" style="margin-left: 20px;"><code>@article{linbayesian,
-  title={Bayesian Persuasion Is a Bargaining Game},
-  author={Lin, Yue and Zhu, Shuhui and Cunningham, William A and Li, Wenhao and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang}
-}</code></pre></div>
-    </details>
+
 
 ---
 
 ## Professional Services
 
 Independent Reviewer
-- NeurIPS 2024 [6, 45615], 2025 [0]
+- NeurIPS 2024 [6, 45615], 2025 [5, 0]
 - ICLR 2025 [3, 21831]
-- ICML 2025 [5, 23320+]
-- TMLR 2025 [1, 0+]
+- ICML 2025 [6, 32893]
+- TMLR 2025 [2, 9550]
 
 Volunteer
 - AAMAS 2024 [3, 9876], 2025 [2, 4792]
 - ICML (Position) 2025 [2, 5016]
 
-> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. Total reviews: 22.
+> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. Total reviews: 28.
 
 ---
 
 ## Teaching
 
 Teaching Assistant
--  CSC6021/AIR6001 Artificial Intelligence (2024-25 Term 2). Professor: Chris Ding.
+-  CSC6021/AIR6001 Artificial Intelligence (2024-25 Term 2).
 
 
 ---
@@ -424,8 +429,10 @@ Teaching Assistant
     <ul>
     <li>王者荣耀 Honor of Kings
         <ul>
-        <li>浙江省第64 诸葛亮 10169战力；胜率57.6%，场次1824</li>
-        <li>巅峰赛1843分</li>
+        <li>全国第74 诸葛亮，战力13853，胜率57.5%，场次1956</li>
+        <li>浙江省第57 嫦娥，战力10725，胜率64.3%，场次210</li>
+        <li>浙江省第42 米莱狄，战力7863，胜率54.6%，场次414</li>
+        <li>巅峰赛打野2063分，中路1849分，巅峰场次共800</li>
         </ul>
     </li>
     <li>Overwatch 1
@@ -435,7 +442,7 @@ Teaching Assistant
     </li>
     <li>Steam
         <ul>
-        <li>Hollow Knight, Batman: Arkham Knight, Marvel Rivals, Lost Castle 2, ...</li>
+        <li>Risk of Rain 2, Hollow Knight, Batman: Arkham Knight, Marvel Rivals, Lost Castle 2, baba is you...</li>
         </ul>
     </li>
     </ul>

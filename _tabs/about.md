@@ -26,9 +26,18 @@ toc: true
 {: .prompt-info } -->
 
 Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang [Homepage]</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha [Google Scholar]</a></span>. Here, I will irregularly update my experiences, notes, and computational magic spells that interest me.
+Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang [Homepage]</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha [Google Scholar]</a></span>. 
+I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
 
-<details style="margin-top: -10px; margin-bottom: 10px;">
+<ul>
+    <li>My research interests lie primarily in designing efficient learning algorithms to guide agents toward better equilibriums in multi-agent tasks. For experts: (1) solving sequential social dilemmas, by designing learning algorithms that incorporate mechanism design, and (2) designing learning methods for mechanism design problems.</li>
+    <li>Most of my focus is on sequential mixed-motive multi-agent scenarios, and I am particularly interested in communication mechanisms (keywords: information design, Bayesian persuasion, cheap talk), as well as some other mechanisms that influence others, such as incentivization.</li>
+    <li>My expertise in learning methods lies in reinforcement learning (RL), particularly multi-agent hyper-gradient modeling, and in large language models (LLMs).</li>
+</ul>
+
+<!-- Here, I will irregularly update my experiences, notes, and computational magic spells that interest me. -->
+
+<!-- <details style="margin-top: -10px; margin-bottom: 10px;">
 <summary>My current research interest lies in using computational methods to study mechanisms, to address some social dilemma issues in game theory, in which scenarios everyone being self-interested may lead to the detriment of social welfare. [Click here to see details of my research interests]</summary>
 <ul>
   <li>
@@ -45,7 +54,7 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
     </ul>
   </li>
 </ul>
-</details>
+</details> -->
 
 <div style="color: #999;">
   And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption. <i>—&nbsp;Friedrich&nbsp;Nietzsche,&nbsp;Thus&nbsp;Spoke&nbsp;Zarathustra.</i>
@@ -91,13 +100,14 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
       <p><strong>Currently</strong></p>
       <ul>
         <!-- <li>Social Dilemma</li> -->
-        <li>Multi-Agent RL: Mixed-Motive Tasks</li>
+        <!-- <li>Multi-Agent RL: Mixed-Motive Tasks</li> -->
+        <li>Multi-Agent Reinforcement Learning</li>
         <li>Game Theory: Information Design</li>
         <!-- <li>Algorithmic Game Theory</li> -->
         <!-- <ul style="margin-left: -20px;">
           <li>Information Design</li>
         </ul> -->
-        <li>Large Language Models</li>
+        <li>LLMs for Game Solvers</li>
       </ul>
       <p><strong>Formerly</strong></p>
       <ul>
@@ -122,6 +132,8 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
 
 ### Education 
 
+- <span translate="no">**Shenzhen Loop Area Institute**</span>  
+  Joint Ph.D. Student (2025.9 - Present)  
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
   Ph.D. Student in Data Science (2024.8 - Present)  
   <!-- Ph.D. Student in Data Science (2024.9 - Present)   -->
@@ -161,6 +173,7 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
     [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
     [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
     [[Talk RLChina]](https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978)  
+    [[Patent]]({{site.baseurl}}/posts/IDMARL_patent/)
     <!-- [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   -->
     <details style="margin-top: -10px;">
     <summary>[Click to check the Abstract]</summary>
@@ -193,6 +206,7 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
     <span translate="no">*EC 2025 Workshop: Information Economics and Large Language Models.*</span>  
     > The title of an alternative version: Bayesian Persuasion as a Bargaining Game.  
     [[Paper]](https://arxiv.org/abs/2506.05876) 
+    [[Code & Experiments]](https://github.com/YueLin301/InformationBargaining) 
     <details style="margin-top: -10px;">
     <summary>[Click to check the Abstract]</summary>
     <div class="language-plaintext highlighter-rouge">
@@ -245,6 +259,9 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
   year={2025}
 }</code></pre></div>
     </details>
+
+
+
 
 <!-- - Information Design in Multi-Agent Reinforcement Learning.  
     **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
@@ -387,10 +404,10 @@ The high-scoring courses at the undergraduate level include the following:
 ## Professional Services
 
 Independent Reviewer
-- NeurIPS 2024 [6, 45615], 2025 [5, 0]
-- ICLR 2025 [3, 21831]
+- NeurIPS 2024 [6, 45615], 2025 [5, 32912]
+- ICLR 2025 [3, 21831], 2026 [0]
 - ICML 2025 [6, 32893]
-- TMLR 2025 [2, 9550]
+- TMLR 2025 [2, 38363]
 
 Volunteer
 - AAMAS 2024 [3, 9876], 2025 [2, 4792]
@@ -411,10 +428,13 @@ Teaching Assistant
 ## Patents
 
 - <span translate="no">多智能体强化学习通信方法、终端设备及存储介质</span>  
-    <span translate="no">状态：专利待审</span>  
-    <span translate="no">申请人：香港中文大学（深圳）</span>  
     <span translate="no">发明人：**林越**、李文浩、查宏远、王趵翔</span>  
-    <span translate="no">申请公布号：CN116455754A；申请号：2023103977440；申请公布日：2023.07.18；申请日：2023.04.06</span>
+    <span translate="no">申请人：香港中文大学（深圳）</span>  
+    <span translate="no">类型：发明</span>  
+    <span translate="no">状态：已授权</span>  
+    > <span translate="no">专利号：ZL 2023 1 0397744.0；授权公告号：CN 116455754 B；授权公告日：2025.9.16</span>  
+    [[证书]]({{site.baseurl}}/posts/IDMARL_patent/)
+    <!-- <span translate="no">申请公布号：CN116455754A；申请号：2023103977440；申请公布日：2023.07.18；申请日：2023.04.06</span> -->
 
 <!-- http://epub.cnipa.gov.cn/Dxb/IndexQuery -->
 
@@ -432,7 +452,7 @@ Teaching Assistant
         <li>全国第74 诸葛亮，战力13853，胜率57.5%，场次1956</li>
         <li>浙江省第57 嫦娥，战力10725，胜率64.3%，场次210</li>
         <li>浙江省第42 米莱狄，战力7863，胜率54.6%，场次414</li>
-        <li>巅峰赛打野2063分，中路1849分，巅峰场次共800</li>
+        <li>巅峰赛打野2063分（第3892名），中路1849分，巅峰场次共800</li>
         </ul>
     </li>
     <li>Overwatch 1
@@ -442,17 +462,19 @@ Teaching Assistant
     </li>
     <li>Steam
         <ul>
-        <li>Risk of Rain 2, Hollow Knight, Batman: Arkham Knight, Marvel Rivals, Lost Castle 2, baba is you...</li>
+        <li>Hollow Knight, Hollow Knight: Silksong, The Stanley Parable, Batman: Arkham Knight, Marvel Rivals...</li>
+        <!-- <li>Risk of Rain 2, Hollow Knight, Batman: Arkham Knight, Marvel Rivals, Lost Castle 2, baba is you...</li> -->
         </ul>
     </li>
+    <!-- <li>Among all games, the one that has influenced me the most is **The Stanley Parable.**</li> -->
     </ul>
     </details>
 </li>
 
 <li>Movies</li>
-<li>DC Comics</li>
-<li>Ping-Pong</li>
-<li>Psychology</li>
+<!-- <li>DC Comics</li> -->
+<!-- <li>Ping-Pong</li> -->
+<!-- <li>Psychology</li> -->
 
 </ul>
 

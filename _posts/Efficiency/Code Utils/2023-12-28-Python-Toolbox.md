@@ -548,13 +548,16 @@ print(f"函数运行耗时：{elapsed_time}秒")
    python setup.py sdist bdist_wheel
    ```
 
-4. **发布到PyPI**：首先需要在[PyPI](https://pypi.org/)注册一个账号，然后安装`twine`（`pip install twine`），最后使用以下命令上传你的包：
+4. 本地测试： pip install dist/xxx.whl
+
+
+5. **发布到PyPI**：首先需要在[PyPI](https://pypi.org/)注册一个账号，然后安装`twine`（`pip install twine`），最后使用以下命令上传你的包：
 
    ```
    twine upload dist/*
    ```
 
-5. **安装测试**：一旦你的包被成功上传到PyPI，你就可以使用`pip`来安装它了，就像安装其他任何包一样：
+6. **安装测试**：一旦你的包被成功上传到PyPI，你就可以使用`pip`来安装它了，就像安装其他任何包一样：
 
    ```
    pip install your_package_name

@@ -137,7 +137,8 @@ I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
   Ph.D. Student in Data Science (2024.8 - Present)  
   <!-- Ph.D. Student in Data Science (2024.9 - Present)   -->
-- <span translate="no">**Tiangong University**</span>  
+<!-- - <span translate="no">**Tiangong University**</span>   -->
+- <span translate="no">**Tianjin Polytechnic University**</span>  
   Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
         > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127  
@@ -413,7 +414,7 @@ Volunteer
 - AAMAS 2024 [3, 9876], 2025 [2, 4792]
 - ICML (Position) 2025 [2, 5016]
 
-> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. Total reviews: 28.
+> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. Total reviews: 29.
 
 ---
 
@@ -447,15 +448,15 @@ Teaching Assistant
     <details>
     <summary>Video Games</summary>
     <ul>
-    <li>王者荣耀 Honor of Kings
+    <li>王者荣耀 Honor of Kings （已退坑）
         <ul>
         <li>全国第74 诸葛亮，战力13853，胜率57.5%，场次1956</li>
         <li>浙江省第57 嫦娥，战力10725，胜率64.3%，场次210</li>
         <li>浙江省第42 米莱狄，战力7863，胜率54.6%，场次414</li>
-        <li>巅峰赛打野2063分（第3892名），中路1849分，巅峰场次共800</li>
+        <li>巅峰赛打野2063分（全国第3892名），中路1849分，巅峰场次共800</li>
         </ul>
     </li>
-    <li>Overwatch 1
+    <li>Overwatch 1 （已退坑）
         <ul>
         <li>Doomfist: 284 hours, 1669 matches, win rate 54%, kill/death 26068/13137</li>
         </ul>

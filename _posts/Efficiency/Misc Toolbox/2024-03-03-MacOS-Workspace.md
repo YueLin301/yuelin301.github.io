@@ -19,6 +19,12 @@ _False Knees - Joshua_
 
 ![](../../../assets/img/2024-03-03-MacOS-Desktop/img_2024-03-03-07-30-57.png){: width="300" height="300" }
 
+
+### MonitorControl
+
+[GitHub Repo](https://github.com/MonitorControl/MonitorControl#readme)
+
+
 ### Wins and Magnet
 
 Window Arrangement
@@ -68,11 +74,11 @@ Effect:
 > 您的截图显示内存压力为42%，这表明尽管空闲内存不多，但系统并没有经历过高的内存压力。macOS设计了内存压力指标来指示是否需要采取行动（如关闭应用程序或重启系统）以释放内存。只要这个压力指标保持在低至中等水平，通常不需要担心内存问题。
 
 
-### AutoRaise
+<!-- ### AutoRaise
 
 鼠标移到哪里，哪里就会自动亮起，少一次点击操作
 
-我的偏好是关闭window raise，打开window focus
+我的偏好是关闭window raise，打开window focus -->
 
 
 
@@ -90,9 +96,15 @@ Effect:
 [【谁说Mac不能玩游戏？我直接爽玩｜Mac丝滑游戏最新秘诀，都在这了。】](https://www.bilibili.com/video/BV1iG41127J4?vd_source=b3cf9eb7cfe43c730613c5158a38e978)
 
 
+
+
+
+
+
 ## Writing Tools
 
 1. VSCode: code, blog; use github account to sync settings
+    1. Cursor
 2. Scapple: mindmap
 3. Typora: draft
 4. Obsidian: blog, draft
@@ -104,7 +116,7 @@ Effect:
 8. (Remote Connection)
     1. Termius
     2. CUHKSZ VPN
-9. (Miscs)
+9.  (Miscs)
     1. Mathpix
     2. The Unarchiver (in app store)
 
@@ -223,3 +235,14 @@ For my mac mini:
 15. 厂商刀法精湛且迭代太快，选购太揪心不痛快（还是没钱造成的）
 16. Pytorch CUDA配置麻烦，而且代码要改变一些写法，还是不用了
 17. 我的这台老版pro还得接拓展坞才够用，而且只能外接一台显示器 -->
+
+
+## Dock
+
+通过终端命令调整 Dock 栏的隐藏速度，下面是设置为0延迟
+
+```
+defaults write com.apple.dock autohide-delay -int 0
+killall Dock
+```
+

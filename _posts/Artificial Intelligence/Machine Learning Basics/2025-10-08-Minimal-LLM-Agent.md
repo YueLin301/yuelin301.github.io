@@ -7,8 +7,8 @@ math: True
 ---
 
 
-> 要管理几个平台的API，包括测试基本的query啥的，顺手花了点时间写了个这个
-{: .prompt-warning }
+> OpenAI 后面推出了个 `Response` 方法，要替代 `Chat Completion` 了，能自动记住上下文了。但是这个方法目前只有 OpenAI 系列模型能用，其他平台用不了，所以暂时先不考虑这个。
+{: .prompt-info }
 
 
 ## Overview
@@ -343,6 +343,12 @@ Memory:
 
 ## How to Use
 
+### Installation
+
+```
+pip install MinimalLLMAgent
+```
+
 ### API Key
 
 For security reasons, this project does not maintain any API key files. You need to configure the API key yourself in the **environment variables.** Check the following guidelines to see how it is done:
@@ -350,7 +356,31 @@ For security reasons, this project does not maintain any API key files. You need
 - [Alibaba guideline](https://help.aliyun.com/zh/model-studio/configure-api-key-through-environment-variables)
 
 
-Resources:
+**An Example Set Sp for MacOS Users:**
+
+1. Append the following API configurations to the end of the `~/.zshrc` file.
+
+```
+export OPENAI_API_KEY="sk-xxx"
+export OPENAI_BASE_URL="https://api.openai.com/v1"
+
+export XAI_API_KEY="xai-xxx"
+export XAI_BASE_URL="https://api.x.ai/v1"
+
+export DEEPSEEK_API_KEY="sk-xxx"
+export DEEPSEEK_BASE_URL="https://api.deepseek.com"
+
+export GEMINI_API_KEY=""
+export GEMINI_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
+
+export DASHSCOPE_API_KEY="sk-xxx"
+export DASHSCOPE_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+```
+
+2. Run `source ~/.zshrc` to update.
+
+
+## Resources
 - [LLM Comparisons](https://artificialanalysis.ai/)
 - OpenAI
     - [Models and pricing](https://openai.com/api/pricing/)
@@ -377,26 +407,3 @@ Resources:
     - [A query example](https://help.aliyun.com/zh/model-studio/use-qwen-by-calling-api)
     - [A query example](https://help.aliyun.com/zh/model-studio/use-qwen-by-calling-api)
     - [Dashboard](https://bailian.console.aliyun.com/?tab=model#/efm/model_experience_center/text)
-
-**An Example Set Sp for MacOS Users:**
-
-1. Append the following API configurations to the end of the `~/.zshrc` file.
-
-```
-export OPENAI_API_KEY="sk-xxx"
-export OPENAI_BASE_URL="https://api.openai.com/v1"
-
-export XAI_API_KEY="xai-xxx"
-export XAI_BASE_URL="https://api.x.ai/v1"
-
-export DEEPSEEK_API_KEY="sk-xxx"
-export DEEPSEEK_BASE_URL="https://api.deepseek.com"
-
-export GEMINI_API_KEY=""
-export GEMINI_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
-
-export DASHSCOPE_API_KEY="sk-xxx"
-export DASHSCOPE_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-```
-
-2. Run `source ~/.zshrc` to update.

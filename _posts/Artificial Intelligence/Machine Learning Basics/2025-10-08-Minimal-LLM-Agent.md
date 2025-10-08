@@ -17,7 +17,7 @@ math: True
 pip install MinimalLLMAgent
 ```
 
-- [Homepage](https://yuelin301.github.io/posts/Minimal-LLM-Agent/#3-interact): https://yuelin301.github.io/posts/Minimal-LLM-Agent
+- [Homepage](https://yuelin301.github.io/posts/Minimal-LLM-Agent): https://yuelin301.github.io/posts/Minimal-LLM-Agent
 - [PyPI Page](https://pypi.org/project/MinimalLLMAgent/): https://pypi.org/project/MinimalLLMAgent/
 - [GitHub Page](https://github.com/YueLin301/min_llm_agent): https://github.com/YueLin301/min_llm_agent
 
@@ -61,6 +61,18 @@ if __name__ == "__main__":
     llm_agent.print_memory()
 ```
 
+```
+Question: What is the capital of France?
+Answer by model gpt-4o-mini: The capital of France is Paris.
+======================================
+Memory:
+--------------------------------------
+[0] (user): What is the capital of France?
+[1] (assistant): The capital of France is Paris.
+======================================
+```
+
+
 ### 2: Dict Input
 
 ```python
@@ -77,7 +89,11 @@ if __name__ == "__main__":
         },
         {
             "role": "user",
-            "content": "What is the capital of France?",
+            "content": "1+1=?",
+        },
+        {
+            "role": "user",
+            "content": "1+2=?",
         }
     ]
     response = llm_agent(messages)
@@ -85,8 +101,21 @@ if __name__ == "__main__":
     print(f"Messages: {messages}")
     print(f"Answer by model {llm_agent.model_name}: {response}")
     
-    # llm_agent.print_memory(memory_item_separator="/")
     llm_agent.print_memory()
+```
+
+
+```
+Messages: [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '1+1=?'}, {'role': 'user', 'content': '1+2=?'}]
+Answer by model gpt-4o-mini: 1 + 1 = 2 and 1 + 2 = 3.
+======================================
+Memory:
+--------------------------------------
+[0] (system): You are a helpful assistant.
+[1] (user): 1+1=?
+[2] (user): 1+2=?
+[3] (assistant): 1 + 1 = 2 and 1 + 2 = 3.
+======================================
 ```
 
 ### 3: Interact
@@ -150,6 +179,167 @@ Memory:
 > q
 /
 ```
+
+
+### 1a: Memoryless Query
+
+```python
+from min_llm_agent import min_llm_agent_class
+
+if __name__ == "__main__":
+
+    llm_agent = min_llm_agent_class(platform_name="OpenAI", model_name="gpt-4o-mini")
+
+    question = "What is the capital of France?"
+    response = llm_agent(question, with_memory=False)
+
+    print(f"Question: {question}")
+    print(f"Answer by model {llm_agent.model_name}: {response}")
+
+    llm_agent.print_memory()
+```
+
+```
+Question: What is the capital of France?
+Answer by model gpt-4o-mini: The capital of France is Paris.
+======================================
+Memory:
+--------------------------------------
+======================================
+```
+
+### 2a: More Keywords
+
+- JSON mode
+- temperature
+
+See more detailed keywords on [OpenAI API Reference](https://platform.openai.com/docs/api-reference/chat).
+
+```python
+from min_llm_agent import min_llm_agent_class
+
+if __name__ == "__main__":
+
+    llm_agent = min_llm_agent_class(platform_name="OpenAI", model_name="gpt-4o-mini")
+
+    messages = [
+        {"role": "system", "content": "Extract the event information. Output in JSON format, including the event name, date, and participants."},
+        {"role": "user", "content": "Alice and Bob are going to a science fair on Friday."},
+    ]
+
+    response = llm_agent(messages, response_format={"type": "json_object"}, temperature=0.5)
+
+    print(f"Messages: {messages}")
+    print(f"Answer by model {llm_agent.model_name}: {response}")
+
+    llm_agent.print_memory()
+```
+
+```
+Messages: [{'role': 'system', 'content': 'Extract the event information. Output in JSON format, including the event name, date, and participants.'}, {'role': 'user', 'content': 'Alice and Bob are going to a science fair on Friday.'}]
+Answer by model gpt-4o-mini: {
+  "event_name": "Science Fair",
+  "date": "Friday",
+  "participants": ["Alice", "Bob"]
+}
+================================================
+Memory:
+------------------------------------------------
+[0] (system): Extract the event information. Output in JSON format, including the event name, date, and participants.
+[1] (user): Alice and Bob are going to a science fair on Friday.
+[2] (assistant): {
+  "event_name": "Science Fair",
+  "date": "Friday",
+  "participants": ["Alice", "Bob"]
+}
+================================================
+```
+
+
+### 4: Memory Management
+
+```python
+from min_llm_agent import min_llm_agent_class
+from LyPythonToolbox import lyprint_separator
+from pprint import pprint
+
+if __name__ == "__main__":
+    llm_agent = min_llm_agent_class(platform_name="OpenAI", model_name="gpt-4o-mini")
+
+    response = llm_agent("1+1=?")
+    response = llm_agent("1+2=?", with_memory=False)
+    llm_agent.print_memory()
+    
+    lyprint_separator("|")
+    llm_agent.reset_memory()
+    print("Reset memory...")
+    response = llm_agent("1+3=?")
+    llm_agent.print_memory()
+    
+    lyprint_separator("|")
+    print("Set memory...")
+    llm_agent.set_memory([{"role": "system", "content": "You are a self-interested and rational player."}])
+    llm_agent.print_memory()
+
+    lyprint_separator("|")
+    response = llm_agent("You are playing a coordination game. State your strategy in only a sentence.", role="user")
+    print("Get memory and pprint...")
+    memory = llm_agent.get_memory()
+    pprint(memory)
+
+    lyprint_separator("|")
+    print("Append memory...")
+    llm_agent.append_memory({"role": "user", "content": "1+4=?"})
+    llm_agent.print_memory()
+```
+
+
+```
+================================================
+Memory:
+------------------------------------------------
+[0] (user): 1+1=?
+[1] (assistant): 1 + 1 = 2.
+================================================
+||||||||||||||||||||||||||||||||||||||||||||||||
+Reset memory...
+================================================
+Memory:
+------------------------------------------------
+[0] (user): 1+3=?
+[1] (assistant): 1 + 3 = 4.
+================================================
+||||||||||||||||||||||||||||||||||||||||||||||||
+Set memory...
+================================================
+Memory:
+------------------------------------------------
+[0] (system): You are a self-interested and rational player.
+================================================
+||||||||||||||||||||||||||||||||||||||||||||||||
+Get memory and pprint...
+[{'content': 'You are a self-interested and rational player.',
+  'role': 'system'},
+ {'content': 'You are playing a coordination game. State your strategy in only '
+             'a sentence.',
+  'role': 'user'},
+ {'content': 'I will choose the strategy that aligns with the most commonly '
+             'played option by other players to ensure mutual coordination and '
+             'benefit.',
+  'role': 'assistant'}]
+||||||||||||||||||||||||||||||||||||||||||||||||
+Append memory...
+================================================
+Memory:
+------------------------------------------------
+[0] (system): You are a self-interested and rational player.
+[1] (user): You are playing a coordination game. State your strategy in only a sentence.
+[2] (assistant): I will choose the strategy that aligns with the most commonly played option by other players to ensure mutual coordination and benefit.
+[3] (user): 1+4=?
+================================================
+```
+
+
 
 ## How to Use
 

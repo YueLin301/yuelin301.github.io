@@ -7,12 +7,17 @@ math: True
 ---
 
 
+> 要管理几个平台的API，包括测试基本的query啥的，顺手花了点时间写了个这个
+{: .prompt-warning }
+
+
 ## Overview
 
 ```
 pip install MinimalLLMAgent
 ```
 
+- [Homepage](https://yuelin301.github.io/posts/Minimal-LLM-Agent/#3-interact): https://yuelin301.github.io/posts/Minimal-LLM-Agent
 - [PyPI Page](https://pypi.org/project/MinimalLLMAgent/): https://pypi.org/project/MinimalLLMAgent/
 - [GitHub Page](https://github.com/YueLin301/min_llm_agent): https://github.com/YueLin301/min_llm_agent
 

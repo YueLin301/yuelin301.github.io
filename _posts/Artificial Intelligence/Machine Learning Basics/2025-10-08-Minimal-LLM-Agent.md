@@ -29,14 +29,22 @@ Features:
 
 
 Models & Pricing:
+[[OpenAI](https://openai.com/api/pricing/), 
+[Grok](https://docs.x.ai/docs/models), 
+[DeepSeek](https://api-docs.deepseek.com/zh-cn/quick_start/pricing), 
+[Gemini](https://ai.google.dev/gemini-api/docs/pricing?gad_campaignid=20860603089&gbraid=0AAAAACn9t65pzlA_HxdUpPvBVpGwkD-14&hl), 
+[Ali](https://help.aliyun.com/zh/model-studio/models)]
 
-`supported_platform_name_list = ["OpenAI", "Grok", "DeepSeek", "Gemini", "Ali"]`
+```python
+from min_llm_agent import *
 
-- [OpenAI](https://openai.com/api/pricing/)
-- [Grok](https://docs.x.ai/docs/models)
-- [DeepSeek](https://api-docs.deepseek.com/zh-cn/quick_start/pricing)
-- [Gemini](https://ai.google.dev/gemini-api/docs/pricing?gad_campaignid=20860603089&gbraid=0AAAAACn9t65pzlA_HxdUpPvBVpGwkD-14&hl)
-- [Ali](https://help.aliyun.com/zh/model-studio/models)
+print_all_supported_platforms()
+print_all_supported_accessible_models()
+
+# supported_platform_name_list = ["OpenAI", "Grok", "DeepSeek", "Gemini", "Ali"]
+print_accessible_models("OpenAI", id_only=True)
+```
+
 
 ## Examples
 
@@ -404,6 +412,5 @@ export DASHSCOPE_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
 - Alibaba
     - [Models and pricing](https://help.aliyun.com/zh/model-studio/models)
     - [API Guides](https://help.aliyun.com/zh/model-studio/get-api-key?scm=20140722.H_2712195._.OR_help-T_cn~zh-V_1)
-    - [A query example](https://help.aliyun.com/zh/model-studio/use-qwen-by-calling-api)
     - [A query example](https://help.aliyun.com/zh/model-studio/use-qwen-by-calling-api)
     - [Dashboard](https://bailian.console.aliyun.com/?tab=model#/efm/model_experience_center/text)

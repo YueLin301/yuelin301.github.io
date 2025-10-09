@@ -122,11 +122,12 @@ $$
 =& \sum\limits_{\sigma} \mu_0(\cdot)\cdot \varphi(\sigma\mid\cdot) \\
 =& \mu_0(\cdot) \cdot \sum\limits_{\sigma} \varphi(\sigma\mid\cdot) \\
 =& \mu_0(\cdot)
-% =& \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu} \mathbb{P}(\sigma) \cdot \mu(\cdot\mid\sigma) \\
-% =& \sum\limits_{\mu} \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits_{s} \mu_0(s)\cdot\varphi(\sigma\mid s) \cdot \mu(\cdot\mid \sigma) \\
-% =& \sum\limits_{\mu} \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits_{s} \mu_0(s)\cdot\varphi(\sigma\mid s) \cdot \frac{\mu_0(\cdot)\cdot \varphi(\sigma\mid \cdot)}{\sum\limits_{s'}\mu_0(s')\cdot \varphi(\sigma\mid s')} \\
 \end{aligned}
 $$
+
+<!-- % =& \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu} \mathbb{P}(\sigma) \cdot \mu(\cdot\mid\sigma) \\
+% =& \sum\limits_{\mu} \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits_{s} \mu_0(s)\cdot\varphi(\sigma\mid s) \cdot \mu(\cdot\mid \sigma) \\
+% =& \sum\limits_{\mu} \sum\limits_{\sigma: \mu(\cdot\mid \sigma) = \mu}\sum\limits_{s} \mu_0(s)\cdot\varphi(\sigma\mid s) \cdot \frac{\mu_0(\cdot)\cdot \varphi(\sigma\mid \cdot)}{\sum\limits_{s'}\mu_0(s')\cdot \varphi(\sigma\mid s')} \\ -->
 
 
 ### Bayes Plausible

@@ -28,10 +28,9 @@ Features:
 - a GUI/terminal simulation that allows for web-style interaction
     - to bypass the access limits for advanced models on the web version
 
+<video controls autoplay muted loop style="width: 100%;" src="{{ site.baseurl }}/assets/img/2025-10-08-Minimal-LLM-Agent/demo.mp4"></video>
 
-![](../../../assets/img/2025-10-08-Minimal-LLM-Agent/img_2025-10-10-05-50-19.png)
 
-![](../../../assets/img/2025-10-08-Minimal-LLM-Agent/img_2025-10-10-05-50-44.png){: width="400" }
 
 
 Models & Pricing:
@@ -195,9 +194,9 @@ See more detailed keywords on [OpenAI API Reference](https://platform.openai.com
 llm_agent.interact(mode="GUI")  # default
 ```
 
-![](../../../assets/img/2025-10-08-Minimal-LLM-Agent/img_2025-10-10-05-50-19.png)
+![](https://yuelin301.github.io/assets/img/2025-10-08-Minimal-LLM-Agent/img_2025-10-10-05-50-19.png)
 
-![](../../../assets/img/2025-10-08-Minimal-LLM-Agent/img_2025-10-10-05-50-44.png){: width="400" }
+![](https://yuelin301.github.io/assets/img/2025-10-08-Minimal-LLM-Agent/img_2025-10-10-05-50-44.png){: width="400" }
 
 
 

@@ -27,7 +27,6 @@ toc: true
 
 Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
 Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang [Homepage]</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha [Google Scholar]</a></span>. 
-I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
 
 <ul>
     <li>My research interests lie primarily in designing efficient learning algorithms to guide agents toward better equilibriums in multi-agent tasks. For experts: (1) solving sequential social dilemmas, by designing learning algorithms that incorporate mechanism design, and (2) designing learning methods for mechanism design problems.</li>
@@ -132,8 +131,8 @@ I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
 
 ### Education 
 
-- <span translate="no">**Shenzhen Loop Area Institute**</span>  
-  Joint Ph.D. Student (2025.9 - Present)  
+<!-- - <span translate="no">**Shenzhen Loop Area Institute**</span>   -->
+  <!-- Joint Ph.D. Student (2025.9 - Present)   -->
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
   Ph.D. Student in Data Science (2024.8 - Present)  
   <!-- Ph.D. Student in Data Science (2024.9 - Present)   -->
@@ -148,16 +147,20 @@ I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
 
 ### Experience
 
+- <span translate="no">**Tencent**</span>  
+  Research Intern @ Lightspeed Studios, Shenzhen (2025.12 - Present)
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
-  Research Assistant in School of Data Science (2022.2 - Present)
+  Research Assistant @ School of Data Science (2022.2 - 2024.8)  
+  Advisors: Prof. Baoxiang Wang & Prof. Hongyuan Zha
 
 ---
 
-## Selected Publications
+## Publications & Manuscripts
 
 <!-- [[Google Scholar]](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN) -->
 
-### Data Science
+
+### Data Science x Game Theory
 
 <!-- #### Mix-Motive MARL Communication x Game Theory -->
 
@@ -201,13 +204,11 @@ I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
     year={2023}
 }</code></pre></div>
     </details>
-
-- <span translate="no">Information Bargaining: Bilateral Commitment in Bayesian Persuasion.</span>  
-    <span translate="no">**Yue Lin**, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span>  
-    <span translate="no">*EC 2025 Workshop: Information Economics and Large Language Models.*</span>  
-    > The title of an alternative version: Bayesian Persuasion as a Bargaining Game.  
-    [[Paper]](https://arxiv.org/abs/2506.05876) 
-    [[Code & Experiments]](https://github.com/YueLin301/InformationBargaining) 
+- <span translate="no">Policy-Conditioned Policies for Multi-Agent Task Solving.</span>  
+    <span translate="no">**Yue Lin**, Shuhui Zhu, Wenhao Li, Dan Qiao, Ang Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*arXiv preprint. 2025-12-24.*</span>
+    > 
+    [[Manuscript]](https://arxiv.org/abs/2512.21024) 
     <details style="margin-top: -10px;">
     <summary>[Click to check the Abstract]</summary>
     <div class="language-plaintext highlighter-rouge">
@@ -215,7 +216,7 @@ I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
     <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
     <span></span>
     </div>
-    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Bayesian persuasion, an extension of cheap-talk communication, involves an informed sender committing to a signaling scheme to influence a receiver’s actions. Compared to cheap talk, this sender’s commitment enables the receiver to verify the incentive compatibility of signals beforehand, facilitating cooperation. While effective in one-shot scenarios, Bayesian persuasion faces computational complexity (NP-hardness) when extended to long-term interactions, where the receiver may adopt dynamic strategies conditional on past outcomes and future expectations. To address this complexity, we introduce the bargaining perspective, which allows: (1) a unified framework and well-structured solution concept for long-term persuasion, with desirable properties such as fairness and Pareto efficiency; (2) a clear distinction between two previously conflated advantages: the sender’s informational advantage and first-proposer advantage. With only modest modifications to the standard setting, this perspective makes explicit the common knowledge of the game structure and grants the receiver comparable commitment capabilities, thereby reinterpreting classic one-sided persuasion as a balanced information bargaining framework. The framework is validated through a two-stage validationand-inference paradigm: We first demonstrate that GPT-o3 and DeepSeek-R1, out of publicly available LLMs, reliably handle standard tasks; We then apply them to persuasion scenarios to test that the outcomes align with what our informationbargaining framework suggests. All code, results, and terminal logs are publicly available at https://github.com/YueLin301/InformationBargaining.</code></pre></div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>In multi-agent tasks, the central challenge lies in the dynamic adaptation of strategies. However, directly conditioning on opponents' strategies is intractable in the prevalent deep reinforcement learning paradigm due to a fundamental ``representational bottleneck'': neural policies are opaque, high-dimensional parameter vectors that are incomprehensible to other agents. In this work, we propose a paradigm shift that bridges this gap by representing policies as human-interpretable source code and utilizing Large Language Models (LLMs) as approximate interpreters. This programmatic representation allows us to operationalize the game-theoretic concept of Program Equilibrium. We reformulate the learning problem by utilizing LLMs to perform optimization directly in the space of programmatic policies. The LLM functions as a point-wise best-response operator that iteratively synthesizes and refines the ego agent's policy code to respond to the opponent's strategy. We formalize this process as Programmatic Iterated Best Response (PIBR), an algorithm where the policy code is optimized by textual gradients, using structured feedback derived from game utility and runtime unit tests. We demonstrate that this approach effectively solves several standard coordination matrix games and a cooperative Level-Based Foraging environment.</code></pre></div>
     </details>  
     <details>
     <summary>[Click to check the BibTex code]</summary>
@@ -224,14 +225,13 @@ I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
     <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
     <span></span>
     </div>
-    <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2025bayesian,
-  title={Bayesian Persuasion as a Bargaining Game},
-  author={Lin, Yue and Zhu, Shuhui and Cunningham, William A and Li, Wenhao and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang},
-  journal={arXiv preprint arXiv:2506.05876},
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2025policy,
+  title={Policy-Conditioned Policies for Multi-Agent Task Solving},
+  author={Lin, Yue and Zhu, Shuhui and Li, Wenhao and Li, Ang and Qiao, Dan and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang},
+  journal={arXiv preprint arXiv:2512.21024},
   year={2025}
 }</code></pre></div>
     </details>
-
 - <span translate="no">Verbalized Bayesian Persuasion.</span>  
     <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
     <span translate="no">*EC 2025 Workshop: Information Economics and Large Language Models.*</span>
@@ -263,25 +263,58 @@ I am also a joint Ph.D. student at the Shenzhen Loop Area Institute.
 
 
 
+### Data Science x Game Theory x Social Science
 
-<!-- - Information Design in Multi-Agent Reinforcement Learning.  
-    **Yue Lin**, Wenhao Li, Hongyuan Zha, Baoxiang Wang.  
-    *Neural Information Processing Systems (NeurIPS) 2023*.
-    > Poster. This is currently my most representative work.  
-    [[Paper]](https://arxiv.org/abs/2305.06807) 
-    [[Code]](https://github.com/YueLin301/InformationDesignMARL) 
-    [[Experiments]](https://wandb.ai/yuelin301/IND+MARL?nw=nwuseryuelin301) 
-    [[Blog en]]({{site.baseurl}}/posts/IDMARL/) 
-    [[Blog cn]]({{site.baseurl}}/posts/IDMARL-cn/) 
-    [[Zhihu cn]](https://zhuanlan.zhihu.com/p/687305626) 
-    [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
-    [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
-    [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   -->
+
+- <span translate="no">Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents.</span>  
+    <span translate="no">Shuhui Zhu, **Yue Lin**, Shriya Kaistha, Wenhao Li, Baoxiang Wang, Hongyuan Zha, Gillian K Hadfield, Pascal Poupart.</span>
+
+
+### Game Theory
+
+- <span translate="no">Information Bargaining: Bilateral Commitment in Bayesian Persuasion.</span>  
+    <span translate="no">**Yue Lin**, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*EC 2025 Workshop: Information Economics and Large Language Models.*</span>  
+    > The title of an alternative version: Bayesian Persuasion as a Bargaining Game.  
+    [[Paper]](https://arxiv.org/abs/2506.05876) 
+    [[Code & Experiments]](https://github.com/YueLin301/InformationBargaining) 
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Bayesian persuasion, an extension of cheap-talk communication, involves an informed sender committing to a signaling scheme to influence a receiver’s actions. Compared to cheap talk, this sender’s commitment enables the receiver to verify the incentive compatibility of signals beforehand, facilitating cooperation. While effective in one-shot scenarios, Bayesian persuasion faces computational complexity (NP-hardness) when extended to long-term interactions, where the receiver may adopt dynamic strategies conditional on past outcomes and future expectations. To address this complexity, we introduce the bargaining perspective, which allows: (1) a unified framework and well-structured solution concept for long-term persuasion, with desirable properties such as fairness and Pareto efficiency; (2) a clear distinction between two previously conflated advantages: the sender’s informational advantage and first-proposer advantage. With only modest modifications to the standard setting, this perspective makes explicit the common knowledge of the game structure and grants the receiver comparable commitment capabilities, thereby reinterpreting classic one-sided persuasion as a balanced information bargaining framework. The framework is validated through a two-stage validationand-inference paradigm: We first demonstrate that GPT-o3 and DeepSeek-R1, out of publicly available LLMs, reliably handle standard tasks; We then apply them to persuasion scenarios to test that the outcomes align with what our informationbargaining framework suggests. All code, results, and terminal logs are publicly available at https://github.com/YueLin301/InformationBargaining.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2025bayesian,
+  title={Bayesian Persuasion as a Bargaining Game},
+  author={Lin, Yue and Zhu, Shuhui and Cunningham, William A and Li, Wenhao and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang},
+  journal={arXiv preprint arXiv:2506.05876},
+  year={2025}
+}</code></pre></div>
+    </details>
+
+
+
+
+
+
+
+
 
 <!-- > Of the empty and useless years of the rest, with the rest me intertwined,  
 > The question, O me! so sad, recurring — What good amid these, O me, O life?  
 > *— Walt Whitman, O Me! O Life!*
 {: .prompt-tip } -->
+
 
 ### Robotics
 
@@ -404,14 +437,17 @@ The high-scoring courses at the undergraduate level include the following:
 
 ## Professional Services
 
+Service Honors
+- NeurIPS 2025 Top Reviewer [[List]](https://neurips.cc/Conferences/2025/ProgramCommittee)
+
 Independent Reviewer
 - NeurIPS 2024 [6, 45615], 2025 [5, 32912]
-- ICLR 2025 [3, 21831], 2026 [0]
+- ICLR 2025 [3, 21831], 2026 [1, 5994]
 - ICML 2025 [6, 32893]
 - TMLR 2025 [2, 38363]
 
 Volunteer
-- AAMAS 2024 [3, 9876], 2025 [2, 4792]
+- AAMAS 2024 [3, 9876], 2025 [2, 4792], 2026 [2, 2303]
 - ICML (Position) 2025 [2, 5016]
 
 > Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. Total reviews: 29.
@@ -420,8 +456,9 @@ Volunteer
 
 ## Teaching
 
-Teaching Assistant
+Teaching Assistant @ The Chinese University of Hong Kong, Shenzhen
 -  CSC6021/AIR6001 Artificial Intelligence (2024-25 Term 2).
+-  DDA5001 Machine Learning (2025-26 Term 2).
 
 
 ---
@@ -448,7 +485,7 @@ Teaching Assistant
     <details>
     <summary>Video Games</summary>
     <ul>
-    <li>王者荣耀 Honor of Kings （已退坑）
+    <li>王者荣耀 Honor of Kings
         <ul>
         <li>全国第74 诸葛亮，战力13853，胜率57.5%，场次1956</li>
         <li>浙江省第57 嫦娥，战力10725，胜率64.3%，场次210</li>

@@ -130,7 +130,7 @@ Effect:
 2. Zotero: papers
 3. updf: misc pdf
 4. (VPN)
-	1. Pigcha (R.I.P.)
+	1. Pigcha
 	2. monocloud
 
 How to use monocloud in terminal:

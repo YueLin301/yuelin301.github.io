@@ -151,7 +151,7 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
   Research Intern @ Lightspeed Studios, Shenzhen (2025.12 - Present)
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
   Research Assistant @ School of Data Science (2022.2 - 2024.8)  
-  Advisors: Prof. Baoxiang Wang & Prof. Hongyuan Zha
+  Advisors: Prof. Baoxiang Wang & Prof. Hongyuan Zha (Subsequently my Ph.D. Supervisor and Co-Supervisor)
 
 ---
 
@@ -204,6 +204,34 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
     year={2023}
 }</code></pre></div>
     </details>
+- <span translate="no">Verbalized Bayesian Persuasion.</span>  
+    <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*International Conference on Machine Learning (ICML) 2026.*</span>
+    > Regular paper.  
+    [[Paper]](https://arxiv.org/abs/2502.01587) 
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Information design (ID) explores how a sender influence the optimal behavior of receivers to achieve specific objectives. While ID originates from everyday human communication, existing game-theoretic and machine learning methods often model information structures as numbers, which limits many applications to toy games. This work leverages LLMs and proposes a verbalized framework in Bayesian persuasion (BP), which extends classic BP to real-world games involving human dialogues for the first time. Specifically, we map the BP to a verbalized mediator-augmented extensive-form game, where LLMs instantiate the sender and receiver. To efficiently solve the verbalized game, we propose a generalized equilibrium-finding algorithm combining LLM and game solver. The algorithm is reinforced with techniques including verbalized commitment assumptions, verbalized obedience constraints, and information obfuscation. Numerical experiments in dialogue scenarios, such as recommendation letters, courtroom interactions, and law enforcement, validate that our framework can both reproduce theoretical results in classic BP and discover effective persuasion strategies in more complex natural language and multi-stage scenarios.</code></pre></div>
+    </details>  
+    <details>
+    <summary>[Click to check the BibTex code]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px;"><code>@article{li2025verbalized,
+  title={Verbalized Bayesian Persuasion},
+  author={Li, Wenhao and Lin, Yue and Wang, Xiangfeng and Jin, Bo and Zha, Hongyuan and Wang, Baoxiang},
+  journal={arXiv preprint arXiv:2502.01587},
+  year={2025}
+}</code></pre></div>
+    </details>
 - <span translate="no">Policy-Conditioned Policies for Multi-Agent Task Solving.</span>  
     <span translate="no">**Yue Lin**, Shuhui Zhu, Wenhao Li, Dan Qiao, Ang Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span>  
     <span translate="no">*arXiv preprint. 2025-12-24.*</span>
@@ -232,35 +260,6 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
   year={2025}
 }</code></pre></div>
     </details>
-- <span translate="no">Verbalized Bayesian Persuasion.</span>  
-    <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
-    <span translate="no">*EC 2025 Workshop: Information Economics and Large Language Models.*</span>
-    > 
-    [[Paper]](https://arxiv.org/abs/2502.01587) 
-    <details style="margin-top: -10px;">
-    <summary>[Click to check the Abstract]</summary>
-    <div class="language-plaintext highlighter-rouge">
-    <div class="code-header">
-    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-    <span></span>
-    </div>
-    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Information design (ID) explores how a sender influence the optimal behavior of receivers to achieve specific objectives. While ID originates from everyday human communication, existing game-theoretic and machine learning methods often model information structures as numbers, which limits many applications to toy games. This work leverages LLMs and proposes a verbalized framework in Bayesian persuasion (BP), which extends classic BP to real-world games involving human dialogues for the first time. Specifically, we map the BP to a verbalized mediator-augmented extensive-form game, where LLMs instantiate the sender and receiver. To efficiently solve the verbalized game, we propose a generalized equilibrium-finding algorithm combining LLM and game solver. The algorithm is reinforced with techniques including verbalized commitment assumptions, verbalized obedience constraints, and information obfuscation. Numerical experiments in dialogue scenarios, such as recommendation letters, courtroom interactions, and law enforcement, validate that our framework can both reproduce theoretical results in classic BP and discover effective persuasion strategies in more complex natural language and multi-stage scenarios.</code></pre></div>
-    </details>  
-    <details>
-    <summary>[Click to check the BibTex code]</summary>
-    <div class="language-plaintext highlighter-rouge">
-    <div class="code-header">
-    <span data-label-text="BibTex"><i class="fas fa-code fa-fw small"></i></span>
-    <span></span>
-    </div>
-    <pre class="highlight" style="margin-left: 20px;"><code>@article{li2025verbalized,
-  title={Verbalized Bayesian Persuasion},
-  author={Li, Wenhao and Lin, Yue and Wang, Xiangfeng and Jin, Bo and Zha, Hongyuan and Wang, Baoxiang},
-  journal={arXiv preprint arXiv:2502.01587},
-  year={2025}
-}</code></pre></div>
-    </details>
-
 
 
 ### Data Science x Game Theory x Social Science
@@ -268,9 +267,10 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
 
 - <span translate="no">Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents.</span>  
     <span translate="no">Shuhui Zhu, **Yue Lin**, Shriya Kaistha, Wenhao Li, Baoxiang Wang, Hongyuan Zha, Gillian K Hadfield, Pascal Poupart.</span>  
-    <span translate="no">*arXiv preprint. 2026-02-08.*</span>
-    > 
-    [[Manuscript]](https://arxiv.org/abs/2602.07777) 
+    <span translate="no">*International Conference on Machine Learning (ICML) 2026.*</span>
+    > Regular paper.  
+    [[Paper]](https://arxiv.org/abs/2602.07777) 
+    [[Code]](https://github.com/shuhui-zhu/ALIGN)
     <details style="margin-top: -10px;">
     <summary>[Click to check the Abstract]</summary>
     <div class="language-plaintext highlighter-rouge">
@@ -462,7 +462,8 @@ Volunteer
 - AAMAS 2024 [3, 9876], 2025 [2, 4792], 2026 [2, 2303]
 - ICML (Position) 2025 [2, 5016]
 
-> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. Total reviews: 29.
+> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. 
+<!-- Total reviews: 29. -->
 
 ---
 

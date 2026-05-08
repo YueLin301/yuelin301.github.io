@@ -25,39 +25,7 @@ toc: true
 > *— Walt Whitman, O Me! O Life!*
 {: .prompt-info } -->
 
-Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
-Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang [Homepage]</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha [Google Scholar]</a></span>. 
-
-<ul>
-    <li>My research interests lie primarily in designing efficient learning algorithms to guide agents toward better equilibriums in multi-agent tasks. For experts: (1) solving sequential social dilemmas, by designing learning algorithms that incorporate mechanism design, and (2) designing learning methods for mechanism design problems.</li>
-    <li>Most of my focus is on sequential mixed-motive multi-agent scenarios, and I am particularly interested in communication mechanisms (keywords: information design, Bayesian persuasion, cheap talk), as well as some other mechanisms that influence others, such as incentivization.</li>
-    <li>My expertise in learning methods lies in reinforcement learning (RL), particularly multi-agent hyper-gradient modeling, and in large language models (LLMs).</li>
-</ul>
-
-<!-- Here, I will irregularly update my experiences, notes, and computational magic spells that interest me. -->
-
-<!-- <details style="margin-top: -10px; margin-bottom: 10px;">
-<summary>My current research interest lies in using computational methods to study mechanisms, to address some social dilemma issues in game theory, in which scenarios everyone being self-interested may lead to the detriment of social welfare. [Click here to see details of my research interests]</summary>
-<ul>
-  <li>
-    <ul>
-      <li>The method I use is Multi-Agent Reinforcement Learning (MARL), essentially with the rationality assumption. And I have recently started working with some tools that seem more "human-like", like large language models.</li>
-      <li>Specifically I am focusing on the problem of Bayesian persuasion (BP, <a href="{{site.baseurl}}/posts/Information-Design-10min/">[my blog]</a>) in economics: a sender with an informational advantage tries to persuade a receiver, who has different motives, to take actions that are beneficial to the sender. My research is on sequential decision-making situations.</li>
-      <li>A representative work on this is <a href="{{site.baseurl}}/posts/IDMARL/">this [my blog]</a> (NeurIPS), where we proposed a general model-free RL algorithm for multi-agent communication (for the cognoscenti: policy gradient for communication), and expanded the constraints in BP so that mixed-motive communication (even between two agents) in MARL is conceivable.</li>
-    </ul>
-  </li>
-  <li>During my undergraduate years (specifically, from 2019 to 2021), I dabbled in robotics, understood kinematics, and played a bit with <a href="https://github.com/YueLin301/robot-dynamics-mynotes">dynamics [my repo]</a>.
-    <ul>
-      <li>I presented a purely simulation-based robotic mechanism design <a href="{{site.baseurl}}/posts/RHex-T3/">work [my blog]</a> at ICRA. It is about a hybrid leg can transform into various forms (wheel, legs, RHex) to adapt to different terrains, and can even climb ladders.</li>
-      <li>Also I <a href="{{site.baseurl}}/posts/SSCC/">have implemented [my blog]</a> a "gimbal" using a hyper-redundant manipulator (purely based on kinematics), allowing it to efficiently reach into barrels.</li>
-    </ul>
-  </li>
-</ul>
-</details> -->
-
-<div style="color: #999;">
-  And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption. <i>—&nbsp;Friedrich&nbsp;Nietzsche,&nbsp;Thus&nbsp;Spoke&nbsp;Zarathustra.</i>
-</div>
+{% include intro_shared.html %}
 
 ---
 
@@ -107,6 +75,7 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
           <li>Information Design</li>
         </ul> -->
         <li>LLMs for Game Solvers</li>
+        <li>Communication Mechanisms</li>
       </ul>
       <p><strong>Formerly</strong></p>
       <ul>
@@ -159,6 +128,38 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
 
 <!-- [[Google Scholar]](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN) -->
 
+<div class="pub-view-toggle">
+  <button class="pub-view-btn pub-view-btn-active" onclick="switchPubView('category')" id="btn-pub-category">By Category</button>
+  <button class="pub-view-btn" onclick="switchPubView('time')" id="btn-pub-time">By Time</button>
+</div>
+
+<style>
+  .pub-view-toggle { margin: 10px 0 20px 0; }
+  .pub-view-btn {
+    padding: 6px 16px;
+    margin-right: 8px;
+    border: 1px solid #c8d3e3;
+    background: #f0f4fa;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #495485;
+  }
+  .pub-view-btn:hover { background: #e3ebf5; }
+  .pub-view-btn-active,
+  .pub-view-btn-active:hover {
+    background: #495485;
+    color: white;
+    border-color: #495485;
+  }
+</style>
+
+<div id="pub-by-time" style="display: none;">
+<!-- Auto-populated from #pub-by-category by JS at page load. Single source of truth lives in by-category below. -->
+</div>
+
+<div id="pub-by-category" markdown="1">
 
 ### Data Science x Game Theory
 
@@ -265,6 +266,19 @@ Currently I am a Ph.D. student (data science program) in School of Data Science 
 ### Data Science x Game Theory x Social Science
 
 
+- <span translate="no">The Reciprocity Gradient.</span>  
+    <span translate="no">**Yue Lin**, Pascal Poupart, Shuhui Zhu, Dan Qiao, Wenhao Li, Yuan Liu, Hongyuan Zha, Baoxiang Wang.</span>  
+    <span translate="no">*Manuscript. 2026-05-07.*</span>
+    > 
+    <details style="margin-top: -10px;">
+    <summary>[Click to check the Abstract]</summary>
+    <div class="language-plaintext highlighter-rouge">
+    <div class="code-header">
+    <span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+    <span></span>
+    </div>
+    <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Communication is fundamental to sustaining reciprocity and cooperation in strategic interactions. We identify and formulate the influence attribution problem as the central optimization difficulty inherent in such dynamics for a learning agent: any action or signal the agent emits reshapes the reputations of many third parties along combinatorially branching paths before feeding back into its own future rewards, forcing the agent to account for all of these indirect channels at once when choosing every action. To address this, we introduce the reciprocity gradient, which explicitly backpropagates reward gradients through private estimators of opponents' policies trained from public observations. The gradient flows through the reputation chain itself analytically, rather than being estimated from sampled returns. It jointly optimizes actions and evaluative signals without intrinsic rewards or reward shaping. Empirically, the method recovers near-optimal context-sensitive policies, while sample-based baselines collapse into constant-output policies.</code></pre></div>
+    </details>
 - <span translate="no">Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents.</span>  
     <span translate="no">Shuhui Zhu, **Yue Lin**, Shriya Kaistha, Wenhao Li, Baoxiang Wang, Hongyuan Zha, Gillian K Hadfield, Pascal Poupart.</span>  
     <span translate="no">*International Conference on Machine Learning (ICML) 2026.*</span>
@@ -443,7 +457,79 @@ The high-scoring courses at the undergraduate level include the following:
 
 <!-- ### Preprints -->
 
+</div>
 
+<script>
+function buildPubByTime() {
+  var catContainer = document.getElementById('pub-by-category');
+  var timeContainer = document.getElementById('pub-by-time');
+  if (!catContainer || !timeContainer) return;
+
+  var lis = catContainer.querySelectorAll('ul > li');
+  var entries = [];
+
+  lis.forEach(function (li) {
+    var clone = li.cloneNode(true);
+    clone.querySelectorAll('details').forEach(function (d) { d.remove(); });
+    var text = clone.textContent;
+
+    var matches = text.match(/(20\d{2})(?:-(\d{2})(?:-(\d{2}))?)?/g);
+    var sortKey = 0;
+    var year = null;
+    if (matches && matches.length > 0) {
+      var last = matches[matches.length - 1];
+      var parts = last.match(/(20\d{2})(?:-(\d{2})(?:-(\d{2}))?)?/);
+      year = parseInt(parts[1], 10);
+      var month = parts[2] ? parseInt(parts[2], 10) : 6;
+      var day = parts[3] ? parseInt(parts[3], 10) : 15;
+      sortKey = year * 10000 + month * 100 + day;
+    }
+
+    entries.push({ li: li, sortKey: sortKey, year: year });
+  });
+
+  entries.sort(function (a, b) { return b.sortKey - a.sortKey; });
+
+  timeContainer.innerHTML = '';
+  var currentYear = null;
+  var currentUl = null;
+  entries.forEach(function (e) {
+    if (e.year !== currentYear) {
+      currentYear = e.year;
+      var h3 = document.createElement('h3');
+      h3.textContent = currentYear != null ? String(currentYear) : 'Unknown';
+      timeContainer.appendChild(h3);
+      currentUl = document.createElement('ul');
+      timeContainer.appendChild(currentUl);
+    }
+    currentUl.appendChild(e.li.cloneNode(true));
+  });
+}
+
+function switchPubView(view) {
+  var byCat = document.getElementById('pub-by-category');
+  var byTime = document.getElementById('pub-by-time');
+  var btnCat = document.getElementById('btn-pub-category');
+  var btnTime = document.getElementById('btn-pub-time');
+  if (view === 'category') {
+    byCat.style.display = 'block';
+    byTime.style.display = 'none';
+    btnCat.classList.add('pub-view-btn-active');
+    btnTime.classList.remove('pub-view-btn-active');
+  } else {
+    byCat.style.display = 'none';
+    byTime.style.display = 'block';
+    btnTime.classList.add('pub-view-btn-active');
+    btnCat.classList.remove('pub-view-btn-active');
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', buildPubByTime);
+} else {
+  buildPubByTime();
+}
+</script>
 
 ---
 
@@ -516,7 +602,7 @@ Teaching Assistant @ The Chinese University of Hong Kong, Shenzhen
     </li>
     <li>Steam
         <ul>
-        <li>Hollow Knight, Hollow Knight: Silksong, The Stanley Parable, Batman: Arkham Knight, Marvel Rivals...</li>
+        <li>Slay the Spire 2, Hollow Knight, Hollow Knight: Silksong, The Stanley Parable, Batman: Arkham Knight, Marvel Rivals...</li>
         <!-- <li>Risk of Rain 2, Hollow Knight, Batman: Arkham Knight, Marvel Rivals, Lost Castle 2, baba is you...</li> -->
         </ul>
     </li>

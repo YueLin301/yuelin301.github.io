@@ -177,7 +177,7 @@ toc: true
     [[Zhihu cn]](https://zhuanlan.zhihu.com/p/687305626) 
     [[Slides]]({{site.baseurl}}/posts/IDMARL/#slides) 
     [[Talk en]](https://www.youtube.com/watch?v=yhVlpv_1Pg4) 
-    [[Talk RLChina]](https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978)  
+    [[Talk RLChina]](https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978) 
     [[Patent]]({{site.baseurl}}/posts/IDMARL_patent/)
     <!-- [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   -->
     <details style="margin-top: -10px;">
@@ -268,8 +268,9 @@ toc: true
 
 - <span translate="no">The Reciprocity Gradient.</span>  
     <span translate="no">**Yue Lin**, Pascal Poupart, Shuhui Zhu, Dan Qiao, Wenhao Li, Yuan Liu, Hongyuan Zha, Baoxiang Wang.</span>  
-    <span translate="no">*Manuscript. 2026-05-07.*</span>
+    <span translate="no">*arXiv preprint. 2026-05-12.*</span>
     > 
+    [[Manuscript]](https://arxiv.org/abs/2605.08323) 
     <details style="margin-top: -10px;">
     <summary>[Click to check the Abstract]</summary>
     <div class="language-plaintext highlighter-rouge">
@@ -480,8 +481,8 @@ function buildPubByTime() {
       var last = matches[matches.length - 1];
       var parts = last.match(/(20\d{2})(?:-(\d{2})(?:-(\d{2}))?)?/);
       year = parseInt(parts[1], 10);
-      var month = parts[2] ? parseInt(parts[2], 10) : 6;
-      var day = parts[3] ? parseInt(parts[3], 10) : 15;
+      var month = parts[2] ? parseInt(parts[2], 10) : 1;
+      var day = parts[3] ? parseInt(parts[3], 10) : 1;
       sortKey = year * 10000 + month * 100 + day;
     }
 
@@ -538,18 +539,37 @@ if (document.readyState === 'loading') {
 Service Honors
 - NeurIPS 2025 Top Reviewer [[List]](https://neurips.cc/Conferences/2025/ProgramCommittee)
 
+<div id="prof-services" markdown="1">
+
 Independent Reviewer
-- NeurIPS 2024 [6, 45615], 2025 [5, 32912]
-- ICLR 2025 [3, 21831], 2026 [1, 5994]
-- ICML 2025 [6, 32893], 2026 [6, 29440]
-- TMLR 2025 [2, 38363], 2026 [1, 5962]
+- NeurIPS 2024 [6; 45615], 2025 [5; 32912], 2026 [0]
+- ICLR 2025 [3; 21831], 2026 [1; 5994]
+- ICML 2025 [6; 32893], 2026 [6; 43185]
+- TMLR 2025 [2; 38363], 2026 [2; 10331]
 
 Volunteer
 - AAMAS 2024 [3, 9876], 2025 [2, 4792], 2026 [2, 2303]
 - ICML (Position) 2025 [2, 5016]
 
-> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet. 
-<!-- Total reviews: 29. -->
+</div>
+
+> Numbers in brackets indicate the number of manuscripts reviewed and the character count of all reviews, respectively. A "0" means the invitation was accepted, but no review assignment has been made yet.  
+> Total reviews: <span id="total-reviews">—</span>.
+
+<script>
+(function () {
+  var section = document.getElementById('prof-services');
+  var el = document.getElementById('total-reviews');
+  if (!section || !el) return;
+  var text = section.textContent;
+  var pattern = /\[(\d+)(?:\s*[;,]\s*\d+)?\]/g;
+  var match, total = 0;
+  while ((match = pattern.exec(text)) !== null) {
+    total += parseInt(match[1], 10);
+  }
+  el.textContent = total;
+})();
+</script>
 
 ---
 
@@ -557,7 +577,6 @@ Volunteer
 
 Teaching Assistant @ The Chinese University of Hong Kong, Shenzhen
 -  CSC6021/AIR6001 Artificial Intelligence (2024-25 Term 2).
--  DDA5001 Machine Learning (2025-26 Term 2).
 
 
 ---

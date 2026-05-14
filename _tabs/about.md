@@ -268,7 +268,7 @@ toc: true
 
 - <span translate="no">The Reciprocity Gradient.</span>  
     <span translate="no">**Yue Lin**, Pascal Poupart, Shuhui Zhu, Dan Qiao, Wenhao Li, Yuan Liu, Hongyuan Zha, Baoxiang Wang.</span>  
-    <span translate="no">*arXiv preprint. 2026-05-12.*</span>
+    <span translate="no">*arXiv preprint. 2026-05-08.*</span>
     > 
     [[Manuscript]](https://arxiv.org/abs/2605.08323) 
     <details style="margin-top: -10px;">
@@ -538,6 +538,7 @@ if (document.readyState === 'loading') {
 
 Service Honors
 - NeurIPS 2025 Top Reviewer [[List]](https://neurips.cc/Conferences/2025/ProgramCommittee)
+- ICML 2026 Silver Reviewer
 
 <div id="prof-services" markdown="1">
 
@@ -548,8 +549,8 @@ Independent Reviewer
 - TMLR 2025 [2; 38363], 2026 [2; 10331]
 
 Volunteer
-- AAMAS 2024 [3, 9876], 2025 [2, 4792], 2026 [2, 2303]
-- ICML (Position) 2025 [2, 5016]
+- AAMAS 2024 [3; 9876], 2025 [2; 4792], 2026 [2; 2303]
+- ICML (Position) 2025 [2; 5016]
 
 </div>
 

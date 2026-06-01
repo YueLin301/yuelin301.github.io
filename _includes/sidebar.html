@@ -206,6 +206,17 @@
       overflow-y: auto;
   }
 
+  /* Keep scrolling but hide the scrollbar */
+  #lysidebar,
+  #lysidebar_content {
+      scrollbar-width: none;      /* Firefox */
+      -ms-overflow-style: none;   /* IE & old Edge */
+  }
+  #lysidebar::-webkit-scrollbar,
+  #lysidebar_content::-webkit-scrollbar {
+      display: none;              /* Chrome, Safari, WebKit */
+  }
+
   #lysidebar .category {
       margin-bottom: 5px;
   }

@@ -483,3 +483,54 @@ $$
 where $x_{n+1} = r_{t+1} + \gamma V(s_{t+1}).$ The $V(s_{t+1})$ is not the ground true value, but we can used it. (Proving convergence is another thing to do.) 
 
 So we can say that the value function is updated based on itself. And this method uses $V(s_{t+1})$ instead of $\sum\limits_{k=t}^\infty \gamma^{k-t}\cdot r_{k+2}.$ And that's what bootstrapping means. 
+
+
+---
+
+## LLM Text Embedding for State
+
+ToM-agent: Large Language Models as Theory of Mind Aware Generative Agents with Counterfactual Reflection
+https://arxiv.org/html/2501.15355v1
+
+让大模型描述环境state，然后用openai提供的text embedding，把对state的自然语言描述转化成embedding，传给RL去学
+
+可以引入先验知识
+
+## Fourier Features
+
+如果网络的输入是低维，输出是高维，那么可以用这个trick来捕捉
+
+原论文：
+Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains
+https://arxiv.org/abs/2006.10739
+
+应用例子：
+Solving Infinite-Player Games with Player-to-Strategy Networks
+https://arxiv.org/pdf/2501.09330
+
+> **核心思想一句话**：不再为每个玩家单独存一份策略，而是训练**一个函数 $s\_\theta$**（神经网络，参数 $\theta$），它**输入一个玩家、输出该玩家的策略**。要问玩家 $i$ 怎么打，就前向计算 $s\_\theta(i)$。
+> 
+> - **网络输入由三部分组成**（具体用哪些取决于博弈）：
+> 
+>     1. **标识玩家的特征**：例如空间博弈里玩家就是平面上的一个点（二维坐标）；"连续交易者"博弈里玩家就是单位区间 $[0,1]$ 上的一个标量；若玩家间有相似性结构，可用嵌入向量（相似玩家嵌入相近）。
+>     2. **该玩家收到的观测**（不完全信息博弈中）。
+>     3. **随机噪声**：用来让输出"随机化"，从而表示混合策略（见 §4.3）。
+> 
+> - **共享参数**：所有玩家共用同一套网络参数 $\theta$。靠泛化能力，一组参数"一次性"覆盖无穷多玩家——这正是能处理"无限"的关键。
+> 
+> - **为什么要 Fourier 特征（含背景）**：
+> 
+>     **先讲清"玩家特征空间（player feature space）"是什么。** 在 P2SN 里，网络 $s\_\theta$ 的输入就是"用来标识一个玩家的那几个坐标/特征"。这些特征张成的空间，就是网络的**输入域**，也就是策略函数 $s\_\theta$ 所"生活"的那个空间。它通常**非常低维**：
+> 
+>     - 空间博弈里，一个玩家**就是平面上的一个点**，输入是二维坐标 $(x\_1, x\_2) \in [0,1]^2$ → 玩家特征空间是 **2 维**的单位正方形；
+>     - "连续交易者"博弈里，一个玩家**就是单位区间上的一个标量** $x \in [0,1]$ → 玩家特征空间是 **1 维**的线段。
+> 
+>     也就是说，$s\_\theta$ 要表示的，其实是一个定义在这个低维空间上的函数：**"玩家在哪个位置 → 该位置的玩家该怎么打"**。
+> 
+>     **难点在哪。** 均衡策略随玩家位置的变化往往**很剧烈、很"高频"**。比如反协调博弈里相邻玩家要选不同资源，于是"策略随坐标"会形成密集的交替条纹，这在信号意义上就是**高空间频率**。而一个**已知事实**是：标准前馈网络（MLP）存在**谱偏置（spectral bias）**——它天生偏向学"低频、平滑"的函数，**在低维输入上很难刻画这种细节丰富、高频变化的模式**（要么根本学不出来，要么收敛极慢）。直觉上，一个普通 MLP 在 2 维输入上更像在画"平滑曲面"，画不出尖锐的交替花纹。
+> 
+>     **解决办法（借自 Tancik et al. 2020 的 random Fourier features）。** 在把输入喂给 MLP 之前，先过一层正弦/余弦映射，把低维输入"升频"到一个高维特征空间：
+> 
+>     $$f(x) = \big(\sin(Bx+b),\ \cos(Bx+b)\big),$$
+> 
+>     其中频率矩阵 $B$ 用标准差 $\sigma=100$ 的正态分布初始化（$\sigma$ 越大、采到的频率越高，越能表达高频细节），相位 $b$ 在 $[0, 2\pi)$ 上均匀初始化。直觉：单凭一个 MLP 只会画平滑曲面，但**先铺一组各种频率的正弦/余弦波作为"基"**，MLP 就能像傅立叶级数那样，用这些基把"尖锐、交替"的策略模式拼出来。作者发现这一步显著提升了 P2SN 的表示能力。

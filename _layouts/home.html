@@ -259,8 +259,28 @@ panel_includes:
 
 <div style="margin-bottom: 35px;"></div>
 
-<div style="width: 100%; max-width: 600px; margin: auto;">
-  <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=dc9e71&w=300&t=tt&d=jdy-KeNo_f3zL8VC2_O8su6clmH9O5qDNkJ8DDtpMm0&co=e9d9ca&cmo=808080&cmn=966b50&ct=000000'></script>
-</div>
-
 {% include contact_shared.html %}
+
+<!-- clustrmap with timeout fallback: hide silently if it doesn't load within 2.5s -->
+<div id="clustrmap-wrapper" style="width: 100%; max-width: 600px; margin: 35px auto 0 auto;"></div>
+<script>
+  (function () {
+    var wrapper = document.getElementById('clustrmap-wrapper');
+    if (!wrapper) return;
+    var src = 'https://cdn.clustrmaps.com/map_v2.js?cl=dc9e71&w=300&t=tt&d=jdy-KeNo_f3zL8VC2_O8su6clmH9O5qDNkJ8DDtpMm0&co=e9d9ca&cmo=808080&cmn=966b50&ct=000000';
+    var s = document.createElement('script');
+    s.id = 'clustrmaps';
+    s.src = src;
+    s.async = true;
+    var loaded = false;
+    s.onload = function () { loaded = true; };
+    s.onerror = function () { wrapper.style.display = 'none'; };
+    wrapper.appendChild(s);
+    // Hard timeout: if not loaded in 2.5s, hide the empty slot silently
+    setTimeout(function () {
+      if (!loaded) {
+        wrapper.style.display = 'none';
+      }
+    }, 2500);
+  })();
+</script>

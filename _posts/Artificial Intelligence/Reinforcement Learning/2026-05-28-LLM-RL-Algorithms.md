@@ -57,7 +57,7 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
   \mathcal{L}\_{\text{pretrain}}(\theta) \;=\; -\sum\_{u \in \mathcal{D}\_{\text{pretrain}}} \sum\_{t=1}^{|u|} \log \pi\_\theta(u\_t \mid u\_{<t})
   $$
   其中 $u$ 是一个**完整的无结构文本文档**（一整篇文章 / 一段代码 / 一个网页），$u_t$ 是它的第 $t$ 个 token，$u_{<t}$ 是它的前 $t-1$ 个 token 前缀。
-- 数据：海量互联网文本（CommonCrawl, Wikipedia, GitHub, ...），$10^{12}$–$10^{13}$ tokens
+- 数据：海量互联网文本（CommonCrawl, Wikipedia, GitHub, ...），\$10^{12}$–\$10^{13}$ tokens
 - 代表模型：GPT-2, GPT-3, LLaMA-base, ...
 - 结果：模型学到了语言的"统计共现规律"，**会续写**，但**不会按指令做事**。给它 `"What is 2+2?"`，它可能续写 `"What is 2+2? What is 3+3? What is..."` 而不是回答 4。
 
@@ -67,7 +67,7 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
   \mathcal{L}\_{\text{SFT}}(\theta) \;=\; -\mathbb{E}\_{(x, y) \sim \mathcal{D}\_{\text{SFT}}}\!\left[\log \pi\_\theta(y \mid x)\right]
   $$
   其中 $x$ 是 **prompt**（问题），$y$ 是对应的 **response**（回答）；$\pi_\theta(y \mid x)$ 是模型生成 $y$ 的整体序列概率，按 chain rule 拆为 $\pi_\theta(y \mid x) = \prod_{t=1}^{\lvert y \rvert} \pi_\theta(y_t \mid x, y_{<t})$。
-- 数据：人工写的高质量 (问题, 答案) 配对（FLAN, T0, Alpaca, ShareGPT 风格），$10^4$–$10^6$ 对
+- 数据：人工写的高质量 (问题, 答案) 配对（FLAN, T0, Alpaca, ShareGPT 风格），\$10^4$–\$10^6$ 对
 - 结果：模型学会"听指令格式回答"，但**未必懂偏好**。
 
 > **🤔 SFT 和 Pretraining 的区别**
@@ -106,9 +106,9 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > | | Pretraining | SFT |
 > |---|---|---|
 > | 数据形态 | 无结构 raw text 流 | 结构化 (prompt, response) 对 |
-> | 数据量 | $10^{12}$–$10^{13}$ tokens（TB 级） | $10^4$–$10^6$ 对（MB-GB 级） |
+> | 数据量 | \$10^{12}$–\$10^{13}$ tokens（TB 级） | \$10^4$–\$10^6$ 对（MB-GB 级） |
 > | 数据来源 | 网络抓取（CommonCrawl, GitHub, Wikipedia） | 人工标注或精心 curated（FLAN, Alpaca, ShareGPT chat template） |
-> | 训练成本 | $\sim 10^6$ GPU-小时（H100 计） | $\sim 10$–$10^3$ GPU-小时 |
+> | 训练成本 | $\sim 10^6$ GPU-小时（H100 计） | $\sim 10$–\$10^3$ GPU-小时 |
 >
 > SFT 数据量比 pretraining 小 **6–9 个数量级**。这决定了 SFT 的角色不是"教模型新语言"，而是"调整输出分布"。
 >
@@ -117,8 +117,8 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > > **定义**：1 GPU-小时 = 1 张 GPU 工作 1 小时的算力消耗。它**不是**单卡训完的实际墙钟时间，而是**总算力 = GPU 数 × 工作小时数**。
 > >
 > > 例子：
-> > - 8 张 H100 跑 10 小时 = $8 \times 10 = 80$ GPU-小时
-> > - 1024 张 H100 跑 1 个月 (720 小时) = $1024 \times 720 \approx 7.4 \times 10^5$ GPU-小时
+> > - 8 张 H100 跑 10 小时 = \$8 \times 10 = 80$ GPU-小时
+> > - 1024 张 H100 跑 1 个月 (720 小时) = \$1024 \times 720 \approx 7.4 \times 10^5$ GPU-小时
 > >
 > > **GPU 型号决定每 GPU-小时能算多少 FLOPs**。同样是 1 GPU-小时，不同卡的算力差几十倍：
 > >
@@ -134,11 +134,11 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > > 所以引用"GPU-小时"数字时**必须说清是什么卡**，否则差几十倍。本文如无特别说明，**默认按 H100 bf16 算**。
 > >
 > > **粗略量级感**：
-> > - 训 Llama-2-7B from scratch：$\approx 1.8 \times 10^5$ A100-小时（论文报告）≈ $5.6 \times 10^4$ H100-小时
+> > - 训 Llama-2-7B from scratch：$\approx 1.8 \times 10^5$ A100-小时（论文报告）≈ \$5.6 \times 10^4$ H100-小时
 > > - 训 Llama-3-70B from scratch：$\approx 6.4 \times 10^6$ H100-小时
 > > - 训 GPT-4 (估计)：$\geq 5 \times 10^7$ A100-小时
-> > - 7B 模型 SFT 一轮（10 万样本）：$\sim 50$–$200$ H100-小时
-> > - 7B 模型 RLHF (PPO) 一轮：$\sim 500$–$2000$ H100-小时（比 SFT 贵 10× 主要因为 4 个模型同时活）
+> > - 7B 模型 SFT 一轮（10 万样本）：$\sim 50$–\$200$ H100-小时
+> > - 7B 模型 RLHF (PPO) 一轮：$\sim 500$–\$2000$ H100-小时（比 SFT 贵 10× 主要因为 4 个模型同时活）
 > >
 > > 这就是为什么 pretraining 是 big-tech-only（千万美元到上亿美元 GPU 成本，每张 H100 \$2-3/小时 $\times 10^6$ 小时），而 SFT/RLHF 学术实验室也做得起（几万到几十万美元）。
 >
@@ -149,7 +149,7 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > | 模型初始化 | 随机初始化（或从 earlier checkpoint） | **从 pretrained checkpoint 继续** |
 > | 学到什么 | 语言统计规律 $p(\text{text})$ | 指令-回答格式 $p(\text{response} \mid \text{prompt})$ |
 > | 输出行为 | 续写：给一段就接着写 | 应答：给问题就回答 |
-> | 学习率 | 大（$\sim 10^{-4}$） | 小（$\sim 10^{-5}$ 到 $10^{-6}$） |
+> | 学习率 | 大（$\sim 10^{-4}$） | 小（$\sim 10^{-5}$ 到 \$10^{-6}$） |
 >
 > SFT 用**小学习率 + 少量数据 + loss mask** 把 pretrained model 的输出分布**轻微 reshape 到指令格式**，又不能让它忘掉 pretraining 学到的语言能力，这就是 catastrophic forgetting 在 LLM training 里的具体表现。
 >
@@ -221,14 +221,14 @@ $$
 
 **数据**：一批人工标注的 $(x, y\_w, y\_l)$ 三元组，$y\_w$ 是 winner，$y\_l$ 是 loser。
 
-**Bradley-Terry 模型**（1952 年的经典模型）：假设存在一个 latent reward 函数 $r^*(x, y)$，则偏好概率为
+**Bradley-Terry 模型**（1952 年的经典模型）：假设存在一个 latent reward 函数 $r^\ast(x, y)$，则偏好概率为
 $$
 P(y_w \succ y_l \mid x) \;=\; \frac{\exp(r^*(x, y_w))}{\exp(r^*(x, y_w)) + \exp(r^*(x, y_l))}
 \;=\; \mathrm{sigm}\!\left(r^*(x, y_w) - r^*(x, y_l)\right)
 $$
-其中 $\mathrm{sigm}(z) := \dfrac{1}{1 + e^{-z}} = \dfrac{e^z}{1 + e^z}$ 是 **sigmoid（logistic）函数**，把任意实数压到 $(0, 1)$，是概率值的标准激活。第二个等号来自分子分母同除 $\exp(r^*(x, y\_w))$ + 整理 + 用 sigmoid 定义重写。
+其中 $\mathrm{sigm}(z) := \dfrac{1}{1 + e^{-z}} = \dfrac{e^z}{1 + e^z}$ 是 **sigmoid（logistic）函数**，把任意实数压到 $(0, 1)$，是概率值的标准激活。第二个等号来自分子分母同除 $\exp(r^\ast(x, y\_w))$ + 整理 + 用 sigmoid 定义重写。
 
-**关键性质**：$r^*$ 只能确定到一个**加性常数**（$r^* + c$ 给出相同的偏好概率，因为 $(r^* + c)(y\_w) - (r^* + c)(y\_l) = r^*(y\_w) - r^*(y\_l)$，$c$ 抵消），所以 RM 输出的 scalar 本身没有绝对意义，**只有差值有意义**。
+**关键性质**：$r^\ast$ 只能确定到一个**加性常数**（$r^\ast + c$ 给出相同的偏好概率，因为 $(r^\ast + c)(y\_w) - (r^\ast + c)(y\_l) = r^\ast(y\_w) - r^\ast(y\_l)$，$c$ 抵消），所以 RM 输出的 scalar 本身没有绝对意义，**只有差值有意义**。
 
 > **关于 sigmoid 记号**：很多 ML 论文（DPO 原文等）把 sigmoid 写作 $\sigma(\cdot)$。本文为避免与统计学里 $\sigma$ 表示标准差冲突（§6 会用到），统一用 $\mathrm{sigm}(\cdot)$ 表示 sigmoid，$\sigma$ 仅用于标准差。阅读外部论文时注意换算。
 
@@ -236,13 +236,13 @@ $$
 
 Reward Model $r\_\phi$ 本质上是一个 **scalar regressor**：吃 (prompt, response) 输出一个数。
 
-- **输入**：一对 $(x, y)$，把 prompt 和 response 拼接成单一 token 序列 $[x; y] = (x\_1, \ldots, x\_{|x|}, y\_1, \ldots, y\_{|y|})$
+- **输入**：一对 $(x, y)$，把 prompt 和 response 拼接成单一 token 序列 $[x; y] = (x\_1, \ldots, x\_{\lvert x \rvert}, y\_1, \ldots, y\_{\lvert y \rvert})$
 - **输出**：单个标量 $r\_\phi(x, y) \in \mathbb{R}$，表示"这个 $y$ 对这个 $x$ 来说有多好"。**没有绝对量纲**（见前面 BT 模型的加性常数性质），只有差值才有意义。
 - **架构**（4 步）：
   1. **Transformer 主干**：通常直接**复制 $\pi\_{\text{SFT}}$ 的权重**作初始化（保留所有层），这样 RM 直接继承 SFT 学到的语言理解能力。
-  2. **去掉原来的 LM head**（$d\_{\text{hidden}} \to |V|$ 的 linear 层；$|V|$ 是词表大小，对 Llama 系约 32k–128k；$d\_{\text{hidden}}$ 是 transformer 隐藏维度，对 Llama-7B 是 4096。LM head 原本用来给每个词表 token 出一个 logit，预测下一个 token 的分布）。
+  2. **去掉原来的 LM head**（$d\_{\text{hidden}} \to \lvert V \rvert$ 的 linear 层；$\lvert V \rvert$ 是词表大小，对 Llama 系约 32k–128k；$d\_{\text{hidden}}$ 是 transformer 隐藏维度，对 Llama-7B 是 4096。LM head 原本用来给每个词表 token 出一个 logit，预测下一个 token 的分布）。
   3. **换上一个新的 value head**：$d\_{\text{hidden}} \to 1$ 的 linear 层，把 hidden state 投到单个 scalar。新建 + 随机初始化。
-  4. **取最后一个 token 位置**（$y$ 末尾，整段序列的最后一个 token）的 hidden state $h^L\_{|x|+|y|}$，通过 value head 算 scalar：$r\_\phi(x, y) = W\_{\text{val}}\, h^L\_{|x|+|y|}$。
+  4. **取最后一个 token 位置**（$y$ 末尾，整段序列的最后一个 token）的 hidden state $h^L\_{\lvert x \rvert+\lvert y \rvert}$，通过 value head 算 scalar：$r\_\phi(x, y) = W\_{\text{val}}\, h^L\_{\lvert x \rvert+\lvert y \rvert}$。
 
 为什么取**最后一个 token** 的 hidden state？因为 transformer 是 causal 的，最后一个位置 attended over 了**整个 $(x, y)$ 序列**，是对整段最 informative 的表示。其他位置只看到部分序列。
 
@@ -347,7 +347,7 @@ $$
 
 **为什么有 KL 项**？这是 RLHF 最关键的设计：
 
-1. **防 reward hacking**：$r\_\phi$ 不是 $r^*$（真实偏好），只是它的近似。如果 $\pi\_\theta$ 把 $r\_\phi$ 优化得太狠，模型会发现 $r\_\phi$ 的盲点并疯狂利用（典型例子：模型学会输出 `"As an AI language model..."` 因为 RM 给了高分）。KL 约束把 $\pi\_\theta$ 拴在 $\pi\_{\text{SFT}}$ 附近，避免漂太远。
+1. **防 reward hacking**：$r\_\phi$ 不是 $r^\ast$（真实偏好），只是它的近似。如果 $\pi\_\theta$ 把 $r\_\phi$ 优化得太狠，模型会发现 $r\_\phi$ 的盲点并疯狂利用（典型例子：模型学会输出 `"As an AI language model..."` 因为 RM 给了高分）。KL 约束把 $\pi\_\theta$ 拴在 $\pi\_{\text{SFT}}$ 附近，避免漂太远。
 2. **保持语言质量**：$\pi\_{\text{SFT}}$ 是说人话的，把 $\pi\_\theta$ 钉在它附近就保证语言不崩塌。
 3. **理论解释**：这个目标其实等价于"在 KL ball 内最大化 reward"，是一种 trust region。
 
@@ -373,18 +373,18 @@ $$
 | MDP 要素 | LLM RLHF 里对应什么 | 备注 |
 |---|---|---|
 | **状态** $s\_t$ | $(x, y\_{<t})$：prompt + 已生成的 token 前缀 | 初始状态 $s\_0 = x$；状态包含完整历史，Markov 性成立 |
-| **动作** $a\_t$ | 下一个 token $y\_t \in V$（从词表中选一个） | 动作空间 $\mathcal{A} = V$，大小 $\|V\| \approx 10^5$ |
+| **动作** $a\_t$ | 下一个 token $y\_t \in V$（从词表中选一个） | 动作空间 $\mathcal{A} = V$，大小 $\lvert V \rvert \approx 10^5$ |
 | **转移** $P(s\_{t+1} \mid s\_t, a\_t)$ | **确定性**：把 $a\_t$ 拼到序列尾部，$s\_{t+1} = (x, y\_{<t}, a\_t) = (x, y\_{\leq t})$ | **无环境随机性**，唯一的随机性来自策略本身 |
 | **奖励** $r(s\_t, a\_t)$ | 中间步: $r\_t = 0$；终止步 $T$（采到 EOS 或截断）: $r\_T = r\_\phi(x, y)$ | **稀疏终端 reward**：只有完整 response 写完才有 RM 评分 |
 | **策略** $\pi\_\theta(a\_t \mid s\_t)$ | LLM 的 next-token 分布 $\pi\_\theta(y\_t \mid x, y\_{<t})$ | **就是 LLM 自己**，π 和模型是同一个东西 |
-| **回合长度** $T$ | $\|y\|$（response 长度，到 EOS 或 max length 截断） | 一般 50–4000 |
+| **回合长度** $T$ | $\lvert y \rvert$（response 长度，到 EOS 或 max length 截断） | 一般 50–4000 |
 | **折扣** $\gamma$ | RLHF 一般取 1（undiscounted） | 因为 reward 只在 episode 终端出现 |
 
 这个 MDP 有三个特殊性质（已在 §1.4 提及）：
 
 1. **确定性转移**：选了哪个 token 就是哪个状态，无环境噪声。整个 trajectory 的随机性全部来自策略 $\pi\_\theta$ 的采样。
 2. **稀疏终端奖励**：所有中间 token 的 immediate reward = 0，只有最后一步有 $r\_\phi(x, y)$。这让它本质上接近一个 **contextual bandit**（context = prompt，action = whole response），但写成 token-level MDP 是为了让 PPO 的 per-token clip 等机制能套上去。
-3. **动作空间巨大但离散**：$|V| \approx 10^5$，比经典控制问题大得多，但因为是离散的，reparameterization trick 用不了。
+3. **动作空间巨大但离散**：$\lvert V \rvert \approx 10^5$，比经典控制问题大得多，但因为是离散的，reparameterization trick 用不了。
 
 **(2) 为什么这就是 RL（不是 SL）**
 
@@ -406,9 +406,9 @@ $$
 
 |  | SFT | RLHF |
 |---|---|---|
-| 数据来源 | 人写好的 $(x, y^*)$ 对，$y^*$ **与 $\pi\_\theta$ 无关** | rollout 自 $\pi\_\theta$ 自己：$y \sim \pi\_\theta(\cdot \mid x)$ |
-| 监督信号 | 每个 token 有"正确答案" $y^*\_t$（teacher forcing） | 整段 response 完后才有一个 scalar reward，**无 token-level label** |
-| 框架 | 普通 MLE：$\max\_\theta \mathbb{E}\_{(x,y^*) \sim \mathcal{D}}[\log \pi\_\theta(y^* \mid x)]$ | sequential decision-making：agent 自己生成 trajectory + credit assignment |
+| 数据来源 | 人写好的 $(x, y^\ast)$ 对，$y^\ast$ **与 $\pi\_\theta$ 无关** | rollout 自 $\pi\_\theta$ 自己：$y \sim \pi\_\theta(\cdot \mid x)$ |
+| 监督信号 | 每个 token 有"正确答案" $y^\ast\_t$（teacher forcing） | 整段 response 完后才有一个 scalar reward，**无 token-level label** |
+| 框架 | 普通 MLE：$\max\_\theta \mathbb{E}\_{(x,y^\ast) \sim \mathcal{D}}[\log \pi\_\theta(y^\ast \mid x)]$ | sequential decision-making：agent 自己生成 trajectory + credit assignment |
 | 需要 MDP 吗 | **不需要**，数据集决定一切 | **需要**，agent-environment 交互产生数据 |
 
 关键的"为什么不能用 SFT 解 RLHF"是：**RM 给的是整段 response 的 scalar 分数，没有逐 token 的 label**。要把这种 scalar 终端 reward 推回到每个 token 的更新方向，必须经过 RL 的 **credit assignment 机制**，这就是 policy gradient theorem 处理的事，SL 没有对应的工具。
@@ -558,11 +558,11 @@ $$
 
 **仍然是 Markovian 的**：只依赖 $s\_t$，不显式依赖更早的状态。"history-dependent policy" 是从外部小状态空间（比如只看 "$y\_t$ 依赖前 t-1 个 token"）看的视角；MDP 里**把历史塞进状态本身**就化解了这个问题。
 
-这是经典 trick：**state augmentation**。POMDP → MDP via belief state 也是同一个思想（把"看不见的隐状态信念"塞进状态）。代价是状态空间随 $t$ 指数增长（每步多 $\|V\|$ 种可能），但 RL 推导仍然合法。
+这是经典 trick：**state augmentation**。POMDP → MDP via belief state 也是同一个思想（把"看不见的隐状态信念"塞进状态）。代价是状态空间随 $t$ 指数增长（每步多 $\lvert V \rvert$ 种可能），但 RL 推导仍然合法。
 
 LLM-MDP 本质上是一个 **tree-structured MDP**：从 $s\_0 = x$ 出发，每个 action 让 state 走向树的一个新分支，因为转移确定，每条 trajectory 走树上一条独立路径，**不同 trajectory 永远不汇合**。
 
-> **🔖 提醒：$\tilde r$ 含 $\theta$，但下面当 scalar 处理**。$\tilde r(x, y) = r\_\phi(x, y) - \beta \log \frac{\pi\_\theta(y|x)}{\pi\_{\text{SFT}}(y|x)}$ 形式上含 $\log \pi\_\theta$，严格说依赖 $\theta$。但 (2) 已经证明：直接对 $J = \mathbb{E}\_{y \sim \pi\_\theta}[\tilde r(x, y; \theta)]$ 求导时，"$\theta$ 在 $\tilde r$ 里"那一项等于 $-\beta \mathbb{E}\_{y \sim \pi\_\theta}[\nabla \log \pi\_\theta] = 0$（score function 零均值，即 (2) 里 KL 推导的 Step 3a）。所以最终 policy gradient 里 $\tilde r$ 就是个 scalar，下面对它不再求 $\theta$ 梯度。
+> **🔖 提醒：$\tilde r$ 含 $\theta$，但下面当 scalar 处理**。$\tilde r(x, y) = r\_\phi(x, y) - \beta \log \frac{\pi\_\theta(y\mid x)}{\pi\_{\text{SFT}}(y\mid x)}$ 形式上含 $\log \pi\_\theta$，严格说依赖 $\theta$。但 (2) 已经证明：直接对 $J = \mathbb{E}\_{y \sim \pi\_\theta}[\tilde r(x, y; \theta)]$ 求导时，"$\theta$ 在 $\tilde r$ 里"那一项等于 $-\beta \mathbb{E}\_{y \sim \pi\_\theta}[\nabla \log \pi\_\theta] = 0$（score function 零均值，即 (2) 里 KL 推导的 Step 3a）。所以最终 policy gradient 里 $\tilde r$ 就是个 scalar，下面对它不再求 $\theta$ 梯度。
 
 **Step 1：起点**。(2) 末尾给出的 sequence-level policy gradient，等价地写成对联合概率求和的展开式：
 
@@ -571,7 +571,7 @@ $$
 \;=\; \sum_y \nabla_\theta \pi_\theta(y \mid x) \cdot \tilde r(x, y)
 $$
 
-要拆 token-level，核心是算**整段联合概率** $\pi\_\theta(y \mid x)$（$\|V\|^T$ 维空间上一个点的质量）对 $\theta$ 的导数如何按 $t$ 分解。
+要拆 token-level，核心是算**整段联合概率** $\pi\_\theta(y \mid x)$（$\lvert V \rvert^T$ 维空间上一个点的质量）对 $\theta$ 的导数如何按 $t$ 分解。
 
 **Step 2：用 autoregressive chain rule 展开联合概率**
 
@@ -849,13 +849,13 @@ $$
 > | **action 分布** | $\frac{\pi\_\theta}{\pi\_{\text{old}}}$ importance sampling | ✅ 精确（第一步） |
 > | **state 分布** | $d^{\pi\_\theta} \rightsquigarrow d^{\pi\_{\text{old}}}$ 直接替换 | ❌ 近似（第二步） |
 >
-> **为什么 state 分布不也做一次 IS 来修正？** 因为 state-visitation ratio $\frac{d^{\pi\_\theta}(s)}{d^{\pi\_{\text{old}}}(s)}$ **算不出来**。action ratio $\frac{\pi\_\theta(a|s)}{\pi\_{\text{old}}(a|s)}$ 能算，因为两个策略对给定 $(s,a)$ 直接吐概率；但
+> **为什么 state 分布不也做一次 IS 来修正？** 因为 state-visitation ratio $\frac{d^{\pi\_\theta}(s)}{d^{\pi\_{\text{old}}}(s)}$ **算不出来**。action ratio $\frac{\pi\_\theta(a\mid s)}{\pi\_{\text{old}}(a\mid s)}$ 能算，因为两个策略对给定 $(s,a)$ 直接吐概率；但
 > $$d^{\pi}(s) = (1-\gamma)\sum_{t=0}^\infty \gamma^t \Pr(s_t = s \mid \pi)$$
-> 依赖**整条轨迹**：初始分布 + 环境转移 $P(s'|s,a)$ + 策略在到达 $s$ 之前每一步的所有选择。要算这个 ratio 得对所有到达 $s$ 的路径积分、还要知道 dynamics model，实际中**无法逐点计算**，只能丢掉这个修正项。
+> 依赖**整条轨迹**：初始分布 + 环境转移 $P(s'\mid s,a)$ + 策略在到达 $s$ 之前每一步的所有选择。要算这个 ratio 得对所有到达 $s$ 的路径积分、还要知道 dynamics model，实际中**无法逐点计算**，只能丢掉这个修正项。
 >
 > **所以 surrogate 的全部近似来自"偷换 state 分布"这一层**，而那一层没法 IS 修正。$\pi\_\theta$ 离 $\pi\_{\text{old}}$ 越近，$d^{\pi\_\theta} \approx d^{\pi\_{\text{old}}}$ 越准，近似误差越小。这正是下面 KL 约束的根本动机。
 >
-> **🔍 LLM 上这个近似在 sequence 层面消失**：contextual bandit 视角（整段 response $y$ 当一个 action）里 "state" = prompt $x$，从数据分布 $\mathcal{D}$ 采、**不依赖策略**，所以没有 state-shift，$\mathbb{E}\_{y \sim \pi\_\theta}[r] = \mathbb{E}\_{y \sim \pi\_{\text{old}}}[\frac{\pi\_\theta(y|x)}{\pi\_{\text{old}}(y|x)} r]$ **精确**。只有 token-level MDP 视角（中间状态 $(x, y\_{<t})$ 由策略生成）才重新出现 state-shift 近似。
+> **🔍 LLM 上这个近似在 sequence 层面消失**：contextual bandit 视角（整段 response $y$ 当一个 action）里 "state" = prompt $x$，从数据分布 $\mathcal{D}$ 采、**不依赖策略**，所以没有 state-shift，$\mathbb{E}\_{y \sim \pi\_\theta}[r] = \mathbb{E}\_{y \sim \pi\_{\text{old}}}[\frac{\pi\_\theta(y\mid x)}{\pi\_{\text{old}}(y\mid x)} r]$ **精确**。只有 token-level MDP 视角（中间状态 $(x, y\_{<t})$ 由策略生成）才重新出现 state-shift 近似。
 
 为了让"$\pi\_\theta$ 离 $\pi\_{\text{old}}$ 不远"这个近似成立，TRPO 加 **KL 硬约束**：
 
@@ -1071,13 +1071,13 @@ $$
 
 这是一个**带约束的优化问题**，用拉格朗日法 / 变分法即可解出 closed-form 最优解。
 
-构造 Lagrangian（用 $\lambda$ 处理归一化约束；$\pi(y|x) \ge 0$ 由 $\log\pi$ 项自动隐式保证，因为 $\pi \to 0$ 会让目标 $\to -\infty$）：
+构造 Lagrangian（用 $\lambda$ 处理归一化约束；$\pi(y\mid x) \ge 0$ 由 $\log\pi$ 项自动隐式保证，因为 $\pi \to 0$ 会让目标 $\to -\infty$）：
 
 $$
 \mathcal{L}(\pi, \lambda) \;=\; \sum_y \pi(y|x)\left[r(x,y) - \beta\log\pi(y|x) + \beta\log\pi_{\text{ref}}(y|x)\right] \;-\; \lambda\!\left(\sum_y \pi(y|x) - 1\right)
 $$
 
-由于 $y$ 是离散的，把每个 $\pi(y|x)$ 当独立变量，逐个求偏导（这就是"变分法"在离散情形下的样子）。**关键技巧**：注意 $\dfrac{d}{d\pi}\!\left[-\beta\,\pi\log\pi\right] = -\beta(\log\pi + 1)$，多出来的 $-\beta$ 别漏。
+由于 $y$ 是离散的，把每个 $\pi(y\mid x)$ 当独立变量，逐个求偏导（这就是"变分法"在离散情形下的样子）。**关键技巧**：注意 $\dfrac{d}{d\pi}\!\left[-\beta\,\pi\log\pi\right] = -\beta(\log\pi + 1)$，多出来的 $-\beta$ 别漏。
 
 $$
 \frac{\partial \mathcal{L}}{\partial \pi(y|x)} \;=\; r(x,y) \;\underbrace{-\beta\log\pi(y|x) - \beta}_{\text{from }-\beta\,\pi\log\pi} \;+\; \beta\log\pi_{\text{ref}}(y|x) \;-\; \lambda
@@ -1089,7 +1089,7 @@ $$
 r(x,y) \;-\; \beta\log\pi(y|x) \;-\; \beta \;+\; \beta\log\pi_{\text{ref}}(y|x) \;-\; \lambda \;=\; 0
 $$
 
-整理出 $\log\pi(y|x)$：
+整理出 $\log\pi(y\mid x)$：
 
 $$
 \log\pi(y|x) \;=\; \log\pi_{\text{ref}}(y|x) \;+\; \frac{r(x,y)}{\beta} \;-\; \frac{\beta + \lambda}{\beta}
@@ -1101,7 +1101,7 @@ $$
 \pi(y|x) \;=\; \pi_{\text{ref}}(y|x)\cdot\exp\!\left(\frac{r(x,y)}{\beta}\right)\cdot\underbrace{\exp\!\left(-\frac{\beta+\lambda}{\beta}\right)}_{\text{常数（不依赖 }y\text{）}}
 $$
 
-用归一化约束 $\sum\_y \pi(y|x) = 1$ 确定常数：
+用归一化约束 $\sum\_y \pi(y\mid x) = 1$ 确定常数：
 
 $$
 \exp\!\left(-\frac{\beta+\lambda}{\beta}\right) \;=\; \frac{1}{Z(x)},
@@ -1116,12 +1116,12 @@ $$
 
 二阶条件：目标对 $\pi$ 是严格凹的（KL 项是严格凸的，加负号成严格凹），所以一阶条件给出的就是全局最大。
 
-**关于 $\beta$ 的解读**：$\pi^* \propto \pi\_{\text{ref}} \cdot \exp(r/\beta)$ 这个形式里 $\beta$ 是温度。
-- $\beta \to \infty$：$\pi^* \to \pi\_{\text{ref}}$，reward 影响消失，policy 完全跟着 reference 走；
-- $\beta \to 0$：$\pi^*$ 退化为对 $\arg\max\_y r(x,y)$ 的点质量（greedy，完全忽略 reference）；
+**关于 $\beta$ 的解读**：$\pi^\ast \propto \pi\_{\text{ref}} \cdot \exp(r/\beta)$ 这个形式里 $\beta$ 是温度。
+- $\beta \to \infty$：$\pi^\ast \to \pi\_{\text{ref}}$，reward 影响消失，policy 完全跟着 reference 走；
+- $\beta \to 0$：$\pi^\ast$ 退化为对 $\arg\max\_y r(x,y)$ 的点质量（greedy，完全忽略 reference）；
 - $\beta$ 适中：在"听人话"和"追求 reward"之间取平衡。
 
-这个 "$\pi^* \propto \pi\_{\text{ref}} \exp(r/\beta)$" 形式在统计物理（Gibbs 分布）、最大熵原理、soft Q-learning 中反复出现，是同一数学结构在不同领域的显化。
+这个 "$\pi^\ast \propto \pi\_{\text{ref}} \exp(r/\beta)$" 形式在统计物理（Gibbs 分布）、最大熵原理、soft Q-learning 中反复出现，是同一数学结构在不同领域的显化。
 
 **第二步：把这个关系反过来表达 reward。**
 
@@ -1168,9 +1168,9 @@ $$
 
 **第四步：把上面的偏好概率公式做最大似然，得到 DPO loss。**
 
-第三步得到的是**真实偏好概率**，用未知的最优 policy $\pi^*$ 表达。但 $\pi^*$ 我们不知道，它正是我们要求的未知量。从第三步到最终的 DPO loss，要走六个小步骤。
+第三步得到的是**真实偏好概率**，用未知的最优 policy $\pi^\ast$ 表达。但 $\pi^\ast$ 我们不知道，它正是我们要求的未知量。从第三步到最终的 DPO loss，要走六个小步骤。
 
-**(a) Reparametrize：用神经网络 $\pi\_\theta$ 替代 $\pi^*$**
+**(a) Reparametrize：用神经网络 $\pi\_\theta$ 替代 $\pi^\ast$**
 
 定义"模型对偏好概率的预测"：
 
@@ -1178,7 +1178,7 @@ $$
 P_\theta(y_w \succ y_l \mid x) \;:=\; \mathrm{sigm}\!\left(\beta \log\frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log\frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)
 $$
 
-这一步是**整个 DPO 的关键概念跳跃**：用可训练的 transformer $\pi\_\theta$ 代替未知的 $\pi^*$，把"找最优 policy" 转化为"找让偏好预测匹配数据的 $\theta$"。
+这一步是**整个 DPO 的关键概念跳跃**：用可训练的 transformer $\pi\_\theta$ 代替未知的 $\pi^\ast$，把"找最优 policy" 转化为"找让偏好预测匹配数据的 $\theta$"。
 
 **为什么合法**？这正是 policy ↔ reward 的 **dual** 关系给的合法性。$\pi\_\theta$ 一旦确定，它通过 $r = \beta\log(\pi\_\theta/\pi\_{\text{ref}})$ 自动定义了一个隐式 reward，这个 reward 又自动定义了它配合 RLHF 目标的最优 policy 就是 $\pi\_\theta$ 本身。所以以 $\pi\_\theta$ 参数化，就是在 (reward, policy) 这个 dual 对里**选了 policy 这一边**。
 
@@ -1222,7 +1222,7 @@ $$
 
 把六小步缩成一句话：
 
-> **(a)** 把未知的 $\pi^*$ 替换成可训练的 $\pi\_\theta$（合法，因为 dual），把第三步的真实偏好概率公式变成"模型对偏好概率的预测" $P\_\theta$。
+> **(a)** 把未知的 $\pi^\ast$ 替换成可训练的 $\pi\_\theta$（合法，因为 dual），把第三步的真实偏好概率公式变成"模型对偏好概率的预测" $P\_\theta$。
 > **(b)–(e)** 套用标准 MLE（最大化数据似然 → 等价于最小化负对数似然 → 写成期望形式）。
 > **(f)** 把 $P\_\theta$ 展开成 log policy ratio 的具体形式。
 
@@ -1238,13 +1238,13 @@ $$
 
 **(d) $\beta$ 是温度，不是要调的 RL 超参**：固定常数（通常 0.1）。
 
-**(e) Reward 是 policy 的 implicit reparameterization**：DPO 训练后，可以从 $\pi\_\theta$ 反推出 reward $r(x, y) = \beta \log \frac{\pi\_\theta(y|x)}{\pi\_{\text{ref}}(y|x)} + C$。所以 DPO 训出来的 $\pi\_\theta$ 内部"藏着一个 RM"。
+**(e) Reward 是 policy 的 implicit reparameterization**：DPO 训练后，可以从 $\pi\_\theta$ 反推出 reward $r(x, y) = \beta \log \frac{\pi\_\theta(y\mid x)}{\pi\_{\text{ref}}(y\mid x)} + C$。所以 DPO 训出来的 $\pi\_\theta$ 内部"藏着一个 RM"。
 
 **(f) 工程上 2 个模型够了**：$\pi\_\theta$ 训练、$\pi\_{\text{ref}}$ frozen（甚至可以用同一个 model 的 frozen 版本做 ref）。RLHF 的 4 模型 → DPO 的 2 模型。
 
 ### 5.4 DPO 梯度的直觉
 
-DPO loss 对 $\theta$ 求梯度，设 $\hat r\_\theta(x, y) = \beta \log \frac{\pi\_\theta(y|x)}{\pi\_{\text{ref}}(y|x)}$（隐式 reward）：
+DPO loss 对 $\theta$ 求梯度，设 $\hat r\_\theta(x, y) = \beta \log \frac{\pi\_\theta(y\mid x)}{\pi\_{\text{ref}}(y\mid x)}$（隐式 reward）：
 
 $$
 \nabla_\theta \mathcal{L}_{\text{DPO}} \;=\; -\beta\, \mathbb{E}\!\left[\mathrm{sigm}\!\left(\hat r_\theta(y_l) - \hat r_\theta(y_w)\right) \cdot \left(\nabla_\theta \log \pi_\theta(y_w|x) - \nabla_\theta \log \pi_\theta(y_l|x)\right)\right]
@@ -1416,13 +1416,13 @@ $$
 \mathbb{E}_{y \sim \pi_\theta}\!\left[b(x) \cdot \nabla_\theta \log \pi_\theta(y|x)\right] \;=\; b(x) \cdot \nabla_\theta\, \mathbb{E}_{y \sim \pi_\theta}\!\left[1\right] \;=\; b(x) \cdot \nabla_\theta\, 1 \;=\; 0
 $$
 
-**最优 baseline 是条件 reward 期望**：$b^*(x) = V^*(x) := \mathbb{E}\_{y \sim \pi\_\theta}[r(x, y)]$。PPO-RLHF 训一个神经网络 $V\_\psi(x)$ 来估这个东西，这就是要被去掉的 value model。
+**最优 baseline 是条件 reward 期望**：$b^\ast(x) = V^\ast(x) := \mathbb{E}\_{y \sim \pi\_\theta}[r(x, y)]$。PPO-RLHF 训一个神经网络 $V\_\psi(x)$ 来估这个东西，这就是要被去掉的 value model。
 
-#### 6.2.5 Step 3：用 Monte Carlo 估计 $V^*$（group sampling 的本质）
+#### 6.2.5 Step 3：用 Monte Carlo 估计 $V^\ast$（group sampling 的本质）
 
-GRPO 不训 value model，而是**直接用蒙特卡洛估计** $V^*(x)$：
+GRPO 不训 value model，而是**直接用蒙特卡洛估计** $V^\ast(x)$：
 
-对每个 prompt $x$，采样 $G$ 条 response $\{y^1, \ldots, y^G\} \sim \pi\_{\text{old}}(\cdot | x)$，得到 reward $\{r^1, \ldots, r^G\}$。用样本均值估期望：
+对每个 prompt $x$，采样 $G$ 条 response $\{y^1, \ldots, y^G\} \sim \pi\_{\text{old}}(\cdot \mid  x)$，得到 reward $\{r^1, \ldots, r^G\}$。用样本均值估期望：
 
 $$
 \hat V(x) \;:=\; \frac{1}{G}\sum_{i=1}^G r^i \;\approx\; V^*(x)
@@ -1528,7 +1528,7 @@ L_{\text{GRPO}}(\theta) \;=\; -\frac{1}{G}\sum_{i=1}^G \min\!\left(\rho^i A^i,\ 
 $$
 
 其中：
-- $\rho^i = \pi\_\theta(y^i|x) / \pi\_{\text{old}}(y^i|x)$：**sequence-level** importance ratio
+- $\rho^i = \pi\_\theta(y^i\mid x) / \pi\_{\text{old}}(y^i\mid x)$：**sequence-level** importance ratio
 - $A^i = (r^i - \mathrm{mean}(r^{1..G})) / (\mathrm{std}(r^{1..G}) + \epsilon\_{\text{num}})$：group-normalized advantage
 - $\widehat{\mathrm{KL}}$：K3 estimator
 
@@ -1815,7 +1815,7 @@ for prompt x:
 #### 7.5.1 GRPO 暴露的具体缺陷（4 个）
 
 1. **Length bias**：advantage 除以 std，长错答案的相对惩罚反而小 → policy 学会写越来越长的错误回答
-2. **Entropy collapse**：PPO clip 上界 $1+\varepsilon$ 抑制 token 概率上升 → 高 entropy token（探索性 token）逐渐被压死 → 策略变 deterministic 太快
+2. **Entropy collapse**：PPO clip 上界 \$1+\varepsilon$ 抑制 token 概率上升 → 高 entropy token（探索性 token）逐渐被压死 → 策略变 deterministic 太快
 3. **Sample inefficiency**：group 内全 0 或全 1 reward 的 prompt（已掌握或完全不会）梯度为 0 → 白消耗 compute
 4. **Long-CoT 不稳**：超长输出累积 KL 漂移大，模型容易 break
 

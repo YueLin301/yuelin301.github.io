@@ -223,7 +223,7 @@ BERT 在 2018–2020 主导了 NLP benchmark（GLUE / SuperGLUE）。**但 BERT 
 GPT (Radford et al. 2018) 走另一条路：
 - 只用 decoder（去掉 encoder 部分 + cross-attention）
 - Causal attention：每个 token 只看前面
-- 预训练目标：**单纯的 next-token prediction**（最大化 $\sum\_t \log p(x\_t | x\_{<t})$）
+- 预训练目标：**单纯的 next-token prediction**（最大化 $\sum\_t \log p(x\_t \mid  x\_{<t})$）
 - 用法：把任何任务都 reformulate 成"接续生成"
   - 分类 → `"this review is positive or negative?\nAnswer: [next token]"`
   - 翻译 → `"Translate to French: hello\nFrench: [next tokens]"`
@@ -317,7 +317,7 @@ softmax → token 分布 → 采样 / argmax
 | $n\_{\text{heads}}$ | attention head 数 | 7B: 32 / 70B: 64 |
 | $d\_{\text{head}}$ | 每个 head 的维度 $= d\_{\text{hidden}} / n\_{\text{heads}}$ | 7B/70B: 128 |
 | $d\_{\text{ff}}$ | FFN 中间维度 | 通常 $\approx 4 \cdot d\_{\text{hidden}}$（SwiGLU 用 $\approx 8/3 \cdot d\_{\text{hidden}}$） |
-| $\|V\|$ | vocab size | Llama-2: 32k / Llama-3: 128k / Qwen-2.5: 152k |
+| $\lvert V \rvert$ | vocab size | Llama-2: 32k / Llama-3: 128k / Qwen-2.5: 152k |
 | context length | 最大输入 token 数 | 4k → 32k → 128k → 1M（演进中） |
 
 ### 2.4 参数量怎么估
@@ -325,10 +325,10 @@ softmax → token 分布 → 采样 / argmax
 #### 2.4.1 "X B" 是什么意思
 
 LLM 名字里的 **B** = **Billion (10 亿)**。其它常见单位：
-- **K** = thousand (千) = $10^3$
-- **M** = million (百万) = $10^6$
-- **B** = billion (十亿) = $10^9$
-- **T** = trillion (万亿) = $10^{12}$
+- **K** = thousand (千) = \$10^3$
+- **M** = million (百万) = \$10^6$
+- **B** = billion (十亿) = \$10^9$
+- **T** = trillion (万亿) = \$10^{12}$
 
 所以：
 - **Qwen-7B** = 7 × 10⁹ ≈ **70 亿个参数**
@@ -337,23 +337,23 @@ LLM 名字里的 **B** = **Billion (10 亿)**。其它常见单位：
 - **GPT-4 估计 1.8T** = 1.8 万亿个参数（未公开，估计值）
 - **DeepSeek-V3 671B** = 6710 亿总参（MoE：活跃 37B）
 
-**"参数"** 是什么？就是神经网络里所有可训练的浮点数 weight。比如一个 linear layer $W \in \mathbb{R}^{4096 \times 4096}$ 有 $4096^2 \approx 16.8\text{M}$ 个参数；一个 LLM 由几百个这种 linear / embedding / norm 拼起来，参数加总就是 "X B"。
+**"参数"** 是什么？就是神经网络里所有可训练的浮点数 weight。比如一个 linear layer $W \in \mathbb{R}^{4096 \times 4096}$ 有 \$4096^2 \approx 16.8\text{M}$ 个参数；一个 LLM 由几百个这种 linear / embedding / norm 拼起来，参数加总就是 "X B"。
 
 注意：**这个数字只算 weight 本身**，不算梯度、optimizer state、activation 等训练时才有的额外数据。所以"7B 模型"和"训 7B 模型需要的总显存"是两件不同的事（差 4-6 倍，见 §2.9.3）。
 
 #### 2.4.2 参数量怎么算出来
 
 每层 transformer block 的参数主要在两块：
-- **Self-attention**：4 个 $d\_{\text{hidden}} \times d\_{\text{hidden}}$ linear (Q, K, V, output) = $4 d\_{\text{hidden}}^2$
-- **FFN (SwiGLU)**：3 个 linear (gate, up, down)，总参数 = $3 d\_{\text{hidden}} \cdot d\_{\text{ff}} \approx 8 d\_{\text{hidden}}^2$（when $d\_{\text{ff}} \approx 8/3 \cdot d\_{\text{hidden}}$）
+- **Self-attention**：4 个 $d\_{\text{hidden}} \times d\_{\text{hidden}}$ linear (Q, K, V, output) = \$4 d\_{\text{hidden}}^2$
+- **FFN (SwiGLU)**：3 个 linear (gate, up, down)，总参数 = \$3 d\_{\text{hidden}} \cdot d\_{\text{ff}} \approx 8 d\_{\text{hidden}}^2$（when $d\_{\text{ff}} \approx 8/3 \cdot d\_{\text{hidden}}$）
 
 每层总参数 $\approx 12 d\_{\text{hidden}}^2$。
-总参数 $\approx L \cdot 12 d\_{\text{hidden}}^2 + \text{embedding overhead}$（embedding 表是 $|V| \cdot d\_{\text{hidden}}$）。
+总参数 $\approx L \cdot 12 d\_{\text{hidden}}^2 + \text{embedding overhead}$（embedding 表是 $\lvert V \rvert \cdot d\_{\text{hidden}}$）。
 
 **例：Llama-7B**（$L=32, d\_{\text{hidden}}=4096$）：
 - 每层 $\approx 12 \times 4096^2 \approx 201\text{M}$
 - 32 层 $\approx 6.4\text{B}$
-- + embedding ($32k \times 4096 \approx 0.13\text{B}$，输入输出共享则只算一次)
+- + embedding (\$32k \times 4096 \approx 0.13\text{B}$，输入输出共享则只算一次)
 - 总共 $\approx 6.7\text{B}$ ✓
 
 **记忆口诀**：$L \cdot 12 d^2$ ≈ 总参数量。
@@ -511,7 +511,7 @@ LLM 名字里的 **B** = **Billion (10 亿)**。其它常见单位：
 
 ### 2.6 主流开源 LLM 的具体配置
 
-| 模型 | $L$ | $d\_{\text{hidden}}$ | $n\_{\text{heads}}$ | $\|V\|$ | 参数量 | FFN 激活 | 备注 |
+| 模型 | $L$ | $d\_{\text{hidden}}$ | $n\_{\text{heads}}$ | $\lvert V \rvert$ | 参数量 | FFN 激活 | 备注 |
 |---|---|---|---|---|---|---|---|
 | GPT-2 small | 12 | 768 | 12 | 50k | 124M | GeLU | 远古 |
 | GPT-2 XL | 48 | 1600 | 25 | 50k | 1.5B | GeLU | |
@@ -536,14 +536,28 @@ LLM 名字里的 **B** = **Billion (10 亿)**。其它常见单位：
 ### 2.7 激活函数：GeLU vs SwiGLU
 
 - **GeLU** (Gaussian Error Linear Unit，GPT-2/3, BERT 时代)：
-  $$\text{GeLU}(x) = x \cdot \Phi(x) \approx 0.5 x \left[1 + \tanh\!\left(\sqrt{2/\pi}(x + 0.044715 x^3)\right)\right]$$
+
+  $$
+  \begin{aligned}
+  \text{GeLU}(x) &= x \cdot \Phi(x) \\
+  &\approx 0.5\, x \left[1 + \tanh\!\left(\sqrt{2/\pi}\,(x + 0.044715\, x^3)\right)\right]
+  \end{aligned}
+  $$
+
   其中 $\Phi$ 是标准正态累积分布。直觉：smooth 版的 ReLU。FFN 结构是 `Linear → GeLU → Linear`。
 
 - **SwiGLU** (Llama / Qwen / DeepSeek 现代主流)：
-  $$\text{SwiGLU}(x) = \text{Swish}(W_{\text{gate}} x) \odot (W_{\text{up}} x), \quad \text{Swish}(z) = z \cdot \mathrm{sigm}(z)$$
+
+  $$
+  \begin{aligned}
+  \text{SwiGLU}(x) &= \text{Swish}(W_{\text{gate}}\, x) \odot (W_{\text{up}}\, x) \\
+  \text{Swish}(z) &= z \cdot \mathrm{sigm}(z)
+  \end{aligned}
+  $$
+
   然后 $W\_{\text{down}}$ 投回 $d\_{\text{hidden}}$。**Gated**（门控）+ **Swish**（smooth ReLU）的组合：两个 linear，一个走 swish 当 gate，一个当 value，element-wise 乘后再投回。
 
-  → SwiGLU 的 FFN 是 3 个 linear（gate, up, down），所以参数比 GeLU 的 2-linear FFN 多 50%。为了保持总参数量，SwiGLU 的 $d\_{\text{ff}}$ 通常缩到 $\approx 8/3 \cdot d\_{\text{hidden}}$（GeLU 用 $4 \cdot d\_{\text{hidden}}$）。
+  → SwiGLU 的 FFN 是 3 个 linear（gate, up, down），所以参数比 GeLU 的 2-linear FFN 多 50%。为了保持总参数量，SwiGLU 的 $d\_{\text{ff}}$ 通常缩到 $\approx 8/3 \cdot d\_{\text{hidden}}$（GeLU 用 \$4 \cdot d\_{\text{hidden}}$）。
 
 - **ReLU**：早期模型偶有使用，现代基本绝迹。
 
@@ -601,24 +615,24 @@ NVIDIA 的产品线分成**两条独立的线**，名字、license、价格都�
 
 | GPU | 发布 | VRAM | bf16 TFLOPS | 价格 (USD) | 用途 |
 |---|---|---|---|---|---|
-| RTX 3090 | 2020 | 24 GB | 71 | ~$1000（二手） | 7B 推理 / LoRA |
-| RTX 4090 | 2022 | 24 GB | 165 | ~$1.5K | 个人实验主力 |
-| RTX 5090 | 2024 | 32 GB | ~300 | ~$2K | 最新消费级旗舰 |
-| RTX A6000 / 6000 Ada | 2021 / 2022 | 48 GB | 91 / 91 | $5–7K | 工作站旗舰 |
-| L40 / L40S | 2023 | 48 GB | 181 / 362 | $7–10K | 数据中心 inference |
+| RTX 3090 | 2020 | 24 GB | 71 | ~\$1000（二手） | 7B 推理 / LoRA |
+| RTX 4090 | 2022 | 24 GB | 165 | ~\$1.5K | 个人实验主力 |
+| RTX 5090 | 2024 | 32 GB | ~300 | ~\$2K | 最新消费级旗舰 |
+| RTX A6000 / 6000 Ada | 2021 / 2022 | 48 GB | 91 / 91 | \$5–7K | 工作站旗舰 |
+| L40 / L40S | 2023 | 48 GB | 181 / 362 | \$7–10K | 数据中心 inference |
 
 **数据中心训练旗舰**（学术 / 公司 / 云）：
 
 | GPU | 发布 | VRAM | bf16 TFLOPS | 价格 (USD) | 云租 (USD/hr) | 备注 |
 |---|---|---|---|---|---|---|
-| V100 | 2017 | 16/32 GB HBM2 | 125 | $5–8K（二手）| ~$0.5 | 第一代实用 ML 卡 |
-| A100 40GB | 2020 | 40 GB HBM2 | 312 | ~$8K | ~$1 | 学术老主力 |
-| A100 80GB | 2021 | 80 GB HBM2e | 312 | ~$15K | ~$1.5 | 80GB 版价值大 |
-| **H100 80GB** | 2022 | 80 GB HBM3 | **989** | ~$30K | $2–3 | **当前事实标准** |
-| H200 | 2024 | **141 GB** HBM3e | 989 | ~$35K | $3–4 | FLOPS 同 H100，显存 +75% |
-| B100 | 2024 | 192 GB HBM3e | ~1800 | ~$40K | - | Blackwell 新架构 |
-| **B200** | 2024 | 192 GB | **2250** | ~$50K | $4–6 | 当前 SOTA |
-| GB200 (2 GPU + 1 CPU) | 2025 | 384 GB | 5000 | $80K+ | - | 数据中心顶级 |
+| V100 | 2017 | 16/32 GB HBM2 | 125 | \$5–8K（二手）| ~\$0.5 | 第一代实用 ML 卡 |
+| A100 40GB | 2020 | 40 GB HBM2 | 312 | ~\$8K | ~\$1 | 学术老主力 |
+| A100 80GB | 2021 | 80 GB HBM2e | 312 | ~\$15K | ~\$1.5 | 80GB 版价值大 |
+| **H100 80GB** | 2022 | 80 GB HBM3 | **989** | ~\$30K | \$2–3 | **当前事实标准** |
+| H200 | 2024 | **141 GB** HBM3e | 989 | ~\$35K | \$3–4 | FLOPS 同 H100，显存 +75% |
+| B100 | 2024 | 192 GB HBM3e | ~1800 | ~\$40K | - | Blackwell 新架构 |
+| **B200** | 2024 | 192 GB | **2250** | ~\$50K | \$4–6 | 当前 SOTA |
+| GB200 (2 GPU + 1 CPU) | 2025 | 384 GB | 5000 | \$80K+ | - | 数据中心顶级 |
 
 **关键算力数字感**：
 - H100 算力 $\approx$ A100 的 **3×**
@@ -631,7 +645,7 @@ step by step 估算（**全参数训练**，bf16 + Adam）：
 
 | 项目 | 占用 | 推导 |
 |---|---|---|
-| 模型权重 (bf16) | 14 GB | $7\text{B} \times 2$ bytes |
+| 模型权重 (bf16) | 14 GB | \$7\text{B} \times 2$ bytes |
 | 梯度 (bf16) | 14 GB | 每个 weight 一个 gradient |
 | Adam 优化器状态 | 28 GB | 一阶矩 + 二阶矩，各 14 GB |
 | Activation memory | 10–30 GB | 取决于 batch size + seq len + gradient checkpointing |
@@ -693,12 +707,12 @@ GRPO（**去掉 value model**）：
 #### 2.9.6 学术研究的最低配置 & 典型配置
 
 **最低配置（学生 / 单人）**：
-- **1× RTX 4090 24GB** （~$1.5K）：跑 7B 推理 + LoRA 微调够用，做不了全参 SFT
-- **1× A100 80GB 云租**（~$1.5/h）：可以做 7B 全参 SFT（慢但可行）+ LoRA RL
+- **1× RTX 4090 24GB** （~\$1.5K）：跑 7B 推理 + LoRA 微调够用，做不了全参 SFT
+- **1× A100 80GB 云租**（~\$1.5/h）：可以做 7B 全参 SFT（慢但可行）+ LoRA RL
 
 **典型学术配置**：
 - **8× A100 80GB 节点**（系组共享 + 学校 cluster）：能做 7B 全参 SFT + GRPO + 13B LoRA
-- **8× H100 80GB 节点**（云租 ~$30/h，或大学 cluster）：能做 7B PPO-RLHF + 13B 全参 + 70B LoRA
+- **8× H100 80GB 节点**（云租 ~\$30/h，或大学 cluster）：能做 7B PPO-RLHF + 13B 全参 + 70B LoRA
 
 **工业研究 / 大厂**：
 - **64× H100 / 128× H100 cluster**：做 70B 训练、长 context、大 RL
@@ -726,13 +740,13 @@ GRPO（**去掉 value model**）：
 
 - 硬件：8× H100 80GB
 - 时长：~2 周
-- GPU-小时：$8 \times 24 \times 14 = 2688$ H100-小时
-- 云成本：$2688 \times \$2.5 = \$6720$ ≈ 5 万 RMB
+- GPU-小时：\$8 \times 24 \times 14 = 2688$ H100-小时
+- 云成本：\$2688 \times \$2.5 = \$6720$ ≈ 5 万 RMB
 
 GRPO 同样规模：
 - 硬件需求降到 2-4× H100
 - 时长：~1 周
-- 云成本：~$1500-2500 ≈ 1-2 万 RMB
+- 云成本：~\$1500-2500 ≈ 1-2 万 RMB
 
 **这就是为什么个人/小团队**用 GRPO + LoRA 在云上租 H100 跑一轮实验是**可行的**（万元级，几天）；而 PPO-RLHF 大规模复现门槛在 **5 万 RMB 起**。
 

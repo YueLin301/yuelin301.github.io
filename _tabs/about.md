@@ -117,7 +117,7 @@ toc: true
 ### Experience
 
 - <span translate="no">**Tencent**</span>  
-  Research Intern @ Lightspeed Studios, Shenzhen (2025.12 - Present)
+  Research Intern @ Lightspeed Studios, Shenzhen (2025.12 - 2026.6)
 - <span translate="no">**The Chinese University of Hong Kong, Shenzhen**</span>  
   Research Assistant @ School of Data Science (2022.2 - 2024.8)  
   Advisors: Prof. Baoxiang Wang & Prof. Hongyuan Zha (Subsequently my Ph.D. Supervisor and Co-Supervisor)
@@ -208,7 +208,7 @@ toc: true
 - <span translate="no">Verbalized Bayesian Persuasion.</span>  
     <span translate="no">Wenhao Li, **Yue Lin**, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span>  
     <span translate="no">*International Conference on Machine Learning (ICML) 2026.*</span>
-    > Regular paper.  
+    > Poster.  
     [[Paper]](https://arxiv.org/abs/2502.01587) 
     <details style="margin-top: -10px;">
     <summary>[Click to check the Abstract]</summary>
@@ -283,7 +283,7 @@ toc: true
 - <span translate="no">Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents.</span>  
     <span translate="no">Shuhui Zhu, **Yue Lin**, Shriya Kaistha, Wenhao Li, Baoxiang Wang, Hongyuan Zha, Gillian K Hadfield, Pascal Poupart.</span>  
     <span translate="no">*International Conference on Machine Learning (ICML) 2026.*</span>
-    > Regular paper.  
+    > Poster.  
     [[Paper]](https://arxiv.org/abs/2602.07777) 
     [[Code]](https://github.com/shuhui-zhu/ALIGN)
     <details style="margin-top: -10px;">
@@ -631,8 +631,26 @@ Teaching Assistant @ The Chinese University of Hong Kong, Shenzhen
     </details>
 </li>
 
+<li>
+    <details>
+    <summary>DC Comics</summary>
+    <ul>
+    <li>Recommended reads:
+        <ul>
+        <li><i>Penguin: Pain &amp; Prejudice</i></li>
+        <li><i>Batman: The Killing Joke</i></li>
+        <li><i>Batman (2016-): I Am Bane</i></li>
+        <li><i>One Bad Day: The Riddler</i></li>
+        <li><i>Batman (2016-): The War of Jokes and Riddles</i></li>
+        <li><i>Joker's Asylum II: The Riddler</i></li>
+        <li><i>Joker</i></li>
+        </ul>
+    </li>
+    </ul>
+    </details>
+</li>
+
 <li>Movies</li>
-<!-- <li>DC Comics</li> -->
 <!-- <li>Ping-Pong</li> -->
 <!-- <li>Psychology</li> -->
 

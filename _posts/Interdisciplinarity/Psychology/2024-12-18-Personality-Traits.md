@@ -308,7 +308,7 @@ Key premises of the lexical perspective (Saucier and Goldberg, 2001):
     - *Emic*: native descriptors found in each language → a “big three” (agreeableness, extraversion, conscientiousness) emerges from a wider range of languages.
     - *Etic*: imports structures via translations of questionnaires → a “big five” tends to emerge in Anglo-Germanic studies.
 - Webb's (1915) pioneering data, when re-analysed, also yields six factors that match present-day schemes (Deary, 1996).
-- Goldberg's team provides public domain items in the **International Personality Item Pool** (http://www.ipip.ori.org/ipip).
+- Goldberg's team provides public domain items in the **International Personality Item Pool** (https://www.ipip.ori.org/ipip).
 
 #### The consensus from questionnaire studies
 

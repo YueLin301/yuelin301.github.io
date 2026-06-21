@@ -1,8 +1,8 @@
 ---
 title: SDS Colloquium 12.26 - Richard Sutton
 date: 2024-12-31 11:00:00 +0800
-categories: [Pastimes, Literature]
-tags: [Life, Pastimes, Literature]
+categories: [Pastimes, Essays]
+tags: [Life, Pastimes, Essays]
 math: True
 # pin: True
 ---

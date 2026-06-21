@@ -2,7 +2,7 @@
     // 这一整块代码如果没被注释，就是显示部分目录，并且是按下面的sort那里排序，如果注释了就是显示全部的目录
     document.addEventListener('DOMContentLoaded', function() {
         // 定义要显示的目录名称列表
-        var displayedCategories = ["Efficiency", "Code Utils", "Literature"];
+        var displayedCategories = ["Efficiency", "Code Utils", "Essays"];
 
         // 隐藏所有目录
         document.querySelectorAll('#lysidebar .category').forEach(function(category) {
@@ -66,7 +66,7 @@
         </a>
     </div>
     <div id="lysidebar_content">
-        {% assign display_order = "Reinforcement Learning\\Multi-Agent Reinforcement Learning\\Machine Learning Basics\\Economics & Game Theory\\Mathematics\\Robotics\\Psychology\\Code Utils\\Misc Toolbox\\Literature\\Entertainment" | split: "\\" %}
+        {% assign display_order = "Reinforcement Learning\\Multi-Agent Reinforcement Learning\\Machine Learning Basics\\Economics & Game Theory\\Mathematics\\Robotics\\Psychology\\Code Utils\\Misc Toolbox\\Essays\\Entertainment" | split: "\\" %}
         {% for category_name in display_order %}
             <!-- {% assign category_posts = site.categories[category_name] %} -->
             <!-- 下面这个是把时间最早的放最前面 -->

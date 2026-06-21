@@ -599,7 +599,32 @@ Teaching Assistant @ The Chinese University of Hong Kong, Shenzhen
 
 ## Hobbies
 
-<ul>
+<style>
+  /* Tame nested-list indentation so it stays reasonable on narrow (mobile) screens */
+  .hobbies-list, .hobbies-list ul { padding-left: 1.4em; }
+</style>
+
+<ul class="hobbies-list">
+<li>
+    <details>
+    <summary>DC Comics</summary>
+    <ul>
+    <li>Recommended reads (ordered by how much I love them):
+        <ul>
+        <li><i>The Riddler: Year One</i></li>
+        <li><i>Penguin: Pain &amp; Prejudice</i></li>
+        <li><i>Batman: The Killing Joke</i></li>
+        <li><i>Batman (2016-): I Am Bane</i></li>
+        <li><i>One Bad Day: The Riddler</i></li>
+        <li><i>Batman (2016-): The War of Jokes and Riddles</i></li>
+        <li><i>Joker's Asylum II: The Riddler</i></li>
+        <li><i>Joker: Killer Smile</i></li>
+        </ul>
+    </li>
+    </ul>
+    </details>
+</li>
+
 <li>
     <details>
     <summary>Video Games</summary>
@@ -627,25 +652,6 @@ Teaching Assistant @ The Chinese University of Hong Kong, Shenzhen
         </ul>
     </li>
     <!-- <li>Among all games, the one that has influenced me the most is **The Stanley Parable.**</li> -->
-    </ul>
-    </details>
-</li>
-
-<li>
-    <details>
-    <summary>DC Comics</summary>
-    <ul>
-    <li>Recommended reads:
-        <ul>
-        <li><i>Penguin: Pain &amp; Prejudice</i></li>
-        <li><i>Batman: The Killing Joke</i></li>
-        <li><i>Batman (2016-): I Am Bane</i></li>
-        <li><i>One Bad Day: The Riddler</i></li>
-        <li><i>Batman (2016-): The War of Jokes and Riddles</i></li>
-        <li><i>Joker's Asylum II: The Riddler</i></li>
-        <li><i>Joker</i></li>
-        </ul>
-    </li>
     </ul>
     </details>
 </li>

@@ -1,8 +1,8 @@
 ---
 title: "Poets Collection"
 date: 2024-05-01 11:00:00 +0800
-categories: [Pastimes, Literature]
-tags: [Life, Pastimes, Literature]
+categories: [Pastimes, Essays]
+tags: [Life, Pastimes, Essays]
 math: True
 ---
 

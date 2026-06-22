@@ -2,7 +2,7 @@
 title: Anxiety Disorders
 date: 2026-06-20 12:30:00 +0800
 categories: [Interdisciplinarity, Psychology]
-tags: [Life, Interdisciplinarity, Psychology]
+tags: [Life, Interdisciplinarity, Psychology, Clinical]
 math: True
 ---
 

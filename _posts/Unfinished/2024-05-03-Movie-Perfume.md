@@ -1,13 +1,16 @@
 ---
 title: "Perfume: The Story of a Murderer"
 date: 2024-05-03 11:00:00 +0800
-categories: [Pastimes, Essays]
+categories: [Uncategorized, Unfinished]
 tags: [Life, Pastimes, Essays, Movie]
 math: True
 # pin: True
 image:
   path: /assets/img/2024-02-09-Movie-Perfume/WechatIMG1.jpg
 ---
+
+> ⚠️ 本文尚在撰写中，内容未完成，后续会继续补充与修订。
+{:.prompt-warning}
 
 ![](../../../assets/img/2024-02-09-Movie-Perfume/WechatIMG2.jpg)
 

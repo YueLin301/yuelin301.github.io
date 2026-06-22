@@ -2,7 +2,7 @@
 title: Id, Ego, and Superego
 date: 2024-08-01 14:40:00 +0800
 categories: [Interdisciplinarity, Psychology]
-tags: [Life, Interdisciplinarity, Psychology]
+tags: [Life, Interdisciplinarity, Psychology, Psychoanalysis]
 math: True
 ---
 

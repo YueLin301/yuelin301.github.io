@@ -2,7 +2,7 @@
 title: Obsessive-Compulsive and Related Disorders
 date: 2026-06-20 13:00:00 +0800
 categories: [Interdisciplinarity, Psychology]
-tags: [Life, Interdisciplinarity, Psychology]
+tags: [Life, Interdisciplinarity, Psychology, Clinical]
 math: True
 ---
 

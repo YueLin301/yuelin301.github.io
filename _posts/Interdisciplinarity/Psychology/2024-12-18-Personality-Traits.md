@@ -2,7 +2,7 @@
 title: Personality Traits
 date: 2024-12-18 12:30:00 +0800 
 categories: [Interdisciplinarity, Psychology]
-tags: [Life, Interdisciplinarity, Psychology, Personality]
+tags: [Life, Interdisciplinarity, Psychology, Personality, Psychometrics]
 math: True
 pin: True
 # image:

@@ -101,5 +101,10 @@
     {% include mode-toggle.html %}
   {% endunless %}
 
+  <!-- GoatCounter (privacy-friendly, cookieless analytics) -->
+  {% if jekyll.environment == 'production' %}
+    <script data-goatcounter="https://yuelin.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  {% endif %}
+
   {% include metadata-hook.html %}
 </head>

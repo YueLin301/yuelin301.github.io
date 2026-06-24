@@ -110,7 +110,7 @@ toc: true
   Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)
     - School of Computer Science and Technology (2019.9 - 2022.6)  
         > GPA:  3.89 / 4 (92.22 / 100); Rank: 1 / 127  
-        [[Certification]]({{site.baseurl}}/posts/Certification-Rank/)
+        [[Certificate]]({{site.baseurl}}/posts/Certificate-Rank/)
     - School of Mechanical Engineering (2018.9 - 2019.6)  
         > GPA:  3.90 / 4 (92.00 / 100); Rank: 1 / 60
 

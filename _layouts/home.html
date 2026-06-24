@@ -261,6 +261,9 @@ panel_includes:
 
 {% include contact_shared.html %}
 
+{% comment %}
+ClustrMaps visitor map disabled on 2026-06. Reason: clustrmaps.com and cdn.clustrmaps.com became unreachable (DNS / CDN outage; the official site stopped resolving). The widget below already loaded asynchronously with an onerror handler and a 2.5s timeout fallback, so the outage never blocked the site. To re-enable if the service returns, just remove the surrounding Liquid comment wrapper (the comment and endcomment lines).
+
 <!-- clustrmap with timeout fallback: hide silently if it doesn't load within 2.5s -->
 <div id="clustrmap-wrapper" style="width: 100%; max-width: 600px; margin: 35px auto 0 auto;"></div>
 <script>
@@ -284,3 +287,4 @@ panel_includes:
     }, 2500);
   })();
 </script>
+{% endcomment %}

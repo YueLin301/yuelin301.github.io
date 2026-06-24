@@ -941,7 +941,7 @@ def coinChange(coins: List[int], amount: int) -> int:
 
 ---
 
-### 一、不同路径（62, Unique Paths）
+### 1. 不同路径（62, Unique Paths）
 
 **题意与直觉**
 
@@ -1040,7 +1040,7 @@ def uniquePaths(m: int, n: int) -> int:
 
 ---
 
-### 二、最长公共子序列（1143, Longest Common Subsequence）
+### 2. 最长公共子序列（1143, Longest Common Subsequence）
 
 **题意与直觉**
 
@@ -1179,7 +1179,7 @@ def longestCommonSubsequence(text1: str, text2: str) -> int:
 
 ---
 
-### 三、编辑距离（72, Edit Distance）
+### 3. 编辑距离（72, Edit Distance）
 
 **题意与直觉**
 
@@ -1340,7 +1340,7 @@ def minDistance(word1: str, word2: str) -> int:
 
 ---
 
-### 四、最长递增子序列（300, Longest Increasing Subsequence）
+### 4. 最长递增子序列（300, Longest Increasing Subsequence）
 
 这道题特殊在：它有两种经典解法，$O(n^2)$ 的标准 DP 好理解，$O(n\log n)$ 的二分解法更快但更巧妙。我们都讲透。
 
@@ -1470,7 +1470,7 @@ def lengthOfLIS(nums: list[int]) -> int:
 
 ---
 
-### 五、0/1 背包 与 分割等和子集（416, Partition Equal Subset Sum）
+### 5. 0/1 背包 与 分割等和子集（416, Partition Equal Subset Sum）
 
 最后压轴的是**背包模型**，它是 DP 里应用最广的一类。我们先把 0/1 背包的标准模型讲清楚，再看它在 LeetCode 416 上的经典变形。
 

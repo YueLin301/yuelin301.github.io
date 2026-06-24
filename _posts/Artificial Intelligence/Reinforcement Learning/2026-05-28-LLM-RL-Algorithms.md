@@ -20,7 +20,7 @@ math: True
 > 全部带 formulation、数学推导和"为什么这么设计"的逻辑。
 
 ---
-## 三、LLM 进入 RL 之前：为什么 LLM 突然需要 RL？
+## 3. LLM 进入 RL 之前：为什么 LLM 突然需要 RL？
 
 ### 3.1 LLM 的三阶段简史（pre-RL）
 
@@ -199,7 +199,7 @@ Stage 3: Reinforcement Learning (PPO)
 
 ---
 
-## 四、RLHF 三阶段：完整数学推导
+## 4. RLHF 三阶段：完整数学推导
 
 > **RLHF = Reinforcement Learning from Human Feedback（基于人类反馈的强化学习）**；本章三阶段涉及 **SFT = Supervised Fine-Tuning（有监督微调）**、**RM = Reward Model（奖励模型）**、**PPO = Proximal Policy Optimization（近端策略优化）**。
 
@@ -1027,7 +1027,7 @@ for each iteration:
 
 ---
 
-## 五、RLHF 之后的进化：DPO 革命
+## 5. RLHF 之后的进化：DPO 革命
 
 > **DPO = Direct Preference Optimization（直接偏好优化）**，Rafailov et al. 2023。
 
@@ -1270,7 +1270,7 @@ DPO 极大降低了 LLM alignment 的成本，是 2023-2024 alignment 圈最重�
 
 ---
 
-## 六、推理时代：GRPO 与 R1-Zero
+## 6. 推理时代：GRPO 与 R1-Zero
 
 > **GRPO = Group Relative Policy Optimization（组相对策略优化）**，Shao et al. 2024（DeepSeekMath）。
 
@@ -1621,7 +1621,7 @@ GRPO + RLVR 现在是 **reasoning-focused LLM** 的事实标准。
 
 ---
 
-## 七、其他 LLM RL 算法（家族补全）
+## 7. 其他 LLM RL 算法（家族补全）
 
 ### 7.1 RLOO (REINFORCE Leave-One-Out) — 详细推导
 
@@ -2104,7 +2104,7 @@ Benchmark + 失败分类法（**不是算法**）：多 director agent 各持 3D
 
 ---
 
-## 八、奖励信号来源的分类（独立于算法）
+## 8. 奖励信号来源的分类（独立于算法）
 
 任何 LLM RL 算法都可以配上以下三类奖励之一：
 
@@ -2140,7 +2140,7 @@ PRM 更细但训练贵（需要 step-level label）。R1 实证表明 **ORM + GR
 
 ---
 
-## 九、多智能体与自博弈方向
+## 9. 多智能体与自博弈方向
 
 ### 9.1 Constitutional AI（Anthropic 2022）
 用一组 written principles 让 LLM **self-critique** + **self-revise**，然后再用 RLAIF 训。是一种"内嵌 critic"的设置。
@@ -2163,7 +2163,7 @@ PRM 更细但训练贵（需要 step-level label）。R1 实证表明 **ORM + GR
 
 ---
 
-## 十、一句话总结
+## 10. 一句话总结
 
 > **整个 RL → RLHF → LLM RL 的进化是同一件事在不同层次的展开**：
 > 1. 经典 RL 解决"如何在 MDP 里做序列决策"，核心是 policy gradient theorem

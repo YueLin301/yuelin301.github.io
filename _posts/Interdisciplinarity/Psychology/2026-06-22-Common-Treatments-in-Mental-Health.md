@@ -182,7 +182,7 @@ tags: [Life, Interdisciplinarity, Psychology, Clinical]
 > 本节为科普整理，不替代专业诊治。所有躯体／神经调控治疗均须由精神科及相关专科评估与实施；用药（含氯胺酮／艾司氯胺酮）须严格遵医嘱，不可自行尝试。
 {:.prompt-warning}
 
-### 一、躯体与神经调控治疗（somatic & neuromodulation）
+### 1. 躯体与神经调控治疗（somatic & neuromodulation）
 
 这一类的共同点是“不靠（或不只靠）口服药物起效，而是通过电、磁、外科电极或特定物理刺激直接调节脑活动”。定位上，越往后越是“留给前面手段失败之后”的选项。
 
@@ -230,7 +230,7 @@ tags: [Life, Interdisciplinarity, Psychology, Clinical]
 | 光疗 Light Therapy | 定时暴露强光以调节昼夜节律 | 季节性情感障碍 SAD | 对季节性抑郁循证好、低成本可自助配合 |
 | 氯胺酮／艾司氯胺酮 | NMDA 系统药物，亚麻醉剂量快速抗抑郁 | 难治抑郁、伴急性自杀意念 | 快速起效，须监护，作用短、有滥用风险 |
 
-### 二、基础与辅助手段（foundational & adjunctive）
+### 2. 基础与辅助手段（foundational & adjunctive）
 
 这一类不直接“干预脑”，门槛低、风险小，几乎是所有方案都应叠加的底盘。它们提升依从性、巩固疗效、降低复发，单用通常适合轻度问题，与药物／心理治疗联用则普遍有益。
 

@@ -190,6 +190,7 @@ exclude:
   - rollup.config.js
   - node_modules
   - package*.json
+  - buffer
 
 jekyll-archives:
   enabled: [categories, tags]

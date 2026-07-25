@@ -11,4 +11,59 @@ redirect_from:
 
 {% include lang.html %}
 
-<p class="lead">{{ site.data.locales[lang].not_found.statment }}</p>
+<style>
+  /* Keep Chirpy's page chrome (sidebar); hide the plain title in favor of the card below. */
+  #core-wrapper .dynamic-title { display: none; }
+
+  .nf { display: flex; justify-content: center; padding: 0.5rem 0 2.5rem; }
+  .nf-card {
+    max-width: 30rem;
+    width: 100%;
+    text-align: center;
+    background: var(--card-bg, #fff);
+    border: 1px solid rgba(128, 128, 128, 0.18);
+    border-radius: 14px;
+    box-shadow: var(--card-shadow, 0 8px 30px rgba(20, 20, 40, 0.08));
+    padding: 2.6rem 2rem;
+  }
+  .nf-code {
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #2a408e;
+  }
+  .nf-title { font-size: 1.25rem; font-weight: 700; margin: 0.7rem 0 0.4rem; color: inherit; }
+  .nf-msg { color: inherit; opacity: 0.72; margin: 0 auto 1.5rem; max-width: 24rem; }
+  .nf-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
+  .nf-btn {
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 0.55rem 1.15rem;
+    border-radius: 9px;
+    border: 1px solid #2a408e;
+    transition: transform 0.08s ease, opacity 0.15s ease;
+  }
+  .nf-btn:hover { transform: translateY(-1px); opacity: 0.92; text-decoration: none; }
+  .nf-btn-primary { background: #2a408e; color: #fff; }
+  .nf-btn-ghost { background: transparent; color: #2a408e; }
+
+  html[data-mode='dark'] .nf-code { color: #6f9aec; }
+  html[data-mode='dark'] .nf-btn { border-color: #6f9aec; }
+  html[data-mode='dark'] .nf-btn-primary { background: #6f9aec; color: #10131c; }
+  html[data-mode='dark'] .nf-btn-ghost { color: #6f9aec; }
+</style>
+
+<div class="nf">
+  <div class="nf-card">
+    <div class="nf-code">404</div>
+    <div class="nf-title">Page not found</div>
+    <p class="nf-msg">{{ site.data.locales[lang].not_found.statment | default: "The page you are looking for does not exist, or may have moved." }}</p>
+    <div class="nf-actions">
+      <a class="nf-btn nf-btn-primary" href="{{ '/' | relative_url }}">Home</a>
+      <a class="nf-btn nf-btn-ghost" href="{{ '/about/' | relative_url }}">About</a>
+      <a class="nf-btn nf-btn-ghost" href="{{ '/about_me/' | relative_url }}">Profile</a>
+    </div>
+  </div>
+</div>

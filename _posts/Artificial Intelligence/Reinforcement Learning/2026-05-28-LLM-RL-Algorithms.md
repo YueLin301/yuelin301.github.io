@@ -30,23 +30,23 @@ math: True
 
 | 符号 | 含义 | 注意 |
 |---|---|---|
-| $u = (u_1, \ldots, u_{\lvert u \rvert})$ | **无结构文本文档**（pretraining 的训练样本，整段不分 prompt/response） | 只在 §2.1 pretraining 出现 |
-| $x = (x_1, \ldots, x_{\lvert x \rvert})$ | **prompt**（指令 / 问题），token 序列 | SFT 起所有后续阶段都是这个含义 |
-| $y = (y_1, \ldots, y_{\lvert y \rvert})$ | **response**（回答），token 序列 | SFT / RLHF / GRPO / RLOO 都用这个 |
-| $y_t$ | $y$ 的第 $t$ 个 token | 标量 token |
-| $y_{<t}$ | $y$ 的前 $t-1$ 个 token 前缀 | 用作 conditioning |
-| $\pi_\theta(y \mid x)$ | 模型在 prompt $x$ 下生成完整 response $y$ 的联合概率 | 由 chain rule $\prod_t \pi_\theta(y_t \mid x, y_{<t})$ 得到 |
-| $\pi_\theta(\cdot \mid x)$ | 模型在 $x$ 下的整段 response 分布（采样符号 $y \sim \pi_\theta(\cdot \mid x)$） | |
+| $u = (u\_1, \ldots, u\_{\lvert u \rvert})$ | **无结构文本文档**（pretraining 的训练样本，整段不分 prompt/response） | 只在 §2.1 pretraining 出现 |
+| $x = (x\_1, \ldots, x\_{\lvert x \rvert})$ | **prompt**（指令 / 问题），token 序列 | SFT 起所有后续阶段都是这个含义 |
+| $y = (y\_1, \ldots, y\_{\lvert y \rvert})$ | **response**（回答），token 序列 | SFT / RLHF / GRPO / RLOO 都用这个 |
+| $y\_t$ | $y$ 的第 $t$ 个 token | 标量 token |
+| $y\_{<t}$ | $y$ 的前 $t-1$ 个 token 前缀 | 用作 conditioning |
+| $\pi\_\theta(y \mid x)$ | 模型在 prompt $x$ 下生成完整 response $y$ 的联合概率 | 由 chain rule $\prod\_t \pi\_\theta(y\_t \mid x, y\_{<t})$ 得到 |
+| $\pi\_\theta(\cdot \mid x)$ | 模型在 $x$ 下的整段 response 分布（采样符号 $y \sim \pi\_\theta(\cdot \mid x)$） | |
 | $\beta$ | KL 正则系数 / temperature | 不同算法用法略不同（PPO-RLHF / DPO / GRPO 各自有 $\beta$） |
-| $r(x, y)$ 或 $r_\phi(x, y)$ | reward（task reward 或 RM 分数） | 上下文区分 |
+| $r(x, y)$ 或 $r\_\phi(x, y)$ | reward（task reward 或 RM 分数） | 上下文区分 |
 | $\mathrm{sigm}(z) = 1/(1+e^{-z})$ | **sigmoid（logistic）函数** | 出现在 BT 模型 / DPO loss 中。**本文不用 $\sigma$ 表示 sigmoid**（很多 ML 论文这么用），因为 $\sigma$ 在统计学里是标准差的标准记号，两个含义分用不同符号避免歧义。 |
-| $\sigma, \sigma^2, \sigma_i$ | **标准差 / 方差** | 仅出现在 §6.1+ 的 variance 分析 / normalization 上下文（与统计学传统一致） |
-| $V$, $\lvert V \rvert$ | **词表 (vocabulary)** 与其大小 | $V$ = token 词表集合，$\lvert V \rvert$ = 词表 size（Llama 系约 32k–128k，Qwen 系约 150k）。LLM 输出 LM head 是 $d_{\text{hidden}} \to \lvert V \rvert$ 的 linear，给每个 token 一个 logit |
-| $d_{\text{hidden}}$ | **transformer 隐藏维度** | 每层 hidden state 的维数（GPT-2-XL 1600 / Llama-7B 4096 / Llama-70B 8192 等）。LM head / value head 的输入维度 |
+| $\sigma, \sigma^2, \sigma\_i$ | **标准差 / 方差** | 仅出现在 §6.1+ 的 variance 分析 / normalization 上下文（与统计学传统一致） |
+| $V$, $\lvert V \rvert$ | **词表 (vocabulary)** 与其大小 | $V$ = token 词表集合，$\lvert V \rvert$ = 词表 size（Llama 系约 32k–128k，Qwen 系约 150k）。LLM 输出 LM head 是 $d\_{\text{hidden}} \to \lvert V \rvert$ 的 linear，给每个 token 一个 logit |
+| $d\_{\text{hidden}}$ | **transformer 隐藏维度** | 每层 hidden state 的维数（GPT-2-XL 1600 / Llama-7B 4096 / Llama-70B 8192 等）。LM head / value head 的输入维度 |
 
 **重要：避免一个常见 LLM 文献记号陷阱**，很多论文用同一个 $x$ 同时指"pretraining 中的整段文本"和"SFT 中的 prompt"。这两件事**结构上不同**（一个是完整文档，一个只是输入部分）。本文用**不同字母** $u$ 和 $x$ **显式区分**，避免混淆。
 
-GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sampled response，$\pi_i$ for agent $i$'s policy 等），在引入处现场定义。
+GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sampled response，$\pi\_i$ for agent $i$'s policy 等），在引入处现场定义。
 
 ---
 
@@ -54,20 +54,20 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 
 - 目标：next-token prediction，最大化下一个 token 的对数似然
   $$
-  \mathcal{L}\_{\text{pretrain}}(\theta) \;=\; -\sum\_{u \in \mathcal{D}\_{\text{pretrain}}} \sum\_{t=1}^{|u|} \log \pi\_\theta(u\_t \mid u\_{<t})
+  \mathcal{L}_{\text{pretrain}}(\theta) \;=\; -\sum_{u \in \mathcal{D}_{\text{pretrain}}} \sum_{t=1}^{|u|} \log \pi_\theta(u_t \mid u_{<t})
   $$
-  其中 $u$ 是一个**完整的无结构文本文档**（一整篇文章 / 一段代码 / 一个网页），$u_t$ 是它的第 $t$ 个 token，$u_{<t}$ 是它的前 $t-1$ 个 token 前缀。
-- 数据：海量互联网文本（CommonCrawl, Wikipedia, GitHub, ...），\$10^{12}$–\$10^{13}$ tokens
+  其中 $u$ 是一个**完整的无结构文本文档**（一整篇文章 / 一段代码 / 一个网页），$u\_t$ 是它的第 $t$ 个 token，$u\_{<t}$ 是它的前 $t-1$ 个 token 前缀。
+- 数据：海量互联网文本（CommonCrawl, Wikipedia, GitHub, ...），$10^{12}$–$10^{13}$ tokens
 - 代表模型：GPT-2, GPT-3, LLaMA-base, ...
 - 结果：模型学到了语言的"统计共现规律"，**会续写**，但**不会按指令做事**。给它 `"What is 2+2?"`，它可能续写 `"What is 2+2? What is 3+3? What is..."` 而不是回答 4。
 
 **阶段 B：有监督微调 (SFT, Supervised Fine-Tuning)**
 - 目标：在人写的 (prompt, response) 对上继续 MLE
   $$
-  \mathcal{L}\_{\text{SFT}}(\theta) \;=\; -\mathbb{E}\_{(x, y) \sim \mathcal{D}\_{\text{SFT}}}\!\left[\log \pi\_\theta(y \mid x)\right]
+  \mathcal{L}_{\text{SFT}}(\theta) \;=\; -\mathbb{E}_{(x, y) \sim \mathcal{D}_{\text{SFT}}}\!\left[\log \pi_\theta(y \mid x)\right]
   $$
-  其中 $x$ 是 **prompt**（问题），$y$ 是对应的 **response**（回答）；$\pi_\theta(y \mid x)$ 是模型生成 $y$ 的整体序列概率，按 chain rule 拆为 $\pi_\theta(y \mid x) = \prod_{t=1}^{\lvert y \rvert} \pi_\theta(y_t \mid x, y_{<t})$。
-- 数据：人工写的高质量 (问题, 答案) 配对（FLAN, T0, Alpaca, ShareGPT 风格），\$10^4$–\$10^6$ 对
+  其中 $x$ 是 **prompt**（问题），$y$ 是对应的 **response**（回答）；$\pi\_\theta(y \mid x)$ 是模型生成 $y$ 的整体序列概率，按 chain rule 拆为 $\pi\_\theta(y \mid x) = \prod\_{t=1}^{\lvert y \rvert} \pi\_\theta(y\_t \mid x, y\_{<t})$。
+- 数据：人工写的高质量 (问题, 答案) 配对（FLAN, T0, Alpaca, ShareGPT 风格），$10^4$–$10^6$ 对
 - 结果：模型学会"听指令格式回答"，但**未必懂偏好**。
 
 > **🤔 SFT 和 Pretraining 的区别**
@@ -75,10 +75,10 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > 两个 loss 都是 next-token cross-entropy / NLL，长得很像。先把公式拆到 token 级放一起对比，再列差别。
 >
 > **Pretraining**：
-> $$\mathcal{L}\_{\text{pretrain}}(\theta) \;=\; -\sum\_{u \in \mathcal{D}\_{\text{pretrain}}} \sum\_{t=1}^{|u|} \log \pi\_\theta(u\_t \mid u\_{<t})$$
+> $$\mathcal{L}_{\text{pretrain}}(\theta) \;=\; -\sum_{u \in \mathcal{D}_{\text{pretrain}}} \sum_{t=1}^{|u|} \log \pi_\theta(u_t \mid u_{<t})$$
 >
-> **SFT**（用 chain rule 展开 $\log \pi_\theta(y \mid x) = \sum_{t=1}^{\lvert y \rvert} \log \pi_\theta(y_t \mid x, y_{<t})$）：
-> $$\mathcal{L}\_{\text{SFT}}(\theta) \;=\; -\mathbb{E}\_{(x, y) \sim \mathcal{D}\_{\text{SFT}}}\!\left[\sum\_{t=1}^{|y|} \log \pi\_\theta(y\_t \mid x, y\_{<t})\right]$$
+> **SFT**（用 chain rule 展开 $\log \pi\_\theta(y \mid x) = \sum\_{t=1}^{\lvert y \rvert} \log \pi\_\theta(y\_t \mid x, y\_{<t})$）：
+> $$\mathcal{L}_{\text{SFT}}(\theta) \;=\; -\mathbb{E}_{(x, y) \sim \mathcal{D}_{\text{SFT}}}\!\left[\sum_{t=1}^{|y|} \log \pi_\theta(y_t \mid x, y_{<t})\right]$$
 >
 > 两者都是 next-token NLL（**这是相似的部分**），但有几处具体差别，分**公式层面**和**公式之外**两类。
 >
@@ -88,7 +88,7 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > |---|---|---|
 > | 求和对象 | 数据集中每个文档 $u$ | 数据集中每个 (prompt, response) 对 $(x, y)$ |
 > | 求和 token 范围 | 文档全部 $\lvert u \rvert$ 个 token（**每个位置都进 loss**） | 仅 response 的 $\lvert y \rvert$ 个 token（**prompt token 不进 loss**） |
-> | 每个被预测 token 的 context | 同一文档自己的前缀 $u_{<t}$ | prompt $x$ + response 已生成前缀 $y_{<t}$ |
+> | 每个被预测 token 的 context | 同一文档自己的前缀 $u\_{<t}$ | prompt $x$ + response 已生成前缀 $y\_{<t}$ |
 >
 > 这就是 **loss masking**：SFT 把 prompt 部分 token 的 loss mask 为 0。具体例子：训练样本
 > ```
@@ -106,9 +106,9 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > | | Pretraining | SFT |
 > |---|---|---|
 > | 数据形态 | 无结构 raw text 流 | 结构化 (prompt, response) 对 |
-> | 数据量 | \$10^{12}$–\$10^{13}$ tokens（TB 级） | \$10^4$–\$10^6$ 对（MB-GB 级） |
+> | 数据量 | $10^{12}$–$10^{13}$ tokens（TB 级） | $10^4$–$10^6$ 对（MB-GB 级） |
 > | 数据来源 | 网络抓取（CommonCrawl, GitHub, Wikipedia） | 人工标注或精心 curated（FLAN, Alpaca, ShareGPT chat template） |
-> | 训练成本 | $\sim 10^6$ GPU-小时（H100 计） | $\sim 10$–\$10^3$ GPU-小时 |
+> | 训练成本 | $\sim 10^6$ GPU-小时（H100 计） | $\sim 10$–$10^3$ GPU-小时 |
 >
 > SFT 数据量比 pretraining 小 **6–9 个数量级**。这决定了 SFT 的角色不是"教模型新语言"，而是"调整输出分布"。
 >
@@ -117,8 +117,8 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > > **定义**：1 GPU-小时 = 1 张 GPU 工作 1 小时的算力消耗。它**不是**单卡训完的实际墙钟时间，而是**总算力 = GPU 数 × 工作小时数**。
 > >
 > > 例子：
-> > - 8 张 H100 跑 10 小时 = \$8 \times 10 = 80$ GPU-小时
-> > - 1024 张 H100 跑 1 个月 (720 小时) = \$1024 \times 720 \approx 7.4 \times 10^5$ GPU-小时
+> > - 8 张 H100 跑 10 小时 = $8 \times 10 = 80$ GPU-小时
+> > - 1024 张 H100 跑 1 个月 (720 小时) = $1024 \times 720 \approx 7.4 \times 10^5$ GPU-小时
 > >
 > > **GPU 型号决定每 GPU-小时能算多少 FLOPs**。同样是 1 GPU-小时，不同卡的算力差几十倍：
 > >
@@ -134,13 +134,13 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > > 所以引用"GPU-小时"数字时**必须说清是什么卡**，否则差几十倍。本文如无特别说明，**默认按 H100 bf16 算**。
 > >
 > > **粗略量级感**：
-> > - 训 Llama-2-7B from scratch：$\approx 1.8 \times 10^5$ A100-小时（论文报告）≈ \$5.6 \times 10^4$ H100-小时
+> > - 训 Llama-2-7B from scratch：$\approx 1.8 \times 10^5$ A100-小时（论文报告）≈ $5.6 \times 10^4$ H100-小时
 > > - 训 Llama-3-70B from scratch：$\approx 6.4 \times 10^6$ H100-小时
 > > - 训 GPT-4 (估计)：$\geq 5 \times 10^7$ A100-小时
-> > - 7B 模型 SFT 一轮（10 万样本）：$\sim 50$–\$200$ H100-小时
-> > - 7B 模型 RLHF (PPO) 一轮：$\sim 500$–\$2000$ H100-小时（比 SFT 贵 10× 主要因为 4 个模型同时活）
+> > - 7B 模型 SFT 一轮（10 万样本）：$\sim 50$–$200$ H100-小时
+> > - 7B 模型 RLHF (PPO) 一轮：$\sim 500$–$2000$ H100-小时（比 SFT 贵 10× 主要因为 4 个模型同时活）
 > >
-> > 这就是为什么 pretraining 是 big-tech-only（千万美元到上亿美元 GPU 成本，每张 H100 \$2-3/小时 $\times 10^6$ 小时），而 SFT/RLHF 学术实验室也做得起（几万到几十万美元）。
+> > 这就是为什么 pretraining 是 big-tech-only（千万美元到上亿美元 GPU 成本：每张 H100 每小时 2-3 美元，乘以 $10^6$ 量级的 GPU-小时），而 SFT/RLHF 学术实验室也做得起（几万到几十万美元）。
 >
 > **差别 3（公式之外，起点 + 优化幅度）**
 >
@@ -149,7 +149,7 @@ GRPO / 多智能体等后续章节会引入更多符号（$y^i$ for group-sample
 > | 模型初始化 | 随机初始化（或从 earlier checkpoint） | **从 pretrained checkpoint 继续** |
 > | 学到什么 | 语言统计规律 $p(\text{text})$ | 指令-回答格式 $p(\text{response} \mid \text{prompt})$ |
 > | 输出行为 | 续写：给一段就接着写 | 应答：给问题就回答 |
-> | 学习率 | 大（$\sim 10^{-4}$） | 小（$\sim 10^{-5}$ 到 \$10^{-6}$） |
+> | 学习率 | 大（$\sim 10^{-4}$） | 小（$\sim 10^{-5}$ 到 $10^{-6}$） |
 >
 > SFT 用**小学习率 + 少量数据 + loss mask** 把 pretrained model 的输出分布**轻微 reshape 到指令格式**，又不能让它忘掉 pretraining 学到的语言能力，这就是 catastrophic forgetting 在 LLM training 里的具体表现。
 >
@@ -212,7 +212,7 @@ $$
 展开成 token 级：
 
 $$
-\log \pi_\theta(y \mid x) \;=\; \sum_{t=1}^{T} \log \pi_\theta(y_t \mid x, y_{<t})
+\log \pi_\theta(y \mid x) \;=\; \sum_{t=1}^{\lvert y \rvert} \log \pi_\theta(y_t \mid x, y_{<t})
 $$
 
 完了。这是标准的 teacher forcing。$\pi\_\theta$ 从 pretrained base model 初始化，fine-tune 后得到 $\pi\_{\text{SFT}}$。**$\pi\_{\text{SFT}}$ 后面会作为 Stage 3 的 reference policy**。
@@ -372,7 +372,7 @@ $$
 
 | MDP 要素 | LLM RLHF 里对应什么 | 备注 |
 |---|---|---|
-| **状态** $s\_t$ | $(x, y\_{<t})$：prompt + 已生成的 token 前缀 | 初始状态 $s\_0 = x$；状态包含完整历史，Markov 性成立 |
+| **状态** $s\_t$ | $(x, y\_{<t})$：prompt + 已生成的 token 前缀 | 初始状态 $s\_1 = (x, \varnothing) = x$；状态包含完整历史，Markov 性成立 |
 | **动作** $a\_t$ | 下一个 token $y\_t \in V$（从词表中选一个） | 动作空间 $\mathcal{A} = V$，大小 $\lvert V \rvert \approx 10^5$ |
 | **转移** $P(s\_{t+1} \mid s\_t, a\_t)$ | **确定性**：把 $a\_t$ 拼到序列尾部，$s\_{t+1} = (x, y\_{<t}, a\_t) = (x, y\_{\leq t})$ | **无环境随机性**，唯一的随机性来自策略本身 |
 | **奖励** $r(s\_t, a\_t)$ | 中间步: $r\_t = 0$；终止步 $T$（采到 EOS 或截断）: $r\_T = r\_\phi(x, y)$ | **稀疏终端 reward**：只有完整 response 写完才有 RM 评分 |
@@ -391,7 +391,7 @@ $$
 把 §1.1 的经典 RL 目标搬过来：
 
 $$
-J_{\text{RL}}(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\Big[\sum_{t=0}^{T} \gamma^t r(s_t, a_t)\Big]
+J_{\text{RL}}(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\Big[\sum_{t=1}^{T} \gamma^{t-1} r(s_t, a_t)\Big]
 $$
 
 在上面定义的 LLM-MDP 里（$\gamma=1$，只有终端 reward），这个目标退化为：
@@ -560,7 +560,7 @@ $$
 
 这是经典 trick：**state augmentation**。POMDP → MDP via belief state 也是同一个思想（把"看不见的隐状态信念"塞进状态）。代价是状态空间随 $t$ 指数增长（每步多 $\lvert V \rvert$ 种可能），但 RL 推导仍然合法。
 
-LLM-MDP 本质上是一个 **tree-structured MDP**：从 $s\_0 = x$ 出发，每个 action 让 state 走向树的一个新分支，因为转移确定，每条 trajectory 走树上一条独立路径，**不同 trajectory 永远不汇合**。
+LLM-MDP 本质上是一个 **tree-structured MDP**：从 $s\_1 = x$ 出发，每个 action 让 state 走向树的一个新分支，因为转移确定，每条 trajectory 走树上一条独立路径，**不同 trajectory 永远不汇合**。
 
 > **🔖 提醒：$\tilde r$ 含 $\theta$，但下面当 scalar 处理**。$\tilde r(x, y) = r\_\phi(x, y) - \beta \log \frac{\pi\_\theta(y\mid x)}{\pi\_{\text{SFT}}(y\mid x)}$ 形式上含 $\log \pi\_\theta$，严格说依赖 $\theta$。但 (2) 已经证明：直接对 $J = \mathbb{E}\_{y \sim \pi\_\theta}[\tilde r(x, y; \theta)]$ 求导时，"$\theta$ 在 $\tilde r$ 里"那一项等于 $-\beta \mathbb{E}\_{y \sim \pi\_\theta}[\nabla \log \pi\_\theta] = 0$（score function 零均值，即 (2) 里 KL 推导的 Step 3a）。所以最终 policy gradient 里 $\tilde r$ 就是个 scalar，下面对它不再求 $\theta$ 梯度。
 
@@ -850,8 +850,8 @@ $$
 > | **state 分布** | $d^{\pi\_\theta} \rightsquigarrow d^{\pi\_{\text{old}}}$ 直接替换 | ❌ 近似（第二步） |
 >
 > **为什么 state 分布不也做一次 IS 来修正？** 因为 state-visitation ratio $\frac{d^{\pi\_\theta}(s)}{d^{\pi\_{\text{old}}}(s)}$ **算不出来**。action ratio $\frac{\pi\_\theta(a\mid s)}{\pi\_{\text{old}}(a\mid s)}$ 能算，因为两个策略对给定 $(s,a)$ 直接吐概率；但
-> $$d^{\pi}(s) = (1-\gamma)\sum_{t=0}^\infty \gamma^t \Pr(s_t = s \mid \pi)$$
-> 依赖**整条轨迹**：初始分布 + 环境转移 $P(s'\mid s,a)$ + 策略在到达 $s$ 之前每一步的所有选择。要算这个 ratio 得对所有到达 $s$ 的路径积分、还要知道 dynamics model，实际中**无法逐点计算**，只能丢掉这个修正项。
+> $$d^{\pi}(s) = \sum_{t=0}^\infty \gamma^t \Pr(s_t = s \mid \pi)$$
+> （未归一化的 discounted visitation，即 TRPO 原文的 $\rho^\pi$，$\mathbb{E}\_{s \sim d^\pi}$ 沿用其记号习惯）依赖**整条轨迹**：初始分布 + 环境转移 $P(s'\mid s,a)$ + 策略在到达 $s$ 之前每一步的所有选择。要算这个 ratio 得对所有到达 $s$ 的路径积分、还要知道 dynamics model，实际中**无法逐点计算**，只能丢掉这个修正项。
 >
 > **所以 surrogate 的全部近似来自"偷换 state 分布"这一层**，而那一层没法 IS 修正。$\pi\_\theta$ 离 $\pi\_{\text{old}}$ 越近，$d^{\pi\_\theta} \approx d^{\pi\_{\text{old}}}$ 越准，近似误差越小。这正是下面 KL 约束的根本动机。
 >
@@ -972,10 +972,10 @@ $$
 $$
 
 $$
-A_t^{\text{GAE}(\lambda)} \;=\; \sum_{l=0}^{T-t-1} (\gamma \lambda)^l\, \delta_{t+l}
+A_t^{\text{GAE}(\lambda)} \;=\; \sum_{l=0}^{T-t} (\gamma \lambda)^l\, \delta_{t+l}, \qquad V_\psi(s_{T+1}) := 0
 $$
 
-其中 $V\_\psi$ 是一个**单独训练的 value model**（通常 transformer 主干 + linear head）。$\lambda$ 平衡偏差和方差，$\gamma$ 通常 $\approx 1$。
+其中 $V\_\psi$ 是一个**单独训练的 value model**（通常 transformer 主干 + linear head）。$\lambda$ 平衡偏差和方差，$\gamma$ 通常 $\approx 1$。按本文 token 从 $t=1$ 数到 $T$ 的约定，求和上限是 $T-t$：最后一项 $\delta\_T$ 恰好携带 RM 分数 $r\_\phi(x,y)$；终端之后没有 bootstrap，故约定 $V\_\psi(s\_{T+1}) := 0$。
 
 **PPO clip loss**（per-token）：
 
@@ -1048,7 +1048,7 @@ PPO-RLHF 痛点：
 从 RLHF Stage 3 的 KL-regularized 目标出发：
 
 $$
-\max_\pi\ \mathbb{E}_{x, y \sim \pi}\!\left[r(x, y)\right]
+\max_\pi\ \mathbb{E}_{x \sim \mathcal{D},\ y \sim \pi(\cdot|x)}\!\left[r(x, y)\right]
 \;-\; \beta\, \mathrm{KL}(\pi \| \pi_{\text{ref}})
 $$
 
@@ -1059,7 +1059,7 @@ $$
 \mathrm{KL}(\pi \| \pi_{\text{ref}}) = \mathbb{E}_{y \sim \pi}\!\left[\log\frac{\pi(y|x)}{\pi_{\text{ref}}(y|x)}\right]
 $$
 
-整个目标可写为：
+这个目标对每个 $x$ 独立成立（KL 也按 $x$ 逐点取），固定一个 $x$ 后可写为：
 
 $$
 \max_\pi\ J(\pi) \;:=\; \sum_y \pi(y \mid x)\left[r(x, y) - \beta \log\frac{\pi(y|x)}{\pi_{\text{ref}}(y|x)}\right]
@@ -1335,7 +1335,7 @@ $$
 > | **baseline 怎么来** | 学一个 value model $V\_\psi(s\_t)$ | 同一个 prompt 采 $G$ 条，用 **group 内 reward 均值**当 baseline | **干掉 value model**（少一个和 policy 同样大的网络 + 它的训练不稳定） |
 > | **advantage 粒度** | per-token（GAE） | **per-sequence**（整条 $y$ 一个 $A$） | 不需要 token-level value，配合上面一条 |
 > | **advantage 归一化** | 减 baseline | 减 group 均值后**再除 group 标准差** | 跨 prompt 尺度统一，训练更稳 |
-> | **KL 怎么加** | 塞进 per-token reward | **直接作为 loss 加项** | sequence-level 没有 token reward 容器，只能这么加 |
+> | **KL 怎么加** | 塞进 per-token reward | **直接作为 loss 加项**（逐 token 的 K3 估计） | 不把 KL 混进 reward，信号更干净 |
 >
 > surrogate + clip（复用 rollout）、importance ratio、KL-to-ref，这些**全部照搬 PPO**，没动。
 >
@@ -1370,7 +1370,7 @@ $$
 J(\theta) \;=\; \mathbb{E}_{x \sim \mathcal{D},\ y \sim \pi_\theta(\cdot|x)}\!\left[r(x, y)\right] \;-\; \beta\, \mathbb{E}_{x}\!\left[\mathrm{KL}(\pi_\theta \,\|\, \pi_{\text{ref}})\right]
 $$
 
-不同之处在**视角**：GRPO 把 $y$ 当作 **atomic action**（sequence-level），不去管 token-level transition。这意味着 advantage、importance ratio 都是 per-sequence 的。
+不同之处在**视角**：GRPO 把 $y$ 当作 **atomic action**（sequence-level），不去管 token-level transition。这意味着 advantage 是 per-sequence 的：整条 $y$ 共享一个标量 $A^i$。（importance ratio 在原文公式里仍是 per-token 的：优势广播之后逐 token 校正、逐 token clip，见 6.2.7。）
 
 #### 6.2.3 Step 1：对目标求梯度
 
@@ -1416,7 +1416,7 @@ $$
 \mathbb{E}_{y \sim \pi_\theta}\!\left[b(x) \cdot \nabla_\theta \log \pi_\theta(y|x)\right] \;=\; b(x) \cdot \nabla_\theta\, \mathbb{E}_{y \sim \pi_\theta}\!\left[1\right] \;=\; b(x) \cdot \nabla_\theta\, 1 \;=\; 0
 $$
 
-**最优 baseline 是条件 reward 期望**：$b^\ast(x) = V^\ast(x) := \mathbb{E}\_{y \sim \pi\_\theta}[r(x, y)]$。PPO-RLHF 训一个神经网络 $V\_\psi(x)$ 来估这个东西，这就是要被去掉的 value model。
+**（近似）最优的 baseline 是条件 reward 期望**：$b^\ast(x) = V^\ast(x) := \mathbb{E}\_{y \sim \pi\_\theta}[r(x, y)]$（严格方差最优解是按 $\lVert\nabla\_\theta \log \pi\_\theta\rVert^2$ 加权的 reward 期望，Greensmith et al. 2004；实践一律用这个标准近似）。PPO-RLHF 训一个神经网络 $V\_\psi(x)$ 来估这个东西，这就是要被去掉的 value model。
 
 #### 6.2.5 Step 3：用 Monte Carlo 估计 $V^\ast$（group sampling 的本质）
 
@@ -1465,7 +1465,7 @@ $$
 
 注意 std 也用了 $r^i$ 自身，再引入一点 bias，但同样在大 $G$ 下可忽略。
 
-#### 6.2.7 Step 5：套用 PPO-clip 到 sequence-level ratio
+#### 6.2.7 Step 5：套用 PPO-clip（原文的 ratio 是 per-token 的）
 
 到此为止用纯 REINFORCE update 已经可行：
 
@@ -1475,23 +1475,27 @@ $$
 
 但 GRPO 想要**每条 rollout 数据多步利用**（提高 sample efficiency），所以套用 PPO-clip 框架。
 
-定义 **sequence-level importance ratio**：
+顺着 sequence 视角，最自然的想法是定义 **sequence-level importance ratio**：
 
 $$
 \rho^i(\theta) \;=\; \frac{\pi_\theta(y^i | x)}{\pi_{\text{old}}(y^i | x)} \;=\; \prod_{t=1}^{T^i} \frac{\pi_\theta(y^i_t | x, y^i_{<t})}{\pi_{\text{old}}(y^i_t | x, y^i_{<t})}
 $$
 
-这里 $\pi\_{\text{old}}$ 是采样时的 policy 快照；$\pi\_\theta$ 是当前更新中的 policy。两者在每个 epoch 开头同步一次（"on-policy snapshot"）。
-
-PPO-clip 风格的 surrogate loss：
+但这个连乘正是 4.3.4 里说过的方差炸弹：几百个略偏离 1 的因子乘起来，$\rho^i$ 会指数级偏离 1，clip 几乎必然触发、梯度大面积失效。**所以 GRPO 原文（Shao et al. 2024, Eq. 3）实际用的是 token 粒度**：ratio 逐 token 定义，组归一化的优势 $A^i$（整条序列一个标量）广播给该序列的每个 token，clip 逐 token 做，最后按 token 平均：
 
 $$
-L^{\text{PPO-clip}}_{\text{GRPO}}(\theta) \;=\; -\frac{1}{G}\sum_{i=1}^G \min\!\left(\rho^i A^i,\ \mathrm{clip}(\rho^i, 1-\varepsilon, 1+\varepsilon) A^i\right)
+\rho^i_t(\theta) \;=\; \frac{\pi_\theta(y^i_t \mid x, y^i_{<t})}{\pi_{\text{old}}(y^i_t \mid x, y^i_{<t})}
 $$
 
-负号是因为我们要最小化 loss（最大化原目标）。
+$$
+L^{\text{PPO-clip}}_{\text{GRPO}}(\theta) \;=\; -\frac{1}{G}\sum_{i=1}^G \frac{1}{T^i}\sum_{t=1}^{T^i} \min\!\left(\rho^i_t A^i,\ \mathrm{clip}(\rho^i_t, 1-\varepsilon, 1+\varepsilon) A^i\right)
+$$
 
-**clip 的作用**：当 $\pi\_\theta$ 漂离 $\pi\_{\text{old}}$ 太远时（$\rho^i$ 超出 $[1-\varepsilon, 1+\varepsilon]$），clip 限制 effective gradient，防止过大更新破坏策略。
+这里 $\pi\_{\text{old}}$ 是采样时的 policy 快照；$\pi\_\theta$ 是当前更新中的 policy。两者在每个 epoch 开头同步一次（“on-policy snapshot”）。负号是因为我们要最小化 loss（最大化原目标）。
+
+**clip 的作用**：当某个 token 上 $\pi\_\theta$ 漂离 $\pi\_{\text{old}}$ 太远（$\rho^i\_t$ 超出 $[1-\varepsilon, 1+\varepsilon]$）时，clip 限制该 token 的 effective gradient，防止过大更新破坏策略。
+
+于是 GRPO 里有一个值得记住的不对称：**优势是 sequence 级的（组内比较发生在整条回答之间），重要性校正与裁剪是 token 级的（优势广播之后逐 token 进行）**。真把 sequence-level ratio 用起来的路线，后来由 GSPO（§7.6）接手：它用长度归一化的几何平均 $(\rho^i)^{1/T^i}$ 压住连乘的方差。
 
 #### 6.2.8 Step 6：KL 项怎么放？
 
@@ -1501,16 +1505,16 @@ $$
 r_t \;=\; -\beta \log \frac{\pi_\theta(y_t | x, y_{<t})}{\pi_{\text{SFT}}(y_t | x, y_{<t})}
 $$
 
-但 GRPO 是 sequence-level，没有 token reward 容器。所以 GRPO **直接把 KL 作为 loss 项加进来**：
+GRPO 不往 token reward 里塞 KL，而是**直接把 KL 作为 loss 项加进来**：
 
 $$
 L_{\text{GRPO}}^{\text{total}}(\theta) \;=\; L^{\text{PPO-clip}}_{\text{GRPO}}(\theta) \;+\; \beta \cdot \mathbb{E}_{x}\!\left[\mathrm{KL}(\pi_\theta \,\|\, \pi_{\text{ref}})\right]
 $$
 
-**KL 的实际数值估计**：因为 $y^i \sim \pi\_{\text{old}}$（不是 $\pi\_\theta$），所以直接的样本均值 KL 估计是 biased 的。DeepSeek-R1 原文采用 **Schulman (2020) 的 K3 estimator**：
+**KL 的实际数值估计**：因为 $y^i \sim \pi\_{\text{old}}$（不是 $\pi\_\theta$），所以直接的样本均值 KL 估计是 biased 的。原文采用 **Schulman (2020) 的 K3 estimator**，与 clip 项同一粒度：逐 token 计算、按 token 平均：
 
 $$
-\mathrm{KL}(\pi_\theta \,\|\, \pi_{\text{ref}}) \,\Big|_{y^i} \;\approx\; \frac{\pi_{\text{ref}}(y^i | x)}{\pi_\theta(y^i | x)} - 1 - \log\frac{\pi_{\text{ref}}(y^i | x)}{\pi_\theta(y^i | x)}
+\widehat{\mathrm{KL}}\,\Big|_{y^i} \;=\; \frac{1}{T^i}\sum_{t=1}^{T^i}\left[\frac{\pi_{\text{ref}}(y^i_t \mid x, y^i_{<t})}{\pi_\theta(y^i_t \mid x, y^i_{<t})} - 1 - \log\frac{\pi_{\text{ref}}(y^i_t \mid x, y^i_{<t})}{\pi_\theta(y^i_t \mid x, y^i_{<t})}\right]
 $$
 
 这个估计器有两个好性质：
@@ -1523,14 +1527,14 @@ $$
 
 $$
 \boxed{\;
-L_{\text{GRPO}}(\theta) \;=\; -\frac{1}{G}\sum_{i=1}^G \min\!\left(\rho^i A^i,\ \mathrm{clip}(\rho^i, 1-\varepsilon, 1+\varepsilon) A^i\right) \;+\; \beta \cdot \widehat{\mathrm{KL}}(\pi_\theta \,\|\, \pi_{\text{ref}})
+L_{\text{GRPO}}(\theta) \;=\; -\frac{1}{G}\sum_{i=1}^G \frac{1}{T^i}\sum_{t=1}^{T^i}\left[ \min\!\left(\rho^i_t A^i,\ \mathrm{clip}(\rho^i_t, 1-\varepsilon, 1+\varepsilon) A^i\right) \;-\; \beta \cdot \widehat{\mathrm{KL}}_t \right]
 \;}
 $$
 
 其中：
-- $\rho^i = \pi\_\theta(y^i\mid x) / \pi\_{\text{old}}(y^i\mid x)$：**sequence-level** importance ratio
-- $A^i = (r^i - \mathrm{mean}(r^{1..G})) / (\mathrm{std}(r^{1..G}) + \epsilon\_{\text{num}})$：group-normalized advantage
-- $\widehat{\mathrm{KL}}$：K3 estimator
+- $\rho^i\_t = \pi\_\theta(y^i\_t \mid x, y^i\_{<t}) / \pi\_{\text{old}}(y^i\_t \mid x, y^i\_{<t})$：**per-token** importance ratio
+- $A^i = (r^i - \mathrm{mean}(r^{1..G})) / (\mathrm{std}(r^{1..G}) + \epsilon\_{\text{num}})$：group-normalized advantage，整条序列一个标量，广播给每个 token
+- $\widehat{\mathrm{KL}}\_t$：K3 estimator 的逐 token 项（见 6.2.8）
 
 #### 6.2.10 完整算法
 
@@ -1554,9 +1558,9 @@ for iteration = 1, 2, ...:
     for k = 1, ..., K:
         L = 0
         for each (b, i):
-            ρ = π_θ(y^{b,i}|x_b) / π_old(y^{b,i}|x_b)
-            L += -min(ρ · A^{b,i}, clip(ρ, 1-ε, 1+ε) · A^{b,i})
-            L += β · K3_kl(π_θ, π_ref, y^{b,i})
+            for t = 1, ..., T^{b,i}:               # ratio 与 clip 都是 per-token 的
+                ρ_t = π_θ(y^{b,i}_t|x_b, y^{b,i}_{<t}) / π_old(y^{b,i}_t|x_b, y^{b,i}_{<t})
+                L += -[min(ρ_t · A^{b,i}, clip(ρ_t, 1-ε, 1+ε) · A^{b,i}) - β · K3_kl_t] / T^{b,i}
         L /= (B · G)
         θ ← θ - lr · ∇L
 ```
@@ -1578,7 +1582,7 @@ for iteration = 1, 2, ...:
 - 失去 per-token credit assignment
 - group baseline 引入 $\mathcal{O}(1/G)$ 小偏差
 
-**为什么在 reasoning 任务上 GRPO 特别好用**？因为 reasoning 任务 reward 极稀疏（只有终答对错），per-token credit assignment 本来就不可靠，sequence-level 反而更适合任务结构。这是 GRPO 在 reasoning 上成功的关键"结构匹配"原因。
+**为什么在 reasoning 任务上 GRPO 特别好用**？因为 reasoning 任务 reward 极稀疏（只有终答对错），per-token credit assignment 本来就不可靠，sequence 级的优势信号反而更匹配任务结构。这是 GRPO 在 reasoning 上成功的关键“结构匹配”原因。
 
 ### 6.3 GRPO 与 PPO-RLHF 的差异表
 
@@ -1587,7 +1591,7 @@ for iteration = 1, 2, ...:
 | Value model | 需要 | **不需要** |
 | Advantage 粒度 | per-token (GAE) | per-sequence |
 | Reward 来源 | reward model | verifiable reward |
-| Ratio | per-token | per-sequence |
+| Ratio | per-token | per-token（组优势广播，逐 token clip） |
 | KL 注入方式 | token-level reward penalty | loss 加项 |
 | 显存中模型数 | 4 | 2-3 |
 
@@ -1713,7 +1717,7 @@ $$
 |---|---|---|---|---|
 | value model | 是 | **不要** | 不要 | 不要 |
 | advantage | GAE | discounted return | LOO baseline | group mean baseline |
-| clip | per-token | per-token | **无** | per-sequence |
+| clip | per-token | per-token | **无** | per-token（优势 per-sequence） |
 | KL placement | token-level reward | token-level reward | loss term | loss term |
 | sample efficiency | 高（K-epoch） | 高（K-epoch） | 低（1-epoch） | 高（K-epoch） |
 | 实现复杂度 | 高 | 中 | **低** | 中 |
@@ -1815,7 +1819,7 @@ for prompt x:
 #### 7.5.1 GRPO 暴露的具体缺陷（4 个）
 
 1. **Length bias**：advantage 除以 std，长错答案的相对惩罚反而小 → policy 学会写越来越长的错误回答
-2. **Entropy collapse**：PPO clip 上界 \$1+\varepsilon$ 抑制 token 概率上升 → 高 entropy token（探索性 token）逐渐被压死 → 策略变 deterministic 太快
+2. **Entropy collapse**：PPO clip 上界 $1+\varepsilon$ 抑制 token 概率上升 → 高 entropy token（探索性 token）逐渐被压死 → 策略变 deterministic 太快
 3. **Sample inefficiency**：group 内全 0 或全 1 reward 的 prompt（已掌握或完全不会）梯度为 0 → 白消耗 compute
 4. **Long-CoT 不稳**：超长输出累积 KL 漂移大，模型容易 break
 
@@ -1842,13 +1846,13 @@ for prompt x in batch:
 
 让每个 update step 都有 effective 信号；空 group 不浪费 compute。
 
-**(3) Token-Level Policy Gradient Loss**：长 CoT 场景下，回到 token-level loss（而非 GRPO 默认的 sequence-level）：
+**(3) Token-Level Policy Gradient Loss**：改的是 loss 的**归一化分母**。GRPO 是样本级平均（每条序列先除以自己的 $T^i$，再对 $G$ 条平均，长短样本同权），DAPO 改成全局 token 平均：
 
 $$
 L_{\text{token}} \;=\; \frac{1}{\sum_i T^i} \sum_i \sum_t \min(\rho^i_t A^i,\ \mathrm{clip}(\rho^i_t) A^i)
 $$
 
-其中 $\rho^i\_t$ 是 per-token IS ratio。**优点**：避免长样本主导梯度。**对应**：sequence-level GRPO 在 long-CoT 下指数级放大 ratio（我之前 §5.2.11 提到过），token-level 不会。
+ratio 与 clip 本来就都是 per-token 的（见 6.2.7），两者差别只在分母。**效果**：GRPO 的样本级平均会稀释长序列里单个 token 的梯度（长回答里每个 token 的权重是 $1/T^i$，比短回答小得多），对 long-CoT 不利；全局 token 平均让所有 token 等权。
 
 **(4) Overlong Reward Shaping**：对超过 max-length 的输出做软惩罚（不是直接截断）：
 

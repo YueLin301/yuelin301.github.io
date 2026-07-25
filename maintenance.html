@@ -1,0 +1,45 @@
+---
+permalink: /maintenance/
+sitemap: false
+# "Under maintenance" splash + full profile. Shares content with /about/ and
+# /about_me/ via _includes/cv_content.html. This page does NOT show
+# automatically; to put the site into maintenance mode, copy the body below into
+# index.html (replacing its `layout: home` front matter).
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Yue Lin - under maintenance</title>
+  {% include cv_styles.html %}
+</head>
+<body>
+  <main class="wrap">
+    <section class="card notice">
+      <img class="avatar" src="https://yuelin301.github.io/assets/img/avatar/meow5.png" alt="avatar" onerror="this.style.display='none'">
+      <div class="brand">Yue Lin</div>
+      <div class="domain">LyTopia &middot; yuelin301.github.io</div>
+      <div class="status"><span class="dot"></span> Under maintenance</div>
+      <p>My site is currently under maintenance, most likely because I am uploading new content. Please check back in a few minutes.</p>
+      <p class="dim">In the meantime, you can read my profile below.</p>
+      <div class="contact-mini">
+        <span><i class="fa-solid fa-envelope"></i><a href="mailto:linyue3h1@gmail.com">linyue3h1@gmail.com</a></span>
+        <span><i class="fa-brands fa-weixin"></i>WeChat: v01d_id</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/YueLin301/yuelin301.github.io">GitHub repository</a>
+        <a class="btn btn-ghost" href="https://github.com/YueLin301">GitHub profile</a>
+      </div>
+      <div class="cue">&#8595;&nbsp; profile</div>
+    </section>
+
+    <section class="card cv">
+      <div class="cv-content">
+        {% include cv_content.html %}
+      </div>
+    </section>
+  </main>
+</body>
+</html>

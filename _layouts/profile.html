@@ -1,0 +1,289 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo title=false %}
+  <title>{{ page.title | default: 'Yue Lin' }}</title>
+  {% include_cached favicons.html %}
+  {% include cv_styles.html %}
+  <style>
+    .cv-content li[data-publication="true"] > blockquote {
+      margin-bottom: .75rem;
+    }
+    .cv-content li[data-publication="true"] > blockquote + details {
+      margin-top: 0 !important;
+    }
+    .cv-content .cv-section-title {
+      scroll-margin-top: 2rem;
+    }
+
+    .profile-toc[hidden] {
+      display: none;
+    }
+    .profile-toc {
+      position: fixed;
+      right: 1rem;
+      bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+      z-index: 50;
+      width: min(18rem, calc(100vw - 2rem));
+      color: var(--cv-text, #2c2c33);
+    }
+    .profile-toc:not(.is-open) {
+      width: auto;
+    }
+    .profile-toc-details {
+      overflow: hidden;
+      border: 1px solid var(--cv-border, #ececf1);
+      border-radius: 12px;
+      background: var(--cv-bg, #fff);
+      box-shadow: 0 8px 28px rgba(20, 20, 40, .14);
+    }
+    .profile-toc-summary {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      min-height: 2.7rem;
+      padding: .55rem .85rem;
+      color: var(--cv-text, #2c2c33);
+      font-size: .84rem;
+      font-weight: 650;
+      line-height: 1.3;
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+    }
+    .profile-toc-summary::-webkit-details-marker {
+      display: none;
+    }
+    .profile-toc-summary::before {
+      content: "";
+      width: .85rem;
+      height: .65rem;
+      background:
+        linear-gradient(currentColor 0 0) 0 0 / 100% 1px,
+        linear-gradient(currentColor 0 0) 0 50% / 100% 1px,
+        linear-gradient(currentColor 0 0) 0 100% / 100% 1px;
+      background-repeat: no-repeat;
+      opacity: .72;
+    }
+    .profile-toc-details[open] .profile-toc-summary {
+      border-bottom: 1px solid var(--cv-border, #ececf1);
+    }
+    .profile-toc-summary:focus-visible,
+    .profile-toc-link:focus-visible {
+      outline: 2px solid var(--accent, #2a408e);
+      outline-offset: -2px;
+    }
+    .profile-toc-list {
+      max-height: min(60vh, 28rem);
+      margin: 0;
+      padding: .55rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      list-style: none;
+    }
+    .profile-toc-item {
+      margin: 0;
+    }
+    .profile-toc-link {
+      display: block;
+      margin: 1px 0;
+      padding: .38rem .55rem .38rem .7rem;
+      border-left: 2px solid transparent;
+      border-radius: 0 6px 6px 0;
+      color: var(--cv-muted, #6a6a72);
+      font-size: .78rem;
+      line-height: 1.35;
+      text-decoration: none;
+      transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease;
+    }
+    .profile-toc-link:hover {
+      color: var(--cv-link, #2a408e);
+      background: #f6f8fc;
+      text-decoration: none;
+    }
+    .profile-toc-link[aria-current="location"] {
+      border-left-color: var(--cv-link, #2a408e);
+      background: #eef2fa;
+      color: var(--cv-link, #2a408e);
+    }
+
+    @media (min-width: 82rem) {
+      .profile-toc {
+        top: 1.5rem;
+        right: auto;
+        bottom: auto;
+        left: calc(50% + 30rem);
+        width: min(14rem, calc(50vw - 31.5rem));
+      }
+      .profile-toc:not(.is-open) {
+        width: min(14rem, calc(50vw - 31.5rem));
+      }
+      .profile-toc-details {
+        max-height: calc(100vh - 3rem);
+        overflow-y: auto;
+        box-shadow: 0 8px 24px rgba(20, 20, 40, .1);
+      }
+      .profile-toc-list {
+        max-height: calc(100vh - 7rem);
+      }
+    }
+
+    @media (max-width: 81.99rem) {
+      body {
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile-toc-link {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="profile-toc" id="profile-toc" aria-label="Table of contents" hidden>
+    <details class="profile-toc-details" id="profile-toc-details">
+      <summary class="profile-toc-summary">Contents</summary>
+      <ol class="profile-toc-list" id="profile-toc-list"></ol>
+    </details>
+  </nav>
+  <main class="wrap">
+    <section class="card cv">
+      <div class="cv-content">
+        {% include cv_content.html %}
+      </div>
+    </section>
+  </main>
+  <script>
+    (function () {
+      function initializeProfileToc() {
+        var toc = document.getElementById('profile-toc');
+        var details = document.getElementById('profile-toc-details');
+        var list = document.getElementById('profile-toc-list');
+        var content = document.querySelector('.cv-content');
+        if (!toc || !details || !list || !content) return;
+
+        var headings = Array.prototype.slice.call(
+          content.querySelectorAll('h2.cv-section-title')
+        );
+        if (!headings.length) return;
+
+        var links = [];
+        var fragment = document.createDocumentFragment();
+        headings.forEach(function (heading, index) {
+          if (!heading.id) {
+            var baseId = heading.textContent.trim().toLowerCase()
+              .replace(/&/g, ' and ')
+              .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
+              .replace(/^-+|-+$/g, '') || 'section-' + (index + 1);
+            var uniqueId = baseId;
+            var suffix = 2;
+            while (document.getElementById(uniqueId)) {
+              uniqueId = baseId + '-' + suffix;
+              suffix += 1;
+            }
+            heading.id = uniqueId;
+          }
+          var item = document.createElement('li');
+          var link = document.createElement('a');
+          item.className = 'profile-toc-item';
+          link.className = 'profile-toc-link';
+          link.href = '#' + heading.id;
+          link.textContent = heading.textContent.trim();
+          item.appendChild(link);
+          fragment.appendChild(item);
+          links.push(link);
+        });
+        list.appendChild(fragment);
+        toc.hidden = false;
+
+        var desktopQuery = window.matchMedia('(min-width: 82rem)');
+
+        function updateOpenClass() {
+          toc.classList.toggle('is-open', details.open);
+        }
+
+        function syncResponsiveState() {
+          details.open = desktopQuery.matches;
+          updateOpenClass();
+        }
+
+        function setActiveHeading(heading) {
+          links.forEach(function (link) {
+            if (link.getAttribute('href') === '#' + heading.id) {
+              link.setAttribute('aria-current', 'location');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+        }
+
+        var scrollQueued = false;
+        function updateActiveHeading() {
+          var marker = Math.min(160, window.innerHeight * .22);
+          var active = headings[0];
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= marker) active = heading;
+          });
+          if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+            active = headings[headings.length - 1];
+          }
+          setActiveHeading(active);
+          scrollQueued = false;
+        }
+
+        function queueActiveHeadingUpdate() {
+          if (scrollQueued) return;
+          scrollQueued = true;
+          window.requestAnimationFrame(updateActiveHeading);
+        }
+
+        details.addEventListener('toggle', updateOpenClass);
+        links.forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (!desktopQuery.matches) details.open = false;
+          });
+        });
+        document.addEventListener('click', function (event) {
+          if (!desktopQuery.matches && details.open && !toc.contains(event.target)) {
+            details.open = false;
+          }
+        });
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && !desktopQuery.matches && details.open) {
+            details.open = false;
+            details.querySelector('summary').focus();
+          }
+        });
+        window.addEventListener('scroll', queueActiveHeadingUpdate, { passive: true });
+        window.addEventListener('resize', queueActiveHeadingUpdate);
+        if (desktopQuery.addEventListener) {
+          desktopQuery.addEventListener('change', syncResponsiveState);
+        } else {
+          desktopQuery.addListener(syncResponsiveState);
+        }
+
+        syncResponsiveState();
+        updateActiveHeading();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeProfileToc);
+      } else {
+        initializeProfileToc();
+      }
+    }());
+  </script>
+  {% if jekyll.environment == 'production' %}
+    <script defer src="{{ '/unregister.js' | relative_url }}"></script>
+    {% if site.google_analytics.id != empty and site.google_analytics.id %}
+      {% include google-analytics.html %}
+    {% endif %}
+  {% endif %}
+</body>
+</html>

@@ -118,7 +118,8 @@ assets:
 pwa:
   enabled: false # the option for PWA feature
 
-paginate: 10
+# The root page is the standalone profile, so generating /pageN/ clones is disabled.
+# paginate: 10
 
 # ------------ The following options are not recommended to be modified ------------------
 

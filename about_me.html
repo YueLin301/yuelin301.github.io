@@ -1,34 +1,8 @@
 ---
+layout: profile
+title: Yue Lin
 permalink: /about_me/
 sitemap: false
-# Standalone, self-contained profile page. Shares its content with the home
-# maintenance page and the /about/ tab via _includes/cv_content.html.
-# Edit _includes/cv_content.html to update all three at once.
+canonical_url: https://yuelin301.github.io/
+# Alias for the root profile page. Both paths use _layouts/profile.html.
 ---
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yue Lin - Profile</title>
-  {% include_cached favicons.html %}
-  {% include cv_styles.html %}
-  <style>
-    .cv-content li[data-publication="true"] > blockquote {
-      margin-bottom: .75rem;
-    }
-    .cv-content li[data-publication="true"] > blockquote + details {
-      margin-top: 0 !important;
-    }
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <section class="card cv">
-      <div class="cv-content">
-        {% include cv_content.html %}
-      </div>
-    </section>
-  </main>
-</body>
-</html>

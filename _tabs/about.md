@@ -5,10 +5,12 @@ title: About Me
 icon: fa-solid fa-hat-wizard
 order: 2
 toc: true
+sitemap: false
+canonical_url: https://yuelin301.github.io/
 ---
 
 <!-- Content lives in the single source _includes/cv_content.html, shared with the
-     home maintenance page (index.html) and /about_me/. Edit that file to update
-     all three. The original hand-written about.md is backed up at buffer/about.md.orig.bak. -->
+     root profile, /about_me/, and /maintenance/. Edit it to update every profile
+     surface. The original hand-written about.md is backed up at buffer/about.md.orig.bak. -->
 
 {% include cv_content.html %}

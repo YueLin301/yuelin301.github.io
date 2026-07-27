@@ -1,12 +1,46 @@
 <!-- ============================================================
 SINGLE SOURCE for the personal profile / CV.
-Included by: index.html (maintenance page), about_me.html
-(/about_me/), and _tabs/about.md (/about/).
-Edit THIS file only; all three pages update on the next build.
-Pure HTML; all asset/link paths are absolute URLs so it renders
-correctly standalone and when served raw.
+Included by: _layouts/profile.html (/ and /about_me/),
+maintenance.html (/maintenance/), and _tabs/about.md (/about/).
+Edit THIS file only; all four pages update on the next build.
+Site assets use Jekyll-relative URLs so previews and deployed pages
+share the same optimized files.
 ============================================================ -->
 <style>
+.cv-profile .cv-avatar {
+position: relative;
+flex: 0 0 130px;
+width: 130px;
+height: 130px;
+margin-right: 30px;
+}
+.cv-profile .cv-avatar::before,
+.cv-profile .cv-avatar::after {
+content: "";
+position: absolute;
+inset: 0;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.cv-profile .cv-avatar::before {
+background-image: url('{{ "/assets/img/photo2_transparent_260.webp" | relative_url }}');
+}
+.cv-profile .cv-avatar::after {
+background-image: url('{{ "/assets/img/photo2_cooler_transparent_260.webp" | relative_url }}');
+opacity: 0;
+transition: opacity 180ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+.cv-profile .cv-avatar:hover::after {
+opacity: 1;
+}
+}
+@media (prefers-reduced-motion: reduce) {
+.cv-profile .cv-avatar::after {
+transition: none;
+}
+}
 .cv-profile .cv-section-title,
 .cv-content .cv-profile .cv-section-title {
 margin: 2.9rem 0 1.1rem;
@@ -65,8 +99,7 @@ margin-top: 1.6rem;
 
 <div class="cv-profile">
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-<div style="flex-shrink: 0; width: 130px; height: 130px; background-image: url('https://yuelin301.github.io/assets/img/photo2_transparent.png'); background-size: cover; background-position: center; margin-right: 30px;" onmouseover="this.style.backgroundImage='url(https://yuelin301.github.io/assets/img/photo2_cooler_transparent.png)'" onmouseout="this.style.backgroundImage='url(https://yuelin301.github.io/assets/img/photo2_transparent.png)'">
-</div>
+<div class="cv-avatar" role="img" aria-label="Portrait of Yue Lin"></div>
 <div style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
 <!-- <div style="font-style: italic; color: #555; border-left: 5px solid #eee; padding-left: 20px;"> -->
 <div style="color: #495485; font-size: 22px">
@@ -154,7 +187,8 @@ width: 85%;
 </div>
 <div class="spacer"></div>
 <div class="flex-item" style="text-align: center;">
-<a href="https://yuelin301.github.io/assets/img/about/crow1.png" class="popup img-link  shimmer"><img src="https://yuelin301.github.io/assets/img/about/crow1.png" alt="pic1" style="max-height: 100%; margin: auto;" loading="lazy"></a>
+<!-- Chirpy wraps images on /about/ with its popup link; standalone pages need an explicit link. -->
+{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{% if page.url == '/about/' %}{{ '/assets/img/about/crow1.png' | relative_url }}{% else %}{{ '/assets/img/about/crow1_700.webp' | relative_url }}{% endif %}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 300px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
 <p><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
 </div>
 <div class="auto-spacer"></div>
@@ -848,6 +882,14 @@ el.textContent = total;
 
 <!-- http://epub.cnipa.gov.cn/Dxb/IndexQuery -->
 
+{% if page.url == '/' or page.url == '/about/' or page.url == '/about_me/' %}
+<h2 class="cv-section-title" id="academic-footprints">Academic Footprints</h2>
+<ul>
+<li><span translate="no">ICML 2026 @ Seoul, South Korea</span></li>
+<li><span translate="no">ICRA 2021 @ Xi’an, China</span></li>
+</ul>
+{% endif %}
+
 <h2 class="cv-section-title" id="hobbies">Hobbies</h2>
 
 <style>
@@ -1117,7 +1159,7 @@ white-space: nowrap;
 </span>
 </details> -->
 
-<figure style="text-align: center; margin: 1.6rem 0;"><a href="https://yuelin301.github.io/assets/img/about/bird1.png" class="popup img-link  shimmer"><img src="https://yuelin301.github.io/assets/img/about/bird1.png" alt="pic2" width="500" loading="lazy"></a><figcaption style="margin-top: .5rem;"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
+<figure style="text-align: center; margin: 1.6rem 0;">{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/bird1.png' | relative_url }}">{% endunless %}<img src="{% if page.url == '/about/' %}{{ '/assets/img/about/bird1.png' | relative_url }}{% else %}{{ '/assets/img/about/bird1_600.webp' | relative_url }}{% endif %}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) calc(100vw - 3rem), 500px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}<figcaption style="margin-top: .5rem;"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
 
 <script>
 var currentPubTypeFilter = 'all';

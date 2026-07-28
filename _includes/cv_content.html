@@ -7,12 +7,51 @@ Site assets use Jekyll-relative URLs so previews and deployed pages
 share the same optimized files.
 ============================================================ -->
 <style>
+.cv-profile {
+container-type: inline-size;
+min-width: 0;
+overflow-wrap: break-word;
+}
+.cv-profile a {
+overflow-wrap: anywhere;
+}
+.cv-profile details,
+.cv-profile blockquote,
+.cv-profile figure {
+min-width: 0;
+max-width: 100%;
+}
+.cv-profile .cv-intro-header {
+display: grid;
+grid-template-columns: 130px minmax(0, 1fr);
+align-items: center;
+column-gap: 30px;
+margin-bottom: 20px;
+}
 .cv-profile .cv-avatar {
 position: relative;
+display: block;
 flex: 0 0 130px;
 width: 130px;
 height: 130px;
-margin-right: 30px;
+padding: 0;
+border: 0;
+background: transparent;
+appearance: none;
+cursor: pointer;
+touch-action: manipulation;
+-webkit-tap-highlight-color: transparent;
+}
+.cv-profile .cv-avatar:focus-visible {
+outline: 3px solid rgba(73, 84, 133, 0.55);
+outline-offset: 4px;
+}
+.cv-profile .cv-intro-quote {
+min-width: 0;
+color: #495485;
+font-size: 22px;
+line-height: 1.45;
+text-align: center;
 }
 .cv-profile .cv-avatar::before,
 .cv-profile .cv-avatar::after {
@@ -30,6 +69,9 @@ background-image: url('{{ "/assets/img/photo2_transparent_260.webp" | relative_u
 background-image: url('{{ "/assets/img/photo2_cooler_transparent_260.webp" | relative_url }}');
 opacity: 0;
 transition: opacity 180ms ease;
+}
+.cv-profile .cv-avatar[aria-pressed="true"]::after {
+opacity: 1;
 }
 @media (hover: hover) and (pointer: fine) {
 .cv-profile .cv-avatar:hover::after {
@@ -83,6 +125,82 @@ display: none !important;
 .cv-profile .cv-subsection-title .me-2 {
 margin-right: 0 !important;
 }
+.cv-profile .cv-epigraph-attribution {
+text-align: right;
+overflow-wrap: anywhere;
+}
+.cv-profile .cv-epigraph-author,
+.cv-profile .cv-epigraph-title {
+display: inline-block;
+}
+@container (max-width: 36rem) {
+.cv-profile .cv-intro-header {
+grid-template-columns: 1fr;
+justify-items: center;
+row-gap: 1rem;
+}
+.cv-profile .cv-intro-quote {
+width: 100%;
+font-size: clamp(18px, 4cqi, 22px);
+text-align: center;
+}
+.cv-profile .cv-epigraph-title {
+display: block;
+}
+.cv-profile .cv-section-title,
+.cv-content .cv-profile .cv-section-title {
+font-size: 1.38rem;
+margin-top: 2.4rem;
+}
+.cv-profile .cv-subsection-title,
+.cv-content .cv-profile .cv-subsection-title {
+font-size: 1.02rem;
+margin-top: 1.6rem;
+}
+.cv-profile blockquote {
+margin-right: 0;
+margin-left: 0;
+}
+.cv-profile pre.highlight {
+max-width: 100%;
+margin-left: 0 !important;
+}
+}
+@supports not (container-type: inline-size) {
+@media (max-width: 688px) {
+.cv-profile .cv-intro-header {
+grid-template-columns: 1fr;
+justify-items: center;
+row-gap: 1rem;
+}
+.cv-profile .cv-intro-quote {
+width: 100%;
+font-size: 19px;
+text-align: center;
+}
+.cv-profile .cv-epigraph-title {
+display: block;
+}
+.cv-profile .cv-section-title,
+.cv-content .cv-profile .cv-section-title {
+font-size: 1.38rem;
+margin-top: 2.4rem;
+}
+.cv-profile .cv-subsection-title,
+.cv-content .cv-profile .cv-subsection-title {
+font-size: 1.02rem;
+margin-top: 1.6rem;
+}
+.cv-profile blockquote {
+margin-right: 0;
+margin-left: 0;
+}
+.cv-profile pre.highlight {
+max-width: 100%;
+margin-left: 0 !important;
+}
+}
+}
 @media (max-width: 768px) {
 .cv-profile .cv-section-title,
 .cv-content .cv-profile .cv-section-title {
@@ -98,16 +216,36 @@ margin-top: 1.6rem;
 </style>
 
 <div class="cv-profile">
-<div style="display: flex; align-items: center; margin-bottom: 20px;">
-<div class="cv-avatar" role="img" aria-label="Portrait of Yue Lin"></div>
-<div style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+<div class="cv-intro-header">
+<button type="button" class="cv-avatar" aria-label="Show sunglasses portrait" aria-pressed="false"></button>
 <!-- <div style="font-style: italic; color: #555; border-left: 5px solid #eee; padding-left: 20px;"> -->
-<div style="color: #495485; font-size: 22px">
+<div class="cv-intro-quote">
 <!-- <b>The world only makes sense if you force it to. <i>—&nbsp;Batman.</i></b> -->
 <b>"The powerful play goes on...<br />And you may contribute a verse."</b>
 </div>
 </div>
-</div>
+
+<script>
+(function () {
+var avatar = document.querySelector('.cv-profile .cv-avatar[aria-pressed]');
+if (!avatar) {
+return;
+}
+
+avatar.addEventListener('click', function () {
+var showSunglasses = avatar.getAttribute('aria-pressed') !== 'true';
+avatar.setAttribute('aria-pressed', showSunglasses ? 'true' : 'false');
+avatar.setAttribute(
+'aria-label',
+showSunglasses ? 'Show regular portrait' : 'Show sunglasses portrait'
+);
+});
+
+avatar.addEventListener('pointerup', function () {
+avatar.blur();
+});
+})();
+</script>
 
 <!-- > *Answer.*  
 > That you are here — that life exists and identity,  
@@ -115,49 +253,85 @@ margin-top: 1.6rem;
 > *— Walt Whitman, O Me! O Life!*
 {: .prompt-info } -->
 
-<p>Hi, this is <span translate="no">Yue Lin</span> (/ˈjuːeɪ lɪn/, or 林越 in Chinese), and welcome to my personal website.
+<p>Hi, this is <strong><span translate="no">Yue Lin</span></strong> (/ˈjuːeɪ lɪn/, or <strong>林越</strong> in Chinese), and welcome to my personal website.
 Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang [Homepage]</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha [Google Scholar]</a></span>.
 Other close collaborators include Prof. <span translate="no"><a href="https://ewanlee.weebly.com/">Wenhao Li [Homepage]</a></span> and Prof. <span translate="no"><a href="https://cs.uwaterloo.ca/~ppoupart/index.html">Pascal Poupart [Homepage]</a></span>. For a printable summary of my background, see my <a href="https://yuelin301.github.io/Resume_YueLin/Resume_en.pdf" target="_blank" rel="noopener noreferrer">[Resume]</a>.</p>
 
 <ul>
 <li>My research interests lie primarily in designing efficient learning algorithms to guide agents toward better equilibriums in multi-agent tasks. For experts: (1) solving sequential social dilemmas, by designing learning algorithms that incorporate mechanism design, and (2) designing learning methods for mechanism design problems.</li>
 <li>Most of my focus is on sequential mixed-motive multi-agent scenarios, and I am particularly interested in communication mechanisms (keywords: information design, Bayesian persuasion, cheap talk, reputation), as well as some other mechanisms that influence others, such as incentivization.</li>
-<li>My expertise in learning methods lies in reinforcement learning (RL), particularly multi-agent hyper-gradient modeling, and in large language models (LLMs).</li>
+<li>My expertise in learning methods lies in reinforcement learning (RL) and large language models (LLMs).</li>
 </ul>
 
 <div style="color: #999;">
 And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all "it was" into "thus I willed it" — that alone should I call redemption.
-<div style="text-align: right;"><i>—&nbsp;Friedrich&nbsp;Nietzsche,&nbsp;Thus&nbsp;Spoke&nbsp;Zarathustra.</i></div>
+<div class="cv-epigraph-attribution"><i><span class="cv-epigraph-author">— Friedrich Nietzsche,</span> <span class="cv-epigraph-title">Thus Spoke Zarathustra.</span></i></div>
 </div>
 
 <h2 class="cv-section-title" id="research-interests">Research Interests</h2>
 
 <style>
-.flex-container {
-display: flex;
-justify-content: flex-start;
+.cv-profile .flex-container {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 300px));
+justify-content: space-between;
 align-items: stretch;
+gap: clamp(2rem, 8cqi, 5rem);
 }
-.flex-item {
-/* width: 45%; */
-width: 300px;
+.cv-profile .flex-item {
+min-width: 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
 }
-.spacer {
-width: 20%;
+.cv-profile .research-illustration {
+width: 100%;
+justify-self: end;
 }
-.auto-spacer {
-flex-grow: 1;
+.cv-profile .research-illustration > a {
+display: block;
+width: 100%;
 }
+.cv-profile .research-illustration img {
+display: block;
+width: 100%;
+height: auto;
+}
+.cv-profile .spacer,
+.cv-profile .auto-spacer {
+display: none;
+}
+@container (max-width: 42rem) {
+.cv-profile .flex-container {
+grid-template-columns: minmax(0, 1fr);
+gap: 1.5rem;
+}
+.cv-profile .research-illustration {
+width: min(90%, 30rem);
+justify-self: center;
+}
+}
+@container (max-width: 20rem) {
+.cv-profile .research-illustration {
+width: 100%;
+}
+}
+@supports not (container-type: inline-size) {
 @media (max-width: 768px) {
-.flex-container {
-flex-direction: column;
-align-items: center;
+.cv-profile .flex-container {
+grid-template-columns: minmax(0, 1fr);
+gap: 1.5rem;
 }
-.flex-item, .spacer, .auto-spacer {
-width: 85%;
+.cv-profile .research-illustration {
+width: min(90%, 30rem);
+margin-right: auto;
+margin-left: auto;
+}
+}
+@media (max-width: 360px) {
+.cv-profile .research-illustration {
+width: 100%;
+}
 }
 }
 </style>
@@ -185,13 +359,11 @@ width: 85%;
 </ul>
 </div>
 </div>
-<div class="spacer"></div>
-<div class="flex-item" style="text-align: center;">
+<div class="flex-item research-illustration" style="text-align: center;">
 <!-- Chirpy wraps images on /about/ with its popup link; standalone pages need an explicit link. -->
 {% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{% if page.url == '/about/' %}{{ '/assets/img/about/crow1.png' | relative_url }}{% else %}{{ '/assets/img/about/crow1_700.webp' | relative_url }}{% endif %}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 300px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
 <p><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
 </div>
-<div class="auto-spacer"></div>
 </div>
 
 <!-- <br clear="all"/> -->
@@ -287,16 +459,25 @@ font-size: 13px;
 font-weight: 600;
 }
 .pub-view-btn {
-padding: 6px 16px;
+max-width: 100%;
+padding: 6px 14px;
 border: 1px solid #c8d3e3;
-background: #f0f4fa;
-border-radius: 6px;
+background: #f4f7fb;
+border-radius: 999px;
 cursor: pointer;
+font-family: inherit;
 font-size: 14px;
-font-weight: bold;
+font-weight: 600;
+line-height: 1.25;
+white-space: nowrap;
 color: #495485;
+transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
 .pub-view-btn:hover { background: #e3ebf5; }
+.pub-view-btn:focus-visible {
+outline: 2px solid #495485;
+outline-offset: 2px;
+}
 .pub-view-btn-active,
 .pub-view-btn-active:hover {
 background: #495485;
@@ -321,7 +502,9 @@ text-transform: uppercase;
 .pub-result-count::before,
 .pub-result-count::after {
 content: "";
-width: 52px;
+flex: 0 1 52px;
+width: auto;
+max-width: 52px;
 height: 1px;
 background: #d7dee9;
 }
@@ -349,16 +532,42 @@ font-weight: 600;
 .pub-tldr {
 color: var(--text-color, #5d6473);
 }
-@media (max-width: 768px) {
+@container (max-width: 42rem) {
 .pub-control-group {
 width: 100%;
+justify-content: center;
 }
 .pub-control-label {
 flex-basis: 100%;
 margin-bottom: 1px;
+text-align: left;
 }
 .pub-view-btn {
-flex: 1 1 auto;
+flex: 0 0 auto;
+min-width: 4.5rem;
+min-height: 40px;
+padding: 7px 13px;
+font-size: 13px;
+}
+}
+@supports not (container-type: inline-size) {
+@media (max-width: 768px) {
+.pub-control-group {
+width: 100%;
+justify-content: center;
+}
+.pub-control-label {
+flex-basis: 100%;
+margin-bottom: 1px;
+text-align: left;
+}
+.pub-view-btn {
+flex: 0 0 auto;
+min-width: 4.5rem;
+min-height: 40px;
+padding: 7px 13px;
+font-size: 13px;
+}
 }
 }
 </style>
@@ -377,7 +586,7 @@ flex: 1 1 auto;
 <span translate="no"><strong>Yue Lin</strong>, Wenhao Li, Hongyuan Zha, Baoxiang Wang.</span><br />
 <span translate="no"><em>Neural Information Processing Systems (NeurIPS) 2023. Poster.</em></span>
 <blockquote>
-<p class="pub-meta-line"><span class="pub-meta-label">Highlight:</span> This is one of my representative works.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Highlight:</span> This is one of my representative works; as of 2026, my advisor also regards it as one of his representative works.</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
 <a href="https://arxiv.org/abs/2305.06807">[Paper]</a> 
 <a href="https://github.com/YueLin301/InformationDesignMARL">[Code]</a> 
@@ -390,7 +599,6 @@ flex: 1 1 auto;
 <a href="https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978">[Talk RLChina]</a> 
 <a href="https://yuelin301.github.io/posts/IDMARL_patent/">[Patent]</a>
 <!-- [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   --></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Advisor's view:</span> As of 2026, my advisor also regards this as one of his representative works.</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces a Markov signaling game and an obedience-constrained signaling-gradient algorithm that learns what information to reveal over time so self-interested receivers are willing to follow the sender's recommendations.</p>
 </blockquote>
@@ -469,9 +677,9 @@ flex: 1 1 auto;
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
 <a href="https://arxiv.org/abs/2512.21024">[Manuscript]</a> 
 <!-- [[Blog]](/posts/PCP/) --></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> This work was scooped by <em>Evaluating LLMs in Open-Source Games</em>. We then planned a substantially improved version, but that follow-up direction was also scooped by Google DeepMind's <em>Code-Space Response Oracles: Generating Interpretable Multi-Agent Policies with Large Language Models</em>.</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Represents each agent's strategy as readable source code and introduces Programmatic Iterated Best Response, where an LLM rewrites one policy against another using game rewards and unit tests as feedback.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> This work was scooped by <em>Evaluating LLMs in Open-Source Games</em>. We then planned a substantially improved version, but that follow-up direction was also scooped by Google DeepMind's <em>Code-Space Response Oracles: Generating Interpretable Multi-Agent Policies with Large Language Models</em>.</p>
 </blockquote>
 <details style="margin-top: -10px;">
 <summary>[Expand Abstract]</summary>
@@ -506,9 +714,9 @@ flex: 1 1 auto;
 <span translate="no"><em>Draft. 2024.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> No public manuscript.</p>
-<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> No paper was produced; our method was scooped by Google's paper <em>Multi-agent cooperation through learning-aware policy gradients</em> (<em>ICLR 2025</em>).</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Derives an exact policy gradient for non-stationary multi-agent learning systems by explicitly accounting for the histories of the other agents.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> No paper was produced; our method was scooped by Google's paper <em>Multi-agent cooperation through learning-aware policy gradients</em> (<em>ICLR 2025</em>).</p>
 </blockquote>
 <details style="margin-top: -10px;">
 <summary>[Expand Abstract]</summary>
@@ -630,9 +838,9 @@ flex: 1 1 auto;
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
 <a href="https://arxiv.org/abs/2506.05876">[Paper]</a> 
 <a href="https://github.com/YueLin301/InformationBargaining">[Code &amp; Experiments]</a></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Earlier title:</span> <em>Bayesian Persuasion as a Bargaining Game</em> (used at the EC '25 workshop).</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Game Theory</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Recasts long-term Bayesian persuasion as two-sided bargaining with commitment on both sides, separating the value of private information from the advantage of proposing first.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Earlier title:</span> <em>Bayesian Persuasion as a Bargaining Game</em> (used at the EC '25 workshop).</p>
 </blockquote>
 <details style="margin-top: -10px;">
 <summary>[Expand Abstract]</summary>
@@ -681,9 +889,9 @@ flex: 1 1 auto;
 <a href="https://ieeexplore.ieee.org/abstract/document/9561060">[Paper]</a> 
 <a href="https://yuelin301.github.io/posts/RHex-T3/">[Blog]</a> 
 <a href="https://yuelin301.github.io/posts/RHex-T3/#videos">[Demo Videos]</a></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> Delivered a presentation at the Xi’an conference venue.</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Robotics</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces a two-degree-of-freedom transformable RHex design that switches among wheel, leg, claw, and hook modes for efficient travel, obstacle crossing, object transport, and ladder climbing.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> I gave an oral presentation of this work at the conference in Xi’an.</p>
 </blockquote>
 <details style="margin-top: -10px;">
 <summary>[Expand Abstract]</summary>
@@ -722,7 +930,6 @@ flex: 1 1 auto;
 <a href="https://github.com/YueLin301/Swinging-Search-Crawling-Control">[Code]</a> 
 <a href="https://yuelin301.github.io/posts/SSCC/">[Blog]</a> 
 <a href="https://yuelin301.github.io/posts/SSCC/#videos">[Demo Video]</a></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Format:</span> Journal article.</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Robotics</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces Swinging Search and Crawling Control, which uses reinforcement learning over the arm's self-motion to find a collision-free target configuration, then moves the arm toward it by crawling instead of searching every intermediate pose.</p>
 </blockquote>
@@ -1089,61 +1296,133 @@ _Generated by ChatGPT-4._ -->
 <div class="contact-block">
 <style>
 .contact-block {
+width: 100%;
 text-align: center;
 margin: 1.5em auto;
 max-width: 480px;
 }
-.contact-block table {
-border-collapse: collapse;
-margin: 0 auto;
+.cv-profile .contact-list {
+display: grid;
+gap: 0.1rem;
+margin: 0;
+padding: 0;
+list-style: none;
 font-size: 15px;
-width: auto;
 }
-.contact-block td {
-padding: 6px 0;
+.cv-profile .contact-item {
+display: grid;
+grid-template-columns: 28px 8.25rem minmax(0, 1fr);
+align-items: center;
+column-gap: 10px;
+min-width: 0;
+margin: 0;
+padding: 0.45rem 0;
+text-align: left;
+}
+.contact-block .ci-icon,
+.contact-block .ci-label,
+.contact-block .ci-value {
+min-width: 0;
 vertical-align: middle;
-border: none;
 }
 .contact-block .ci-icon {
 width: 28px;
 text-align: center;
 font-size: 17px;
 opacity: 0.75;
-padding-right: 10px;
 }
 .contact-block .ci-label {
-text-align: left;
 font-weight: 600;
 white-space: nowrap;
-padding-right: 28px;
 }
 .contact-block .ci-value {
-text-align: left;
-white-space: nowrap;
+white-space: normal;
+overflow-wrap: anywhere;
+}
+.contact-block .ci-value a {
+overflow-wrap: anywhere;
+}
+@container (max-width: 26rem) {
+.cv-profile .contact-item {
+grid-template-columns: 24px minmax(0, 1fr);
+column-gap: 10px;
+row-gap: 0.05rem;
+padding: 0.55rem 0;
+}
+.contact-block .ci-icon {
+grid-column: 1;
+grid-row: 1 / span 2;
+align-self: start;
+width: 24px;
+margin-top: 0.15rem;
+}
+.contact-block .ci-label,
+.contact-block .ci-value {
+grid-column: 2;
+white-space: normal;
+}
+.contact-block .ci-label {
+color: var(--text-color, #6a6a72);
+font-size: 0.8rem;
+line-height: 1.25;
+}
+.contact-block .ci-value {
+overflow-wrap: anywhere;
+}
+}
+@supports not (container-type: inline-size) {
+@media (max-width: 560px) {
+.cv-profile .contact-item {
+grid-template-columns: 24px minmax(0, 1fr);
+column-gap: 10px;
+row-gap: 0.05rem;
+padding: 0.55rem 0;
+}
+.contact-block .ci-icon {
+grid-column: 1;
+grid-row: 1 / span 2;
+align-self: start;
+width: 24px;
+margin-top: 0.15rem;
+}
+.contact-block .ci-label,
+.contact-block .ci-value {
+grid-column: 2;
+white-space: normal;
+}
+.contact-block .ci-label {
+color: var(--text-color, #6a6a72);
+font-size: 0.8rem;
+line-height: 1.25;
+}
+.contact-block .ci-value {
+overflow-wrap: anywhere;
+}
+}
 }
 </style>
-<div class="table-wrapper"><table>
-<tr>
-<td class="ci-icon"><i class="fa-solid fa-envelope"></i></td>
-<td class="ci-label">Email</td>
-<td class="ci-value"><a href="mailto:linyue3h1@gmail.com">linyue3h1@gmail.com</a></td>
-</tr>
-<tr>
-<td class="ci-icon"><i class="fa-solid fa-graduation-cap"></i></td>
-<td class="ci-label">Google Scholar</td>
-<td class="ci-value"><a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer"><span translate="no">Yue Lin</span></a></td>
-</tr>
-<tr>
-<td class="ci-icon"><i class="fa-brands fa-github"></i></td>
-<td class="ci-label">GitHub</td>
-<td class="ci-value"><a href="https://github.com/YueLin301" target="_blank" rel="noopener noreferrer">github.com/YueLin301</a></td>
-</tr>
-<tr>
-<td class="ci-icon"><i class="fa-brands fa-weixin"></i></td>
-<td class="ci-label">WeChat</td>
-<td class="ci-value">v01d_id</td>
-</tr>
-</table></div>
+<ul class="contact-list">
+<li class="contact-item">
+<span class="ci-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+<span class="ci-label">Email</span>
+<span class="ci-value"><a href="mailto:linyue3h1@gmail.com">linyue3h1@gmail.com</a></span>
+</li>
+<li class="contact-item">
+<span class="ci-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+<span class="ci-label">Google Scholar</span>
+<span class="ci-value"><a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer"><span translate="no">Yue Lin</span></a></span>
+</li>
+<li class="contact-item">
+<span class="ci-icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+<span class="ci-label">GitHub</span>
+<span class="ci-value"><a href="https://github.com/YueLin301" target="_blank" rel="noopener noreferrer">github.com/YueLin301</a></span>
+</li>
+<li class="contact-item">
+<span class="ci-icon" aria-hidden="true"><i class="fa-brands fa-weixin"></i></span>
+<span class="ci-label">WeChat</span>
+<span class="ci-value">v01d_id</span>
+</li>
+</ul>
 </div>
 
 <!-- <details>

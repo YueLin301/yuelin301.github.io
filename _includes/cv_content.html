@@ -223,6 +223,17 @@ margin-top: 1.6rem;
 <!-- <b>The world only makes sense if you force it to. <i>—&nbsp;Batman.</i></b> -->
 <b>"The powerful play goes on...<br />And you may contribute a verse."</b>
 </div>
+{% if include.show_theme_toggle %}
+<button class="profile-theme-toggle" id="profile-theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+<svg class="profile-theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M20.5 15.2A8.7 8.7 0 0 1 8.8 3.5 8.7 8.7 0 1 0 20.5 15.2Z"></path>
+</svg>
+<svg class="profile-theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+<circle cx="12" cy="12" r="4"></circle>
+<path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+</svg>
+</button>
+{% endif %}
 </div>
 
 <script>
@@ -273,10 +284,9 @@ And how could one endure being a man, if not also for the possibility to create,
 <style>
 .cv-profile .flex-container {
 display: grid;
-grid-template-columns: repeat(2, minmax(0, 300px));
-justify-content: space-between;
+grid-template-columns: max-content minmax(0, 1fr);
 align-items: stretch;
-gap: clamp(2rem, 8cqi, 5rem);
+gap: 0;
 }
 .cv-profile .flex-item {
 min-width: 0;
@@ -285,8 +295,8 @@ flex-direction: column;
 justify-content: center;
 }
 .cv-profile .research-illustration {
-width: 100%;
-justify-self: end;
+width: min(100%, 280px);
+justify-self: center;
 }
 .cv-profile .research-illustration > a {
 display: block;
@@ -296,6 +306,22 @@ width: 100%;
 display: block;
 width: 100%;
 height: auto;
+}
+.cv-profile .research-period-title {
+text-align: left;
+}
+.cv-profile .research-text-block > .research-period-title:first-child {
+margin-top: 0;
+}
+@container (min-width: 42.01rem) {
+.cv-profile .flex-container > .flex-item {
+justify-content: flex-start;
+}
+.cv-profile .research-text-block {
+width: fit-content;
+max-width: 100%;
+align-self: flex-start;
+}
 }
 .cv-profile .spacer,
 .cv-profile .auto-spacer {
@@ -317,6 +343,16 @@ width: 100%;
 }
 }
 @supports not (container-type: inline-size) {
+@media (min-width: 769px) {
+.cv-profile .flex-container > .flex-item {
+justify-content: flex-start;
+}
+.cv-profile .research-text-block {
+width: fit-content;
+max-width: 100%;
+align-self: flex-start;
+}
+}
 @media (max-width: 768px) {
 .cv-profile .flex-container {
 grid-template-columns: minmax(0, 1fr);
@@ -338,8 +374,8 @@ width: 100%;
 
 <div class="flex-container">
 <div class="flex-item">
-<div>
-<p><strong>Currently</strong></p>
+<div class="research-text-block">
+<p class="research-period-title"><strong>Currently</strong></p>
 <ul>
 <!-- <li>Social Dilemma</li> -->
 <!-- <li>Multi-Agent RL: Mixed-Motive Tasks</li> -->
@@ -352,7 +388,7 @@ width: 100%;
 <li>LLMs for Game Solvers</li>
 <li>Communication Mechanisms</li>
 </ul>
-<p><strong>Formerly</strong></p>
+<p class="research-period-title"><strong>Formerly</strong></p>
 <ul>
 <li>Redundant Manipulator Control</li>
 <li>Robotic Mechanism Design</li>
@@ -361,7 +397,7 @@ width: 100%;
 </div>
 <div class="flex-item research-illustration" style="text-align: center;">
 <!-- Chirpy wraps images on /about/ with its popup link; standalone pages need an explicit link. -->
-{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{% if page.url == '/about/' %}{{ '/assets/img/about/crow1.png' | relative_url }}{% else %}{{ '/assets/img/about/crow1_700.webp' | relative_url }}{% endif %}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 300px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
+{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{% if page.url == '/about/' %}{{ '/assets/img/about/crow1.png' | relative_url }}{% else %}{{ '/assets/img/about/crow1_700.webp' | relative_url }}{% endif %}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 280px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
 <p><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
 </div>
 </div>

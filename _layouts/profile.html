@@ -8,8 +8,25 @@
   {% seo title=false %}
   <title>{{ page.title | default: 'Yue Lin' }}</title>
   {% include_cached favicons.html %}
+  <script>
+    (function () {
+      var theme = null;
+      try {
+        theme = localStorage.getItem('profile-theme');
+      } catch (error) {
+        theme = null;
+      }
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    }());
+  </script>
   {% include cv_styles.html %}
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     .cv-content li[data-publication="true"] > blockquote {
       margin-bottom: .75rem;
     }
@@ -18,6 +35,51 @@
     }
     .cv-content .cv-section-title {
       scroll-margin-top: 2rem;
+    }
+
+    .cv-content .cv-profile .cv-intro-header {
+      grid-template-columns: 130px minmax(0, 1fr) 2.75rem;
+    }
+    .profile-theme-toggle {
+      display: grid;
+      align-self: start;
+      justify-self: end;
+      width: 2.75rem;
+      height: 2.75rem;
+      padding: 0;
+      place-items: center;
+      border: 1px solid var(--cv-border, #ececf1);
+      border-radius: 50%;
+      background: var(--cv-bg, #fff);
+      color: var(--cv-link, #2a408e);
+      box-shadow: 0 6px 20px rgba(20, 20, 40, .12);
+      cursor: pointer;
+      transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease, transform 120ms ease;
+    }
+    .profile-theme-toggle:hover {
+      transform: translateY(-1px);
+    }
+    .profile-theme-toggle:focus-visible {
+      outline: 2px solid var(--accent, #2a408e);
+      outline-offset: 3px;
+    }
+    .profile-theme-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
+    .profile-theme-icon-sun {
+      display: none;
+    }
+    html[data-theme="dark"] .profile-theme-icon-moon {
+      display: none;
+    }
+    html[data-theme="dark"] .profile-theme-icon-sun {
+      display: block;
     }
 
     .profile-toc[hidden] {
@@ -110,13 +172,39 @@
     }
     .profile-toc-link:hover {
       color: var(--cv-link, #2a408e);
-      background: #f6f8fc;
+      background: var(--cv-soft-bg, #f6f8fc);
       text-decoration: none;
     }
     .profile-toc-link[aria-current="location"] {
       border-left-color: var(--cv-link, #2a408e);
-      background: #eef2fa;
+      background: var(--cv-active-bg, #eef2fa);
       color: var(--cv-link, #2a408e);
+    }
+    html[data-theme="dark"] .cv-profile .cv-intro-quote,
+    html[data-theme="dark"] .cv-profile .pub-meta-label,
+    html[data-theme="dark"] .cv-profile .pub-result-count strong {
+      color: #aebcf0;
+    }
+    html[data-theme="dark"] .cv-profile .pub-view-btn {
+      border-color: #4b5365;
+      background: #2a2d35;
+      color: #cbd5f5;
+    }
+    html[data-theme="dark"] .cv-profile .pub-view-btn:hover {
+      background: #343947;
+    }
+    html[data-theme="dark"] .cv-profile .pub-view-btn:focus-visible {
+      outline-color: #aebcf0;
+    }
+    html[data-theme="dark"] .cv-profile .pub-view-btn-active,
+    html[data-theme="dark"] .cv-profile .pub-view-btn-active:hover {
+      border-color: #8da5e8;
+      background: #8da5e8;
+      color: #17181d;
+    }
+    html[data-theme="dark"] .cv-profile .pub-result-count::before,
+    html[data-theme="dark"] .cv-profile .pub-result-count::after {
+      background: #4b5365;
     }
 
     @media (min-width: 82rem) {
@@ -146,6 +234,46 @@
       }
     }
 
+    @container (max-width: 36rem) {
+      .cv-content .cv-profile .cv-intro-header {
+        grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+        column-gap: .75rem;
+      }
+      .cv-profile .cv-avatar {
+        grid-row: 1;
+        grid-column: 2;
+      }
+      .cv-profile .cv-intro-quote {
+        grid-row: 2;
+        grid-column: 1 / -1;
+      }
+      .profile-theme-toggle {
+        grid-row: 1;
+        grid-column: 3;
+      }
+    }
+
+    @supports not (container-type: inline-size) {
+      @media (max-width: 43rem) {
+        .cv-content .cv-profile .cv-intro-header {
+          grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+          column-gap: .75rem;
+        }
+        .cv-profile .cv-avatar {
+          grid-row: 1;
+          grid-column: 2;
+        }
+        .cv-profile .cv-intro-quote {
+          grid-row: 2;
+          grid-column: 1 / -1;
+        }
+        .profile-theme-toggle {
+          grid-row: 1;
+          grid-column: 3;
+        }
+      }
+    }
+
     @media (max-width: 24rem) {
       .profile-toc:not(.is-open) .profile-toc-summary {
         width: 2.75rem;
@@ -168,13 +296,17 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .profile-theme-toggle,
       .profile-toc-link {
         transition: none;
       }
     }
   </style>
 </head>
-<body>
+<body id="introduction">
   <nav class="profile-toc" id="profile-toc" aria-label="Table of contents" hidden>
     <details class="profile-toc-details" id="profile-toc-details">
       <summary class="profile-toc-summary"><span class="profile-toc-summary-label">Contents</span></summary>
@@ -184,12 +316,37 @@
   <main class="wrap">
     <section class="card cv">
       <div class="cv-content">
-        {% include cv_content.html %}
+        {% include cv_content.html show_theme_toggle=true %}
       </div>
     </section>
   </main>
   <script>
     (function () {
+      var root = document.documentElement;
+      var themeToggle = document.getElementById('profile-theme-toggle');
+
+      function updateThemeToggle() {
+        if (!themeToggle) return;
+        var dark = root.getAttribute('data-theme') === 'dark';
+        var label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+        themeToggle.setAttribute('aria-label', label);
+        themeToggle.setAttribute('title', label);
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          var nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', nextTheme);
+          try {
+            localStorage.setItem('profile-theme', nextTheme);
+          } catch (error) {
+            // The selected theme still applies for this page view.
+          }
+          updateThemeToggle();
+        });
+        updateThemeToggle();
+      }
+
       function initializeProfileToc() {
         var toc = document.getElementById('profile-toc');
         var details = document.getElementById('profile-toc-details');
@@ -204,6 +361,21 @@
 
         var links = [];
         var fragment = document.createDocumentFragment();
+        var introduction = document.getElementById('introduction');
+
+        function appendTocLink(target, label) {
+          var item = document.createElement('li');
+          var link = document.createElement('a');
+          item.className = 'profile-toc-item';
+          link.className = 'profile-toc-link';
+          link.href = '#' + target.id;
+          link.textContent = label;
+          item.appendChild(link);
+          fragment.appendChild(item);
+          links.push(link);
+        }
+
+        appendTocLink(introduction, 'Introduction');
         headings.forEach(function (heading, index) {
           if (!heading.id) {
             var baseId = heading.textContent.trim().toLowerCase()
@@ -218,15 +390,7 @@
             }
             heading.id = uniqueId;
           }
-          var item = document.createElement('li');
-          var link = document.createElement('a');
-          item.className = 'profile-toc-item';
-          link.className = 'profile-toc-link';
-          link.href = '#' + heading.id;
-          link.textContent = heading.textContent.trim();
-          item.appendChild(link);
-          fragment.appendChild(item);
-          links.push(link);
+          appendTocLink(heading, heading.textContent.trim());
         });
         list.appendChild(fragment);
         toc.hidden = false;
@@ -255,7 +419,7 @@
         var scrollQueued = false;
         function updateActiveHeading() {
           var marker = Math.min(160, window.innerHeight * .22);
-          var active = headings[0];
+          var active = introduction;
           headings.forEach(function (heading) {
             if (heading.getBoundingClientRect().top <= marker) active = heading;
           });
@@ -274,8 +438,21 @@
 
         details.addEventListener('toggle', updateOpenClass);
         links.forEach(function (link) {
-          link.addEventListener('click', function () {
+          link.addEventListener('click', function (event) {
+            var href = link.getAttribute('href');
+            var target = href ? document.getElementById(href.slice(1)) : null;
+            if (!target) return;
+
+            event.preventDefault();
             if (!desktopQuery.matches) details.open = false;
+            target.scrollIntoView({
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+              block: 'start'
+            });
+            if (window.location.hash !== href) {
+              window.history.pushState(null, '', href);
+            }
+            setActiveHeading(target);
           });
         });
         document.addEventListener('click', function (event) {

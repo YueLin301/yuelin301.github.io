@@ -15,6 +15,66 @@ overflow-wrap: break-word;
 .cv-profile a {
 overflow-wrap: anywhere;
 }
+.cv-profile .cv-accent-icon {
+display: inline-block;
+margin-right: 0.38em;
+color: #495485;
+font-size: 0.9em;
+vertical-align: -0.02em;
+}
+.cv-profile .cv-icon-label {
+font-weight: 600;
+}
+html[data-theme="dark"] .cv-profile .cv-accent-icon {
+color: #aebcf0;
+}
+.cv-profile .cv-affiliation-list {
+margin: 0;
+padding-left: 0;
+list-style: none;
+}
+.cv-profile .cv-affiliation-list > .cv-affiliation-item {
+display: grid;
+grid-template-columns: 1.5rem minmax(0, 1fr);
+align-items: start;
+gap: 0.55rem;
+margin: 0.75rem 0;
+}
+.cv-profile .cv-affiliation-logo {
+display: block;
+box-sizing: border-box;
+width: 1.5rem;
+height: 1.5rem;
+margin-top: 0.08rem;
+border: 1px solid rgba(127, 127, 127, 0.2);
+border-radius: 0.3rem;
+background-color: #fff;
+background-position: center;
+background-repeat: no-repeat;
+background-size: calc(100% - 0.26rem) calc(100% - 0.26rem);
+}
+.cv-profile .cv-affiliation-logo-cuhk-shenzhen {
+background-image: url('{{ "/assets/img/about/institutions/cuhk-shenzhen.png" | relative_url }}');
+}
+.cv-profile .cv-affiliation-logo-tiangong {
+background-image: url('{{ "/assets/img/about/institutions/tiangong-university.png" | relative_url }}');
+}
+.cv-profile .cv-affiliation-logo-microsoft {
+background-image: url('{{ "/assets/img/about/institutions/microsoft.svg" | relative_url }}');
+}
+.cv-profile .cv-affiliation-logo-tencent {
+background-image: url('{{ "/assets/img/about/institutions/tencent.png" | relative_url }}');
+}
+.cv-profile .cv-affiliation-body {
+min-width: 0;
+}
+.cv-profile .cv-centered-narrow-content {
+width: fit-content;
+max-width: min(100%, 32rem);
+margin-right: auto;
+margin-left: auto;
+text-align: left;
+}
 .cv-profile details,
 .cv-profile blockquote,
 .cv-profile figure {
@@ -120,6 +180,18 @@ content: none !important;
 .cv-profile .cv-section-title .anchor,
 .cv-profile .cv-subsection-title .anchor {
 display: none !important;
+}
+.cv-profile .cv-section-title .cv-section-icon {
+display: inline-block;
+width: 1.25em;
+margin-right: 0.38em;
+color: #495485;
+font-size: 0.8em;
+text-align: center;
+vertical-align: 0.03em;
+}
+html[data-theme="dark"] .cv-profile .cv-section-title .cv-section-icon {
+color: #aebcf0;
 }
 .cv-profile .cv-section-title .me-2,
 .cv-profile .cv-subsection-title .me-2 {
@@ -265,8 +337,8 @@ avatar.blur();
 {: .prompt-info } -->
 
 <p>Hi, this is <strong><span translate="no">Yue Lin</span></strong> (/ˈjuːeɪ lɪn/, or <strong>林越</strong> in Chinese), and welcome to my personal website.
-Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io">Baoxiang Wang [Homepage]</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao">Hongyuan Zha [Google Scholar]</a></span>.
-Other close collaborators include Prof. <span translate="no"><a href="https://ewanlee.weebly.com/">Wenhao Li [Homepage]</a></span> and Prof. <span translate="no"><a href="https://cs.uwaterloo.ca/~ppoupart/index.html">Pascal Poupart [Homepage]</a></span>. For a printable summary of my background, see my <a href="https://yuelin301.github.io/Resume_YueLin/Resume_en.pdf" target="_blank" rel="noopener noreferrer">[Resume]</a>.</p>
+Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io" title="Homepage">Baoxiang Wang</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao" title="Google Scholar">Hongyuan Zha</a></span>.
+Other close collaborators include Prof. <span translate="no"><a href="https://ewanlee.weebly.com/" title="Homepage">Wenhao Li</a></span> and Prof. <span translate="no"><a href="https://cs.uwaterloo.ca/~ppoupart/index.html" title="Homepage">Pascal Poupart</a></span>. For a printable summary of my background, see my <a href="{{ site.baseurl }}/Resume_YueLin/Resume_en.pdf?v={{ site.time | date: '%Y%m%d%H%M' }}" target="_blank" rel="noopener noreferrer">[Resume]</a>.</p>
 
 <ul>
 <li>My research interests lie primarily in designing efficient learning algorithms to guide agents toward better equilibriums in multi-agent tasks. For experts: (1) solving sequential social dilemmas, by designing learning algorithms that incorporate mechanism design, and (2) designing learning methods for mechanism design problems.</li>
@@ -279,7 +351,7 @@ And how could one endure being a man, if not also for the possibility to create,
 <div class="cv-epigraph-attribution"><i><span class="cv-epigraph-author">— Friedrich Nietzsche,</span> <span class="cv-epigraph-title">Thus Spoke Zarathustra.</span></i></div>
 </div>
 
-<h2 class="cv-section-title" id="research-interests">Research Interests</h2>
+<h2 class="cv-section-title" id="research-interests"><i class="fa-solid fa-wand-sparkles cv-section-icon" aria-hidden="true"></i>Research Interests</h2>
 
 <style>
 .cv-profile .flex-container {
@@ -404,18 +476,23 @@ width: 100%;
 
 <!-- <br clear="all"/> -->
 
-<h2 class="cv-section-title" id="education--experience">Education &amp; Experience</h2>
+<h2 class="cv-section-title" id="education--experience"><i class="fa-brands fa-fort-awesome cv-section-icon" aria-hidden="true"></i>Education &amp; Experience</h2>
 
 <h3 class="cv-subsection-title" id="education">Education</h3>
 
 <!-- - <span translate="no">**Shenzhen Loop Area Institute**</span>   -->
 <p><!-- Joint Ph.D. Student (2025.9 - Present)   --></p>
-<ul>
-<li><span translate="no"><strong>The Chinese University of Hong Kong, Shenzhen</strong></span><br />
+<ul class="cv-affiliation-list">
+<li class="cv-affiliation-item">
+<span class="cv-affiliation-logo cv-affiliation-logo-cuhk-shenzhen" aria-hidden="true"></span>
+<div class="cv-affiliation-body"><span translate="no"><strong>The Chinese University of Hong Kong, Shenzhen</strong></span><br />
 Ph.D. Student in Data Science (2024.8 - Present)<br />
 <!-- Ph.D. Student in Data Science (2024.9 - Present)   -->
-<!-- - <span translate="no">**Tiangong University**</span>   --></li>
-<li><span translate="no"><strong>Tianjin Polytechnic University</strong></span><br />
+<!-- - <span translate="no">**Tiangong University**</span>   --></div>
+</li>
+<li class="cv-affiliation-item">
+<span class="cv-affiliation-logo cv-affiliation-logo-tiangong" aria-hidden="true"></span>
+<div class="cv-affiliation-body"><span translate="no"><strong>Tianjin Polytechnic University</strong></span><br />
 Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)
 <ul>
 <li>School of Computer Science and Technology (2019.9 - 2022.6)
@@ -430,24 +507,34 @@ Bachelor of Engineering in Computer Science and Technology (2018.9 - 2022.6)
 </blockquote>
 </li>
 </ul>
+</div>
 </li>
 </ul>
 
 <h3 class="cv-subsection-title" id="experience">Experience</h3>
 
-<ul>
-<li><span translate="no"><strong>Microsoft</strong></span><br />
+<ul class="cv-affiliation-list">
+<li class="cv-affiliation-item">
+<span class="cv-affiliation-logo cv-affiliation-logo-microsoft" aria-hidden="true"></span>
+<div class="cv-affiliation-body"><span translate="no"><strong>Microsoft</strong></span><br />
 Research Intern @ Microsoft Research Asia (MSRA) (2026.8 - Present)<br />
-Mentor: <span translate="no">Lu Wang</span> <a href="https://scholar.google.com/citations?user=hqlU92YAAAAJ" target="_blank" rel="noopener noreferrer">[Google Scholar]</a></li>
-<li><span translate="no"><strong>Tencent</strong></span><br />
+Mentor: <span translate="no"><a href="https://scholar.google.com/citations?user=hqlU92YAAAAJ" title="Google Scholar" target="_blank" rel="noopener noreferrer">Lu Wang</a></span></div>
+</li>
+<li class="cv-affiliation-item">
+<span class="cv-affiliation-logo cv-affiliation-logo-tencent" aria-hidden="true"></span>
+<div class="cv-affiliation-body"><span translate="no"><strong>Tencent</strong></span><br />
 Research Intern @ Lightspeed Studios, Shenzhen (2025.12 - 2026.6)<br />
-Mentor: <span translate="no">Yuan Liu</span></li>
-<li><span translate="no"><strong>The Chinese University of Hong Kong, Shenzhen</strong></span><br />
+Mentor: <span translate="no">Yuan Liu</span></div>
+</li>
+<li class="cv-affiliation-item">
+<span class="cv-affiliation-logo cv-affiliation-logo-cuhk-shenzhen" aria-hidden="true"></span>
+<div class="cv-affiliation-body"><span translate="no"><strong>The Chinese University of Hong Kong, Shenzhen</strong></span><br />
 Research Assistant @ School of Data Science (2022.2 - 2024.8)<br />
-Advisors: Prof. Baoxiang Wang &amp; Prof. Hongyuan Zha (Subsequently my Ph.D. Supervisor and Co-Supervisor)</li>
+Advisors: Prof. Baoxiang Wang &amp; Prof. Hongyuan Zha (Subsequently my Ph.D. Supervisor and Co-Supervisor)</div>
+</li>
 </ul>
 
-<h2 class="cv-section-title" id="publications--manuscripts">Publications &amp; Manuscripts</h2>
+<h2 class="cv-section-title" id="publications--manuscripts"><i class="fa-solid fa-scroll cv-section-icon" aria-hidden="true"></i>Publications &amp; Manuscripts</h2>
 
 <!-- [[Google Scholar]](https://scholar.google.com/citations?user=fbvQHX4AAAAJ&hl=zh-CN) -->
 
@@ -1046,9 +1133,9 @@ The high-scoring courses at the undergraduate level include the following:
 
 </div>
 
-<h2 class="cv-section-title" id="professional-services">Professional Services</h2>
+<h2 class="cv-section-title" id="professional-services"><i class="fa-solid fa-chess-knight cv-section-icon" aria-hidden="true"></i>Professional Services</h2>
 
-<p>Service Honors</p>
+<p class="cv-icon-label"><i class="fa-solid fa-award fa-fw cv-accent-icon" aria-hidden="true"></i>Service Honors</p>
 <ul>
 <li>NeurIPS 2025 Top Reviewer <a href="https://neurips.cc/Conferences/2025/ProgramCommittee">[List]</a> <a href="/assets/img/about/neurips-2025-top-reviewer-award-email.png">[Award Email Screenshot]</a></li>
 <li>ICML 2026 Silver Reviewer <a href="/assets/img/about/icml-2026-silver-reviewer-award-email.png">[Award Email Screenshot]</a></li>
@@ -1056,7 +1143,7 @@ The high-scoring courses at the undergraduate level include the following:
 
 <div id="prof-services">
 
-<p>Independent Reviewer</p>
+<p class="cv-icon-label"><i class="fa-solid fa-eye fa-fw cv-accent-icon" aria-hidden="true"></i>Independent Reviewer</p>
 <ul>
 <li>NeurIPS 2024 [6; 45615], 2025 [5; 32912], 2026 [4; 17738]</li>
 <li>ICLR 2025 [3; 21831], 2026 [1; 5994]</li>
@@ -1065,7 +1152,7 @@ The high-scoring courses at the undergraduate level include the following:
 <li>TMLR 2025 [2; 38363], 2026 [2; 10331]</li>
 </ul>
 
-<p>Volunteer</p>
+<p class="cv-icon-label"><i class="fa-solid fa-hand-sparkles fa-fw cv-accent-icon" aria-hidden="true"></i>Volunteer</p>
 <ul>
 <li>ACL 2026 [1; 4155]</li>
 <li>AAMAS 2024 [3; 9876], 2025 [2; 4792], 2026 [2; 2303]</li>
@@ -1090,14 +1177,14 @@ el.textContent = total;
 })();
 </script>
 
-<h2 class="cv-section-title" id="teaching">Teaching</h2>
+<h2 class="cv-section-title" id="teaching"><i class="fa-solid fa-hat-wizard cv-section-icon" aria-hidden="true"></i>Teaching</h2>
 
 <p>Teaching Assistant @ The Chinese University of Hong Kong, Shenzhen</p>
 <ul>
 <li>CSC6021/AIR6001 Artificial Intelligence (2024-25 Term 2).</li>
 </ul>
 
-<h2 class="cv-section-title" id="patents">Patents</h2>
+<h2 class="cv-section-title" id="patents"><i class="fa-solid fa-circle-check cv-section-icon" aria-hidden="true"></i>Patents</h2>
 
 <ul>
 <li><span translate="no">基于联邦学习的大语言模型预训练方法和装置</span><br />
@@ -1126,20 +1213,37 @@ el.textContent = total;
 <!-- http://epub.cnipa.gov.cn/Dxb/IndexQuery -->
 
 {% if page.url == '/' or page.url == '/about/' or page.url == '/about_me/' %}
-<h2 class="cv-section-title" id="academic-footprints">Academic Footprints</h2>
+<h2 class="cv-section-title" id="early-projects"><i class="fa-solid fa-puzzle-piece cv-section-icon" aria-hidden="true"></i>Early Projects</h2>
+<p>They may be simple, but they were among the first projects I built entirely on my own and remain meaningful to me. I was so proud of them that I bet a friend I would one day put both on my resume 😂</p>
 <ul>
-<li><span translate="no">ICML 2026 @ Seoul, South Korea</span></li>
-<li><span translate="no">ICRA 2021 @ Xi’an, China</span></li>
+<li><span translate="no"><strong>LYdriveTogether</strong></span>
+<blockquote>
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> <a href="https://github.com/YueLin301/LYhighSchool/tree/main/6%E5%B9%B6%E9%A9%BE%E9%BD%90%E9%A9%B1%E4%BD%8E%E9%85%8D%E7%89%88" target="_blank" rel="noopener noreferrer">[Code]</a></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Created:</span> 2017-04-20</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Description:</span> A Visual Basic game I built in high school in which one player controls two cars at the same time with mirrored keys, steering each around a different set of obstacles.</p>
+</blockquote>
+</li>
+<li><span translate="no"><strong>LYtanker</strong></span>
+<blockquote>
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> <a href="https://github.com/YueLin301/LYhighSchool/tree/main/11Tanker" target="_blank" rel="noopener noreferrer">[Code]</a></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Created:</span> 2017-07-16</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Description:</span> A two-player tank battle game I built in Visual Basic during high school, with keyboard-controlled movement and firing.</p>
+</blockquote>
+</li>
+</ul>
+
+<h2 class="cv-section-title" id="academic-footprints"><i class="fa-regular fa-map cv-section-icon" aria-hidden="true"></i>Academic Footprints</h2>
+<ul>
+<li><span translate="no">ICML 2026 @ Seoul, South Korea 🇰🇷</span></li>
+<li><span translate="no">ICRA 2021 @ Xi’an, China 🇨🇳</span></li>
 </ul>
 {% endif %}
 
-<h2 class="cv-section-title" id="hobbies">Hobbies</h2>
+<h2 class="cv-section-title" id="hobbies"><i class="fa-solid fa-dice cv-section-icon" aria-hidden="true"></i>Hobbies</h2>
 
 <style>
-/* Hobbies list: consistent, mobile-safe indentation.
-Top level has no bullets — this removes the awkward "bullet + <details> ▶" double
-marker and the marker-misplacement you get when a block <details> sits inside an <li>.
-Nested lists keep normal bullets with one modest, uniform indent per level. */
+/* Hobbies list: top-level labels have no bullets, while nested content keeps
+one modest, mobile-safe indent per level. */
 .hobbies-list {
 list-style: none;
 margin: 0;
@@ -1155,15 +1259,19 @@ padding-inline-start: 1.25em;
 margin: 0.15em 0;
 overflow-wrap: anywhere; /* keep long stat / title lines from overflowing on mobile */
 }
-.hobbies-list summary {
-cursor: pointer;
+.hobbies-list .cv-hobby-label {
+color: #495485;
+font-weight: 600;
+}
+html[data-theme="dark"] .cv-profile .hobbies-list .cv-hobby-label {
+color: #aebcf0;
 }
 </style>
 
+<div class="cv-centered-narrow-content">
 <ul class="hobbies-list">
 <li>
-<details>
-<summary>DC Comics</summary>
+<span class="cv-hobby-label"><i class="fa-solid fa-book-open fa-fw cv-accent-icon" aria-hidden="true"></i>DC Comics</span>
 <ul>
 <li>Recommended reads (ordered by how much I love them):
 <ul>
@@ -1171,19 +1279,15 @@ cursor: pointer;
 <li><i>Penguin: Pain &amp; Prejudice</i></li>
 <li><i>Batman: The Killing Joke</i></li>
 <li><i>Batman (2016-): I Am Bane</i></li>
-<li><i>One Bad Day: The Riddler</i></li>
 <li><i>Batman (2016-): The War of Jokes and Riddles</i></li>
-<li><i>Joker's Asylum II: The Riddler</i></li>
-<li><i>Joker: Killer Smile</i></li>
+<li><i>One Bad Day: The Riddler</i></li>
 </ul>
 </li>
 </ul>
-</details>
 </li>
 
 <li>
-<details>
-<summary>Video Games</summary>
+<span class="cv-hobby-label"><i class="fa-solid fa-gamepad fa-fw cv-accent-icon" aria-hidden="true"></i>Video Games</span>
 <ul>
 <li>王者荣耀 Honor of Kings
 <ul>
@@ -1192,11 +1296,10 @@ cursor: pointer;
 <li>浙江省第100 阿古朵，战力10028，胜率60.8%，场次176</li>
 <li>衢州市第5 影，战力10028，胜率54.1%，场次368</li>
 <li>浙江省第42 米莱狄，战力7863，胜率55.2%，场次511</li>
-<li>巅峰赛打野2063分（全国第3892名），中路1849分</li>
-<li>IOS Q区</li>
+<li>巅峰赛打野2063分（全国第3892名），中路1849分，IOS Q区</li>
 </ul>
 </li>
-<li>Overwatch 1 （已退坑）
+<li>Overwatch 1
 <ul>
 <li>Doomfist: 284 hours, 1669 matches, win rate 54%, kill/death 26068/13137</li>
 </ul>
@@ -1209,14 +1312,14 @@ cursor: pointer;
 </li>
 <!-- <li>Among all games, the one that has influenced me the most is **The Stanley Parable.**</li> -->
 </ul>
-</details>
 </li>
 
-<li>Movies</li>
+<li><span class="cv-hobby-label"><i class="fa-solid fa-film fa-fw cv-accent-icon" aria-hidden="true"></i>Movies</span></li>
 <!-- <li>Ping-Pong</li> -->
 <!-- <li>Psychology</li> -->
 
 </ul>
+</div>
 
 <!-- ## Personality
 
@@ -1327,7 +1430,7 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 <!-- ![garage](/assets/img/avatar/garage3c.png)
 _Generated by ChatGPT-4._ -->
 
-<h2 class="cv-section-title" id="contact">Contact</h2>
+<h2 class="cv-section-title" id="contact"><i class="fa-solid fa-crow cv-section-icon" aria-hidden="true"></i>Contact</h2>
 
 <div class="contact-block">
 <style>
@@ -1365,7 +1468,7 @@ vertical-align: middle;
 width: 28px;
 text-align: center;
 font-size: 17px;
-opacity: 0.75;
+color: #495485;
 }
 .contact-block .ci-label {
 font-weight: 600;
@@ -1376,7 +1479,20 @@ white-space: normal;
 overflow-wrap: anywhere;
 }
 .contact-block .ci-value a {
+color: #495485;
 overflow-wrap: anywhere;
+}
+.cv-profile .contact-block .ci-value a:hover,
+.cv-profile .contact-block .ci-value a:focus-visible {
+border-bottom-color: currentColor;
+color: #495485 !important;
+text-decoration-color: currentColor;
+}
+html[data-theme="dark"] .cv-profile .contact-block .ci-icon,
+html[data-theme="dark"] .cv-profile .contact-block .ci-value a,
+html[data-theme="dark"] .cv-profile .contact-block .ci-value a:hover,
+html[data-theme="dark"] .cv-profile .contact-block .ci-value a:focus-visible {
+color: #aebcf0 !important;
 }
 @container (max-width: 26rem) {
 .cv-profile .contact-item {

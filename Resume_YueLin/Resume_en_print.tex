@@ -94,27 +94,22 @@
   % Github:  \\
 \end{tabular*}
 
-%-----------Education & Experience-----------------
+%-----------Education-----------------
 \vspace{10pt}
-\section{Education \& Experience}
+\section{Education}
 \vspace{3pt}
 
 \resumeSubHeadingListStart
     \resumeSubheading{The Chinese University of Hong Kong, Shenzhen}{Shenzhen, China}
     {\textit{PhD Student - School of Data Science}}{2024.8 - Present}
-    {Research Interests: Multi-Agent Reinforcement Learning, Information Design.}
-    \resumeSubheading{Microsoft}{China}
-    {\textit{Research Intern @ Microsoft Research Asia (MSRA)}}{2026.8 - Present}
-    {Mentor: Lu Wang.}
-    \resumeSubheading{Tencent}{Shenzhen, China}
-    {\textit{Research Intern - Lightspeed Studios}}{2025.12 - 2026.6}
-    {Mentor: Yuan Liu.}
-    \resumeSubheading{The Chinese University of Hong Kong, Shenzhen}{Shenzhen, China}
-    {\textit{Research Assistant - School of Data Science}}{2022.2 - 2024.8}
+    {Research Interests: Multi-Agent Reinforcement Learning, Information Design.\\
+    Fortunately advised by Prof. Baoxiang Wang and Prof. Hongyuan Zha.\\
+    Other close collaborators include Prof. Wenhao Li and Prof. Pascal Poupart.}
 % \vspace{5pt}
     % \resumeSubheading{Tiangong University}{Tianjin, China}
     \resumeSubheading{Tianjin Polytechnic University}{Tianjin, China}
     {\textit{Bachelor of Engineering - Computer Science and Technology}}{2018.9 - 2022.6}
+    {}
 \vspace{-3pt}
         \resumeItemListStart
             \resumeItem
@@ -126,6 +121,23 @@
                 {GPA: 3.90/4 (92.0/100)~~
                 Rank: 1/60}
         \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------Experience-----------------
+\vspace{5pt}
+\section{Experience}
+\vspace{3pt}
+
+\resumeSubHeadingListStart
+    \resumeSubheading{Microsoft}{China}
+    {\textit{Research Intern @ Microsoft Research Asia (MSRA)}}{2026.8 - Present}
+    {Mentor: Lu Wang.}
+    \resumeSubheading{Tencent}{Shenzhen, China}
+    {\textit{Research Intern - Lightspeed Studios}}{2025.12 - 2026.6}
+    {Mentor: Yuan Liu.}
+    \resumeSubheading{The Chinese University of Hong Kong, Shenzhen}{Shenzhen, China}
+    {\textit{Research Assistant - School of Data Science}}{2022.2 - 2024.8}
+    {Fortunately advised by Prof. Baoxiang Wang and Prof. Hongyuan Zha.}
 \resumeSubHeadingListEnd
 
 %-----------Publications-----------------
@@ -142,14 +154,14 @@
         \item Poster. This is one of my representative works.
         \item As of 2026, my advisor also regards this as one of his representative works.
 
-        \item Area: Data Science $\times$ Game Theory
+        \item TLDR: Introduces a Markov signaling game and an obedience-constrained signaling-gradient algorithm that learns what information to reveal over time so self-interested receivers are willing to follow the sender's recommendations.
       \end{itemize}
 \item Verbalized Bayesian Persuasion. \\
       Wenhao Li, \textbf{Yue Lin}, Yun Hua, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang. \\
       \textit{International Conference on Machine Learning (ICML) 2026.}
       \begin{itemize}[itemsep=0pt,topsep=0pt,partopsep=0pt]
 
-        \item Area: Data Science $\times$ Game Theory
+        \item TLDR: Introduces a verbalized Bayesian-persuasion framework in which LLMs play sender and receiver while an equilibrium solver searches for natural-language messages the receiver has reason to follow, including in multi-stage dialogues.
       \end{itemize}
 \item Policy-Conditioned Policies for Multi-Agent Task Solving. \\
       \textbf{Yue Lin}, Shuhui Zhu, Wenhao Li, Ang Li, Dan Qiao, Pascal Poupart, Hongyuan Zha, Baoxiang Wang. \\
@@ -161,7 +173,7 @@
               scooped by Google DeepMind's
               \textit{Code-Space Response Oracles: Generating Interpretable Multi-Agent Policies with Large Language Models}.
 
-        \item Area: Data Science $\times$ Game Theory
+        \item TLDR: Represents each agent's strategy as readable source code and introduces Programmatic Iterated Best Response, where an LLM rewrites one policy against another using game rewards and unit tests as feedback.
       \end{itemize}
 \item History-Dependent Policy Gradient. \\
       \textbf{Yue Lin}, Jiacheng Nie, Hongyuan Zha, Baoxiang Wang. \\
@@ -170,7 +182,7 @@
         \item No paper was produced; our method was scooped by Google's paper
               \textit{Multi-agent cooperation through learning-aware policy gradients}
               (\textit{ICLR 2025}).
-        \item Area: Data Science $\times$ Game Theory
+        \item TLDR: Derives an exact policy gradient for non-stationary multi-agent learning systems by explicitly accounting for the histories of the other agents.
       \end{itemize}
 \item The Reciprocity Gradient. \\
       \textbf{Yue Lin}, Pascal Poupart, Shuhui Zhu, Dan Qiao, Wenhao Li, Yuan Liu, Hongyuan Zha, Baoxiang Wang. \\
@@ -178,21 +190,21 @@
       \begin{itemize}[itemsep=0pt,topsep=0pt,partopsep=0pt]
         \item This is one of my representative works.
 
-        \item Area: Data Science $\times$ Social Science $\times$ Game Theory
+        \item TLDR: Introduces the reciprocity gradient, which analytically traces how actions and evaluative signals propagate through reputation chains and return as future rewards, jointly optimizing both without reward shaping.
       \end{itemize}
 \item Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents. \\
       Shuhui Zhu, \textbf{Yue Lin}, Shriya Kaistha, Wenhao Li, Baoxiang Wang, Hongyuan Zha, Gillian K. Hadfield, Pascal Poupart. \\
       \textit{International Conference on Machine Learning (ICML) 2026.}
       \begin{itemize}[itemsep=0pt,topsep=0pt,partopsep=0pt]
 
-            \item Area: Data Science $\times$ Social Science $\times$ Game Theory
+            \item TLDR: Introduces ALIGN, a decentralized mechanism in which self-interested language-model agents exchange open-ended, tone-graded gossip to build reputations, coordinate social norms, and isolate defectors.
       \end{itemize}
 \item Information Bargaining: Bilateral Commitment in Bayesian Persuasion. \\
       \textbf{Yue Lin}, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang. \\
       \textit{EC 2025 Workshop: Information Economics and Large Language Models.}
       \begin{itemize}[itemsep=0pt,topsep=0pt,partopsep=0pt]
 
-            \item Area: Game Theory $\times$ Data Science
+            \item TLDR: Recasts long-term Bayesian persuasion as two-sided bargaining with commitment on both sides, separating the value of private information from the advantage of proposing first.
       \end{itemize}
 \item Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3. \\
       \textbf{Yue Lin}, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao. \\
@@ -200,14 +212,14 @@
       \begin{itemize}[itemsep=0pt,topsep=0pt,partopsep=0pt]
         \item Oral. Delivered a presentation at the Xi’an conference venue.
 
-        \item Area: Robotics
+        \item TLDR: Introduces a two-degree-of-freedom transformable RHex design that switches among wheel, leg, claw, and hook modes for efficient travel, obstacle crossing, object transport, and ladder climbing.
       \end{itemize}
 \item A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators. \\
       \textbf{Yue Lin}, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin. \\
       \textit{International Journal of Advanced Robotic Systems (IJARS) 2022.}
       \begin{itemize}[itemsep=0pt,topsep=0pt,partopsep=0pt]
 
-            \item Area: Robotics
+            \item TLDR: Introduces Swinging Search and Crawling Control, which uses reinforcement learning over the arm's self-motion to find a collision-free target configuration, then moves the arm toward it by crawling instead of searching every intermediate pose.
       \end{itemize}
 
 \end{itemize}

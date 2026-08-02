@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light dark">
+  <title>LyTopia · Deploying</title>
+  <style>
+    :root {
+      --page-bg: #f7f7f9;
+      --card-bg: #ffffff;
+      --border: #e9e9ee;
+      --text: #34343c;
+      --muted: #6f6f78;
+      --accent: #2a408e;
+      --accent-contrast: #ffffff;
+      --shadow: 0 12px 38px rgba(20, 20, 40, 0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page-bg: #17181b;
+        --card-bg: #232329;
+        --border: #34343a;
+        --text: #dcdce0;
+        --muted: #a6a6ae;
+        --accent: #82a8ef;
+        --accent-contrast: #10131c;
+        --shadow: 0 12px 38px rgba(0, 0, 0, 0.42);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: min(100%, 42rem);
+    }
+
+    .card {
+      padding: clamp(2rem, 6vw, 3.5rem);
+      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin: 0.8rem 0 0.1rem;
+      font-size: clamp(1.45rem, 4vw, 1.8rem);
+      letter-spacing: -0.02em;
+    }
+
+    .domain {
+      margin: 0 0 1.35rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1.2rem;
+      padding: 0.3rem 0.9rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+
+    p {
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    .detail {
+      margin-top: 0.45rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.6rem;
+    }
+
+    .button {
+      padding: 0.58rem 1.05rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 650;
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      border-radius: 9px;
+    }
+
+    .button.primary {
+      color: var(--accent-contrast);
+      background: var(--accent);
+    }
+
+    .button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0.35;
+        transform: scale(0.85);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dot {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <img class="avatar" src="assets/img/avatar/meow5.png" alt="LyTopia cat avatar"
+        onerror="this.onerror=null;this.src='../assets/img/avatar/meow5.png'">
+      <h1>Yue Lin</h1>
+      <p class="domain">LyTopia · yuelin301.github.io</p>
+      <div class="status"><span class="dot"></span>Deploying a new version</div>
+      <p>The site is temporarily showing this page while the latest update is being deployed.</p>
+      <p class="detail">Please check back in a few minutes.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/YueLin301">GitHub profile</a>
+        <a class="button" href="https://github.com/YueLin301/yuelin301.github.io">Website repository</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

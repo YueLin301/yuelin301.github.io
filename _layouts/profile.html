@@ -8,6 +8,10 @@
   {% seo title=false %}
   <title>{{ page.title | default: 'Yue Lin' }}</title>
   {% include_cached favicons.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/cursor.css' | relative_url }}">
+  {% if site.mouse_click_effect %}
+    <script defer src="{{ '/assets/js/lib/fireworks.js' | relative_url }}"></script>
+  {% endif %}
   <script>
     (function () {
       var theme = null;
@@ -27,6 +31,10 @@
     html {
       scroll-behavior: smooth;
     }
+    #introduction button,
+    #introduction summary {
+      cursor: inherit;
+    }
     .cv-content li[data-publication="true"] > blockquote {
       margin-bottom: .75rem;
     }
@@ -35,6 +43,28 @@
     }
     .cv-content .cv-section-title {
       scroll-margin-top: 2rem;
+    }
+    .profile-colophon {
+      padding: 0 .5rem;
+      text-align: right;
+    }
+    .profile-colophon a {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .25rem 0;
+      color: var(--cv-muted, #6a6a72);
+      font-size: .7rem;
+      letter-spacing: .06em;
+      text-decoration: none;
+    }
+    .profile-colophon a:hover,
+    .profile-colophon a:focus-visible {
+      color: var(--cv-link, #2a408e);
+    }
+    .profile-colophon a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
     }
 
     .cv-content .cv-profile .cv-intro-header {
@@ -319,6 +349,12 @@
         {% include cv_content.html show_theme_toggle=true %}
       </div>
     </section>
+    <footer class="profile-colophon">
+      <a href="{{ '/archives/' | relative_url }}" aria-label="LyTopia archives">
+        <i class="fa-solid fa-scroll" aria-hidden="true"></i>
+        <span>LyTopia</span>
+      </a>
+    </footer>
   </main>
   <script>
     (function () {

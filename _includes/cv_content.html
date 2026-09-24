@@ -659,6 +659,57 @@ font-weight: 600;
 .pub-tldr {
 color: var(--text-color, #5d6473);
 }
+.cv-profile .pub-reflection-details {
+margin-top: 0.65rem;
+}
+.cv-profile .pub-reflection {
+margin: 0.75rem 0 1rem;
+padding: 1rem 1.1rem;
+border-left: 3px solid rgba(73, 84, 133, 0.35);
+border-radius: 0 0.45rem 0.45rem 0;
+background: rgba(73, 84, 133, 0.055);
+color: var(--text-color, #5d6473);
+font-size: 0.94rem;
+line-height: 1.78;
+}
+.cv-profile .pub-reflection > :first-child {
+margin-top: 0;
+}
+.cv-profile .pub-reflection > :last-child {
+margin-bottom: 0;
+}
+.cv-profile .pub-reflection-venue {
+margin-bottom: 0.05rem;
+color: #495485;
+font-size: 0.78rem;
+font-weight: 650;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
+html[data-theme="dark"] .cv-profile .pub-reflection-venue {
+color: #aebcf0;
+}
+.cv-profile .pub-reflection-title {
+margin: 0.05rem 0 1rem;
+color: var(--heading-color, #343d63);
+font-size: 1.15rem;
+font-weight: 650;
+line-height: 1.45;
+}
+.cv-profile .pub-reflection-epigraph {
+margin: 1rem 0 1.15rem;
+padding: 0.15rem 0 0.15rem 1rem;
+border-left: 3px solid rgba(73, 84, 133, 0.28);
+color: var(--text-color, #5d6473);
+}
+.cv-profile .pub-reflection-epigraph footer {
+margin-top: 0.45rem;
+font-style: normal;
+text-align: right;
+}
+.cv-profile .pub-reflection p {
+margin: 0.85rem 0;
+}
 @container (max-width: 42rem) {
 .pub-control-group {
 width: 100%;
@@ -711,7 +762,7 @@ font-size: 13px;
 <ul>
 <li data-publication="true" data-pub-year="2023" data-published="true" data-first-author="true" data-representative="true" data-selected-paper="true"><span translate="no">Information Design in Multi-Agent Reinforcement Learning.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Wenhao Li, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>Neural Information Processing Systems (NeurIPS) 2023. Poster.</em></span>
+<span translate="no"><em>Advances in Neural Information Processing Systems (NeurIPS). 2023. Poster.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Highlight:</span> This is one of my representative works; as of 2026, my advisor also regards it as one of his representative works.</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
@@ -757,9 +808,9 @@ font-size: 13px;
 }</code></pre></div>
 </details>
 </li>
-<li data-publication="true" data-pub-year="2026" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Verbalized Bayesian Persuasion.</span><br />
+<li data-publication="true" data-pub-year="2026" data-pub-sort="2026-07" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Verbalized Bayesian Persuasion.</span><br />
 <span translate="no">Wenhao Li, <strong>Yue Lin</strong>, Yun Hua, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>International Conference on Machine Learning (ICML) 2026. Poster.</em></span>
+<span translate="no"><em>International Conference on Machine Learning (ICML). 2026. Poster.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
 <a href="https://openreview.net/forum?id=dc0WdvWSnB">[Paper]</a> 
@@ -796,7 +847,7 @@ font-size: 13px;
 }</code></pre></div>
 </details>
 </li>
-<li data-publication="true" data-pub-year="2025" data-published="false" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">Policy-Conditioned Policies for Multi-Agent Task Solving.</span><br />
+<li data-publication="true" data-pub-year="2025" data-pub-sort="2025-12-24" data-published="false" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">Policy-Conditioned Policies for Multi-Agent Task Solving.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Shuhui Zhu, Wenhao Li, Ang Li, Dan Qiao, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span><br />
 <span translate="no"><em>arXiv preprint. 2025-12-24.</em></span>
 <blockquote>
@@ -874,16 +925,17 @@ font-size: 13px;
 <h3 class="cv-subsection-title" id="data-science-x-game-theory-x-social-science">Data Science x Game Theory x Social Science</h3>
 
 <ul>
-<li data-publication="true" data-pub-year="2026" data-published="false" data-first-author="true" data-representative="true" data-selected-paper="true"><span translate="no">The Reciprocity Gradient.</span><br />
+<li data-publication="true" data-pub-year="2026" data-pub-sort="2026-12" data-published="true" data-first-author="true" data-representative="true" data-selected-paper="true"><span translate="no">The Reciprocity Gradient.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Pascal Poupart, Shuhui Zhu, Dan Qiao, Wenhao Li, Yuan Liu, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>arXiv preprint. 2026-05-08.</em></span>
+<span translate="no"><em>Advances in Neural Information Processing Systems (NeurIPS). 2026. Poster.</em></span>
 <blockquote>
 
 <p class="pub-meta-line"><span class="pub-meta-label">Highlight:</span> This is one of my representative works.</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
-<a href="https://arxiv.org/abs/2605.08323">[Manuscript]</a></p>
+<a href="https://arxiv.org/abs/2605.08323">[arXiv]</a></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Review scores:</span> 6/5/4 (out of 6; 4 = <em>borderline accept</em>).</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory × Social Science</span></p>
-<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces the reciprocity gradient, which analytically traces how actions and evaluative signals propagate through reputation chains and return as future rewards, jointly optimizing both without reward shaping.</p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Derives a pure-RL reciprocity gradient that solves cross-agent influence attribution by differentiating future returns through chains of actions, evaluations, and other agents' responses, so an agent learns from scratch both how to behave under social scrutiny and how to reshape group norms—without reward shaping, centralized mechanisms, or reputation priors.</p>
 </blockquote>
 <details style="margin-top: -10px;">
 <summary>[Expand Abstract]</summary>
@@ -901,21 +953,40 @@ font-size: 13px;
 <span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
 <span></span>
 </div>
-  <pre class="highlight" style="margin-left: 20px;"><code>@misc{lin2026reciprocity,
+  <pre class="highlight" style="margin-left: 20px;"><code>@inproceedings{lin2026reciprocity,
   title={The Reciprocity Gradient},
   author={Lin, Yue and Poupart, Pascal and Zhu, Shuhui and Qiao, Dan and Li, Wenhao and Liu, Yuan and Zha, Hongyuan and Wang, Baoxiang},
+  booktitle={Advances in Neural Information Processing Systems},
   year={2026},
-  eprint={2605.08323},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG},
-  doi={10.48550/arXiv.2605.08323},
   url={https://arxiv.org/abs/2605.08323}
 }</code></pre></div>
 </details>
+<details class="pub-reflection-details">
+<summary>[Expand Afterword]</summary>
+<article class="pub-reflection" lang="zh-CN">
+<p class="pub-reflection-venue"><span translate="no">NeurIPS 2026</span></p>
+<h4 class="pub-reflection-title">世界偶尔回应我</h4>
+
+<blockquote class="pub-reflection-epigraph">
+<p>“你不能只为自己而活；千万条丝线将你与你的同胞连接在一起，而沿着那些丝线，如同沿着共振的弦一般，你的行为会作为原因向外传递，又将造成结果返回到你自己身上。”</p>
+<footer>—— 《参与他人的罪恶》</footer>
+</blockquote>
+
+<p>这篇文章研究声誉（Reputation）问题，是一个多人通信问题，每个人可以评价别人的行为，每个人在和另一个人互动的时候也都可以看到别人对它的评价。方法是纯RL，我们的方法可以让一个从0开始学习的 Agent 学会如何在一个社会评价体系里存活（在他人的凝视下behave itself），并学会如何通过闲谈评价别人的行为来改变整个社会风气使其对自己有利。潜在的未来应用场景包括涉及通信的社会群体系统的建模，比如电商平台和数字零工系统（如网约车平台）里面的评论系统。</p>
+
+<p>这个问题的难点在于延迟奖励和信号影响力的归因。当每个人的行为都会被别人评价的时候，玩家在做任何动作时都要考虑自己对他人的影响 以及这个影响以后又将会如何影响回自己。个体A该如何行动 来改变B的看法 从而使C在之前从没见过A的情况下愿意和A自己合作？A又该如何评价别人的行为 来操纵整个群体的声誉 从而使自己以后可以获得更多收益？“众生随业流转。” 我们希望设计算法捕捉到这种交互过程中的错综复杂的 业力 Karma，从而稳定地优化收益期望。我们把这种跨Agent 的 Credit Assignment 问题称为 Influence Attribution，即，研究玩家该如何完成这一条链的归因：如何提高自己的收益 -&gt; 谁的行为影响了我的收益 -&gt; 如何改变自己的动作来改变那些人对我的评价/如何改变自己对别人的评价来改变群体的风气使其对我有利。</p>
+
+<p>没有 Reward Shaping，没有 Centralized Mechanisms，没有在方法里引入任何关于 Reputation 的先验知识，我们给出的答案是简单自然的，自然到能让人感觉这问题本就应该这样解决：梯度。把动作也看成是一种信号，那么我的信号的细微变化会引起你的行为的什么变动这个问题，就被归约成咱的老问题 通信问题了，直观上可以说动作也是在表达你的倾向所以也是通信。在这个环境的随机过程里，我们重新推导了 Policy Gradient，计算每个 sampled trajectory 里的自己最后的收益期望对自己策略的梯度，中间沿着整个计算图 chain through 了的所有的策略函数，也就是沿着这整个互动历史构成的网络拓扑来计算了“个体的行为对自己未来收益的途径过程中的每个人造成的影响”，可以说Influence Attribution 是自动完成的。实验效果是在经典Leading Eights和新造的群体里都达到了理论上的最优均衡。</p>
+
+<p>不是花费最多心血的一篇但算是很有纪念意义的一篇了，这是当时吸引我加入这个研究方向的问题之一。组里之前做过一些尝试但是探索比较曲折所以一直被搁置。一直以来有隐隐感觉这个问题也许可以用之前的一些简单的insights来搞，不过一直没有真的去起步。在经历诸多其他稿子的不顺（有不可抗力也有自身原因）之后，终于在今年2月底决定捡起来开始着手推进。折腾了2个月做了尽可能足的准备，直接投直接中，稳得像失去过什么。在这个技术日新月异的大模型时代，做出一篇古典的强化学习算法已经不算是什么能称道的事了，但这篇解决了不光是一个问题也解决了心结，作为又一个个人阶段性的工作我仍然感到很满意，也是感性地写了这许多。于是今晚可以不再琢磨 multi-agent system 的春天到底什么时候来，喃喃着什么 “一切烦恼都来自于人际关系”、“以特定方式把 agents 组织成社会才会产生真正的智能”、”more is different” 就睡着了</p>
+
+<p>感谢导师们的指导，感谢合作者及身边人的支持。孩子终于又要到饭了🍌🐒</p>
+</article>
+</details>
 </li>
-<li data-publication="true" data-pub-year="2026" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents.</span><br />
+<li data-publication="true" data-pub-year="2026" data-pub-sort="2026-07" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents.</span><br />
 <span translate="no">Shuhui Zhu, <strong>Yue Lin</strong>, Shriya Kaistha, Wenhao Li, Baoxiang Wang, Hongyuan Zha, Gillian K. Hadfield, Pascal Poupart.</span><br />
-<span translate="no"><em>International Conference on Machine Learning (ICML) 2026. Poster.</em></span>
+<span translate="no"><em>International Conference on Machine Learning (ICML). 2026. Poster.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
 <a href="https://openreview.net/forum?id=jYxRNCfRaD">[Paper]</a> 
@@ -958,9 +1029,9 @@ font-size: 13px;
 <h3 class="cv-subsection-title" id="game-theory">Game Theory</h3>
 
 <ul>
-<li data-publication="true" data-pub-year="2025" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">Information Bargaining: Bilateral Commitment in Bayesian Persuasion.</span><br />
+<li data-publication="true" data-pub-year="2025" data-pub-sort="2025-07-10" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">Information Bargaining: Bilateral Commitment in Bayesian Persuasion.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>EC 2025 Workshop: Information Economics and Large Language Models.</em></span>
+<span translate="no"><em>Workshop on Information Economics × Large Language Models at the ACM Conference on Economics and Computation (EC). 2025. Poster.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
 <a href="https://arxiv.org/abs/2506.05876">[Paper]</a> 
@@ -989,12 +1060,12 @@ font-size: 13px;
   title={Information Bargaining: Bilateral Commitment in Bayesian Persuasion},
   author={Lin, Yue and Zhu, Shuhui and Cunningham, William A. and Li, Wenhao and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang},
   year={2025},
+  note={Poster presented at the First EC Workshop on Information Economics {$\times$} Large Language Models (non-archival)},
   eprint={2506.05876},
   archivePrefix={arXiv},
   primaryClass={cs.GT},
   doi={10.48550/arXiv.2506.05876},
-  url={https://arxiv.org/abs/2506.05876},
-  note={Presented at the EC '25 Workshop on Information Economics x Large Language Models (non-archival)}
+  url={https://arxiv.org/abs/2506.05876}
 }</code></pre></div>
 </details>
 </li>
@@ -1010,7 +1081,7 @@ font-size: 13px;
 <ul>
 <li data-publication="true" data-pub-year="2021" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="true"><span translate="no">Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.</span><br />
-<span translate="no"><em>International Conference on Robotics and Automation (ICRA) 2021. Oral.</em></span>
+<span translate="no"><em>International Conference on Robotics and Automation (ICRA). 2021. Oral.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
 <a href="https://ieeexplore.ieee.org/abstract/document/9561060">[Paper]</a> 
@@ -1051,7 +1122,7 @@ font-size: 13px;
 </li>
 <li data-publication="true" data-pub-year="2022" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.</span><br />
-<span translate="no"><em>International Journal of Advanced Robotic Systems (IJARS) 2022</em>.</span>
+<span translate="no"><em>International Journal of Advanced Robotic Systems (IJARS). 2022.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> <a href="https://journals.sagepub.com/doi/full/10.1177/17298806221110022">[Paper]</a> 
 <a href="https://github.com/YueLin301/Swinging-Search-Crawling-Control">[Code]</a> 
@@ -1099,13 +1170,13 @@ font-size: 13px;
 
 <!-- - Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
 **Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
-*International Conference on Robotics and Automation (ICRA) 2021*.
+*International Conference on Robotics and Automation (ICRA). 2021. Oral.*
 > Oral. Delivered a presentation at the Xi'an conference venue.  
 [[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060) 
 [[Blog]](/posts/RHex-T3/)  
 - A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
 **Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.  
-*International Journal of Advanced Robotic Systems (IJARS) 2022*.  
+*International Journal of Advanced Robotic Systems (IJARS). 2022.*
 > [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Blog]](/posts/SSCC/) 
 [[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
 - Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.  
@@ -1150,7 +1221,7 @@ The high-scoring courses at the undergraduate level include the following:
 <p class="cv-icon-label"><i class="fa-solid fa-eye fa-fw cv-accent-icon" aria-hidden="true"></i>Independent Reviewer</p>
 <ul>
 <li>NeurIPS 2024 [6; 45615], 2025 [5; 32912], 2026 [4; 17738]</li>
-<li>ICLR 2025 [3; 21831], 2026 [1; 5994]</li>
+<li>ICLR 2025 [3; 21831], 2026 [1; 5994], 2027 [0; 0]</li>
 <li>ICML 2025 [6; 32893], 2026 [6; 43185]</li>
 <li>AAAI 2027 [2; 12678]</li>
 <li>TMLR 2025 [2; 38363], 2026 [2; 10331]</li>
@@ -1241,6 +1312,7 @@ el.textContent = total;
 
 <h2 class="cv-section-title" id="academic-footprints"><i class="fa-regular fa-map cv-section-icon" aria-hidden="true"></i>Academic Footprints</h2>
 <ul>
+<li><span translate="no">NeurIPS 2026 @ Sydney, Australia 🇦🇺</span> <em>(Planning to attend)</em></li>
 <li><span translate="no">ICML 2026 @ Seoul, South Korea 🇰🇷</span></li>
 <li><span translate="no">ICRA 2021 @ Xi’an, China 🇨🇳</span></li>
 </ul>
@@ -1644,8 +1716,18 @@ var matches = text.match(/(20\d{2})(?:-(\d{2})(?:-(\d{2}))?)?/g);
 var sortKey = 0;
 var year = null;
 var explicitYear = li.getAttribute('data-pub-year');
+var explicitSort = li.getAttribute('data-pub-sort');
 if (explicitYear && /^(20\d{2})$/.test(explicitYear)) {
 year = parseInt(explicitYear, 10);
+}
+
+var explicitSortParts = explicitSort && explicitSort.match(/^(20\d{2})-(\d{2})(?:-(\d{2}))?$/);
+if (explicitSortParts) {
+if (year == null) year = parseInt(explicitSortParts[1], 10);
+var explicitMonth = parseInt(explicitSortParts[2], 10);
+var explicitDay = explicitSortParts[3] ? parseInt(explicitSortParts[3], 10) : 1;
+sortKey = parseInt(explicitSortParts[1], 10) * 10000 + explicitMonth * 100 + explicitDay;
+} else if (year != null) {
 sortKey = year * 10000 + 101;
 } else if (matches && matches.length > 0) {
 var last = matches[matches.length - 1];

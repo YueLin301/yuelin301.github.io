@@ -67,13 +67,15 @@
       outline-offset: 4px;
     }
 
-    .cv-content .cv-profile .cv-intro-header {
-      grid-template-columns: 130px minmax(0, 1fr) 2.75rem;
+    .cv-content .cv-profile .cv-identity-lockup {
+      padding: 0;
     }
     .profile-theme-toggle {
+      position: fixed;
+      top: max(1.5rem, env(safe-area-inset-top, 0px));
+      right: max(1rem, env(safe-area-inset-right, 0px));
+      z-index: 50;
       display: grid;
-      align-self: start;
-      justify-self: end;
       width: 2.75rem;
       height: 2.75rem;
       padding: 0;
@@ -102,13 +104,16 @@
       stroke-linejoin: round;
       stroke-width: 1.8;
     }
+    .profile-theme-icon-moon {
+      display: none;
+    }
     .profile-theme-icon-sun {
+      display: block;
+    }
+    html[data-theme="dark"] .profile-theme-icon-sun {
       display: none;
     }
     html[data-theme="dark"] .profile-theme-icon-moon {
-      display: none;
-    }
-    html[data-theme="dark"] .profile-theme-icon-sun {
       display: block;
     }
 
@@ -136,37 +141,67 @@
     .profile-toc-details {
       overflow: hidden;
       border: 1px solid var(--cv-border, #ececf1);
-      border-radius: 12px;
+      border-radius: 10px;
       background: var(--cv-bg, #fff);
-      box-shadow: 0 8px 28px rgba(20, 20, 40, .14);
+      box-shadow: 0 5px 18px rgba(20, 20, 40, .1);
     }
     .profile-toc-summary {
       display: flex;
       align-items: center;
-      gap: .55rem;
-      min-height: 2.7rem;
-      padding: .55rem .85rem;
+      gap: .42rem;
+      min-height: 2.35rem;
+      padding: .42rem .7rem;
       color: var(--cv-text, #2c2c33);
-      font-size: .84rem;
+      font-size: .76rem;
       font-weight: 650;
       line-height: 1.3;
+      letter-spacing: .01em;
       list-style: none;
       cursor: pointer;
       user-select: none;
+      transition: color 120ms ease, background-color 120ms ease, transform 120ms ease;
     }
     .profile-toc-summary::-webkit-details-marker {
       display: none;
     }
     .profile-toc-summary::before {
-      content: "";
-      width: .85rem;
-      height: .65rem;
-      background:
-        linear-gradient(currentColor 0 0) 0 0 / 100% 1px,
-        linear-gradient(currentColor 0 0) 0 50% / 100% 1px,
-        linear-gradient(currentColor 0 0) 0 100% / 100% 1px;
-      background-repeat: no-repeat;
-      opacity: .72;
+      content: none;
+    }
+    .profile-toc-summary-icon {
+      display: block;
+      width: 1em;
+      height: auto;
+      flex: 0 0 auto;
+      color: var(--cv-link, #2a408e);
+      font-size: 1rem;
+      text-align: center;
+    }
+    .profile-toc:not(.is-open) .profile-toc-details {
+      border-color: rgba(73, 84, 133, .18);
+      border-radius: 999px;
+      box-shadow: 0 4px 16px rgba(20, 20, 40, .1);
+    }
+    .profile-toc:not(.is-open) .profile-toc-summary:hover {
+      background: var(--cv-soft-bg, #f6f8fc);
+      transform: translateY(-1px);
+    }
+    .profile-toc:not(.is-open) .profile-toc-summary {
+      width: 2.75rem;
+      min-height: 2.75rem;
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+    }
+    .profile-toc:not(.is-open) .profile-toc-summary-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
     .profile-toc-details[open] .profile-toc-summary {
       border-bottom: 1px solid var(--cv-border, #ececf1);
@@ -237,16 +272,28 @@
       background: #4b5365;
     }
 
-    @media (min-width: 82rem) {
-      .profile-toc {
-        top: 1.5rem;
-        right: auto;
-        bottom: auto;
-        left: calc(50% + 30rem);
-        width: min(14rem, calc(50vw - 31.5rem));
+    @media (min-width: 64rem) {
+      .profile-theme-toggle {
+        right: calc(25vw - 15.375rem);
       }
       .profile-toc:not(.is-open) {
-        width: min(14rem, calc(50vw - 31.5rem));
+        right: calc(25vw - 15.375rem);
+        bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    @media (min-width: 82rem) {
+      .profile-toc {
+        top: auto;
+        right: auto;
+        bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+        left: calc(75vw + 14rem);
+        width: min(14rem, calc(50vw - 30rem));
+        transform: translateX(-50%);
+      }
+      .profile-toc:not(.is-open) {
+        right: auto;
+        width: 2.75rem;
       }
       .profile-toc-details {
         max-height: calc(100vh - 3rem);
@@ -264,64 +311,10 @@
       }
     }
 
-    @container (max-width: 36rem) {
-      .cv-content .cv-profile .cv-intro-header {
-        grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
-        column-gap: .75rem;
-      }
-      .cv-profile .cv-avatar {
-        grid-row: 1;
-        grid-column: 2;
-      }
-      .cv-profile .cv-intro-quote {
-        grid-row: 2;
-        grid-column: 1 / -1;
-      }
+    @media (max-width: 40rem) {
       .profile-theme-toggle {
-        grid-row: 1;
-        grid-column: 3;
-      }
-    }
-
-    @supports not (container-type: inline-size) {
-      @media (max-width: 43rem) {
-        .cv-content .cv-profile .cv-intro-header {
-          grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
-          column-gap: .75rem;
-        }
-        .cv-profile .cv-avatar {
-          grid-row: 1;
-          grid-column: 2;
-        }
-        .cv-profile .cv-intro-quote {
-          grid-row: 2;
-          grid-column: 1 / -1;
-        }
-        .profile-theme-toggle {
-          grid-row: 1;
-          grid-column: 3;
-        }
-      }
-    }
-
-    @media (max-width: 24rem) {
-      .profile-toc:not(.is-open) .profile-toc-summary {
-        width: 2.75rem;
-        min-height: 2.75rem;
-        justify-content: center;
-        gap: 0;
-        padding: .55rem;
-      }
-      .profile-toc:not(.is-open) .profile-toc-summary-label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
+        top: max(.75rem, env(safe-area-inset-top, 0px));
+        right: max(.75rem, env(safe-area-inset-right, 0px));
       }
     }
 
@@ -330,6 +323,7 @@
         scroll-behavior: auto;
       }
       .profile-theme-toggle,
+      .profile-toc-summary,
       .profile-toc-link {
         transition: none;
       }
@@ -339,7 +333,12 @@
 <body id="introduction">
   <nav class="profile-toc" id="profile-toc" aria-label="Table of contents" hidden>
     <details class="profile-toc-details" id="profile-toc-details">
-      <summary class="profile-toc-summary"><span class="profile-toc-summary-label">Contents</span></summary>
+      <summary class="profile-toc-summary" title="Contents">
+        <svg class="profile-toc-summary-icon" viewBox="0 0 576 512" aria-hidden="true" focusable="false" fill="currentColor">
+          <path d="M256 16c0-7 4.5-13.2 11.2-15.3s13.9 .4 17.9 6.1l224 320c3.4 4.9 3.8 11.3 1.1 16.6s-8.2 8.6-14.2 8.6H272c-8.8 0-16-7.2-16-16V16zM212.1 96.5c7 1.9 11.9 8.2 11.9 15.5V336c0 8.8-7.2 16-16 16H80c-5.7 0-11-3-13.8-8s-2.9-11-.1-16l128-224c3.6-6.3 11-9.4 18-7.5zM5.7 404.3C2.8 394.1 10.5 384 21.1 384H554.9c10.6 0 18.3 10.1 15.4 20.3l-4 14.3C550.7 473.9 500.4 512 443 512H133C75.6 512 25.3 473.9 9.7 418.7l-4-14.3z"/>
+        </svg>
+        <span class="profile-toc-summary-label">Contents</span>
+      </summary>
       <ol class="profile-toc-list" id="profile-toc-list"></ol>
     </details>
   </nav>

@@ -18,14 +18,15 @@ overflow-wrap: anywhere;
 .cv-profile .cv-accent-icon {
 display: inline-block;
 margin-right: 0.38em;
-color: #495485;
+color: var(--heading-color, #495485);
 font-size: 0.9em;
 vertical-align: -0.02em;
 }
 .cv-profile .cv-icon-label {
 font-weight: 600;
 }
-html[data-theme="dark"] .cv-profile .cv-accent-icon {
+html[data-theme="dark"] .cv-profile .cv-accent-icon,
+html[data-mode="dark"] .cv-profile .cv-accent-icon {
 color: #aebcf0;
 }
 .cv-profile .cv-affiliation-list {
@@ -82,42 +83,191 @@ min-width: 0;
 max-width: 100%;
 }
 .cv-profile .cv-intro-header {
-display: grid;
-grid-template-columns: 130px minmax(0, 1fr);
+--cv-hero-space: clamp(2rem, 4cqi, 2.4rem);
+display: flex;
+flex-direction: column;
 align-items: center;
-column-gap: 30px;
-margin-bottom: 20px;
+gap: var(--cv-hero-space);
+margin-bottom: var(--cv-hero-space);
+padding-top: var(--cv-hero-space);
+text-align: center;
+}
+.cv-profile .cv-identity-lockup {
+display: grid;
+grid-template-columns: minmax(8rem, 1fr) minmax(0, 2fr) minmax(8rem, 1fr);
+column-gap: 1rem;
+align-items: center;
+width: 100%;
+min-height: 112px;
+margin: 0 auto;
+}
+.cv-profile .cv-identity {
+grid-column: 2;
+grid-row: 1;
+width: 100%;
+min-width: 0;
+padding: 0;
+text-align: center;
 }
 .cv-profile .cv-avatar {
 position: relative;
 display: block;
-flex: 0 0 130px;
-width: 130px;
-height: 130px;
+width: 112px;
+height: 112px;
 padding: 0;
+overflow: hidden;
 border: 0;
-background: transparent;
+border-radius: 26px;
+background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(73, 84, 133, 0.055));
+box-shadow: 0 8px 22px rgba(33, 41, 78, 0.1), 0 20px 14px -16px rgba(33, 41, 78, 0.36);
 appearance: none;
-cursor: pointer;
+cursor: url('{{ "/assets/img/material/cursor_gun.png" | relative_url }}'), pointer;
 touch-action: manipulation;
 -webkit-tap-highlight-color: transparent;
+transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms ease;
+}
+#introduction .cv-profile .cv-avatar {
+cursor: url('{{ "/assets/img/material/cursor_gun.png" | relative_url }}'), pointer;
 }
 .cv-profile .cv-avatar:focus-visible {
-outline: 3px solid rgba(73, 84, 133, 0.55);
+outline: 2px solid rgba(73, 84, 133, 0.55);
 outline-offset: 4px;
 }
-.cv-profile .cv-intro-quote {
-min-width: 0;
+html[data-theme="dark"] .cv-profile .cv-avatar,
+html[data-mode="dark"] .cv-profile .cv-avatar {
+background: rgba(255, 255, 255, 0.035);
+box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 21px 15px -16px rgba(0, 0, 0, 0.62);
+}
+.cv-profile .cv-identity-lockup > .cv-avatar {
+position: relative;
+grid-column: 1;
+grid-row: 1;
+justify-self: center;
+top: auto;
+left: auto;
+transform: none;
+}
+.cv-profile .cv-identity-links {
+grid-column: 3;
+grid-row: 1;
+display: grid;
+gap: 0.38rem;
+justify-self: center;
+align-self: center;
+text-align: left;
+}
+.cv-profile .cv-identity-links a {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+color: var(--text-color, #5d6473);
+font-size: 0.78rem;
+font-weight: 600;
+line-height: 1.35;
+letter-spacing: 0.02em;
+text-decoration: none;
+}
+.cv-profile .cv-identity-links i {
+width: 1.1em;
 color: #495485;
-font-size: 22px;
-line-height: 1.45;
 text-align: center;
+}
+.cv-profile .cv-identity-links a:hover,
+.cv-profile .cv-identity-links a:focus-visible {
+color: #495485;
+text-decoration: none;
+}
+.cv-profile .cv-identity-links a:focus-visible {
+outline: 2px solid currentColor;
+outline-offset: 3px;
+}
+html[data-theme="dark"] .cv-profile .cv-identity-links i,
+html[data-mode="dark"] .cv-profile .cv-identity-links i,
+html[data-theme="dark"] .cv-profile .cv-identity-links a:hover,
+html[data-theme="dark"] .cv-profile .cv-identity-links a:focus-visible,
+html[data-mode="dark"] .cv-profile .cv-identity-links a:hover,
+html[data-mode="dark"] .cv-profile .cv-identity-links a:focus-visible {
+color: #aebcf0;
+}
+.cv-profile .cv-intro-quote {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1.1rem;
+width: min(100%, 58rem);
+min-width: 0;
+margin-top: 0;
+padding: 0.25rem 0;
+text-align: center;
+}
+.cv-profile .cv-intro-quote::before,
+.cv-profile .cv-intro-quote::after {
+content: "";
+flex: 1 1 2.5rem;
+max-width: 3.5rem;
+height: 1px;
+background: #495485;
+opacity: 0.16;
+}
+.cv-profile .cv-identity-name {
+margin: 0;
+padding: 0;
+border: 0;
+color: var(--heading-color, #343d63);
+font-size: clamp(2rem, 4cqi, 2.3rem);
+font-weight: 700;
+line-height: 1.15;
+letter-spacing: -0.025em;
+}
+.cv-profile .cv-identity-name::before,
+.cv-profile .cv-identity-name::after {
+content: none !important;
+}
+.cv-profile .cv-identity-name .anchor {
+display: none !important;
+}
+.cv-profile .cv-identity-role {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.15rem 0.45rem;
+margin: 0.35rem 0 0;
+color: var(--text-color, #5d6473);
+font-size: 0.93rem;
+font-weight: 500;
+line-height: 1.45;
+}
+.cv-profile .cv-intro-verse {
+min-width: 0;
+margin: 0;
+padding: 0;
+color: #495485;
+font-family: "Snell Roundhand", "Segoe Script", "Apple Chancery", "URW Chancery L", Georgia, serif;
+font-size: clamp(1.2rem, 1.9cqi, 1.45rem);
+font-style: normal;
+font-weight: 400;
+line-height: 1.45;
+letter-spacing: 0.006em;
+}
+.cv-profile .cv-intro-verse > span {
+display: inline;
+}
+html[data-theme="dark"] .cv-profile .cv-intro-verse,
+html[data-mode="dark"] .cv-profile .cv-intro-verse {
+color: #aebcf0;
+}
+html[data-theme="dark"] .cv-profile .cv-intro-quote::before,
+html[data-theme="dark"] .cv-profile .cv-intro-quote::after,
+html[data-mode="dark"] .cv-profile .cv-intro-quote::before,
+html[data-mode="dark"] .cv-profile .cv-intro-quote::after {
+background: #aebcf0;
 }
 .cv-profile .cv-avatar::before,
 .cv-profile .cv-avatar::after {
 content: "";
 position: absolute;
 inset: 0;
+border-radius: inherit;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -137,8 +287,25 @@ opacity: 1;
 .cv-profile .cv-avatar:hover::after {
 opacity: 1;
 }
+.cv-profile .cv-identity-lockup > .cv-avatar:hover {
+transform: translateY(-4px);
+box-shadow: 0 15px 32px rgba(33, 41, 78, 0.15), 0 27px 18px -17px rgba(33, 41, 78, 0.32);
+}
+html[data-theme="dark"] .cv-profile .cv-identity-lockup > .cv-avatar:hover,
+html[data-mode="dark"] .cv-profile .cv-identity-lockup > .cv-avatar:hover {
+box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4), 0 28px 18px -17px rgba(0, 0, 0, 0.58);
+}
+}
+.cv-profile .cv-identity-lockup > .cv-avatar:active {
+transform: translateY(1px) scale(0.975);
+box-shadow: 0 5px 14px rgba(33, 41, 78, 0.1), 0 12px 9px -11px rgba(33, 41, 78, 0.3);
+}
+.cv-profile .cv-identity-lockup > .cv-avatar:focus-visible {
+transform: translateY(-2px);
+box-shadow: 0 13px 30px rgba(33, 41, 78, 0.15), 0 24px 16px -17px rgba(33, 41, 78, 0.32);
 }
 @media (prefers-reduced-motion: reduce) {
+.cv-profile .cv-avatar,
 .cv-profile .cv-avatar::after {
 transition: none;
 }
@@ -190,7 +357,8 @@ font-size: 0.8em;
 text-align: center;
 vertical-align: 0.03em;
 }
-html[data-theme="dark"] .cv-profile .cv-section-title .cv-section-icon {
+html[data-theme="dark"] .cv-profile .cv-section-title .cv-section-icon,
+html[data-mode="dark"] .cv-profile .cv-section-title .cv-section-icon {
 color: #aebcf0;
 }
 .cv-profile .cv-section-title .me-2,
@@ -207,14 +375,79 @@ display: inline-block;
 }
 @container (max-width: 36rem) {
 .cv-profile .cv-intro-header {
-grid-template-columns: 1fr;
-justify-items: center;
-row-gap: 1rem;
+--cv-hero-space: 1.5rem;
+gap: var(--cv-hero-space);
+margin-bottom: var(--cv-hero-space);
+padding-top: var(--cv-hero-space);
+}
+.cv-profile .cv-identity-lockup {
+display: grid;
+grid-template-columns: 4.5rem minmax(0, 1fr) 4.5rem;
+grid-template-rows: auto auto auto;
+row-gap: 0.65rem;
+width: 100%;
+min-height: 0;
+}
+.cv-profile .cv-identity {
+display: contents;
+padding: 0;
+text-align: center;
+}
+.cv-profile .cv-avatar {
+width: 64px;
+height: 64px;
+border-radius: 16px;
+box-shadow: 0 5px 14px rgba(33, 41, 78, 0.11), 0 13px 9px -11px rgba(33, 41, 78, 0.34);
+}
+.cv-profile .cv-identity-lockup > .cv-avatar {
+position: relative;
+grid-row: 1;
+grid-column: 1;
+align-self: center;
+justify-self: start;
+top: auto;
+left: auto;
+transform: none;
+}
+.cv-profile .cv-identity-lockup > .cv-avatar:active {
+transform: translateY(1px) scale(0.96);
 }
 .cv-profile .cv-intro-quote {
 width: 100%;
-font-size: clamp(18px, 4cqi, 22px);
+padding: 0.2rem 0;
 text-align: center;
+}
+.cv-profile .cv-intro-quote::before,
+.cv-profile .cv-intro-quote::after {
+flex-basis: 1.25rem;
+max-width: 2rem;
+}
+.cv-profile .cv-identity-name {
+grid-row: 1;
+grid-column: 2;
+align-self: center;
+font-size: 1.75rem;
+}
+.cv-profile .cv-identity-role {
+grid-row: 2;
+grid-column: 1 / -1;
+display: grid;
+row-gap: 0.05rem;
+justify-content: center;
+margin-top: 0;
+}
+.cv-profile .cv-identity-links {
+grid-row: 3;
+grid-column: 1 / -1;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.45rem 0.9rem;
+margin-top: 0.1rem;
+}
+.cv-profile .cv-intro-verse {
+font-size: 1.08rem;
+line-height: 1.5;
 }
 .cv-profile .cv-epigraph-title {
 display: block;
@@ -241,14 +474,79 @@ margin-left: 0 !important;
 @supports not (container-type: inline-size) {
 @media (max-width: 688px) {
 .cv-profile .cv-intro-header {
-grid-template-columns: 1fr;
-justify-items: center;
-row-gap: 1rem;
+--cv-hero-space: 1.5rem;
+gap: var(--cv-hero-space);
+margin-bottom: var(--cv-hero-space);
+padding-top: var(--cv-hero-space);
+}
+.cv-profile .cv-identity-lockup {
+display: grid;
+grid-template-columns: 4.5rem minmax(0, 1fr) 4.5rem;
+grid-template-rows: auto auto auto;
+row-gap: 0.65rem;
+width: 100%;
+min-height: 0;
+}
+.cv-profile .cv-identity {
+display: contents;
+padding: 0;
+text-align: center;
+}
+.cv-profile .cv-avatar {
+width: 64px;
+height: 64px;
+border-radius: 16px;
+box-shadow: 0 5px 14px rgba(33, 41, 78, 0.11), 0 13px 9px -11px rgba(33, 41, 78, 0.34);
+}
+.cv-profile .cv-identity-lockup > .cv-avatar {
+position: relative;
+grid-row: 1;
+grid-column: 1;
+align-self: center;
+justify-self: start;
+top: auto;
+left: auto;
+transform: none;
+}
+.cv-profile .cv-identity-lockup > .cv-avatar:active {
+transform: translateY(1px) scale(0.96);
 }
 .cv-profile .cv-intro-quote {
 width: 100%;
-font-size: 19px;
+padding: 0.2rem 0;
 text-align: center;
+}
+.cv-profile .cv-intro-quote::before,
+.cv-profile .cv-intro-quote::after {
+flex-basis: 1.25rem;
+max-width: 2rem;
+}
+.cv-profile .cv-identity-name {
+grid-row: 1;
+grid-column: 2;
+align-self: center;
+font-size: 1.75rem;
+}
+.cv-profile .cv-identity-role {
+grid-row: 2;
+grid-column: 1 / -1;
+display: grid;
+row-gap: 0.05rem;
+justify-content: center;
+margin-top: 0;
+}
+.cv-profile .cv-identity-links {
+grid-row: 3;
+grid-column: 1 / -1;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.45rem 0.9rem;
+margin-top: 0.1rem;
+}
+.cv-profile .cv-intro-verse {
+font-size: 1.08rem;
+line-height: 1.5;
 }
 .cv-profile .cv-epigraph-title {
 display: block;
@@ -289,11 +587,36 @@ margin-top: 1.6rem;
 
 <div class="cv-profile">
 <div class="cv-intro-header">
+<div class="cv-identity-lockup">
 <button type="button" class="cv-avatar" aria-label="Show sunglasses portrait" aria-pressed="false"></button>
+<div class="cv-identity">
+<div class="cv-identity-name"><span translate="no">Yue Lin</span></div>
+<p class="cv-identity-role">
+<span>Ph.D. Student at CUHK-Shenzhen</span>
+<span>Multi-Agent Learning &amp; Game Theory</span>
+</p>
+</div>
+<nav class="cv-identity-links" aria-label="Profile links">
+<a href="{{ site.baseurl }}/Resume_YueLin/Resume_en.pdf?v={{ site.time | date: '%Y%m%d%H%M' }}" target="_blank" rel="noopener noreferrer" title="Resume">
+<i class="fa-solid fa-scroll" aria-hidden="true"></i><span>Resume</span>
+</a>
+<a href="mailto:linyue3h1@gmail.com" title="Email">
+<i class="fa-solid fa-feather-pointed" aria-hidden="true"></i><span>Email</span>
+</a>
+<a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+<i class="fa-solid fa-hat-wizard" aria-hidden="true"></i><span>Google Scholar</span>
+</a>
+<a href="https://github.com/YueLin301" target="_blank" rel="noopener noreferrer" title="GitHub">
+<i class="fa-brands fa-fort-awesome" aria-hidden="true"></i><span>GitHub</span>
+</a>
+</nav>
+</div>
 <!-- <div style="font-style: italic; color: #555; border-left: 5px solid #eee; padding-left: 20px;"> -->
 <div class="cv-intro-quote">
 <!-- <b>The world only makes sense if you force it to. <i>—&nbsp;Batman.</i></b> -->
-<b>"The powerful play goes on...<br />And you may contribute a verse."</b>
+<div class="cv-intro-verse">
+<span>The powerful play goes on, and you may contribute a verse.</span>
+</div>
 </div>
 {% if include.show_theme_toggle %}
 <button class="profile-theme-toggle" id="profile-theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
@@ -337,11 +660,11 @@ avatar.blur();
 {: .prompt-info } -->
 
 <p>Hi, this is <strong><span translate="no">Yue Lin</span></strong> (/ˈjuːeɪ lɪn/, or <strong>林越</strong> in Chinese), and welcome to my personal website.
-Currently I am a Ph.D. student (data science program) in School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io" title="Homepage">Baoxiang Wang</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao" title="Google Scholar">Hongyuan Zha</a></span>.
+Currently I am a Ph.D. student (data science program) in the School of Data Science at The Chinese University of Hong Kong, Shenzhen, fortunately advised by Prof. <span translate="no"><a href="https://bxiangwang.github.io" title="Homepage">Baoxiang Wang</a></span> and Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao" title="Google Scholar">Hongyuan Zha</a></span>.
 Other close collaborators include Prof. <span translate="no"><a href="https://ewanlee.weebly.com/" title="Homepage">Wenhao Li</a></span> and Prof. <span translate="no"><a href="https://cs.uwaterloo.ca/~ppoupart/index.html" title="Homepage">Pascal Poupart</a></span>. For a printable summary of my background, see my <a href="{{ site.baseurl }}/Resume_YueLin/Resume_en.pdf?v={{ site.time | date: '%Y%m%d%H%M' }}" target="_blank" rel="noopener noreferrer">[Resume]</a>.</p>
 
 <ul>
-<li>My research interests lie primarily in designing efficient learning algorithms to guide agents toward better equilibriums in multi-agent tasks. For experts: (1) solving sequential social dilemmas, by designing learning algorithms that incorporate mechanism design, and (2) designing learning methods for mechanism design problems.</li>
+<li>My research interests lie primarily in designing efficient learning algorithms to guide agents toward better equilibria in multi-agent tasks. For experts: (1) solving sequential social dilemmas, by designing learning algorithms that incorporate mechanism design, and (2) designing learning methods for mechanism design problems.</li>
 <li>Most of my focus is on sequential mixed-motive multi-agent scenarios, and I am particularly interested in communication mechanisms (keywords: information design, Bayesian persuasion, cheap talk, reputation), as well as some other mechanisms that influence others, such as incentivization.</li>
 <li>My expertise in learning methods lies in reinforcement learning (RL) and large language models (LLMs).</li>
 </ul>
@@ -386,6 +709,9 @@ text-align: left;
 margin-top: 0;
 }
 @container (min-width: 42.01rem) {
+.cv-profile .flex-container {
+padding-left: clamp(2.25rem, 5cqi, 3rem);
+}
 .cv-profile .flex-container > .flex-item {
 justify-content: flex-start;
 }
@@ -416,6 +742,9 @@ width: 100%;
 }
 @supports not (container-type: inline-size) {
 @media (min-width: 769px) {
+.cv-profile .flex-container {
+padding-left: 2.75rem;
+}
 .cv-profile .flex-container > .flex-item {
 justify-content: flex-start;
 }
@@ -469,7 +798,7 @@ width: 100%;
 </div>
 <div class="flex-item research-illustration" style="text-align: center;">
 <!-- Chirpy wraps images on /about/ with its popup link; standalone pages need an explicit link. -->
-{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{% if page.url == '/about/' %}{{ '/assets/img/about/crow1.png' | relative_url }}{% else %}{{ '/assets/img/about/crow1_700.webp' | relative_url }}{% endif %}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 280px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
+{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{{ '/assets/img/about/crow1_700.webp' | relative_url }}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 280px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
 <p><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
 </div>
 </div>
@@ -548,18 +877,12 @@ Advisors: Prof. <span translate="no"><a href="https://bxiangwang.github.io" titl
 <button class="pub-view-btn pub-view-btn-active" onclick="switchPubTypeFilter('all')" id="btn-pub-type-all" aria-pressed="true">All</button>
 <button class="pub-view-btn" onclick="switchPubTypeFilter('representative')" id="btn-pub-type-representative" aria-pressed="false">Representative</button>
 <button class="pub-view-btn" onclick="switchPubTypeFilter('selected')" id="btn-pub-type-selected" aria-pressed="false">Selected</button>
-<button class="pub-view-btn" onclick="switchPubTypeFilter('publications')" id="btn-pub-type-publications" aria-pressed="false">Publications</button>
 <button class="pub-view-btn" onclick="switchPubTypeFilter('manuscripts')" id="btn-pub-type-manuscripts" aria-pressed="false">Manuscripts</button>
 </div>
 <div class="pub-control-group" role="group" aria-label="Publication authorship">
 <span class="pub-control-label">Authorship</span>
 <button class="pub-view-btn pub-view-btn-active" onclick="switchPubAuthorFilter('all')" id="btn-pub-author-all" aria-pressed="true">All</button>
 <button class="pub-view-btn" onclick="switchPubAuthorFilter('first-author')" id="btn-pub-author-first-author" aria-pressed="false">First Author</button>
-</div>
-<div class="pub-control-group" role="group" aria-label="Publication view">
-<span class="pub-control-label">View by</span>
-<button class="pub-view-btn pub-view-btn-active" onclick="switchPubView('time')" id="btn-pub-time" aria-pressed="true">Time</button>
-<button class="pub-view-btn" onclick="switchPubView('category')" id="btn-pub-category" aria-pressed="false">Category</button>
 </div>
 <div class="pub-result-count" id="pub-result-count" role="status" aria-live="polite" aria-atomic="true">
 <span>Count</span>
@@ -686,7 +1009,8 @@ font-weight: 650;
 letter-spacing: 0.08em;
 text-transform: uppercase;
 }
-html[data-theme="dark"] .cv-profile .pub-reflection-venue {
+html[data-theme="dark"] .cv-profile .pub-reflection-venue,
+html[data-mode="dark"] .cv-profile .pub-reflection-venue {
 color: #aebcf0;
 }
 .cv-profile .pub-reflection-title {
@@ -709,6 +1033,90 @@ text-align: right;
 }
 .cv-profile .pub-reflection p {
 margin: 0.85rem 0;
+}
+html[data-theme="dark"] .cv-profile .pub-meta-label,
+html[data-theme="dark"] .cv-profile .pub-result-count strong,
+html[data-mode="dark"] .cv-profile .pub-meta-label,
+html[data-mode="dark"] .cv-profile .pub-result-count strong {
+color: #aebcf0;
+}
+html[data-theme="dark"] .cv-profile .pub-view-btn,
+html[data-mode="dark"] .cv-profile .pub-view-btn {
+border-color: #4b5365;
+background: #2a2d35;
+color: #cbd5f5;
+}
+html[data-theme="dark"] .cv-profile .pub-view-btn:hover,
+html[data-mode="dark"] .cv-profile .pub-view-btn:hover {
+background: #343947;
+}
+html[data-theme="dark"] .cv-profile .pub-view-btn:focus-visible,
+html[data-mode="dark"] .cv-profile .pub-view-btn:focus-visible {
+outline-color: #aebcf0;
+}
+html[data-theme="dark"] .cv-profile .pub-view-btn-active,
+html[data-theme="dark"] .cv-profile .pub-view-btn-active:hover,
+html[data-mode="dark"] .cv-profile .pub-view-btn-active,
+html[data-mode="dark"] .cv-profile .pub-view-btn-active:hover {
+border-color: #8da5e8;
+background: #8da5e8;
+color: #17181d;
+}
+html[data-theme="dark"] .cv-profile .pub-result-count::before,
+html[data-theme="dark"] .cv-profile .pub-result-count::after,
+html[data-mode="dark"] .cv-profile .pub-result-count::before,
+html[data-mode="dark"] .cv-profile .pub-result-count::after {
+background: #4b5365;
+}
+@media (prefers-color-scheme: dark) {
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-avatar {
+background: rgba(255, 255, 255, 0.035);
+box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 21px 15px -16px rgba(0, 0, 0, 0.62);
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-lockup > .cv-avatar:hover {
+box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4), 0 28px 18px -17px rgba(0, 0, 0, 0.58);
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-links i,
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-links a:hover,
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-links a:focus-visible,
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-intro-verse,
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-accent-icon,
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-section-title .cv-section-icon,
+html:not([data-theme]):not([data-mode]) .cv-profile .hobbies-list .cv-hobby-label,
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-reflection-venue,
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-meta-label,
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-result-count strong,
+html:not([data-theme]):not([data-mode]) .cv-profile .contact-block .ci-icon,
+html:not([data-theme]):not([data-mode]) .cv-profile .contact-block .ci-value a,
+html:not([data-theme]):not([data-mode]) .cv-profile .contact-block .ci-value a:hover,
+html:not([data-theme]):not([data-mode]) .cv-profile .contact-block .ci-value a:focus-visible {
+color: #aebcf0 !important;
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-intro-quote::before,
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-intro-quote::after {
+background: #aebcf0;
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-view-btn {
+border-color: #4b5365;
+background: #2a2d35;
+color: #cbd5f5;
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-view-btn:hover {
+background: #343947;
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-view-btn:focus-visible {
+outline-color: #aebcf0;
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-view-btn-active,
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-view-btn-active:hover {
+border-color: #8da5e8;
+background: #8da5e8;
+color: #17181d;
+}
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-result-count::before,
+html:not([data-theme]):not([data-mode]) .cv-profile .pub-result-count::after {
+background: #4b5365;
+}
 }
 @container (max-width: 42rem) {
 .pub-control-group {
@@ -751,179 +1159,8 @@ font-size: 13px;
 </style>
 
 <div id="pub-by-time">
-<!-- Auto-populated from #pub-by-category by JS at page load. Single source of truth lives in by-category below. -->
-</div>
-<div id="pub-by-category" style="display: none;">
-
-<h3 class="cv-subsection-title" id="data-science-x-game-theory">Data Science x Game Theory</h3>
-
-<!-- #### Mix-Motive MARL Communication x Game Theory -->
-
-<ul>
-<li data-publication="true" data-pub-year="2023" data-published="true" data-first-author="true" data-representative="true" data-selected-paper="true"><span translate="no">Information Design in Multi-Agent Reinforcement Learning.</span><br />
-<span translate="no"><strong>Yue Lin</strong>, Wenhao Li, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>Advances in Neural Information Processing Systems (NeurIPS). 2023. Poster.</em></span>
-<blockquote>
-<p class="pub-meta-line"><span class="pub-meta-label">Highlight:</span> This is one of my representative works; as of 2026, my advisor also regards it as one of his representative works.</p>
-<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
-<a href="https://arxiv.org/abs/2305.06807">[Paper]</a> 
-<a href="https://github.com/YueLin301/InformationDesignMARL">[Code]</a> 
-<a href="https://wandb.ai/yuelin301/IND+MARL?nw=nwuseryuelin301">[Experiments]</a> 
-<a href="https://yuelin301.github.io/posts/IDMARL/">[Blog en]</a> 
-<a href="https://yuelin301.github.io/posts/IDMARL-cn/">[Blog cn]</a> 
-<a href="https://zhuanlan.zhihu.com/p/687305626">[Zhihu cn]</a> 
-<a href="https://yuelin301.github.io/posts/IDMARL/#slides">[Slides]</a> 
-<a href="https://www.youtube.com/watch?v=yhVlpv_1Pg4">[Talk en]</a> 
-<a href="https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978">[Talk RLChina]</a> 
-<a href="https://yuelin301.github.io/posts/IDMARL_patent/">[Patent]</a>
-<!-- [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   --></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
-<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces a Markov signaling game and an obedience-constrained signaling-gradient algorithm that learns what information to reveal over time so self-interested receivers are willing to follow the sender's recommendations.</p>
-</blockquote>
-<details style="margin-top: -10px;">
-<summary>[Expand Abstract]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Reinforcement learning (RL) is inspired by the way human infants and animals learn from the environment. The setting is somewhat idealized because, in actual tasks, other agents in the environment have their own goals and behave adaptively to the ego agent. To thrive in those environments, the agent needs to influence other agents so their actions become more helpful and less harmful. Research in computational economics distills two ways to influence others directly: by providing tangible goods (mechanism design) and by providing information (information design). This work investigates information design problems for a group of RL agents. The main challenges are two-fold. One is the information provided will immediately affect the transition of the agent trajectories, which introduces additional non-stationarity. The other is the information can be ignored, so the sender must provide information that the receiver is willing to respect. We formulate the Markov signaling game, and develop the notions of signaling gradient and the extended obedience constraints that address these challenges. Our algorithm is efficient on various mixed-motive tasks and provides further insights into computational economics. Our code is publicly available at https://github.com/YueLin301/InformationDesignMARL.</code></pre></div>
-</details>
-<details>
-<summary>[Expand BibTeX]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px;"><code>@inproceedings{lin2023information,
-  title={Information Design in Multi-Agent Reinforcement Learning},
-  author={Lin, Yue and Li, Wenhao and Zha, Hongyuan and Wang, Baoxiang},
-  booktitle={Advances in Neural Information Processing Systems},
-  volume={36},
-  pages={25584--25597},
-  year={2023},
-  publisher={Curran Associates, Inc.},
-  url={https://proceedings.neurips.cc/paper_files/paper/2023/hash/511d7c4e61878cf08ece6351ea3c529e-Abstract-Conference.html}
-}</code></pre></div>
-</details>
-</li>
-<li data-publication="true" data-pub-year="2026" data-pub-sort="2026-07" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Verbalized Bayesian Persuasion.</span><br />
-<span translate="no">Wenhao Li, <strong>Yue Lin</strong>, Yun Hua, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>International Conference on Machine Learning (ICML). 2026. Poster.</em></span>
-<blockquote>
-<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
-<a href="https://openreview.net/forum?id=dc0WdvWSnB">[Paper]</a> 
-<a href="https://arxiv.org/abs/2502.01587">[arXiv]</a> 
-<!-- [[Blog]](/posts/VBP/) --></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
-<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces a verbalized Bayesian-persuasion framework in which LLMs play sender and receiver while an equilibrium solver searches for natural-language messages the receiver has reason to follow, including in multi-stage dialogues.</p>
-</blockquote>
-<details style="margin-top: -10px;">
-<summary>[Expand Abstract]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Information design (ID) explores how a sender influence the optimal behavior of receivers to achieve specific objectives. While ID originates from everyday human communication, existing game-theoretic and learning methods often model information structures as numbers, which limits many applications to toy games. This work leverages LLMs and proposes a verbalized framework in Bayesian persuasion (BP), which extends classic BP to real-world games involving human dialogues for the first time. We map the BP to a verbalized mediator-augmented game, where LLMs instantiate the sender and receiver. To efficiently solve the verbalized game, we propose a generalized equilibrium-finding algorithm combining LLM and game solver. The algorithm is reinforced with techniques including verbalized commitment assumptions, verbalized obedience constraints, and information obfuscation. Experiments in dialogue scenarios, such as recommendation letters, law enforcement, diplomacy with press, validate that our framework can reproduce theoretical results in classic BP and discover effective persuasion strategies in more complex natural language and multi-stage scenarios.</code></pre></div>
-</details>
-<details>
-<summary>[Expand BibTeX]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px;"><code>@inproceedings{li2026verbalized,
-  title={Verbalized Bayesian Persuasion},
-  author={Li, Wenhao and Lin, Yue and Hua, Yun and Wang, Xiangfeng and Jin, Bo and Zha, Hongyuan and Wang, Baoxiang},
-  booktitle={Proceedings of the 43rd International Conference on Machine Learning},
-  series={Proceedings of Machine Learning Research},
-  volume={306},
-  publisher={PMLR},
-  year={2026},
-  url={https://openreview.net/forum?id=dc0WdvWSnB}
-}</code></pre></div>
-</details>
-</li>
-<li data-publication="true" data-pub-year="2025" data-pub-sort="2025-12-24" data-published="false" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">Policy-Conditioned Policies for Multi-Agent Task Solving.</span><br />
-<span translate="no"><strong>Yue Lin</strong>, Shuhui Zhu, Wenhao Li, Ang Li, Dan Qiao, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>arXiv preprint. 2025-12-24.</em></span>
-<blockquote>
-
-<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
-<a href="https://arxiv.org/abs/2512.21024">[Manuscript]</a> 
-<!-- [[Blog]](/posts/PCP/) --></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
-<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Represents each agent's strategy as readable source code and introduces Programmatic Iterated Best Response, where an LLM rewrites one policy against another using game rewards and unit tests as feedback.</p>
-<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> This work was scooped by <em>Evaluating LLMs in Open-Source Games</em>. We then planned a substantially improved version, but that follow-up direction was also scooped by Google DeepMind's <em>Code-Space Response Oracles: Generating Interpretable Multi-Agent Policies with Large Language Models</em>.</p>
-</blockquote>
-<details style="margin-top: -10px;">
-<summary>[Expand Abstract]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>In multi-agent tasks, the central challenge lies in the dynamic adaptation of strategies. However, directly conditioning on opponents' strategies is intractable in the prevalent deep reinforcement learning paradigm due to a fundamental “representational bottleneck”: neural policies are opaque, high-dimensional parameter vectors that are incomprehensible to other agents. In this work, we propose a paradigm shift that bridges this gap by representing policies as human-interpretable source code and utilizing Large Language Models (LLMs) as approximate interpreters. This programmatic representation allows us to operationalize the game-theoretic concept of Program Equilibrium. We reformulate the learning problem by utilizing LLMs to perform optimization directly in the space of programmatic policies. The LLM functions as a point-wise best-response operator that iteratively synthesizes and refines the ego agent's policy code to respond to the opponent's strategy. We formalize this process as Programmatic Iterated Best Response (PIBR), an algorithm where the policy code is optimized by textual gradients, using structured feedback derived from game utility and runtime unit tests. We demonstrate that this approach effectively solves several standard coordination matrix games and a cooperative Level-Based Foraging environment.</code></pre></div>
-</details>
-<details>
-<summary>[Expand BibTeX]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px;"><code>@misc{lin2025policyconditioned,
-  title={Policy-Conditioned Policies for Multi-Agent Task Solving},
-  author={Lin, Yue and Zhu, Shuhui and Li, Wenhao and Li, Ang and Qiao, Dan and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang},
-  year={2025},
-  eprint={2512.21024},
-  archivePrefix={arXiv},
-  primaryClass={cs.GT},
-  doi={10.48550/arXiv.2512.21024},
-  url={https://arxiv.org/abs/2512.21024}
-}</code></pre></div>
-</details>
-</li>
-<li data-publication="true" data-pub-year="2024" data-published="false" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">History-Dependent Policy Gradient.</span><br />
-<span translate="no"><strong>Yue Lin</strong>, Jiacheng Nie, Hongyuan Zha, Baoxiang Wang.</span><br />
-<span translate="no"><em>Draft. 2024.</em></span>
-<blockquote>
-<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> No public manuscript.</p>
-<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
-<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Derives an exact policy gradient for non-stationary multi-agent learning systems by explicitly accounting for the histories of the other agents.</p>
-<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> No paper was produced; our method was scooped by Google's paper <em>Multi-agent cooperation through learning-aware policy gradients</em> (<em>ICLR 2025</em>).</p>
-</blockquote>
-<details style="margin-top: -10px;">
-<summary>[Expand Abstract]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>No stable abstract is available because this project did not result in a paper.</code></pre></div>
-</details>
-<details>
-<summary>[Expand BibTeX]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px;"><code>@unpublished{lin2024history,
-  title={History-Dependent Policy Gradient},
-  author={Lin, Yue and Nie, Jiacheng and Zha, Hongyuan and Wang, Baoxiang},
-  note={Unpublished project; no manuscript was produced},
-  year={2024}
-}</code></pre></div>
-</details>
-</li>
-</ul>
-
-<h3 class="cv-subsection-title" id="data-science-x-game-theory-x-social-science">Data Science x Game Theory x Social Science</h3>
-
+<!-- Static chronological source of truth. JavaScript only filters the existing items. -->
+<h3 class="cv-subsection-title">2026</h3>
 <ul>
 <li data-publication="true" data-pub-year="2026" data-pub-sort="2026-12" data-published="true" data-first-author="true" data-representative="true" data-selected-paper="true"><span translate="no">The Reciprocity Gradient.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Pascal Poupart, Shuhui Zhu, Dan Qiao, Wenhao Li, Yuan Liu, Hongyuan Zha, Baoxiang Wang.</span><br />
@@ -984,14 +1221,53 @@ font-size: 13px;
 </article>
 </details>
 </li>
+<li data-publication="true" data-pub-year="2026" data-pub-sort="2026-07" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Verbalized Bayesian Persuasion.</span><br />
+<span translate="no">Wenhao Li, <strong>Yue Lin</strong>, Yun Hua, Xiangfeng Wang, Bo Jin, Hongyuan Zha, Baoxiang Wang.</span><br />
+<span translate="no"><em>International Conference on Machine Learning (ICML). 2026. Poster.</em></span>
+<blockquote>
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
+<a href="https://openreview.net/forum?id=dc0WdvWSnB">[Paper]</a> 
+<a href="https://arxiv.org/abs/2502.01587">[arXiv]</a> 
+<!-- [[Blog]](/posts/VBP/) --></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces a verbalized Bayesian-persuasion framework in which LLMs play sender and receiver while an equilibrium solver searches for natural-language messages the receiver has reason to follow, including in multi-stage dialogues.</p>
+</blockquote>
+<details style="margin-top: -10px;">
+<summary>[Expand Abstract]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Information design (ID) explores how a sender influence the optimal behavior of receivers to achieve specific objectives. While ID originates from everyday human communication, existing game-theoretic and learning methods often model information structures as numbers, which limits many applications to toy games. This work leverages LLMs and proposes a verbalized framework in Bayesian persuasion (BP), which extends classic BP to real-world games involving human dialogues for the first time. We map the BP to a verbalized mediator-augmented game, where LLMs instantiate the sender and receiver. To efficiently solve the verbalized game, we propose a generalized equilibrium-finding algorithm combining LLM and game solver. The algorithm is reinforced with techniques including verbalized commitment assumptions, verbalized obedience constraints, and information obfuscation. Experiments in dialogue scenarios, such as recommendation letters, law enforcement, diplomacy with press, validate that our framework can reproduce theoretical results in classic BP and discover effective persuasion strategies in more complex natural language and multi-stage scenarios.</code></pre></div>
+</details>
+<details>
+<summary>[Expand BibTeX]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px;"><code>@inproceedings{li2026verbalized,
+  title={Verbalized Bayesian Persuasion},
+  author={Li, Wenhao and Lin, Yue and Hua, Yun and Wang, Xiangfeng and Jin, Bo and Zha, Hongyuan and Wang, Baoxiang},
+  booktitle={Proceedings of the 43rd International Conference on Machine Learning},
+  series={Proceedings of Machine Learning Research},
+  volume={306},
+  publisher={PMLR},
+  year={2026},
+  url={https://openreview.net/forum?id=dc0WdvWSnB}
+}</code></pre></div>
+</details>
+</li>
 <li data-publication="true" data-pub-year="2026" data-pub-sort="2026-07" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents.</span><br />
 <span translate="no">Shuhui Zhu, <strong>Yue Lin</strong>, Shriya Kaistha, Wenhao Li, Baoxiang Wang, Hongyuan Zha, Gillian K. Hadfield, Pascal Poupart.</span><br />
 <span translate="no"><em>International Conference on Machine Learning (ICML). 2026. Poster.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
-<a href="https://openreview.net/forum?id=jYxRNCfRaD">[Paper]</a> 
-<a href="https://arxiv.org/abs/2602.07777">[arXiv]</a> 
-<a href="https://github.com/shuhui-zhu/ALIGN">[Code]</a> 
+<a href="https://openreview.net/forum?id=jYxRNCfRaD">[Paper]</a>
+<a href="https://arxiv.org/abs/2602.07777">[arXiv]</a>
+<a href="https://github.com/shuhui-zhu/ALIGN">[Code]</a>
 <!-- [[Blog]](/posts/ALIGN/) --></p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory × Social Science</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces ALIGN, a decentralized mechanism in which self-interested language-model agents exchange open-ended, tone-graded gossip to build reputations, coordinate social norms, and isolate defectors.</p>
@@ -1025,16 +1301,54 @@ font-size: 13px;
 </details>
 </li>
 </ul>
-
-<h3 class="cv-subsection-title" id="game-theory">Game Theory</h3>
-
+<h3 class="cv-subsection-title">2025</h3>
 <ul>
+<li data-publication="true" data-pub-year="2025" data-pub-sort="2025-12-24" data-published="false" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">Policy-Conditioned Policies for Multi-Agent Task Solving.</span><br />
+<span translate="no"><strong>Yue Lin</strong>, Shuhui Zhu, Wenhao Li, Ang Li, Dan Qiao, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span><br />
+<span translate="no"><em>arXiv preprint. 2025-12-24.</em></span>
+<blockquote>
+
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
+<a href="https://arxiv.org/abs/2512.21024">[Manuscript]</a> 
+<!-- [[Blog]](/posts/PCP/) --></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Represents each agent's strategy as readable source code and introduces Programmatic Iterated Best Response, where an LLM rewrites one policy against another using game rewards and unit tests as feedback.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> This work was scooped by <em>Evaluating LLMs in Open-Source Games</em>. We then planned a substantially improved version, but that follow-up direction was also scooped by Google DeepMind's <em>Code-Space Response Oracles: Generating Interpretable Multi-Agent Policies with Large Language Models</em>.</p>
+</blockquote>
+<details style="margin-top: -10px;">
+<summary>[Expand Abstract]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>In multi-agent tasks, the central challenge lies in the dynamic adaptation of strategies. However, directly conditioning on opponents' strategies is intractable in the prevalent deep reinforcement learning paradigm due to a fundamental “representational bottleneck”: neural policies are opaque, high-dimensional parameter vectors that are incomprehensible to other agents. In this work, we propose a paradigm shift that bridges this gap by representing policies as human-interpretable source code and utilizing Large Language Models (LLMs) as approximate interpreters. This programmatic representation allows us to operationalize the game-theoretic concept of Program Equilibrium. We reformulate the learning problem by utilizing LLMs to perform optimization directly in the space of programmatic policies. The LLM functions as a point-wise best-response operator that iteratively synthesizes and refines the ego agent's policy code to respond to the opponent's strategy. We formalize this process as Programmatic Iterated Best Response (PIBR), an algorithm where the policy code is optimized by textual gradients, using structured feedback derived from game utility and runtime unit tests. We demonstrate that this approach effectively solves several standard coordination matrix games and a cooperative Level-Based Foraging environment.</code></pre></div>
+</details>
+<details>
+<summary>[Expand BibTeX]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px;"><code>@misc{lin2025policyconditioned,
+  title={Policy-Conditioned Policies for Multi-Agent Task Solving},
+  author={Lin, Yue and Zhu, Shuhui and Li, Wenhao and Li, Ang and Qiao, Dan and Poupart, Pascal and Zha, Hongyuan and Wang, Baoxiang},
+  year={2025},
+  eprint={2512.21024},
+  archivePrefix={arXiv},
+  primaryClass={cs.GT},
+  doi={10.48550/arXiv.2512.21024},
+  url={https://arxiv.org/abs/2512.21024}
+}</code></pre></div>
+</details>
+</li>
 <li data-publication="true" data-pub-year="2025" data-pub-sort="2025-07-10" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">Information Bargaining: Bilateral Commitment in Bayesian Persuasion.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Shuhui Zhu, William A Cunningham, Wenhao Li, Pascal Poupart, Hongyuan Zha, Baoxiang Wang.</span><br />
 <span translate="no"><em>Workshop on Information Economics × Large Language Models at the ACM Conference on Economics and Computation (EC). 2025. Poster.</em></span>
 <blockquote>
 <p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
-<a href="https://arxiv.org/abs/2506.05876">[Paper]</a> 
+<a href="https://arxiv.org/abs/2506.05876">[Paper]</a>
 <a href="https://github.com/YueLin301/InformationBargaining">[Code &amp; Experiments]</a></p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Game Theory</span></p>
 <p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Recasts long-term Bayesian persuasion as two-sided bargaining with commitment on both sides, separating the value of private information from the advantage of proposing first.</p>
@@ -1070,14 +1384,138 @@ font-size: 13px;
 </details>
 </li>
 </ul>
-
-<!-- > Of the empty and useless years of the rest, with the rest me intertwined,  
-> The question, O me! so sad, recurring — What good amid these, O me, O life?  
-> *— Walt Whitman, O Me! O Life!*
-{: .prompt-tip } -->
-
-<h3 class="cv-subsection-title" id="robotics">Robotics</h3>
-
+<h3 class="cv-subsection-title">2024</h3>
+<ul>
+<li data-publication="true" data-pub-year="2024" data-published="false" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">History-Dependent Policy Gradient.</span><br />
+<span translate="no"><strong>Yue Lin</strong>, Jiacheng Nie, Hongyuan Zha, Baoxiang Wang.</span><br />
+<span translate="no"><em>Draft. 2024.</em></span>
+<blockquote>
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> No public manuscript.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Derives an exact policy gradient for non-stationary multi-agent learning systems by explicitly accounting for the histories of the other agents.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Note:</span> No paper was produced; our method was scooped by Google's paper <em>Multi-agent cooperation through learning-aware policy gradients</em> (<em>ICLR 2025</em>).</p>
+</blockquote>
+<details style="margin-top: -10px;">
+<summary>[Expand Abstract]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>No stable abstract is available because this project did not result in a paper.</code></pre></div>
+</details>
+<details>
+<summary>[Expand BibTeX]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px;"><code>@unpublished{lin2024history,
+  title={History-Dependent Policy Gradient},
+  author={Lin, Yue and Nie, Jiacheng and Zha, Hongyuan and Wang, Baoxiang},
+  note={Unpublished project; no manuscript was produced},
+  year={2024}
+}</code></pre></div>
+</details>
+</li>
+</ul>
+<h3 class="cv-subsection-title">2023</h3>
+<ul>
+<li data-publication="true" data-pub-year="2023" data-published="true" data-first-author="true" data-representative="true" data-selected-paper="true"><span translate="no">Information Design in Multi-Agent Reinforcement Learning.</span><br />
+<span translate="no"><strong>Yue Lin</strong>, Wenhao Li, Hongyuan Zha, Baoxiang Wang.</span><br />
+<span translate="no"><em>Advances in Neural Information Processing Systems (NeurIPS). 2023. Poster.</em></span>
+<blockquote>
+<p class="pub-meta-line"><span class="pub-meta-label">Highlight:</span> This is one of my representative works; as of 2026, my advisor also regards it as one of his representative works.</p>
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
+<a href="https://arxiv.org/abs/2305.06807">[Paper]</a>
+<a href="https://github.com/YueLin301/InformationDesignMARL">[Code]</a>
+<a href="https://wandb.ai/yuelin301/IND+MARL?nw=nwuseryuelin301">[Experiments]</a>
+<a href="https://yuelin301.github.io/posts/IDMARL/">[Blog en]</a>
+<a href="https://yuelin301.github.io/posts/IDMARL-cn/">[Blog cn]</a>
+<a href="https://zhuanlan.zhihu.com/p/687305626">[Zhihu cn]</a>
+<a href="https://yuelin301.github.io/posts/IDMARL/#slides">[Slides]</a>
+<a href="https://www.youtube.com/watch?v=yhVlpv_1Pg4">[Talk en]</a>
+<a href="https://www.bilibili.com/video/BV1t142117Km?vd_source=b3cf9eb7cfe43c730613c5158a38e978">[Talk RLChina]</a>
+<a href="https://yuelin301.github.io/posts/IDMARL_patent/">[Patent]</a>
+<!-- [[Talk cn]](https://www.bilibili.com/video/BV1e94y177Dj/?share_source=copy_web&vd_source=b3cf9eb7cfe43c730613c5158a38e978&t=2825)   --></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces a Markov signaling game and an obedience-constrained signaling-gradient algorithm that learns what information to reveal over time so self-interested receivers are willing to follow the sender's recommendations.</p>
+</blockquote>
+<details style="margin-top: -10px;">
+<summary>[Expand Abstract]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Reinforcement learning (RL) is inspired by the way human infants and animals learn from the environment. The setting is somewhat idealized because, in actual tasks, other agents in the environment have their own goals and behave adaptively to the ego agent. To thrive in those environments, the agent needs to influence other agents so their actions become more helpful and less harmful. Research in computational economics distills two ways to influence others directly: by providing tangible goods (mechanism design) and by providing information (information design). This work investigates information design problems for a group of RL agents. The main challenges are two-fold. One is the information provided will immediately affect the transition of the agent trajectories, which introduces additional non-stationarity. The other is the information can be ignored, so the sender must provide information that the receiver is willing to respect. We formulate the Markov signaling game, and develop the notions of signaling gradient and the extended obedience constraints that address these challenges. Our algorithm is efficient on various mixed-motive tasks and provides further insights into computational economics. Our code is publicly available at https://github.com/YueLin301/InformationDesignMARL.</code></pre></div>
+</details>
+<details>
+<summary>[Expand BibTeX]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px;"><code>@inproceedings{lin2023information,
+  title={Information Design in Multi-Agent Reinforcement Learning},
+  author={Lin, Yue and Li, Wenhao and Zha, Hongyuan and Wang, Baoxiang},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={36},
+  pages={25584--25597},
+  year={2023},
+  publisher={Curran Associates, Inc.},
+  url={https://proceedings.neurips.cc/paper_files/paper/2023/hash/511d7c4e61878cf08ece6351ea3c529e-Abstract-Conference.html}
+}</code></pre></div>
+</details>
+</li>
+</ul>
+<h3 class="cv-subsection-title">2022</h3>
+<ul>
+<li data-publication="true" data-pub-year="2022" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.</span><br />
+<span translate="no"><strong>Yue Lin</strong>, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.</span><br />
+<span translate="no"><em>International Journal of Advanced Robotic Systems (IJARS). 2022.</em></span>
+<blockquote>
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> <a href="https://journals.sagepub.com/doi/full/10.1177/17298806221110022">[Paper]</a>
+<a href="https://github.com/YueLin301/Swinging-Search-Crawling-Control">[Code]</a>
+<a href="https://yuelin301.github.io/posts/SSCC/">[Blog]</a>
+<a href="https://yuelin301.github.io/posts/SSCC/#videos">[Demo Video]</a></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Robotics</span></p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces Swinging Search and Crawling Control, which uses reinforcement learning over the arm's self-motion to find a collision-free target configuration, then moves the arm toward it by crawling instead of searching every intermediate pose.</p>
+</blockquote>
+<details style="margin-top: -10px;">
+<summary>[Expand Abstract]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Redundant manipulators are flexible enough to adapt to complex environments, but their controller is also required to be specific for their extra degrees of freedom. Inspired by the morphology of snakes, we propose a path planning algorithm named Swinging Search and Crawling Control, which allows the snake-like redundant manipulators to explore in complex pipeline environments without collision. The proposed algorithm consists of the Swinging Search and the Crawling Control. In Swinging Search, a collision-free manipulator configuration that of the end-effector in the target point is found by applying reinforcement learning to self-motion, instead of designing joint motion. The self-motion narrows the search space to the null space, and the reinforcement learning makes the algorithm use the information of the environment, instead of blindly searching. Then in Crawling Control, the manipulator is controlled to crawl to the target point like a snake along the collision-free configuration. It only needs to search for a collision-free configuration for the manipulator, instead of searching collision-free configurations throughout the process of path planning. Simulation experiments show that the algorithm can complete path planning tasks of hyper-redundant manipulators in complex environments. The 16 degrees of freedom and 24 degrees of freedom manipulators can achieve 83.3% and 96.7% success rates in the pipe, respectively. In the concentric pipe, the 24 degrees of freedom manipulator has a success rate of 96.1%.</code></pre></div>
+</details>
+<details>
+<summary>[Expand BibTeX]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2022snake,
+  title={A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators},
+  author={Lin, Yue and Wang, Jianming and Xiao, Xuan and Qu, Ji and Qin, Fatao},
+  journal={International Journal of Advanced Robotic Systems},
+  volume={19},
+  number={4},
+  year={2022},
+  month=jul,
+  publisher={SAGE Publications},
+  doi={10.1177/17298806221110022},
+  url={https://doi.org/10.1177/17298806221110022}
+}</code></pre></div>
+</details>
+</li>
+</ul>
+<h3 class="cv-subsection-title">2021</h3>
 <ul>
 <li data-publication="true" data-pub-year="2021" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="true"><span translate="no">Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.</span><br />
 <span translate="no"><strong>Yue Lin</strong>, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.</span><br />
@@ -1120,69 +1558,28 @@ font-size: 13px;
 }</code></pre></div>
 </details>
 </li>
-<li data-publication="true" data-pub-year="2022" data-published="true" data-first-author="true" data-representative="false" data-selected-paper="false"><span translate="no">A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.</span><br />
-<span translate="no"><strong>Yue Lin</strong>, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.</span><br />
-<span translate="no"><em>International Journal of Advanced Robotic Systems (IJARS). 2022.</em></span>
-<blockquote>
-<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span> <a href="https://journals.sagepub.com/doi/full/10.1177/17298806221110022">[Paper]</a> 
-<a href="https://github.com/YueLin301/Swinging-Search-Crawling-Control">[Code]</a> 
-<a href="https://yuelin301.github.io/posts/SSCC/">[Blog]</a> 
-<a href="https://yuelin301.github.io/posts/SSCC/#videos">[Demo Video]</a></p>
-<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Robotics</span></p>
-<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Introduces Swinging Search and Crawling Control, which uses reinforcement learning over the arm's self-motion to find a collision-free target configuration, then moves the arm toward it by crawling instead of searching every intermediate pose.</p>
-</blockquote>
-<details style="margin-top: -10px;">
-<summary>[Expand Abstract]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>Redundant manipulators are flexible enough to adapt to complex environments, but their controller is also required to be specific for their extra degrees of freedom. Inspired by the morphology of snakes, we propose a path planning algorithm named Swinging Search and Crawling Control, which allows the snake-like redundant manipulators to explore in complex pipeline environments without collision. The proposed algorithm consists of the Swinging Search and the Crawling Control. In Swinging Search, a collision-free manipulator configuration that of the end-effector in the target point is found by applying reinforcement learning to self-motion, instead of designing joint motion. The self-motion narrows the search space to the null space, and the reinforcement learning makes the algorithm use the information of the environment, instead of blindly searching. Then in Crawling Control, the manipulator is controlled to crawl to the target point like a snake along the collision-free configuration. It only needs to search for a collision-free configuration for the manipulator, instead of searching collision-free configurations throughout the process of path planning. Simulation experiments show that the algorithm can complete path planning tasks of hyper-redundant manipulators in complex environments. The 16 degrees of freedom and 24 degrees of freedom manipulators can achieve 83.3% and 96.7% success rates in the pipe, respectively. In the concentric pipe, the 24 degrees of freedom manipulator has a success rate of 96.1%.</code></pre></div>
-</details>
-<details>
-<summary>[Expand BibTeX]</summary>
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
-<span></span>
-</div>
-  <pre class="highlight" style="margin-left: 20px;"><code>@article{lin2022snake,
-  title={A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators},
-  author={Lin, Yue and Wang, Jianming and Xiao, Xuan and Qu, Ji and Qin, Fatao},
-  journal={International Journal of Advanced Robotic Systems},
-  volume={19},
-  number={4},
-  year={2022},
-  month=jul,
-  publisher={SAGE Publications},
-  doi={10.1177/17298806221110022},
-  url={https://doi.org/10.1177/17298806221110022}
-}</code></pre></div>
-</details>
-</li>
 </ul>
 
-<!-- - <span translate="no">Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.</span>  
-<span translate="no">Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.</span>  
-<span translate="no">*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.</span>  
-> [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)   -->
+<!-- - <span translate="no">Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.</span>
+<span translate="no">Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.</span>
+<span translate="no">*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.</span>
+> [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853) -->
 
-<!-- - Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.  
-**Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.  
+<!-- - Innovative Design and Simulation of a Transformable Robot with Flexibility and Versatility, RHex-T3.
+**Yue Lin**, Yujia Tian, Yongjiang Xue, Shujun Han, Huaiyu Zhang, Wenxin Lai, Xuan Xiao.
 *International Conference on Robotics and Automation (ICRA). 2021. Oral.*
-> Oral. Delivered a presentation at the Xi'an conference venue.  
-[[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060) 
-[[Blog]](/posts/RHex-T3/)  
-- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.  
-**Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.  
+> Oral. Delivered a presentation at the Xi'an conference venue.
+[[Paper]](https://ieeexplore.ieee.org/abstract/document/9561060)
+[[Blog]](/posts/RHex-T3/)
+- A snake-inspired path planning algorithm based on reinforcement learning and self-motion for hyper-redundant manipulators.
+**Yue Lin**, Jianming Wang, Xuan Xiao, Ji Qu, Fatao Qin.
 *International Journal of Advanced Robotic Systems (IJARS). 2022.*
-> [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Blog]](/posts/SSCC/) 
-[[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)  
-- Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.  
-Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.  
-*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.  
-> [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853)   -->
+> [[Paper]](https://journals.sagepub.com/doi/full/10.1177/17298806221110022) [[Blog]](/posts/SSCC/)
+[[Code]](https://github.com/YueLin301/Swinging-Search-Crawling-Control)
+- Self-Adaptive Walking Speed Control on Underactuated Rimless Wheel.
+Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.
+*IEEE International Conference on Mechatronics and Automation (ICMA) 2020*.
+> [[Paper]](https://ieeexplore.ieee.org/abstract/document/9233853) -->
 
 <!-- ---
 
@@ -1198,14 +1595,13 @@ Wenxin Lai, Yujia Tian, Shujun Han, **Yue Lin**, Yongiiang Xue, Juezhu Lai.
 - Assisted classmates in preparing for final exams during the pandemic. Check out my [mind map notes](https://github.com/YueLin301/MindMap-bakcup).
 - Initiated and organized a weekly seminar on Advanced Mathematics for classmates, promoting a harmonious learning environment.
 
-The high-scoring courses at the undergraduate level include the following: 
+The high-scoring courses at the undergraduate level include the following:
 - **Mathematics:** Advanced Mathematics (100), Discrete Mathematics (96);
 - **Computer Science:** Compiler Theory (99), Embedded System Design (99), Software Engineering (98), Operating System (95), Computer Networks (96), Curriculum Design on Database (95), Application Development Practice (97), Internet of Things Technology (99), Software Development Practice (95), Distributed and Cloud Computing (95);
 - **Artificial Intelligence:** Digital Image Processing (98), Speech Recognition and Natural Language Understanding (96), Computerized Vision (96), Machine Learning (95);
 - **Robotics:** Intelligent Mobile Robot (99), Electrical and Electronic Technology (98), College Physics (97). -->
 
 <!-- ### Preprints -->
-
 </div>
 
 <h2 class="cv-section-title" id="professional-services"><i class="fa-solid fa-chess-knight cv-section-icon" aria-hidden="true"></i>Professional Services</h2>
@@ -1342,7 +1738,8 @@ overflow-wrap: anywhere; /* keep long stat / title lines from overflowing on mob
 color: #495485;
 font-weight: 600;
 }
-html[data-theme="dark"] .cv-profile .hobbies-list .cv-hobby-label {
+html[data-theme="dark"] .cv-profile .hobbies-list .cv-hobby-label,
+html[data-mode="dark"] .cv-profile .hobbies-list .cv-hobby-label {
 color: #aebcf0;
 }
 </style>
@@ -1573,7 +1970,11 @@ text-decoration-color: currentColor;
 html[data-theme="dark"] .cv-profile .contact-block .ci-icon,
 html[data-theme="dark"] .cv-profile .contact-block .ci-value a,
 html[data-theme="dark"] .cv-profile .contact-block .ci-value a:hover,
-html[data-theme="dark"] .cv-profile .contact-block .ci-value a:focus-visible {
+html[data-theme="dark"] .cv-profile .contact-block .ci-value a:focus-visible,
+html[data-mode="dark"] .cv-profile .contact-block .ci-icon,
+html[data-mode="dark"] .cv-profile .contact-block .ci-value a,
+html[data-mode="dark"] .cv-profile .contact-block .ci-value a:hover,
+html[data-mode="dark"] .cv-profile .contact-block .ci-value a:focus-visible {
 color: #aebcf0 !important;
 }
 @container (max-width: 26rem) {
@@ -1637,22 +2038,22 @@ overflow-wrap: anywhere;
 </style>
 <ul class="contact-list">
 <li class="contact-item">
-<span class="ci-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+<span class="ci-icon" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></span>
 <span class="ci-label">Email</span>
 <span class="ci-value"><a href="mailto:linyue3h1@gmail.com">linyue3h1@gmail.com</a></span>
 </li>
 <li class="contact-item">
-<span class="ci-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+<span class="ci-icon" aria-hidden="true"><i class="fa-solid fa-hat-wizard"></i></span>
 <span class="ci-label">Google Scholar</span>
 <span class="ci-value"><a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer"><span translate="no">Yue Lin</span></a></span>
 </li>
 <li class="contact-item">
-<span class="ci-icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+<span class="ci-icon" aria-hidden="true"><i class="fa-brands fa-fort-awesome"></i></span>
 <span class="ci-label">GitHub</span>
 <span class="ci-value"><a href="https://github.com/YueLin301" target="_blank" rel="noopener noreferrer">github.com/YueLin301</a></span>
 </li>
 <li class="contact-item">
-<span class="ci-icon" aria-hidden="true"><i class="fa-brands fa-weixin"></i></span>
+<span class="ci-icon" aria-hidden="true"><i class="fa-solid fa-comment-dots"></i></span>
 <span class="ci-label">WeChat</span>
 <span class="ci-value">v01d_id</span>
 </li>
@@ -1672,7 +2073,7 @@ overflow-wrap: anywhere;
 </span>
 </details> -->
 
-<figure style="text-align: center; margin: 1.6rem 0;">{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/bird1.png' | relative_url }}">{% endunless %}<img src="{% if page.url == '/about/' %}{{ '/assets/img/about/bird1.png' | relative_url }}{% else %}{{ '/assets/img/about/bird1_600.webp' | relative_url }}{% endif %}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) calc(100vw - 3rem), 500px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}<figcaption style="margin-top: .5rem;"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
+<figure style="text-align: center; margin: 1.6rem 0;">{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/bird1.png' | relative_url }}">{% endunless %}<img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) calc(100vw - 3rem), 500px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}<figcaption style="margin-top: .5rem;"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
 
 <script>
 var currentPubTypeFilter = 'all';
@@ -1699,74 +2100,11 @@ items.push(child);
 return items;
 }
 
-function buildPubByTime() {
-var catContainer = document.getElementById('pub-by-category');
-var timeContainer = document.getElementById('pub-by-time');
-if (!catContainer || !timeContainer) return;
-
-var lis = getDirectPublicationItems(catContainer);
-var entries = [];
-
-lis.forEach(function (li) {
-var clone = li.cloneNode(true);
-clone.querySelectorAll('details').forEach(function (d) { d.remove(); });
-var text = clone.textContent;
-
-var matches = text.match(/(20\d{2})(?:-(\d{2})(?:-(\d{2}))?)?/g);
-var sortKey = 0;
-var year = null;
-var explicitYear = li.getAttribute('data-pub-year');
-var explicitSort = li.getAttribute('data-pub-sort');
-if (explicitYear && /^(20\d{2})$/.test(explicitYear)) {
-year = parseInt(explicitYear, 10);
-}
-
-var explicitSortParts = explicitSort && explicitSort.match(/^(20\d{2})-(\d{2})(?:-(\d{2}))?$/);
-if (explicitSortParts) {
-if (year == null) year = parseInt(explicitSortParts[1], 10);
-var explicitMonth = parseInt(explicitSortParts[2], 10);
-var explicitDay = explicitSortParts[3] ? parseInt(explicitSortParts[3], 10) : 1;
-sortKey = parseInt(explicitSortParts[1], 10) * 10000 + explicitMonth * 100 + explicitDay;
-} else if (year != null) {
-sortKey = year * 10000 + 101;
-} else if (matches && matches.length > 0) {
-var last = matches[matches.length - 1];
-var parts = last.match(/(20\d{2})(?:-(\d{2})(?:-(\d{2}))?)?/);
-year = parseInt(parts[1], 10);
-var month = parts[2] ? parseInt(parts[2], 10) : 1;
-var day = parts[3] ? parseInt(parts[3], 10) : 1;
-sortKey = year * 10000 + month * 100 + day;
-}
-
-entries.push({ li: li, sortKey: sortKey, year: year });
-});
-
-entries.sort(function (a, b) { return b.sortKey - a.sortKey; });
-
-timeContainer.innerHTML = '';
-var currentYear = null;
-var currentUl = null;
-entries.forEach(function (e) {
-if (e.year !== currentYear) {
-currentYear = e.year;
-var h3 = document.createElement('h3');
-h3.className = 'cv-subsection-title';
-h3.textContent = currentYear != null ? String(currentYear) : 'Unknown';
-timeContainer.appendChild(h3);
-currentUl = document.createElement('ul');
-timeContainer.appendChild(currentUl);
-}
-currentUl.appendChild(e.li.cloneNode(true));
-});
-}
-
 function publicationMatchesFilter(item) {
 if (currentPubTypeFilter === 'representative' &&
     item.getAttribute('data-representative') !== 'true') return false;
 if (currentPubTypeFilter === 'selected' &&
     item.getAttribute('data-selected-paper') !== 'true') return false;
-if (currentPubTypeFilter === 'publications' &&
-    item.getAttribute('data-published') !== 'true') return false;
 if (currentPubTypeFilter === 'manuscripts' &&
     item.getAttribute('data-published') !== 'false') return false;
 if (currentPubAuthorFilter === 'first-author' &&
@@ -1793,13 +2131,12 @@ heading.style.display = visibleCount > 0 ? '' : 'none';
 }
 
 function applyPubFilter() {
-applyPubFilterToContainer(document.getElementById('pub-by-category'));
 applyPubFilterToContainer(document.getElementById('pub-by-time'));
 updatePubResultCount();
 }
 
 function updatePubResultCount() {
-var source = document.getElementById('pub-by-category');
+var source = document.getElementById('pub-by-time');
 var value = document.getElementById('pub-result-count-value');
 if (!source || !value) return;
 var count = getDirectPublicationItems(source).filter(publicationMatchesFilter).length;
@@ -1807,7 +2144,7 @@ value.textContent = String(count);
 }
 
 function switchPubTypeFilter(filter) {
-var filters = ['all', 'representative', 'selected', 'publications', 'manuscripts'];
+var filters = ['all', 'representative', 'selected', 'manuscripts'];
 if (filters.indexOf(filter) === -1) return;
 currentPubTypeFilter = filter;
 
@@ -1838,31 +2175,9 @@ button.setAttribute('aria-pressed', active ? 'true' : 'false');
 applyPubFilter();
 }
 
-function switchPubView(view) {
-var byCat = document.getElementById('pub-by-category');
-var byTime = document.getElementById('pub-by-time');
-var btnCat = document.getElementById('btn-pub-category');
-var btnTime = document.getElementById('btn-pub-time');
-var showCategory = view === 'category';
-if (showCategory) {
-byCat.style.display = 'block';
-byTime.style.display = 'none';
-} else {
-byCat.style.display = 'none';
-byTime.style.display = 'block';
-}
-
-btnCat.classList.toggle('pub-view-btn-active', showCategory);
-btnTime.classList.toggle('pub-view-btn-active', !showCategory);
-btnCat.setAttribute('aria-pressed', showCategory ? 'true' : 'false');
-btnTime.setAttribute('aria-pressed', showCategory ? 'false' : 'true');
-}
-
 function initializePublicationControls() {
-buildPubByTime();
 switchPubTypeFilter('all');
 switchPubAuthorFilter('all');
-switchPubView('time');
 }
 
 if (document.readyState === 'loading') {

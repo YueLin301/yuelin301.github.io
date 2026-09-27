@@ -382,8 +382,8 @@ padding-top: var(--cv-hero-space);
 }
 .cv-profile .cv-identity-lockup {
 display: grid;
-grid-template-columns: 4.5rem minmax(0, 1fr) 4.5rem;
-grid-template-rows: auto auto auto;
+grid-template-columns: minmax(0, 1fr);
+grid-template-rows: auto auto auto auto;
 row-gap: 0.65rem;
 width: 100%;
 min-height: 0;
@@ -404,7 +404,7 @@ position: relative;
 grid-row: 1;
 grid-column: 1;
 align-self: center;
-justify-self: start;
+justify-self: center;
 top: auto;
 left: auto;
 transform: none;
@@ -423,22 +423,22 @@ flex-basis: 1.25rem;
 max-width: 2rem;
 }
 .cv-profile .cv-identity-name {
-grid-row: 1;
-grid-column: 2;
+grid-row: 2;
+grid-column: 1;
 align-self: center;
 font-size: 1.75rem;
 }
 .cv-profile .cv-identity-role {
-grid-row: 2;
-grid-column: 1 / -1;
+grid-row: 3;
+grid-column: 1;
 display: grid;
 row-gap: 0.05rem;
 justify-content: center;
 margin-top: 0;
 }
 .cv-profile .cv-identity-links {
-grid-row: 3;
-grid-column: 1 / -1;
+grid-row: 4;
+grid-column: 1;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
@@ -481,8 +481,8 @@ padding-top: var(--cv-hero-space);
 }
 .cv-profile .cv-identity-lockup {
 display: grid;
-grid-template-columns: 4.5rem minmax(0, 1fr) 4.5rem;
-grid-template-rows: auto auto auto;
+grid-template-columns: minmax(0, 1fr);
+grid-template-rows: auto auto auto auto;
 row-gap: 0.65rem;
 width: 100%;
 min-height: 0;
@@ -503,7 +503,7 @@ position: relative;
 grid-row: 1;
 grid-column: 1;
 align-self: center;
-justify-self: start;
+justify-self: center;
 top: auto;
 left: auto;
 transform: none;
@@ -522,22 +522,22 @@ flex-basis: 1.25rem;
 max-width: 2rem;
 }
 .cv-profile .cv-identity-name {
-grid-row: 1;
-grid-column: 2;
+grid-row: 2;
+grid-column: 1;
 align-self: center;
 font-size: 1.75rem;
 }
 .cv-profile .cv-identity-role {
-grid-row: 2;
-grid-column: 1 / -1;
+grid-row: 3;
+grid-column: 1;
 display: grid;
 row-gap: 0.05rem;
 justify-content: center;
 margin-top: 0;
 }
 .cv-profile .cv-identity-links {
-grid-row: 3;
-grid-column: 1 / -1;
+grid-row: 4;
+grid-column: 1;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
@@ -605,9 +605,6 @@ margin-top: 1.6rem;
 </a>
 <a href="https://scholar.google.com/citations?user=fbvQHX4AAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar">
 <i class="fa-solid fa-hat-wizard" aria-hidden="true"></i><span>Google Scholar</span>
-</a>
-<a href="https://github.com/YueLin301" target="_blank" rel="noopener noreferrer" title="GitHub">
-<i class="fa-brands fa-fort-awesome" aria-hidden="true"></i><span>GitHub</span>
 </a>
 </nav>
 </div>
@@ -877,7 +874,7 @@ Advisors: Prof. <span translate="no"><a href="https://bxiangwang.github.io" titl
 <button class="pub-view-btn pub-view-btn-active" onclick="switchPubTypeFilter('all')" id="btn-pub-type-all" aria-pressed="true">All</button>
 <button class="pub-view-btn" onclick="switchPubTypeFilter('representative')" id="btn-pub-type-representative" aria-pressed="false">Representative</button>
 <button class="pub-view-btn" onclick="switchPubTypeFilter('selected')" id="btn-pub-type-selected" aria-pressed="false">Selected</button>
-<button class="pub-view-btn" onclick="switchPubTypeFilter('manuscripts')" id="btn-pub-type-manuscripts" aria-pressed="false">Manuscripts</button>
+<button class="pub-view-btn" onclick="switchPubTypeFilter('published')" id="btn-pub-type-published" aria-pressed="false">Pubs Only</button>
 </div>
 <div class="pub-control-group" role="group" aria-label="Publication authorship">
 <span class="pub-control-label">Authorship</span>
@@ -1172,7 +1169,7 @@ font-size: 13px;
 <a href="https://arxiv.org/abs/2605.08323">[arXiv]</a></p>
 <p class="pub-meta-line"><span class="pub-meta-label">Review scores:</span> 6/5/4 (out of 6; 4 = <em>borderline accept</em>).</p>
 <p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory × Social Science</span></p>
-<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Derives a pure-RL reciprocity gradient that solves cross-agent influence attribution by differentiating future returns through chains of actions, evaluations, and other agents' responses, so an agent learns from scratch both how to behave under social scrutiny and how to reshape group norms without reward shaping, centralized mechanisms, or reputation priors.</p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Derives a pure-RL reciprocity gradient that solves cross-agent influence attribution by differentiating future returns through chains of actions, evaluations, and other agents' responses, so an agent learns from scratch both how to behave under social scrutiny and how to influence reputations across the group and shift its broader social climate without reward shaping, centralized mechanisms, or reputation priors.</p>
 </blockquote>
 <details style="margin-top: -10px;">
 <summary>[Expand Abstract]</summary>
@@ -2105,8 +2102,8 @@ if (currentPubTypeFilter === 'representative' &&
     item.getAttribute('data-representative') !== 'true') return false;
 if (currentPubTypeFilter === 'selected' &&
     item.getAttribute('data-selected-paper') !== 'true') return false;
-if (currentPubTypeFilter === 'manuscripts' &&
-    item.getAttribute('data-published') !== 'false') return false;
+if (currentPubTypeFilter === 'published' &&
+    item.getAttribute('data-published') !== 'true') return false;
 if (currentPubAuthorFilter === 'first-author' &&
     item.getAttribute('data-first-author') !== 'true') return false;
 return true;
@@ -2144,7 +2141,7 @@ value.textContent = String(count);
 }
 
 function switchPubTypeFilter(filter) {
-var filters = ['all', 'representative', 'selected', 'manuscripts'];
+var filters = ['all', 'representative', 'selected', 'published'];
 if (filters.indexOf(filter) === -1) return;
 currentPubTypeFilter = filter;
 

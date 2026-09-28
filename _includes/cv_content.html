@@ -29,6 +29,23 @@ html[data-theme="dark"] .cv-profile .cv-accent-icon,
 html[data-mode="dark"] .cv-profile .cv-accent-icon {
 color: #aebcf0;
 }
+.cv-profile ul:not(.cv-affiliation-list):not(.academic-footprints-list):not(.hobbies-list):not(.contact-list):not(.profile-toc-list) > li {
+position: relative;
+list-style: none !important;
+}
+.cv-profile ul:not(.cv-affiliation-list):not(.academic-footprints-list):not(.hobbies-list):not(.contact-list):not(.profile-toc-list) > li::before {
+content: "✦" !important;
+position: absolute;
+top: 0.06em;
+left: -1.2rem;
+color: #495485;
+font-size: 1.28em;
+line-height: 1;
+}
+html[data-theme="dark"] .cv-profile ul:not(.cv-affiliation-list):not(.academic-footprints-list):not(.hobbies-list):not(.contact-list):not(.profile-toc-list) > li::before,
+html[data-mode="dark"] .cv-profile ul:not(.cv-affiliation-list):not(.academic-footprints-list):not(.hobbies-list):not(.contact-list):not(.profile-toc-list) > li::before {
+color: #aebcf0;
+}
 .cv-profile .cv-affiliation-list {
 margin: 0;
 padding-left: 0;
@@ -76,6 +93,22 @@ margin-right: auto;
 margin-left: auto;
 text-align: left;
 }
+.cv-profile .cv-comic-credit {
+margin-top: 0.12rem;
+font-size: 0.78rem;
+line-height: 1.35;
+}
+.cv-profile .cv-closing-comic {
+margin: 1.6rem 0;
+text-align: center;
+}
+.cv-profile .cv-closing-comic img {
+display: block;
+width: min(88%, 400px);
+height: auto;
+margin-right: auto;
+margin-left: auto;
+}
 .cv-profile details,
 .cv-profile blockquote,
 .cv-profile figure {
@@ -83,6 +116,7 @@ min-width: 0;
 max-width: 100%;
 }
 .cv-profile .cv-intro-header {
+--cv-hero-space: 2.4rem;
 --cv-hero-space: clamp(2rem, 4cqi, 2.4rem);
 display: flex;
 flex-direction: column;
@@ -214,6 +248,7 @@ margin: 0;
 padding: 0;
 border: 0;
 color: var(--heading-color, #343d63);
+font-size: 2.3rem;
 font-size: clamp(2rem, 4cqi, 2.3rem);
 font-weight: 700;
 line-height: 1.15;
@@ -243,6 +278,7 @@ margin: 0;
 padding: 0;
 color: #495485;
 font-family: "Snell Roundhand", "Segoe Script", "Apple Chancery", "URW Chancery L", Georgia, serif;
+font-size: 1.35rem;
 font-size: clamp(1.2rem, 1.9cqi, 1.45rem);
 font-style: normal;
 font-weight: 400;
@@ -796,7 +832,7 @@ width: 100%;
 <div class="flex-item research-illustration" style="text-align: center;">
 <!-- Chirpy wraps images on /about/ with its popup link; standalone pages need an explicit link. -->
 {% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{{ '/assets/img/about/crow1_700.webp' | relative_url }}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 280px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
-<p><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
+<p class="cv-comic-credit"><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
 </div>
 </div>
 
@@ -1704,10 +1740,182 @@ el.textContent = total;
 {% endcomment %}
 
 <h2 class="cv-section-title" id="academic-footprints"><i class="fa-regular fa-map cv-section-icon" aria-hidden="true"></i>Academic Footprints</h2>
-<ul>
-<li><span translate="no">NeurIPS 2026 @ Sydney, Australia 🇦🇺</span> <em>(Planning to attend)</em></li>
-<li><span translate="no">ICML 2026 @ Seoul, South Korea 🇰🇷</span></li>
-<li><span translate="no">ICRA 2021 @ Xi’an, China 🇨🇳</span></li>
+<style>
+.cv-profile .academic-footprints-list {
+margin: 0.75rem 0 0;
+padding: 0;
+list-style: none;
+text-align: center;
+}
+.cv-profile .academic-footprint-item {
+margin: 0.85rem auto 0;
+padding: 0;
+text-align: center;
+}
+.cv-profile .academic-footprint-item + .academic-footprint-item {
+margin-top: 1.25rem;
+}
+.cv-profile .academic-footprint-item + .academic-footprint-item::before {
+content: "";
+display: block;
+width: min(100%, 34rem);
+height: 1px;
+margin: 0 auto 1.25rem;
+background: linear-gradient(90deg, transparent, rgba(73, 84, 133, 0.24) 18%, rgba(73, 84, 133, 0.24) 82%, transparent);
+}
+.cv-profile .academic-footprint-label {
+color: #495485;
+font-weight: 700;
+}
+.cv-profile .academic-footprint-label::before {
+content: "✦";
+margin-right: 0.42em;
+font-size: 1.15em;
+vertical-align: 0.04em;
+}
+.cv-profile .academic-footprint-missed {
+text-decoration: line-through;
+text-decoration-thickness: 1.25px;
+text-decoration-color: currentColor;
+}
+.cv-profile .academic-footprint-gallery {
+display: grid;
+gap: 0.45rem;
+margin: 0.85rem auto 0;
+}
+.cv-profile .academic-footprint-gallery-three {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+width: min(100%, 38rem);
+}
+.cv-profile .academic-footprint-gallery-four {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+width: min(100%, 50rem);
+}
+.cv-profile .academic-footprint-gallery-two {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+width: min(100%, 26rem);
+}
+.cv-profile .academic-footprint-photo {
+display: block;
+overflow: hidden;
+aspect-ratio: 4 / 3;
+border-radius: 0.4rem;
+box-shadow: 0 2px 8px rgba(33, 41, 78, 0.12);
+transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.cv-profile .academic-footprint-photo:hover,
+.cv-profile .academic-footprint-photo:focus-visible {
+transform: translateY(-2px);
+box-shadow: 0 5px 14px rgba(33, 41, 78, 0.2);
+}
+.cv-profile .academic-footprint-note {
+width: min(100%, 32rem);
+margin: 0.65rem auto 0;
+padding: 0.6rem 0.85rem;
+color: var(--text-color, #5d6473);
+font-size: 0.82rem;
+line-height: 1.45;
+background: rgba(73, 84, 133, 0.035);
+border: 1px dashed rgba(73, 84, 133, 0.28);
+border-radius: 0.4rem;
+}
+.cv-profile .academic-footprint-photo img {
+display: block;
+width: 100%;
+height: 100%;
+margin: 0;
+object-fit: cover;
+}
+.cv-profile .academic-footprint-certificate img {
+object-fit: contain;
+background: #fff;
+}
+.cv-profile .academic-footprint-photo-item {
+min-width: 0;
+margin: 0;
+}
+.cv-profile .academic-footprint-caption {
+margin-top: 0.22rem;
+color: var(--text-color, #5d6473);
+font-size: 0.75rem;
+line-height: 1.3;
+text-align: center;
+}
+html[data-theme="dark"] .cv-profile .academic-footprint-photo,
+html[data-mode="dark"] .cv-profile .academic-footprint-photo {
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.38);
+}
+html[data-theme="dark"] .cv-profile .academic-footprint-label,
+html[data-mode="dark"] .cv-profile .academic-footprint-label {
+color: #aebcf0;
+}
+html[data-theme="dark"] .cv-profile .academic-footprint-note,
+html[data-mode="dark"] .cv-profile .academic-footprint-note {
+color: #aebcf0;
+background: rgba(174, 188, 240, 0.045);
+border-color: rgba(174, 188, 240, 0.32);
+}
+html[data-theme="dark"] .cv-profile .academic-footprint-item + .academic-footprint-item::before,
+html[data-mode="dark"] .cv-profile .academic-footprint-item + .academic-footprint-item::before {
+background: linear-gradient(90deg, transparent, rgba(174, 188, 240, 0.26) 18%, rgba(174, 188, 240, 0.26) 82%, transparent);
+}
+@container (max-width: 36rem) {
+.cv-profile .academic-footprint-gallery {
+gap: 0.3rem;
+}
+.cv-profile .academic-footprint-gallery-two,
+.cv-profile .academic-footprint-gallery-three,
+.cv-profile .academic-footprint-gallery-four {
+grid-template-columns: minmax(0, 1fr);
+width: min(100%, 20rem);
+}
+}
+@supports not (container-type: inline-size) {
+@media (max-width: 688px) {
+.cv-profile .academic-footprint-gallery {
+gap: 0.3rem;
+}
+.cv-profile .academic-footprint-gallery-two,
+.cv-profile .academic-footprint-gallery-three,
+.cv-profile .academic-footprint-gallery-four {
+grid-template-columns: minmax(0, 1fr);
+width: min(100%, 20rem);
+}
+}
+}
+</style>
+<ul class="academic-footprints-list">
+<li class="academic-footprint-item">
+<div class="academic-footprint-label"><span translate="no">NeurIPS 2026 @ Sydney, Australia 🇦🇺</span></div>
+<div class="academic-footprint-note">Planning to attend. See you in Sydney! 👋</div>
+</li>
+<li class="academic-footprint-item">
+<div class="academic-footprint-label"><span translate="no">ICML 2026 @ Seoul, South Korea 🇰🇷</span></div>
+<div class="academic-footprint-gallery academic-footprint-gallery-four">
+<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-venue-photo.jpg"><img src="/assets/img/about/icml-2026-venue-photo-thumb.webp" alt="ICML 2026 venue at COEX in Seoul" width="800" height="600" loading="lazy" decoding="async"></a>
+<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo.jpg"><img src="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo-thumb.webp" alt="At the Verbalized Bayesian Persuasion poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
+<figure class="academic-footprint-photo-item">
+<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo.jpg"><img src="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo-thumb.webp" alt="Talk, Judge, Cooperate poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
+<figcaption class="academic-footprint-caption">(Forgot to take a photo<br>with Shuhui 😭)</figcaption>
+</figure>
+<a class="academic-footprint-photo academic-footprint-certificate" href="/assets/my_paper/icml-2026-attendance-certificate.pdf" aria-label="Open the ICML 2026 attendance certificate PDF"><img src="/assets/img/about/icml-2026-attendance-certificate-thumb.webp" alt="ICML 2026 certificate of attendance for Yue Lin" width="800" height="619" loading="lazy" decoding="async"></a>
+</div>
+</li>
+<li class="academic-footprint-item">
+<div class="academic-footprint-label"><span class="academic-footprint-missed" translate="no">NeurIPS 2025 @ San Diego, USA 🇺🇸</span></div>
+<div class="academic-footprint-note">I was selected as a Top Reviewer and offered complimentary registration, but by then it was too late to obtain a U.S. visa in time for the San Diego meeting.</div>
+</li>
+<li class="academic-footprint-item">
+<div class="academic-footprint-label"><span class="academic-footprint-missed" translate="no">NeurIPS 2023 @ New Orleans, USA 🇺🇸</span></div>
+<div class="academic-footprint-note">I was unable to attend because my U.S. visa application was not approved.</div>
+</li>
+<li class="academic-footprint-item">
+<div class="academic-footprint-label"><span translate="no">ICRA 2021 @ Xi’an, China 🇨🇳</span></div>
+<div class="academic-footprint-gallery academic-footprint-gallery-two">
+<a class="academic-footprint-photo" href="/assets/img/about/icra-2021-conference-photo.jpg"><img src="/assets/img/about/icra-2021-conference-photo-thumb.webp" alt="At the ICRA 2021 conference venue in Xi'an" width="800" height="600" loading="lazy" decoding="async"></a>
+<a class="academic-footprint-photo" href="/assets/img/about/icra-2021-presentation-photo.jpg"><img src="/assets/img/about/icra-2021-presentation-photo-thumb.webp" alt="Presenting RHex-T3 at ICRA 2021" width="800" height="600" loading="lazy" decoding="async"></a>
+</div>
+</li>
 </ul>
 {% endif %}
 
@@ -1911,10 +2119,9 @@ _Generated by ChatGPT-4._ -->
 <div class="contact-block">
 <style>
 .contact-block {
-width: 100%;
+width: min(100%, 25rem);
 text-align: center;
 margin: 1.5em auto;
-max-width: 480px;
 }
 .cv-profile .contact-list {
 display: grid;
@@ -1926,7 +2133,7 @@ font-size: 15px;
 }
 .cv-profile .contact-item {
 display: grid;
-grid-template-columns: 28px 8.25rem minmax(0, 1fr);
+grid-template-columns: 28px 10rem minmax(0, 1fr);
 align-items: center;
 column-gap: 10px;
 min-width: 0;
@@ -2070,7 +2277,7 @@ overflow-wrap: anywhere;
 </span>
 </details> -->
 
-<figure style="text-align: center; margin: 1.6rem 0;">{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/bird1.png' | relative_url }}">{% endunless %}<img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) calc(100vw - 3rem), 500px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}<figcaption style="margin-top: .5rem;"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
+<figure class="cv-closing-comic">{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/bird1.png' | relative_url }}">{% endunless %}<img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) 88vw, 400px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}<figcaption class="cv-comic-credit"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
 
 <script>
 var currentPubTypeFilter = 'all';

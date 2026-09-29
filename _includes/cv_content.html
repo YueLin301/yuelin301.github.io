@@ -34,17 +34,18 @@ position: relative;
 list-style: none !important;
 }
 .cv-profile ul:not(.cv-affiliation-list):not(.academic-footprints-list):not(.hobbies-list):not(.contact-list):not(.profile-toc-list) > li::before {
-content: "✦" !important;
+content: "" !important;
 position: absolute;
-top: 0.06em;
-left: -1.2rem;
-color: #495485;
-font-size: 1.28em;
-line-height: 1;
+top: 0.58em;
+left: -1.18rem;
+width: 0.54rem;
+height: 0.54rem;
+background: #495485;
+clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
 }
 html[data-theme="dark"] .cv-profile ul:not(.cv-affiliation-list):not(.academic-footprints-list):not(.hobbies-list):not(.contact-list):not(.profile-toc-list) > li::before,
 html[data-mode="dark"] .cv-profile ul:not(.cv-affiliation-list):not(.academic-footprints-list):not(.hobbies-list):not(.contact-list):not(.profile-toc-list) > li::before {
-color: #aebcf0;
+background: #aebcf0;
 }
 .cv-profile .cv-affiliation-list {
 margin: 0;
@@ -1764,14 +1765,20 @@ margin: 0 auto 1.25rem;
 background: linear-gradient(90deg, transparent, rgba(73, 84, 133, 0.24) 18%, rgba(73, 84, 133, 0.24) 82%, transparent);
 }
 .cv-profile .academic-footprint-label {
+display: inline-flex;
+align-items: center;
 color: #495485;
 font-weight: 700;
 }
 .cv-profile .academic-footprint-label::before {
-content: "✦";
+content: "";
+flex: 0 0 auto;
+width: 0.56rem;
+height: 0.56rem;
 margin-right: 0.42em;
-font-size: 1.15em;
-vertical-align: 0.04em;
+background: currentColor;
+clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+transform: translateY(-0.02em);
 }
 .cv-profile .academic-footprint-missed {
 text-decoration: line-through;

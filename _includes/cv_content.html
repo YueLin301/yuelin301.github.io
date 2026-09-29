@@ -831,8 +831,7 @@ width: 100%;
 </div>
 </div>
 <div class="flex-item research-illustration" style="text-align: center;">
-<!-- Chirpy wraps images on /about/ with its popup link; standalone pages need an explicit link. -->
-{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/crow1.png' | relative_url }}">{% endunless %}<img src="{{ '/assets/img/about/crow1_700.webp' | relative_url }}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 280px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}
+<a href="{{ '/assets/img/about/crow1.png' | relative_url }}" data-footprint-lightbox data-lightbox-caption="“False Knees” by Joshua" aria-haspopup="dialog"><img src="{{ '/assets/img/about/crow1_700.webp' | relative_url }}" srcset="{{ '/assets/img/about/crow1_350.webp' | relative_url }} 350w,{{ '/assets/img/about/crow1_700.webp' | relative_url }} 700w" sizes="(max-width: 768px) 85vw, 280px" alt="Four-panel False Knees comic: a crow discovers it is the source of all its problems" width="700" height="711" style="max-height: 100%; margin: auto;"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async"></a>
 <p class="cv-comic-credit"><a href="https://falseknees.com/about.html">"False Knees" by Joshua</a></p>
 </div>
 </div>
@@ -1810,6 +1809,9 @@ border-radius: 0.4rem;
 box-shadow: 0 2px 8px rgba(33, 41, 78, 0.12);
 transition: transform 160ms ease, box-shadow 160ms ease;
 }
+.cv-profile [data-footprint-lightbox] {
+cursor: zoom-in;
+}
 .cv-profile .academic-footprint-photo:hover,
 .cv-profile .academic-footprint-photo:focus-visible {
 transform: translateY(-2px);
@@ -1866,6 +1868,98 @@ html[data-theme="dark"] .cv-profile .academic-footprint-item + .academic-footpri
 html[data-mode="dark"] .cv-profile .academic-footprint-item + .academic-footprint-item::before {
 background: linear-gradient(90deg, transparent, rgba(174, 188, 240, 0.26) 18%, rgba(174, 188, 240, 0.26) 82%, transparent);
 }
+.cv-footprint-lightbox {
+position: fixed;
+inset: 0;
+box-sizing: border-box;
+width: 100vw;
+height: 100dvh;
+max-width: none;
+max-height: none;
+margin: 0;
+padding: clamp(0.75rem, 2vw, 1.5rem);
+overflow: hidden;
+border: 0;
+background: transparent;
+color: #f7f8ff;
+}
+.cv-footprint-lightbox:not([open]) {
+display: none;
+}
+.cv-footprint-lightbox[open] {
+display: grid;
+place-items: center;
+}
+.cv-footprint-lightbox::backdrop {
+background: rgba(7, 9, 18, 0.82);
+-webkit-backdrop-filter: blur(4px);
+backdrop-filter: blur(4px);
+}
+.cv-footprint-lightbox-figure {
+display: grid;
+grid-template-rows: minmax(0, 1fr) auto;
+place-items: center;
+gap: 0.65rem;
+width: 100%;
+height: 100%;
+min-height: 0;
+margin: 0;
+pointer-events: none;
+}
+.cv-footprint-lightbox-image {
+display: block;
+width: auto;
+height: auto;
+max-width: min(94vw, 90rem);
+max-height: calc(100dvh - 5.5rem);
+margin: 0;
+object-fit: contain;
+border-radius: 0.5rem;
+box-shadow: 0 16px 52px rgba(0, 0, 0, 0.48);
+pointer-events: auto;
+}
+.cv-footprint-lightbox-caption {
+max-width: min(90vw, 48rem);
+margin: 0;
+color: rgba(247, 248, 255, 0.88);
+font-size: 0.84rem;
+line-height: 1.4;
+text-align: center;
+}
+.cv-footprint-lightbox-close {
+position: fixed;
+z-index: 1;
+top: max(0.85rem, env(safe-area-inset-top));
+right: max(0.85rem, env(safe-area-inset-right));
+display: grid;
+place-items: center;
+box-sizing: border-box;
+width: 2.75rem;
+height: 2.75rem;
+padding: 0;
+border: 1px solid rgba(255, 255, 255, 0.32);
+border-radius: 50%;
+color: #fff;
+font: 400 1.75rem/1 system-ui, sans-serif;
+background: rgba(18, 22, 39, 0.72);
+box-shadow: 0 4px 18px rgba(0, 0, 0, 0.24);
+cursor: pointer;
+transition: background 150ms ease, transform 150ms ease;
+}
+.cv-footprint-lightbox-close:hover,
+.cv-footprint-lightbox-close:focus-visible {
+background: rgba(73, 84, 133, 0.94);
+transform: scale(1.05);
+}
+html.cv-footprint-lightbox-open,
+html.cv-footprint-lightbox-open body {
+overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+.cv-footprint-lightbox-close {
+transition: none;
+}
+}
 @container (max-width: 36rem) {
 .cv-profile .academic-footprint-gallery {
 gap: 0.3rem;
@@ -1875,6 +1969,19 @@ gap: 0.3rem;
 .cv-profile .academic-footprint-gallery-four {
 grid-template-columns: minmax(0, 1fr);
 width: min(100%, 20rem);
+}
+}
+@media (max-width: 688px) {
+.cv-footprint-lightbox {
+padding: 0.65rem;
+}
+.cv-footprint-lightbox-image {
+max-width: calc(100vw - 1.3rem);
+max-height: calc(100dvh - 5rem);
+border-radius: 0.35rem;
+}
+.cv-footprint-lightbox-caption {
+font-size: 0.78rem;
 }
 }
 @supports not (container-type: inline-size) {
@@ -1899,10 +2006,10 @@ width: min(100%, 20rem);
 <li class="academic-footprint-item">
 <div class="academic-footprint-label"><span translate="no">ICML 2026 @ Seoul, South Korea 🇰🇷</span></div>
 <div class="academic-footprint-gallery academic-footprint-gallery-four">
-<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-venue-photo.webp"><img src="/assets/img/about/icml-2026-venue-photo-thumb.webp" alt="ICML 2026 venue at COEX in Seoul" width="800" height="600" loading="lazy" decoding="async"></a>
-<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo.webp"><img src="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo-thumb.webp" alt="At the Verbalized Bayesian Persuasion poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
+<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-venue-photo.webp" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icml-2026-venue-photo-thumb.webp" alt="ICML 2026 venue at COEX in Seoul" width="800" height="600" loading="lazy" decoding="async"></a>
+<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo.webp" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo-thumb.webp" alt="At the Verbalized Bayesian Persuasion poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
 <figure class="academic-footprint-photo-item">
-<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo.webp"><img src="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo-thumb.webp" alt="Talk, Judge, Cooperate poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
+<a class="academic-footprint-photo" href="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo.webp" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo-thumb.webp" alt="Talk, Judge, Cooperate poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
 <figcaption class="academic-footprint-caption">(Forgot to take a photo<br>with Shuhui 😭)</figcaption>
 </figure>
 <a class="academic-footprint-photo academic-footprint-certificate" href="/assets/my_paper/icml-2026-attendance-certificate.pdf" aria-label="Open the ICML 2026 attendance certificate PDF"><img src="/assets/img/about/icml-2026-attendance-certificate-thumb.webp" alt="ICML 2026 certificate of attendance for Yue Lin" width="800" height="619" loading="lazy" decoding="async"></a>
@@ -1919,11 +2026,105 @@ width: min(100%, 20rem);
 <li class="academic-footprint-item">
 <div class="academic-footprint-label"><span translate="no">ICRA 2021 @ Xi’an, China 🇨🇳</span></div>
 <div class="academic-footprint-gallery academic-footprint-gallery-two">
-<a class="academic-footprint-photo" href="/assets/img/about/icra-2021-conference-photo.jpg"><img src="/assets/img/about/icra-2021-conference-photo-thumb.webp" alt="At the ICRA 2021 conference venue in Xi'an" width="800" height="600" loading="lazy" decoding="async"></a>
-<a class="academic-footprint-photo" href="/assets/img/about/icra-2021-presentation-photo.jpg"><img src="/assets/img/about/icra-2021-presentation-photo-thumb.webp" alt="Presenting RHex-T3 at ICRA 2021" width="800" height="600" loading="lazy" decoding="async"></a>
+<a class="academic-footprint-photo" href="/assets/img/about/icra-2021-conference-photo.jpg" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icra-2021-conference-photo-thumb.webp" alt="At the ICRA 2021 conference venue in Xi'an" width="800" height="600" loading="lazy" decoding="async"></a>
+<a class="academic-footprint-photo" href="/assets/img/about/icra-2021-presentation-photo.jpg" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icra-2021-presentation-photo-thumb.webp" alt="Presenting RHex-T3 at ICRA 2021" width="800" height="600" loading="lazy" decoding="async"></a>
 </div>
 </li>
 </ul>
+<script>
+(function () {
+var lightboxRoot = document.querySelector('.cv-profile');
+if (!lightboxRoot || typeof HTMLDialogElement === 'undefined' || typeof HTMLDialogElement.prototype.showModal !== 'function') return;
+
+var lightbox = document.createElement('dialog');
+lightbox.className = 'cv-footprint-lightbox';
+lightbox.setAttribute('aria-label', 'Expanded image preview');
+var closeButton = document.createElement('button');
+closeButton.className = 'cv-footprint-lightbox-close';
+closeButton.type = 'button';
+closeButton.setAttribute('aria-label', 'Close image preview');
+var closeMark = document.createElement('span');
+closeMark.setAttribute('aria-hidden', 'true');
+closeMark.textContent = '\u00d7';
+closeButton.appendChild(closeMark);
+
+var lightboxFigure = document.createElement('figure');
+lightboxFigure.className = 'cv-footprint-lightbox-figure';
+var lightboxImage = document.createElement('img');
+lightboxImage.className = 'cv-footprint-lightbox-image';
+lightboxImage.alt = '';
+var lightboxCaption = document.createElement('figcaption');
+lightboxCaption.className = 'cv-footprint-lightbox-caption';
+lightboxFigure.appendChild(lightboxImage);
+lightboxFigure.appendChild(lightboxCaption);
+lightbox.appendChild(closeButton);
+lightbox.appendChild(lightboxFigure);
+document.body.appendChild(lightbox);
+
+var activeTrigger = null;
+
+function closeLightbox() {
+if (lightbox.open) lightbox.close();
+}
+
+function openLightbox(trigger) {
+var thumbnail = trigger.querySelector('img');
+if (!thumbnail) return;
+
+activeTrigger = trigger;
+lightboxImage.src = thumbnail.currentSrc || thumbnail.src;
+var caption = trigger.getAttribute('data-lightbox-caption') || thumbnail.alt || '';
+lightboxImage.alt = thumbnail.alt || '';
+lightboxCaption.textContent = caption;
+document.documentElement.classList.add('cv-footprint-lightbox-open');
+lightbox.showModal();
+try {
+closeButton.focus({ preventScroll: true });
+} catch (error) {
+closeButton.focus();
+}
+
+var fullSource = trigger.href;
+if (fullSource && fullSource !== lightboxImage.src) {
+var fullImage = new Image();
+fullImage.onload = function () {
+if (lightbox.open && activeTrigger === trigger) lightboxImage.src = fullImage.src;
+};
+fullImage.src = fullSource;
+}
+}
+
+lightboxRoot.addEventListener('click', function (event) {
+var trigger = event.target.closest('[data-footprint-lightbox]');
+if (!trigger || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+event.preventDefault();
+openLightbox(trigger);
+});
+
+closeButton.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', function (event) {
+if (event.target === lightbox) closeLightbox();
+});
+lightbox.addEventListener('cancel', function (event) {
+event.preventDefault();
+closeLightbox();
+});
+lightbox.addEventListener('close', function () {
+document.documentElement.classList.remove('cv-footprint-lightbox-open');
+lightboxImage.removeAttribute('src');
+lightboxImage.alt = '';
+lightboxCaption.textContent = '';
+if (activeTrigger) {
+try {
+activeTrigger.focus({ preventScroll: true });
+} catch (error) {
+activeTrigger.focus();
+}
+}
+activeTrigger = null;
+});
+})();
+</script>
 {% endif %}
 
 <h2 class="cv-section-title" id="hobbies"><i class="fa-solid fa-dice cv-section-icon" aria-hidden="true"></i>Hobbies</h2>
@@ -2284,7 +2485,7 @@ overflow-wrap: anywhere;
 </span>
 </details> -->
 
-<figure class="cv-closing-comic">{% unless page.url == '/about/' %}<a href="{{ '/assets/img/about/bird1.png' | relative_url }}">{% endunless %}<img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) 88vw, 400px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async">{% unless page.url == '/about/' %}</a>{% endunless %}<figcaption class="cv-comic-credit"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
+<figure class="cv-closing-comic"><a href="{{ '/assets/img/about/bird1.png' | relative_url }}" data-footprint-lightbox data-lightbox-caption="“False Knees” by Joshua" aria-haspopup="dialog"><img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) 88vw, 400px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async"></a><figcaption class="cv-comic-credit"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
 
 <script>
 var currentPubTypeFilter = 'all';

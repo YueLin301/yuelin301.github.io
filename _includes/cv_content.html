@@ -665,6 +665,7 @@ margin-top: 1.6rem;
 {% endif %}
 </div>
 
+
 <script>
 (function () {
 var avatar = document.querySelector('.cv-profile .cv-avatar[aria-pressed]');
@@ -919,7 +920,7 @@ Advisors: Prof. <span translate="no"><a href="https://bxiangwang.github.io" titl
 </div>
 <div class="pub-result-count" id="pub-result-count" role="status" aria-live="polite" aria-atomic="true">
 <span>Count</span>
-<strong id="pub-result-count-value">9</strong>
+<strong id="pub-result-count-value">10</strong>
 </div>
 </div>
 
@@ -1252,6 +1253,43 @@ font-size: 13px;
 
 <p>感谢导师们的指导，感谢合作者及身边人的支持。孩子终于又要到饭了🍌🐒</p>
 </article>
+</details>
+</li>
+<li data-publication="true" data-pub-year="2026" data-pub-sort="2026-10-02" data-published="false" data-first-author="false" data-representative="false" data-selected-paper="false"><span translate="no">Ask, Relax, or Act? Evaluating Actionable Indeterminacy in LLM Preference Reasoning.</span><br />
+<span translate="no">Ang Li, <strong>Yue Lin</strong>, Feifei Kou, Zhan Su, Prayag Tiwari, Wenhao Li, Shuhui Zhu, Hongyuan Zha, Baoxiang Wang.</span><br />
+<span translate="no"><em>arXiv preprint. 2026-10-02.</em></span>
+<blockquote>
+<p class="pub-meta-line"><span class="pub-meta-label">Resources:</span>
+<a href="https://arxiv.org/abs/2610.03102">[arXiv]</a></p>
+<p class="pub-meta-line"><span class="pub-meta-label">Category:</span> <span translate="no">Data Science × Game Theory</span></p>
+<p class="pub-meta-line pub-tldr"><span class="pub-meta-label">TLDR:</span> Formalizes actionable indeterminacy and builds a solver-grounded benchmark to test whether an LLM acts when uncertainty is harmless, asks only when missing preferences or objectives block action, and minimally repairs infeasible constraints.</p>
+</blockquote>
+<details style="margin-top: -10px;">
+<summary>[Expand Abstract]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="Abstract"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px; white-space: pre-wrap; word-break: break-word;"><code>An LLM agent can recognize uncertainty yet still choose the wrong next step: asking when action is already justified, or seeking clarification when the constraints must change. We formalize actionable indeterminacy: act when an accepted action is shared across all admissible preferences or objectives, clarify when each possibility is feasible but no action is shared, and propose a minimum-cost permitted constraint repair when the request is infeasible. We construct a solver-grounded benchmark spanning object allocation, meeting scheduling, apartment choice, and stable matching. Matched pairs retain the same source while changing whether intervention is necessary, and evaluation separates decision correctness, matched-pair reliability, and fully correct responses. Our findings reveal a recurring difficulty in recognizing when intervention is unnecessary: models can identify situations requiring clarification or repair yet still intervene when a justified action already exists. Correct decision labels also fail to guarantee usable actions, questions, or repairs. Crucially, response requirements shape not only how decisions are expressed but also which decisions are made. Making the required content explicit substantially improves fully correct responses and can change intervention decisions, even when outputs are already parseable. These findings highlight that reliable agency requires more than recognizing uncertainty: it requires intervening only when necessary and translating the chosen next step into a verifiable response.</code></pre></div>
+</details>
+<details>
+<summary>[Expand BibTeX]</summary>
+<div class="language-plaintext highlighter-rouge">
+<div class="code-header">
+<span data-label-text="BibTeX"><i class="fas fa-code fa-fw small"></i></span>
+<span></span>
+</div>
+  <pre class="highlight" style="margin-left: 20px;"><code>@misc{li2026ask,
+  title={Ask, Relax, or Act? Evaluating Actionable Indeterminacy in {LLM} Preference Reasoning},
+  author={Li, Ang and Lin, Yue and Kou, Feifei and Su, Zhan and Tiwari, Prayag and Li, Wenhao and Zhu, Shuhui and Zha, Hongyuan and Wang, Baoxiang},
+  year={2026},
+  eprint={2610.03102},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  doi={10.48550/arXiv.2610.03102},
+  url={https://arxiv.org/abs/2610.03102}
+}</code></pre></div>
 </details>
 </li>
 <li data-publication="true" data-pub-year="2026" data-pub-sort="2026-07" data-published="true" data-first-author="false" data-representative="false" data-selected-paper="true"><span translate="no">Verbalized Bayesian Persuasion.</span><br />
@@ -1637,9 +1675,9 @@ The high-scoring courses at the undergraduate level include the following:
 <!-- ### Preprints -->
 </div>
 
-<h2 class="cv-section-title" id="professional-services"><i class="fa-solid fa-chess-knight cv-section-icon" aria-hidden="true"></i>Professional Services</h2>
+<h2 class="cv-section-title" id="professional-services"><i class="fa-solid fa-chess-knight cv-section-icon" aria-hidden="true"></i>Reviewing</h2>
 
-<p class="cv-icon-label"><i class="fa-solid fa-award fa-fw cv-accent-icon" aria-hidden="true"></i>Service Honors</p>
+<p class="cv-icon-label"><i class="fa-solid fa-award fa-fw cv-accent-icon" aria-hidden="true"></i>Highlights</p>
 <ul>
 <li>NeurIPS 2025 Top Reviewer <a href="https://neurips.cc/Conferences/2025/ProgramCommittee">[List]</a> <a href="/assets/img/about/neurips-2025-top-reviewer-award-email.png">[Award Email Screenshot]</a></li>
 <li>ICML 2026 Silver Reviewer <a href="/assets/img/about/icml-2026-silver-reviewer-award-email.png">[Award Email Screenshot]</a></li>
@@ -1650,9 +1688,10 @@ The high-scoring courses at the undergraduate level include the following:
 <p class="cv-icon-label"><i class="fa-solid fa-eye fa-fw cv-accent-icon" aria-hidden="true"></i>Independent Reviewer</p>
 <ul>
 <li>NeurIPS 2024 [6; 45615], 2025 [5; 32912], 2026 [4; 17738]</li>
-<li>ICLR 2025 [3; 21831], 2026 [1; 5994], 2027 [0; 0]</li>
+<li>ICLR 2025 [3; 21831], 2026 [1; 5994], 2027 [5; 0]</li>
 <li>ICML 2025 [6; 32893], 2026 [6; 43185]</li>
 <li>AAAI 2027 [2; 12678]</li>
+<li>AAMAS 2027 [0; 0]</li>
 <li>TMLR 2025 [2; 38363], 2026 [2; 10331]</li>
 </ul>
 
@@ -1667,7 +1706,7 @@ The high-scoring courses at the undergraduate level include the following:
 
 <blockquote>
 <p>Format: [assigned manuscripts; review characters]. First “0”: invitation accepted, awaiting assignment; second “0”: assigned, review pending.<br />
-Total reviews: <span id="total-reviews">—</span>.</p>
+Total reviews: <span id="total-reviews">52</span>.</p>
 </blockquote>
 <script>
 (function () {

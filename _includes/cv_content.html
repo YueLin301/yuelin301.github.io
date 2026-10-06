@@ -145,16 +145,26 @@ padding: 0;
 text-align: center;
 }
 .cv-profile .cv-avatar {
+--cv-avatar-surface: #f0f1f6;
+--cv-avatar-edge: rgba(255, 255, 255, 0.92);
+--cv-avatar-outline: rgba(33, 41, 78, 0.18);
+--cv-avatar-top-shadow: 1px 3px 3px rgba(28, 34, 55, 0.38), 3px 6px 7px -4px rgba(28, 34, 55, 0.27), 0 0 0 1px var(--cv-avatar-outline);
+--cv-avatar-bottom-shadow: 0 1px 3px rgba(33, 41, 78, 0.12), 0 0 0 1px var(--cv-avatar-outline);
+--cv-avatar-back-image: url('{{ "/assets/img/avatar/jojo-portrait.jpg" | relative_url }}');
+/* Frame both matching poses from the original photo without retouching it. */
+--cv-avatar-back-position: 78% 44%;
+--cv-avatar-back-size: 205% auto;
 position: relative;
 display: block;
 width: 100px;
 height: 100px;
 padding: 0;
-overflow: hidden;
+overflow: visible;
 border: 0;
-border-radius: 26px;
-background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(73, 84, 133, 0.055));
-box-shadow: 0 8px 22px rgba(33, 41, 78, 0.1), 0 20px 14px -16px rgba(33, 41, 78, 0.36);
+border-radius: 20px;
+background: transparent;
+isolation: isolate;
+box-shadow: 0 9px 20px rgba(33, 41, 78, 0.1);
 appearance: none;
 cursor: url('{{ "/assets/img/material/cursor_gun.png" | relative_url }}'), pointer;
 touch-action: manipulation;
@@ -170,8 +180,11 @@ outline-offset: 4px;
 }
 html[data-theme="dark"] .cv-profile .cv-avatar,
 html[data-mode="dark"] .cv-profile .cv-avatar {
-background: rgba(255, 255, 255, 0.035);
-box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 21px 15px -16px rgba(0, 0, 0, 0.62);
+--cv-avatar-surface: #252731;
+--cv-avatar-edge: rgba(225, 230, 245, 0.38);
+--cv-avatar-outline: rgba(0, 0, 0, 0.45);
+--cv-avatar-top-shadow: 1px 3px 3px rgba(0, 0, 0, 0.65), 3px 6px 7px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--cv-avatar-outline);
+box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 .cv-profile .cv-identity-lockup > .cv-avatar {
 position: relative;
@@ -299,8 +312,42 @@ html[data-mode="dark"] .cv-profile .cv-intro-quote::before,
 html[data-mode="dark"] .cv-profile .cv-intro-quote::after {
 background: #aebcf0;
 }
-.cv-profile .cv-avatar::before,
-.cv-profile .cv-avatar::after {
+.cv-profile .cv-avatar-card {
+position: relative;
+display: block;
+width: 100%;
+height: 100%;
+border-radius: inherit;
+pointer-events: none;
+}
+.cv-profile .cv-avatar-face {
+position: absolute;
+inset: 0;
+box-sizing: border-box;
+overflow: hidden;
+border: 1px solid var(--cv-avatar-edge);
+border-radius: inherit;
+background-color: var(--cv-avatar-surface);
+}
+.cv-profile .cv-avatar-front,
+.cv-profile .cv-avatar[aria-pressed="true"] .cv-avatar-back {
+z-index: 2;
+transform: none;
+box-shadow: var(--cv-avatar-top-shadow);
+}
+.cv-profile .cv-avatar-back,
+.cv-profile .cv-avatar[aria-pressed="true"] .cv-avatar-front {
+z-index: 1;
+transform: translate(5px, 5px) rotate(4deg);
+box-shadow: var(--cv-avatar-bottom-shadow);
+}
+.cv-profile .cv-avatar-back {
+background-image: var(--cv-avatar-back-image);
+background-position: var(--cv-avatar-back-position);
+background-size: var(--cv-avatar-back-size);
+}
+.cv-profile .cv-avatar-front::before,
+.cv-profile .cv-avatar-front::after {
 content: "";
 position: absolute;
 inset: 0;
@@ -309,41 +356,41 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
-.cv-profile .cv-avatar::before {
+.cv-profile .cv-avatar-front::before {
 background-image: url('{{ "/assets/img/photo2_transparent_260.webp" | relative_url }}');
 }
-.cv-profile .cv-avatar::after {
+.cv-profile .cv-avatar-front::after {
 background-image: url('{{ "/assets/img/photo2_cooler_transparent_260.webp" | relative_url }}');
 opacity: 0;
 transition: opacity 180ms ease;
 }
-.cv-profile .cv-avatar[aria-pressed="true"]::after {
+.cv-profile .cv-avatar-front.is-sunglasses::after {
 opacity: 1;
 }
 @media (hover: hover) and (pointer: fine) {
-.cv-profile .cv-avatar:hover::after {
+.cv-profile .cv-avatar[aria-pressed="false"]:not(.is-shuffling):hover .cv-avatar-front::after {
 opacity: 1;
 }
 .cv-profile .cv-identity-lockup > .cv-avatar:hover {
 transform: translateY(-4px);
-box-shadow: 0 15px 32px rgba(33, 41, 78, 0.15), 0 27px 18px -17px rgba(33, 41, 78, 0.32);
+box-shadow: 0 14px 26px rgba(33, 41, 78, 0.13);
 }
 html[data-theme="dark"] .cv-profile .cv-identity-lockup > .cv-avatar:hover,
 html[data-mode="dark"] .cv-profile .cv-identity-lockup > .cv-avatar:hover {
-box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4), 0 28px 18px -17px rgba(0, 0, 0, 0.58);
+box-shadow: 0 15px 28px rgba(0, 0, 0, 0.3);
 }
 }
 .cv-profile .cv-identity-lockup > .cv-avatar:active {
 transform: translateY(1px) scale(0.975);
-box-shadow: 0 5px 14px rgba(33, 41, 78, 0.1), 0 12px 9px -11px rgba(33, 41, 78, 0.3);
+box-shadow: 0 5px 14px rgba(33, 41, 78, 0.1);
 }
 .cv-profile .cv-identity-lockup > .cv-avatar:focus-visible {
 transform: translateY(-2px);
-box-shadow: 0 13px 30px rgba(33, 41, 78, 0.15), 0 24px 16px -17px rgba(33, 41, 78, 0.32);
+box-shadow: 0 12px 24px rgba(33, 41, 78, 0.13);
 }
 @media (prefers-reduced-motion: reduce) {
 .cv-profile .cv-avatar,
-.cv-profile .cv-avatar::after {
+.cv-profile .cv-avatar-front::after {
 transition: none;
 }
 }
@@ -433,8 +480,8 @@ text-align: center;
 .cv-profile .cv-avatar {
 width: 88px;
 height: 88px;
-border-radius: 22px;
-box-shadow: 0 5px 14px rgba(33, 41, 78, 0.11), 0 13px 9px -11px rgba(33, 41, 78, 0.34);
+border-radius: 18px;
+box-shadow: 0 7px 16px rgba(33, 41, 78, 0.1);
 }
 .cv-profile .cv-identity-lockup > .cv-avatar {
 position: relative;
@@ -532,8 +579,8 @@ text-align: center;
 .cv-profile .cv-avatar {
 width: 88px;
 height: 88px;
-border-radius: 22px;
-box-shadow: 0 5px 14px rgba(33, 41, 78, 0.11), 0 13px 9px -11px rgba(33, 41, 78, 0.34);
+border-radius: 18px;
+box-shadow: 0 7px 16px rgba(33, 41, 78, 0.1);
 }
 .cv-profile .cv-identity-lockup > .cv-avatar {
 position: relative;
@@ -625,7 +672,12 @@ margin-top: 1.6rem;
 <div class="cv-profile">
 <div class="cv-intro-header">
 <div class="cv-identity-lockup">
-<button type="button" class="cv-avatar" aria-label="Show sunglasses portrait" aria-pressed="false"></button>
+<button type="button" class="cv-avatar" aria-label="Show photo with the JoJo character" aria-pressed="false" title="Click to shuffle photos">
+<span class="cv-avatar-card" aria-hidden="true">
+<span class="cv-avatar-face cv-avatar-front"></span>
+<span class="cv-avatar-face cv-avatar-back"></span>
+</span>
+</button>
 <div class="cv-identity">
 <div class="cv-identity-name"><span translate="no">Yue Lin</span></div>
 <p class="cv-identity-role">
@@ -673,13 +725,69 @@ if (!avatar) {
 return;
 }
 
+var portrait = avatar.querySelector('.cv-avatar-front');
+var photo = avatar.querySelector('.cv-avatar-back');
+var desiredBack = avatar.getAttribute('aria-pressed') === 'true';
+var shuffling = false;
+var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+var restingCard = 'translate(5px, 5px) rotate(4deg)';
+
+function showPhoto(showBack) {
+avatar.setAttribute('aria-pressed', showBack ? 'true' : 'false');
+avatar.setAttribute('title', showBack ? 'Click to show portrait' : 'Click to shuffle photos');
+}
+
+function shufflePhotos() {
+var currentBack = avatar.getAttribute('aria-pressed') === 'true';
+if (shuffling || currentBack === desiredBack) return;
+var nextBack = desiredBack;
+if (reducedMotion.matches || typeof portrait.animate !== 'function') {
+showPhoto(nextBack);
+return;
+}
+
+shuffling = true;
+var outgoing = currentBack ? photo : portrait;
+var incoming = currentBack ? portrait : photo;
+var topShadow = window.getComputedStyle(outgoing).boxShadow;
+var bottomShadow = window.getComputedStyle(incoming).boxShadow;
+/* Keep the departing portrait unchanged while the two cards trade places. */
+portrait.classList.toggle('is-sunglasses', !currentBack && avatar.matches(':hover') && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
+avatar.classList.add('is-shuffling');
+var timing = { duration: 620, easing: 'ease-in-out', fill: 'forwards' };
+var animations = [];
+try {
+animations.push(outgoing.animate([
+{ transform: 'none', zIndex: 3, boxShadow: topShadow, offset: 0 },
+{ transform: 'translate(-115%, -8%) rotate(-12deg)', zIndex: 3, boxShadow: topShadow, offset: 0.45 },
+{ transform: 'translate(-115%, -8%) rotate(-12deg)', zIndex: 1, boxShadow: bottomShadow, offset: 0.5 },
+{ transform: restingCard, zIndex: 1, boxShadow: bottomShadow, offset: 1 }
+], timing));
+animations.push(incoming.animate([
+{ transform: restingCard, zIndex: 1, boxShadow: bottomShadow, offset: 0 },
+{ transform: 'none', zIndex: 2, boxShadow: topShadow, offset: 0.5 },
+{ transform: 'none', zIndex: 2, boxShadow: topShadow, offset: 1 }
+], timing));
+} catch (error) {
+finishShuffle();
+return;
+}
+
+function finishShuffle() {
+showPhoto(nextBack);
+animations.forEach(function (animation) { animation.cancel(); });
+portrait.classList.remove('is-sunglasses');
+avatar.classList.remove('is-shuffling');
+shuffling = false;
+/* Fast clicks change the requested card without interrupting a cut midway. */
+shufflePhotos();
+}
+Promise.all(animations.map(function (animation) { return animation.finished; })).then(finishShuffle, finishShuffle);
+}
+
 avatar.addEventListener('click', function () {
-var showSunglasses = avatar.getAttribute('aria-pressed') !== 'true';
-avatar.setAttribute('aria-pressed', showSunglasses ? 'true' : 'false');
-avatar.setAttribute(
-'aria-label',
-showSunglasses ? 'Show regular portrait' : 'Show sunglasses portrait'
-);
+desiredBack = !desiredBack;
+shufflePhotos();
 });
 
 avatar.addEventListener('pointerup', function () {
@@ -1104,11 +1212,14 @@ background: #4b5365;
 }
 @media (prefers-color-scheme: dark) {
 html:not([data-theme]):not([data-mode]) .cv-profile .cv-avatar {
-background: rgba(255, 255, 255, 0.035);
-box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 21px 15px -16px rgba(0, 0, 0, 0.62);
+--cv-avatar-surface: #252731;
+--cv-avatar-edge: rgba(225, 230, 245, 0.38);
+--cv-avatar-outline: rgba(0, 0, 0, 0.45);
+--cv-avatar-top-shadow: 1px 3px 3px rgba(0, 0, 0, 0.65), 3px 6px 7px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--cv-avatar-outline);
+box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-lockup > .cv-avatar:hover {
-box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4), 0 28px 18px -17px rgba(0, 0, 0, 0.58);
+box-shadow: 0 15px 28px rgba(0, 0, 0, 0.3);
 }
 html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-links i,
 html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-links a:hover,

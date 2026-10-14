@@ -1867,7 +1867,7 @@ The high-scoring courses at the undergraduate level include the following:
 <li>NeurIPS 2024 [6; 45615], 2025 [5; 32912], 2026 [4; 17738]</li>
 <li>ICLR 2025 [3; 21831], 2026 [1; 5994], 2027 [5; 0]</li>
 <li>ICML 2025 [6; 32893], 2026 [6; 43185]</li>
-<li>AAAI 2027 [2; 12678]</li>
+<li>AAAI 2027 [6; 12678]</li>
 <li>AAMAS 2027 [0; 0]</li>
 <li>TMLR 2025 [2; 38363], 2026 [2; 10331]</li>
 </ul>
@@ -1883,7 +1883,7 @@ The high-scoring courses at the undergraduate level include the following:
 
 <blockquote>
 <p>Format: [assigned manuscripts; review characters]. First “0”: invitation accepted, awaiting assignment; second “0”: assigned, review pending.<br />
-Total reviews: <span id="total-reviews">52</span>.</p>
+Total reviews: <span id="total-reviews">56</span>.</p>
 </blockquote>
 <script>
 (function () {
@@ -2236,6 +2236,8 @@ Poster: <a href="https://arxiv.org/abs/2605.08323" translate="no">The Reciprocit
 <a class="academic-footprint-photo academic-footprint-certificate" href="/assets/my_paper/icml-2026-attendance-certificate.pdf" aria-label="Open the ICML 2026 attendance certificate PDF"><img src="/assets/img/about/icml-2026-attendance-certificate-thumb.webp" alt="ICML 2026 certificate of attendance for Yue Lin" width="800" height="619" loading="lazy" decoding="async"></a>
 </div>
 </li>
+{% comment %}Keep the two missed U.S. visits in source, but omit them from the page.{% endcomment %}
+{% comment %}
 <li class="academic-footprint-item">
 <div class="academic-footprint-label"><span class="academic-footprint-missed" translate="no">NeurIPS 2025 @ San Diego, USA 🇺🇸</span></div>
 <div class="academic-footprint-note">I was selected as a Top Reviewer and offered complimentary registration, but by then it was too late to obtain a U.S. visa in time for the San Diego meeting.</div>
@@ -2244,6 +2246,7 @@ Poster: <a href="https://arxiv.org/abs/2605.08323" translate="no">The Reciprocit
 <div class="academic-footprint-label"><span class="academic-footprint-missed" translate="no">NeurIPS 2023 @ New Orleans, USA 🇺🇸</span></div>
 <div class="academic-footprint-note">I was unable to attend because my U.S. visa application was not approved.</div>
 </li>
+{% endcomment %}
 <li class="academic-footprint-item">
 <div class="academic-footprint-label"><span translate="no">ICRA 2021 @ Xi’an, China 🇨🇳</span></div>
 <div class="academic-footprint-gallery academic-footprint-gallery-two">
@@ -2717,6 +2720,8 @@ In song and in dance man exhibits himself as a member of a higher community, he 
 <figure class="cv-closing-comic"><a href="{{ '/assets/img/about/bird1.png' | relative_url }}" data-footprint-lightbox data-lightbox-caption="“False Knees” by Joshua" aria-haspopup="dialog"><img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) 88vw, 400px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async"></a><figcaption class="cv-comic-credit"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
 
 <script>
+var pubTypeFilters = ['all', 'representative', 'selected', 'published'];
+var pubAuthorFilters = ['all', 'first-author'];
 var currentPubTypeFilter = 'all';
 var currentPubAuthorFilter = 'all';
 
@@ -2772,6 +2777,8 @@ heading.style.display = visibleCount > 0 ? '' : 'none';
 }
 
 function applyPubFilter() {
+updatePubFilterButtons('type', pubTypeFilters, currentPubTypeFilter);
+updatePubFilterButtons('author', pubAuthorFilters, currentPubAuthorFilter);
 applyPubFilterToContainer(document.getElementById('pub-by-time'));
 updatePubResultCount();
 }
@@ -2784,41 +2791,55 @@ var count = getDirectPublicationItems(source).filter(publicationMatchesFilter).l
 value.textContent = String(count);
 }
 
-function switchPubTypeFilter(filter) {
-var filters = ['all', 'representative', 'selected', 'published'];
-if (filters.indexOf(filter) === -1) return;
-currentPubTypeFilter = filter;
-
+function updatePubFilterButtons(group, filters, activeFilter) {
 filters.forEach(function (name) {
-var button = document.getElementById('btn-pub-type-' + name);
+var button = document.getElementById('btn-pub-' + group + '-' + name);
 if (!button) return;
-var active = name === filter;
+var active = name === activeFilter;
 button.classList.toggle('pub-view-btn-active', active);
 button.setAttribute('aria-pressed', active ? 'true' : 'false');
 });
+}
 
+function updatePublicationUrl() {
+var url = new URL(window.location.href);
+/* Keep other query parameters and the current profile route when sharing. */
+if (currentPubTypeFilter === 'all') url.searchParams.delete('pub');
+else url.searchParams.set('pub', currentPubTypeFilter);
+if (currentPubAuthorFilter === 'all') url.searchParams.delete('author');
+else url.searchParams.set('author', currentPubAuthorFilter);
+url.hash = 'publications--manuscripts';
+if (url.href !== window.location.href) {
+window.history.pushState(window.history.state, '', url.href);
+}
+}
+
+function restorePublicationFilters() {
+var params = new URLSearchParams(window.location.search);
+var type = params.get('pub');
+var author = params.get('author');
+currentPubTypeFilter = pubTypeFilters.indexOf(type) !== -1 ? type : 'all';
+currentPubAuthorFilter = pubAuthorFilters.indexOf(author) !== -1 ? author : 'all';
 applyPubFilter();
+}
+
+function switchPubTypeFilter(filter) {
+if (pubTypeFilters.indexOf(filter) === -1) return;
+currentPubTypeFilter = filter;
+applyPubFilter();
+updatePublicationUrl();
 }
 
 function switchPubAuthorFilter(filter) {
-var filters = ['all', 'first-author'];
-if (filters.indexOf(filter) === -1) return;
+if (pubAuthorFilters.indexOf(filter) === -1) return;
 currentPubAuthorFilter = filter;
-
-filters.forEach(function (name) {
-var button = document.getElementById('btn-pub-author-' + name);
-if (!button) return;
-var active = name === filter;
-button.classList.toggle('pub-view-btn-active', active);
-button.setAttribute('aria-pressed', active ? 'true' : 'false');
-});
-
 applyPubFilter();
+updatePublicationUrl();
 }
 
 function initializePublicationControls() {
-switchPubTypeFilter('all');
-switchPubAuthorFilter('all');
+restorePublicationFilters();
+window.addEventListener('popstate', restorePublicationFilters);
 }
 
 if (document.readyState === 'loading') {

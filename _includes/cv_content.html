@@ -84,6 +84,14 @@ background-image: url('{{ "/assets/img/about/institutions/microsoft.svg" | relat
 .cv-profile .cv-affiliation-logo-tencent {
 background-image: url('{{ "/assets/img/about/institutions/tencent.png" | relative_url }}');
 }
+.cv-profile .cv-affiliation-advisors {
+display: grid;
+grid-template-columns: max-content minmax(0, 1fr);
+column-gap: 0.3em;
+}
+.cv-profile .cv-affiliation-advisor-note {
+display: block;
+}
 .cv-profile .cv-affiliation-body {
 min-width: 0;
 }
@@ -1076,7 +1084,11 @@ Mentor: <span translate="no">Yuan Liu</span></div>
 <span class="cv-affiliation-logo cv-affiliation-logo-cuhk-shenzhen" aria-hidden="true"></span>
 <div class="cv-affiliation-body"><span translate="no"><strong>The Chinese University of Hong Kong, Shenzhen</strong></span><br />
 Research Assistant @ School of Data Science (2022.2 - 2024.8)<br />
-Advisors: Prof. <span translate="no"><a href="https://bxiangwang.github.io" title="Homepage" target="_blank" rel="noopener noreferrer">Baoxiang Wang</a></span> &amp; Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao" title="Google Scholar" target="_blank" rel="noopener noreferrer">Hongyuan Zha</a></span> (Subsequently my Ph.D. Supervisor and Co-Supervisor)</div>
+<div class="cv-affiliation-advisors">
+<span>Advisors:</span>
+<div><span class="cv-affiliation-advisor-names">Prof. <span translate="no"><a href="https://bxiangwang.github.io" title="Homepage" target="_blank" rel="noopener noreferrer">Baoxiang Wang</a></span> &amp; Prof. <span translate="no"><a href="https://scholar.google.com/citations?user=n1DQMIsAAAAJ&amp;hl=en&amp;oi=ao" title="Google Scholar" target="_blank" rel="noopener noreferrer">Hongyuan Zha</a></span></span>
+<span class="cv-affiliation-advisor-note">(Subsequently my Ph.D. Supervisor and Co-Supervisor)</span></div>
+</div></div>
 </li>
 </ul>
 
@@ -1087,9 +1099,9 @@ Advisors: Prof. <span translate="no"><a href="https://bxiangwang.github.io" titl
 <div class="pub-controls">
 <div class="pub-control-group" role="group" aria-label="Publication type">
 <span class="pub-control-label">Type</span>
-<button class="pub-view-btn pub-view-btn-active" onclick="switchPubTypeFilter('all')" id="btn-pub-type-all" aria-pressed="true">All</button>
+<button class="pub-view-btn" onclick="switchPubTypeFilter('all')" id="btn-pub-type-all" aria-pressed="false">All</button>
 <button class="pub-view-btn" onclick="switchPubTypeFilter('representative')" id="btn-pub-type-representative" aria-pressed="false">Representative</button>
-<button class="pub-view-btn" onclick="switchPubTypeFilter('selected')" id="btn-pub-type-selected" aria-pressed="false">Selected</button>
+<button class="pub-view-btn pub-view-btn-active" onclick="switchPubTypeFilter('selected')" id="btn-pub-type-selected" aria-pressed="true">Selected</button>
 <button class="pub-view-btn" onclick="switchPubTypeFilter('published')" id="btn-pub-type-published" aria-pressed="false">Pubs Only</button>
 </div>
 <div class="pub-control-group" role="group" aria-label="Publication authorship">
@@ -1099,7 +1111,7 @@ Advisors: Prof. <span translate="no"><a href="https://bxiangwang.github.io" titl
 </div>
 <div class="pub-result-count" id="pub-result-count" role="status" aria-live="polite" aria-atomic="true">
 <span>Count</span>
-<strong id="pub-result-count-value">10</strong>
+<strong id="pub-result-count-value">5</strong>
 </div>
 </div>
 
@@ -2226,14 +2238,13 @@ Poster: <a href="https://arxiv.org/abs/2605.08323" translate="no">The Reciprocit
 </li>
 <li class="academic-footprint-item">
 <div class="academic-footprint-label"><span translate="no">ICML 2026 @ Seoul, South Korea 🇰🇷</span></div>
-<div class="academic-footprint-gallery academic-footprint-gallery-four">
+<div class="academic-footprint-gallery academic-footprint-gallery-three">
 <a class="academic-footprint-photo" href="/assets/img/about/icml-2026-venue-photo.webp" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icml-2026-venue-photo-thumb.webp" alt="ICML 2026 venue at COEX in Seoul" width="800" height="600" loading="lazy" decoding="async"></a>
 <a class="academic-footprint-photo" href="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo.webp" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icml-2026-verbalized-bayesian-persuasion-poster-photo-thumb.webp" alt="At the Verbalized Bayesian Persuasion poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
 <figure class="academic-footprint-photo-item">
 <a class="academic-footprint-photo" href="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo.webp" data-footprint-lightbox aria-haspopup="dialog"><img src="/assets/img/about/icml-2026-talk-judge-cooperate-poster-photo-thumb.webp" alt="Talk, Judge, Cooperate poster at ICML 2026" width="800" height="600" loading="lazy" decoding="async"></a>
 <figcaption class="academic-footprint-caption">(Forgot to take a photo<br>with Shuhui 😭)</figcaption>
 </figure>
-<a class="academic-footprint-photo academic-footprint-certificate" href="/assets/my_paper/icml-2026-attendance-certificate.pdf" aria-label="Open the ICML 2026 attendance certificate PDF"><img src="/assets/img/about/icml-2026-attendance-certificate-thumb.webp" alt="ICML 2026 certificate of attendance for Yue Lin" width="800" height="619" loading="lazy" decoding="async"></a>
 </div>
 </li>
 {% comment %}Keep the two missed U.S. visits in source, but omit them from the page.{% endcomment %}
@@ -2371,6 +2382,28 @@ padding-inline-start: 1.25em;
 margin: 0.15em 0;
 overflow-wrap: anywhere; /* keep long stat / title lines from overflowing on mobile */
 }
+.hobbies-list .cv-comics-more summary {
+width: fit-content;
+list-style: none;
+color: var(--text-muted-color, var(--cv-muted, #6a6a72));
+}
+.hobbies-list .cv-comics-more summary::-webkit-details-marker {
+display: none;
+}
+.hobbies-list .cv-comics-more summary:focus-visible {
+outline: 2px solid currentColor;
+outline-offset: 3px;
+border-radius: 2px;
+}
+.hobbies-list .cv-comics-more ul {
+/* Keep the revealed titles aligned with the visible recommendations. */
+padding-left: 0;
+padding-inline-start: 0;
+list-style: none;
+margin: 0;
+display: flow-root;
+overflow: hidden;
+}
 .hobbies-list .cv-hobby-label {
 color: #495485;
 font-weight: 600;
@@ -2393,13 +2426,57 @@ color: #aebcf0;
 <li><i>The Riddler: Year One</i></li>
 <li><i>Penguin: Pain &amp; Prejudice</i></li>
 <li><i>Batman: The Killing Joke</i></li>
+<li class="cv-comics-more">
+<details>
+<summary aria-label="Three more recommended comics">…</summary>
+<ul>
 <li><i>Batman (2016-): I Am Bane</i></li>
 <li><i>Batman (2016-): The War of Jokes and Riddles</i></li>
 <li><i>One Bad Day: The Riddler</i></li>
 </ul>
+</details>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+
+<script>
+(function () {
+document.querySelectorAll('.cv-comics-more details').forEach(function (details) {
+var summary = details.querySelector('summary');
+var list = details.querySelector('ul');
+var expanded = details.open;
+var animation = null;
+function setExpanded(open) {
+if (expanded === open) return;
+expanded = open;
+// Read the current frame before cancelling so quick reversals stay smooth.
+var height = details.open ? list.getBoundingClientRect().height : 0;
+var opacity = details.open ? getComputedStyle(list).opacity : 0;
+if (animation) animation.cancel();
+if (!list.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+details.open = open;
+animation = null;
+return;
+}
+details.open = true;
+animation = list.animate([
+{ height: height + 'px', opacity: opacity },
+{ height: (open ? list.scrollHeight : 0) + 'px', opacity: open ? 1 : 0 }
+], { duration: 240, easing: 'cubic-bezier(0.2, 0.7, 0.2, 1)' });
+animation.onfinish = function () {
+details.open = expanded;
+animation = null;
+};
+}
+summary.addEventListener('click', function (event) {
+event.preventDefault();
+setExpanded(!expanded);
+});
+});
+})();
+</script>
 
 {% comment %}
 <li>
@@ -2722,7 +2799,8 @@ In song and in dance man exhibits himself as a member of a higher community, he 
 <script>
 var pubTypeFilters = ['all', 'representative', 'selected', 'published'];
 var pubAuthorFilters = ['all', 'first-author'];
-var currentPubTypeFilter = 'all';
+var defaultPubTypeFilter = 'selected';
+var currentPubTypeFilter = defaultPubTypeFilter;
 var currentPubAuthorFilter = 'all';
 
 function getDirectPublicationLists(container) {
@@ -2804,7 +2882,7 @@ button.setAttribute('aria-pressed', active ? 'true' : 'false');
 function updatePublicationUrl() {
 var url = new URL(window.location.href);
 /* Keep other query parameters and the current profile route when sharing. */
-if (currentPubTypeFilter === 'all') url.searchParams.delete('pub');
+if (currentPubTypeFilter === defaultPubTypeFilter) url.searchParams.delete('pub');
 else url.searchParams.set('pub', currentPubTypeFilter);
 if (currentPubAuthorFilter === 'all') url.searchParams.delete('author');
 else url.searchParams.set('author', currentPubAuthorFilter);
@@ -2818,7 +2896,7 @@ function restorePublicationFilters() {
 var params = new URLSearchParams(window.location.search);
 var type = params.get('pub');
 var author = params.get('author');
-currentPubTypeFilter = pubTypeFilters.indexOf(type) !== -1 ? type : 'all';
+currentPubTypeFilter = pubTypeFilters.indexOf(type) !== -1 ? type : defaultPubTypeFilter;
 currentPubAuthorFilter = pubAuthorFilters.indexOf(author) !== -1 ? author : 'all';
 applyPubFilter();
 }

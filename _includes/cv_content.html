@@ -360,6 +360,7 @@ html[data-mode="dark"] .cv-profile .cv-intro-quote::before,
 html[data-mode="dark"] .cv-profile .cv-intro-quote::after {
 background: #aebcf0;
 }
+{% comment %}Archived alternate-photo styles and card animations.
 .cv-profile .cv-avatar-card {
 position: relative;
 display: block;
@@ -409,10 +410,11 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 .cv-profile .cv-avatar-front::before {
-background-image: url('{{ "/assets/img/photo2_transparent_260.webp" | relative_url }}');
+background-image: url('{{ "/assets/img/avatar/ly2026-11.png" | relative_url }}');
 }
 .cv-profile .cv-avatar-front::after {
-background-image: url('{{ "/assets/img/photo2_cooler_transparent_260.webp" | relative_url }}');
+/* No old ID-photo overlay on the new portrait. */
+display: none;
 opacity: 0;
 transition: opacity 180ms ease;
 }
@@ -439,6 +441,7 @@ opacity: 1;
 transition: none;
 }
 }
+{% endcomment %}
 .cv-profile .cv-section-title,
 .cv-content .cv-profile .cv-section-title {
 margin: 2.9rem 0 1.1rem;
@@ -684,17 +687,28 @@ font-size: 1.02rem;
 margin-top: 1.6rem;
 }
 }
+.cv-profile .cv-avatar.cv-avatar-static,
+#introduction .cv-profile .cv-avatar.cv-avatar-static {
+background-image: url('{{ "/assets/img/avatar/ly2026-11.png" | relative_url }}');
+background-size: cover;
+background-position: center;
+cursor: inherit;
+transition: none;
+}
 </style>
 
 <div class="cv-profile">
 <div class="cv-intro-header">
 <div class="cv-identity-lockup">
+<div class="cv-avatar cv-avatar-static" role="img" aria-label="Portrait of Yue Lin"></div>
+{% comment %}Archived alternate photo and card markup for possible reuse.
 <button type="button" class="cv-avatar" aria-label="Show photo with the JoJo character" aria-pressed="false" title="Click to shuffle photos">
 <span class="cv-avatar-card" aria-hidden="true">
 <span class="cv-avatar-face cv-avatar-front"></span>
 <span class="cv-avatar-face cv-avatar-back"></span>
 </span>
 </button>
+{% endcomment %}
 <div class="cv-identity">
 <div class="cv-identity-name"><span translate="no">Yue Lin</span></div>
 <p class="cv-identity-role">
@@ -768,6 +782,7 @@ window.addEventListener('resize', alignQuoteRules);
 window.addEventListener('load', alignQuoteRules, { once: true });
 })();
 
+{% comment %}Archived automatic/manual photo shuffle.
 (function () {
 var avatar = document.querySelector('.cv-profile .cv-avatar[aria-pressed]');
 if (!avatar) {
@@ -849,17 +864,17 @@ function scheduleAutoShuffle(delay) {
 window.clearTimeout(autoShuffleTimer);
 autoShuffleTimer = window.setTimeout(function () {
 togglePhoto();
-scheduleAutoShuffle(30000);
+scheduleAutoShuffle(15000);
 }, delay);
 }
 
 avatar.addEventListener('click', function () {
 togglePhoto();
-scheduleAutoShuffle(30000);
+scheduleAutoShuffle(15000);
 });
 
 function startAutoShuffle() {
-/* A click before load already started its own 30-second wait. */
+/* A click before load already started its own 15-second wait. */
 if (autoShuffleTimer === null) scheduleAutoShuffle(15000);
 }
 
@@ -873,6 +888,7 @@ avatar.addEventListener('pointerup', function () {
 avatar.blur();
 });
 })();
+{% endcomment %}
 </script>
 
 <!-- > *Answer.*  

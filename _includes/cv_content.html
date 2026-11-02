@@ -171,7 +171,7 @@ border: 0;
 border-radius: 20px;
 background: transparent;
 isolation: isolate;
-box-shadow: 0 10px 24px rgba(33, 41, 78, 0.07);
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55), 0 2px 5px rgba(20, 25, 40, 0.12), 0 8px 22px rgba(20, 25, 40, 0.12);
 appearance: none;
 cursor: url('{{ "/assets/img/material/cursor_gun.png" | relative_url }}'), pointer;
 touch-action: manipulation;
@@ -189,7 +189,7 @@ html[data-mode="dark"] .cv-profile .cv-avatar {
 --cv-avatar-surface: #282a33;
 --cv-avatar-top-shadow: 1px 2px 3px rgba(0, 0, 0, 0.45), 3px 5px 8px -4px rgba(0, 0, 0, 0.28);
 --cv-avatar-bottom-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.17), 0 2px 5px rgba(0, 0, 0, 0.25), 0 8px 22px rgba(0, 0, 0, 0.26);
 }
 .cv-profile .cv-identity-lockup > .cv-avatar {
 position: relative;
@@ -287,6 +287,11 @@ font-size: clamp(2rem, 4cqi, 2.3rem);
 font-weight: 700;
 line-height: 1.15;
 letter-spacing: -0.025em;
+text-shadow: 0 3px 4px rgba(33, 41, 78, 0.17), 0 7px 16px rgba(33, 41, 78, 0.12);
+}
+html[data-theme="dark"] .cv-profile .cv-identity-name,
+html[data-mode="dark"] .cv-profile .cv-identity-name {
+text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3), 0 7px 16px rgba(0, 0, 0, 0.23);
 }
 .cv-profile .cv-identity-name::before,
 .cv-profile .cv-identity-name::after {
@@ -529,7 +534,7 @@ text-align: center;
 width: 88px;
 height: 88px;
 border-radius: 18px;
-box-shadow: 0 7px 18px rgba(33, 41, 78, 0.07);
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55), 0 2px 4px rgba(20, 25, 40, 0.11), 0 7px 18px rgba(20, 25, 40, 0.11);
 }
 .cv-profile .cv-identity-lockup > .cv-avatar {
 position: relative;
@@ -614,7 +619,7 @@ text-align: center;
 width: 88px;
 height: 88px;
 border-radius: 18px;
-box-shadow: 0 7px 18px rgba(33, 41, 78, 0.07);
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55), 0 2px 4px rgba(20, 25, 40, 0.11), 0 7px 18px rgba(20, 25, 40, 0.11);
 }
 .cv-profile .cv-identity-lockup > .cv-avatar {
 position: relative;
@@ -692,6 +697,7 @@ margin-top: 1.6rem;
 background-image: url('{{ "/assets/img/avatar/ly2026-11.png" | relative_url }}');
 background-size: cover;
 background-position: center;
+border-radius: 50%;
 cursor: inherit;
 transition: none;
 }
@@ -1177,11 +1183,14 @@ html[data-mode="dark"] .cv-profile .pub-result-count::after {
 background: #4b5365;
 }
 @media (prefers-color-scheme: dark) {
+html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-name {
+text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3), 0 7px 16px rgba(0, 0, 0, 0.23);
+}
 html:not([data-theme]):not([data-mode]) .cv-profile .cv-avatar {
 --cv-avatar-surface: #282a33;
 --cv-avatar-top-shadow: 1px 2px 3px rgba(0, 0, 0, 0.45), 3px 5px 8px -4px rgba(0, 0, 0, 0.28);
 --cv-avatar-bottom-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.17), 0 2px 5px rgba(0, 0, 0, 0.25), 0 8px 22px rgba(0, 0, 0, 0.26);
 }
 html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-links i,
 html:not([data-theme]):not([data-mode]) .cv-profile .cv-identity-links a:hover,
@@ -2245,6 +2254,7 @@ activeTrigger = null;
 </script>
 {% endif %}
 
+{% comment %}Hobbies section hidden for now; preserve all content for reuse.
 <h2 class="cv-section-title" id="hobbies"><i class="fa-solid fa-dice cv-section-icon" aria-hidden="true"></i>Hobbies</h2>
 
 <style>
@@ -2396,6 +2406,7 @@ setExpanded(!expanded);
 
 </ul>
 </div>
+{% endcomment %}
 
 <!-- ## Personality
 
@@ -2658,6 +2669,441 @@ overflow-wrap: anywhere;
 </li>
 </ul>
 </div>
+
+<h2 class="cv-section-title" id="beyond-the-forest"><svg class="cv-section-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="height: 1.25em; vertical-align: -0.15em;" aria-hidden="true" focusable="false"><path d="m2 26 9-14 7 9 5-7 7 12M23 2l1 3.5 3.5 1-3.5 1L23 11l-1-3.5-3.5-1 3.5-1Z"/></svg>Beyond the Forest</h2>
+
+<style>
+.cv-profile .cv-beyond-topics {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 8px;
+margin: 1.2rem 0 0;
+}
+.cv-profile .cv-beyond-panel {
+overflow: hidden;
+}
+.cv-profile .cv-beyond-panel[hidden] {
+display: none;
+}
+.cv-profile .cv-beyond-panel-inner {
+margin-top: 1rem;
+padding: 0.35rem 0.9rem;
+border-left: 2px solid rgba(127, 127, 150, 0.28);
+color: var(--text-color, #5d6473);
+font-size: 0.9rem;
+}
+.cv-profile .cv-beyond-panel-inner > p {
+margin: 0 0 0.75rem;
+}
+.cv-profile .cv-beyond-panel-inner > p:last-child {
+margin-bottom: 0;
+}
+.cv-profile .cv-beyond-reading-list {
+margin: 0;
+padding-left: 1.2rem;
+}
+.cv-profile .cv-beyond-reading-list > li {
+margin: 0.85rem 0;
+overflow-wrap: anywhere;
+}
+.cv-profile .cv-beyond-reading-list > li:first-child {
+margin-top: 0;
+}
+.cv-profile .cv-beyond-reading-list > li:last-child {
+margin-bottom: 0;
+}
+.cv-profile .cv-beyond-category-title {
+margin: 0 0 0.85rem;
+padding: 0;
+border: 0;
+color: var(--heading-color, #343d63);
+font-size: 1rem;
+font-weight: 600;
+line-height: 1.5;
+}
+.cv-profile .cv-beyond-category-divider {
+margin: 1.75rem 0;
+border: 0;
+border-top: 1px solid rgba(127, 127, 150, 0.28);
+opacity: 1;
+}
+.cv-profile .cv-beyond-reading-authors {
+margin-top: 0.2rem;
+color: var(--text-muted-color, #6a6a72);
+font-size: 0.88em;
+line-height: 1.6;
+}
+.cv-profile .cv-philosophy {
+max-width: 52rem;
+margin: 1.5rem auto 0;
+padding: 0.5rem 0;
+border: 0;
+text-align: center;
+line-height: 1.9;
+}
+.cv-profile .cv-philosophy-piece {
+margin: 0;
+}
+.cv-profile .cv-philosophy-piece blockquote {
+margin: 0;
+padding: 0;
+border: 0;
+background: none;
+color: inherit;
+font-size: inherit;
+font-style: normal;
+text-align: center;
+}
+.cv-profile .cv-philosophy-piece p {
+margin: 0;
+}
+.cv-profile .cv-philosophy-poem-title {
+margin: 0 0 0.35rem;
+padding: 0;
+border: 0;
+color: var(--heading-color, #343d63);
+font-size: 1.1rem;
+font-weight: 700;
+}
+.cv-profile .cv-philosophy-byline,
+.cv-profile .cv-philosophy-piece figcaption {
+color: var(--text-muted-color, #6a6a72);
+font-size: 0.88em;
+line-height: 1.7;
+}
+.cv-profile .cv-philosophy-piece .cv-philosophy-byline {
+margin-bottom: 1.35rem;
+}
+.cv-profile .cv-philosophy-poem-lines p {
+margin: 0.4rem 0;
+}
+.cv-profile .cv-philosophy-piece .cv-philosophy-answer {
+margin: 1.25rem 0 0.65rem;
+}
+.cv-profile .cv-philosophy-piece figcaption {
+margin-top: 1rem;
+text-align: center;
+}
+.cv-profile .cv-philosophy-divider {
+width: min(100%, 22rem);
+margin: 2.25rem auto;
+border: 0;
+border-top: 1px solid rgba(127, 127, 150, 0.28);
+opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+.cv-profile .cv-beyond-topic-button {
+transition: none;
+}
+}
+</style>
+
+<div class="cv-beyond-topics" role="group" aria-label="Beyond the Forest topics">
+<button type="button" class="pub-view-btn pub-view-btn-active cv-beyond-topic-button" id="beyond-research-button" aria-expanded="true" aria-controls="beyond-research-panel" data-beyond-toggle>Purpose &amp; Sparks</button>
+<button type="button" class="pub-view-btn cv-beyond-topic-button" id="beyond-philosophy-button" aria-expanded="false" aria-controls="beyond-philosophy-panel" data-beyond-toggle>Poetry &amp; Wine</button>
+<button type="button" class="pub-view-btn cv-beyond-topic-button" id="beyond-comics-button" aria-expanded="false" aria-controls="beyond-comics-panel" data-beyond-toggle>Comics</button>
+</div>
+<div class="cv-beyond-panel" id="beyond-research-panel" role="region" aria-labelledby="beyond-research-button">
+<div class="cv-beyond-panel-inner">
+<p>Readings that inspire my research and sense of purpose.</p>
+
+<section class="cv-beyond-reading-category" aria-labelledby="sparks-visions">
+<h3 class="cv-beyond-category-title" id="sparks-visions">Research Visions</h3>
+<ul class="cv-beyond-reading-list">
+<li>
+<a href="https://arxiv.org/abs/2012.08630" target="_blank" rel="noopener noreferrer">Open Problems in Cooperative AI</a>
+<div class="cv-beyond-reading-authors">Allan Dafoe, Edward Hughes, Yoram Bachrach, Tantum Collins, Kevin R. McKee, Joel Z. Leibo, Kate Larson, and Thore Graepel · arXiv preprint, 2020</div>
+</li>
+<li>
+<a href="https://arxiv.org/abs/2208.11173" target="_blank" rel="noopener noreferrer">The Alberta Plan for AI Research</a>
+<div class="cv-beyond-reading-authors">Richard S. Sutton, Michael H. Bowling, and Patrick M. Pilarski · arXiv preprint, 2022</div>
+</li>
+<li>
+<a href="https://www.cooperativeai.com/post/supercooperation-the-future-of-ai-for-democracy-workshop-takeaways" target="_blank" rel="noopener noreferrer">&ldquo;Supercooperation: The Future of AI for Democracy&rdquo; Workshop Takeaways</a>
+<div class="cv-beyond-reading-authors">Cooperative AI Foundation · Cooperative AI Foundation blog, 2026</div>
+</li>
+<li>
+<a href="https://doi.org/10.3390/app11114948" target="_blank" rel="noopener noreferrer">Multi-Agent Reinforcement Learning: A Review of Challenges and Applications</a>
+<div class="cv-beyond-reading-authors">Lorenzo Canese, Gian Carlo Cardarilli, Luca Di Nunzio, Rocco Fazzolari, Daniele Giardino, Marco Re, and Sergio Spanò · Applied Sciences, 2021</div>
+</li>
+<li>
+<a href="https://arxiv.org/abs/1702.03037" target="_blank" rel="noopener noreferrer">Multi-agent Reinforcement Learning in Sequential Social Dilemmas</a>
+<div class="cv-beyond-reading-authors">Joel Z. Leibo, Vinicius Zambaldi, Marc Lanctot, Janusz Marecki, and Thore Graepel · AAMAS, 2017</div>
+</li>
+<li>
+<a href="https://doi.org/10.1098/rstb.2020.0291" target="_blank" rel="noopener noreferrer">The complexity of human cooperation under indirect reciprocity</a>
+<div class="cv-beyond-reading-authors">Fernando P. Santos, Jorge M. Pacheco, and Francisco C. Santos · Philosophical Transactions of the Royal Society B: Biological Sciences, 2021</div>
+</li>
+<li>
+<a href="https://proceedings.mlr.press/v139/leibo21a.html" target="_blank" rel="noopener noreferrer">Scalable Evaluation of Multi-Agent Reinforcement Learning with Melting Pot</a>
+<div class="cv-beyond-reading-authors">Joel Z. Leibo, Edgar Duéñez-Guzmán, Alexander Sasha Vezhnevets, John P. Agapiou, Peter Sunehag, Raphael Koster, Jayd Matyas, Charles Beattie, Igor Mordatch, and Thore Graepel · ICML, 2021</div>
+</li>
+<li>
+<a href="https://arxiv.org/abs/2004.13332" target="_blank" rel="noopener noreferrer">The AI Economist: Improving Equality and Productivity with AI-Driven Tax Policies</a>
+<div class="cv-beyond-reading-authors">Stephan Zheng, Alexander Trott, Sunil Srinivasa, Nikhil Naik, Melvin Gruesbeck, David C. Parkes, and Richard Socher · arXiv preprint, 2020</div>
+</li>
+</ul>
+</section>
+
+<hr class="cv-beyond-category-divider">
+
+<section class="cv-beyond-reading-category" aria-labelledby="sparks-games">
+<h3 class="cv-beyond-category-title" id="sparks-games">Games</h3>
+<ul class="cv-beyond-reading-list">
+<li>
+<a href="https://doi.org/10.1126/science.ade9097" target="_blank" rel="noopener noreferrer">Human-level play in the game of Diplomacy by combining language models with strategic reasoning</a>
+<div class="cv-beyond-reading-authors">Meta Fundamental AI Research Diplomacy Team (FAIR) et al. · Science, 2022</div>
+</li>
+<li>
+<a href="https://www.nature.com/articles/nature16961" target="_blank" rel="noopener noreferrer">Mastering the game of Go with deep neural networks and tree search</a>
+<div class="cv-beyond-reading-authors">David Silver, Aja Huang, et al. · Nature, 2016</div>
+</li>
+<li>
+<a href="https://www.nature.com/articles/s41586-019-1724-z" target="_blank" rel="noopener noreferrer">Grandmaster level in StarCraft II using multi-agent reinforcement learning</a>
+<div class="cv-beyond-reading-authors">Oriol Vinyals et al. · Nature, 2019</div>
+</li>
+</ul>
+</section>
+
+<hr class="cv-beyond-category-divider">
+
+<section class="cv-beyond-reading-category" aria-labelledby="sparks-communication">
+<h3 class="cv-beyond-category-title" id="sparks-communication">Communication</h3>
+<ul class="cv-beyond-reading-list">
+<li>
+<a href="https://www.annualreviews.org/content/journals/10.1146/annurev-economics-080218-025739" target="_blank" rel="noopener noreferrer">Bayesian Persuasion and Information Design</a>
+<div class="cv-beyond-reading-authors">Emir Kamenica · Annual Review of Economics, 2019</div>
+</li>
+<li>
+<a href="https://www.sigecom.org/exchanges/volume_15/2/DUGHMI.pdf" target="_blank" rel="noopener noreferrer">Algorithmic Information Structure Design: A Survey</a>
+<div class="cv-beyond-reading-authors">Shaddin Dughmi · ACM SIGecom Exchanges, 2017</div>
+</li>
+<li>
+<a href="https://www.jstor.org/stable/1913390" target="_blank" rel="noopener noreferrer">Strategic Information Transmission</a>
+<div class="cv-beyond-reading-authors">Vincent P. Crawford and Joel Sobel · Econometrica, 1982</div>
+</li>
+</ul>
+</section>
+
+<hr class="cv-beyond-category-divider">
+
+<section class="cv-beyond-reading-category" aria-labelledby="sparks-foundations">
+<h3 class="cv-beyond-category-title" id="sparks-foundations">Foundations</h3>
+<ul class="cv-beyond-reading-list">
+<li>
+<a href="https://mitpress.mit.edu/9780262039246/reinforcement-learning/" target="_blank" rel="noopener noreferrer">Reinforcement Learning: An Introduction (Second Edition)</a>
+<div class="cv-beyond-reading-authors">Richard S. Sutton and Andrew G. Barto · MIT Press, 2018</div>
+</li>
+<li>
+<a href="https://faculty.haas.berkeley.edu/stadelis/gametheory1.htm" target="_blank" rel="noopener noreferrer">Game Theory: An Introduction</a>
+<div class="cv-beyond-reading-authors">Steven Tadelis · Princeton University Press, 2013</div>
+</li>
+<li>
+<a href="https://ucrisportal.univie.ac.at/en/publications/the-calculus-of-selfishness/" target="_blank" rel="noopener noreferrer">The Calculus of Selfishness</a>
+<div class="cv-beyond-reading-authors">Karl Sigmund · Princeton University Press, 2010</div>
+</li>
+<li>
+<a href="https://timroughgarden.org/f13/f13.pdf" target="_blank" rel="noopener noreferrer">Lecture Notes on Algorithmic Game Theory</a>
+<div class="cv-beyond-reading-authors">Tim Roughgarden · Stanford CS364A lecture notes, Fall 2013</div>
+</li>
+<li>
+<a href="https://www.research.ed.ac.uk/en/publications/personality-traits-2nd-edition/" target="_blank" rel="noopener noreferrer">Personality Traits (Second Edition)</a>
+<div class="cv-beyond-reading-authors">Gerald Matthews, Ian J. Deary, and Martha C. Whiteman · Cambridge University Press, 2003</div>
+</li>
+<li>
+<a href="https://www.routledge.com/Psychological-Types/Jung/p/book/9781315725918" target="_blank" rel="noopener noreferrer">Psychological Types</a>
+<div class="cv-beyond-reading-authors">C. G. Jung · Rascher (original German edition), 1921</div>
+</li>
+<li>
+<a href="https://masfoundations.org/" target="_blank" rel="noopener noreferrer">Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations</a>
+<div class="cv-beyond-reading-authors">Yoav Shoham and Kevin Leyton-Brown · Cambridge University Press, 2009</div>
+</li>
+</ul>
+</section>
+
+<hr class="cv-beyond-category-divider">
+
+<section class="cv-beyond-reading-category" aria-labelledby="sparks-methods">
+<h3 class="cv-beyond-category-title" id="sparks-methods">Methods</h3>
+<ul class="cv-beyond-reading-list">
+<li>
+<a href="https://proceedings.neurips.cc/paper_files/paper/2020/hash/ad7ed5d47b9baceb12045a929e7e2f66-Abstract.html" target="_blank" rel="noopener noreferrer">Learning to Incentivize Other Learning Agents</a>
+<div class="cv-beyond-reading-authors">Jiachen Yang, Ang Li, Mehrdad Farajtabar, Peter Sunehag, Edward Hughes, and Hongyuan Zha · NeurIPS, 2020</div>
+</li>
+<li>
+<a href="https://arxiv.org/abs/1709.04326" target="_blank" rel="noopener noreferrer">Learning with Opponent-Learning Awareness</a>
+<div class="cv-beyond-reading-authors">Jakob N. Foerster, Richard Y. Chen, Maruan Al-Shedivat, Shimon Whiteson, Pieter Abbeel, and Igor Mordatch · AAMAS, 2018</div>
+</li>
+<li>
+<a href="https://www.pnas.org/doi/10.1073/pnas.1206569109" target="_blank" rel="noopener noreferrer">Iterated Prisoner’s Dilemma contains strategies that dominate any evolutionary opponent</a>
+<div class="cv-beyond-reading-authors">William H. Press and Freeman J. Dyson · PNAS, 2012</div>
+</li>
+<li>
+<a href="https://proceedings.neurips.cc/paper_files/paper/2016/hash/c7635bfd99248a2cdef8249ef7bfbef4-Abstract.html" target="_blank" rel="noopener noreferrer">Learning to Communicate with Deep Multi-Agent Reinforcement Learning</a>
+<div class="cv-beyond-reading-authors">Jakob Foerster, Ioannis Alexandros Assael, Nando de Freitas, and Shimon Whiteson · NeurIPS, 2016</div>
+</li>
+<li>
+<a href="https://proceedings.neurips.cc/paper_files/paper/2017/hash/68a9750337a418a86fe06c1991a1d64c-Abstract.html" target="_blank" rel="noopener noreferrer">Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments</a>
+<div class="cv-beyond-reading-authors">Ryan Lowe, Yi Wu, Aviv Tamar, Jean Harb, Pieter Abbeel, and Igor Mordatch · NeurIPS, 2017</div>
+</li>
+<li>
+<a href="https://proceedings.neurips.cc/paper/1999/hash/464d828b85b0bed98e80ade0a5c43b0f-Abstract.html" target="_blank" rel="noopener noreferrer">Policy Gradient Methods for Reinforcement Learning with Function Approximation</a>
+<div class="cv-beyond-reading-authors">Richard S. Sutton, David A. McAllester, Satinder P. Singh, and Yishay Mansour · NeurIPS, 1999</div>
+</li>
+<li>
+<a href="https://proceedings.mlr.press/v32/silver14.html" target="_blank" rel="noopener noreferrer">Deterministic Policy Gradient Algorithms</a>
+<div class="cv-beyond-reading-authors">David Silver, Guy Lever, Nicolas Heess, Thomas Degris, Daan Wierstra, and Martin Riedmiller · ICML, 2014</div>
+</li>
+<li>
+<a href="https://proceedings.mlr.press/v37/schulman15.html" target="_blank" rel="noopener noreferrer">Trust Region Policy Optimization</a>
+<div class="cv-beyond-reading-authors">John Schulman, Sergey Levine, Philipp Moritz, Michael Jordan, and Pieter Abbeel · ICML, 2015</div>
+</li>
+<li>
+<a href="https://www.jmlr.org/papers/v4/hu03a.html" target="_blank" rel="noopener noreferrer">Nash Q-Learning for General-Sum Stochastic Games</a>
+<div class="cv-beyond-reading-authors">Junling Hu and Michael P. Wellman · Journal of Machine Learning Research, 2003</div>
+</li>
+<li>
+<a href="https://www.jstor.org/stable/1907266" target="_blank" rel="noopener noreferrer">The Bargaining Problem</a>
+<div class="cv-beyond-reading-authors">John F. Nash, Jr. · Econometrica, 1950</div>
+</li>
+<li>
+<a href="https://arielrubinstein.org/papers/11.pdf" target="_blank" rel="noopener noreferrer">Perfect Equilibrium in a Bargaining Model</a>
+<div class="cv-beyond-reading-authors">Ariel Rubinstein · Econometrica, 1982</div>
+</li>
+<li>
+<a href="https://doi.org/10.1016/j.geb.2004.02.002" target="_blank" rel="noopener noreferrer">Program Equilibrium</a>
+<div class="cv-beyond-reading-authors">Moshe Tennenholtz · Games and Economic Behavior, 2004</div>
+</li>
+</ul>
+</section>
+
+</div>
+</div>
+
+<div class="cv-beyond-panel" id="beyond-philosophy-panel" role="region" aria-labelledby="beyond-philosophy-button" hidden>
+<div class="cv-beyond-panel-inner cv-philosophy">
+<figure class="cv-philosophy-piece">
+<h3 class="cv-philosophy-poem-title">O Me! O Life!</h3>
+<p class="cv-philosophy-byline">By <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank" rel="noopener noreferrer">Walt Whitman</a></p>
+<div class="cv-philosophy-poem-lines">
+<p>Oh me! Oh life! of the questions of these recurring,</p>
+<p>Of the endless trains of the faithless, of cities fill’d with the foolish,</p>
+<p>Of myself forever reproaching myself, (for who more foolish than I, and who more faithless?)</p>
+<p>Of eyes that vainly crave the light, of the objects mean, of the struggle ever renew’d,</p>
+<p>Of the poor results of all, of the plodding and sordid crowds I see around me,</p>
+<p>Of the empty and useless years of the rest, with the rest me intertwined,</p>
+<p>The question, O me! so sad, recurring—What good amid these, O me, O life?</p>
+<p class="cv-philosophy-answer"><em>Answer.</em></p>
+<p>That you are here—that life exists and identity,</p>
+<p><strong>That the powerful play goes on, and you may contribute a verse.</strong></p>
+</div>
+</figure>
+
+<hr class="cv-philosophy-divider">
+
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all “it was” into “thus I willed it” — that alone should I call redemption.</p>
+</blockquote>
+<figcaption>— Friedrich Nietzsche, <cite>Thus Spoke Zarathustra</cite>, <a href="https://www.gutenberg.org/files/1998/1998-h/1998-h.htm#link2H_4_0048" target="_blank" rel="noopener noreferrer" title="Part II, On Redemption; chapter source in Thomas Common’s translation">“On Redemption”</a></figcaption>
+</figure>
+
+<hr class="cv-philosophy-divider">
+
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>In this state a man enriches everything from out his own abundance: what he sees, what he wills, he sees distended, compressed, strong, overladen with power. He transfigures things until they reflect his power,—until they are stamped with his perfection.</p>
+</blockquote>
+<figcaption>— Friedrich Nietzsche, <cite>The Twilight of the Idols.</cite> <a href="https://www.gutenberg.org/files/52263/52263-h/52263-h.htm#Page_67" target="_blank" rel="noopener noreferrer" title="Skirmishes in a War with the Age, §9; translated by Anthony M. Ludovici (1911)">§9</a></figcaption>
+</figure>
+
+<hr class="cv-philosophy-divider">
+
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>What is happiness?—The feeling that power <em>increases</em>—that resistance is overcome.</p>
+</blockquote>
+<figcaption>— Friedrich Nietzsche, <cite>The Antichrist.</cite> <a href="https://www.gutenberg.org/files/19322/19322-h/19322-h.htm#Page_43" target="_blank" rel="noopener noreferrer" title="The Antichrist, §2; translated by H. L. Mencken (1918)">§2</a></figcaption>
+</figure>
+
+<hr class="cv-philosophy-divider">
+
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>And this secret spake Life herself unto me.<br>
+<strong>“Behold,” said she, “I am that WHICH MUST EVER SURPASS ITSELF.”</strong></p>
+</blockquote>
+<figcaption>— Friedrich Nietzsche, <cite>Thus Spake Zarathustra</cite>, <a href="https://www.gutenberg.org/files/1998/1998-h/1998-h.htm#link2H_4_0040" target="_blank" rel="noopener noreferrer" title="Part II, XXXIV. Self-Surpassing; translated by Thomas Common">“Self-Surpassing”</a></figcaption>
+</figure>
+
+<hr class="cv-philosophy-divider">
+
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>And what you have called world, that shall be created only by you: your reason, your image, your will, your love shall thus be realized. And verily, for your own bliss, you lovers of knowledge.</p>
+</blockquote>
+<figcaption>— Friedrich Nietzsche, <cite>Thus Spoke Zarathustra.</cite> p. 70</figcaption>
+</figure>
+
+<hr class="cv-philosophy-divider">
+
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>The world only makes sense if you force it to.</p>
+</blockquote>
+<figcaption>— Batman</figcaption>
+</figure>
+</div>
+</div>
+
+<div class="cv-beyond-panel" id="beyond-comics-panel" role="region" aria-labelledby="beyond-comics-button" hidden>
+<div class="cv-beyond-panel-inner">
+<p>DC Comics — Recommended reads (ordered by how much I love them):</p>
+<ul class="cv-beyond-reading-list">
+<li><i>The Riddler: Year One</i></li>
+<li><i>Penguin: Pain &amp; Prejudice</i></li>
+<li><i>Batman: The Killing Joke</i></li>
+<li><i>Batman (2016-): I Am Bane</i></li>
+<li><i>Batman (2016-): The War of Jokes and Riddles</i></li>
+<li><i>One Bad Day: The Riddler</i></li>
+</ul>
+</div>
+</div>
+
+<script>
+(function () {
+var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-beyond-toggle]'));
+function setExpanded(button, open) {
+if ((button.getAttribute('aria-expanded') === 'true') === open) return;
+var panel = document.getElementById(button.getAttribute('aria-controls'));
+var height = panel.hidden ? 0 : panel.getBoundingClientRect().height;
+var opacity = panel.hidden ? 0 : getComputedStyle(panel).opacity;
+if (panel.getAnimations) panel.getAnimations().forEach(function (animation) { animation.cancel(); });
+button.setAttribute('aria-expanded', String(open));
+button.classList.toggle('pub-view-btn-active', open);
+if (!panel.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+panel.hidden = !open;
+return;
+}
+panel.hidden = false;
+var animation = panel.animate([
+{ height: height + 'px', opacity: opacity },
+{ height: (open ? panel.scrollHeight : 0) + 'px', opacity: open ? 1 : 0 }
+], { duration: 220, easing: 'cubic-bezier(0.2, 0.7, 0.2, 1)' });
+animation.onfinish = function () {
+panel.hidden = !open;
+};
+}
+buttons.forEach(function (button) {
+button.addEventListener('click', function () {
+var open = button.getAttribute('aria-expanded') !== 'true';
+buttons.forEach(function (other) { setExpanded(other, other === button && open); });
+});
+});
+})();
+</script>
 
 <div class="cv-epigraph cv-contact-quote" style="color: #999;">
 In song and in dance man exhibits himself as a member of a higher community, he has forgotten how to walk and speak, and is on the point of taking a dancing flight into the air. His gestures bespeak enchantment.

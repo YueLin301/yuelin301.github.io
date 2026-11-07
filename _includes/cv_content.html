@@ -139,7 +139,7 @@ text-align: center;
 display: grid;
 grid-template-columns: minmax(8rem, 1fr) minmax(0, 2fr) minmax(8rem, 1fr);
 column-gap: 1rem;
-align-items: center;
+align-items: end;
 width: 100%;
 min-height: 112px;
 margin: 0 auto;
@@ -151,6 +151,7 @@ width: 100%;
 min-width: 0;
 padding: 0;
 text-align: center;
+transform: translateY(4px);
 }
 .cv-profile .cv-avatar {
 --cv-avatar-surface: #f8f9fc;
@@ -163,8 +164,8 @@ text-align: center;
 --cv-avatar-back-size: 205% auto;
 position: relative;
 display: block;
-width: 100px;
-height: 100px;
+width: 79px;
+height: 79px;
 padding: 0;
 overflow: visible;
 border: 0;
@@ -206,7 +207,7 @@ grid-row: 1;
 display: grid;
 gap: 0.38rem;
 justify-self: center;
-align-self: center;
+align-self: end;
 text-align: left;
 }
 .cv-profile .cv-identity-links a {
@@ -522,6 +523,7 @@ display: grid;
 grid-template-columns: minmax(0, 1fr);
 grid-template-rows: auto auto auto auto;
 row-gap: 0.65rem;
+align-items: center;
 width: 100%;
 min-height: 0;
 }
@@ -529,10 +531,11 @@ min-height: 0;
 display: contents;
 padding: 0;
 text-align: center;
+transform: none;
 }
 .cv-profile .cv-avatar {
-width: 88px;
-height: 88px;
+width: 82px;
+height: 82px;
 border-radius: 18px;
 box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55), 0 2px 4px rgba(20, 25, 40, 0.11), 0 7px 18px rgba(20, 25, 40, 0.11);
 }
@@ -571,6 +574,8 @@ flex-wrap: wrap;
 justify-content: center;
 gap: 0.45rem 0.9rem;
 margin-top: 0.1rem;
+transform: none;
+align-self: center;
 }
 .cv-profile .cv-epigraph-title {
 display: block;
@@ -607,6 +612,7 @@ display: grid;
 grid-template-columns: minmax(0, 1fr);
 grid-template-rows: auto auto auto auto;
 row-gap: 0.65rem;
+align-items: center;
 width: 100%;
 min-height: 0;
 }
@@ -614,10 +620,11 @@ min-height: 0;
 display: contents;
 padding: 0;
 text-align: center;
+transform: none;
 }
 .cv-profile .cv-avatar {
-width: 88px;
-height: 88px;
+width: 82px;
+height: 82px;
 border-radius: 18px;
 box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55), 0 2px 4px rgba(20, 25, 40, 0.11), 0 7px 18px rgba(20, 25, 40, 0.11);
 }
@@ -656,6 +663,8 @@ flex-wrap: wrap;
 justify-content: center;
 gap: 0.45rem 0.9rem;
 margin-top: 0.1rem;
+transform: none;
+align-self: center;
 }
 .cv-profile .cv-epigraph-title {
 display: block;
@@ -694,10 +703,9 @@ margin-top: 1.6rem;
 }
 .cv-profile .cv-avatar.cv-avatar-static,
 #introduction .cv-profile .cv-avatar.cv-avatar-static {
-background-image: url('{{ "/assets/img/avatar/ly2026-11.png" | relative_url }}');
+background-image: url('{{ "/assets/img/avatar/ly2026-11-2.png" | relative_url }}');
 background-size: cover;
 background-position: center;
-border-radius: 50%;
 cursor: inherit;
 transition: none;
 }
@@ -1769,7 +1777,7 @@ The high-scoring courses at the undergraduate level include the following:
 <p class="cv-icon-label"><i class="fa-solid fa-eye fa-fw cv-accent-icon" aria-hidden="true"></i>Independent Reviewer</p>
 <ul>
 <li>NeurIPS 2024 [6; 45615], 2025 [5; 32912], 2026 [4; 17738]</li>
-<li>ICLR 2025 [3; 21831], 2026 [1; 5994], 2027 [5; 13765]</li>
+<li>ICLR 2025 [3; 21831], 2026 [1; 5994], 2027 [6; 15219]</li>
 <li>ICML 2025 [6; 32893], 2026 [6; 43185]</li>
 <li>AAAI 2027 [6; 20898]</li>
 <li>AAMAS 2027 [5; 0]</li>
@@ -1787,7 +1795,7 @@ The high-scoring courses at the undergraduate level include the following:
 
 <blockquote>
 <p>Format: [assigned manuscripts; review characters]. First “0”: invitation accepted, awaiting assignment; second “0”: assigned, review pending.<br />
-Total reviews: <span id="total-reviews">61</span>.</p>
+Total reviews: <span id="total-reviews">62</span>.</p>
 </blockquote>
 <script>
 (function () {
@@ -2670,7 +2678,7 @@ overflow-wrap: anywhere;
 </ul>
 </div>
 
-<h2 class="cv-section-title" id="beyond-the-forest"><svg class="cv-section-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="height: 1.25em; vertical-align: -0.15em;" aria-hidden="true" focusable="false"><path d="m2 26 9-14 7 9 5-7 7 12M23 2l1 3.5 3.5 1-3.5 1L23 11l-1-3.5-3.5-1 3.5-1Z"/></svg>Beyond the Forest</h2>
+<h2 class="cv-section-title" id="beyond-the-forest"><svg class="cv-section-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="height: 1.25em; vertical-align: -0.15em;" aria-hidden="true" focusable="false"><path d="m2 26 9-14 7 9 5-7 7 12M23 2l1 3.5 3.5 1-3.5 1L23 11l-1-3.5-3.5-1 3.5-1Z"/></svg>The Forest and Beyond</h2>
 
 <style>
 .cv-profile .cv-beyond-topics {
@@ -2681,10 +2689,16 @@ justify-content: center;
 gap: 8px;
 margin: 1.2rem 0 0;
 }
+.cv-profile .cv-beyond-content {
+display: flow-root;
+overflow: hidden;
+overflow-anchor: none;
+}
 .cv-profile .cv-beyond-panel {
 overflow: hidden;
 }
-.cv-profile .cv-beyond-panel[hidden] {
+.cv-profile .cv-beyond-panel[hidden],
+.cv-profile [data-beyond-closing][hidden] {
 display: none;
 }
 .cv-profile .cv-beyond-panel-inner {
@@ -2714,6 +2728,12 @@ margin-top: 0;
 .cv-profile .cv-beyond-reading-list > li:last-child {
 margin-bottom: 0;
 }
+.cv-profile .cv-beyond-comic-chapters {
+margin-top: 0.5rem;
+}
+.cv-profile .cv-beyond-comic-chapters > li {
+margin: 0.3rem 0;
+}
 .cv-profile .cv-beyond-category-title {
 margin: 0 0 0.85rem;
 padding: 0;
@@ -2736,7 +2756,7 @@ font-size: 0.88em;
 line-height: 1.6;
 }
 .cv-profile .cv-philosophy {
-max-width: 52rem;
+max-width: 44rem;
 margin: 1.5rem auto 0;
 padding: 0.5rem 0;
 border: 0;
@@ -2754,23 +2774,28 @@ background: none;
 color: inherit;
 font-size: inherit;
 font-style: normal;
-text-align: center;
+text-align: inherit;
 }
 .cv-profile .cv-philosophy-piece p {
 margin: 0;
 }
-.cv-profile .cv-philosophy-poem-title {
+.cv-profile .cv-philosophy-poem-title,
+.cv-profile .cv-philosophy-theme-title {
 margin: 0 0 0.35rem;
 padding: 0;
 border: 0;
 color: var(--heading-color, #343d63);
 font-size: 1.1rem;
-font-weight: 700;
+font-weight: 600;
+}
+.cv-profile .cv-philosophy-poem-title {
+font-size: 1rem;
+font-weight: 500;
 }
 .cv-profile .cv-philosophy-byline,
 .cv-profile .cv-philosophy-piece figcaption {
 color: var(--text-muted-color, #6a6a72);
-font-size: 0.88em;
+font-size: 0.85em;
 line-height: 1.7;
 }
 .cv-profile .cv-philosophy-piece .cv-philosophy-byline {
@@ -2783,14 +2808,60 @@ margin: 0.4rem 0;
 margin: 1.25rem 0 0.65rem;
 }
 .cv-profile .cv-philosophy-piece figcaption {
-margin-top: 1rem;
+margin-top: 0.65rem;
+text-align: inherit;
+}
+.cv-profile .cv-philosophy-theme .cv-philosophy-piece figcaption {
+text-align: right;
+}
+.cv-profile .cv-philosophy-piece figcaption a {
+color: inherit;
+text-decoration: underline;
+text-decoration-color: rgba(127, 127, 150, 0.35);
+text-underline-offset: 0.2em;
+}
+.cv-profile .cv-philosophy-piece figcaption a:hover {
+color: var(--link-color, #495485);
+}
+.cv-profile .cv-philosophy-theme {
+max-width: 38rem;
+margin: 0 auto;
+text-align: left;
+}
+.cv-profile .cv-philosophy-theme-header {
+margin-bottom: 1.5rem;
 text-align: center;
 }
+.cv-profile .cv-philosophy-theme-title {
+line-height: 1.5;
+}
+.cv-profile .cv-philosophy-theme .cv-philosophy-piece + .cv-philosophy-piece {
+margin-top: 1.9rem;
+}
+.cv-profile .cv-philosophy-piece-short {
+text-align: center;
+}
+.cv-profile .cv-philosophy-piece .cv-philosophy-context {
+margin: 0 0 1rem;
+color: var(--text-muted-color, #6a6a72);
+font-size: 0.92em;
+line-height: 1.8;
+text-align: left;
+}
+.cv-profile .cv-philosophy-context-label {
+display: block;
+margin-bottom: 0.3rem;
+font-size: 0.85em;
+font-weight: 500;
+}
+.cv-profile .cv-philosophy-closing blockquote {
+font-size: 1.05em;
+}
 .cv-profile .cv-philosophy-divider {
-width: min(100%, 22rem);
-margin: 2.25rem auto;
+width: min(60%, 15rem);
+margin: 2.75rem auto;
 border: 0;
-border-top: 1px solid rgba(127, 127, 150, 0.28);
+border-top: 1px solid rgba(127, 127, 150, 0.22);
 opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2800,12 +2871,13 @@ transition: none;
 }
 </style>
 
-<div class="cv-beyond-topics" role="group" aria-label="Beyond the Forest topics">
-<button type="button" class="pub-view-btn pub-view-btn-active cv-beyond-topic-button" id="beyond-research-button" aria-expanded="true" aria-controls="beyond-research-panel" data-beyond-toggle>Purpose &amp; Sparks</button>
-<button type="button" class="pub-view-btn cv-beyond-topic-button" id="beyond-philosophy-button" aria-expanded="false" aria-controls="beyond-philosophy-panel" data-beyond-toggle>Poetry &amp; Wine</button>
+<div class="cv-beyond-topics" role="group" aria-label="The Forest and Beyond topics">
+<button type="button" class="pub-view-btn cv-beyond-topic-button" id="beyond-research-button" aria-expanded="false" aria-controls="beyond-research-panel" data-beyond-toggle>Purpose &amp; Sparks</button>
+<button type="button" class="pub-view-btn cv-beyond-topic-button pub-view-btn-active" id="beyond-philosophy-button" aria-expanded="true" aria-controls="beyond-philosophy-panel" data-beyond-toggle>Poetry &amp; Wine</button>
 <button type="button" class="pub-view-btn cv-beyond-topic-button" id="beyond-comics-button" aria-expanded="false" aria-controls="beyond-comics-panel" data-beyond-toggle>Comics</button>
 </div>
-<div class="cv-beyond-panel" id="beyond-research-panel" role="region" aria-labelledby="beyond-research-button">
+<div class="cv-beyond-content" id="beyond-content">
+<div class="cv-beyond-panel" id="beyond-research-panel" role="region" aria-labelledby="beyond-research-button" hidden>
 <div class="cv-beyond-panel-inner">
 <p>Readings that inspire my research and sense of purpose.</p>
 
@@ -2829,7 +2901,7 @@ transition: none;
 <div class="cv-beyond-reading-authors">Lorenzo Canese, Gian Carlo Cardarilli, Luca Di Nunzio, Rocco Fazzolari, Daniele Giardino, Marco Re, and Sergio Spanò · Applied Sciences, 2021</div>
 </li>
 <li>
-<a href="https://arxiv.org/abs/1702.03037" target="_blank" rel="noopener noreferrer">Multi-agent Reinforcement Learning in Sequential Social Dilemmas</a>
+<a href="https://www.ifaamas.org/Proceedings/aamas2017/pdfs/p464.pdf" target="_blank" rel="noopener noreferrer">Multi-agent Reinforcement Learning in Sequential Social Dilemmas</a>
 <div class="cv-beyond-reading-authors">Joel Z. Leibo, Vinicius Zambaldi, Marc Lanctot, Janusz Marecki, and Thore Graepel · AAMAS, 2017</div>
 </li>
 <li>
@@ -2841,8 +2913,16 @@ transition: none;
 <div class="cv-beyond-reading-authors">Joel Z. Leibo, Edgar Duéñez-Guzmán, Alexander Sasha Vezhnevets, John P. Agapiou, Peter Sunehag, Raphael Koster, Jayd Matyas, Charles Beattie, Igor Mordatch, and Thore Graepel · ICML, 2021</div>
 </li>
 <li>
-<a href="https://arxiv.org/abs/2004.13332" target="_blank" rel="noopener noreferrer">The AI Economist: Improving Equality and Productivity with AI-Driven Tax Policies</a>
-<div class="cv-beyond-reading-authors">Stephan Zheng, Alexander Trott, Sunil Srinivasa, Nikhil Naik, Melvin Gruesbeck, David C. Parkes, and Richard Socher · arXiv preprint, 2020</div>
+<a href="https://doi.org/10.1126/sciadv.abk2607" target="_blank" rel="noopener noreferrer">The AI Economist: Taxation policy design via two-level deep multiagent reinforcement learning</a>
+<div class="cv-beyond-reading-authors">Stephan Zheng, Alexander Trott, Sunil Srinivasa, David C. Parkes, and Richard Socher · Science Advances, 2022</div>
+</li>
+<li>
+<a href="https://www.cooperativeai.com/seminars/when-ai-agents-meet-a-blueprint-for-addressing-multi-agent-ai-governance" target="_blank" rel="noopener noreferrer">When AI Agents Meet: A Blueprint for Addressing Multi-Agent AI Governance</a>
+<div class="cv-beyond-reading-authors">Speakers: Lewis Hammond, Elham Tabassi, and Marta Bieńkiewicz · Cooperative AI Foundation seminar, 2026</div>
+</li>
+<li>
+<a href="https://www.cooperativeai.com/seminars/closing-the-democratic-loop-automated-oversight-for-the-agi-era" target="_blank" rel="noopener noreferrer">Closing the Democratic Loop: Automated Oversight for the AGI Era</a>
+<div class="cv-beyond-reading-authors">Speaker: Michiel Bakker · Cooperative AI Foundation seminar, 2026</div>
 </li>
 </ul>
 </section>
@@ -2901,24 +2981,24 @@ transition: none;
 <div class="cv-beyond-reading-authors">Steven Tadelis · Princeton University Press, 2013</div>
 </li>
 <li>
-<a href="https://ucrisportal.univie.ac.at/en/publications/the-calculus-of-selfishness/" target="_blank" rel="noopener noreferrer">The Calculus of Selfishness</a>
+<a href="https://doi.org/10.1515/9781400832255" target="_blank" rel="noopener noreferrer">The Calculus of Selfishness</a>
 <div class="cv-beyond-reading-authors">Karl Sigmund · Princeton University Press, 2010</div>
 </li>
 <li>
-<a href="https://timroughgarden.org/f13/f13.pdf" target="_blank" rel="noopener noreferrer">Lecture Notes on Algorithmic Game Theory</a>
-<div class="cv-beyond-reading-authors">Tim Roughgarden · Stanford CS364A lecture notes, Fall 2013</div>
+<a href="https://doi.org/10.1017/CBO9781316779309" target="_blank" rel="noopener noreferrer">Twenty Lectures on Algorithmic Game Theory</a>
+<div class="cv-beyond-reading-authors">Tim Roughgarden · Cambridge University Press, 2016</div>
 </li>
 <li>
-<a href="https://www.research.ed.ac.uk/en/publications/personality-traits-2nd-edition/" target="_blank" rel="noopener noreferrer">Personality Traits (Second Edition)</a>
+<a href="https://doi.org/10.1017/CBO9780511812736" target="_blank" rel="noopener noreferrer">Personality Traits (Second Edition)</a>
 <div class="cv-beyond-reading-authors">Gerald Matthews, Ian J. Deary, and Martha C. Whiteman · Cambridge University Press, 2003</div>
 </li>
 <li>
 <a href="https://www.routledge.com/Psychological-Types/Jung/p/book/9781315725918" target="_blank" rel="noopener noreferrer">Psychological Types</a>
-<div class="cv-beyond-reading-authors">C. G. Jung · Rascher (original German edition), 1921</div>
+<div class="cv-beyond-reading-authors">C. G. Jung · Routledge, 1971 (original German edition: 1921)</div>
 </li>
 <li>
-<a href="https://masfoundations.org/" target="_blank" rel="noopener noreferrer">Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations</a>
-<div class="cv-beyond-reading-authors">Yoav Shoham and Kevin Leyton-Brown · Cambridge University Press, 2009</div>
+<a href="https://doi.org/10.1017/CBO9780511811654" target="_blank" rel="noopener noreferrer">Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations</a>
+<div class="cv-beyond-reading-authors">Yoav Shoham and Kevin Leyton-Brown · Cambridge University Press, 2008</div>
 </li>
 </ul>
 </section>
@@ -2933,7 +3013,7 @@ transition: none;
 <div class="cv-beyond-reading-authors">Jiachen Yang, Ang Li, Mehrdad Farajtabar, Peter Sunehag, Edward Hughes, and Hongyuan Zha · NeurIPS, 2020</div>
 </li>
 <li>
-<a href="https://arxiv.org/abs/1709.04326" target="_blank" rel="noopener noreferrer">Learning with Opponent-Learning Awareness</a>
+<a href="https://www.ifaamas.org/Proceedings/aamas2018/pdfs/p122.pdf" target="_blank" rel="noopener noreferrer">Learning with Opponent-Learning Awareness</a>
 <div class="cv-beyond-reading-authors">Jakob N. Foerster, Richard Y. Chen, Maruan Al-Shedivat, Shimon Whiteson, Pieter Abbeel, and Igor Mordatch · AAMAS, 2018</div>
 </li>
 <li>
@@ -2942,15 +3022,15 @@ transition: none;
 </li>
 <li>
 <a href="https://proceedings.neurips.cc/paper_files/paper/2016/hash/c7635bfd99248a2cdef8249ef7bfbef4-Abstract.html" target="_blank" rel="noopener noreferrer">Learning to Communicate with Deep Multi-Agent Reinforcement Learning</a>
-<div class="cv-beyond-reading-authors">Jakob Foerster, Ioannis Alexandros Assael, Nando de Freitas, and Shimon Whiteson · NeurIPS, 2016</div>
+<div class="cv-beyond-reading-authors">Jakob Foerster, Ioannis Alexandros Assael, Nando de Freitas, and Shimon Whiteson · NIPS, 2016</div>
 </li>
 <li>
 <a href="https://proceedings.neurips.cc/paper_files/paper/2017/hash/68a9750337a418a86fe06c1991a1d64c-Abstract.html" target="_blank" rel="noopener noreferrer">Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments</a>
-<div class="cv-beyond-reading-authors">Ryan Lowe, Yi Wu, Aviv Tamar, Jean Harb, Pieter Abbeel, and Igor Mordatch · NeurIPS, 2017</div>
+<div class="cv-beyond-reading-authors">Ryan Lowe, Yi Wu, Aviv Tamar, Jean Harb, Pieter Abbeel, and Igor Mordatch · NIPS, 2017</div>
 </li>
 <li>
 <a href="https://proceedings.neurips.cc/paper/1999/hash/464d828b85b0bed98e80ade0a5c43b0f-Abstract.html" target="_blank" rel="noopener noreferrer">Policy Gradient Methods for Reinforcement Learning with Function Approximation</a>
-<div class="cv-beyond-reading-authors">Richard S. Sutton, David A. McAllester, Satinder P. Singh, and Yishay Mansour · NeurIPS, 1999</div>
+<div class="cv-beyond-reading-authors">Richard S. Sutton, David A. McAllester, Satinder P. Singh, and Yishay Mansour · NIPS, 1999</div>
 </li>
 <li>
 <a href="https://proceedings.mlr.press/v32/silver14.html" target="_blank" rel="noopener noreferrer">Deterministic Policy Gradient Algorithms</a>
@@ -2969,7 +3049,7 @@ transition: none;
 <div class="cv-beyond-reading-authors">John F. Nash, Jr. · Econometrica, 1950</div>
 </li>
 <li>
-<a href="https://arielrubinstein.org/papers/11.pdf" target="_blank" rel="noopener noreferrer">Perfect Equilibrium in a Bargaining Model</a>
+<a href="https://www.jstor.org/stable/1912531" target="_blank" rel="noopener noreferrer">Perfect Equilibrium in a Bargaining Model</a>
 <div class="cv-beyond-reading-authors">Ariel Rubinstein · Econometrica, 1982</div>
 </li>
 <li>
@@ -2982,10 +3062,14 @@ transition: none;
 </div>
 </div>
 
-<div class="cv-beyond-panel" id="beyond-philosophy-panel" role="region" aria-labelledby="beyond-philosophy-button" hidden>
+<div class="cv-beyond-panel" id="beyond-philosophy-panel" role="region" aria-labelledby="beyond-philosophy-button">
 <div class="cv-beyond-panel-inner cv-philosophy">
+<section aria-labelledby="philosophy-fool">
+<div class="cv-philosophy-theme-header">
+<h3 class="cv-philosophy-theme-title" id="philosophy-fool">The Fool</h3>
+</div>
 <figure class="cv-philosophy-piece">
-<h3 class="cv-philosophy-poem-title">O Me! O Life!</h3>
+<h4 class="cv-philosophy-poem-title">O Me! O Life!</h4>
 <p class="cv-philosophy-byline">By <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank" rel="noopener noreferrer">Walt Whitman</a></p>
 <div class="cv-philosophy-poem-lines">
 <p>Oh me! Oh life! of the questions of these recurring,</p>
@@ -3000,61 +3084,123 @@ transition: none;
 <p><strong>That the powerful play goes on, and you may contribute a verse.</strong></p>
 </div>
 </figure>
+</section>
 
 <hr class="cv-philosophy-divider">
+
+<section class="cv-philosophy-theme" aria-labelledby="philosophy-unselfing">
+<div class="cv-philosophy-theme-header">
+<h3 class="cv-philosophy-theme-title" id="philosophy-unselfing">The Dionysian &amp; Unselfing</h3>
+</div>
+<figure class="cv-philosophy-piece cv-philosophy-piece-short">
+<blockquote>
+<p>Art transcends selfish and obsessive limitations of personality and can enlarge the sensibility of its consumer.</p>
+</blockquote>
+<figcaption>— Iris Murdoch, <a href="https://eganphilosophy.com/wp-content/uploads/2022/05/Murdoch-The-Sovereignty-of-Good-Over-Other-Concepts.pdf#page=13" target="_blank" rel="noopener noreferrer"><cite>The Sovereignty of Good</cite></a>, p. 84</figcaption>
+</figure>
+
+<figure class="cv-philosophy-piece cv-philosophy-piece-short">
+<p class="cv-philosophy-context"><span class="cv-philosophy-context-label">Context (paraphrased)</span>In her example, Murdoch imagines herself dwelling on wounded pride. A kestrel outside the window draws her attention away from her own concerns.</p>
+<blockquote>
+<p>Then suddenly I observe a hovering kestrel. In a moment everything is altered. The brooding self with its hurt vanity has disappeared.</p>
+</blockquote>
+<figcaption>— Iris Murdoch, <a href="https://eganphilosophy.com/wp-content/uploads/2022/05/Murdoch-The-Sovereignty-of-Good-Over-Other-Concepts.pdf#page=10" target="_blank" rel="noopener noreferrer"><cite>The Sovereignty of Good</cite></a></figcaption>
+</figure>
 
 <figure class="cv-philosophy-piece">
 <blockquote>
-<p>And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all “it was” into “thus I willed it” — that alone should I call redemption.</p>
+<p>In song and in dance man exhibits himself as a member of a higher community, he has forgotten how to walk and speak, and is on the point of taking a dancing flight into the air. His gestures bespeak enchantment.</p>
 </blockquote>
-<figcaption>— Friedrich Nietzsche, <cite>Thus Spoke Zarathustra</cite>, <a href="https://www.gutenberg.org/files/1998/1998-h/1998-h.htm#link2H_4_0048" target="_blank" rel="noopener noreferrer" title="Part II, On Redemption; chapter source in Thomas Common’s translation">“On Redemption”</a></figcaption>
+<figcaption>— Friedrich Nietzsche, <a href="https://www.gutenberg.org/cache/epub/51356/pg51356-images.html#Page_27" target="_blank" rel="noopener noreferrer" title="The Birth of Tragedy, §1; translated by William A. Haussmann (1910)"><cite>The Birth of Tragedy</cite></a>, §1</figcaption>
 </figure>
-
-<hr class="cv-philosophy-divider">
 
 <figure class="cv-philosophy-piece">
 <blockquote>
 <p>In this state a man enriches everything from out his own abundance: what he sees, what he wills, he sees distended, compressed, strong, overladen with power. He transfigures things until they reflect his power,—until they are stamped with his perfection.</p>
 </blockquote>
-<figcaption>— Friedrich Nietzsche, <cite>The Twilight of the Idols.</cite> <a href="https://www.gutenberg.org/files/52263/52263-h/52263-h.htm#Page_67" target="_blank" rel="noopener noreferrer" title="Skirmishes in a War with the Age, §9; translated by Anthony M. Ludovici (1911)">§9</a></figcaption>
+<figcaption>— Friedrich Nietzsche, <a href="https://www.gutenberg.org/files/52263/52263-h/52263-h.htm#Page_67" target="_blank" rel="noopener noreferrer" title="Skirmishes in a War with the Age, §9; translated by Anthony M. Ludovici (1911)"><cite>The Twilight of the Idols</cite></a>, §9</figcaption>
 </figure>
+</section>
 
 <hr class="cv-philosophy-divider">
 
-<figure class="cv-philosophy-piece">
+<section class="cv-philosophy-theme" aria-labelledby="philosophy-life">
+<div class="cv-philosophy-theme-header">
+<h3 class="cv-philosophy-theme-title" id="philosophy-life">Life &amp; Self-Overcoming</h3>
+</div>
+<figure class="cv-philosophy-piece cv-philosophy-piece-short">
+<blockquote>
+<p>And this secret spake Life herself unto me.<br>
+“Behold,” said she, “I am that WHICH MUST EVER SURPASS ITSELF.”</p>
+</blockquote>
+<figcaption>— Friedrich Nietzsche, <a href="https://www.gutenberg.org/files/1998/1998-h/1998-h.htm#link2H_4_0040" target="_blank" rel="noopener noreferrer" title="Part II, XXXIV. Self-Surpassing; translated by Thomas Common"><cite>Thus Spoke Zarathustra</cite></a>, “Self-Surpassing”</figcaption>
+</figure>
+
+<figure class="cv-philosophy-piece cv-philosophy-piece-short">
 <blockquote>
 <p>What is happiness?—The feeling that power <em>increases</em>—that resistance is overcome.</p>
 </blockquote>
-<figcaption>— Friedrich Nietzsche, <cite>The Antichrist.</cite> <a href="https://www.gutenberg.org/files/19322/19322-h/19322-h.htm#Page_43" target="_blank" rel="noopener noreferrer" title="The Antichrist, §2; translated by H. L. Mencken (1918)">§2</a></figcaption>
+<figcaption>— Friedrich Nietzsche, <a href="https://www.gutenberg.org/files/19322/19322-h/19322-h.htm#Page_43" target="_blank" rel="noopener noreferrer" title="The Antichrist, §2; translated by H. L. Mencken (1918)"><cite>The Antichrist</cite></a>, §2</figcaption>
 </figure>
+</section>
 
 <hr class="cv-philosophy-divider">
+
+<section class="cv-philosophy-theme" aria-labelledby="philosophy-curiosity">
+<div class="cv-philosophy-theme-header">
+<h3 class="cv-philosophy-theme-title" id="philosophy-curiosity">Curiosity, Science &amp; Reconciliation</h3>
+</div>
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>And how could one endure being a man, if not also for the possibility to create, guess riddles, and redeem accidents? To redeem those who lived in the past and to recreate all “it was” into “thus I willed it” — that alone should I call redemption.</p>
+</blockquote>
+<figcaption>— Friedrich Nietzsche, <a href="https://www.gutenberg.org/files/1998/1998-h/1998-h.htm#link2H_4_0048" target="_blank" rel="noopener noreferrer" title="Part II, On Redemption; chapter source in Thomas Common’s translation"><cite>Thus Spoke Zarathustra</cite></a>, “On Redemption”</figcaption>
+</figure>
 
 <figure class="cv-philosophy-piece">
 <blockquote>
-<p>And this secret spake Life herself unto me.<br>
-<strong>“Behold,” said she, “I am that WHICH MUST EVER SURPASS ITSELF.”</strong></p>
+<p>... to be truly gone. To know that reality is not passive, [not merely] an experience that comes to you. To know that everything is contigent upon your own <em>WILL.</em> Everything bows to your own perspective. Everything answers to <em>your answers.</em></p>
 </blockquote>
-<figcaption>— Friedrich Nietzsche, <cite>Thus Spake Zarathustra</cite>, <a href="https://www.gutenberg.org/files/1998/1998-h/1998-h.htm#link2H_4_0040" target="_blank" rel="noopener noreferrer" title="Part II, XXXIV. Self-Surpassing; translated by Thomas Common">“Self-Surpassing”</a></figcaption>
+<figcaption>— The Riddler, <cite>Batman (2016-): The War of Jokes and Riddles</cite></figcaption>
 </figure>
+</section>
+
+
 
 <hr class="cv-philosophy-divider">
+
+<section class="cv-philosophy-theme" aria-labelledby="philosophy-world">
+<div class="cv-philosophy-theme-header">
+<h3 class="cv-philosophy-theme-title" id="philosophy-world">The World</h3>
+</div>
+<figure class="cv-philosophy-piece cv-philosophy-closing cv-philosophy-piece-short">
+<blockquote>
+<p>The world only <strong>makes sense</strong> if you force it to.</p>
+</blockquote>
+<figcaption>— Batman, <cite>Batman v Superman: Dawn of Justice</cite></figcaption>
+</figure>
+
+<figure class="cv-philosophy-piece">
+<blockquote>
+<p>You oppose the corporations, their order, their world, in a mindless way, yet you offer no worthy alternative.</p>
+</blockquote>
+<figcaption>— Goro Takemura, <cite>Cyberpunk 2077</cite></figcaption>
+</figure>
 
 <figure class="cv-philosophy-piece">
 <blockquote>
 <p>And what you have called world, that shall be created only by you: your reason, your image, your will, your love shall thus be realized. And verily, for your own bliss, you lovers of knowledge.</p>
 </blockquote>
-<figcaption>— Friedrich Nietzsche, <cite>Thus Spoke Zarathustra.</cite> p. 70</figcaption>
+<figcaption>— Friedrich Nietzsche, <cite>Thus Spoke Zarathustra</cite>, p. 70</figcaption>
 </figure>
 
-<hr class="cv-philosophy-divider">
-
-<figure class="cv-philosophy-piece">
+<figure class="cv-philosophy-piece cv-philosophy-closing cv-philosophy-piece-short">
 <blockquote>
-<p>The world only makes sense if you force it to.</p>
+<p><strong>Wake the [bleep] up, Samurai. We have a city to burn.</strong></p>
 </blockquote>
-<figcaption>— Batman</figcaption>
+<figcaption>— Johnny Silverhand, <a href="https://www.youtube.com/watch?v=qIcTM8WXFjk" target="_blank" rel="noopener noreferrer"><cite>Cyberpunk 2077</cite></a>, E3 2019 Cinematic Trailer</figcaption>
 </figure>
+</section>
 </div>
 </div>
 
@@ -3062,50 +3208,37 @@ transition: none;
 <div class="cv-beyond-panel-inner">
 <p>DC Comics — Recommended reads (ordered by how much I love them):</p>
 <ul class="cv-beyond-reading-list">
-<li><i>The Riddler: Year One</i></li>
-<li><i>Penguin: Pain &amp; Prejudice</i></li>
-<li><i>Batman: The Killing Joke</i></li>
-<li><i>Batman (2016-): I Am Bane</i></li>
-<li><i>Batman (2016-): The War of Jokes and Riddles</i></li>
-<li><i>One Bad Day: The Riddler</i></li>
+<li>
+<i>The Riddler: Year One</i>
+<div class="cv-beyond-reading-authors">On realizing one's own worth.</div>
+</li>
+<li>
+<i>Penguin: Pain &amp; Prejudice</i>
+<div class="cv-beyond-reading-authors">On pride, love, and feeling worthy.</div>
+</li>
+<li>
+<i>Batman: The Killing Joke</i>
+<div class="cv-beyond-reading-authors">When you’ve had one bad day, should a bit of insanity help?</div>
+</li>
+<li>
+<i>Batman (2016-)</i>
+<div class="cv-beyond-reading-authors">On self-destruction, pure devotion, and the balance between suffering and happiness.</div>
+<ul class="cv-beyond-reading-list cv-beyond-comic-chapters">
+<li><i>I Am Bane</i></li>
+<li><i>The War of Jokes and Riddles</i></li>
+</ul>
+</li>
+<li>
+<i>One Bad Day: The Riddler</i>
+<div class="cv-beyond-reading-authors">On rules and conceit.</div>
+</li>
 </ul>
 </div>
 </div>
 
-<script>
-(function () {
-var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-beyond-toggle]'));
-function setExpanded(button, open) {
-if ((button.getAttribute('aria-expanded') === 'true') === open) return;
-var panel = document.getElementById(button.getAttribute('aria-controls'));
-var height = panel.hidden ? 0 : panel.getBoundingClientRect().height;
-var opacity = panel.hidden ? 0 : getComputedStyle(panel).opacity;
-if (panel.getAnimations) panel.getAnimations().forEach(function (animation) { animation.cancel(); });
-button.setAttribute('aria-expanded', String(open));
-button.classList.toggle('pub-view-btn-active', open);
-if (!panel.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-panel.hidden = !open;
-return;
-}
-panel.hidden = false;
-var animation = panel.animate([
-{ height: height + 'px', opacity: opacity },
-{ height: (open ? panel.scrollHeight : 0) + 'px', opacity: open ? 1 : 0 }
-], { duration: 220, easing: 'cubic-bezier(0.2, 0.7, 0.2, 1)' });
-animation.onfinish = function () {
-panel.hidden = !open;
-};
-}
-buttons.forEach(function (button) {
-button.addEventListener('click', function () {
-var open = button.getAttribute('aria-expanded') !== 'true';
-buttons.forEach(function (other) { setExpanded(other, other === button && open); });
-});
-});
-})();
-</script>
 
-<div class="cv-epigraph cv-contact-quote" style="color: #999;">
+
+<div class="cv-epigraph cv-contact-quote" style="color: #999;" data-beyond-closing hidden>
 In song and in dance man exhibits himself as a member of a higher community, he has forgotten how to walk and speak, and is on the point of taking a dancing flight into the air. His gestures bespeak enchantment.
 <div class="cv-epigraph-attribution"><i><span class="cv-epigraph-author">— Friedrich Nietzsche,</span> <span class="cv-epigraph-title">The Birth of Tragedy.</span></i> <a href="https://www.gutenberg.org/cache/epub/51356/pg51356-images.html#Page_27" target="_blank" rel="noopener noreferrer" title="The Birth of Tragedy, §1; translated by William A. Haussmann (1910)">§1</a></div>
 </div>
@@ -3123,7 +3256,63 @@ In song and in dance man exhibits himself as a member of a higher community, he 
 </span>
 </details> -->
 
-<figure class="cv-closing-comic"><a href="{{ '/assets/img/about/bird1.png' | relative_url }}" data-footprint-lightbox data-lightbox-caption="“False Knees” by Joshua" aria-haspopup="dialog"><img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) 88vw, 400px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async"></a><figcaption class="cv-comic-credit"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
+<figure class="cv-closing-comic" data-beyond-closing hidden><a href="{{ '/assets/img/about/bird1.png' | relative_url }}" data-footprint-lightbox data-lightbox-caption="“False Knees” by Joshua" aria-haspopup="dialog"><img src="{{ '/assets/img/about/bird1_600.webp' | relative_url }}" srcset="{{ '/assets/img/about/bird1_300.webp' | relative_url }} 300w,{{ '/assets/img/about/bird1_600.webp' | relative_url }} 600w" sizes="(max-width: 768px) 88vw, 400px" alt="Four-panel False Knees comic about a bird experiencing clarity and autonomy in flight" width="600" height="866"{% unless page.url == '/about/' %} loading="lazy"{% endunless %} decoding="async"></a><figcaption class="cv-comic-credit"><em><a href="https://falseknees.com/about.html">“False Knees” by Joshua</a></em></figcaption></figure>
+</div>
+
+<script>
+(function () {
+var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-beyond-toggle]'));
+var content = document.getElementById('beyond-content');
+var closingContent = document.querySelectorAll('[data-beyond-closing]');
+var contentAnimation = null;
+var contentWidth = content.clientWidth;
+function syncClosingContent() {
+var anyOpen = buttons.some(function (button) { return button.getAttribute('aria-expanded') === 'true'; });
+Array.prototype.forEach.call(closingContent, function (element) { element.hidden = anyOpen; });
+}
+function toggleTopic(button) {
+var startHeight = content.getBoundingClientRect().height;
+var spaceBelowViewport = Math.max(0, document.documentElement.scrollHeight - window.scrollY - window.innerHeight);
+// Avoid shortening the document past the current viewport while replacing its closing content.
+var minimumHeight = Math.max(0, Math.ceil(startHeight - spaceBelowViewport));
+content.style.height = startHeight + 'px';
+if (contentAnimation) contentAnimation.cancel();
+content.style.minHeight = minimumHeight + 'px';
+var open = button.getAttribute('aria-expanded') !== 'true';
+buttons.forEach(function (other) {
+var expanded = other === button && open;
+var panel = document.getElementById(other.getAttribute('aria-controls'));
+if (panel.getAnimations) panel.getAnimations().forEach(function (animation) { animation.cancel(); });
+other.setAttribute('aria-expanded', String(expanded));
+other.classList.toggle('pub-view-btn-active', expanded);
+panel.hidden = !expanded;
+});
+syncClosingContent();
+content.style.height = 'auto';
+var endHeight = content.getBoundingClientRect().height;
+if (!content.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+contentAnimation = content.animate([
+{ height: startHeight + 'px' },
+{ height: endHeight + 'px' }
+], { duration: 220, easing: 'cubic-bezier(0.2, 0.7, 0.2, 1)' });
+if (open) {
+var activePanel = document.getElementById(button.getAttribute('aria-controls'));
+activePanel.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220 });
+}
+}
+buttons.forEach(function (button) {
+button.addEventListener('click', function () { toggleTopic(button); });
+});
+window.addEventListener('resize', function () {
+if (content.clientWidth === contentWidth) return;
+contentWidth = content.clientWidth;
+if (contentAnimation) contentAnimation.cancel();
+content.style.height = 'auto';
+content.style.minHeight = '';
+});
+syncClosingContent();
+})();
+</script>
 
 <script>
 var pubTypeFilters = ['all', 'representative', 'selected', 'published'];
